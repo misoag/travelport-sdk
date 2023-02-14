@@ -9,7 +9,8 @@
         "wsdl",
         "wsdltophp"
     ],
-    "homepage": "",
+    "homepage": "https://github.com/misoag/travelport-sdk",
+    "license": "MIT",
     "require": {
         "php": ">=7.4 || ^8.0",
         "ext-dom": "*",
