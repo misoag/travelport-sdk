@@ -1,18 +1,8 @@
 {
     "name": "misoag/travelport-sdk",
-    "type": "library",
-    "description": "Package generated from ./wsdl/uAPI_WSDLschema_Release-V22.3.1.9440/hotel_v52_0/Hotel.wsdl using wsdltophp/packagegenerator",
-    "keywords": [
-        "travelport",
-        "hotel",
-        "soap",
-        "wsdl",
-        "wsdltophp"
-    ],
-    "homepage": "https://github.com/misoag/travelport-sdk",
-    "license": "MIT",
+    "description": "Package generated from ./wsdl/uAPI_WSDLschema_Release-V22.3.1.9440/util_v52_0/Util.wsdl using wsdltophp/packagegenerator",
     "require": {
-        "php": ">=7.4 || ^8.0",
+        "php": ">=7.4",
         "ext-dom": "*",
         "ext-mbstring": "*",
         "ext-soap": "*",
@@ -20,7 +10,9 @@
     },
     "autoload": {
         "psr-4": {
-            "": "./src/"
+            "Travelport\\Util\\": "./src/Travelport/Util",
+            "Travelport\\UniversalRecord\\": "./src/Travelport/UniversalRecord",
+            "Travelport\\Hotel\\": "./src/Travelport/Hotel"
         }
     }
 }
