@@ -1,6 +1,6 @@
 {
     "name": "misoag/travelport-sdk",
-    "description": "Package generated from ./wsdl/uAPI_WSDLschema_Release-V21.3.1.1004/util_v51_0/Util.wsdl using wsdltophp/packagegenerator",
+    "description": "Package generated from ./wsdl/uAPI_WSDLschema_Release-V22.3.1.9440/util_v52_0/Util.wsdl using wsdltophp/packagegenerator",
     "require": {
         "php": ">=7.4",
         "ext-dom": "*",
