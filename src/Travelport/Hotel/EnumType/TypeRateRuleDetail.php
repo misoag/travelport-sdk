@@ -9,8 +9,8 @@ use WsdlToPhp\PackageBase\AbstractStructEnumBase;
 /**
  * This class stands for typeRateRuleDetail EnumType
  * Meta information extracted from the WSDL
- * - documentation: 'None' returns hotel property descriptive information-supported for 1p,1g/1v. 'Complete' returns the complete hotel and room rate information-supported for 1p,1g/1v, 'RatePlansOnly' returns hotel rate information only - supported for
- * 1p.
+ * - documentation: 'None' returns hotel property descriptive information-supported for 1p/1j,1g/1v. 'Complete' returns the complete hotel and room rate information-supported for 1p/1j,1g/1v, 'RatePlansOnly' returns hotel rate information only -
+ * supported for 1p/1j.
  * @subpackage Enumerations
  */
 class TypeRateRuleDetail extends AbstractStructEnumBase

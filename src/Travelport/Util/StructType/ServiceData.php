@@ -32,7 +32,7 @@ class ServiceData extends AbstractStructBase
     /**
      * The SSRRef
      * Meta information extracted from the WSDL
-     * - documentation: References to the related SSRs. At present, only reference to ASVC SSR is supported. Supported providers are 1G/1V/1P
+     * - documentation: References to the related SSRs. At present, only reference to ASVC SSR is supported. Supported providers are 1G/1V/1P/1J
      * - maxOccurs: 999
      * - minOccurs: 0
      * @var \Travelport\Util\StructType\TypeKeyBasedReference[]
@@ -87,7 +87,7 @@ class ServiceData extends AbstractStructBase
     /**
      * The EMDSummaryRef
      * Meta information extracted from the WSDL
-     * - documentation: Reference to the corresponding EMD issued. Supported providers are 1G/1V/1P | Reference type
+     * - documentation: Reference to the corresponding EMD issued. Supported providers are 1G/1V/1P/1J | Reference type
      * - base: xs:string
      * - use: optional
      * @var string|null
@@ -96,7 +96,7 @@ class ServiceData extends AbstractStructBase
     /**
      * The EMDCouponRef
      * Meta information extracted from the WSDL
-     * - documentation: Reference to the corresponding EMD coupon issued. Supported providers are 1G/1V/1P | Reference type
+     * - documentation: Reference to the corresponding EMD coupon issued. Supported providers are 1G/1V/1P/1J | Reference type
      * - base: xs:string
      * - use: optional
      * @var string|null

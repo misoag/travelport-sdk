@@ -51,7 +51,7 @@ class TypeVehicleCharge extends AbstractStructBase
     /**
      * The Name
      * Meta information extracted from the WSDL
-     * - documentation: Identifies the type of charge information for the category. For 1P , when category is “Special”, Name attribute will have Special Equipment code enumeration, which can be used in booking vehicle on 1P host.
+     * - documentation: Identifies the type of charge information for the category. For 1P,1J , when category is “Special”, Name attribute will have Special Equipment code enumeration, which can be used in booking vehicle on 1P,1J host.
      * - use: optional
      * @var string|null
      */
@@ -59,7 +59,7 @@ class TypeVehicleCharge extends AbstractStructBase
     /**
      * The Description
      * Meta information extracted from the WSDL
-     * - documentation: Special Equipment Charge description text of the rental charge. 1P only.
+     * - documentation: Special Equipment Charge description text of the rental charge. 1P, 1J only.
      * - use: optional
      * @var string|null
      */

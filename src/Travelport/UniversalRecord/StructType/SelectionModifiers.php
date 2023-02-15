@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for SelectionModifiers StructType
  * Meta information extracted from the WSDL
- * - documentation: References to airsegments for which EMDs will be generated on all the associated services. | Modifiers supported for selection of services during EMD Issuance. Supported providers are 1V/1G/1P
+ * - documentation: References to airsegments for which EMDs will be generated on all the associated services. | Modifiers supported for selection of services during EMD Issuance. Supported providers are 1V/1G/1P/1J
  * @subpackage Structs
  */
 class SelectionModifiers extends AbstractStructBase

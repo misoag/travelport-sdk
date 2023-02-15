@@ -13,7 +13,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * - documentation: Element Key related supporting attributes | Commission information applied during EMD issuance | Infomration about the fare calculation | Fare related information for these electronic miscellaneous documents | FormOfPayment used for
  * issuing these electronic miscellaneous documents | Payment charged for EMD isuance | Electronic miscellaneous documents.As an EMDInfo container displays all the EMDs which are in conjunction, there can be maximum 4 ElectronicMiscDocuments present in
  * an EMDInfo | List of Supplier Locator information that is associated with this document | Basic information of the traveler associated with this EMDInfo. | This is the parent container to display EMD information. Occurrence of multiple unique EMDs
- * inside this container indicate that those EMDs are conjunctive to each other. Supported providers are 1G/1V/1P
+ * inside this container indicate that those EMDs are conjunctive to each other. Supported providers are 1G/1V/1P/1J
  * @subpackage Structs
  */
 class EMDInfo extends AbstractStructBase
@@ -69,7 +69,7 @@ class EMDInfo extends AbstractStructBase
     /**
      * The EMDEndorsement
      * Meta information extracted from the WSDL
-     * - documentation: Endorsement for EMD. Supported providers are 1V/1G/1P
+     * - documentation: Endorsement for EMD. Supported providers are 1V/1G/1P/1J
      * - base: xs:string
      * - maxLength: 255
      * - maxOccurs: 999

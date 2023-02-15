@@ -11,8 +11,8 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * This class stands for Name StructType
  * Meta information extracted from the WSDL
  * - documentation: Possible value for restriction name "Non-Refundable","Non-Changeable","Cancellation","Changes", "Non-Refundable marked with No Show","No Show","Non-Changeable marked with No Show" | The commercial name of the optional service on
- * which the embargo applies. Provider: 1G, 1V, 1P | Name of the group in group booking. | The keyword name. | Name of Emergency Contact Person | Policy Name | Agent's role name | Complete name fields | The name as it appears on the card. | Value of the
- * reference data item that may not uniquely identify a single Reference Data item (e.g. Chicago for Airport would return ORD and MDW). | At least one character data in Next Result Reference
+ * which the embargo applies. Provider: 1G, 1V, 1P, 1J | Name of the group in group booking. | The keyword name. | Name of Emergency Contact Person | Policy Name | Agent's role name | Complete name fields | The name as it appears on the card. | Value of
+ * the reference data item that may not uniquely identify a single Reference Data item (e.g. Chicago for Airport would return ORD and MDW). | At least one character data in Next Result Reference
  * - base: xs:string
  * - minLength: 1
  * - type: common:StringLength1to128 | xs:string

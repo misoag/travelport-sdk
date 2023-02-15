@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for ElectronicMiscDocument StructType
  * Meta information extracted from the WSDL
- * - documentation: Element Key related supporting attributes | The coupon information for the EMD issued. | Electronic miscellaneous document. Supported providers are 1G/1V/1P
+ * - documentation: Element Key related supporting attributes | The coupon information for the EMD issued. | Electronic miscellaneous document. Supported providers are 1G/1V/1P/1J
  * @subpackage Structs
  */
 class ElectronicMiscDocument extends AbstractStructBase

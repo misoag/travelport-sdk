@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for typeAnchorFlightData StructType
  * Meta information extracted from the WSDL
- * - documentation: To support Anchor flight search contain the anchor flight details. Supported providers 1P
+ * - documentation: To support Anchor flight search contain the anchor flight details. Supported providers 1P, 1J
  * @subpackage Structs
  */
 class TypeAnchorFlightData extends AbstractStructBase

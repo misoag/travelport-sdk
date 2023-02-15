@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for ProhibitedConnectionPoints StructType
  * Meta information extracted from the WSDL
- * - documentation: This is the container to specify all prohibited connection points. Applicable for 1G/1V/1P.
+ * - documentation: This is the container to specify all prohibited connection points. Applicable for 1G/1V/1P/1J.
  * @subpackage Structs
  */
 class ProhibitedConnectionPoints extends AbstractStructBase

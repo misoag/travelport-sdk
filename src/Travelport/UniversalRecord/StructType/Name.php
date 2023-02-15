@@ -12,7 +12,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * Meta information extracted from the WSDL
  * - documentation: Name of the group in group booking. | The keyword name. | Name of Emergency Contact Person | Policy Name | Agent's role name | Complete name fields | The name as it appears on the card. | Name of the Saved Trip. | Possible value for
  * restriction name "Non-Refundable","Non-Changeable","Cancellation","Changes", "Non-Refundable marked with No Show","No Show","Non-Changeable marked with No Show" | The commercial name of the optional service on which the embargo applies. Provider: 1G,
- * 1V, 1P | At least one character data in Next Result Reference
+ * 1V, 1P, 1J | At least one character data in Next Result Reference
  * - base: xs:string
  * - minLength: 1
  * - type: xs:string

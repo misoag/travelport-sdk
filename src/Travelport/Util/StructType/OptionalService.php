@@ -10,9 +10,9 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for OptionalService StructType
  * Meta information extracted from the WSDL
- * - documentation: Specifies how the Optional Service fee is to be applied. The choices are Per One Way, Per Round Trip, Per Item (Per Piece), Per Travel, Per Ticket, Per 1 Kilo, Per 5 Kilos. Provider: 1G, 1V, 1P | Information regarding any specific
- * for this service. | Describes a merchandising service of a given type (e.g. Seat) that can be purchased for the indicated amount. If this service is for only a given passenger or segment the references will indicate the restrictions. If this service
- * applies to all passenger or the entire itinerary, the references will not be present.
+ * - documentation: Specifies how the Optional Service fee is to be applied. The choices are Per One Way, Per Round Trip, Per Item (Per Piece), Per Travel, Per Ticket, Per 1 Kilo, Per 5 Kilos. Provider: 1G, 1V, 1P, 1J | Information regarding any
+ * specific for this service. | Describes a merchandising service of a given type (e.g. Seat) that can be purchased for the indicated amount. If this service is for only a given passenger or segment the references will indicate the restrictions. If this
+ * service applies to all passenger or the entire itinerary, the references will not be present.
  * @subpackage Structs
  */
 class OptionalService extends AbstractStructBase
@@ -425,7 +425,7 @@ class OptionalService extends AbstractStructBase
     /**
      * The WeightInExcess
      * Meta information extracted from the WSDL
-     * - documentation: The excess weight of a bag. Providers: 1G, 1V, 1P
+     * - documentation: The excess weight of a bag. Providers: 1G, 1V, 1P, 1J
      * - use: optional
      * @var string|null
      */
@@ -433,7 +433,7 @@ class OptionalService extends AbstractStructBase
     /**
      * The TotalWeight
      * Meta information extracted from the WSDL
-     * - documentation: The total weight of a bag. Providers: 1G, 1V, 1P
+     * - documentation: The total weight of a bag. Providers: 1G, 1V, 1P, 1J
      * - use: optional
      * @var string|null
      */
@@ -441,7 +441,7 @@ class OptionalService extends AbstractStructBase
     /**
      * The BaggageUnitPrice
      * Meta information extracted from the WSDL
-     * - documentation: The per unit price of baggage. Providers: 1G, 1V, 1P | A monetary value (valid to req/rsp Currency type) Format : Currency Code + Amount(USD123.10)
+     * - documentation: The per unit price of baggage. Providers: 1G, 1V, 1P, 1J | A monetary value (valid to req/rsp Currency type) Format : Currency Code + Amount(USD123.10)
      * - base: xs:string
      * - use: optional
      * @var string|null
@@ -450,7 +450,7 @@ class OptionalService extends AbstractStructBase
     /**
      * The FirstPiece
      * Meta information extracted from the WSDL
-     * - documentation: Indicates the minimum occurrence of excess baggage.Provider: 1G, 1V, 1P.
+     * - documentation: Indicates the minimum occurrence of excess baggage.Provider: 1G, 1V, 1P, 1J.
      * - use: optional
      * @var int|null
      */
@@ -458,7 +458,7 @@ class OptionalService extends AbstractStructBase
     /**
      * The LastPiece
      * Meta information extracted from the WSDL
-     * - documentation: Indicates the maximum occurrence of excess baggage. Provider: 1G, 1V, 1P.
+     * - documentation: Indicates the maximum occurrence of excess baggage. Provider: 1G, 1V, 1P, 1J.
      * - use: optional
      * @var int|null
      */
@@ -466,7 +466,7 @@ class OptionalService extends AbstractStructBase
     /**
      * The Restricted
      * Meta information extracted from the WSDL
-     * - documentation: When set to “true”, the Optional Service is restricted by an embargo. Provider: 1G, 1V, 1P
+     * - documentation: When set to “true”, the Optional Service is restricted by an embargo. Provider: 1G, 1V, 1P, 1J
      * - default: false
      * - use: optional
      * @var bool|null
@@ -475,7 +475,7 @@ class OptionalService extends AbstractStructBase
     /**
      * The IsRepriceRequired
      * Meta information extracted from the WSDL
-     * - documentation: When set to “true”, the Optional Service must be re-priced. Provider: 1G, 1V, 1P
+     * - documentation: When set to “true”, the Optional Service must be re-priced. Provider: 1G, 1V, 1P, 1J
      * - default: false
      * @var bool|null
      */
@@ -483,7 +483,7 @@ class OptionalService extends AbstractStructBase
     /**
      * The BookedQuantity
      * Meta information extracted from the WSDL
-     * - documentation: Indicates the Optional Service quantity already booked. Provider: 1G, 1V, 1P
+     * - documentation: Indicates the Optional Service quantity already booked. Provider: 1G, 1V, 1P, 1J
      * - use: optional
      * @var string|null
      */
@@ -491,7 +491,7 @@ class OptionalService extends AbstractStructBase
     /**
      * The Group
      * Meta information extracted from the WSDL
-     * - documentation: Associates Optional Services with the same ServiceSub Code, Air Segment, Passenger, and EMD Associated Item. Provider:1G, 1V, 1P
+     * - documentation: Associates Optional Services with the same ServiceSub Code, Air Segment, Passenger, and EMD Associated Item. Provider:1G, 1V, 1P, 1J
      * - use: optional
      * @var string|null
      */

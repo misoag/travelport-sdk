@@ -6,7 +6,7 @@
  * - the key must be a constant beginning with WSDL_ from AbstractSoapClientBase class (each generated ServiceType class extends this class)
  * - the value must be the corresponding key value (each option matches a {@link http://www.php.net/manual/en/soapclient.soapclient.php} option)
  * $options = [
- * WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => './wsdl/uAPI_WSDLschema_Release-V22.3.1.9440/util_v52_0/Util.wsdl',
+ * WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => './wsdl/uAPI_WSDLschema_Release-V21.3.1.1004/util_v51_0/Util.wsdl',
  * WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_TRACE => true,
  * WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_LOGIN => 'you_secret_login',
  * WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_PASSWORD => 'you_secret_password',
@@ -18,7 +18,7 @@ require_once __DIR__ . '/vendor/autoload.php';
  * Minimal options
  */
 $options = [
-    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => './wsdl/uAPI_WSDLschema_Release-V22.3.1.9440/util_v52_0/Util.wsdl',
+    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => './wsdl/uAPI_WSDLschema_Release-V21.3.1.1004/util_v51_0/Util.wsdl',
     WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \Travelport\Util\ClassMap::get(),
 ];
 /**

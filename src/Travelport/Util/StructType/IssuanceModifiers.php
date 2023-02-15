@@ -11,7 +11,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * This class stands for IssuanceModifiers StructType
  * Meta information extracted from the WSDL
  * - documentation: Commission information to be used for EMD issuance. | Endorsement details to be used during EMD issuance. | Information about customer receipt via email. | FormOfPayment information to be used for EMD issuance. | Reference to
- * FormOfPayment present in the UR to be used for EMD issuance. | Override PNR FOP for EMD Issuance. | General modifiers supported for EMD Issuance.Supported providers are 1V/1G/1P
+ * FormOfPayment present in the UR to be used for EMD issuance. | Override PNR FOP for EMD Issuance. | General modifiers supported for EMD Issuance.Supported providers are 1V/1G/1P/1J
  * @subpackage Structs
  */
 class IssuanceModifiers extends AbstractStructBase
@@ -49,7 +49,7 @@ class IssuanceModifiers extends AbstractStructBase
     /**
      * The EMDEndorsement
      * Meta information extracted from the WSDL
-     * - documentation: Endorsement for EMD. Supported providers are 1V/1G/1P
+     * - documentation: Endorsement for EMD. Supported providers are 1V/1G/1P/1J
      * - base: xs:string
      * - maxLength: 255
      * - minLength: 1

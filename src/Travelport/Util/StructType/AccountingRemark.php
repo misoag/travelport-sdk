@@ -54,7 +54,7 @@ class AccountingRemark extends AbstractStructBase
      * The TypeInGds
      * Meta information extracted from the WSDL
      * - documentation: Defines the GDS Accounting remark types | Only below mentioned values are Supported as typeGdsAccountingRemark Fare Canned Ticket Account Other InvoiceLayout ServiceFee AgentSign TourCode (1P) Endorsement (1P) CorporateTrackingId
-     * (1P) ItineraryInvoicePerTraveler (1P) ItineraryInvoicePerSurname (1P) DividerCard (1P) NetFare/VC/CAR (1P) MarketCode (1V) BranchLocationOverride (1V) BookingAgentOverride (1V) SellingAgentOverride (1V) ProductTypeOverride (1V) TicketingAgent (1V)
+     * (1P) ItineraryInvoicePerTraveler (1P) ItineraryInvoicePerSurname (1P) DividerCard (1P) NetFare/VC/CAR (1P/1J) MarketCode (1V) BranchLocationOverride (1V) BookingAgentOverride (1V) SellingAgentOverride (1V) ProductTypeOverride (1V) TicketingAgent (1V)
      * Sort (1V) PurchaseOrder (1V) ItineraryWithFare (1V) ItineraryWithoutFare (1V) ItineraryWithAmount (1V)
      * - base: xs:string
      * - maxLength: 30

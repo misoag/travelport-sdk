@@ -10,10 +10,10 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for AirTicketingModifiers StructType
  * Meta information extracted from the WSDL
- * - documentation: Provide Payment for FOP. Providers supported: Galileo, Apollo, Worldspan. | CreditCardAuth information to be used as ticketing modifier at the time of ticketing. Providers supported: Galileo, Apollo, Worldspan. | FormOfPayment
- * information to be used as ticketing modifier at the time of ticketing. Providers supported: Galileo, Apollo, Worldspan. | Allows an agency to add the commission to a new or different commission rate which will be applied at time of ticketing. The
- * commission Modifier allows the user specify how the commission change is to applied. Providers supported: Worldspan. | Allows an agency to add user defined ticketing endorsements in the ticket. Providers supported: Worldspan. | Allows an agency to
- * modify the tour code information during ticket issuance. Providers supported: Worldspan. | Modifiers used during ticketing
+ * - documentation: Provide Payment for FOP. Providers supported: Galileo, Apollo, Worldspan and JAL. | CreditCardAuth information to be used as ticketing modifier at the time of ticketing. Providers supported: Galileo, Apollo, Worldspan and JAL. |
+ * FormOfPayment information to be used as ticketing modifier at the time of ticketing. Providers supported: Galileo, Apollo, Worldspan and JAL. | Allows an agency to add the commission to a new or different commission rate which will be applied at time
+ * of ticketing. The commission Modifier allows the user specify how the commission change is to applied. Providers supported: Worldspan and JAL. | Allows an agency to add user defined ticketing endorsements in the ticket. Providers supported: Worldspan
+ * and JAL. | Allows an agency to modify the tour code information during ticket issuance. Providers supported: Worldspan and JAL. | Modifiers used during ticketing
  * @subpackage Structs
  */
 class AirTicketingModifiers extends AbstractStructBase
@@ -100,7 +100,7 @@ class AirTicketingModifiers extends AbstractStructBase
     /**
      * The TicketedFareOverride
      * Meta information extracted from the WSDL
-     * - documentation: It is a modifier to allow re-issuance of tickets for stored fares which are already ticketed. Providers supported are 1P
+     * - documentation: It is a modifier to allow re-issuance of tickets for stored fares which are already ticketed. Providers supported are 1P/1J
      * - default: false
      * - use: optional
      * @var bool|null
@@ -109,7 +109,7 @@ class AirTicketingModifiers extends AbstractStructBase
     /**
      * The SuppressTaxAndFee
      * Meta information extracted from the WSDL
-     * - documentation: Allow to suppress Taxand Fee in ticketing response.Providers supported: Worldspan.
+     * - documentation: Allow to suppress Taxand Fee in ticketing response.Providers supported: Worldspan and JAL.
      * - default: false
      * - use: optional
      * @var bool|null
@@ -118,7 +118,7 @@ class AirTicketingModifiers extends AbstractStructBase
     /**
      * The NoComparisonSFQ
      * Meta information extracted from the WSDL
-     * - documentation: 1P - Set to "true" to include the no comparison overide #NC to override the existing SFQ and issue the ticket. Only valid for AirTicketingReq, not valid for AirExchangeTicketingReq.
+     * - documentation: 1P/1J - Set to "true" to include the no comparison overide #NC to override the existing SFQ and issue the ticket. Only valid for AirTicketingReq, not valid for AirExchangeTicketingReq.
      * - default: false
      * - use: optional
      * @var bool|null

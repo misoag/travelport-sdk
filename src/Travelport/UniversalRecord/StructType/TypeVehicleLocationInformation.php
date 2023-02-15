@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for typeVehicleLocationInformation StructType
  * Meta information extracted from the WSDL
- * - documentation: Pickup/Return Location Hours of operation. Data is not always returned by the vendor. | Pickup location phone numbers.Data is not always returned by the vendor. | Valid for VehicleRulesRsp 1P only.
+ * - documentation: Pickup/Return Location Hours of operation. Data is not always returned by the vendor. | Pickup location phone numbers.Data is not always returned by the vendor. | Valid for VehicleRulesRsp 1P, 1J only.
  * @subpackage Structs
  */
 class TypeVehicleLocationInformation extends AbstractStructBase

@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for QueuePlace StructType
  * Meta information extracted from the WSDL
- * - documentation: Identifies the Queue Information to be selected for placing the UR | Allow queue placement of a PNR at the time of booking to be used for Providers 1G,1V and 1P.
+ * - documentation: Identifies the Queue Information to be selected for placing the UR | Allow queue placement of a PNR at the time of booking to be used for Providers 1G,1V,1P and 1J.
  * @subpackage Structs
  */
 class QueuePlace extends AbstractStructBase

@@ -111,7 +111,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: air_v52_0:AirPricingModifiers
+     * - ref: air_v51_0:AirPricingModifiers
      * @var \Travelport\UniversalRecord\StructType\AirPricingModifiers[]
      */
     protected ?array $AirPricingModifiers = null;
@@ -123,7 +123,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: air_v52_0:AirPricingSolution
+     * - ref: air_v51_0:AirPricingSolution
      * @var \Travelport\UniversalRecord\StructType\AirPricingSolution[]
      */
     protected ?array $AirPricingSolution = null;
@@ -143,7 +143,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: vehicle_v52_0:VehicleSearchModifiers
+     * - ref: vehicle_v51_0:VehicleSearchModifiers
      * @var \Travelport\UniversalRecord\StructType\VehicleSearchModifiers[]
      */
     protected ?array $VehicleSearchModifiers = null;
@@ -155,7 +155,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: vehicle_v52_0:VehicleDateLocation
+     * - ref: vehicle_v51_0:VehicleDateLocation
      * @var \Travelport\UniversalRecord\StructType\VehicleDateLocation[]
      */
     protected ?array $VehicleDateLocation = null;
@@ -176,7 +176,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: vehicle_v52_0:VehicleSpecialRequest
+     * - ref: vehicle_v51_0:VehicleSpecialRequest
      * @var \Travelport\UniversalRecord\StructType\VehicleSpecialRequest[]
      */
     protected ?array $VehicleSpecialRequest = null;
@@ -188,7 +188,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: vehicle_v52_0:PaymentInformation
+     * - ref: vehicle_v51_0:PaymentInformation
      * @var \Travelport\UniversalRecord\StructType\PaymentInformation[]
      */
     protected ?array $PaymentInformation = null;
@@ -200,7 +200,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: vehicle_v52_0:DeliveryAddress
+     * - ref: vehicle_v51_0:DeliveryAddress
      * @var \Travelport\UniversalRecord\StructType\DeliveryAddress[]
      */
     protected ?array $DeliveryAddress = null;
@@ -212,7 +212,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: vehicle_v52_0:CollectionAddress
+     * - ref: vehicle_v51_0:CollectionAddress
      * @var \Travelport\UniversalRecord\StructType\CollectionAddress[]
      */
     protected ?array $CollectionAddress = null;
@@ -224,7 +224,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: vehicle_v52_0:FlightArrivalInformation
+     * - ref: vehicle_v51_0:FlightArrivalInformation
      * @var \Travelport\UniversalRecord\StructType\FlightArrivalInformation[]
      */
     protected ?array $FlightArrivalInformation = null;
@@ -236,7 +236,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: vehicle_v52_0:Vehicle
+     * - ref: vehicle_v51_0:Vehicle
      * @var \Travelport\UniversalRecord\StructType\Vehicle[]
      */
     protected ?array $Vehicle = null;
@@ -265,7 +265,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: hotel_v52_0:HotelProperty
+     * - ref: hotel_v51_0:HotelProperty
      * @var \Travelport\UniversalRecord\StructType\HotelProperty[]
      */
     protected ?array $HotelProperty = null;
@@ -277,7 +277,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: hotel_v52_0:HotelStay
+     * - ref: hotel_v51_0:HotelStay
      * @var \Travelport\UniversalRecord\StructType\HotelStay[]
      */
     protected ?array $HotelStay = null;
@@ -289,7 +289,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: hotel_v52_0:HotelRulesModifiers
+     * - ref: hotel_v51_0:HotelRulesModifiers
      * @var \Travelport\UniversalRecord\StructType\HotelRulesModifiers[]
      */
     protected ?array $HotelRulesModifiers = null;
@@ -301,7 +301,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: hotel_v52_0:HotelDetailsModifiers
+     * - ref: hotel_v51_0:HotelDetailsModifiers
      * @var \Travelport\UniversalRecord\StructType\HotelDetailsModifiers[]
      */
     protected ?array $HotelDetailsModifiers = null;
@@ -313,7 +313,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: hotel_v52_0:HotelRateDetail
+     * - ref: hotel_v51_0:HotelRateDetail
      * @var \Travelport\UniversalRecord\StructType\HotelRateDetail[]
      */
     protected ?array $HotelRateDetail = null;
@@ -325,7 +325,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: hotel_v52_0:PromotionCode
+     * - ref: hotel_v51_0:PromotionCode
      * @var \Travelport\UniversalRecord\StructType\PromotionCode[]
      */
     protected ?array $PromotionCode = null;
@@ -345,7 +345,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: rail_v52_0:RailPricingSolution
+     * - ref: rail_v51_0:RailPricingSolution
      * @var \Travelport\UniversalRecord\StructType\RailPricingSolution[]
      */
     protected ?array $RailPricingSolution = null;
@@ -357,7 +357,7 @@ class SavedTrip extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: rail_v52_0:RailFareNote
+     * - ref: rail_v51_0:RailFareNote
      * @var \Travelport\UniversalRecord\StructType\RailFareNote[]
      */
     protected ?array $RailFareNote = null;

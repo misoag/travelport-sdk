@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for EMDTravelerInfo StructType
  * Meta information extracted from the WSDL
- * - documentation: EMD traveler information. Supported providers are 1G/1V/1P
+ * - documentation: EMD traveler information. Supported providers are 1G/1V/1P/1J
  * @subpackage Structs
  */
 class EMDTravelerInfo extends AbstractStructBase

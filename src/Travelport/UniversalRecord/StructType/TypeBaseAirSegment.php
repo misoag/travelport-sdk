@@ -320,7 +320,7 @@ class TypeBaseAirSegment extends Segment
     /**
      * The BrandIndicator
      * Meta information extracted from the WSDL
-     * - documentation: Value “B” specifies that the carrier supports Rich Content and Branding. The Brand Indicator is only returned in the availability search response. Provider: 1G, 1V, 1P, ACH
+     * - documentation: Value “B” specifies that the carrier supports Rich Content and Branding. The Brand Indicator is only returned in the availability search response. Provider: 1G, 1V, 1P, 1J, ACH
      * - use: optional
      * @var string|null
      */

@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for ActionDetails StructType
  * Meta information extracted from the WSDL
- * - documentation: Information related to the storing of the fare: Agent, Date and Action for Provider: 1P
+ * - documentation: Information related to the storing of the fare: Agent, Date and Action for Provider: 1P/1J
  * @subpackage Structs
  */
 class ActionDetails extends AbstractStructBase
@@ -18,7 +18,7 @@ class ActionDetails extends AbstractStructBase
     /**
      * The PseudoCityCode
      * Meta information extracted from the WSDL
-     * - documentation: PCC in the host of the agent who stored the fare for Provider: 1P | 2 to 10 Letter Pseudo City Code
+     * - documentation: PCC in the host of the agent who stored the fare for Provider: 1P/1J | 2 to 10 Letter Pseudo City Code
      * - base: xs:string
      * - maxLength: 10
      * - minLength: 2
@@ -29,7 +29,7 @@ class ActionDetails extends AbstractStructBase
     /**
      * The AgentSine
      * Meta information extracted from the WSDL
-     * - documentation: The sign in of the user who stored the fare for Provider: 1P
+     * - documentation: The sign in of the user who stored the fare for Provider: 1P/1J
      * - use: optional
      * @var string|null
      */
@@ -37,7 +37,7 @@ class ActionDetails extends AbstractStructBase
     /**
      * The EventDate
      * Meta information extracted from the WSDL
-     * - documentation: Date at which the fare was stored for Provider: 1P
+     * - documentation: Date at which the fare was stored for Provider: 1P/1J
      * - use: optional
      * @var string|null
      */
@@ -45,7 +45,7 @@ class ActionDetails extends AbstractStructBase
     /**
      * The EventTime
      * Meta information extracted from the WSDL
-     * - documentation: Time at which the fare was stored for Provider: 1P
+     * - documentation: Time at which the fare was stored for Provider: 1P/1J
      * - use: optional
      * @var string|null
      */
@@ -53,7 +53,7 @@ class ActionDetails extends AbstractStructBase
     /**
      * The Text
      * Meta information extracted from the WSDL
-     * - documentation: The type of action the agent performed for Provider: 1P
+     * - documentation: The type of action the agent performed for Provider: 1P/1J
      * - use: optional
      * @var string|null
      */

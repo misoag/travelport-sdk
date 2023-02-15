@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for FareRulesFilter StructType
  * Meta information extracted from the WSDL
- * - documentation: Fare Rules Filter about this fare component. Applicable Providers are 1P,1G,1V.
+ * - documentation: Fare Rules Filter about this fare component. Applicable Providers are 1P,1J,1G,1V.
  * @subpackage Structs
  */
 class FareRulesFilter extends AbstractStructBase

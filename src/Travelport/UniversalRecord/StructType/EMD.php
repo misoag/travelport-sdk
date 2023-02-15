@@ -36,7 +36,7 @@ class EMD extends AbstractStructBase
     /**
      * The AssociatedItem
      * Meta information extracted from the WSDL
-     * - documentation: The type of Optional Service. The choices are Flight, Ticket, Merchandising, Rule Buster, Allowance, Chargeable Baggage, Carry On Baggage Allowance, Prepaid Baggage. Provider: 1G, 1V, 1P
+     * - documentation: The type of Optional Service. The choices are Flight, Ticket, Merchandising, Rule Buster, Allowance, Chargeable Baggage, Carry On Baggage Allowance, Prepaid Baggage. Provider: 1G, 1V, 1P, 1J
      * - use: optional
      * @var string|null
      */

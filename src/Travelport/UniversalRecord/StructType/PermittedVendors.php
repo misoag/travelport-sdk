@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for PermittedVendors StructType
  * Meta information extracted from the WSDL
- * - documentation: 1G/1V max 4 vendors, 1P max 99 vendors
+ * - documentation: 1G/1V max 4 vendors, 1P/1J max 99 vendors
  * @subpackage Structs
  */
 class PermittedVendors extends AbstractStructBase

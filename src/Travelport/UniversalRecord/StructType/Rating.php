@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for Rating StructType
  * Meta information extracted from the WSDL
- * - documentation: Definition of the seat rating. Providers: 1G, 1V, 1P
+ * - documentation: Definition of the seat rating. Providers: 1G, 1V, 1P, 1J
  * @subpackage Structs
  */
 class Rating extends AbstractStructBase
@@ -18,7 +18,7 @@ class Rating extends AbstractStructBase
     /**
      * The Number
      * Meta information extracted from the WSDL
-     * - documentation: Numerical rating of the seat from 1 to 5 with 1 being bad and 5 being good. Providers: 1G, 1V, 1P
+     * - documentation: Numerical rating of the seat from 1 to 5 with 1 being bad and 5 being good. Providers: 1G, 1V, 1P, 1J
      * - use: required
      * @var int
      */

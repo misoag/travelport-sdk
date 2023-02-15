@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for AuditData StructType
  * Meta information extracted from the WSDL
- * - documentation: Container for Pricing Audit Data.For providers 1P
+ * - documentation: Container for Pricing Audit Data.For providers 1P/1J
  * @subpackage Structs
  */
 class AuditData extends AbstractStructBase

@@ -79,7 +79,7 @@ class HotelRulesModifiers extends AbstractStructBase
     /**
      * The TotalOccupants
      * Meta information extracted from the WSDL
-     * - documentation: Number of guests for the room. Supported Providers: 1P
+     * - documentation: Number of guests for the room. Supported Providers: 1P/1J
      * - use: optional
      * @var int|null
      */

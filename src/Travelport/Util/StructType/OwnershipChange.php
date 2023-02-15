@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for OwnershipChange StructType
  * Meta information extracted from the WSDL
- * - documentation: Element to change the ownership of the PNR in the UR. PROVIDER SUPPORTED: Worldspan.
+ * - documentation: Element to change the ownership of the PNR in the UR. PROVIDER SUPPORTED: Worldspan and JAL.
  * @subpackage Structs
  */
 class OwnershipChange extends AbstractStructBase

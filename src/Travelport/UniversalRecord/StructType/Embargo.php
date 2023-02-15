@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for Embargo StructType
  * Meta information extracted from the WSDL
- * - documentation: Embargo details. Provider: 1G, 1V, 1P
+ * - documentation: Embargo details. Provider: 1G, 1V, 1P, 1J
  * @subpackage Structs
  */
 class Embargo extends AbstractStructBase
@@ -55,7 +55,7 @@ class Embargo extends AbstractStructBase
     /**
      * The Text
      * Meta information extracted from the WSDL
-     * - documentation: Brief description of the embargo. Provider: 1G, 1V, 1P
+     * - documentation: Brief description of the embargo. Provider: 1G, 1V, 1P, 1J
      * - use: optional
      * @var string|null
      */
@@ -63,7 +63,7 @@ class Embargo extends AbstractStructBase
     /**
      * The SecondaryType
      * Meta information extracted from the WSDL
-     * - documentation: The secondary type of the optional service on which the embargo applies. Provider: 1G, 1V, 1P
+     * - documentation: The secondary type of the optional service on which the embargo applies. Provider: 1G, 1V, 1P, 1J
      * - use: optional
      * @var string|null
      */
@@ -71,7 +71,7 @@ class Embargo extends AbstractStructBase
     /**
      * The Type
      * Meta information extracted from the WSDL
-     * - documentation: The type of optional service on which the embargo applies. Provider: 1G, 1V, 1P | An identifier that labels this Merchandising Service (Baggage, Nomiles,GroundTransportation etc)
+     * - documentation: The type of optional service on which the embargo applies. Provider: 1G, 1V, 1P, 1J | An identifier that labels this Merchandising Service (Baggage, Nomiles,GroundTransportation etc)
      * - base: xs:string
      * - maxLength: 128
      * - minLength: 1
@@ -82,7 +82,7 @@ class Embargo extends AbstractStructBase
     /**
      * The Url
      * Meta information extracted from the WSDL
-     * - documentation: Website of the operating carrier. Provider: 1G, 1V, 1P
+     * - documentation: Website of the operating carrier. Provider: 1G, 1V, 1P, 1J
      * - use: optional
      * @var string|null
      */

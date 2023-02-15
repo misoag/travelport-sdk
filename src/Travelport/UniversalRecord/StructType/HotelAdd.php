@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for HotelAdd StructType
  * Meta information extracted from the WSDL
- * - documentation: Specify desired optional bed types. Applicable for optional bed types:RollawayAdult,RollawayChild,or Crib if supported by the hotel supplier. Providers :1G/1V/1P
+ * - documentation: Specify desired optional bed types. Applicable for optional bed types:RollawayAdult,RollawayChild,or Crib if supported by the hotel supplier. Providers :1G/1V/1P/1J
  * @subpackage Structs
  */
 class HotelAdd extends AbstractStructBase
@@ -56,7 +56,7 @@ class HotelAdd extends AbstractStructBase
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
      * - minOccurs: 0
-     * - ref: hotel_v52_0:GuestInformation
+     * - ref: hotel_v51_0:GuestInformation
      * @var \Travelport\UniversalRecord\StructType\GuestInformation|null
      */
     protected ?\Travelport\UniversalRecord\StructType\GuestInformation $GuestInformation = null;
@@ -68,7 +68,7 @@ class HotelAdd extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: hotel_v52_0:AssociatedRemark
+     * - ref: hotel_v51_0:AssociatedRemark
      * @var \Travelport\UniversalRecord\StructType\AssociatedRemark[]
      */
     protected ?array $AssociatedRemark = null;
@@ -95,7 +95,7 @@ class HotelAdd extends AbstractStructBase
      * - maxLength: 250
      * - maxOccurs: 1
      * - minOccurs: 0
-     * - ref: hotel_v52_0:HotelSpecialRequest
+     * - ref: hotel_v51_0:HotelSpecialRequest
      * @var string|null
      */
     protected ?string $HotelSpecialRequest = null;
@@ -154,14 +154,14 @@ class HotelAdd extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: hotel_v52_0:HotelBedding
+     * - ref: hotel_v51_0:HotelBedding
      * @var \Travelport\UniversalRecord\StructType\HotelBedding[]
      */
     protected ?array $HotelBedding = null;
     /**
      * The BookingConfirmation
      * Meta information extracted from the WSDL
-     * - documentation: Hotel Confirmation Number from a Third Party System. | Hotel Booking Confirmation Number for hotel segment. Supported Providers:1P.
+     * - documentation: Hotel Confirmation Number from a Third Party System. | Hotel Booking Confirmation Number for hotel segment. Supported Providers:1P/1J.
      * - base: typeHotelConfirmationNumber
      * - choice: LoyaltyCard | Guarantee | GuestInformation | AssociatedRemark | BookingSource | HotelSpecialRequest | CorporateDiscountID | ReservationName | ThirdPartyInformation | TravelComplianceData | HotelBedding | BookingConfirmation
      * - choiceMaxOccurs: 1
@@ -169,7 +169,7 @@ class HotelAdd extends AbstractStructBase
      * - maxLength: 32
      * - maxOccurs: 1
      * - minOccurs: 0
-     * - ref: hotel_v52_0:BookingConfirmation
+     * - ref: hotel_v51_0:BookingConfirmation
      * @var string|null
      */
     protected ?string $BookingConfirmation = null;

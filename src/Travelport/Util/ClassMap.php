@@ -491,6 +491,7 @@ class ClassMap
             'TicketingModifiers' => '\\Travelport\\Util\\StructType\\TicketingModifiers',
             'BulkTicket' => '\\Travelport\\Util\\StructType\\BulkTicket',
             'ExemptOBFee' => '\\Travelport\\Util\\StructType\\ExemptOBFee',
+            'ExcludeTicketing' => '\\Travelport\\Util\\StructType\\ExcludeTicketing',
             'LandCharges' => '\\Travelport\\Util\\StructType\\LandCharges',
             'Tax' => '\\Travelport\\Util\\StructType\\Tax',
             'DocumentOptions' => '\\Travelport\\Util\\StructType\\DocumentOptions',

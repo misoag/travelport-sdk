@@ -136,7 +136,7 @@ class RepricingModifiers extends AbstractStructBase
     /**
      * The AirPricingSolutionRef
      * Meta information extracted from the WSDL
-     * - documentation: A reference to a AirPricingSolution. Providers: 1G, 1V, 1P. | Reference type
+     * - documentation: A reference to a AirPricingSolution. Providers: 1G, 1V, 1P, 1J. | Reference type
      * - base: xs:string
      * - use: optional
      * @var string|null

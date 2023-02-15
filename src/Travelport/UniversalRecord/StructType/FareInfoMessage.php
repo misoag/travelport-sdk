@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for FareInfoMessage StructType
  * Meta information extracted from the WSDL
- * - documentation: A simple textual fare information message.Providers supported : 1G/1V/1P
+ * - documentation: A simple textual fare information message.Providers supported : 1G/1V/1P/1J
  * @subpackage Structs
  */
 class FareInfoMessage extends AbstractStructBase

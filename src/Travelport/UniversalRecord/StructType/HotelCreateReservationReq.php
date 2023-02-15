@@ -185,7 +185,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
     /**
      * The MandatoryRateMatch
      * Meta information extracted from the WSDL
-     * - documentation: If true, hotel will not be booked if there is a rate discrepancy. Default is false. Supported providers: 1g,1v,1p.
+     * - documentation: If true, hotel will not be booked if there is a rate discrepancy. Default is false. Supported providers: 1g,1v,1p,1j.
      * - default: false
      * - use: optional
      * @var bool|null
@@ -194,7 +194,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
     /**
      * The StatusCode
      * Meta information extracted from the WSDL
-     * - documentation: Hotel Segment Status Code.Supported Providers:1P. | Valid 2 letter Status Code
+     * - documentation: Hotel Segment Status Code.Supported Providers:1P/1J. | Valid 2 letter Status Code
      * - base: xs:string
      * - length: 2
      * - use: optional
@@ -205,7 +205,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
     /**
      * The BookingConfirmation
      * Meta information extracted from the WSDL
-     * - documentation: Hotel Booking Confirmation Number for passive hotel segment. Supported Providers:1P. | Hotel Confirmation Number from a Third Party System.
+     * - documentation: Hotel Booking Confirmation Number for passive hotel segment. Supported Providers:1P/1J. | Hotel Confirmation Number from a Third Party System.
      * - base: xs:string
      * - maxLength: 32
      * - use: optional

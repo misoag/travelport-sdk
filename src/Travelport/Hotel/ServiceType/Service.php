@@ -13,7 +13,17 @@ use WsdlToPhp\PackageBase\AbstractSoapClientBase;
  */
 class Service extends AbstractSoapClientBase
 {
-    public function service($parameters)
+    /**
+     * Method to call the operation originally named service
+     * This method has been renamed because it is defined several times but with
+     * different signature
+     * @uses AbstractSoapClientBase::getSoapClient()
+     * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::saveLastError()
+     * @param \Travelport\Hotel\StructType\HotelSearchAvailabilityReq $parameters
+     * @return \Travelport\Hotel\StructType\BaseHotelSearchRsp|bool
+     */
+    public function service(\Travelport\Hotel\StructType\HotelSearchAvailabilityReq $parameters)
     {
         try {
             $this->setResult($resultService = $this->getSoapClient()->__soapCall('service', [

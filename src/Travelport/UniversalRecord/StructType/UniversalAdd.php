@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for UniversalAdd StructType
  * Meta information extracted from the WSDL
- * - documentation: Provider:1G,1V,1P,ACH,SDK.Product:Air,Hotel,Vehicle,Cruise | Element to add Review booking to a PNR .
+ * - documentation: Provider:1G,1V,1P,1J,ACH,SDK.Product:Air,Hotel,Vehicle,Cruise | Element to add Review booking to a PNR .
  * @subpackage Structs
  */
 class UniversalAdd extends AbstractStructBase

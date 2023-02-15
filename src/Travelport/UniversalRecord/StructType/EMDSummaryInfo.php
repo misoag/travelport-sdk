@@ -10,7 +10,8 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for EMDSummaryInfo StructType
  * Meta information extracted from the WSDL
- * - documentation: Element Key related supporting attributes | Payment charged to issue EMD. | EMD traveler information. | Summary information for EMDs conjuncted to each other. | Container for EMD summary information. Supported providers are 1G/1V/1P
+ * - documentation: Element Key related supporting attributes | Payment charged to issue EMD. | EMD traveler information. | Summary information for EMDs conjuncted to each other. | Container for EMD summary information. Supported providers are
+ * 1G/1V/1P/1J
  * @subpackage Structs
  */
 class EMDSummaryInfo extends AbstractStructBase

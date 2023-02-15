@@ -21,7 +21,7 @@ class PassiveAdd extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 999
      * - minOccurs: 1
-     * - ref: passive_v52_0:PassiveSegment
+     * - ref: passive_v51_0:PassiveSegment
      * @var \Travelport\UniversalRecord\StructType\PassiveSegment[]
      */
     protected array $PassiveSegment;
@@ -50,7 +50,7 @@ class PassiveAdd extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: passive_v52_0:PassiveRemark
+     * - ref: passive_v51_0:PassiveRemark
      * @var \Travelport\UniversalRecord\StructType\PassiveRemark[]
      */
     protected ?array $PassiveRemark = null;
@@ -59,7 +59,7 @@ class PassiveAdd extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: passive_v52_0:AssociatedRemark
+     * - ref: passive_v51_0:AssociatedRemark
      * @var \Travelport\UniversalRecord\StructType\AssociatedRemark[]
      */
     protected ?array $AssociatedRemark = null;

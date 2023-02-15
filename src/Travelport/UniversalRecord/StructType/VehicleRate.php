@@ -26,7 +26,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The RateVariance
      * Meta information extracted from the WSDL
-     * - documentation: Used on VehicleCreateReservationReq ONLY. @MandatoryRateMatch ='true' is required for this element to be applied. 1P.
+     * - documentation: Used on VehicleCreateReservationReq ONLY. @MandatoryRateMatch ='true' is required for this element to be applied. 1P, 1J.
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeRateVariance|null
@@ -98,7 +98,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The WeeklyLateCharge
      * Meta information extracted from the WSDL
-     * - documentation: Extra Week Charges information. Supported providers:1P only
+     * - documentation: Extra Week Charges information. Supported providers:1P/1J only
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeRateInfo|null
@@ -107,7 +107,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The PrintText
      * Meta information extracted from the WSDL
-     * - documentation: Informational text provided by the supplier that may be related to the reservation. This is applicable in response messages only, 1p only.
+     * - documentation: Informational text provided by the supplier that may be related to the reservation. This is applicable in response messages only, 1p,1J only.
      * - maxOccurs: 1
      * - minOccurs: 0
      * @var string|null
@@ -179,7 +179,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The RateCode
      * Meta information extracted from the WSDL
-     * - documentation: Rate Code of the vehicle. Supported Providers 1P,1G,1V. | The code of this rate.
+     * - documentation: Rate Code of the vehicle. Supported Providers 1P,1J,1G,1V. | The code of this rate.
      * - base: xs:string
      * - maxLength: 10
      * - use: optional
@@ -189,7 +189,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The RequestedRateCodeApplied
      * Meta information extracted from the WSDL
-     * - documentation: The requested Rate Code applied to the Rate. Valid values: "true", "false", "unknown". Supported Providers 1P.
+     * - documentation: The requested Rate Code applied to the Rate. Valid values: "true", "false", "unknown". Supported Providers 1P,1J.
      * - use: optional
      * @var string|null
      */
@@ -205,7 +205,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The DiscountNumber
      * Meta information extracted from the WSDL
-     * - documentation: Corporate Discount number used to request a specified discount. Supported Providers Requests: 1P,1G,1V, Responses only 1P. | A supplier-specific number which may identify a special rate associated with a traveler's organization
+     * - documentation: Corporate Discount number used to request a specified discount. Supported Providers Requests: 1P,1J,1G,1V, Responses only 1P,1J. | A supplier-specific number which may identify a special rate associated with a traveler's organization
      * - base: xs:string
      * - maxLength: 25
      * - use: optional
@@ -215,7 +215,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The DiscountNumberApplied
      * Meta information extracted from the WSDL
-     * - documentation: Discount Number has been applied to the Rate. Valid values: "true", "false", "unknown". Supported Providers 1P.
+     * - documentation: Discount Number has been applied to the Rate. Valid values: "true", "false", "unknown". Supported Providers 1P,1J.
      * - use: optional
      * @var string|null
      */
@@ -251,7 +251,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The PromotionalCode
      * Meta information extracted from the WSDL
-     * - documentation: Specific coupon or promotion code. Providers 1P,1V,1G.
+     * - documentation: Specific coupon or promotion code. Providers 1P,1J,1V,1G.
      * - use: optional
      * @var string|null
      */
@@ -259,7 +259,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The PromotionalCodeApplied
      * Meta information extracted from the WSDL
-     * - documentation: Promotional/Coupon Number has been applied to the Rate. Valid values: "true", "false", "unknown". Supported Providers 1P.
+     * - documentation: Promotional/Coupon Number has been applied to the Rate. Valid values: "true", "false", "unknown". Supported Providers 1P,1J.
      * - use: optional
      * @var string|null
      */
@@ -275,7 +275,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The TourCodeApplied
      * Meta information extracted from the WSDL
-     * - documentation: Tour Code Number has been applied to the Rate. Valid values: "true", "false", "unknown". Supported Providers 1P.
+     * - documentation: Tour Code Number has been applied to the Rate. Valid values: "true", "false", "unknown". Supported Providers 1P,1J.
      * - use: optional
      * @var string|null
      */
@@ -306,7 +306,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The CorporateRate
      * Meta information extracted from the WSDL
-     * - documentation: If "true" a Corporate Discount has been applied to the rate. Applicable to 1P
+     * - documentation: If "true" a Corporate Discount has been applied to the rate. Applicable to 1P, 1J
      * - use: optional
      * @var bool|null
      */
@@ -314,7 +314,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The AdvancedBooking
      * Meta information extracted from the WSDL
-     * - documentation: Indicates the number of Hours or Days a rate must be booked in advance. Values are for Days = number followed by “D” e.g., "002D" and Hours = number followed by “H” e.g., 002H” 1P/1G/1V only.
+     * - documentation: Indicates the number of Hours or Days a rate must be booked in advance. Values are for Days = number followed by “D” e.g., "002D" and Hours = number followed by “H” e.g., 002H” 1P/1J/1G/1V only.
      * - use: optional
      * @var string|null
      */
@@ -322,7 +322,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The RentalRestriction
      * Meta information extracted from the WSDL
-     * - documentation: RentalRestriction attribute value is true if vehicle rate has rental restrictions. Rental restrictions can be obtained from the Vehicle Rules. 1P only.
+     * - documentation: RentalRestriction attribute value is true if vehicle rate has rental restrictions. Rental restrictions can be obtained from the Vehicle Rules. 1P/1J only.
      * - use: optional
      * @var bool|null
      */
@@ -330,7 +330,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The FlightRestriction
      * Meta information extracted from the WSDL
-     * - documentation: Flight restriction indicator is true if flight information is required at booking. 1P/1G/1V only.
+     * - documentation: Flight restriction indicator is true if flight information is required at booking. 1P/1J/1G/1V only.
      * - use: optional
      * @var bool|null
      */
@@ -338,7 +338,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The CardNumber
      * Meta information extracted from the WSDL
-     * - documentation: Vehicle Loyalty Card Number. Supported Provider 1P. | Loyalty Card number with maximum length as 36.
+     * - documentation: Vehicle Loyalty Card Number. Supported Provider 1P,1J. | Loyalty Card number with maximum length as 36.
      * - base: xs:string
      * - maxLength: 36
      * - minLength: 1
@@ -349,7 +349,7 @@ class VehicleRate extends AbstractStructBase
     /**
      * The CardNumberApplied
      * Meta information extracted from the WSDL
-     * - documentation: Loyalty Card Number has been applied to the Rate. Values: "true", "false", "unknown". Supported Providers 1P.
+     * - documentation: Loyalty Card Number has been applied to the Rate. Values: "true", "false", "unknown". Supported Providers 1P,1J.
      * - use: optional
      * @var string|null
      */

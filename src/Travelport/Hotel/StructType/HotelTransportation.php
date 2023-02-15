@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for HotelTransportation StructType
  * Meta information extracted from the WSDL
- * - documentation: OTA Transportation code. Search for specific transportation. Supported providers: 1G/1V. Only CourtesyBus '7' supported by 1P.
+ * - documentation: OTA Transportation code. Search for specific transportation. Supported providers: 1G/1V. Only CourtesyBus '7' supported by 1P/1J.
  * @subpackage Structs
  */
 class HotelTransportation extends AbstractStructBase

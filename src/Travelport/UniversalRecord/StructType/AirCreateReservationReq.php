@@ -45,7 +45,7 @@ class AirCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * The AirPricingSolution
      * Meta information extracted from the WSDL
      * - maxOccurs: 16
-     * - ref: air_v52_0:AirPricingSolution
+     * - ref: air_v51_0:AirPricingSolution
      * @var \Travelport\UniversalRecord\StructType\AirPricingSolution[]
      */
     protected ?array $AirPricingSolution = null;
@@ -80,7 +80,7 @@ class AirCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * Meta information extracted from the WSDL
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: air_v52_0:AutoSeatAssignment
+     * - ref: air_v51_0:AutoSeatAssignment
      * @var \Travelport\UniversalRecord\StructType\AutoSeatAssignment[]
      */
     protected ?array $AutoSeatAssignment = null;
@@ -89,7 +89,7 @@ class AirCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * Meta information extracted from the WSDL
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: air_v52_0:SpecificSeatAssignment
+     * - ref: air_v51_0:SpecificSeatAssignment
      * @var \Travelport\UniversalRecord\StructType\SpecificSeatAssignment[]
      */
     protected ?array $SpecificSeatAssignment = null;
@@ -98,7 +98,7 @@ class AirCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * Meta information extracted from the WSDL
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: air_v52_0:AssociatedRemark
+     * - ref: air_v51_0:AssociatedRemark
      * @var \Travelport\UniversalRecord\StructType\AssociatedRemark[]
      */
     protected ?array $AssociatedRemark = null;
@@ -107,7 +107,7 @@ class AirCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * Meta information extracted from the WSDL
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: air_v52_0:PocketItineraryRemark
+     * - ref: air_v51_0:PocketItineraryRemark
      * @var \Travelport\UniversalRecord\StructType\PocketItineraryRemark[]
      */
     protected ?array $PocketItineraryRemark = null;
@@ -125,14 +125,14 @@ class AirCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * Meta information extracted from the WSDL
      * - maxOccurs: 99
      * - minOccurs: 0
-     * - ref: air_v52_0:AirPricingTicketingModifiers
+     * - ref: air_v51_0:AirPricingTicketingModifiers
      * @var \Travelport\UniversalRecord\StructType\AirPricingTicketingModifiers[]
      */
     protected ?array $AirPricingTicketingModifiers = null;
     /**
      * The RetainReservation
      * Meta information extracted from the WSDL
-     * - documentation: Provider: 1G,1V,1P
+     * - documentation: Provider: 1G,1V,1P, 1J
      * - default: None
      * - use: optional
      * @var string|null

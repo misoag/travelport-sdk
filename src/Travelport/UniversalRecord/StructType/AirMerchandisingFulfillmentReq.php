@@ -28,7 +28,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      * The HostReservation
      * Meta information extracted from the WSDL
      * - maxOccurs: 999
-     * - ref: air_v52_0:HostReservation
+     * - ref: air_v51_0:HostReservation
      * @var \Travelport\UniversalRecord\StructType\HostReservation[]
      */
     protected ?array $HostReservation = null;
@@ -43,7 +43,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
     /**
      * The AirSolution
      * Meta information extracted from the WSDL
-     * - ref: air_v52_0:AirSolution
+     * - ref: air_v51_0:AirSolution
      * @var \Travelport\UniversalRecord\StructType\AirSolution|null
      */
     protected ?\Travelport\UniversalRecord\StructType\AirSolution $AirSolution = null;
@@ -67,7 +67,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      * The OptionalServices
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * - ref: air_v52_0:OptionalServices
+     * - ref: air_v51_0:OptionalServices
      * @var \Travelport\UniversalRecord\StructType\OptionalServices|null
      */
     protected ?\Travelport\UniversalRecord\StructType\OptionalServices $OptionalServices = null;
@@ -76,7 +76,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      * Meta information extracted from the WSDL
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: air_v52_0:SpecificSeatAssignment
+     * - ref: air_v51_0:SpecificSeatAssignment
      * @var \Travelport\UniversalRecord\StructType\SpecificSeatAssignment[]
      */
     protected ?array $SpecificSeatAssignment = null;
@@ -92,7 +92,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
     /**
      * The ConfirmationEmail
      * Meta information extracted from the WSDL
-     * - documentation: Provider: 1G,1V,1P,ACH.
+     * - documentation: Provider: 1G,1V,1P,1J,ACH.
      * - minOccurs: 0
      * @var string|null
      */
@@ -102,7 +102,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
-     * - ref: air_v52_0:MerchandisingPricingModifiers
+     * - ref: air_v51_0:MerchandisingPricingModifiers
      * @var \Travelport\UniversalRecord\StructType\MerchandisingPricingModifiers|null
      */
     protected ?\Travelport\UniversalRecord\StructType\MerchandisingPricingModifiers $MerchandisingPricingModifiers = null;

@@ -10,8 +10,8 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for BaseCreateReservationReq StructType
  * Meta information extracted from the WSDL
- * - documentation: Allow queue placement of a PNR at the time of booking in AirCreateReservationReq,HotelCreateReservationReq,PassiveCreateReservationReq and VehicleCreateReservationReq for providers 1G,1V and 1P. | SSR element outside Booking Traveler
- * without any Segment Ref or Booking Traveler Ref. | This element will be used if user wants to override segment continuity check.
+ * - documentation: Allow queue placement of a PNR at the time of booking in AirCreateReservationReq,HotelCreateReservationReq,PassiveCreateReservationReq and VehicleCreateReservationReq for providers 1G,1V,1P and 1J. | SSR element outside Booking
+ * Traveler without any Segment Ref or Booking Traveler Ref. | This element will be used if user wants to override segment continuity check.
  * @subpackage Structs
  */
 class BaseCreateReservationReq extends BaseReq

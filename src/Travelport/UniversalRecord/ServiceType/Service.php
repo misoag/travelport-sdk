@@ -22,7 +22,7 @@ class Service extends AbstractSoapClientBase
      * @param string|null $actor
      * @return \Travelport\UniversalRecord\ServiceType\Service
      */
-    public function setSoapHeaderSessionContext(\Travelport\UniversalRecord\StructType\SessionContext $sessionContext, string $namespace = 'http://www.travelport.com/service/universal_v52_0', bool $mustUnderstand = false, ?string $actor = null): self
+    public function setSoapHeaderSessionContext(\Travelport\UniversalRecord\StructType\SessionContext $sessionContext, string $namespace = 'http://www.travelport.com/service/universal_v51_0', bool $mustUnderstand = false, ?string $actor = null): self
     {
         return $this->setSoapHeader($namespace, 'SessionContext', $sessionContext, $mustUnderstand, $actor);
     }
@@ -35,7 +35,7 @@ class Service extends AbstractSoapClientBase
      * @param string|null $actor
      * @return \Travelport\UniversalRecord\ServiceType\Service
      */
-    public function setSoapHeaderSupportedVersions(\Travelport\UniversalRecord\StructType\SupportedVersions $supportedVersions, string $namespace = 'http://www.travelport.com/service/universal_v52_0', bool $mustUnderstand = false, ?string $actor = null): self
+    public function setSoapHeaderSupportedVersions(\Travelport\UniversalRecord\StructType\SupportedVersions $supportedVersions, string $namespace = 'http://www.travelport.com/service/universal_v51_0', bool $mustUnderstand = false, ?string $actor = null): self
     {
         return $this->setSoapHeader($namespace, 'SupportedVersions', $supportedVersions, $mustUnderstand, $actor);
     }
@@ -45,7 +45,7 @@ class Service extends AbstractSoapClientBase
      * different signature
      * Meta information extracted from the WSDL
      * - SOAPHeaderNames: SessionContext, SupportedVersions
-     * - SOAPHeaderNamespaces: http://www.travelport.com/service/universal_v52_0, http://www.travelport.com/service/universal_v52_0
+     * - SOAPHeaderNamespaces: http://www.travelport.com/service/universal_v51_0, http://www.travelport.com/service/universal_v51_0
      * - SOAPHeaderTypes: \Travelport\UniversalRecord\StructType\SessionContext, \Travelport\UniversalRecord\StructType\SupportedVersions
      * - SOAPHeaders: required, required
      * @uses AbstractSoapClientBase::getSoapClient()

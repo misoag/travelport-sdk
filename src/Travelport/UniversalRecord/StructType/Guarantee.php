@@ -18,7 +18,7 @@ class Guarantee extends AbstractStructBase
     /**
      * The Type
      * Meta information extracted from the WSDL
-     * - documentation: Guarantee, Deposit for 1G/1V/1P and PrePayment for 1P only
+     * - documentation: Guarantee, Deposit for 1G/1V/1P/1J and PrePayment for 1P/1J only
      * - use: required
      * @var string
      */

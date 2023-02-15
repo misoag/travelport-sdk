@@ -91,7 +91,7 @@ class Commission extends AbstractStructBase
     /**
      * The CommissionOverride
      * Meta information extracted from the WSDL
-     * - documentation: This is enabled to override CAT-35 commission error during air ticketing. PROVIDER SUPPORTED:Worldspan
+     * - documentation: This is enabled to override CAT-35 commission error during air ticketing. PROVIDER SUPPORTED:Worldspan and JAL
      * - default: false
      * - use: optional
      * @var bool|null

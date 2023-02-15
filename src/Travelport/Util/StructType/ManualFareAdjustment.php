@@ -50,7 +50,7 @@ class ManualFareAdjustment extends AbstractStructBase
     /**
      * The TicketDesignator
      * Meta information extracted from the WSDL
-     * - documentation: Providers: 1p | Ticket Designator type.Size can be up to 20 characters
+     * - documentation: Providers: 1p/1j | Ticket Designator type.Size can be up to 20 characters
      * - base: xs:string
      * - maxLength: 20
      * - minLength: 0
@@ -61,7 +61,7 @@ class ManualFareAdjustment extends AbstractStructBase
     /**
      * The FareType
      * Meta information extracted from the WSDL
-     * - documentation: Providers: 1p | ATPCO fare type code (e.g. XPN)
+     * - documentation: Providers: 1p/1j | ATPCO fare type code (e.g. XPN)
      * - base: xs:string
      * - maxLength: 5
      * - minLength: 1

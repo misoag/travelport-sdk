@@ -338,7 +338,7 @@ class FareInfo extends AbstractStructBase
     /**
      * The BulkTicket
      * Meta information extracted from the WSDL
-     * - documentation: Whether the ticket can be issued as bulk for this fare. Providers supported: Worldspan
+     * - documentation: Whether the ticket can be issued as bulk for this fare. Providers supported: Worldspan and JAL
      * - use: optional
      * @var bool|null
      */
@@ -346,7 +346,7 @@ class FareInfo extends AbstractStructBase
     /**
      * The InclusiveTour
      * Meta information extracted from the WSDL
-     * - documentation: Whether the ticket can be issued as part of included package for this fare. Providers supported: Worldspan
+     * - documentation: Whether the ticket can be issued as part of included package for this fare. Providers supported: Worldspan and JAL
      * - use: optional
      * @var bool|null
      */

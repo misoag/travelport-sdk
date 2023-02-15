@@ -51,7 +51,7 @@ class TypeVoucherInformation extends AbstractStructBase
     /**
      * The Number
      * Meta information extracted from the WSDL
-     * - documentation: To advise car associates of the voucher number and store in the car segment. It is required when VoucherType selected as "RegularVoucher" for 1P only. | Used for Character Strings, length 1 to 16.
+     * - documentation: To advise car associates of the voucher number and store in the car segment. It is required when VoucherType selected as "RegularVoucher" for 1P, 1J only. | Used for Character Strings, length 1 to 16.
      * - base: xs:string
      * - maxLength: 16
      * - minLength: 1

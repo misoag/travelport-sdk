@@ -37,7 +37,7 @@ class Air extends TypeTransactionsAllowed
     /**
      * The ReturnUpsellFare
      * Meta information extracted from the WSDL
-     * - documentation: When set to “true”, Upsell information will be returned in the shop response.  Provider: 1G, 1V, 1P, ACH
+     * - documentation: When set to “true”, Upsell information will be returned in the shop response.  Provider: 1G, 1V, 1P, 1J, ACH
      * @var bool|null
      */
     protected ?bool $ReturnUpsellFare = null;
