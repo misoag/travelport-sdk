@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for CustomerReceiptInfo StructType
  * Meta information extracted from the WSDL
- * - documentation: Information about customer receipt via email. Supported providers are 1V/1G/1P/1J
+ * - documentation: Information about customer receipt via email. Supported providers are 1V/1G/1P
  * @subpackage Structs
  */
 class CustomerReceiptInfo extends AbstractStructBase

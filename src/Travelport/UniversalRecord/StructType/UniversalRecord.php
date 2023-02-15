@@ -10,10 +10,10 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for UniversalRecord StructType
  * Meta information extracted from the WSDL
- * - documentation: Provider: 1G,1V,1P,1J,ACH,SDK.Product:Air,Hotel,Vehicle,Cruise | SSR's having no bookingTravelerRef need to add at providerReservation level outside bookingTraveler | Review Booking or Queue Minders is to add the reminders in the
- * Provider Reservation along with the date time and Queue details. On the date time defined in reminders, the message along with the PNR goes to the desired Queue. | List of EMDs to be shown as part of UR. Supported providers are 1V/1G/1P/1J | The
- * parent container for all cruise booking data. Supported Providers :1V | Travel Agency Service Fees (TASF) are charged by the agency through BSP or Airline Reporting Corporation (ARC). FOP will appear directly inside UniversalRecord | Universal Record
- * holds one or more provider reservations
+ * - documentation: Provider: 1G,1V,1P,ACH,SDK.Product:Air,Hotel,Vehicle,Cruise | SSR's having no bookingTravelerRef need to add at providerReservation level outside bookingTraveler | Review Booking or Queue Minders is to add the reminders in the
+ * Provider Reservation along with the date time and Queue details. On the date time defined in reminders, the message along with the PNR goes to the desired Queue. | List of EMDs to be shown as part of UR. Supported providers are 1V/1G/1P | The parent
+ * container for all cruise booking data. Supported Providers :1V | Travel Agency Service Fees (TASF) are charged by the agency through BSP or Airline Reporting Corporation (ARC). FOP will appear directly inside UniversalRecord | Universal Record holds
+ * one or more provider reservations
  * @subpackage Structs
  */
 class UniversalRecord extends AbstractStructBase
@@ -109,7 +109,7 @@ class UniversalRecord extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: air_v51_0:AirReservation
+     * - ref: air_v52_0:AirReservation
      * @var \Travelport\UniversalRecord\StructType\AirReservation[]
      */
     protected ?array $AirReservation = null;
@@ -121,7 +121,7 @@ class UniversalRecord extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: hotel_v51_0:HotelReservation
+     * - ref: hotel_v52_0:HotelReservation
      * @var \Travelport\UniversalRecord\StructType\HotelReservation[]
      */
     protected ?array $HotelReservation = null;
@@ -133,7 +133,7 @@ class UniversalRecord extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: vehicle_v51_0:VehicleReservation
+     * - ref: vehicle_v52_0:VehicleReservation
      * @var \Travelport\UniversalRecord\StructType\VehicleReservation[]
      */
     protected ?array $VehicleReservation = null;
@@ -145,7 +145,7 @@ class UniversalRecord extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: passive_v51_0:PassiveReservation
+     * - ref: passive_v52_0:PassiveReservation
      * @var \Travelport\UniversalRecord\StructType\PassiveReservation[]
      */
     protected ?array $PassiveReservation = null;
@@ -157,7 +157,7 @@ class UniversalRecord extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: rail_v51_0:RailReservation
+     * - ref: rail_v52_0:RailReservation
      * @var \Travelport\UniversalRecord\StructType\RailReservation[]
      */
     protected ?array $RailReservation = null;
@@ -169,7 +169,7 @@ class UniversalRecord extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: cruise_v51_0:CruiseReservation
+     * - ref: cruise_v52_0:CruiseReservation
      * @var \Travelport\UniversalRecord\StructType\CruiseReservation[]
      */
     protected ?array $CruiseReservation = null;
@@ -181,7 +181,7 @@ class UniversalRecord extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: air_v51_0:EMDSummaryInfo
+     * - ref: air_v52_0:EMDSummaryInfo
      * @var \Travelport\UniversalRecord\StructType\EMDSummaryInfo[]
      */
     protected ?array $EMDSummaryInfo = null;
@@ -300,15 +300,6 @@ class UniversalRecord extends AbstractStructBase
      */
     protected ?array $ConsolidatorRemark = null;
     /**
-     * The UnmaskedDataRemark
-     * Meta information extracted from the WSDL
-     * - maxOccurs: 999
-     * - minOccurs: 0
-     * - ref: UnmaskedDataRemark
-     * @var \Travelport\UniversalRecord\StructType\UnmaskedDataRemark[]
-     */
-    protected ?array $UnmaskedDataRemark = null;
-    /**
      * The InvoiceRemark
      * Meta information extracted from the WSDL
      * - maxOccurs: 999
@@ -420,7 +411,6 @@ class UniversalRecord extends AbstractStructBase
      * @uses UniversalRecord::setCustomerID()
      * @uses UniversalRecord::setCommissionRemark()
      * @uses UniversalRecord::setConsolidatorRemark()
-     * @uses UniversalRecord::setUnmaskedDataRemark()
      * @uses UniversalRecord::setInvoiceRemark()
      * @uses UniversalRecord::setReviewBooking()
      * @uses UniversalRecord::setSSR()
@@ -459,7 +449,6 @@ class UniversalRecord extends AbstractStructBase
      * @param \Travelport\UniversalRecord\StructType\CustomerID[] $customerID
      * @param \Travelport\UniversalRecord\StructType\CommissionRemark[] $commissionRemark
      * @param \Travelport\UniversalRecord\StructType\ConsolidatorRemark[] $consolidatorRemark
-     * @param \Travelport\UniversalRecord\StructType\UnmaskedDataRemark[] $unmaskedDataRemark
      * @param \Travelport\UniversalRecord\StructType\InvoiceRemark[] $invoiceRemark
      * @param \Travelport\UniversalRecord\StructType\ReviewBooking[] $reviewBooking
      * @param \Travelport\UniversalRecord\StructType\SSR[] $sSR
@@ -470,7 +459,7 @@ class UniversalRecord extends AbstractStructBase
      * @param string $createDate
      * @param int $version
      */
-    public function __construct(string $locatorCode, string $status, ?array $linkedUniversalRecord = null, ?\Travelport\UniversalRecord\StructType\Group $group = null, ?array $bookingTraveler = null, ?array $serviceFeeInfo = null, ?array $oSI = null, ?array $actionStatus = null, ?array $providerReservationInfo = null, ?array $airReservation = null, ?array $hotelReservation = null, ?array $vehicleReservation = null, ?array $passiveReservation = null, ?array $railReservation = null, ?array $cruiseReservation = null, ?array $eMDSummaryInfo = null, ?array $providerARNKSegment = null, ?\Travelport\UniversalRecord\StructType\SegmentContinuityInfo $segmentContinuityInfo = null, ?array $xMLRemark = null, ?array $generalRemark = null, ?array $accountingRemark = null, ?array $unassociatedRemark = null, ?array $postscript = null, ?\Travelport\UniversalRecord\StructType\AgencyInfo $agencyInfo = null, ?\Travelport\UniversalRecord\StructType\AppliedProfile $appliedProfile = null, ?\Travelport\UniversalRecord\StructType\AgencyContactInfo $agencyContactInfo = null, ?array $customerID = null, ?array $commissionRemark = null, ?array $consolidatorRemark = null, ?array $unmaskedDataRemark = null, ?array $invoiceRemark = null, ?array $reviewBooking = null, ?array $sSR = null, ?array $invoiceData = null, ?array $formOfPayment = null, ?string $savedTripLocatorCode = null, ?string $lockReason = null, ?string $createDate = null, ?int $version = null)
+    public function __construct(string $locatorCode, string $status, ?array $linkedUniversalRecord = null, ?\Travelport\UniversalRecord\StructType\Group $group = null, ?array $bookingTraveler = null, ?array $serviceFeeInfo = null, ?array $oSI = null, ?array $actionStatus = null, ?array $providerReservationInfo = null, ?array $airReservation = null, ?array $hotelReservation = null, ?array $vehicleReservation = null, ?array $passiveReservation = null, ?array $railReservation = null, ?array $cruiseReservation = null, ?array $eMDSummaryInfo = null, ?array $providerARNKSegment = null, ?\Travelport\UniversalRecord\StructType\SegmentContinuityInfo $segmentContinuityInfo = null, ?array $xMLRemark = null, ?array $generalRemark = null, ?array $accountingRemark = null, ?array $unassociatedRemark = null, ?array $postscript = null, ?\Travelport\UniversalRecord\StructType\AgencyInfo $agencyInfo = null, ?\Travelport\UniversalRecord\StructType\AppliedProfile $appliedProfile = null, ?\Travelport\UniversalRecord\StructType\AgencyContactInfo $agencyContactInfo = null, ?array $customerID = null, ?array $commissionRemark = null, ?array $consolidatorRemark = null, ?array $invoiceRemark = null, ?array $reviewBooking = null, ?array $sSR = null, ?array $invoiceData = null, ?array $formOfPayment = null, ?string $savedTripLocatorCode = null, ?string $lockReason = null, ?string $createDate = null, ?int $version = null)
     {
         $this
             ->setLocatorCode($locatorCode)
@@ -502,7 +491,6 @@ class UniversalRecord extends AbstractStructBase
             ->setCustomerID($customerID)
             ->setCommissionRemark($commissionRemark)
             ->setConsolidatorRemark($consolidatorRemark)
-            ->setUnmaskedDataRemark($unmaskedDataRemark)
             ->setInvoiceRemark($invoiceRemark)
             ->setReviewBooking($reviewBooking)
             ->setSSR($sSR)
@@ -2833,80 +2821,6 @@ class UniversalRecord extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->ConsolidatorRemark)), __LINE__);
         }
         $this->ConsolidatorRemark[] = $item;
-        
-        return $this;
-    }
-    /**
-     * Get UnmaskedDataRemark value
-     * @return \Travelport\UniversalRecord\StructType\UnmaskedDataRemark[]
-     */
-    public function getUnmaskedDataRemark(): ?array
-    {
-        return $this->UnmaskedDataRemark;
-    }
-    /**
-     * This method is responsible for validating the values passed to the setUnmaskedDataRemark method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setUnmaskedDataRemark method
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateUnmaskedDataRemarkForArrayConstraintsFromSetUnmaskedDataRemark(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $universalRecordUnmaskedDataRemarkItem) {
-            // validation for constraint: itemType
-            if (!$universalRecordUnmaskedDataRemarkItem instanceof \Travelport\UniversalRecord\StructType\UnmaskedDataRemark) {
-                $invalidValues[] = is_object($universalRecordUnmaskedDataRemarkItem) ? get_class($universalRecordUnmaskedDataRemarkItem) : sprintf('%s(%s)', gettype($universalRecordUnmaskedDataRemarkItem), var_export($universalRecordUnmaskedDataRemarkItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The UnmaskedDataRemark property can only contain items of type \Travelport\UniversalRecord\StructType\UnmaskedDataRemark, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
-     * Set UnmaskedDataRemark value
-     * @throws InvalidArgumentException
-     * @param \Travelport\UniversalRecord\StructType\UnmaskedDataRemark[] $unmaskedDataRemark
-     * @return \Travelport\UniversalRecord\StructType\UniversalRecord
-     */
-    public function setUnmaskedDataRemark(?array $unmaskedDataRemark = null): self
-    {
-        // validation for constraint: array
-        if ('' !== ($unmaskedDataRemarkArrayErrorMessage = self::validateUnmaskedDataRemarkForArrayConstraintsFromSetUnmaskedDataRemark($unmaskedDataRemark))) {
-            throw new InvalidArgumentException($unmaskedDataRemarkArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($unmaskedDataRemark) && count($unmaskedDataRemark) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($unmaskedDataRemark)), __LINE__);
-        }
-        $this->UnmaskedDataRemark = $unmaskedDataRemark;
-        
-        return $this;
-    }
-    /**
-     * Add item to UnmaskedDataRemark value
-     * @throws InvalidArgumentException
-     * @param \Travelport\UniversalRecord\StructType\UnmaskedDataRemark $item
-     * @return \Travelport\UniversalRecord\StructType\UniversalRecord
-     */
-    public function addToUnmaskedDataRemark(\Travelport\UniversalRecord\StructType\UnmaskedDataRemark $item): self
-    {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\UnmaskedDataRemark) {
-            throw new InvalidArgumentException(sprintf('The UnmaskedDataRemark property can only contain items of type \Travelport\UniversalRecord\StructType\UnmaskedDataRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->UnmaskedDataRemark) && count($this->UnmaskedDataRemark) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->UnmaskedDataRemark)), __LINE__);
-        }
-        $this->UnmaskedDataRemark[] = $item;
         
         return $this;
     }

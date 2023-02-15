@@ -10,8 +10,8 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for VehicleSearchModifiers StructType
  * Meta information extracted from the WSDL
- * - documentation: Use to specify Driver's age. Supported Providers: 1P. | Allows vehicle search with Special equipment by specifying special equipment type. e.g. “BikeRack”. Not supported by all vendors. 1P/1J only. | Supported Providers: 1P/1J.
- * Only type IataNumber is valid. | Search Car by reference point | Controls and switches for the Vehicle Search request
+ * - documentation: Use to specify Driver's age. Supported Providers: 1P. | Allows vehicle search with Special equipment by specifying special equipment type. e.g. “BikeRack”. Not supported by all vendors. 1P only. | Supported Providers: 1P. Only
+ * type IataNumber is valid. | Search Car by reference point | Controls and switches for the Vehicle Search request
  * @subpackage Structs
  */
 class VehicleSearchModifiers extends AbstractStructBase
@@ -181,7 +181,7 @@ class VehicleSearchModifiers extends AbstractStructBase
     /**
      * The SellableRatesOnly
      * Meta information extracted from the WSDL
-     * - documentation: Set to true to search for sellable rates only. Default is to search for all rates. Providers: 1p/1j
+     * - documentation: Set to true to search for sellable rates only. Default is to search for all rates. Providers: 1p
      * - use: optional
      * @var bool|null
      */

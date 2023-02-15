@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for FareRulesFilterCategory StructType
  * Meta information extracted from the WSDL
- * - documentation: Fare Rules Filter if requested will return rules for requested category in the response. Applicable for providers 1G,1V,1P,1J.
+ * - documentation: Fare Rules Filter if requested will return rules for requested category in the response. Applicable for providers 1G,1V,1P.
  * @subpackage Structs
  */
 class FareRulesFilterCategory extends AbstractStructBase
@@ -18,7 +18,7 @@ class FareRulesFilterCategory extends AbstractStructBase
     /**
      * The CategoryCode
      * Meta information extracted from the WSDL
-     * - documentation: Fare Rules Filter category can be requested. Currently only '˜MIN, MAX, ADV, CHG, OTH' is supported. Applicable for Providers 1G,1V,1P,1J.
+     * - documentation: Fare Rules Filter category can be requested. Currently only '˜MIN, MAX, ADV, CHG, OTH' is supported. Applicable for Providers 1G,1V,1P.
      * - maxOccurs: 35
      * - minOccurs: 1
      * @var string[]

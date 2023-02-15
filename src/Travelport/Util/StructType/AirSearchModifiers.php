@@ -123,7 +123,7 @@ class AirSearchModifiers extends AbstractStructBase
     /**
      * The MaxLayoverDuration
      * Meta information extracted from the WSDL
-     * - documentation: This is the maximum duration the layover may have for each trip in the request. Supported providers 1P, 1J.
+     * - documentation: This is the maximum duration the layover may have for each trip in the request. Supported providers 1P.
      * - minOccurs: 0
      * @var \Travelport\Util\StructType\MaxLayoverDurationType|null
      */
@@ -229,7 +229,7 @@ class AirSearchModifiers extends AbstractStructBase
      * The ExcludeOpenJawAirport
      * Meta information extracted from the WSDL
      * - documentation: This option ensures that travel into/out of each location will be into/out of the same airport of that location. Values are true or false. Default value is 'false'. If value is true then open jaws are exclude. If false the open jaws
-     * are included. The supported providers: 1P, 1J
+     * are included. The supported providers: 1P
      * - default: false
      * - use: optional
      * @var bool|null
@@ -239,7 +239,7 @@ class AirSearchModifiers extends AbstractStructBase
      * The ExcludeGroundTransportation
      * Meta information extracted from the WSDL
      * - documentation: Indicates whether to allow the user to exclude ground transportation or not. Default value is 'false'. If value is true then ground transportations are excluded. If false then ground transportations are included. The supported
-     * providers: 1P, 1J
+     * providers: 1P
      * - default: false
      * - use: optional
      * @var bool|null
@@ -248,7 +248,7 @@ class AirSearchModifiers extends AbstractStructBase
     /**
      * The MaxJourneyTime
      * Meta information extracted from the WSDL
-     * - documentation: Maximum Journey Time for all legs (in hours) 0-99. For LFS Supported Providers are 1G,1V,1P,1J. For AirAvail Supported Providers are 1G,1V. | Maximum Journey Time for this leg (in hours) 0-99.
+     * - documentation: Maximum Journey Time for all legs (in hours) 0-99. For LFS Supported Providers are 1G,1V,1P. For AirAvail Supported Providers are 1G,1V. | Maximum Journey Time for this leg (in hours) 0-99.
      * - base: xs:nonNegativeInteger
      * - maxInclusive: 99
      * - minInclusive: 0

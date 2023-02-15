@@ -271,7 +271,7 @@ class AirPricingModifiers extends AbstractStructBase
     /**
      * The ProhibitUnbundledFareTypes
      * Meta information extracted from the WSDL
-     * - documentation: A "True" value wiill remove fares with EOU and ERU fare types from consideration. A "False" value is the same as no value. Default is no value. Applicable providers: 1P/1J/1G/1V
+     * - documentation: A "True" value wiill remove fares with EOU and ERU fare types from consideration. A "False" value is the same as no value. Default is no value. Applicable providers: 1P/1G/1V
      * - use: optional
      * @var bool|null
      */
@@ -279,7 +279,7 @@ class AirPricingModifiers extends AbstractStructBase
     /**
      * The ReturnServices
      * Meta information extracted from the WSDL
-     * - documentation: When set to false, ATPCO filed Optional Services will not be returned. Default is false. Provider: 1G, 1V, 1P, 1J
+     * - documentation: When set to false, ATPCO filed Optional Services will not be returned. Default is false. Provider: 1G, 1V, 1P
      * - default: false
      * - use: optional
      * @var bool|null

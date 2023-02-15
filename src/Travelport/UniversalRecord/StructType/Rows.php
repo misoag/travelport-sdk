@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for Rows StructType
  * Meta information extracted from the WSDL
- * - documentation: Provider: 1G,1V,1P,1J,ACH,MCH. | A wrapper for all the information regarding each of the rows. Providers: ACH, 1G, 1V, 1P, 1J
+ * - documentation: Provider: 1G,1V,1P,ACH,MCH. | A wrapper for all the information regarding each of the rows. Providers: ACH, 1G, 1V, 1P
  * @subpackage Structs
  */
 class Rows extends AbstractStructBase
@@ -27,7 +27,7 @@ class Rows extends AbstractStructBase
     /**
      * The SegmentRef
      * Meta information extracted from the WSDL
-     * - documentation: Specifies the AirSegment the seat map is for. Providers: ACH, 1G, 1V, 1P, 1J | Reference type
+     * - documentation: Specifies the AirSegment the seat map is for. Providers: ACH, 1G, 1V, 1P | Reference type
      * - base: xs:string
      * - use: optional
      * @var string|null

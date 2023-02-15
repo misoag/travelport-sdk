@@ -197,14 +197,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     protected ?\Travelport\Util\StructType\PrintBlankFormItinerary $PrintBlankFormItinerary = null;
     /**
-     * The ExcludeTicketing
-     * Meta information extracted from the WSDL
-     * - minOccurs: 0
-     * - ref: ExcludeTicketing
-     * @var \Travelport\Util\StructType\ExcludeTicketing|null
-     */
-    protected ?\Travelport\Util\StructType\ExcludeTicketing $ExcludeTicketing = null;
-    /**
      * The ExemptOBFee
      * Meta information extracted from the WSDL
      * - maxOccurs: 1
@@ -361,7 +353,6 @@ class TicketingModifiers extends AbstractStructBase
      * @uses TicketingModifiers::setLanguageOption()
      * @uses TicketingModifiers::setLandCharges()
      * @uses TicketingModifiers::setPrintBlankFormItinerary()
-     * @uses TicketingModifiers::setExcludeTicketing()
      * @uses TicketingModifiers::setExemptOBFee()
      * @uses TicketingModifiers::setIsPrimaryDI()
      * @uses TicketingModifiers::setDocumentInstructionNumber()
@@ -400,7 +391,6 @@ class TicketingModifiers extends AbstractStructBase
      * @param \Travelport\Util\StructType\LanguageOption[] $languageOption
      * @param \Travelport\Util\StructType\LandCharges $landCharges
      * @param \Travelport\Util\StructType\PrintBlankFormItinerary $printBlankFormItinerary
-     * @param \Travelport\Util\StructType\ExcludeTicketing $excludeTicketing
      * @param \Travelport\Util\StructType\ExemptOBFee $exemptOBFee
      * @param bool $isPrimaryDI
      * @param string $documentInstructionNumber
@@ -418,7 +408,7 @@ class TicketingModifiers extends AbstractStructBase
      * @param string $elStat
      * @param bool $keyOverride
      */
-    public function __construct(?array $bookingTravelerRef = null, ?\Travelport\Util\StructType\TypeTicketModifierAmountType $netRemit = null, ?\Travelport\Util\StructType\TypeTicketModifierAmountType $netFare = null, ?\Travelport\Util\StructType\TypeTicketModifierAmountType $actualSellingFare = null, ?\Travelport\Util\StructType\TypeTicketModifierAccountingType $invoiceFare = null, ?\Travelport\Util\StructType\TypeTicketModifierAccountingType $corporateDiscount = null, ?\Travelport\Util\StructType\TypeTicketModifierAccountingType $accountingInfo = null, ?\Travelport\Util\StructType\BulkTicket $bulkTicket = null, ?\Travelport\Util\StructType\TypeBulkTicketModifierType $groupTour = null, ?\Travelport\Util\StructType\Commission $commission = null, ?\Travelport\Util\StructType\TourCode $tourCode = null, ?array $ticketEndorsement = null, ?\Travelport\Util\StructType\TypeTicketModifierValueType $valueModifier = null, ?\Travelport\Util\StructType\DocumentSelect $documentSelect = null, ?\Travelport\Util\StructType\DocumentOptions $documentOptions = null, ?\Travelport\Util\StructType\SegmentSelect $segmentSelect = null, ?array $segmentModifiers = null, ?\Travelport\Util\StructType\SupplierLocator $supplierLocator = null, ?\Travelport\Util\StructType\DestinationPurposeCode $destinationPurposeCode = null, ?array $languageOption = null, ?\Travelport\Util\StructType\LandCharges $landCharges = null, ?\Travelport\Util\StructType\PrintBlankFormItinerary $printBlankFormItinerary = null, ?\Travelport\Util\StructType\ExcludeTicketing $excludeTicketing = null, ?\Travelport\Util\StructType\ExemptOBFee $exemptOBFee = null, ?bool $isPrimaryDI = false, ?string $documentInstructionNumber = null, ?string $reference = null, ?string $status = null, ?string $freeText = null, ?string $nameNumber = null, ?string $ticketRecord = null, ?string $platingCarrier = null, ?bool $exemptVAT = null, ?bool $netRemitApplied = null, ?bool $freeTicket = null, ?string $currencyOverrideCode = null, ?string $key = null, ?string $elStat = null, ?bool $keyOverride = null)
+    public function __construct(?array $bookingTravelerRef = null, ?\Travelport\Util\StructType\TypeTicketModifierAmountType $netRemit = null, ?\Travelport\Util\StructType\TypeTicketModifierAmountType $netFare = null, ?\Travelport\Util\StructType\TypeTicketModifierAmountType $actualSellingFare = null, ?\Travelport\Util\StructType\TypeTicketModifierAccountingType $invoiceFare = null, ?\Travelport\Util\StructType\TypeTicketModifierAccountingType $corporateDiscount = null, ?\Travelport\Util\StructType\TypeTicketModifierAccountingType $accountingInfo = null, ?\Travelport\Util\StructType\BulkTicket $bulkTicket = null, ?\Travelport\Util\StructType\TypeBulkTicketModifierType $groupTour = null, ?\Travelport\Util\StructType\Commission $commission = null, ?\Travelport\Util\StructType\TourCode $tourCode = null, ?array $ticketEndorsement = null, ?\Travelport\Util\StructType\TypeTicketModifierValueType $valueModifier = null, ?\Travelport\Util\StructType\DocumentSelect $documentSelect = null, ?\Travelport\Util\StructType\DocumentOptions $documentOptions = null, ?\Travelport\Util\StructType\SegmentSelect $segmentSelect = null, ?array $segmentModifiers = null, ?\Travelport\Util\StructType\SupplierLocator $supplierLocator = null, ?\Travelport\Util\StructType\DestinationPurposeCode $destinationPurposeCode = null, ?array $languageOption = null, ?\Travelport\Util\StructType\LandCharges $landCharges = null, ?\Travelport\Util\StructType\PrintBlankFormItinerary $printBlankFormItinerary = null, ?\Travelport\Util\StructType\ExemptOBFee $exemptOBFee = null, ?bool $isPrimaryDI = false, ?string $documentInstructionNumber = null, ?string $reference = null, ?string $status = null, ?string $freeText = null, ?string $nameNumber = null, ?string $ticketRecord = null, ?string $platingCarrier = null, ?bool $exemptVAT = null, ?bool $netRemitApplied = null, ?bool $freeTicket = null, ?string $currencyOverrideCode = null, ?string $key = null, ?string $elStat = null, ?bool $keyOverride = null)
     {
         $this
             ->setBookingTravelerRef($bookingTravelerRef)
@@ -443,7 +433,6 @@ class TicketingModifiers extends AbstractStructBase
             ->setLanguageOption($languageOption)
             ->setLandCharges($landCharges)
             ->setPrintBlankFormItinerary($printBlankFormItinerary)
-            ->setExcludeTicketing($excludeTicketing)
             ->setExemptOBFee($exemptOBFee)
             ->setIsPrimaryDI($isPrimaryDI)
             ->setDocumentInstructionNumber($documentInstructionNumber)
@@ -1096,25 +1085,6 @@ class TicketingModifiers extends AbstractStructBase
     public function setPrintBlankFormItinerary(?\Travelport\Util\StructType\PrintBlankFormItinerary $printBlankFormItinerary = null): self
     {
         $this->PrintBlankFormItinerary = $printBlankFormItinerary;
-        
-        return $this;
-    }
-    /**
-     * Get ExcludeTicketing value
-     * @return \Travelport\Util\StructType\ExcludeTicketing|null
-     */
-    public function getExcludeTicketing(): ?\Travelport\Util\StructType\ExcludeTicketing
-    {
-        return $this->ExcludeTicketing;
-    }
-    /**
-     * Set ExcludeTicketing value
-     * @param \Travelport\Util\StructType\ExcludeTicketing $excludeTicketing
-     * @return \Travelport\Util\StructType\TicketingModifiers
-     */
-    public function setExcludeTicketing(?\Travelport\Util\StructType\ExcludeTicketing $excludeTicketing = null): self
-    {
-        $this->ExcludeTicketing = $excludeTicketing;
         
         return $this;
     }

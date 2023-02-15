@@ -39,7 +39,7 @@ class OfferAvailabilityModifiers extends AbstractStructBase
     /**
      * The CurrencyType
      * Meta information extracted from the WSDL
-     * - documentation: Currency code override. Providers: ACH, 1G, 1V, 1P, 1J | 3 Letter Currency Code
+     * - documentation: Currency code override. Providers: ACH, 1G, 1V, 1P | 3 Letter Currency Code
      * - base: xs:string
      * - length: 3
      * @var string|null

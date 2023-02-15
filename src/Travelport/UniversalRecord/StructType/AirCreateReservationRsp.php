@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for AirCreateReservationRsp StructType
  * Meta information extracted from the WSDL
- * - documentation: Provider: 1G,1V,1P,1J,ACH.
+ * - documentation: Provider: 1G,1V,1P,ACH.
  * @subpackage Structs
  */
 class AirCreateReservationRsp extends BaseRsp
@@ -28,7 +28,7 @@ class AirCreateReservationRsp extends BaseRsp
      * Meta information extracted from the WSDL
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: air_v51_0:AirSolutionChangedInfo
+     * - ref: air_v52_0:AirSolutionChangedInfo
      * @var \Travelport\UniversalRecord\StructType\AirSolutionChangedInfo[]
      */
     protected ?array $AirSolutionChangedInfo = null;
@@ -36,7 +36,7 @@ class AirCreateReservationRsp extends BaseRsp
      * The AirSegmentSellFailureInfo
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * - ref: air_v51_0:AirSegmentSellFailureInfo
+     * - ref: air_v52_0:AirSegmentSellFailureInfo
      * @var \Travelport\UniversalRecord\StructType\AirSegmentSellFailureInfo|null
      */
     protected ?\Travelport\UniversalRecord\StructType\AirSegmentSellFailureInfo $AirSegmentSellFailureInfo = null;

@@ -26,7 +26,7 @@ class AirSegmentSpecialUpdate extends AbstractStructBase
      * - choice: AirSegment
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
-     * - ref: air_v51_0:AirSegment
+     * - ref: air_v52_0:AirSegment
      * @var \Travelport\UniversalRecord\StructType\TypeBaseAirSegment|null
      */
     protected ?\Travelport\UniversalRecord\StructType\TypeBaseAirSegment $AirSegment = null;

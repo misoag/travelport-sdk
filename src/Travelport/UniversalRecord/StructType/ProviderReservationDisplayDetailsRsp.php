@@ -24,26 +24,14 @@ class ProviderReservationDisplayDetailsRsp extends BaseRsp
      */
     protected ?array $DisplayDetails = null;
     /**
-     * The TravelerNameNum
-     * Meta information extracted from the WSDL
-     * - maxOccurs: 999
-     * - minOccurs: 0
-     * - ref: TravelerNameNum
-     * @var \Travelport\UniversalRecord\StructType\TravelerNameNum[]
-     */
-    protected ?array $TravelerNameNum = null;
-    /**
      * Constructor method for ProviderReservationDisplayDetailsRsp
      * @uses ProviderReservationDisplayDetailsRsp::setDisplayDetails()
-     * @uses ProviderReservationDisplayDetailsRsp::setTravelerNameNum()
      * @param \Travelport\UniversalRecord\StructType\DisplayDetails[] $displayDetails
-     * @param \Travelport\UniversalRecord\StructType\TravelerNameNum[] $travelerNameNum
      */
-    public function __construct(?array $displayDetails = null, ?array $travelerNameNum = null)
+    public function __construct(?array $displayDetails = null)
     {
         $this
-            ->setDisplayDetails($displayDetails)
-            ->setTravelerNameNum($travelerNameNum);
+            ->setDisplayDetails($displayDetails);
     }
     /**
      * Get DisplayDetails value
@@ -116,80 +104,6 @@ class ProviderReservationDisplayDetailsRsp extends BaseRsp
             throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->DisplayDetails)), __LINE__);
         }
         $this->DisplayDetails[] = $item;
-        
-        return $this;
-    }
-    /**
-     * Get TravelerNameNum value
-     * @return \Travelport\UniversalRecord\StructType\TravelerNameNum[]
-     */
-    public function getTravelerNameNum(): ?array
-    {
-        return $this->TravelerNameNum;
-    }
-    /**
-     * This method is responsible for validating the values passed to the setTravelerNameNum method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setTravelerNameNum method
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTravelerNameNumForArrayConstraintsFromSetTravelerNameNum(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $providerReservationDisplayDetailsRspTravelerNameNumItem) {
-            // validation for constraint: itemType
-            if (!$providerReservationDisplayDetailsRspTravelerNameNumItem instanceof \Travelport\UniversalRecord\StructType\TravelerNameNum) {
-                $invalidValues[] = is_object($providerReservationDisplayDetailsRspTravelerNameNumItem) ? get_class($providerReservationDisplayDetailsRspTravelerNameNumItem) : sprintf('%s(%s)', gettype($providerReservationDisplayDetailsRspTravelerNameNumItem), var_export($providerReservationDisplayDetailsRspTravelerNameNumItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The TravelerNameNum property can only contain items of type \Travelport\UniversalRecord\StructType\TravelerNameNum, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
-     * Set TravelerNameNum value
-     * @throws InvalidArgumentException
-     * @param \Travelport\UniversalRecord\StructType\TravelerNameNum[] $travelerNameNum
-     * @return \Travelport\UniversalRecord\StructType\ProviderReservationDisplayDetailsRsp
-     */
-    public function setTravelerNameNum(?array $travelerNameNum = null): self
-    {
-        // validation for constraint: array
-        if ('' !== ($travelerNameNumArrayErrorMessage = self::validateTravelerNameNumForArrayConstraintsFromSetTravelerNameNum($travelerNameNum))) {
-            throw new InvalidArgumentException($travelerNameNumArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($travelerNameNum) && count($travelerNameNum) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($travelerNameNum)), __LINE__);
-        }
-        $this->TravelerNameNum = $travelerNameNum;
-        
-        return $this;
-    }
-    /**
-     * Add item to TravelerNameNum value
-     * @throws InvalidArgumentException
-     * @param \Travelport\UniversalRecord\StructType\TravelerNameNum $item
-     * @return \Travelport\UniversalRecord\StructType\ProviderReservationDisplayDetailsRsp
-     */
-    public function addToTravelerNameNum(\Travelport\UniversalRecord\StructType\TravelerNameNum $item): self
-    {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TravelerNameNum) {
-            throw new InvalidArgumentException(sprintf('The TravelerNameNum property can only contain items of type \Travelport\UniversalRecord\StructType\TravelerNameNum, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->TravelerNameNum) && count($this->TravelerNameNum) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->TravelerNameNum)), __LINE__);
-        }
-        $this->TravelerNameNum[] = $item;
         
         return $this;
     }

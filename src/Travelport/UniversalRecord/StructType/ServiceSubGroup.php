@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for ServiceSubGroup StructType
  * Meta information extracted from the WSDL
- * - documentation: The Service Sub Group of the Ancillary Service. Providers: 1G, 1V, 1P, 1J, ACH
+ * - documentation: The Service Sub Group of the Ancillary Service. Providers: 1G, 1V, 1P, ACH
  * @subpackage Structs
  */
 class ServiceSubGroup extends AbstractStructBase
@@ -18,7 +18,7 @@ class ServiceSubGroup extends AbstractStructBase
     /**
      * The Code
      * Meta information extracted from the WSDL
-     * - documentation: The Service Sub Group Code of the Ancillary Service. Providers: 1G, 1V, 1P, 1J, ACH
+     * - documentation: The Service Sub Group Code of the Ancillary Service. Providers: 1G, 1V, 1P, ACH
      * @var string|null
      */
     protected ?string $Code = null;

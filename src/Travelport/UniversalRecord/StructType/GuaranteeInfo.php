@@ -66,7 +66,7 @@ class GuaranteeInfo extends AbstractStructBase
     /**
      * The CredentialsRequired
      * Meta information extracted from the WSDL
-     * - documentation: Identification required at booking/checkin. Not supported by 1P,1J.
+     * - documentation: Identification required at booking/checkin. Not supported by 1P.
      * - use: optional
      * @var bool|null
      */

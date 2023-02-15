@@ -43,7 +43,7 @@ class SearchAirLeg extends AbstractStructBase
     /**
      * The SearchArvTime
      * Meta information extracted from the WSDL
-     * - documentation: Specifies the preferred time within the time range. For 1G, 1V, 1P, 1J, it is supported for AvailabilitySearchReq (TimeRange must also be specified) and not supported for LowFareSearchReq. ACH does not support search by arrival time.
+     * - documentation: Specifies the preferred time within the time range. For 1G, 1V, 1P, it is supported for AvailabilitySearchReq (TimeRange must also be specified) and not supported for LowFareSearchReq. ACH does not support search by arrival time.
      * - choice: SearchDepTime | SearchArvTime
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1

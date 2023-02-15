@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for EMDCommission StructType
  * Meta information extracted from the WSDL
- * - documentation: Commission information to be used for EMD issuance. Supported providers are 1V/1G/1P/1J
+ * - documentation: Commission information to be used for EMD issuance. Supported providers are 1V/1G/1P
  * @subpackage Structs
  */
 class EMDCommission extends AbstractStructBase

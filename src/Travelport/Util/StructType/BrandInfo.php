@@ -38,7 +38,7 @@ class BrandInfo extends AbstractStructBase
     /**
      * The AirPricingInfoRef
      * Meta information extracted from the WSDL
-     * - documentation: A reference to a AirPricing. Providers: ACH, 1G, 1V, 1P, 1J. | Reference type
+     * - documentation: A reference to a AirPricing. Providers: ACH, 1G, 1V, 1P. | Reference type
      * - base: xs:string
      * - use: optional
      * @var string|null
@@ -47,7 +47,7 @@ class BrandInfo extends AbstractStructBase
     /**
      * The FareInfoRef
      * Meta information extracted from the WSDL
-     * - documentation: A reference to a FareInfo. Providers: ACH, 1G, 1V, 1P, 1J. | Reference type
+     * - documentation: A reference to a FareInfo. Providers: ACH, 1G, 1V, 1P. | Reference type
      * - base: xs:string
      * - use: optional
      * @var string|null

@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for ETR StructType
  * Meta information extracted from the WSDL
- * - documentation: Baggage Allowance Info after Ticketing | This is a container to display detail information of credit card auth. Providers supported: Worldspan and JAL. | Result of ticketing request
+ * - documentation: Baggage Allowance Info after Ticketing | This is a container to display detail information of credit card auth. Providers supported: Worldspan. | Result of ticketing request
  * @subpackage Structs
  */
 class ETR extends AbstractStructBase

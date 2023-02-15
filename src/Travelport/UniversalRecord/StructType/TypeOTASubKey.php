@@ -18,7 +18,7 @@ class TypeOTASubKey extends AbstractStructBase
     /**
      * The Name
      * Meta information extracted from the WSDL
-     * - documentation: A subkey to identify the special equipment codes. Applicable when Policy/@Name is EQUIP. Uses OTA CODE "EQP". 1P/1J. | Refers to Open Travel Code
+     * - documentation: A subkey to identify the special equipment codes. Applicable when Policy/@Name is EQUIP. Uses OTA CODE "EQP". 1P. | Refers to Open Travel Code
      * - base: xs:positiveInteger
      * - use: required
      * @var int

@@ -16,7 +16,7 @@ class SupplierRate extends TypeVehicleRates
     /**
      * The DiscountAmount
      * Meta information extracted from the WSDL
-     * - documentation: Discount Amount 1P/1J only | A monetary value (valid to req/rsp Currency type) Format : Currency Code + Amount(USD123.10)
+     * - documentation: Discount Amount 1P only | A monetary value (valid to req/rsp Currency type) Format : Currency Code + Amount(USD123.10)
      * - base: xs:string
      * - use: optional
      * @var string|null
@@ -25,7 +25,7 @@ class SupplierRate extends TypeVehicleRates
     /**
      * The MandatoryChargeTotal
      * Meta information extracted from the WSDL
-     * - documentation: Total Mandatory Charges, which may include taxes, surcharges, and fees. 1P, 1J only. | A monetary value (valid to req/rsp Currency type) Format : Currency Code + Amount(USD123.10)
+     * - documentation: Total Mandatory Charges, which may include taxes, surcharges, and fees. 1P only. | A monetary value (valid to req/rsp Currency type) Format : Currency Code + Amount(USD123.10)
      * - base: xs:string
      * - use: optional
      * @var string|null

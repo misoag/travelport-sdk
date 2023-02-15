@@ -217,7 +217,7 @@ class Facility extends AbstractStructBase
     /**
      * The OptionalServiceRef
      * Meta information extracted from the WSDL
-     * - documentation: References the OptionalService for the Row/Facility. Providers: ACH, 1G, 1V, 1P, 1J | Reference type
+     * - documentation: References the OptionalService for the Row/Facility. Providers: ACH, 1G, 1V, 1P | Reference type
      * - base: xs:string
      * @var string|null
      */
@@ -225,7 +225,7 @@ class Facility extends AbstractStructBase
     /**
      * The SeatInformationRef
      * Meta information extracted from the WSDL
-     * - documentation: Specifies the seat information for the seat. Providers: ACH, 1G, 1V, 1P, 1J | Reference type
+     * - documentation: Specifies the seat information for the seat. Providers: ACH, 1G, 1V, 1P | Reference type
      * - base: xs:string
      * @var string|null
      */

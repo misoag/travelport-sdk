@@ -85,7 +85,7 @@ class VehicleUpdate extends AbstractStructBase
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
      * - minOccurs: 0
-     * - ref: vehicle_v51_0:VehicleRateInfo
+     * - ref: vehicle_v52_0:VehicleRateInfo
      * @var \Travelport\UniversalRecord\StructType\VehicleRateInfo|null
      */
     protected ?\Travelport\UniversalRecord\StructType\VehicleRateInfo $VehicleRateInfo = null;
@@ -97,7 +97,7 @@ class VehicleUpdate extends AbstractStructBase
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
      * - minOccurs: 0
-     * - ref: vehicle_v51_0:PaymentInformation
+     * - ref: vehicle_v52_0:PaymentInformation
      * @var \Travelport\UniversalRecord\StructType\PaymentInformation|null
      */
     protected ?\Travelport\UniversalRecord\StructType\PaymentInformation $PaymentInformation = null;
@@ -110,7 +110,7 @@ class VehicleUpdate extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: vehicle_v51_0:AssociatedRemark
+     * - ref: vehicle_v52_0:AssociatedRemark
      * @var \Travelport\UniversalRecord\StructType\AssociatedRemark[]
      */
     protected ?array $AssociatedRemark = null;
@@ -122,7 +122,7 @@ class VehicleUpdate extends AbstractStructBase
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
      * - minOccurs: 0
-     * - ref: vehicle_v51_0:VehicleSpecialRequest
+     * - ref: vehicle_v52_0:VehicleSpecialRequest
      * @var \Travelport\UniversalRecord\StructType\VehicleSpecialRequest|null
      */
     protected ?\Travelport\UniversalRecord\StructType\VehicleSpecialRequest $VehicleSpecialRequest = null;
@@ -134,7 +134,7 @@ class VehicleUpdate extends AbstractStructBase
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
      * - minOccurs: 0
-     * - ref: vehicle_v51_0:DeliveryAddress
+     * - ref: vehicle_v52_0:DeliveryAddress
      * @var \Travelport\UniversalRecord\StructType\DeliveryAddress|null
      */
     protected ?\Travelport\UniversalRecord\StructType\DeliveryAddress $DeliveryAddress = null;
@@ -146,7 +146,7 @@ class VehicleUpdate extends AbstractStructBase
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
      * - minOccurs: 0
-     * - ref: vehicle_v51_0:CollectionAddress
+     * - ref: vehicle_v52_0:CollectionAddress
      * @var \Travelport\UniversalRecord\StructType\CollectionAddress|null
      */
     protected ?\Travelport\UniversalRecord\StructType\CollectionAddress $CollectionAddress = null;
@@ -158,7 +158,7 @@ class VehicleUpdate extends AbstractStructBase
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
      * - minOccurs: 0
-     * - ref: vehicle_v51_0:VehicleReturnDateLocation
+     * - ref: vehicle_v52_0:VehicleReturnDateLocation
      * @var \Travelport\UniversalRecord\StructType\VehicleReturnDateLocation|null
      */
     protected ?\Travelport\UniversalRecord\StructType\VehicleReturnDateLocation $VehicleReturnDateLocation = null;
@@ -170,7 +170,7 @@ class VehicleUpdate extends AbstractStructBase
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
      * - minOccurs: 0
-     * - ref: vehicle_v51_0:VehiclePickupDateLocation
+     * - ref: vehicle_v52_0:VehiclePickupDateLocation
      * @var \Travelport\UniversalRecord\StructType\VehiclePickupDateLocation|null
      */
     protected ?\Travelport\UniversalRecord\StructType\VehiclePickupDateLocation $VehiclePickupDateLocation = null;
@@ -207,7 +207,7 @@ class VehicleUpdate extends AbstractStructBase
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
      * - minOccurs: 0
-     * - ref: vehicle_v51_0:VehicleTypeIdentifier
+     * - ref: vehicle_v52_0:VehicleTypeIdentifier
      * @var \Travelport\UniversalRecord\StructType\VehicleTypeIdentifier|null
      */
     protected ?\Travelport\UniversalRecord\StructType\VehicleTypeIdentifier $VehicleTypeIdentifier = null;
@@ -220,7 +220,7 @@ class VehicleUpdate extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 1
      * - minOccurs: 0
-     * - ref: vehicle_v51_0:FlightArrivalInformation
+     * - ref: vehicle_v52_0:FlightArrivalInformation
      * @var \Travelport\UniversalRecord\StructType\FlightArrivalInformation|null
      */
     protected ?\Travelport\UniversalRecord\StructType\FlightArrivalInformation $FlightArrivalInformation = null;

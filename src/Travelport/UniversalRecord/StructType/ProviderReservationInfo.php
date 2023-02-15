@@ -84,15 +84,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     protected ?\Travelport\UniversalRecord\StructType\ProviderReservationDisplayDetailsList $ProviderReservationDisplayDetailsList = null;
     /**
-     * The ExternalReservationInfo
-     * Meta information extracted from the WSDL
-     * - maxOccurs: 1
-     * - minOccurs: 0
-     * - ref: ExternalReservationInfo
-     * @var \Travelport\UniversalRecord\StructType\ExternalReservationInfo|null
-     */
-    protected ?\Travelport\UniversalRecord\StructType\ExternalReservationInfo $ExternalReservationInfo = null;
-    /**
      * The HostCreateDate
      * Meta information extracted from the WSDL
      * - documentation: The date that this reservation was created in the host system.
@@ -103,7 +94,7 @@ class ProviderReservationInfo extends AbstractStructBase
     /**
      * The HostCreateTime
      * Meta information extracted from the WSDL
-     * - documentation: The Time that this reservation was created in the host system for 1P and 1J.
+     * - documentation: The Time that this reservation was created in the host system for 1P.
      * - use: optional
      * @var string|null
      */
@@ -136,7 +127,7 @@ class ProviderReservationInfo extends AbstractStructBase
     /**
      * The GroupRef
      * Meta information extracted from the WSDL
-     * - documentation: Represents a traveler group for Group booking and all their accompanying data. SUPPORTED PROVIDER: Worldspan and JAL. | Reference type
+     * - documentation: Represents a traveler group for Group booking and all their accompanying data. SUPPORTED PROVIDER: Worldspan. | Reference type
      * - base: xs:string
      * - use: optional
      * @var string|null
@@ -145,7 +136,7 @@ class ProviderReservationInfo extends AbstractStructBase
     /**
      * The OwningPCC
      * Meta information extracted from the WSDL
-     * - documentation: Indentifies the owning PCC of the PNR. PROVIDER SUPPORTED: Worldspan,JAL,Galileo and Apollo | 2 to 10 Letter Pseudo City Code
+     * - documentation: Indentifies the owning PCC of the PNR. PROVIDER SUPPORTED: Worldspan,Galileo and Apollo | 2 to 10 Letter Pseudo City Code
      * - base: xs:string
      * - maxLength: 10
      * - minLength: 2
@@ -196,7 +187,6 @@ class ProviderReservationInfo extends AbstractStructBase
      * @uses ProviderReservationInfo::setModifiedDate()
      * @uses ProviderReservationInfo::setProviderReservationDetails()
      * @uses ProviderReservationInfo::setProviderReservationDisplayDetailsList()
-     * @uses ProviderReservationInfo::setExternalReservationInfo()
      * @uses ProviderReservationInfo::setHostCreateDate()
      * @uses ProviderReservationInfo::setHostCreateTime()
      * @uses ProviderReservationInfo::setImported()
@@ -216,7 +206,6 @@ class ProviderReservationInfo extends AbstractStructBase
      * @param string $modifiedDate
      * @param \Travelport\UniversalRecord\StructType\ProviderReservationDetails $providerReservationDetails
      * @param \Travelport\UniversalRecord\StructType\ProviderReservationDisplayDetailsList $providerReservationDisplayDetailsList
-     * @param \Travelport\UniversalRecord\StructType\ExternalReservationInfo $externalReservationInfo
      * @param string $hostCreateDate
      * @param string $hostCreateTime
      * @param bool $imported
@@ -230,7 +219,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * @param string $providerLocatorCode
      * @param string $supplierCode
      */
-    public function __construct(string $key, string $providerCode, string $locatorCode, string $createDate, string $modifiedDate, ?\Travelport\UniversalRecord\StructType\ProviderReservationDetails $providerReservationDetails = null, ?\Travelport\UniversalRecord\StructType\ProviderReservationDisplayDetailsList $providerReservationDisplayDetailsList = null, ?\Travelport\UniversalRecord\StructType\ExternalReservationInfo $externalReservationInfo = null, ?string $hostCreateDate = null, ?string $hostCreateTime = null, ?bool $imported = null, ?string $ticketingModifiersRef = null, ?bool $inQueueMode = null, ?string $groupRef = null, ?string $owningPCC = null, ?string $elStat = null, ?bool $keyOverride = null, ?string $agentOverride = null, ?string $providerLocatorCode = null, ?string $supplierCode = null)
+    public function __construct(string $key, string $providerCode, string $locatorCode, string $createDate, string $modifiedDate, ?\Travelport\UniversalRecord\StructType\ProviderReservationDetails $providerReservationDetails = null, ?\Travelport\UniversalRecord\StructType\ProviderReservationDisplayDetailsList $providerReservationDisplayDetailsList = null, ?string $hostCreateDate = null, ?string $hostCreateTime = null, ?bool $imported = null, ?string $ticketingModifiersRef = null, ?bool $inQueueMode = null, ?string $groupRef = null, ?string $owningPCC = null, ?string $elStat = null, ?bool $keyOverride = null, ?string $agentOverride = null, ?string $providerLocatorCode = null, ?string $supplierCode = null)
     {
         $this
             ->setKey($key)
@@ -240,7 +229,6 @@ class ProviderReservationInfo extends AbstractStructBase
             ->setModifiedDate($modifiedDate)
             ->setProviderReservationDetails($providerReservationDetails)
             ->setProviderReservationDisplayDetailsList($providerReservationDisplayDetailsList)
-            ->setExternalReservationInfo($externalReservationInfo)
             ->setHostCreateDate($hostCreateDate)
             ->setHostCreateTime($hostCreateTime)
             ->setImported($imported)
@@ -496,25 +484,6 @@ class ProviderReservationInfo extends AbstractStructBase
         } else {
             $this->ProviderReservationDisplayDetailsList = $providerReservationDisplayDetailsList;
         }
-        
-        return $this;
-    }
-    /**
-     * Get ExternalReservationInfo value
-     * @return \Travelport\UniversalRecord\StructType\ExternalReservationInfo|null
-     */
-    public function getExternalReservationInfo(): ?\Travelport\UniversalRecord\StructType\ExternalReservationInfo
-    {
-        return $this->ExternalReservationInfo;
-    }
-    /**
-     * Set ExternalReservationInfo value
-     * @param \Travelport\UniversalRecord\StructType\ExternalReservationInfo $externalReservationInfo
-     * @return \Travelport\UniversalRecord\StructType\ProviderReservationInfo
-     */
-    public function setExternalReservationInfo(?\Travelport\UniversalRecord\StructType\ExternalReservationInfo $externalReservationInfo = null): self
-    {
-        $this->ExternalReservationInfo = $externalReservationInfo;
         
         return $this;
     }

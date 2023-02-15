@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for SeatInformation StructType
  * Meta information extracted from the WSDL
- * - documentation: Additional information about seats. Providers: 1G, 1V, 1P, 1J,ACH
+ * - documentation: Additional information about seats. Providers: 1G, 1V, 1P,ACH
  * @subpackage Structs
  */
 class SeatInformation extends AbstractStructBase
@@ -27,28 +27,28 @@ class SeatInformation extends AbstractStructBase
     /**
      * The Power
      * Meta information extracted from the WSDL
-     * - documentation: Detail about any electrical power the seat might have. For example: No Power Providers: 1G, 1V, 1P, 1J
+     * - documentation: Detail about any electrical power the seat might have. For example: No Power Providers: 1G, 1V, 1P
      * @var string|null
      */
     protected ?string $Power = null;
     /**
      * The Video
      * Meta information extracted from the WSDL
-     * - documentation: Detail about any video components the seat might have. For example: No Video Providers: 1G, 1V, 1P, 1J
+     * - documentation: Detail about any video components the seat might have. For example: No Video Providers: 1G, 1V, 1P
      * @var string|null
      */
     protected ?string $Video = null;
     /**
      * The Type
      * Meta information extracted from the WSDL
-     * - documentation: Detail about the type of seat. For example: Exit Row, Standard, etc. Providers: 1G, 1V, 1P, 1J
+     * - documentation: Detail about the type of seat. For example: Exit Row, Standard, etc. Providers: 1G, 1V, 1P
      * @var string|null
      */
     protected ?string $Type = null;
     /**
      * The Description
      * Meta information extracted from the WSDL
-     * - documentation: Detailed description of the seat. Providers: 1G, 1V, 1P, 1J
+     * - documentation: Detailed description of the seat. Providers: 1G, 1V, 1P
      * @var string|null
      */
     protected ?string $Description = null;

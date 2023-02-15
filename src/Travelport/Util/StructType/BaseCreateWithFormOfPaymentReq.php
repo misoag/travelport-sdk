@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for BaseCreateWithFormOfPaymentReq StructType
  * Meta information extracted from the WSDL
- * - documentation: Provider:1G,1V,1P,1J,ACH,SDK. | Container for BaseCreateReservation along with Form Of Payment
+ * - documentation: Provider:1G,1V,1P,ACH,SDK. | Container for BaseCreateReservation along with Form Of Payment
  * @subpackage Structs
  */
 class BaseCreateWithFormOfPaymentReq extends BaseCreateReservationReq

@@ -28,7 +28,7 @@ class UniversalRecordModifyRsp extends BaseRsp
      * Meta information extracted from the WSDL
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: air_v51_0:AirSolutionChangedInfo
+     * - ref: air_v52_0:AirSolutionChangedInfo
      * @var \Travelport\UniversalRecord\StructType\AirSolutionChangedInfo[]
      */
     protected ?array $AirSolutionChangedInfo = null;

@@ -35,7 +35,7 @@ class HotelSearchLocation extends AbstractStructBase
     /**
      * The HotelAddress
      * Meta information extracted from the WSDL
-     * - documentation: Search by address or postal code. Applicable for 1G, 1V, 1P, 1J
+     * - documentation: Search by address or postal code. Applicable for 1G, 1V, 1P
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeStructuredAddress|null
      */
@@ -43,7 +43,7 @@ class HotelSearchLocation extends AbstractStructBase
     /**
      * The ReferencePoint
      * Meta information extracted from the WSDL
-     * - documentation: Search for hotels near a reference point. HotelLocation/Location is mandatory for aggregated scenario if ReferencePoint is used. Applicable for 1G,1V,1P,1J. Country/State are only applicable for 1P/1J
+     * - documentation: Search for hotels near a reference point. HotelLocation/Location is mandatory for aggregated scenario if ReferencePoint is used. Applicable for 1G,1V,1P. Country/State are only applicable for 1P
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeHotelReferencePoint|null
      */

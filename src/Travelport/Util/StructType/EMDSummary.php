@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for EMDSummary StructType
  * Meta information extracted from the WSDL
- * - documentation: Element Key related supporting attributes | The coupon information for the EMD issued. | EMD summary information. Supported providers are 1G/1V/1P/1J
+ * - documentation: Element Key related supporting attributes | The coupon information for the EMD issued. | EMD summary information. Supported providers are 1G/1V/1P
  * @subpackage Structs
  */
 class EMDSummary extends AbstractStructBase

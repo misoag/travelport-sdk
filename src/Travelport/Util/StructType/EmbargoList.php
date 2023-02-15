@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for EmbargoList StructType
  * Meta information extracted from the WSDL
- * - documentation: List of embargoes. Provider: 1G, 1V, 1P, 1J
+ * - documentation: List of embargoes. Provider: 1G, 1V, 1P
  * @subpackage Structs
  */
 class EmbargoList extends AbstractStructBase

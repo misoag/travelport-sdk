@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for HotelUpdate StructType
  * Meta information extracted from the WSDL
- * - documentation: Specify desired optional bed types. Applicable for optional bed types:RollawayAdult,RollawayChild,or Crib if supported by the hotel supplier. Providers :1G/1V/1P/1J
+ * - documentation: Specify desired optional bed types. Applicable for optional bed types:RollawayAdult,RollawayChild,or Crib if supported by the hotel supplier. Providers :1G/1V/1P
  * @subpackage Structs
  */
 class HotelUpdate extends AbstractStructBase
@@ -59,7 +59,7 @@ class HotelUpdate extends AbstractStructBase
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
      * - minOccurs: 0
-     * - ref: hotel_v51_0:GuestInformation
+     * - ref: hotel_v52_0:GuestInformation
      * @var \Travelport\UniversalRecord\StructType\GuestInformation|null
      */
     protected ?\Travelport\UniversalRecord\StructType\GuestInformation $GuestInformation = null;
@@ -72,7 +72,7 @@ class HotelUpdate extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: hotel_v51_0:AssociatedRemark
+     * - ref: hotel_v52_0:AssociatedRemark
      * @var \Travelport\UniversalRecord\StructType\AssociatedRemark[]
      */
     protected ?array $AssociatedRemark = null;
@@ -101,7 +101,7 @@ class HotelUpdate extends AbstractStructBase
      * - maxLength: 250
      * - maxOccurs: 1
      * - minOccurs: 0
-     * - ref: hotel_v51_0:HotelSpecialRequest
+     * - ref: hotel_v52_0:HotelSpecialRequest
      * @var string|null
      */
     protected ?string $HotelSpecialRequest = null;
@@ -112,7 +112,7 @@ class HotelUpdate extends AbstractStructBase
      * HotelBedding | BookingConfirmation
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
-     * - ref: hotel_v51_0:HotelRateInfo
+     * - ref: hotel_v52_0:HotelRateInfo
      * @var \Travelport\UniversalRecord\StructType\HotelRateInfo|null
      */
     protected ?\Travelport\UniversalRecord\StructType\HotelRateInfo $HotelRateInfo = null;
@@ -123,7 +123,7 @@ class HotelUpdate extends AbstractStructBase
      * HotelBedding | BookingConfirmation
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
-     * - ref: hotel_v51_0:HotelStay
+     * - ref: hotel_v52_0:HotelStay
      * @var \Travelport\UniversalRecord\StructType\HotelStay|null
      */
     protected ?\Travelport\UniversalRecord\StructType\HotelStay $HotelStay = null;
@@ -136,7 +136,7 @@ class HotelUpdate extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 1
      * - minOccurs: 0
-     * - ref: hotel_v51_0:HotelCommission
+     * - ref: hotel_v52_0:HotelCommission
      * @var string|null
      */
     protected ?string $HotelCommission = null;
@@ -200,14 +200,14 @@ class HotelUpdate extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: hotel_v51_0:HotelBedding
+     * - ref: hotel_v52_0:HotelBedding
      * @var \Travelport\UniversalRecord\StructType\HotelBedding[]
      */
     protected ?array $HotelBedding = null;
     /**
      * The BookingConfirmation
      * Meta information extracted from the WSDL
-     * - documentation: Hotel Confirmation Number from a Third Party System. | Hotel Booking Confirmation Number for hotel segment. Supported Providers:1P/1J.
+     * - documentation: Hotel Confirmation Number from a Third Party System. | Hotel Booking Confirmation Number for hotel segment. Supported Providers:1P.
      * - base: typeHotelConfirmationNumber
      * - choice: LoyaltyCard | Guarantee | GuestInformation | AssociatedRemark | BookingSource | HotelSpecialRequest | HotelRateInfo | HotelStay | HotelCommission | CorporateDiscountID | ReservationName | ThirdPartyInformation | TravelComplianceData |
      * HotelBedding | BookingConfirmation
@@ -216,7 +216,7 @@ class HotelUpdate extends AbstractStructBase
      * - maxLength: 32
      * - maxOccurs: 1
      * - minOccurs: 0
-     * - ref: hotel_v51_0:BookingConfirmation
+     * - ref: hotel_v52_0:BookingConfirmation
      * @var string|null
      */
     protected ?string $BookingConfirmation = null;

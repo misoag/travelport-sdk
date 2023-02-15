@@ -10,8 +10,8 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for BrandingInfo StructType
  * Meta information extracted from the WSDL
- * - documentation: The additional titles associated to the brand or optional service. Providers: ACH, 1G, 1V, 1P, 1J | The price range of the Ancillary Service. Providers: 1G, 1V, 1P, 1J, ACH | Branding information for the Ancillary Service. Returned
- * in Seat Map only. Providers: 1G, 1V, 1P, 1J, ACH
+ * - documentation: The additional titles associated to the brand or optional service. Providers: ACH, 1G, 1V, 1P | The price range of the Ancillary Service. Providers: 1G, 1V, 1P, ACH | Branding information for the Ancillary Service. Returned in Seat
+ * Map only. Providers: 1G, 1V, 1P, ACH
  * @subpackage Structs
  */
 class BrandingInfo extends AbstractStructBase
@@ -19,7 +19,7 @@ class BrandingInfo extends AbstractStructBase
     /**
      * The CommercialName
      * Meta information extracted from the WSDL
-     * - documentation: The commercial name of the Ancillary Service. Providers: 1G, 1V, 1P, 1J, ACH
+     * - documentation: The commercial name of the Ancillary Service. Providers: 1G, 1V, 1P, ACH
      * - use: required
      * @var string
      */
@@ -71,7 +71,7 @@ class BrandingInfo extends AbstractStructBase
     /**
      * The AirSegmentRef
      * Meta information extracted from the WSDL
-     * - documentation: Specifies the AirSegment the branding information is for. Providers: ACH, 1G, 1V, 1P, 1J
+     * - documentation: Specifies the AirSegment the branding information is for. Providers: ACH, 1G, 1V, 1P
      * - maxOccurs: 99
      * @var \Travelport\Util\StructType\TypeSegmentRef[]
      */
@@ -88,7 +88,7 @@ class BrandingInfo extends AbstractStructBase
     /**
      * The ServiceSubCode
      * Meta information extracted from the WSDL
-     * - documentation: The Service Sub Code of the Ancillary Service. Providers: 1G, 1V, 1P, 1J, ACH
+     * - documentation: The Service Sub Code of the Ancillary Service. Providers: 1G, 1V, 1P, ACH
      * - use: optional
      * @var string|null
      */
@@ -96,7 +96,7 @@ class BrandingInfo extends AbstractStructBase
     /**
      * The ExternalServiceName
      * Meta information extracted from the WSDL
-     * - documentation: The external name of the Ancillary Service. Providers: 1G, 1V, 1P, 1J, ACH
+     * - documentation: The external name of the Ancillary Service. Providers: 1G, 1V, 1P, ACH
      * - use: optional
      * @var string|null
      */
@@ -104,7 +104,7 @@ class BrandingInfo extends AbstractStructBase
     /**
      * The ServiceType
      * Meta information extracted from the WSDL
-     * - documentation: The type of Ancillary Service. Providers: 1G, 1V, 1P, 1J, ACH
+     * - documentation: The type of Ancillary Service. Providers: 1G, 1V, 1P, ACH
      * - use: optional
      * @var string|null
      */
@@ -112,7 +112,7 @@ class BrandingInfo extends AbstractStructBase
     /**
      * The Chargeable
      * Meta information extracted from the WSDL
-     * - documentation: Indicates if the optional service is not offered, is available for a charge, or is included in the brand. Providers: 1G, 1V, 1P, 1J, ACH
+     * - documentation: Indicates if the optional service is not offered, is available for a charge, or is included in the brand. Providers: 1G, 1V, 1P, ACH
      * - use: optional
      * @var string|null
      */

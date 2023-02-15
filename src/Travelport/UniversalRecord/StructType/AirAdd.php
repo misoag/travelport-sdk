@@ -59,7 +59,7 @@ class AirAdd extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 99
      * - minOccurs: 0
-     * - ref: air_v51_0:AirSegment
+     * - ref: air_v52_0:AirSegment
      * @var \Travelport\UniversalRecord\StructType\TypeBaseAirSegment[]
      */
     protected ?array $AirSegment = null;
@@ -72,7 +72,7 @@ class AirAdd extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 99
      * - minOccurs: 0
-     * - ref: air_v51_0:AirPricingInfo
+     * - ref: air_v52_0:AirPricingInfo
      * @var \Travelport\UniversalRecord\StructType\AirPricingInfo[]
      */
     protected ?array $AirPricingInfo = null;
@@ -148,7 +148,7 @@ class AirAdd extends AbstractStructBase
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
      * - minOccurs: 0
-     * - ref: air_v51_0:AutoSeatAssignment
+     * - ref: air_v52_0:AutoSeatAssignment
      * @var \Travelport\UniversalRecord\StructType\AutoSeatAssignment|null
      */
     protected ?\Travelport\UniversalRecord\StructType\AutoSeatAssignment $AutoSeatAssignment = null;
@@ -161,7 +161,7 @@ class AirAdd extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 99
      * - minOccurs: 0
-     * - ref: air_v51_0:SpecificSeatAssignment
+     * - ref: air_v52_0:SpecificSeatAssignment
      * @var \Travelport\UniversalRecord\StructType\SpecificSeatAssignment[]
      */
     protected ?array $SpecificSeatAssignment = null;
@@ -187,7 +187,7 @@ class AirAdd extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 99
      * - minOccurs: 0
-     * - ref: air_v51_0:FeeInfo
+     * - ref: air_v52_0:FeeInfo
      * @var \Travelport\UniversalRecord\StructType\TypeFeeInfo[]
      */
     protected ?array $FeeInfo = null;
@@ -212,7 +212,7 @@ class AirAdd extends AbstractStructBase
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
      * - maxOccurs: 99
-     * - ref: air_v51_0:AirPricingTicketingModifiers
+     * - ref: air_v52_0:AirPricingTicketingModifiers
      * @var \Travelport\UniversalRecord\StructType\AirPricingTicketingModifiers[]
      */
     protected ?array $AirPricingTicketingModifiers = null;
@@ -224,7 +224,7 @@ class AirAdd extends AbstractStructBase
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
      * - minOccurs: 0
-     * - ref: air_v51_0:OptionalServicesInfo
+     * - ref: air_v52_0:OptionalServicesInfo
      * @var \Travelport\UniversalRecord\StructType\OptionalServicesInfo|null
      */
     protected ?\Travelport\UniversalRecord\StructType\OptionalServicesInfo $OptionalServicesInfo = null;
@@ -236,7 +236,7 @@ class AirAdd extends AbstractStructBase
      * - choiceMaxOccurs: 1
      * - choiceMinOccurs: 1
      * - minOccurs: 0
-     * - ref: air_v51_0:AirPricingPayment
+     * - ref: air_v52_0:AirPricingPayment
      * @var \Travelport\UniversalRecord\StructType\AirPricingPayment|null
      */
     protected ?\Travelport\UniversalRecord\StructType\AirPricingPayment $AirPricingPayment = null;
@@ -249,7 +249,7 @@ class AirAdd extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 99
      * - minOccurs: 0
-     * - ref: air_v51_0:AssociatedRemark
+     * - ref: air_v52_0:AssociatedRemark
      * @var \Travelport\UniversalRecord\StructType\AssociatedRemark[]
      */
     protected ?array $AssociatedRemark = null;
@@ -262,7 +262,7 @@ class AirAdd extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 99
      * - minOccurs: 0
-     * - ref: air_v51_0:PocketItineraryRemark
+     * - ref: air_v52_0:PocketItineraryRemark
      * @var \Travelport\UniversalRecord\StructType\PocketItineraryRemark[]
      */
     protected ?array $PocketItineraryRemark = null;
@@ -288,7 +288,7 @@ class AirAdd extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 99
      * - minOccurs: 0
-     * - ref: air_v51_0:AirSegmentPricingModifiers
+     * - ref: air_v52_0:AirSegmentPricingModifiers
      * @var \Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers[]
      */
     protected ?array $AirSegmentPricingModifiers = null;
@@ -314,7 +314,7 @@ class AirAdd extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 99
      * - minOccurs: 0
-     * - ref: air_v51_0:BrandInfo
+     * - ref: air_v52_0:BrandInfo
      * @var \Travelport\UniversalRecord\StructType\BrandInfo[]
      */
     protected ?array $BrandInfo = null;
@@ -327,7 +327,7 @@ class AirAdd extends AbstractStructBase
      * - choiceMinOccurs: 1
      * - maxOccurs: 1
      * - minOccurs: 0
-     * - ref: air_v51_0:InvoluntaryChange
+     * - ref: air_v52_0:InvoluntaryChange
      * @var \Travelport\UniversalRecord\StructType\InvoluntaryChange|null
      */
     protected ?\Travelport\UniversalRecord\StructType\InvoluntaryChange $InvoluntaryChange = null;
@@ -343,7 +343,7 @@ class AirAdd extends AbstractStructBase
     /**
      * The RestrictWaitlist
      * Meta information extracted from the WSDL
-     * - documentation: Restrict Update if it sells a Waitlisted AirSegment. Provider: 1G,1V,1P,1J
+     * - documentation: Restrict Update if it sells a Waitlisted AirSegment. Provider: 1G,1V,1P
      * - default: false
      * - use: optional
      * @var bool|null

@@ -19,7 +19,7 @@ class AirCancelReq extends BaseReq
     /**
      * The Version
      * Meta information extracted from the WSDL
-     * - documentation: Provider: 1G,1V,1P,1J,ACH. | Version of the Universal record. Required with any request to modify the existing Universal record.
+     * - documentation: Provider: 1G,1V,1P,ACH. | Version of the Universal record. Required with any request to modify the existing Universal record.
      * - base: xs:integer
      * - use: required
      * @var int
@@ -37,7 +37,7 @@ class AirCancelReq extends BaseReq
     /**
      * The AirReservationLocatorCode
      * Meta information extracted from the WSDL
-     * - ref: air_v51_0:AirReservationLocatorCode
+     * - ref: air_v52_0:AirReservationLocatorCode
      * @var \Travelport\UniversalRecord\StructType\AirReservationLocatorCode|null
      */
     protected ?\Travelport\UniversalRecord\StructType\AirReservationLocatorCode $AirReservationLocatorCode = null;
@@ -46,7 +46,7 @@ class AirCancelReq extends BaseReq
      * Meta information extracted from the WSDL
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: air_v51_0:AirSegment
+     * - ref: air_v52_0:AirSegment
      * @var \Travelport\UniversalRecord\StructType\TypeBaseAirSegment[]
      */
     protected ?array $AirSegment = null;
@@ -55,7 +55,7 @@ class AirCancelReq extends BaseReq
      * Meta information extracted from the WSDL
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: air_v51_0:AirSegmentRef
+     * - ref: air_v52_0:AirSegmentRef
      * @var \Travelport\UniversalRecord\StructType\AirSegmentRef[]
      */
     protected ?array $AirSegmentRef = null;

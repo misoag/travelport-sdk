@@ -6,7 +6,7 @@
  * - the key must be a constant beginning with WSDL_ from AbstractSoapClientBase class (each generated ServiceType class extends this class)
  * - the value must be the corresponding key value (each option matches a {@link http://www.php.net/manual/en/soapclient.soapclient.php} option)
  * $options = [
- * WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => './wsdl/uAPI_WSDLschema_Release-V22.3.1.9440/universal_v52_0/UniversalRecord.wsdl',
+ * WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => './wsdl/uAPI_WSDLschema_Release-V22.3.1.9440/util_v52_0/Util.wsdl',
  * WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_TRACE => true,
  * WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_LOGIN => 'you_secret_login',
  * WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_PASSWORD => 'you_secret_password',
@@ -18,203 +18,161 @@ require_once __DIR__ . '/vendor/autoload.php';
  * Minimal options
  */
 $options = [
-    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => './wsdl/uAPI_WSDLschema_Release-V22.3.1.9440/universal_v52_0/UniversalRecord.wsdl',
-    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \Travelport\UniversalRecord\ClassMap::get(),
+    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL => './wsdl/uAPI_WSDLschema_Release-V22.3.1.9440/util_v52_0/Util.wsdl',
+    WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \Travelport\Util\ClassMap::get(),
 ];
 /**
  * Samples for Service ServiceType
  */
-$service = new \Travelport\UniversalRecord\ServiceType\Service($options);
-$service->setSoapHeaderSessionContext(new \Travelport\UniversalRecord\StructType\SessionContext());
-$service->setSoapHeaderSupportedVersions(new \Travelport\UniversalRecord\StructType\SupportedVersions());
+$service = new \Travelport\Util\ServiceType\Service($options);
 /**
  * Sample call for service operation/method
  */
-if ($service->service(new \Travelport\UniversalRecord\StructType\UniversalRecordRetrieveReq()) !== false) {
+if ($service->service(new \Travelport\Util\StructType\CreditCardAuthReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_4111e37120ff09df2941830aac7fcd9f operation/method
+ * Sample call for service_ff2fbd0cb66f20c9e6143622c67b06e7 operation/method
  */
-if ($service->service_4111e37120ff09df2941830aac7fcd9f(new \Travelport\UniversalRecord\StructType\UniversalRecordHistorySearchReq()) !== false) {
+if ($service->service_ff2fbd0cb66f20c9e6143622c67b06e7(new \Travelport\Util\StructType\CreateAgencyFeeMcoReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_0349794fd2ce9d0c757e151023a88bed operation/method
+ * Sample call for service_1012f8108f401f52a4f391021342de90 operation/method
  */
-if ($service->service_0349794fd2ce9d0c757e151023a88bed(new \Travelport\UniversalRecord\StructType\UniversalRecordSearchReq()) !== false) {
+if ($service->service_1012f8108f401f52a4f391021342de90(new \Travelport\Util\StructType\McoVoidReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_456f91b8b00170e86273bc4adfecb037 operation/method
+ * Sample call for service_bc6fb824a094f9b2b62e638fd69448f6 operation/method
  */
-if ($service->service_456f91b8b00170e86273bc4adfecb037(new \Travelport\UniversalRecord\StructType\AckScheduleChangeReq()) !== false) {
+if ($service->service_bc6fb824a094f9b2b62e638fd69448f6(new \Travelport\Util\StructType\McoSearchReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_3efe2a29ab406edffa9c7a4657a6f5d0 operation/method
+ * Sample call for service_0b80a7a315cb95cb2f96364693b5a4bb operation/method
  */
-if ($service->service_3efe2a29ab406edffa9c7a4657a6f5d0(new \Travelport\UniversalRecord\StructType\UniversalRecordImportReq()) !== false) {
+if ($service->service_0b80a7a315cb95cb2f96364693b5a4bb(new \Travelport\Util\StructType\MirReportRetrieveReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_565c19bff58e49dbf86720d9738b4de8 operation/method
+ * Sample call for service_5fb10a9204c629542d10afda45b725e4 operation/method
  */
-if ($service->service_565c19bff58e49dbf86720d9738b4de8(new \Travelport\UniversalRecord\StructType\UniversalRecordModifyReq()) !== false) {
+if ($service->service_5fb10a9204c629542d10afda45b725e4(new \Travelport\Util\StructType\MctCountReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_949ba5bad3729a3983cc47471640737b operation/method
+ * Sample call for service_afe44ed2fdd1115b05fd928a5caf2b64 operation/method
  */
-if ($service->service_949ba5bad3729a3983cc47471640737b(new \Travelport\UniversalRecord\StructType\UniversalRecordCancelReq()) !== false) {
+if ($service->service_afe44ed2fdd1115b05fd928a5caf2b64(new \Travelport\Util\StructType\MctLookupReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_4377ff826e824bed049a5a2b67416aaf operation/method
+ * Sample call for service_740fb53f6a4bffbf87d1473e6d0199dd operation/method
  */
-if ($service->service_4377ff826e824bed049a5a2b67416aaf(new \Travelport\UniversalRecord\StructType\ProviderReservationDisplayDetailsReq()) !== false) {
+if ($service->service_740fb53f6a4bffbf87d1473e6d0199dd(new \Travelport\Util\StructType\CalculateTaxReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_83f1c0ca6f1bc6e7542a19cb9c23cc63 operation/method
+ * Sample call for service_9fc238d7c7269a0ba7bb105dac825dc5 operation/method
  */
-if ($service->service_83f1c0ca6f1bc6e7542a19cb9c23cc63(new \Travelport\UniversalRecord\StructType\ProviderReservationDivideReq()) !== false) {
+if ($service->service_9fc238d7c7269a0ba7bb105dac825dc5(new \Travelport\Util\StructType\UpsellAdminReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_c1b4efeb9ba701c9fba0611d8d9a5275 operation/method
+ * Sample call for service_101202a1089bfa3594f343c21c3b7f5b operation/method
  */
-if ($service->service_c1b4efeb9ba701c9fba0611d8d9a5275(new \Travelport\UniversalRecord\StructType\SavedTripCreateReq()) !== false) {
+if ($service->service_101202a1089bfa3594f343c21c3b7f5b(new \Travelport\Util\StructType\BrandedFareAdminReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_0f155582bed16d7ca5101298f328d6c4 operation/method
+ * Sample call for service_912c7685462e28d62654642b2658ad01 operation/method
  */
-if ($service->service_0f155582bed16d7ca5101298f328d6c4(new \Travelport\UniversalRecord\StructType\SavedTripModifyReq()) !== false) {
+if ($service->service_912c7685462e28d62654642b2658ad01(new \Travelport\Util\StructType\BrandedFareSearchReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_f6eeab680817d63e53887962c6d5ee12 operation/method
+ * Sample call for service_8122e2950dcd0d969fbf33c414dbd574 operation/method
  */
-if ($service->service_f6eeab680817d63e53887962c6d5ee12(new \Travelport\UniversalRecord\StructType\SavedTripRetrieveReq()) !== false) {
+if ($service->service_8122e2950dcd0d969fbf33c414dbd574(new \Travelport\Util\StructType\UpsellSearchReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_3244c193fc9a7421499e7eadf44d4c07 operation/method
+ * Sample call for service_c5fb72d8261d096358115d437b0d3a18 operation/method
  */
-if ($service->service_3244c193fc9a7421499e7eadf44d4c07(new \Travelport\UniversalRecord\StructType\SavedTripDeleteReq()) !== false) {
+if ($service->service_c5fb72d8261d096358115d437b0d3a18(new \Travelport\Util\StructType\ContentProviderRetrieveReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_29270eaa79be99f4da92a499589142c4 operation/method
+ * Sample call for service_15a6886d6799ff9a497e8fe2f2d2c2ae operation/method
  */
-if ($service->service_29270eaa79be99f4da92a499589142c4(new \Travelport\UniversalRecord\StructType\SavedTripSearchReq()) !== false) {
+if ($service->service_15a6886d6799ff9a497e8fe2f2d2c2ae(new \Travelport\Util\StructType\CurrencyConversionReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_d816df0f45ba226c1ccd7c747d16e7ec operation/method
+ * Sample call for service_25c3c99d51cdc43c4f817c55d4429363 operation/method
  */
-if ($service->service_d816df0f45ba226c1ccd7c747d16e7ec(new \Travelport\UniversalRecord\StructType\VehicleCreateReservationReq()) !== false) {
+if ($service->service_25c3c99d51cdc43c4f817c55d4429363(new \Travelport\Util\StructType\ReferenceDataRetrieveReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_359ab8977ce467c57c391c9ee02682de operation/method
+ * Sample call for service_c733f7f9120e84b5d6ba583c41bb6367 operation/method
  */
-if ($service->service_359ab8977ce467c57c391c9ee02682de(new \Travelport\UniversalRecord\StructType\VehicleCancelReq()) !== false) {
+if ($service->service_c733f7f9120e84b5d6ba583c41bb6367(new \Travelport\Util\StructType\ReferenceDataSearchReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_6d362ba3ccf2cdb6bed26a40b7a158c1 operation/method
+ * Sample call for service_914efd07c28972acbdca13e4c7d43ffd operation/method
  */
-if ($service->service_6d362ba3ccf2cdb6bed26a40b7a158c1(new \Travelport\UniversalRecord\StructType\HotelCreateReservationReq()) !== false) {
+if ($service->service_914efd07c28972acbdca13e4c7d43ffd(new \Travelport\Util\StructType\ReferenceDataUpdateReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_ad902d6a3193e9134b6c7344bcf05858 operation/method
+ * Sample call for service_1eb20c3424ae723f48b455d7fef33206 operation/method
  */
-if ($service->service_ad902d6a3193e9134b6c7344bcf05858(new \Travelport\UniversalRecord\StructType\HotelCancelReq()) !== false) {
+if ($service->service_1eb20c3424ae723f48b455d7fef33206(new \Travelport\Util\StructType\AgencyServiceFeeCreateReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
 }
 /**
- * Sample call for service_6a708fdf98abf6ae0ae15e0ceaeea645 operation/method
+ * Sample call for service_b602b78f29382cf89acf0f463ceb7e23 operation/method
  */
-if ($service->service_6a708fdf98abf6ae0ae15e0ceaeea645(new \Travelport\UniversalRecord\StructType\RailCreateReservationReq()) !== false) {
-    print_r($service->getResult());
-} else {
-    print_r($service->getLastError());
-}
-/**
- * Sample call for service_1cd364ede385a0eeb57ca2d70b9a5f5c operation/method
- */
-if ($service->service_1cd364ede385a0eeb57ca2d70b9a5f5c(new \Travelport\UniversalRecord\StructType\AirCreateReservationReq()) !== false) {
-    print_r($service->getResult());
-} else {
-    print_r($service->getLastError());
-}
-/**
- * Sample call for service_d5f0b60241e4eaa207aff6efb76b843f operation/method
- */
-if ($service->service_d5f0b60241e4eaa207aff6efb76b843f(new \Travelport\UniversalRecord\StructType\AirCancelReq()) !== false) {
-    print_r($service->getResult());
-} else {
-    print_r($service->getLastError());
-}
-/**
- * Sample call for service_dc4e6a271eeab681b09fe9abb3a42b75 operation/method
- */
-if ($service->service_dc4e6a271eeab681b09fe9abb3a42b75(new \Travelport\UniversalRecord\StructType\AirMerchandisingFulfillmentReq()) !== false) {
-    print_r($service->getResult());
-} else {
-    print_r($service->getLastError());
-}
-/**
- * Sample call for service_6bd77651fc461f35d94a4e3df3d7c851 operation/method
- */
-if ($service->service_6bd77651fc461f35d94a4e3df3d7c851(new \Travelport\UniversalRecord\StructType\PassiveCreateReservationReq()) !== false) {
-    print_r($service->getResult());
-} else {
-    print_r($service->getLastError());
-}
-/**
- * Sample call for service_7ff5bf93a0111db6b49313e6f863164e operation/method
- */
-if ($service->service_7ff5bf93a0111db6b49313e6f863164e(new \Travelport\UniversalRecord\StructType\PassiveCancelReq()) !== false) {
+if ($service->service_b602b78f29382cf89acf0f463ceb7e23(new \Travelport\Util\StructType\FindEmployeesOnFlightReq()) !== false) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());

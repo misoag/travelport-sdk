@@ -53,7 +53,7 @@ class GeneralRemark extends AbstractStructBase
     /**
      * The TypeInGds
      * Meta information extracted from the WSDL
-     * - documentation: Defines the GDS remark types | Only below mentioned values are Supported as typeGdsRemark Alpha Basic Historical Invoice Itinerary Vendor Confidential FOPComment (Currently this is only used by Worldspan and JAL.)
+     * - documentation: Defines the GDS remark types | Only below mentioned values are Supported as typeGdsRemark Alpha Basic Historical Invoice Itinerary Vendor Confidential FOPComment (Currently this is only used by Worldspan.)
      * - base: xs:string
      * - maxLength: 30
      * - use: optional

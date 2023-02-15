@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for ConsolidatorRemark StructType
  * Meta information extracted from the WSDL
- * - documentation: Authorization remark for Consolidator access to a PNR . Contains PCC information created by retail agent to allow a consolidator or other Axess users to service their PNR. PROVIDER SUPPORTED: Worldspan and JAL.
+ * - documentation: Authorization remark for Consolidator access to a PNR . Contains PCC information created by retail agent to allow a consolidator to service their PNR. PROVIDER SUPPORTED: Worldspan.
  * @subpackage Structs
  */
 class ConsolidatorRemark extends AbstractStructBase

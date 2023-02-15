@@ -16,7 +16,7 @@ class TypeRateVariance extends AbstractStructBase
     /**
      * The Type
      * Meta information extracted from the WSDL
-     * - documentation: Supported values are 'percentage.1P, 1J. Future release 'amopunt'.
+     * - documentation: Supported values are 'percentage.1P. Future release 'amopunt'.
      * - use: required
      * @var string
      */
@@ -24,7 +24,7 @@ class TypeRateVariance extends AbstractStructBase
     /**
      * The Value
      * Meta information extracted from the WSDL
-     * - documentation: Represents value of user permitted variance for sell success. eg. "5.00" = 5% variance on the supplier estimated total amount response will be successful. 1P, 1J.
+     * - documentation: Represents value of user permitted variance for sell success. eg. "5.00" = 5% variance on the supplier estimated total amount response will be successful. 1P.
      * - use: required
      * @var float
      */
@@ -32,7 +32,7 @@ class TypeRateVariance extends AbstractStructBase
     /**
      * The Apply
      * Meta information extracted from the WSDL
-     * - documentation: Variance to response amount; 'high', 'low' or 'both. 1P, 1J.
+     * - documentation: Variance to response amount; 'high', 'low' or 'both. 1P.
      * - use: required
      * @var string
      */

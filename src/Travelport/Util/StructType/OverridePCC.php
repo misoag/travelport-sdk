@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for OverridePCC StructType
  * Meta information extracted from the WSDL
- * - documentation: Used to emulate to another PCC or SID. Providers: 1G, 1V, 1P, 1J.
+ * - documentation: Used to emulate to another PCC or SID. Providers: 1G, 1V, 1P.
  * @subpackage Structs
  */
 class OverridePCC extends AbstractStructBase

@@ -41,7 +41,7 @@ class HotelRateByDate extends AbstractStructBase
     /**
      * The ApproximateTotal
      * Meta information extracted from the WSDL
-     * - documentation: Hotel total rate expressed in another currency. Supported Providers: 1P,1J | A monetary value (valid to req/rsp Currency type) Format : Currency Code + Amount(USD123.10)
+     * - documentation: Hotel total rate expressed in another currency. Supported Providers: 1P | A monetary value (valid to req/rsp Currency type) Format : Currency Code + Amount(USD123.10)
      * - base: xs:string
      * - use: optional
      * @var string|null
@@ -50,7 +50,7 @@ class HotelRateByDate extends AbstractStructBase
     /**
      * The Contents
      * Meta information extracted from the WSDL
-     * - documentation: Contents will be representing all unformatted data returned by HOST, those are not uAPI supported. Support provider 1P and 1J.
+     * - documentation: Contents will be representing all unformatted data returned by HOST, those are not uAPI supported. Support provider 1P.
      * - use: optional
      * @var string|null
      */

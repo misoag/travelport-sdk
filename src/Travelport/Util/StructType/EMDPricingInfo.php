@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for EMDPricingInfo StructType
  * Meta information extracted from the WSDL
- * - documentation: Fare related information for these electronic miscellaneous documents. Supported providers are 1G/1V/1P/1J
+ * - documentation: Fare related information for these electronic miscellaneous documents. Supported providers are 1G/1V/1P
  * @subpackage Structs
  */
 class EMDPricingInfo extends AbstractStructBase

@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for HotelRateChangedInfo StructType
  * Meta information extracted from the WSDL
- * - documentation: Applicable for 1G, 1V, 1P, 1J
+ * - documentation: Applicable for 1G, 1V, 1P
  * @subpackage Structs
  */
 class HotelRateChangedInfo extends AbstractStructBase
@@ -33,7 +33,7 @@ class HotelRateChangedInfo extends AbstractStructBase
     /**
      * The Reason
      * Meta information extracted from the WSDL
-     * - documentation: Reason to represent whether rate change in hotel rules.Applicable for 1G, 1V, 1P, 1J
+     * - documentation: Reason to represent whether rate change in hotel rules.Applicable for 1G, 1V, 1P
      * @var string|null
      */
     protected ?string $Reason = null;

@@ -28,7 +28,7 @@ class UniversalModifyFailureInfo extends AbstractStructBase
      * The AirSegmentSellFailureInfo
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * - ref: air_v51_0:AirSegmentSellFailureInfo
+     * - ref: air_v52_0:AirSegmentSellFailureInfo
      * @var \Travelport\UniversalRecord\StructType\AirSegmentSellFailureInfo|null
      */
     protected ?\Travelport\UniversalRecord\StructType\AirSegmentSellFailureInfo $AirSegmentSellFailureInfo = null;

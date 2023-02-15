@@ -135,7 +135,7 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
     /**
      * The MandatoryRateMatch
      * Meta information extracted from the WSDL
-     * - documentation: If true, vehicle will not be booked if there is a rate discrepancy. Default is false. Supported providers: 1P,1J.
+     * - documentation: If true, vehicle will not be booked if there is a rate discrepancy. Default is false. Supported providers: 1P.
      * - default: false
      * - use: optional
      * @var bool|null

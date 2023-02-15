@@ -31,7 +31,7 @@ class NumberOfAdults extends AbstractStructBase
     /**
      * The Amount
      * Meta information extracted from the WSDL
-     * - documentation: Fee for extra adults. Providers: 1g/1v/1p/1j | A monetary value (valid to req/rsp Currency type) Format : Currency Code + Amount(USD123.10)
+     * - documentation: Fee for extra adults. Providers: 1g/1v/1p | A monetary value (valid to req/rsp Currency type) Format : Currency Code + Amount(USD123.10)
      * - base: xs:string
      * - use: optional
      * @var string|null
@@ -40,7 +40,7 @@ class NumberOfAdults extends AbstractStructBase
     /**
      * The Content
      * Meta information extracted from the WSDL
-     * - documentation: Additional information. Providers 1p/1j
+     * - documentation: Additional information. Providers 1p
      * - use: optional
      * @var string|null
      */

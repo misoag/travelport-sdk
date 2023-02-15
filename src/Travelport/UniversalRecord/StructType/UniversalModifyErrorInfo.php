@@ -29,7 +29,7 @@ class UniversalModifyErrorInfo extends TypeErrorInfo
      * Meta information extracted from the WSDL
      * - maxOccurs: 999
      * - minOccurs: 0
-     * - ref: air_v51_0:AirSegmentError
+     * - ref: air_v52_0:AirSegmentError
      * @var \Travelport\UniversalRecord\StructType\AirSegmentError[]
      */
     protected ?array $AirSegmentError = null;

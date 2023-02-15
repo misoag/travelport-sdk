@@ -62,7 +62,7 @@ class RateModifiers extends AbstractStructBase
     /**
      * The TourCode
      * Meta information extracted from the WSDL
-     * - documentation: Tour number or code. Providers: 1P, 1J, 1G, 1V.
+     * - documentation: Tour number or code. Providers: 1P, 1G, 1V.
      * - use: optional
      * @var string|null
      */

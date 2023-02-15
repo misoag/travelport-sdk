@@ -18,14 +18,14 @@ class VehiclePickupDateLocation extends AbstractStructBase
     /**
      * The PickupDateTime
      * Meta information extracted from the WSDL
-     * - documentation: Providers: 1g/1v/1p/1j
+     * - documentation: Providers: 1g/1v/1p
      * @var string|null
      */
     protected ?string $PickupDateTime = null;
     /**
      * The PickupLocation
      * Meta information extracted from the WSDL
-     * - documentation: Providers: 1p/1j | Valid 3 letter IATA city or airport code
+     * - documentation: Providers: 1p | Valid 3 letter IATA city or airport code
      * - base: xs:string
      * - length: 3
      * - use: optional
@@ -36,7 +36,7 @@ class VehiclePickupDateLocation extends AbstractStructBase
     /**
      * The PickupLocationType
      * Meta information extracted from the WSDL
-     * - documentation: Providers: 1p/1j
+     * - documentation: Providers: 1p
      * - use: optional
      * @var string|null
      */
@@ -44,7 +44,7 @@ class VehiclePickupDateLocation extends AbstractStructBase
     /**
      * The PickupLocationNumber
      * Meta information extracted from the WSDL
-     * - documentation: Providers: 1p/1j
+     * - documentation: Providers: 1p
      * - use: optional
      * @var string|null
      */

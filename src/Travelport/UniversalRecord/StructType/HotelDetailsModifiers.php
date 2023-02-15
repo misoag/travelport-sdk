@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for HotelDetailsModifiers StructType
  * Meta information extracted from the WSDL
- * - documentation: Information about requested rooms and allocation of guests per room. | Search with corporate discount IDs or negotiated rate codes. 1G/1V allows a max of 4. 1P/1J allows a max of 1 corporate discount ID and up to 30 negotiated rate
+ * - documentation: Information about requested rooms and allocation of guests per room. | Search with corporate discount IDs or negotiated rate codes. 1G/1V allows a max of 4. 1P allows a max of 1 corporate discount ID and up to 30 negotiated rate
  * codes. Support for this function is hotel supplier dependent. | Controls and switches for the Hotel Details request
  * @subpackage Structs
  */
@@ -87,7 +87,7 @@ class HotelDetailsModifiers extends AbstractStructBase
     /**
      * The NumberOfAdults
      * Meta information extracted from the WSDL
-     * - documentation: The total number of adult guests per booking. Defaults to ‘1’. GDS Providers: 1G, 1V, 1P, 1J.
+     * - documentation: The total number of adult guests per booking. Defaults to ‘1’. GDS Providers: 1G, 1V, 1P.
      * - use: optional
      * @var int|null
      */
@@ -95,8 +95,8 @@ class HotelDetailsModifiers extends AbstractStructBase
     /**
      * The RateRuleDetail
      * Meta information extracted from the WSDL
-     * - documentation: 'None' returns hotel property descriptive information-supported for 1p/1j,1g/1v. 'Complete' returns the complete hotel and room rate information-supported for 1p/1j,1g/1v, 'RatePlansOnly' returns hotel rate information only -
-     * supported for 1p/1j, 1g/1v.
+     * - documentation: 'None' returns hotel property descriptive information-supported for 1p,1g/1v. 'Complete' returns the complete hotel and room rate information-supported for 1p,1g/1v, 'RatePlansOnly' returns hotel rate information only - supported for
+     * 1p, 1g/1v.
      * - default: None
      * @var string|null
      */
@@ -104,7 +104,7 @@ class HotelDetailsModifiers extends AbstractStructBase
     /**
      * The NumberOfRooms
      * Meta information extracted from the WSDL
-     * - documentation: The number of rooms per booking. Defaults to ‘1’. GDS Providers 1G, 1V, 1P, 1J.
+     * - documentation: The number of rooms per booking. Defaults to ‘1’. GDS Providers 1G, 1V, 1P.
      * - default: 1
      * - use: optional
      * @var int|null
@@ -132,7 +132,7 @@ class HotelDetailsModifiers extends AbstractStructBase
     /**
      * The TotalOccupants
      * Meta information extracted from the WSDL
-     * - documentation: Number of guests for the room. Supported Providers: 1P/1J
+     * - documentation: Number of guests for the room. Supported Providers: 1P
      * - use: optional
      * @var int|null
      */

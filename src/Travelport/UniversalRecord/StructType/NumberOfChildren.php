@@ -18,7 +18,7 @@ class NumberOfChildren extends AbstractStructBase
     /**
      * The Count
      * Meta information extracted from the WSDL
-     * - documentation: The total number of children in the booking. Supported Providers 1P/1J.
+     * - documentation: The total number of children in the booking. Supported Providers 1P.
      * - use: required
      * @var int
      */

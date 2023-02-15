@@ -18,8 +18,8 @@ class Refundability extends AbstractStructBase
     /**
      * The Value
      * Meta information extracted from the WSDL
-     * - documentation: Currently returned: FullyRefundable (1G,1V), RefundableWithPenalty (1G,1V), Refundable (1P,1J), NonRefundable (1G,1V,1P,1J).Refundable. | Currently returned: FullyRefundable (1G,1V), RefundableWithPenalty (1G,1V), Refundable (1P,1J),
-     * NonRefundable (1G,1V,1P,1J).
+     * - documentation: Currently returned: FullyRefundable (1G,1V), RefundableWithPenalty (1G,1V), Refundable (1P), NonRefundable (1G,1V,1P).Refundable. | Currently returned: FullyRefundable (1G,1V), RefundableWithPenalty (1G,1V), Refundable (1P),
+     * NonRefundable (1G,1V,1P).
      * - base: xs:string
      * - use: required
      * @var string

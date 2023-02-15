@@ -11,7 +11,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
  * This class stands for BaseBaggageAllowanceInfo StructType
  * Meta information extracted from the WSDL
  * - documentation: Text information as published by carrier. | Contains the text and URL information as published by carrier. | This contains common elements that are used for Baggage Allowance info, carry-on allowance info and embargo Info. Supported
- * providers are 1V/1G/1P/1J
+ * providers are 1V/1G/1P
  * @subpackage Structs
  */
 class BaseBaggageAllowanceInfo extends AbstractStructBase

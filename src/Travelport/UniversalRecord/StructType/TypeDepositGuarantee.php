@@ -73,7 +73,7 @@ class TypeDepositGuarantee extends AbstractStructBase
     /**
      * The Required
      * Meta information extracted from the WSDL
-     * - documentation: If “true” a Guarantee, Deposit or Prepayment is required. 1P, 1J, 1G, 1V only.
+     * - documentation: If “true” a Guarantee, Deposit or Prepayment is required. 1P, 1G, 1V only.
      * - use: optional
      * @var bool|null
      */
