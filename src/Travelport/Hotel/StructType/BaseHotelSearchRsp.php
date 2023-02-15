@@ -18,7 +18,7 @@ class BaseHotelSearchRsp extends BaseSearchRsp
     /**
      * The ReferencePoint
      * Meta information extracted from the WSDL
-     * - documentation: Hotel reference point. Applicable for 1G,1V,1P,1J.
+     * - documentation: Hotel reference point. Applicable for 1G,1V,1P.
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\TypeHotelReferencePoint|null
      */

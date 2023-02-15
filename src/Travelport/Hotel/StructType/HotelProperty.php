@@ -138,7 +138,7 @@ class HotelProperty extends AbstractStructBase
     /**
      * The ParticipationLevel
      * Meta information extracted from the WSDL
-     * - documentation: 2=Best Available Rate 1G, 1V, 4=Lowest Possible Rate 1G, 1V, 1P, 1J | Used for Character Strings, length 1.
+     * - documentation: 2=Best Available Rate 1G, 1V, 4=Lowest Possible Rate 1G, 1V, 1P | Used for Character Strings, length 1.
      * - base: xs:string
      * - length: 1
      * - use: optional

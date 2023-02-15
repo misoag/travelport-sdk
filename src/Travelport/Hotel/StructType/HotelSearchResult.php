@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for HotelSearchResult StructType
  * Meta information extracted from the WSDL
- * - documentation: Hotel Property description. Maximum of 100 words returned. | Supported Providers:1P/1J | The hotel property. Multiple property can only be supported with GDS property aggrigation. | A single hotel availabilty result.
+ * - documentation: Hotel Property description. Maximum of 100 words returned. | Supported Providers:1P | The hotel property. Multiple property can only be supported with GDS property aggrigation. | A single hotel availabilty result.
  * @subpackage Structs
  */
 class HotelSearchResult extends AbstractStructBase

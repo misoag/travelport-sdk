@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for HotelSearchModifiers StructType
  * Meta information extracted from the WSDL
- * - documentation: Search with corporate discount IDs or negotiated rate codes. 1G/1V allows a max of 4. 1P/1J allows a max of 1 corporate discount ID and up to 30 negotiated rate codes. Support for this function is hotel supplier dependent. | Controls
+ * - documentation: Search with corporate discount IDs or negotiated rate codes. 1G/1V allows a max of 4. 1P allows a max of 1 corporate discount ID and up to 30 negotiated rate codes. Support for this function is hotel supplier dependent. | Controls
  * and switches for the Hotel Search request
  * @subpackage Structs
  */
@@ -133,7 +133,7 @@ class HotelSearchModifiers extends AbstractStructBase
     /**
      * The NumberOfAdults
      * Meta information extracted from the WSDL
-     * - documentation: The total number of adult guests per booking. Defaults to ‘1’. Supported Providers: 1G, 1V, 1P, 1J.
+     * - documentation: The total number of adult guests per booking. Defaults to ‘1’. Supported Providers: 1G, 1V, 1P.
      * - use: optional
      * @var int|null
      */
@@ -141,7 +141,7 @@ class HotelSearchModifiers extends AbstractStructBase
     /**
      * The NumberOfRooms
      * Meta information extracted from the WSDL
-     * - documentation: The number of rooms per booking. Defaults to ‘1’. Supported Providers 1G, 1V, 1P, 1J.
+     * - documentation: The number of rooms per booking. Defaults to ‘1’. Supported Providers 1G, 1V, 1P.
      * - use: optional
      * @var int|null
      */

@@ -10,7 +10,7 @@ use WsdlToPhp\PackageBase\AbstractStructBase;
 /**
  * This class stands for ExtraChild StructType
  * Meta information extracted from the WSDL
- * - documentation: Providers: 1p/1j
+ * - documentation: Providers: 1p
  * @subpackage Structs
  */
 class ExtraChild extends AbstractStructBase
