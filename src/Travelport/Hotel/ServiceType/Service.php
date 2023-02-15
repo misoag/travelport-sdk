@@ -71,7 +71,7 @@ class Service extends AbstractSoapClientBase
      * @param \Travelport\Hotel\StructType\HotelDetailsReq $parameters
      * @return \Travelport\Hotel\StructType\HotelDetailsRsp|bool
      */
-    public function service_55dfd2154e264648fd5fab19f4534d4d(\Travelport\Hotel\StructType\HotelDetailsReq $parameters)
+    public function service_55dfd2154e264648fd5fab19f4534d4d($parameters)
     {
         try {
             $this->setResult($resultService = $this->getSoapClient()->__soapCall('service', [
