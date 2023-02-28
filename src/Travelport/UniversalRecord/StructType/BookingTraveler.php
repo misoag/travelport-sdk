@@ -34,7 +34,7 @@ class BookingTraveler extends AbstractStructBase
      * The Email
      * @var \Travelport\UniversalRecord\StructType\Email|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Email $Email = null;
+    protected $Email = null;
     /**
      * The LoyaltyCard
      * @var \Travelport\UniversalRecord\StructType\LoyaltyCard|null
@@ -372,7 +372,7 @@ class BookingTraveler extends AbstractStructBase
      * @param \Travelport\UniversalRecord\StructType\Email $email
      * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
-    public function setEmail(?\Travelport\UniversalRecord\StructType\Email $email = null): self
+    public function setEmail($email = null): self
     {
         $this->Email = $email;
         
