@@ -50,7 +50,7 @@ class MiscFormOfPayment extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?string $expDate = null;
+    protected ?string $ExpDate = null;
     /**
      * The Text
      * Meta information extracted from the WSDL

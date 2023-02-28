@@ -60,7 +60,7 @@ class TypePaymentCard extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?string $expDate = null;
+    protected ?string $ExpDate = null;
     /**
      * The Name
      * Meta information extracted from the WSDL
