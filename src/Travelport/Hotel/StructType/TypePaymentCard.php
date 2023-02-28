@@ -60,7 +60,7 @@ class TypePaymentCard extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $ExpDate = null;
+    protected ?string $expDate = null;
     /**
      * The Name
      * Meta information extracted from the WSDL
@@ -103,12 +103,12 @@ class TypePaymentCard extends AbstractStructBase
      * @param \Travelport\Hotel\StructType\TypeStructuredAddress $billingAddress
      * @param string $type
      * @param string $number
-     * @param int $expDate
+     * @param string $expDate
      * @param string $name
      * @param string $cVV
      * @param string $approvalCode
      */
-    public function __construct(?\Travelport\Hotel\StructType\PhoneNumber $phoneNumber = null, ?\Travelport\Hotel\StructType\TypeStructuredAddress $billingAddress = null, ?string $type = null, ?string $number = null, ?int $expDate = null, ?string $name = null, ?string $cVV = null, ?string $approvalCode = null)
+    public function __construct(?\Travelport\Hotel\StructType\PhoneNumber $phoneNumber = null, ?\Travelport\Hotel\StructType\TypeStructuredAddress $billingAddress = null, ?string $type = null, ?string $number = null, ?string $expDate = null, ?string $name = null, ?string $cVV = null, ?string $approvalCode = null)
     {
         $this
             ->setPhoneNumber($phoneNumber)
@@ -224,21 +224,18 @@ class TypePaymentCard extends AbstractStructBase
      * Get ExpDate value
      * @return int|null
      */
-    public function getExpDate(): ?int
+    public function getExpDate(): ?string
     {
         return $this->ExpDate;
     }
     /**
      * Set ExpDate value
-     * @param int $expDate
+     * @param string $expDate
      * @return \Travelport\Hotel\StructType\TypePaymentCard
      */
-    public function setExpDate(?int $expDate = null): self
+    public function setExpDate(?string $expDate = null): self
     {
-        // validation for constraint: int
-        if (!is_null($expDate) && !(is_int($expDate) || ctype_digit($expDate))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($expDate, true), gettype($expDate)), __LINE__);
-        }
+        
         $this->ExpDate = $expDate;
         
         return $this;

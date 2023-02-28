@@ -50,7 +50,7 @@ class MiscFormOfPayment extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $ExpDate = null;
+    protected ?string $expDate = null;
     /**
      * The Text
      * Meta information extracted from the WSDL
@@ -78,11 +78,11 @@ class MiscFormOfPayment extends AbstractStructBase
      * @param string $category
      * @param string $creditCardType
      * @param string $creditCardNumber
-     * @param int $expDate
+     * @param string $expDate
      * @param string $text
      * @param bool $acceptanceOverride
      */
-    public function __construct(string $category, ?string $creditCardType = null, ?string $creditCardNumber = null, ?int $expDate = null, ?string $text = null, ?bool $acceptanceOverride = null)
+    public function __construct(string $category, ?string $creditCardType = null, ?string $creditCardNumber = null, ?string $expDate = null, ?string $text = null, ?bool $acceptanceOverride = null)
     {
         $this
             ->setCategory($category)
@@ -177,21 +177,18 @@ class MiscFormOfPayment extends AbstractStructBase
      * Get ExpDate value
      * @return int|null
      */
-    public function getExpDate(): ?int
+    public function getExpDate(): ?string
     {
         return $this->ExpDate;
     }
     /**
      * Set ExpDate value
-     * @param int $expDate
+     * @param string $expDate
      * @return \Travelport\Util\StructType\MiscFormOfPayment
      */
-    public function setExpDate(?int $expDate = null): self
+    public function setExpDate(?string $expDate = null): self
     {
-        // validation for constraint: int
-        if (!is_null($expDate) && !(is_int($expDate) || ctype_digit($expDate))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($expDate, true), gettype($expDate)), __LINE__);
-        }
+        
         $this->ExpDate = $expDate;
         
         return $this;
