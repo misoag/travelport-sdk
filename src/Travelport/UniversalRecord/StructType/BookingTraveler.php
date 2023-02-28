@@ -29,7 +29,7 @@ class BookingTraveler extends AbstractStructBase
      * The PhoneNumber
      * @var \Travelport\UniversalRecord\StructType\PhoneNumber|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PhoneNumber $PhoneNumber = null;
+    public $PhoneNumber = null;
     /**
      * The Email
      * @var \Travelport\UniversalRecord\StructType\Email|null
@@ -353,7 +353,7 @@ class BookingTraveler extends AbstractStructBase
      * @param \Travelport\UniversalRecord\StructType\PhoneNumber $phoneNumber
      * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
-    public function setPhoneNumber(?\Travelport\UniversalRecord\StructType\PhoneNumber $phoneNumber = null): self
+    public function setPhoneNumber($phoneNumber = null): self
     {
         $this->PhoneNumber = $phoneNumber;
         
