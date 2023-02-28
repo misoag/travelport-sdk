@@ -77,12 +77,13 @@ class EmailNotification extends AbstractStructBase
         return $this->EmailRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setEmailRef method
+     * This method is responsible for validating the value(s) passed to the setEmailRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEmailRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEmailRefForArrayConstraintsFromSetEmailRef(?array $values = []): string
+    public static function validateEmailRefForArrayConstraintFromSetEmailRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -111,7 +112,7 @@ class EmailNotification extends AbstractStructBase
     public function setEmailRef(?array $emailRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($emailRefArrayErrorMessage = self::validateEmailRefForArrayConstraintsFromSetEmailRef($emailRef))) {
+        if ('' !== ($emailRefArrayErrorMessage = self::validateEmailRefForArrayConstraintFromSetEmailRef($emailRef))) {
             throw new InvalidArgumentException($emailRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

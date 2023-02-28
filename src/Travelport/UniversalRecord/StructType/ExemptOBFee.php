@@ -44,12 +44,13 @@ class ExemptOBFee extends AbstractStructBase
         return $this->SubCode;
     }
     /**
-     * This method is responsible for validating the values passed to the setSubCode method
+     * This method is responsible for validating the value(s) passed to the setSubCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSubCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSubCodeForArrayConstraintsFromSetSubCode(?array $values = []): string
+    public static function validateSubCodeForArrayConstraintFromSetSubCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -78,7 +79,7 @@ class ExemptOBFee extends AbstractStructBase
     public function setSubCode(?array $subCode = null): self
     {
         // validation for constraint: array
-        if ('' !== ($subCodeArrayErrorMessage = self::validateSubCodeForArrayConstraintsFromSetSubCode($subCode))) {
+        if ('' !== ($subCodeArrayErrorMessage = self::validateSubCodeForArrayConstraintFromSetSubCode($subCode))) {
             throw new InvalidArgumentException($subCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(8)

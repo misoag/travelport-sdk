@@ -152,12 +152,13 @@ class BaseCoreReq extends AbstractStructBase
         return $this->AgentIDOverride;
     }
     /**
-     * This method is responsible for validating the values passed to the setAgentIDOverride method
+     * This method is responsible for validating the value(s) passed to the setAgentIDOverride method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAgentIDOverride method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAgentIDOverrideForArrayConstraintsFromSetAgentIDOverride(?array $values = []): string
+    public static function validateAgentIDOverrideForArrayConstraintFromSetAgentIDOverride(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -186,7 +187,7 @@ class BaseCoreReq extends AbstractStructBase
     public function setAgentIDOverride(?array $agentIDOverride = null): self
     {
         // validation for constraint: array
-        if ('' !== ($agentIDOverrideArrayErrorMessage = self::validateAgentIDOverrideForArrayConstraintsFromSetAgentIDOverride($agentIDOverride))) {
+        if ('' !== ($agentIDOverrideArrayErrorMessage = self::validateAgentIDOverrideForArrayConstraintFromSetAgentIDOverride($agentIDOverride))) {
             throw new InvalidArgumentException($agentIDOverrideArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

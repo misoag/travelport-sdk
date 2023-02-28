@@ -290,12 +290,13 @@ class FlightInfoDetail extends AbstractStructBase
         return $this->Meals;
     }
     /**
-     * This method is responsible for validating the values passed to the setMeals method
+     * This method is responsible for validating the value(s) passed to the setMeals method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMeals method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMealsForArrayConstraintsFromSetMeals(?array $values = []): string
+    public static function validateMealsForArrayConstraintFromSetMeals(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -326,7 +327,7 @@ class FlightInfoDetail extends AbstractStructBase
     public function setMeals(?array $meals = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mealsArrayErrorMessage = self::validateMealsForArrayConstraintsFromSetMeals($meals))) {
+        if ('' !== ($mealsArrayErrorMessage = self::validateMealsForArrayConstraintFromSetMeals($meals))) {
             throw new InvalidArgumentException($mealsArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -368,12 +369,13 @@ class FlightInfoDetail extends AbstractStructBase
         return $this->InFlightServices;
     }
     /**
-     * This method is responsible for validating the values passed to the setInFlightServices method
+     * This method is responsible for validating the value(s) passed to the setInFlightServices method
      * This method is willingly generated in order to preserve the one-line inline validation within the setInFlightServices method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateInFlightServicesForArrayConstraintsFromSetInFlightServices(?array $values = []): string
+    public static function validateInFlightServicesForArrayConstraintFromSetInFlightServices(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -402,7 +404,7 @@ class FlightInfoDetail extends AbstractStructBase
     public function setInFlightServices(?array $inFlightServices = null): self
     {
         // validation for constraint: array
-        if ('' !== ($inFlightServicesArrayErrorMessage = self::validateInFlightServicesForArrayConstraintsFromSetInFlightServices($inFlightServices))) {
+        if ('' !== ($inFlightServicesArrayErrorMessage = self::validateInFlightServicesForArrayConstraintFromSetInFlightServices($inFlightServices))) {
             throw new InvalidArgumentException($inFlightServicesArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -442,12 +444,13 @@ class FlightInfoDetail extends AbstractStructBase
         return $this->Variance;
     }
     /**
-     * This method is responsible for validating the values passed to the setVariance method
+     * This method is responsible for validating the value(s) passed to the setVariance method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVariance method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVarianceForArrayConstraintsFromSetVariance(?array $values = []): string
+    public static function validateVarianceForArrayConstraintFromSetVariance(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -476,7 +479,7 @@ class FlightInfoDetail extends AbstractStructBase
     public function setVariance(?array $variance = null): self
     {
         // validation for constraint: array
-        if ('' !== ($varianceArrayErrorMessage = self::validateVarianceForArrayConstraintsFromSetVariance($variance))) {
+        if ('' !== ($varianceArrayErrorMessage = self::validateVarianceForArrayConstraintFromSetVariance($variance))) {
             throw new InvalidArgumentException($varianceArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

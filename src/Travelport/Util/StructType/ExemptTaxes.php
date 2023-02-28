@@ -93,12 +93,13 @@ class ExemptTaxes extends AbstractStructBase
         return $this->CountryCode;
     }
     /**
-     * This method is responsible for validating the values passed to the setCountryCode method
+     * This method is responsible for validating the value(s) passed to the setCountryCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCountryCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCountryCodeForArrayConstraintsFromSetCountryCode(?array $values = []): string
+    public static function validateCountryCodeForArrayConstraintFromSetCountryCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -119,17 +120,17 @@ class ExemptTaxes extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setCountryCode method
+     * This method is responsible for validating the value(s) passed to the setCountryCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCountryCode method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCountryCodeForLengthConstraintFromSetCountryCode($values): string
+    public static function validateCountryCodeForLengthConstraintFromSetCountryCode(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $exemptTaxesCountryCodeItem) {
+        foreach (($values ?? []) as $exemptTaxesCountryCodeItem) {
             // validation for constraint: length(2)
             if (mb_strlen((string) $exemptTaxesCountryCodeItem) !== 2) {
                 $invalidValues[] = var_export($exemptTaxesCountryCodeItem, true);
@@ -151,7 +152,7 @@ class ExemptTaxes extends AbstractStructBase
     public function setCountryCode(?array $countryCode = null): self
     {
         // validation for constraint: array
-        if ('' !== ($countryCodeArrayErrorMessage = self::validateCountryCodeForArrayConstraintsFromSetCountryCode($countryCode))) {
+        if ('' !== ($countryCodeArrayErrorMessage = self::validateCountryCodeForArrayConstraintFromSetCountryCode($countryCode))) {
             throw new InvalidArgumentException($countryCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: length(2)
@@ -199,12 +200,13 @@ class ExemptTaxes extends AbstractStructBase
         return $this->TaxCategory;
     }
     /**
-     * This method is responsible for validating the values passed to the setTaxCategory method
+     * This method is responsible for validating the value(s) passed to the setTaxCategory method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTaxCategory method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTaxCategoryForArrayConstraintsFromSetTaxCategory(?array $values = []): string
+    public static function validateTaxCategoryForArrayConstraintFromSetTaxCategory(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -233,7 +235,7 @@ class ExemptTaxes extends AbstractStructBase
     public function setTaxCategory(?array $taxCategory = null): self
     {
         // validation for constraint: array
-        if ('' !== ($taxCategoryArrayErrorMessage = self::validateTaxCategoryForArrayConstraintsFromSetTaxCategory($taxCategory))) {
+        if ('' !== ($taxCategoryArrayErrorMessage = self::validateTaxCategoryForArrayConstraintFromSetTaxCategory($taxCategory))) {
             throw new InvalidArgumentException($taxCategoryArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

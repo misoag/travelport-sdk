@@ -133,12 +133,13 @@ class PassiveAdd extends AbstractStructBase
         return $this->PassiveSegment;
     }
     /**
-     * This method is responsible for validating the values passed to the setPassiveSegment method
+     * This method is responsible for validating the value(s) passed to the setPassiveSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassiveSegment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePassiveSegmentForArrayConstraintsFromSetPassiveSegment(?array $values = []): string
+    public static function validatePassiveSegmentForArrayConstraintFromSetPassiveSegment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -167,7 +168,7 @@ class PassiveAdd extends AbstractStructBase
     public function setPassiveSegment(array $passiveSegment): self
     {
         // validation for constraint: array
-        if ('' !== ($passiveSegmentArrayErrorMessage = self::validatePassiveSegmentForArrayConstraintsFromSetPassiveSegment($passiveSegment))) {
+        if ('' !== ($passiveSegmentArrayErrorMessage = self::validatePassiveSegmentForArrayConstraintFromSetPassiveSegment($passiveSegment))) {
             throw new InvalidArgumentException($passiveSegmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -207,12 +208,13 @@ class PassiveAdd extends AbstractStructBase
         return $this->SupplierLocator;
     }
     /**
-     * This method is responsible for validating the values passed to the setSupplierLocator method
+     * This method is responsible for validating the value(s) passed to the setSupplierLocator method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSupplierLocator method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSupplierLocatorForArrayConstraintsFromSetSupplierLocator(?array $values = []): string
+    public static function validateSupplierLocatorForArrayConstraintFromSetSupplierLocator(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -241,7 +243,7 @@ class PassiveAdd extends AbstractStructBase
     public function setSupplierLocator(array $supplierLocator): self
     {
         // validation for constraint: array
-        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintsFromSetSupplierLocator($supplierLocator))) {
+        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintFromSetSupplierLocator($supplierLocator))) {
             throw new InvalidArgumentException($supplierLocatorArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -312,12 +314,13 @@ class PassiveAdd extends AbstractStructBase
         return $this->PassiveRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setPassiveRemark method
+     * This method is responsible for validating the value(s) passed to the setPassiveRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassiveRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePassiveRemarkForArrayConstraintsFromSetPassiveRemark(?array $values = []): string
+    public static function validatePassiveRemarkForArrayConstraintFromSetPassiveRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -346,7 +349,7 @@ class PassiveAdd extends AbstractStructBase
     public function setPassiveRemark(?array $passiveRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($passiveRemarkArrayErrorMessage = self::validatePassiveRemarkForArrayConstraintsFromSetPassiveRemark($passiveRemark))) {
+        if ('' !== ($passiveRemarkArrayErrorMessage = self::validatePassiveRemarkForArrayConstraintFromSetPassiveRemark($passiveRemark))) {
             throw new InvalidArgumentException($passiveRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -386,12 +389,13 @@ class PassiveAdd extends AbstractStructBase
         return $this->AssociatedRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAssociatedRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark(?array $values = []): string
+    public static function validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -420,7 +424,7 @@ class PassiveAdd extends AbstractStructBase
     public function setAssociatedRemark(?array $associatedRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark($associatedRemark))) {
+        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark($associatedRemark))) {
             throw new InvalidArgumentException($associatedRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -460,12 +464,13 @@ class PassiveAdd extends AbstractStructBase
         return $this->ThirdPartyInformation;
     }
     /**
-     * This method is responsible for validating the values passed to the setThirdPartyInformation method
+     * This method is responsible for validating the value(s) passed to the setThirdPartyInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setThirdPartyInformation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateThirdPartyInformationForArrayConstraintsFromSetThirdPartyInformation(?array $values = []): string
+    public static function validateThirdPartyInformationForArrayConstraintFromSetThirdPartyInformation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -494,7 +499,7 @@ class PassiveAdd extends AbstractStructBase
     public function setThirdPartyInformation(?array $thirdPartyInformation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($thirdPartyInformationArrayErrorMessage = self::validateThirdPartyInformationForArrayConstraintsFromSetThirdPartyInformation($thirdPartyInformation))) {
+        if ('' !== ($thirdPartyInformationArrayErrorMessage = self::validateThirdPartyInformationForArrayConstraintFromSetThirdPartyInformation($thirdPartyInformation))) {
             throw new InvalidArgumentException($thirdPartyInformationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -527,19 +532,20 @@ class PassiveAdd extends AbstractStructBase
     }
     /**
      * Get TravelComplianceData value
-     * @return \Travelport\UniversalRecord\StructType\TravelComplianceData[]
+     * @return \Travelport\UniversalRecord\StructType\TravelComplianceData[]|null
      */
     public function getTravelComplianceData(): ?array
     {
-        return isset($this->TravelComplianceData) ? $this->TravelComplianceData : null;
+        return $this->TravelComplianceData ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setTravelComplianceData method
+     * This method is responsible for validating the value(s) passed to the setTravelComplianceData method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTravelComplianceData method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTravelComplianceDataForArrayConstraintsFromSetTravelComplianceData(?array $values = []): string
+    public static function validateTravelComplianceDataForArrayConstraintFromSetTravelComplianceData(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -560,13 +566,13 @@ class PassiveAdd extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setTravelComplianceData method
+     * This method is responsible for validating the value(s) passed to the setTravelComplianceData method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTravelComplianceData method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateTravelComplianceDataForChoiceConstraintsFromSetTravelComplianceData($value): string
+    public function validateTravelComplianceDataForChoiceConstraintFromSetTravelComplianceData($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -599,11 +605,11 @@ class PassiveAdd extends AbstractStructBase
     public function setTravelComplianceData(?array $travelComplianceData = null): self
     {
         // validation for constraint: array
-        if ('' !== ($travelComplianceDataArrayErrorMessage = self::validateTravelComplianceDataForArrayConstraintsFromSetTravelComplianceData($travelComplianceData))) {
+        if ('' !== ($travelComplianceDataArrayErrorMessage = self::validateTravelComplianceDataForArrayConstraintFromSetTravelComplianceData($travelComplianceData))) {
             throw new InvalidArgumentException($travelComplianceDataArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(TravelComplianceData)
-        if ('' !== ($travelComplianceDataChoiceErrorMessage = self::validateTravelComplianceDataForChoiceConstraintsFromSetTravelComplianceData($travelComplianceData))) {
+        if ('' !== ($travelComplianceDataChoiceErrorMessage = self::validateTravelComplianceDataForChoiceConstraintFromSetTravelComplianceData($travelComplianceData))) {
             throw new InvalidArgumentException($travelComplianceDataChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -623,13 +629,13 @@ class PassiveAdd extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToTravelComplianceData method
+     * This method is responsible for validating the value(s) passed to the addToTravelComplianceData method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToTravelComplianceData method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToTravelComplianceData($value): string
+    public function validateItemForChoiceConstraintFromAddToTravelComplianceData($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -662,7 +668,7 @@ class PassiveAdd extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The TravelComplianceData property can only contain items of type \Travelport\UniversalRecord\StructType\TravelComplianceData, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(TravelComplianceData)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToTravelComplianceData($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToTravelComplianceData($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)

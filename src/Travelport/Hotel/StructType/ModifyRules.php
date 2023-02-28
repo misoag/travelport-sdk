@@ -60,12 +60,13 @@ class ModifyRules extends AbstractStructBase
         return $this->ModifyRule;
     }
     /**
-     * This method is responsible for validating the values passed to the setModifyRule method
+     * This method is responsible for validating the value(s) passed to the setModifyRule method
      * This method is willingly generated in order to preserve the one-line inline validation within the setModifyRule method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateModifyRuleForArrayConstraintsFromSetModifyRule(?array $values = []): string
+    public static function validateModifyRuleForArrayConstraintFromSetModifyRule(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -94,7 +95,7 @@ class ModifyRules extends AbstractStructBase
     public function setModifyRule(?array $modifyRule = null): self
     {
         // validation for constraint: array
-        if ('' !== ($modifyRuleArrayErrorMessage = self::validateModifyRuleForArrayConstraintsFromSetModifyRule($modifyRule))) {
+        if ('' !== ($modifyRuleArrayErrorMessage = self::validateModifyRuleForArrayConstraintFromSetModifyRule($modifyRule))) {
             throw new InvalidArgumentException($modifyRuleArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -134,12 +135,13 @@ class ModifyRules extends AbstractStructBase
         return $this->SupportedModifications;
     }
     /**
-     * This method is responsible for validating the values passed to the setSupportedModifications method
+     * This method is responsible for validating the value(s) passed to the setSupportedModifications method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSupportedModifications method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSupportedModificationsForArrayConstraintsFromSetSupportedModifications(?array $values = []): string
+    public static function validateSupportedModificationsForArrayConstraintFromSetSupportedModifications(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -170,7 +172,7 @@ class ModifyRules extends AbstractStructBase
     public function setSupportedModifications(?array $supportedModifications = null): self
     {
         // validation for constraint: array
-        if ('' !== ($supportedModificationsArrayErrorMessage = self::validateSupportedModificationsForArrayConstraintsFromSetSupportedModifications($supportedModifications))) {
+        if ('' !== ($supportedModificationsArrayErrorMessage = self::validateSupportedModificationsForArrayConstraintFromSetSupportedModifications($supportedModifications))) {
             throw new InvalidArgumentException($supportedModificationsArrayErrorMessage, __LINE__);
         }
         $this->SupportedModifications = $supportedModifications;

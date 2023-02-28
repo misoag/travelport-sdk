@@ -76,16 +76,16 @@ class PersonalGeography extends AbstractStructBase
      */
     public function getCountryCode(): ?string
     {
-        return isset($this->CountryCode) ? $this->CountryCode : null;
+        return $this->CountryCode ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setCountryCode method
+     * This method is responsible for validating the value(s) passed to the setCountryCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCountryCode method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCountryCodeForChoiceConstraintsFromSetCountryCode($value): string
+    public function validateCountryCodeForChoiceConstraintFromSetCountryCode($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -123,7 +123,7 @@ class PersonalGeography extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($countryCode, true), gettype($countryCode)), __LINE__);
         }
         // validation for constraint: choice(CountryCode, StateProvinceCode, CityCode)
-        if ('' !== ($countryCodeChoiceErrorMessage = self::validateCountryCodeForChoiceConstraintsFromSetCountryCode($countryCode))) {
+        if ('' !== ($countryCodeChoiceErrorMessage = self::validateCountryCodeForChoiceConstraintFromSetCountryCode($countryCode))) {
             throw new InvalidArgumentException($countryCodeChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: length(2)
@@ -144,16 +144,16 @@ class PersonalGeography extends AbstractStructBase
      */
     public function getStateProvinceCode(): ?string
     {
-        return isset($this->StateProvinceCode) ? $this->StateProvinceCode : null;
+        return $this->StateProvinceCode ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setStateProvinceCode method
+     * This method is responsible for validating the value(s) passed to the setStateProvinceCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setStateProvinceCode method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateStateProvinceCodeForChoiceConstraintsFromSetStateProvinceCode($value): string
+    public function validateStateProvinceCodeForChoiceConstraintFromSetStateProvinceCode($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -191,7 +191,7 @@ class PersonalGeography extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($stateProvinceCode, true), gettype($stateProvinceCode)), __LINE__);
         }
         // validation for constraint: choice(CountryCode, StateProvinceCode, CityCode)
-        if ('' !== ($stateProvinceCodeChoiceErrorMessage = self::validateStateProvinceCodeForChoiceConstraintsFromSetStateProvinceCode($stateProvinceCode))) {
+        if ('' !== ($stateProvinceCodeChoiceErrorMessage = self::validateStateProvinceCodeForChoiceConstraintFromSetStateProvinceCode($stateProvinceCode))) {
             throw new InvalidArgumentException($stateProvinceCodeChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: maxLength(6)
@@ -212,16 +212,16 @@ class PersonalGeography extends AbstractStructBase
      */
     public function getCityCode(): ?string
     {
-        return isset($this->CityCode) ? $this->CityCode : null;
+        return $this->CityCode ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setCityCode method
+     * This method is responsible for validating the value(s) passed to the setCityCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCityCode method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCityCodeForChoiceConstraintsFromSetCityCode($value): string
+    public function validateCityCodeForChoiceConstraintFromSetCityCode($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -259,7 +259,7 @@ class PersonalGeography extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cityCode, true), gettype($cityCode)), __LINE__);
         }
         // validation for constraint: choice(CountryCode, StateProvinceCode, CityCode)
-        if ('' !== ($cityCodeChoiceErrorMessage = self::validateCityCodeForChoiceConstraintsFromSetCityCode($cityCode))) {
+        if ('' !== ($cityCodeChoiceErrorMessage = self::validateCityCodeForChoiceConstraintFromSetCityCode($cityCode))) {
             throw new InvalidArgumentException($cityCodeChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: length(3)

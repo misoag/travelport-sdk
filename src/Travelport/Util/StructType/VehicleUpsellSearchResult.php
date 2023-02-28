@@ -52,12 +52,13 @@ class VehicleUpsellSearchResult extends AbstractStructBase
         return $this->VehicleUpsellQualify;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleUpsellQualify method
+     * This method is responsible for validating the value(s) passed to the setVehicleUpsellQualify method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleUpsellQualify method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleUpsellQualifyForArrayConstraintsFromSetVehicleUpsellQualify(?array $values = []): string
+    public static function validateVehicleUpsellQualifyForArrayConstraintFromSetVehicleUpsellQualify(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -86,7 +87,7 @@ class VehicleUpsellSearchResult extends AbstractStructBase
     public function setVehicleUpsellQualify(?array $vehicleUpsellQualify = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleUpsellQualifyArrayErrorMessage = self::validateVehicleUpsellQualifyForArrayConstraintsFromSetVehicleUpsellQualify($vehicleUpsellQualify))) {
+        if ('' !== ($vehicleUpsellQualifyArrayErrorMessage = self::validateVehicleUpsellQualifyForArrayConstraintFromSetVehicleUpsellQualify($vehicleUpsellQualify))) {
             throw new InvalidArgumentException($vehicleUpsellQualifyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

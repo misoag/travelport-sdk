@@ -67,12 +67,13 @@ class AvailableSSR extends AbstractStructBase
         return $this->SSR;
     }
     /**
-     * This method is responsible for validating the values passed to the setSSR method
+     * This method is responsible for validating the value(s) passed to the setSSR method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSSR method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSSRForArrayConstraintsFromSetSSR(?array $values = []): string
+    public static function validateSSRForArrayConstraintFromSetSSR(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -101,7 +102,7 @@ class AvailableSSR extends AbstractStructBase
     public function setSSR(?array $sSR = null): self
     {
         // validation for constraint: array
-        if ('' !== ($sSRArrayErrorMessage = self::validateSSRForArrayConstraintsFromSetSSR($sSR))) {
+        if ('' !== ($sSRArrayErrorMessage = self::validateSSRForArrayConstraintFromSetSSR($sSR))) {
             throw new InvalidArgumentException($sSRArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -141,12 +142,13 @@ class AvailableSSR extends AbstractStructBase
         return $this->SSRRules;
     }
     /**
-     * This method is responsible for validating the values passed to the setSSRRules method
+     * This method is responsible for validating the value(s) passed to the setSSRRules method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSSRRules method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSSRRulesForArrayConstraintsFromSetSSRRules(?array $values = []): string
+    public static function validateSSRRulesForArrayConstraintFromSetSSRRules(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -175,7 +177,7 @@ class AvailableSSR extends AbstractStructBase
     public function setSSRRules(?array $sSRRules = null): self
     {
         // validation for constraint: array
-        if ('' !== ($sSRRulesArrayErrorMessage = self::validateSSRRulesForArrayConstraintsFromSetSSRRules($sSRRules))) {
+        if ('' !== ($sSRRulesArrayErrorMessage = self::validateSSRRulesForArrayConstraintFromSetSSRRules($sSRRules))) {
             throw new InvalidArgumentException($sSRRulesArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -215,12 +217,13 @@ class AvailableSSR extends AbstractStructBase
         return $this->IndustryStandardSSR;
     }
     /**
-     * This method is responsible for validating the values passed to the setIndustryStandardSSR method
+     * This method is responsible for validating the value(s) passed to the setIndustryStandardSSR method
      * This method is willingly generated in order to preserve the one-line inline validation within the setIndustryStandardSSR method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateIndustryStandardSSRForArrayConstraintsFromSetIndustryStandardSSR(?array $values = []): string
+    public static function validateIndustryStandardSSRForArrayConstraintFromSetIndustryStandardSSR(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -249,7 +252,7 @@ class AvailableSSR extends AbstractStructBase
     public function setIndustryStandardSSR(?array $industryStandardSSR = null): self
     {
         // validation for constraint: array
-        if ('' !== ($industryStandardSSRArrayErrorMessage = self::validateIndustryStandardSSRForArrayConstraintsFromSetIndustryStandardSSR($industryStandardSSR))) {
+        if ('' !== ($industryStandardSSRArrayErrorMessage = self::validateIndustryStandardSSRForArrayConstraintFromSetIndustryStandardSSR($industryStandardSSR))) {
             throw new InvalidArgumentException($industryStandardSSRArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

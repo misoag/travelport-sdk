@@ -295,16 +295,16 @@ class BookingTravelerInfo extends AbstractStructBase
      */
     public function getTravelInfo(): ?\Travelport\Util\StructType\TravelInfo
     {
-        return isset($this->TravelInfo) ? $this->TravelInfo : null;
+        return $this->TravelInfo ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setTravelInfo method
+     * This method is responsible for validating the value(s) passed to the setTravelInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTravelInfo method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateTravelInfoForChoiceConstraintsFromSetTravelInfo($value): string
+    public function validateTravelInfoForChoiceConstraintFromSetTravelInfo($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -344,7 +344,7 @@ class BookingTravelerInfo extends AbstractStructBase
     public function setTravelInfo(?\Travelport\Util\StructType\TravelInfo $travelInfo = null): self
     {
         // validation for constraint: choice(TravelInfo, Email, PhoneNumber, Address, EmergencyInfo, DeliveryInfo, Age, CustomizedNameData, AppliedProfile)
-        if ('' !== ($travelInfoChoiceErrorMessage = self::validateTravelInfoForChoiceConstraintsFromSetTravelInfo($travelInfo))) {
+        if ('' !== ($travelInfoChoiceErrorMessage = self::validateTravelInfoForChoiceConstraintFromSetTravelInfo($travelInfo))) {
             throw new InvalidArgumentException($travelInfoChoiceErrorMessage, __LINE__);
         }
         if (is_null($travelInfo) || (is_array($travelInfo) && empty($travelInfo))) {
@@ -361,16 +361,16 @@ class BookingTravelerInfo extends AbstractStructBase
      */
     public function getEmail(): ?\Travelport\Util\StructType\Email
     {
-        return isset($this->Email) ? $this->Email : null;
+        return $this->Email ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setEmail method
+     * This method is responsible for validating the value(s) passed to the setEmail method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEmail method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateEmailForChoiceConstraintsFromSetEmail($value): string
+    public function validateEmailForChoiceConstraintFromSetEmail($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -410,7 +410,7 @@ class BookingTravelerInfo extends AbstractStructBase
     public function setEmail(?\Travelport\Util\StructType\Email $email = null): self
     {
         // validation for constraint: choice(TravelInfo, Email, PhoneNumber, Address, EmergencyInfo, DeliveryInfo, Age, CustomizedNameData, AppliedProfile)
-        if ('' !== ($emailChoiceErrorMessage = self::validateEmailForChoiceConstraintsFromSetEmail($email))) {
+        if ('' !== ($emailChoiceErrorMessage = self::validateEmailForChoiceConstraintFromSetEmail($email))) {
             throw new InvalidArgumentException($emailChoiceErrorMessage, __LINE__);
         }
         if (is_null($email) || (is_array($email) && empty($email))) {
@@ -427,16 +427,16 @@ class BookingTravelerInfo extends AbstractStructBase
      */
     public function getPhoneNumber(): ?\Travelport\Util\StructType\PhoneNumber
     {
-        return isset($this->PhoneNumber) ? $this->PhoneNumber : null;
+        return $this->PhoneNumber ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setPhoneNumber method
+     * This method is responsible for validating the value(s) passed to the setPhoneNumber method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPhoneNumber method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validatePhoneNumberForChoiceConstraintsFromSetPhoneNumber($value): string
+    public function validatePhoneNumberForChoiceConstraintFromSetPhoneNumber($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -476,7 +476,7 @@ class BookingTravelerInfo extends AbstractStructBase
     public function setPhoneNumber(?\Travelport\Util\StructType\PhoneNumber $phoneNumber = null): self
     {
         // validation for constraint: choice(TravelInfo, Email, PhoneNumber, Address, EmergencyInfo, DeliveryInfo, Age, CustomizedNameData, AppliedProfile)
-        if ('' !== ($phoneNumberChoiceErrorMessage = self::validatePhoneNumberForChoiceConstraintsFromSetPhoneNumber($phoneNumber))) {
+        if ('' !== ($phoneNumberChoiceErrorMessage = self::validatePhoneNumberForChoiceConstraintFromSetPhoneNumber($phoneNumber))) {
             throw new InvalidArgumentException($phoneNumberChoiceErrorMessage, __LINE__);
         }
         if (is_null($phoneNumber) || (is_array($phoneNumber) && empty($phoneNumber))) {
@@ -493,16 +493,16 @@ class BookingTravelerInfo extends AbstractStructBase
      */
     public function getAddress(): ?\Travelport\Util\StructType\TypeStructuredAddress
     {
-        return isset($this->Address) ? $this->Address : null;
+        return $this->Address ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAddress method
+     * This method is responsible for validating the value(s) passed to the setAddress method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAddress method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAddressForChoiceConstraintsFromSetAddress($value): string
+    public function validateAddressForChoiceConstraintFromSetAddress($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -542,7 +542,7 @@ class BookingTravelerInfo extends AbstractStructBase
     public function setAddress(?\Travelport\Util\StructType\TypeStructuredAddress $address = null): self
     {
         // validation for constraint: choice(TravelInfo, Email, PhoneNumber, Address, EmergencyInfo, DeliveryInfo, Age, CustomizedNameData, AppliedProfile)
-        if ('' !== ($addressChoiceErrorMessage = self::validateAddressForChoiceConstraintsFromSetAddress($address))) {
+        if ('' !== ($addressChoiceErrorMessage = self::validateAddressForChoiceConstraintFromSetAddress($address))) {
             throw new InvalidArgumentException($addressChoiceErrorMessage, __LINE__);
         }
         if (is_null($address) || (is_array($address) && empty($address))) {
@@ -559,16 +559,16 @@ class BookingTravelerInfo extends AbstractStructBase
      */
     public function getEmergencyInfo(): ?string
     {
-        return isset($this->EmergencyInfo) ? $this->EmergencyInfo : null;
+        return $this->EmergencyInfo ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setEmergencyInfo method
+     * This method is responsible for validating the value(s) passed to the setEmergencyInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEmergencyInfo method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateEmergencyInfoForChoiceConstraintsFromSetEmergencyInfo($value): string
+    public function validateEmergencyInfoForChoiceConstraintFromSetEmergencyInfo($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -612,7 +612,7 @@ class BookingTravelerInfo extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($emergencyInfo, true), gettype($emergencyInfo)), __LINE__);
         }
         // validation for constraint: choice(TravelInfo, Email, PhoneNumber, Address, EmergencyInfo, DeliveryInfo, Age, CustomizedNameData, AppliedProfile)
-        if ('' !== ($emergencyInfoChoiceErrorMessage = self::validateEmergencyInfoForChoiceConstraintsFromSetEmergencyInfo($emergencyInfo))) {
+        if ('' !== ($emergencyInfoChoiceErrorMessage = self::validateEmergencyInfoForChoiceConstraintFromSetEmergencyInfo($emergencyInfo))) {
             throw new InvalidArgumentException($emergencyInfoChoiceErrorMessage, __LINE__);
         }
         if (is_null($emergencyInfo) || (is_array($emergencyInfo) && empty($emergencyInfo))) {
@@ -629,16 +629,16 @@ class BookingTravelerInfo extends AbstractStructBase
      */
     public function getDeliveryInfo(): ?\Travelport\Util\StructType\DeliveryInfo
     {
-        return isset($this->DeliveryInfo) ? $this->DeliveryInfo : null;
+        return $this->DeliveryInfo ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setDeliveryInfo method
+     * This method is responsible for validating the value(s) passed to the setDeliveryInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDeliveryInfo method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateDeliveryInfoForChoiceConstraintsFromSetDeliveryInfo($value): string
+    public function validateDeliveryInfoForChoiceConstraintFromSetDeliveryInfo($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -678,7 +678,7 @@ class BookingTravelerInfo extends AbstractStructBase
     public function setDeliveryInfo(?\Travelport\Util\StructType\DeliveryInfo $deliveryInfo = null): self
     {
         // validation for constraint: choice(TravelInfo, Email, PhoneNumber, Address, EmergencyInfo, DeliveryInfo, Age, CustomizedNameData, AppliedProfile)
-        if ('' !== ($deliveryInfoChoiceErrorMessage = self::validateDeliveryInfoForChoiceConstraintsFromSetDeliveryInfo($deliveryInfo))) {
+        if ('' !== ($deliveryInfoChoiceErrorMessage = self::validateDeliveryInfoForChoiceConstraintFromSetDeliveryInfo($deliveryInfo))) {
             throw new InvalidArgumentException($deliveryInfoChoiceErrorMessage, __LINE__);
         }
         if (is_null($deliveryInfo) || (is_array($deliveryInfo) && empty($deliveryInfo))) {
@@ -695,16 +695,16 @@ class BookingTravelerInfo extends AbstractStructBase
      */
     public function getAge(): ?int
     {
-        return isset($this->Age) ? $this->Age : null;
+        return $this->Age ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAge method
+     * This method is responsible for validating the value(s) passed to the setAge method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAge method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAgeForChoiceConstraintsFromSetAge($value): string
+    public function validateAgeForChoiceConstraintFromSetAge($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -748,7 +748,7 @@ class BookingTravelerInfo extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($age, true), gettype($age)), __LINE__);
         }
         // validation for constraint: choice(TravelInfo, Email, PhoneNumber, Address, EmergencyInfo, DeliveryInfo, Age, CustomizedNameData, AppliedProfile)
-        if ('' !== ($ageChoiceErrorMessage = self::validateAgeForChoiceConstraintsFromSetAge($age))) {
+        if ('' !== ($ageChoiceErrorMessage = self::validateAgeForChoiceConstraintFromSetAge($age))) {
             throw new InvalidArgumentException($ageChoiceErrorMessage, __LINE__);
         }
         if (is_null($age) || (is_array($age) && empty($age))) {
@@ -765,16 +765,16 @@ class BookingTravelerInfo extends AbstractStructBase
      */
     public function getCustomizedNameData(): ?\Travelport\Util\StructType\CustomizedNameData
     {
-        return isset($this->CustomizedNameData) ? $this->CustomizedNameData : null;
+        return $this->CustomizedNameData ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setCustomizedNameData method
+     * This method is responsible for validating the value(s) passed to the setCustomizedNameData method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCustomizedNameData method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCustomizedNameDataForChoiceConstraintsFromSetCustomizedNameData($value): string
+    public function validateCustomizedNameDataForChoiceConstraintFromSetCustomizedNameData($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -814,7 +814,7 @@ class BookingTravelerInfo extends AbstractStructBase
     public function setCustomizedNameData(?\Travelport\Util\StructType\CustomizedNameData $customizedNameData = null): self
     {
         // validation for constraint: choice(TravelInfo, Email, PhoneNumber, Address, EmergencyInfo, DeliveryInfo, Age, CustomizedNameData, AppliedProfile)
-        if ('' !== ($customizedNameDataChoiceErrorMessage = self::validateCustomizedNameDataForChoiceConstraintsFromSetCustomizedNameData($customizedNameData))) {
+        if ('' !== ($customizedNameDataChoiceErrorMessage = self::validateCustomizedNameDataForChoiceConstraintFromSetCustomizedNameData($customizedNameData))) {
             throw new InvalidArgumentException($customizedNameDataChoiceErrorMessage, __LINE__);
         }
         if (is_null($customizedNameData) || (is_array($customizedNameData) && empty($customizedNameData))) {
@@ -831,16 +831,16 @@ class BookingTravelerInfo extends AbstractStructBase
      */
     public function getAppliedProfile(): ?\Travelport\Util\StructType\AppliedProfile
     {
-        return isset($this->AppliedProfile) ? $this->AppliedProfile : null;
+        return $this->AppliedProfile ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAppliedProfile method
+     * This method is responsible for validating the value(s) passed to the setAppliedProfile method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAppliedProfile method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAppliedProfileForChoiceConstraintsFromSetAppliedProfile($value): string
+    public function validateAppliedProfileForChoiceConstraintFromSetAppliedProfile($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -880,7 +880,7 @@ class BookingTravelerInfo extends AbstractStructBase
     public function setAppliedProfile(?\Travelport\Util\StructType\AppliedProfile $appliedProfile = null): self
     {
         // validation for constraint: choice(TravelInfo, Email, PhoneNumber, Address, EmergencyInfo, DeliveryInfo, Age, CustomizedNameData, AppliedProfile)
-        if ('' !== ($appliedProfileChoiceErrorMessage = self::validateAppliedProfileForChoiceConstraintsFromSetAppliedProfile($appliedProfile))) {
+        if ('' !== ($appliedProfileChoiceErrorMessage = self::validateAppliedProfileForChoiceConstraintFromSetAppliedProfile($appliedProfile))) {
             throw new InvalidArgumentException($appliedProfileChoiceErrorMessage, __LINE__);
         }
         if (is_null($appliedProfile) || (is_array($appliedProfile) && empty($appliedProfile))) {

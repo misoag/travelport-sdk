@@ -42,12 +42,13 @@ class RouteList extends AbstractStructBase
         return $this->Route;
     }
     /**
-     * This method is responsible for validating the values passed to the setRoute method
+     * This method is responsible for validating the value(s) passed to the setRoute method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRoute method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRouteForArrayConstraintsFromSetRoute(?array $values = []): string
+    public static function validateRouteForArrayConstraintFromSetRoute(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class RouteList extends AbstractStructBase
     public function setRoute(?array $route = null): self
     {
         // validation for constraint: array
-        if ('' !== ($routeArrayErrorMessage = self::validateRouteForArrayConstraintsFromSetRoute($route))) {
+        if ('' !== ($routeArrayErrorMessage = self::validateRouteForArrayConstraintFromSetRoute($route))) {
             throw new InvalidArgumentException($routeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -117,12 +117,13 @@ class HotelSearchLocation extends AbstractStructBase
         return $this->VendorLocation;
     }
     /**
-     * This method is responsible for validating the values passed to the setVendorLocation method
+     * This method is responsible for validating the value(s) passed to the setVendorLocation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVendorLocation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVendorLocationForArrayConstraintsFromSetVendorLocation(?array $values = []): string
+    public static function validateVendorLocationForArrayConstraintFromSetVendorLocation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -151,7 +152,7 @@ class HotelSearchLocation extends AbstractStructBase
     public function setVendorLocation(?array $vendorLocation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vendorLocationArrayErrorMessage = self::validateVendorLocationForArrayConstraintsFromSetVendorLocation($vendorLocation))) {
+        if ('' !== ($vendorLocationArrayErrorMessage = self::validateVendorLocationForArrayConstraintFromSetVendorLocation($vendorLocation))) {
             throw new InvalidArgumentException($vendorLocationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)

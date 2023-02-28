@@ -651,12 +651,13 @@ class TypeBaseAirSegment extends Segment
         return $this->AirAvailInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirAvailInfo method
+     * This method is responsible for validating the value(s) passed to the setAirAvailInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirAvailInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirAvailInfoForArrayConstraintsFromSetAirAvailInfo(?array $values = []): string
+    public static function validateAirAvailInfoForArrayConstraintFromSetAirAvailInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -685,7 +686,7 @@ class TypeBaseAirSegment extends Segment
     public function setAirAvailInfo(?array $airAvailInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airAvailInfoArrayErrorMessage = self::validateAirAvailInfoForArrayConstraintsFromSetAirAvailInfo($airAvailInfo))) {
+        if ('' !== ($airAvailInfoArrayErrorMessage = self::validateAirAvailInfoForArrayConstraintFromSetAirAvailInfo($airAvailInfo))) {
             throw new InvalidArgumentException($airAvailInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -725,12 +726,13 @@ class TypeBaseAirSegment extends Segment
         return $this->FlightDetails;
     }
     /**
-     * This method is responsible for validating the values passed to the setFlightDetails method
+     * This method is responsible for validating the value(s) passed to the setFlightDetails method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFlightDetails method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFlightDetailsForArrayConstraintsFromSetFlightDetails(?array $values = []): string
+    public static function validateFlightDetailsForArrayConstraintFromSetFlightDetails(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -759,7 +761,7 @@ class TypeBaseAirSegment extends Segment
     public function setFlightDetails(?array $flightDetails = null): self
     {
         // validation for constraint: array
-        if ('' !== ($flightDetailsArrayErrorMessage = self::validateFlightDetailsForArrayConstraintsFromSetFlightDetails($flightDetails))) {
+        if ('' !== ($flightDetailsArrayErrorMessage = self::validateFlightDetailsForArrayConstraintFromSetFlightDetails($flightDetails))) {
             throw new InvalidArgumentException($flightDetailsArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -799,12 +801,13 @@ class TypeBaseAirSegment extends Segment
         return $this->FlightDetailsRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setFlightDetailsRef method
+     * This method is responsible for validating the value(s) passed to the setFlightDetailsRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFlightDetailsRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFlightDetailsRefForArrayConstraintsFromSetFlightDetailsRef(?array $values = []): string
+    public static function validateFlightDetailsRefForArrayConstraintFromSetFlightDetailsRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -833,7 +836,7 @@ class TypeBaseAirSegment extends Segment
     public function setFlightDetailsRef(?array $flightDetailsRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($flightDetailsRefArrayErrorMessage = self::validateFlightDetailsRefForArrayConstraintsFromSetFlightDetailsRef($flightDetailsRef))) {
+        if ('' !== ($flightDetailsRefArrayErrorMessage = self::validateFlightDetailsRefForArrayConstraintFromSetFlightDetailsRef($flightDetailsRef))) {
             throw new InvalidArgumentException($flightDetailsRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -873,12 +876,13 @@ class TypeBaseAirSegment extends Segment
         return $this->AlternateLocationDistanceRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setAlternateLocationDistanceRef method
+     * This method is responsible for validating the value(s) passed to the setAlternateLocationDistanceRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAlternateLocationDistanceRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAlternateLocationDistanceRefForArrayConstraintsFromSetAlternateLocationDistanceRef(?array $values = []): string
+    public static function validateAlternateLocationDistanceRefForArrayConstraintFromSetAlternateLocationDistanceRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -907,7 +911,7 @@ class TypeBaseAirSegment extends Segment
     public function setAlternateLocationDistanceRef(?array $alternateLocationDistanceRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($alternateLocationDistanceRefArrayErrorMessage = self::validateAlternateLocationDistanceRefForArrayConstraintsFromSetAlternateLocationDistanceRef($alternateLocationDistanceRef))) {
+        if ('' !== ($alternateLocationDistanceRefArrayErrorMessage = self::validateAlternateLocationDistanceRefForArrayConstraintFromSetAlternateLocationDistanceRef($alternateLocationDistanceRef))) {
             throw new InvalidArgumentException($alternateLocationDistanceRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -966,12 +970,13 @@ class TypeBaseAirSegment extends Segment
         return $this->SellMessage;
     }
     /**
-     * This method is responsible for validating the values passed to the setSellMessage method
+     * This method is responsible for validating the value(s) passed to the setSellMessage method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSellMessage method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSellMessageForArrayConstraintsFromSetSellMessage(?array $values = []): string
+    public static function validateSellMessageForArrayConstraintFromSetSellMessage(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1000,7 +1005,7 @@ class TypeBaseAirSegment extends Segment
     public function setSellMessage(?array $sellMessage = null): self
     {
         // validation for constraint: array
-        if ('' !== ($sellMessageArrayErrorMessage = self::validateSellMessageForArrayConstraintsFromSetSellMessage($sellMessage))) {
+        if ('' !== ($sellMessageArrayErrorMessage = self::validateSellMessageForArrayConstraintFromSetSellMessage($sellMessage))) {
             throw new InvalidArgumentException($sellMessageArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1040,12 +1045,13 @@ class TypeBaseAirSegment extends Segment
         return $this->RailCoachDetails;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailCoachDetails method
+     * This method is responsible for validating the value(s) passed to the setRailCoachDetails method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailCoachDetails method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailCoachDetailsForArrayConstraintsFromSetRailCoachDetails(?array $values = []): string
+    public static function validateRailCoachDetailsForArrayConstraintFromSetRailCoachDetails(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1074,7 +1080,7 @@ class TypeBaseAirSegment extends Segment
     public function setRailCoachDetails(?array $railCoachDetails = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railCoachDetailsArrayErrorMessage = self::validateRailCoachDetailsForArrayConstraintsFromSetRailCoachDetails($railCoachDetails))) {
+        if ('' !== ($railCoachDetailsArrayErrorMessage = self::validateRailCoachDetailsForArrayConstraintFromSetRailCoachDetails($railCoachDetails))) {
             throw new InvalidArgumentException($railCoachDetailsArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

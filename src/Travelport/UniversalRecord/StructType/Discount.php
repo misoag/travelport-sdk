@@ -81,12 +81,13 @@ class Discount extends AbstractStructBase
         return $this->DiscountCard;
     }
     /**
-     * This method is responsible for validating the values passed to the setDiscountCard method
+     * This method is responsible for validating the value(s) passed to the setDiscountCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDiscountCard method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDiscountCardForArrayConstraintsFromSetDiscountCard(?array $values = []): string
+    public static function validateDiscountCardForArrayConstraintFromSetDiscountCard(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -115,7 +116,7 @@ class Discount extends AbstractStructBase
     public function setDiscountCard(array $discountCard): self
     {
         // validation for constraint: array
-        if ('' !== ($discountCardArrayErrorMessage = self::validateDiscountCardForArrayConstraintsFromSetDiscountCard($discountCard))) {
+        if ('' !== ($discountCardArrayErrorMessage = self::validateDiscountCardForArrayConstraintFromSetDiscountCard($discountCard))) {
             throw new InvalidArgumentException($discountCardArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(9)

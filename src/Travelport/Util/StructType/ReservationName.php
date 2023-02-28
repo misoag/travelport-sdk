@@ -54,16 +54,16 @@ class ReservationName extends AbstractStructBase
      */
     public function getBookingTravelerRef(): ?\Travelport\Util\StructType\BookingTravelerRef
     {
-        return isset($this->BookingTravelerRef) ? $this->BookingTravelerRef : null;
+        return $this->BookingTravelerRef ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setBookingTravelerRef method
+     * This method is responsible for validating the value(s) passed to the setBookingTravelerRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTravelerRef method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateBookingTravelerRefForChoiceConstraintsFromSetBookingTravelerRef($value): string
+    public function validateBookingTravelerRefForChoiceConstraintFromSetBookingTravelerRef($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -96,7 +96,7 @@ class ReservationName extends AbstractStructBase
     public function setBookingTravelerRef(?\Travelport\Util\StructType\BookingTravelerRef $bookingTravelerRef = null): self
     {
         // validation for constraint: choice(BookingTravelerRef, NameOverride)
-        if ('' !== ($bookingTravelerRefChoiceErrorMessage = self::validateBookingTravelerRefForChoiceConstraintsFromSetBookingTravelerRef($bookingTravelerRef))) {
+        if ('' !== ($bookingTravelerRefChoiceErrorMessage = self::validateBookingTravelerRefForChoiceConstraintFromSetBookingTravelerRef($bookingTravelerRef))) {
             throw new InvalidArgumentException($bookingTravelerRefChoiceErrorMessage, __LINE__);
         }
         if (is_null($bookingTravelerRef) || (is_array($bookingTravelerRef) && empty($bookingTravelerRef))) {
@@ -113,16 +113,16 @@ class ReservationName extends AbstractStructBase
      */
     public function getNameOverride(): ?\Travelport\Util\StructType\NameOverride
     {
-        return isset($this->NameOverride) ? $this->NameOverride : null;
+        return $this->NameOverride ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setNameOverride method
+     * This method is responsible for validating the value(s) passed to the setNameOverride method
      * This method is willingly generated in order to preserve the one-line inline validation within the setNameOverride method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateNameOverrideForChoiceConstraintsFromSetNameOverride($value): string
+    public function validateNameOverrideForChoiceConstraintFromSetNameOverride($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -155,7 +155,7 @@ class ReservationName extends AbstractStructBase
     public function setNameOverride(?\Travelport\Util\StructType\NameOverride $nameOverride = null): self
     {
         // validation for constraint: choice(BookingTravelerRef, NameOverride)
-        if ('' !== ($nameOverrideChoiceErrorMessage = self::validateNameOverrideForChoiceConstraintsFromSetNameOverride($nameOverride))) {
+        if ('' !== ($nameOverrideChoiceErrorMessage = self::validateNameOverrideForChoiceConstraintFromSetNameOverride($nameOverride))) {
             throw new InvalidArgumentException($nameOverrideChoiceErrorMessage, __LINE__);
         }
         if (is_null($nameOverride) || (is_array($nameOverride) && empty($nameOverride))) {

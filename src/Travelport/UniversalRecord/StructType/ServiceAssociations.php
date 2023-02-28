@@ -39,12 +39,13 @@ class ServiceAssociations extends AbstractStructBase
         return $this->ApplicableSegment;
     }
     /**
-     * This method is responsible for validating the values passed to the setApplicableSegment method
+     * This method is responsible for validating the value(s) passed to the setApplicableSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setApplicableSegment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateApplicableSegmentForArrayConstraintsFromSetApplicableSegment(?array $values = []): string
+    public static function validateApplicableSegmentForArrayConstraintFromSetApplicableSegment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -73,7 +74,7 @@ class ServiceAssociations extends AbstractStructBase
     public function setApplicableSegment(?array $applicableSegment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($applicableSegmentArrayErrorMessage = self::validateApplicableSegmentForArrayConstraintsFromSetApplicableSegment($applicableSegment))) {
+        if ('' !== ($applicableSegmentArrayErrorMessage = self::validateApplicableSegmentForArrayConstraintFromSetApplicableSegment($applicableSegment))) {
             throw new InvalidArgumentException($applicableSegmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

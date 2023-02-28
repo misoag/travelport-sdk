@@ -131,12 +131,13 @@ class CruiseReservation extends BaseReservation
         return $this->CruiseItinerary;
     }
     /**
-     * This method is responsible for validating the values passed to the setCruiseItinerary method
+     * This method is responsible for validating the value(s) passed to the setCruiseItinerary method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCruiseItinerary method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCruiseItineraryForArrayConstraintsFromSetCruiseItinerary(?array $values = []): string
+    public static function validateCruiseItineraryForArrayConstraintFromSetCruiseItinerary(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -165,7 +166,7 @@ class CruiseReservation extends BaseReservation
     public function setCruiseItinerary(?array $cruiseItinerary = null): self
     {
         // validation for constraint: array
-        if ('' !== ($cruiseItineraryArrayErrorMessage = self::validateCruiseItineraryForArrayConstraintsFromSetCruiseItinerary($cruiseItinerary))) {
+        if ('' !== ($cruiseItineraryArrayErrorMessage = self::validateCruiseItineraryForArrayConstraintFromSetCruiseItinerary($cruiseItinerary))) {
             throw new InvalidArgumentException($cruiseItineraryArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -224,12 +225,13 @@ class CruiseReservation extends BaseReservation
         return $this->OptionalService;
     }
     /**
-     * This method is responsible for validating the values passed to the setOptionalService method
+     * This method is responsible for validating the value(s) passed to the setOptionalService method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOptionalService method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateOptionalServiceForArrayConstraintsFromSetOptionalService(?array $values = []): string
+    public static function validateOptionalServiceForArrayConstraintFromSetOptionalService(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -258,7 +260,7 @@ class CruiseReservation extends BaseReservation
     public function setOptionalService(?array $optionalService = null): self
     {
         // validation for constraint: array
-        if ('' !== ($optionalServiceArrayErrorMessage = self::validateOptionalServiceForArrayConstraintsFromSetOptionalService($optionalService))) {
+        if ('' !== ($optionalServiceArrayErrorMessage = self::validateOptionalServiceForArrayConstraintFromSetOptionalService($optionalService))) {
             throw new InvalidArgumentException($optionalServiceArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -298,12 +300,13 @@ class CruiseReservation extends BaseReservation
         return $this->BookingTravelerRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingTravelerRef method
+     * This method is responsible for validating the value(s) passed to the setBookingTravelerRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTravelerRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef(?array $values = []): string
+    public static function validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -332,7 +335,7 @@ class CruiseReservation extends BaseReservation
     public function setBookingTravelerRef(?array $bookingTravelerRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef($bookingTravelerRef))) {
+        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef($bookingTravelerRef))) {
             throw new InvalidArgumentException($bookingTravelerRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -391,12 +394,13 @@ class CruiseReservation extends BaseReservation
         return $this->Payment;
     }
     /**
-     * This method is responsible for validating the values passed to the setPayment method
+     * This method is responsible for validating the value(s) passed to the setPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPayment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePaymentForArrayConstraintsFromSetPayment(?array $values = []): string
+    public static function validatePaymentForArrayConstraintFromSetPayment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -425,7 +429,7 @@ class CruiseReservation extends BaseReservation
     public function setPayment(?array $payment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($paymentArrayErrorMessage = self::validatePaymentForArrayConstraintsFromSetPayment($payment))) {
+        if ('' !== ($paymentArrayErrorMessage = self::validatePaymentForArrayConstraintFromSetPayment($payment))) {
             throw new InvalidArgumentException($paymentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

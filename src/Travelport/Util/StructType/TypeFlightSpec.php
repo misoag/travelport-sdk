@@ -54,16 +54,16 @@ class TypeFlightSpec extends AbstractStructBase
      */
     public function getFlightNumberRange(): ?\Travelport\Util\StructType\TypeFlightNumberRange
     {
-        return isset($this->FlightNumberRange) ? $this->FlightNumberRange : null;
+        return $this->FlightNumberRange ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setFlightNumberRange method
+     * This method is responsible for validating the value(s) passed to the setFlightNumberRange method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFlightNumberRange method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateFlightNumberRangeForChoiceConstraintsFromSetFlightNumberRange($value): string
+    public function validateFlightNumberRangeForChoiceConstraintFromSetFlightNumberRange($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -96,7 +96,7 @@ class TypeFlightSpec extends AbstractStructBase
     public function setFlightNumberRange(?\Travelport\Util\StructType\TypeFlightNumberRange $flightNumberRange = null): self
     {
         // validation for constraint: choice(FlightNumberRange, SpecificFlightNumber)
-        if ('' !== ($flightNumberRangeChoiceErrorMessage = self::validateFlightNumberRangeForChoiceConstraintsFromSetFlightNumberRange($flightNumberRange))) {
+        if ('' !== ($flightNumberRangeChoiceErrorMessage = self::validateFlightNumberRangeForChoiceConstraintFromSetFlightNumberRange($flightNumberRange))) {
             throw new InvalidArgumentException($flightNumberRangeChoiceErrorMessage, __LINE__);
         }
         if (is_null($flightNumberRange) || (is_array($flightNumberRange) && empty($flightNumberRange))) {
@@ -113,16 +113,16 @@ class TypeFlightSpec extends AbstractStructBase
      */
     public function getSpecificFlightNumber(): ?\Travelport\Util\StructType\TypeSpecificFlightNumber
     {
-        return isset($this->SpecificFlightNumber) ? $this->SpecificFlightNumber : null;
+        return $this->SpecificFlightNumber ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setSpecificFlightNumber method
+     * This method is responsible for validating the value(s) passed to the setSpecificFlightNumber method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSpecificFlightNumber method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateSpecificFlightNumberForChoiceConstraintsFromSetSpecificFlightNumber($value): string
+    public function validateSpecificFlightNumberForChoiceConstraintFromSetSpecificFlightNumber($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -155,7 +155,7 @@ class TypeFlightSpec extends AbstractStructBase
     public function setSpecificFlightNumber(?\Travelport\Util\StructType\TypeSpecificFlightNumber $specificFlightNumber = null): self
     {
         // validation for constraint: choice(FlightNumberRange, SpecificFlightNumber)
-        if ('' !== ($specificFlightNumberChoiceErrorMessage = self::validateSpecificFlightNumberForChoiceConstraintsFromSetSpecificFlightNumber($specificFlightNumber))) {
+        if ('' !== ($specificFlightNumberChoiceErrorMessage = self::validateSpecificFlightNumberForChoiceConstraintFromSetSpecificFlightNumber($specificFlightNumber))) {
             throw new InvalidArgumentException($specificFlightNumberChoiceErrorMessage, __LINE__);
         }
         if (is_null($specificFlightNumber) || (is_array($specificFlightNumber) && empty($specificFlightNumber))) {

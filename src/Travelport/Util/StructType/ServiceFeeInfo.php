@@ -258,12 +258,13 @@ class ServiceFeeInfo extends AbstractStructBase
         return $this->ServiceFeeTaxInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setServiceFeeTaxInfo method
+     * This method is responsible for validating the value(s) passed to the setServiceFeeTaxInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setServiceFeeTaxInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateServiceFeeTaxInfoForArrayConstraintsFromSetServiceFeeTaxInfo(?array $values = []): string
+    public static function validateServiceFeeTaxInfoForArrayConstraintFromSetServiceFeeTaxInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -292,7 +293,7 @@ class ServiceFeeInfo extends AbstractStructBase
     public function setServiceFeeTaxInfo(?array $serviceFeeTaxInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($serviceFeeTaxInfoArrayErrorMessage = self::validateServiceFeeTaxInfoForArrayConstraintsFromSetServiceFeeTaxInfo($serviceFeeTaxInfo))) {
+        if ('' !== ($serviceFeeTaxInfoArrayErrorMessage = self::validateServiceFeeTaxInfoForArrayConstraintFromSetServiceFeeTaxInfo($serviceFeeTaxInfo))) {
             throw new InvalidArgumentException($serviceFeeTaxInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -40,12 +40,13 @@ class ProhibitedVendors extends AbstractStructBase
         return $this->Vendor;
     }
     /**
-     * This method is responsible for validating the values passed to the setVendor method
+     * This method is responsible for validating the value(s) passed to the setVendor method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVendor method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVendorForArrayConstraintsFromSetVendor(?array $values = []): string
+    public static function validateVendorForArrayConstraintFromSetVendor(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -74,7 +75,7 @@ class ProhibitedVendors extends AbstractStructBase
     public function setVendor(?array $vendor = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vendorArrayErrorMessage = self::validateVendorForArrayConstraintsFromSetVendor($vendor))) {
+        if ('' !== ($vendorArrayErrorMessage = self::validateVendorForArrayConstraintFromSetVendor($vendor))) {
             throw new InvalidArgumentException($vendorArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

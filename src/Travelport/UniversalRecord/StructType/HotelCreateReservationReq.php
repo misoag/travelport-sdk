@@ -297,12 +297,13 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->Email;
     }
     /**
-     * This method is responsible for validating the values passed to the setEmail method
+     * This method is responsible for validating the value(s) passed to the setEmail method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEmail method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEmailForArrayConstraintsFromSetEmail(?array $values = []): string
+    public static function validateEmailForArrayConstraintFromSetEmail(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -331,7 +332,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
     public function setEmail(?array $email = null): self
     {
         // validation for constraint: array
-        if ('' !== ($emailArrayErrorMessage = self::validateEmailForArrayConstraintsFromSetEmail($email))) {
+        if ('' !== ($emailArrayErrorMessage = self::validateEmailForArrayConstraintFromSetEmail($email))) {
             throw new InvalidArgumentException($emailArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -371,12 +372,13 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->PhoneNumber;
     }
     /**
-     * This method is responsible for validating the values passed to the setPhoneNumber method
+     * This method is responsible for validating the value(s) passed to the setPhoneNumber method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPhoneNumber method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePhoneNumberForArrayConstraintsFromSetPhoneNumber(?array $values = []): string
+    public static function validatePhoneNumberForArrayConstraintFromSetPhoneNumber(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -405,7 +407,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
     public function setPhoneNumber(?array $phoneNumber = null): self
     {
         // validation for constraint: array
-        if ('' !== ($phoneNumberArrayErrorMessage = self::validatePhoneNumberForArrayConstraintsFromSetPhoneNumber($phoneNumber))) {
+        if ('' !== ($phoneNumberArrayErrorMessage = self::validatePhoneNumberForArrayConstraintFromSetPhoneNumber($phoneNumber))) {
             throw new InvalidArgumentException($phoneNumberArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -445,12 +447,13 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->HotelRateDetail;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelRateDetail method
+     * This method is responsible for validating the value(s) passed to the setHotelRateDetail method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelRateDetail method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelRateDetailForArrayConstraintsFromSetHotelRateDetail(?array $values = []): string
+    public static function validateHotelRateDetailForArrayConstraintFromSetHotelRateDetail(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -479,7 +482,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
     public function setHotelRateDetail(?array $hotelRateDetail = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelRateDetailArrayErrorMessage = self::validateHotelRateDetailForArrayConstraintsFromSetHotelRateDetail($hotelRateDetail))) {
+        if ('' !== ($hotelRateDetailArrayErrorMessage = self::validateHotelRateDetailForArrayConstraintFromSetHotelRateDetail($hotelRateDetail))) {
             throw new InvalidArgumentException($hotelRateDetailArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)
@@ -679,12 +682,13 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->HotelBedding;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelBedding method
+     * This method is responsible for validating the value(s) passed to the setHotelBedding method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelBedding method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelBeddingForArrayConstraintsFromSetHotelBedding(?array $values = []): string
+    public static function validateHotelBeddingForArrayConstraintFromSetHotelBedding(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -713,7 +717,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
     public function setHotelBedding(?array $hotelBedding = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelBeddingArrayErrorMessage = self::validateHotelBeddingForArrayConstraintsFromSetHotelBedding($hotelBedding))) {
+        if ('' !== ($hotelBeddingArrayErrorMessage = self::validateHotelBeddingForArrayConstraintFromSetHotelBedding($hotelBedding))) {
             throw new InvalidArgumentException($hotelBeddingArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(4)
@@ -772,12 +776,13 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->AssociatedRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAssociatedRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark(?array $values = []): string
+    public static function validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -806,7 +811,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
     public function setAssociatedRemark(?array $associatedRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark($associatedRemark))) {
+        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark($associatedRemark))) {
             throw new InvalidArgumentException($associatedRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(9999)
@@ -903,12 +908,13 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->ReviewBooking;
     }
     /**
-     * This method is responsible for validating the values passed to the setReviewBooking method
+     * This method is responsible for validating the value(s) passed to the setReviewBooking method
      * This method is willingly generated in order to preserve the one-line inline validation within the setReviewBooking method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateReviewBookingForArrayConstraintsFromSetReviewBooking(?array $values = []): string
+    public static function validateReviewBookingForArrayConstraintFromSetReviewBooking(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -937,7 +943,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
     public function setReviewBooking(?array $reviewBooking = null): self
     {
         // validation for constraint: array
-        if ('' !== ($reviewBookingArrayErrorMessage = self::validateReviewBookingForArrayConstraintsFromSetReviewBooking($reviewBooking))) {
+        if ('' !== ($reviewBookingArrayErrorMessage = self::validateReviewBookingForArrayConstraintFromSetReviewBooking($reviewBooking))) {
             throw new InvalidArgumentException($reviewBookingArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(9999)

@@ -67,12 +67,13 @@ class TotalReservationPrice extends AbstractStructBase
         return $this->RoomRateDescription;
     }
     /**
-     * This method is responsible for validating the values passed to the setRoomRateDescription method
+     * This method is responsible for validating the value(s) passed to the setRoomRateDescription method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRoomRateDescription method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRoomRateDescriptionForArrayConstraintsFromSetRoomRateDescription(?array $values = []): string
+    public static function validateRoomRateDescriptionForArrayConstraintFromSetRoomRateDescription(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -101,7 +102,7 @@ class TotalReservationPrice extends AbstractStructBase
     public function setRoomRateDescription(?array $roomRateDescription = null): self
     {
         // validation for constraint: array
-        if ('' !== ($roomRateDescriptionArrayErrorMessage = self::validateRoomRateDescriptionForArrayConstraintsFromSetRoomRateDescription($roomRateDescription))) {
+        if ('' !== ($roomRateDescriptionArrayErrorMessage = self::validateRoomRateDescriptionForArrayConstraintFromSetRoomRateDescription($roomRateDescription))) {
             throw new InvalidArgumentException($roomRateDescriptionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)

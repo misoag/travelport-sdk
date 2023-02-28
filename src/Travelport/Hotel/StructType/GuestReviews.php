@@ -41,12 +41,13 @@ class GuestReviews extends AbstractStructBase
         return $this->Comments;
     }
     /**
-     * This method is responsible for validating the values passed to the setComments method
+     * This method is responsible for validating the value(s) passed to the setComments method
      * This method is willingly generated in order to preserve the one-line inline validation within the setComments method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCommentsForArrayConstraintsFromSetComments(?array $values = []): string
+    public static function validateCommentsForArrayConstraintFromSetComments(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -75,7 +76,7 @@ class GuestReviews extends AbstractStructBase
     public function setComments(?array $comments = null): self
     {
         // validation for constraint: array
-        if ('' !== ($commentsArrayErrorMessage = self::validateCommentsForArrayConstraintsFromSetComments($comments))) {
+        if ('' !== ($commentsArrayErrorMessage = self::validateCommentsForArrayConstraintFromSetComments($comments))) {
             throw new InvalidArgumentException($commentsArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

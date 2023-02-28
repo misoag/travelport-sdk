@@ -67,12 +67,13 @@ class HotelUpsellCriteria extends AbstractStructBase
         return $this->HotelUpsellAdd;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelUpsellAdd method
+     * This method is responsible for validating the value(s) passed to the setHotelUpsellAdd method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelUpsellAdd method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelUpsellAddForArrayConstraintsFromSetHotelUpsellAdd(?array $values = []): string
+    public static function validateHotelUpsellAddForArrayConstraintFromSetHotelUpsellAdd(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -101,7 +102,7 @@ class HotelUpsellCriteria extends AbstractStructBase
     public function setHotelUpsellAdd(?array $hotelUpsellAdd = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelUpsellAddArrayErrorMessage = self::validateHotelUpsellAddForArrayConstraintsFromSetHotelUpsellAdd($hotelUpsellAdd))) {
+        if ('' !== ($hotelUpsellAddArrayErrorMessage = self::validateHotelUpsellAddForArrayConstraintFromSetHotelUpsellAdd($hotelUpsellAdd))) {
             throw new InvalidArgumentException($hotelUpsellAddArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -141,12 +142,13 @@ class HotelUpsellCriteria extends AbstractStructBase
         return $this->HotelUpsellUpdate;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelUpsellUpdate method
+     * This method is responsible for validating the value(s) passed to the setHotelUpsellUpdate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelUpsellUpdate method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelUpsellUpdateForArrayConstraintsFromSetHotelUpsellUpdate(?array $values = []): string
+    public static function validateHotelUpsellUpdateForArrayConstraintFromSetHotelUpsellUpdate(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -175,7 +177,7 @@ class HotelUpsellCriteria extends AbstractStructBase
     public function setHotelUpsellUpdate(?array $hotelUpsellUpdate = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelUpsellUpdateArrayErrorMessage = self::validateHotelUpsellUpdateForArrayConstraintsFromSetHotelUpsellUpdate($hotelUpsellUpdate))) {
+        if ('' !== ($hotelUpsellUpdateArrayErrorMessage = self::validateHotelUpsellUpdateForArrayConstraintFromSetHotelUpsellUpdate($hotelUpsellUpdate))) {
             throw new InvalidArgumentException($hotelUpsellUpdateArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -215,12 +217,13 @@ class HotelUpsellCriteria extends AbstractStructBase
         return $this->HotelUpsellDelete;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelUpsellDelete method
+     * This method is responsible for validating the value(s) passed to the setHotelUpsellDelete method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelUpsellDelete method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelUpsellDeleteForArrayConstraintsFromSetHotelUpsellDelete(?array $values = []): string
+    public static function validateHotelUpsellDeleteForArrayConstraintFromSetHotelUpsellDelete(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -249,7 +252,7 @@ class HotelUpsellCriteria extends AbstractStructBase
     public function setHotelUpsellDelete(?array $hotelUpsellDelete = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelUpsellDeleteArrayErrorMessage = self::validateHotelUpsellDeleteForArrayConstraintsFromSetHotelUpsellDelete($hotelUpsellDelete))) {
+        if ('' !== ($hotelUpsellDeleteArrayErrorMessage = self::validateHotelUpsellDeleteForArrayConstraintFromSetHotelUpsellDelete($hotelUpsellDelete))) {
             throw new InvalidArgumentException($hotelUpsellDeleteArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

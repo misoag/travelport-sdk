@@ -459,12 +459,13 @@ class FareDisplay extends AbstractStructBase
         return $this->FarePricing;
     }
     /**
-     * This method is responsible for validating the values passed to the setFarePricing method
+     * This method is responsible for validating the value(s) passed to the setFarePricing method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFarePricing method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFarePricingForArrayConstraintsFromSetFarePricing(?array $values = []): string
+    public static function validateFarePricingForArrayConstraintFromSetFarePricing(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -493,7 +494,7 @@ class FareDisplay extends AbstractStructBase
     public function setFarePricing(?array $farePricing = null): self
     {
         // validation for constraint: array
-        if ('' !== ($farePricingArrayErrorMessage = self::validateFarePricingForArrayConstraintsFromSetFarePricing($farePricing))) {
+        if ('' !== ($farePricingArrayErrorMessage = self::validateFarePricingForArrayConstraintFromSetFarePricing($farePricing))) {
             throw new InvalidArgumentException($farePricingArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -533,12 +534,13 @@ class FareDisplay extends AbstractStructBase
         return $this->FareRestriction;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareRestriction method
+     * This method is responsible for validating the value(s) passed to the setFareRestriction method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareRestriction method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareRestrictionForArrayConstraintsFromSetFareRestriction(?array $values = []): string
+    public static function validateFareRestrictionForArrayConstraintFromSetFareRestriction(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -567,7 +569,7 @@ class FareDisplay extends AbstractStructBase
     public function setFareRestriction(?array $fareRestriction = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareRestrictionArrayErrorMessage = self::validateFareRestrictionForArrayConstraintsFromSetFareRestriction($fareRestriction))) {
+        if ('' !== ($fareRestrictionArrayErrorMessage = self::validateFareRestrictionForArrayConstraintFromSetFareRestriction($fareRestriction))) {
             throw new InvalidArgumentException($fareRestrictionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)
@@ -672,12 +674,13 @@ class FareDisplay extends AbstractStructBase
         return $this->BookingCode;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingCode method
+     * This method is responsible for validating the value(s) passed to the setBookingCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingCodeForArrayConstraintsFromSetBookingCode(?array $values = []): string
+    public static function validateBookingCodeForArrayConstraintFromSetBookingCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -706,7 +709,7 @@ class FareDisplay extends AbstractStructBase
     public function setBookingCode(?array $bookingCode = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingCodeArrayErrorMessage = self::validateBookingCodeForArrayConstraintsFromSetBookingCode($bookingCode))) {
+        if ('' !== ($bookingCodeArrayErrorMessage = self::validateBookingCodeForArrayConstraintFromSetBookingCode($bookingCode))) {
             throw new InvalidArgumentException($bookingCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -746,12 +749,13 @@ class FareDisplay extends AbstractStructBase
         return $this->AccountCode;
     }
     /**
-     * This method is responsible for validating the values passed to the setAccountCode method
+     * This method is responsible for validating the value(s) passed to the setAccountCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAccountCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAccountCodeForArrayConstraintsFromSetAccountCode(?array $values = []): string
+    public static function validateAccountCodeForArrayConstraintFromSetAccountCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -780,7 +784,7 @@ class FareDisplay extends AbstractStructBase
     public function setAccountCode(?array $accountCode = null): self
     {
         // validation for constraint: array
-        if ('' !== ($accountCodeArrayErrorMessage = self::validateAccountCodeForArrayConstraintsFromSetAccountCode($accountCode))) {
+        if ('' !== ($accountCodeArrayErrorMessage = self::validateAccountCodeForArrayConstraintFromSetAccountCode($accountCode))) {
             throw new InvalidArgumentException($accountCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -858,12 +862,13 @@ class FareDisplay extends AbstractStructBase
         return $this->PriceChange;
     }
     /**
-     * This method is responsible for validating the values passed to the setPriceChange method
+     * This method is responsible for validating the value(s) passed to the setPriceChange method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPriceChange method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePriceChangeForArrayConstraintsFromSetPriceChange(?array $values = []): string
+    public static function validatePriceChangeForArrayConstraintFromSetPriceChange(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -892,7 +897,7 @@ class FareDisplay extends AbstractStructBase
     public function setPriceChange(?array $priceChange = null): self
     {
         // validation for constraint: array
-        if ('' !== ($priceChangeArrayErrorMessage = self::validatePriceChangeForArrayConstraintsFromSetPriceChange($priceChange))) {
+        if ('' !== ($priceChangeArrayErrorMessage = self::validatePriceChangeForArrayConstraintFromSetPriceChange($priceChange))) {
             throw new InvalidArgumentException($priceChangeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)

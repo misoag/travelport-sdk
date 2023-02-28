@@ -78,12 +78,13 @@ class AirSolution extends AbstractStructBase
         return $this->SearchTraveler;
     }
     /**
-     * This method is responsible for validating the values passed to the setSearchTraveler method
+     * This method is responsible for validating the value(s) passed to the setSearchTraveler method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSearchTraveler method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSearchTravelerForArrayConstraintsFromSetSearchTraveler(?array $values = []): string
+    public static function validateSearchTravelerForArrayConstraintFromSetSearchTraveler(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -112,7 +113,7 @@ class AirSolution extends AbstractStructBase
     public function setSearchTraveler(?array $searchTraveler = null): self
     {
         // validation for constraint: array
-        if ('' !== ($searchTravelerArrayErrorMessage = self::validateSearchTravelerForArrayConstraintsFromSetSearchTraveler($searchTraveler))) {
+        if ('' !== ($searchTravelerArrayErrorMessage = self::validateSearchTravelerForArrayConstraintFromSetSearchTraveler($searchTraveler))) {
             throw new InvalidArgumentException($searchTravelerArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(9)
@@ -152,12 +153,13 @@ class AirSolution extends AbstractStructBase
         return $this->AirSegment;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirSegment method
+     * This method is responsible for validating the value(s) passed to the setAirSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirSegmentForArrayConstraintsFromSetAirSegment(?array $values = []): string
+    public static function validateAirSegmentForArrayConstraintFromSetAirSegment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -186,7 +188,7 @@ class AirSolution extends AbstractStructBase
     public function setAirSegment(?array $airSegment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airSegmentArrayErrorMessage = self::validateAirSegmentForArrayConstraintsFromSetAirSegment($airSegment))) {
+        if ('' !== ($airSegmentArrayErrorMessage = self::validateAirSegmentForArrayConstraintFromSetAirSegment($airSegment))) {
             throw new InvalidArgumentException($airSegmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(16)
@@ -226,12 +228,13 @@ class AirSolution extends AbstractStructBase
         return $this->HostToken;
     }
     /**
-     * This method is responsible for validating the values passed to the setHostToken method
+     * This method is responsible for validating the value(s) passed to the setHostToken method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHostToken method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHostTokenForArrayConstraintsFromSetHostToken(?array $values = []): string
+    public static function validateHostTokenForArrayConstraintFromSetHostToken(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -260,7 +263,7 @@ class AirSolution extends AbstractStructBase
     public function setHostToken(?array $hostToken = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hostTokenArrayErrorMessage = self::validateHostTokenForArrayConstraintsFromSetHostToken($hostToken))) {
+        if ('' !== ($hostTokenArrayErrorMessage = self::validateHostTokenForArrayConstraintFromSetHostToken($hostToken))) {
             throw new InvalidArgumentException($hostTokenArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(16)
@@ -300,12 +303,13 @@ class AirSolution extends AbstractStructBase
         return $this->FareBasis;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareBasis method
+     * This method is responsible for validating the value(s) passed to the setFareBasis method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareBasis method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareBasisForArrayConstraintsFromSetFareBasis(?array $values = []): string
+    public static function validateFareBasisForArrayConstraintFromSetFareBasis(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -334,7 +338,7 @@ class AirSolution extends AbstractStructBase
     public function setFareBasis(?array $fareBasis = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareBasisArrayErrorMessage = self::validateFareBasisForArrayConstraintsFromSetFareBasis($fareBasis))) {
+        if ('' !== ($fareBasisArrayErrorMessage = self::validateFareBasisForArrayConstraintFromSetFareBasis($fareBasis))) {
             throw new InvalidArgumentException($fareBasisArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(16)

@@ -107,12 +107,13 @@ class BaseHotelSearchRsp extends BaseSearchRsp
         return $this->HotelSearchResult;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelSearchResult method
+     * This method is responsible for validating the value(s) passed to the setHotelSearchResult method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelSearchResult method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelSearchResultForArrayConstraintsFromSetHotelSearchResult(?array $values = []): string
+    public static function validateHotelSearchResultForArrayConstraintFromSetHotelSearchResult(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -141,7 +142,7 @@ class BaseHotelSearchRsp extends BaseSearchRsp
     public function setHotelSearchResult(?array $hotelSearchResult = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelSearchResultArrayErrorMessage = self::validateHotelSearchResultForArrayConstraintsFromSetHotelSearchResult($hotelSearchResult))) {
+        if ('' !== ($hotelSearchResultArrayErrorMessage = self::validateHotelSearchResultForArrayConstraintFromSetHotelSearchResult($hotelSearchResult))) {
             throw new InvalidArgumentException($hotelSearchResultArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

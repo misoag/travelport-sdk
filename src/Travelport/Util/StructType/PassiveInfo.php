@@ -104,12 +104,13 @@ class PassiveInfo extends AbstractStructBase
         return $this->TicketNumber;
     }
     /**
-     * This method is responsible for validating the values passed to the setTicketNumber method
+     * This method is responsible for validating the value(s) passed to the setTicketNumber method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTicketNumber method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTicketNumberForArrayConstraintsFromSetTicketNumber(?array $values = []): string
+    public static function validateTicketNumberForArrayConstraintFromSetTicketNumber(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -138,7 +139,7 @@ class PassiveInfo extends AbstractStructBase
     public function setTicketNumber(?array $ticketNumber = null): self
     {
         // validation for constraint: array
-        if ('' !== ($ticketNumberArrayErrorMessage = self::validateTicketNumberForArrayConstraintsFromSetTicketNumber($ticketNumber))) {
+        if ('' !== ($ticketNumberArrayErrorMessage = self::validateTicketNumberForArrayConstraintFromSetTicketNumber($ticketNumber))) {
             throw new InvalidArgumentException($ticketNumberArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -178,12 +179,13 @@ class PassiveInfo extends AbstractStructBase
         return $this->ConfirmationNumber;
     }
     /**
-     * This method is responsible for validating the values passed to the setConfirmationNumber method
+     * This method is responsible for validating the value(s) passed to the setConfirmationNumber method
      * This method is willingly generated in order to preserve the one-line inline validation within the setConfirmationNumber method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateConfirmationNumberForArrayConstraintsFromSetConfirmationNumber(?array $values = []): string
+    public static function validateConfirmationNumberForArrayConstraintFromSetConfirmationNumber(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -212,7 +214,7 @@ class PassiveInfo extends AbstractStructBase
     public function setConfirmationNumber(?array $confirmationNumber = null): self
     {
         // validation for constraint: array
-        if ('' !== ($confirmationNumberArrayErrorMessage = self::validateConfirmationNumberForArrayConstraintsFromSetConfirmationNumber($confirmationNumber))) {
+        if ('' !== ($confirmationNumberArrayErrorMessage = self::validateConfirmationNumberForArrayConstraintFromSetConfirmationNumber($confirmationNumber))) {
             throw new InvalidArgumentException($confirmationNumberArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

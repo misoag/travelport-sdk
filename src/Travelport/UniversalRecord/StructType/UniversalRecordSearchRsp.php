@@ -78,12 +78,13 @@ class UniversalRecordSearchRsp extends BaseRsp
         return $this->UniversalRecordSearchResult;
     }
     /**
-     * This method is responsible for validating the values passed to the setUniversalRecordSearchResult method
+     * This method is responsible for validating the value(s) passed to the setUniversalRecordSearchResult method
      * This method is willingly generated in order to preserve the one-line inline validation within the setUniversalRecordSearchResult method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateUniversalRecordSearchResultForArrayConstraintsFromSetUniversalRecordSearchResult(?array $values = []): string
+    public static function validateUniversalRecordSearchResultForArrayConstraintFromSetUniversalRecordSearchResult(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -112,7 +113,7 @@ class UniversalRecordSearchRsp extends BaseRsp
     public function setUniversalRecordSearchResult(?array $universalRecordSearchResult = null): self
     {
         // validation for constraint: array
-        if ('' !== ($universalRecordSearchResultArrayErrorMessage = self::validateUniversalRecordSearchResultForArrayConstraintsFromSetUniversalRecordSearchResult($universalRecordSearchResult))) {
+        if ('' !== ($universalRecordSearchResultArrayErrorMessage = self::validateUniversalRecordSearchResultForArrayConstraintFromSetUniversalRecordSearchResult($universalRecordSearchResult))) {
             throw new InvalidArgumentException($universalRecordSearchResultArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

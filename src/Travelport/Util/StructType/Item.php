@@ -41,12 +41,13 @@ class Item extends TypeReferenceData
         return $this->AdditionalElement;
     }
     /**
-     * This method is responsible for validating the values passed to the setAdditionalElement method
+     * This method is responsible for validating the value(s) passed to the setAdditionalElement method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAdditionalElement method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAdditionalElementForArrayConstraintsFromSetAdditionalElement(?array $values = []): string
+    public static function validateAdditionalElementForArrayConstraintFromSetAdditionalElement(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -75,7 +76,7 @@ class Item extends TypeReferenceData
     public function setAdditionalElement(?array $additionalElement = null): self
     {
         // validation for constraint: array
-        if ('' !== ($additionalElementArrayErrorMessage = self::validateAdditionalElementForArrayConstraintsFromSetAdditionalElement($additionalElement))) {
+        if ('' !== ($additionalElementArrayErrorMessage = self::validateAdditionalElementForArrayConstraintFromSetAdditionalElement($additionalElement))) {
             throw new InvalidArgumentException($additionalElementArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

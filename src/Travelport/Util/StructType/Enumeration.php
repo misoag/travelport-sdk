@@ -42,12 +42,13 @@ class Enumeration extends AbstractStructBase
         return $this->SolutionGroup;
     }
     /**
-     * This method is responsible for validating the values passed to the setSolutionGroup method
+     * This method is responsible for validating the value(s) passed to the setSolutionGroup method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSolutionGroup method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSolutionGroupForArrayConstraintsFromSetSolutionGroup(?array $values = []): string
+    public static function validateSolutionGroupForArrayConstraintFromSetSolutionGroup(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class Enumeration extends AbstractStructBase
     public function setSolutionGroup(?array $solutionGroup = null): self
     {
         // validation for constraint: array
-        if ('' !== ($solutionGroupArrayErrorMessage = self::validateSolutionGroupForArrayConstraintsFromSetSolutionGroup($solutionGroup))) {
+        if ('' !== ($solutionGroupArrayErrorMessage = self::validateSolutionGroupForArrayConstraintFromSetSolutionGroup($solutionGroup))) {
             throw new InvalidArgumentException($solutionGroupArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

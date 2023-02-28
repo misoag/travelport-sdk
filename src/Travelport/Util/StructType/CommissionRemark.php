@@ -114,16 +114,16 @@ class CommissionRemark extends AbstractStructBase
      */
     public function getProviderReservationLevel(): ?\Travelport\Util\StructType\ProviderReservationLevel
     {
-        return isset($this->ProviderReservationLevel) ? $this->ProviderReservationLevel : null;
+        return $this->ProviderReservationLevel ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setProviderReservationLevel method
+     * This method is responsible for validating the value(s) passed to the setProviderReservationLevel method
      * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationLevel method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateProviderReservationLevelForChoiceConstraintsFromSetProviderReservationLevel($value): string
+    public function validateProviderReservationLevelForChoiceConstraintFromSetProviderReservationLevel($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -156,7 +156,7 @@ class CommissionRemark extends AbstractStructBase
     public function setProviderReservationLevel(?\Travelport\Util\StructType\ProviderReservationLevel $providerReservationLevel = null): self
     {
         // validation for constraint: choice(ProviderReservationLevel, PassengerTypeLevel)
-        if ('' !== ($providerReservationLevelChoiceErrorMessage = self::validateProviderReservationLevelForChoiceConstraintsFromSetProviderReservationLevel($providerReservationLevel))) {
+        if ('' !== ($providerReservationLevelChoiceErrorMessage = self::validateProviderReservationLevelForChoiceConstraintFromSetProviderReservationLevel($providerReservationLevel))) {
             throw new InvalidArgumentException($providerReservationLevelChoiceErrorMessage, __LINE__);
         }
         if (is_null($providerReservationLevel) || (is_array($providerReservationLevel) && empty($providerReservationLevel))) {
@@ -169,19 +169,20 @@ class CommissionRemark extends AbstractStructBase
     }
     /**
      * Get PassengerTypeLevel value
-     * @return \Travelport\Util\StructType\PassengerTypeLevel[]
+     * @return \Travelport\Util\StructType\PassengerTypeLevel[]|null
      */
     public function getPassengerTypeLevel(): ?array
     {
-        return isset($this->PassengerTypeLevel) ? $this->PassengerTypeLevel : null;
+        return $this->PassengerTypeLevel ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setPassengerTypeLevel method
+     * This method is responsible for validating the value(s) passed to the setPassengerTypeLevel method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassengerTypeLevel method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePassengerTypeLevelForArrayConstraintsFromSetPassengerTypeLevel(?array $values = []): string
+    public static function validatePassengerTypeLevelForArrayConstraintFromSetPassengerTypeLevel(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -202,13 +203,13 @@ class CommissionRemark extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setPassengerTypeLevel method
+     * This method is responsible for validating the value(s) passed to the setPassengerTypeLevel method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassengerTypeLevel method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validatePassengerTypeLevelForChoiceConstraintsFromSetPassengerTypeLevel($value): string
+    public function validatePassengerTypeLevelForChoiceConstraintFromSetPassengerTypeLevel($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -242,11 +243,11 @@ class CommissionRemark extends AbstractStructBase
     public function setPassengerTypeLevel(?array $passengerTypeLevel = null): self
     {
         // validation for constraint: array
-        if ('' !== ($passengerTypeLevelArrayErrorMessage = self::validatePassengerTypeLevelForArrayConstraintsFromSetPassengerTypeLevel($passengerTypeLevel))) {
+        if ('' !== ($passengerTypeLevelArrayErrorMessage = self::validatePassengerTypeLevelForArrayConstraintFromSetPassengerTypeLevel($passengerTypeLevel))) {
             throw new InvalidArgumentException($passengerTypeLevelArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(ProviderReservationLevel, PassengerTypeLevel)
-        if ('' !== ($passengerTypeLevelChoiceErrorMessage = self::validatePassengerTypeLevelForChoiceConstraintsFromSetPassengerTypeLevel($passengerTypeLevel))) {
+        if ('' !== ($passengerTypeLevelChoiceErrorMessage = self::validatePassengerTypeLevelForChoiceConstraintFromSetPassengerTypeLevel($passengerTypeLevel))) {
             throw new InvalidArgumentException($passengerTypeLevelChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -266,13 +267,13 @@ class CommissionRemark extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToPassengerTypeLevel method
+     * This method is responsible for validating the value(s) passed to the addToPassengerTypeLevel method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToPassengerTypeLevel method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToPassengerTypeLevel($value): string
+    public function validateItemForChoiceConstraintFromAddToPassengerTypeLevel($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -306,7 +307,7 @@ class CommissionRemark extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The PassengerTypeLevel property can only contain items of type \Travelport\Util\StructType\PassengerTypeLevel, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(ProviderReservationLevel, PassengerTypeLevel)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToPassengerTypeLevel($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToPassengerTypeLevel($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)

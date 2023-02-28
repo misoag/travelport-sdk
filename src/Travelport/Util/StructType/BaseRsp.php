@@ -87,12 +87,13 @@ class BaseRsp extends AbstractStructBase
         return $this->ResponseMessage;
     }
     /**
-     * This method is responsible for validating the values passed to the setResponseMessage method
+     * This method is responsible for validating the value(s) passed to the setResponseMessage method
      * This method is willingly generated in order to preserve the one-line inline validation within the setResponseMessage method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateResponseMessageForArrayConstraintsFromSetResponseMessage(?array $values = []): string
+    public static function validateResponseMessageForArrayConstraintFromSetResponseMessage(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -121,7 +122,7 @@ class BaseRsp extends AbstractStructBase
     public function setResponseMessage(?array $responseMessage = null): self
     {
         // validation for constraint: array
-        if ('' !== ($responseMessageArrayErrorMessage = self::validateResponseMessageForArrayConstraintsFromSetResponseMessage($responseMessage))) {
+        if ('' !== ($responseMessageArrayErrorMessage = self::validateResponseMessageForArrayConstraintFromSetResponseMessage($responseMessage))) {
             throw new InvalidArgumentException($responseMessageArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

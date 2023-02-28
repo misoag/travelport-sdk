@@ -129,12 +129,13 @@ class SegmentSelect extends AbstractStructBase
         return $this->AirSegmentRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirSegmentRef method
+     * This method is responsible for validating the value(s) passed to the setAirSegmentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegmentRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirSegmentRefForArrayConstraintsFromSetAirSegmentRef(?array $values = []): string
+    public static function validateAirSegmentRefForArrayConstraintFromSetAirSegmentRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -163,7 +164,7 @@ class SegmentSelect extends AbstractStructBase
     public function setAirSegmentRef(?array $airSegmentRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airSegmentRefArrayErrorMessage = self::validateAirSegmentRefForArrayConstraintsFromSetAirSegmentRef($airSegmentRef))) {
+        if ('' !== ($airSegmentRefArrayErrorMessage = self::validateAirSegmentRefForArrayConstraintFromSetAirSegmentRef($airSegmentRef))) {
             throw new InvalidArgumentException($airSegmentRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -203,12 +204,13 @@ class SegmentSelect extends AbstractStructBase
         return $this->HotelReservationRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelReservationRef method
+     * This method is responsible for validating the value(s) passed to the setHotelReservationRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelReservationRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelReservationRefForArrayConstraintsFromSetHotelReservationRef(?array $values = []): string
+    public static function validateHotelReservationRefForArrayConstraintFromSetHotelReservationRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -237,7 +239,7 @@ class SegmentSelect extends AbstractStructBase
     public function setHotelReservationRef(?array $hotelReservationRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelReservationRefArrayErrorMessage = self::validateHotelReservationRefForArrayConstraintsFromSetHotelReservationRef($hotelReservationRef))) {
+        if ('' !== ($hotelReservationRefArrayErrorMessage = self::validateHotelReservationRefForArrayConstraintFromSetHotelReservationRef($hotelReservationRef))) {
             throw new InvalidArgumentException($hotelReservationRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -277,12 +279,13 @@ class SegmentSelect extends AbstractStructBase
         return $this->VehicleReservationRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleReservationRef method
+     * This method is responsible for validating the value(s) passed to the setVehicleReservationRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleReservationRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleReservationRefForArrayConstraintsFromSetVehicleReservationRef(?array $values = []): string
+    public static function validateVehicleReservationRefForArrayConstraintFromSetVehicleReservationRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -311,7 +314,7 @@ class SegmentSelect extends AbstractStructBase
     public function setVehicleReservationRef(?array $vehicleReservationRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleReservationRefArrayErrorMessage = self::validateVehicleReservationRefForArrayConstraintsFromSetVehicleReservationRef($vehicleReservationRef))) {
+        if ('' !== ($vehicleReservationRefArrayErrorMessage = self::validateVehicleReservationRefForArrayConstraintFromSetVehicleReservationRef($vehicleReservationRef))) {
             throw new InvalidArgumentException($vehicleReservationRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -351,12 +354,13 @@ class SegmentSelect extends AbstractStructBase
         return $this->PassiveSegmentRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setPassiveSegmentRef method
+     * This method is responsible for validating the value(s) passed to the setPassiveSegmentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassiveSegmentRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePassiveSegmentRefForArrayConstraintsFromSetPassiveSegmentRef(?array $values = []): string
+    public static function validatePassiveSegmentRefForArrayConstraintFromSetPassiveSegmentRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -385,7 +389,7 @@ class SegmentSelect extends AbstractStructBase
     public function setPassiveSegmentRef(?array $passiveSegmentRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($passiveSegmentRefArrayErrorMessage = self::validatePassiveSegmentRefForArrayConstraintsFromSetPassiveSegmentRef($passiveSegmentRef))) {
+        if ('' !== ($passiveSegmentRefArrayErrorMessage = self::validatePassiveSegmentRefForArrayConstraintFromSetPassiveSegmentRef($passiveSegmentRef))) {
             throw new InvalidArgumentException($passiveSegmentRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

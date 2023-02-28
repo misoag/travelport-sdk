@@ -135,16 +135,16 @@ class TypeVehicleCharge extends AbstractStructBase
      */
     public function getAmount(): ?string
     {
-        return isset($this->Amount) ? $this->Amount : null;
+        return $this->Amount ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAmount method
+     * This method is responsible for validating the value(s) passed to the setAmount method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAmount method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAmountForChoiceConstraintsFromSetAmount($value): string
+    public function validateAmountForChoiceConstraintFromSetAmount($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -181,7 +181,7 @@ class TypeVehicleCharge extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
         // validation for constraint: choice(Amount, Percentage)
-        if ('' !== ($amountChoiceErrorMessage = self::validateAmountForChoiceConstraintsFromSetAmount($amount))) {
+        if ('' !== ($amountChoiceErrorMessage = self::validateAmountForChoiceConstraintFromSetAmount($amount))) {
             throw new InvalidArgumentException($amountChoiceErrorMessage, __LINE__);
         }
         if (is_null($amount) || (is_array($amount) && empty($amount))) {
@@ -198,16 +198,16 @@ class TypeVehicleCharge extends AbstractStructBase
      */
     public function getPercentage(): ?string
     {
-        return isset($this->Percentage) ? $this->Percentage : null;
+        return $this->Percentage ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setPercentage method
+     * This method is responsible for validating the value(s) passed to the setPercentage method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPercentage method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validatePercentageForChoiceConstraintsFromSetPercentage($value): string
+    public function validatePercentageForChoiceConstraintFromSetPercentage($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -244,7 +244,7 @@ class TypeVehicleCharge extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($percentage, true), gettype($percentage)), __LINE__);
         }
         // validation for constraint: choice(Amount, Percentage)
-        if ('' !== ($percentageChoiceErrorMessage = self::validatePercentageForChoiceConstraintsFromSetPercentage($percentage))) {
+        if ('' !== ($percentageChoiceErrorMessage = self::validatePercentageForChoiceConstraintFromSetPercentage($percentage))) {
             throw new InvalidArgumentException($percentageChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: pattern(([0-9]{1,2}|100)\.[0-9]{1,2})

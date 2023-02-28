@@ -53,12 +53,13 @@ class MctLookupRsp extends BaseRsp
         return $this->MctStandard;
     }
     /**
-     * This method is responsible for validating the values passed to the setMctStandard method
+     * This method is responsible for validating the value(s) passed to the setMctStandard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMctStandard method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMctStandardForArrayConstraintsFromSetMctStandard(?array $values = []): string
+    public static function validateMctStandardForArrayConstraintFromSetMctStandard(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -87,7 +88,7 @@ class MctLookupRsp extends BaseRsp
     public function setMctStandard(?array $mctStandard = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mctStandardArrayErrorMessage = self::validateMctStandardForArrayConstraintsFromSetMctStandard($mctStandard))) {
+        if ('' !== ($mctStandardArrayErrorMessage = self::validateMctStandardForArrayConstraintFromSetMctStandard($mctStandard))) {
             throw new InvalidArgumentException($mctStandardArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(4)
@@ -127,12 +128,13 @@ class MctLookupRsp extends BaseRsp
         return $this->MctException;
     }
     /**
-     * This method is responsible for validating the values passed to the setMctException method
+     * This method is responsible for validating the value(s) passed to the setMctException method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMctException method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMctExceptionForArrayConstraintsFromSetMctException(?array $values = []): string
+    public static function validateMctExceptionForArrayConstraintFromSetMctException(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -161,7 +163,7 @@ class MctLookupRsp extends BaseRsp
     public function setMctException(?array $mctException = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mctExceptionArrayErrorMessage = self::validateMctExceptionForArrayConstraintsFromSetMctException($mctException))) {
+        if ('' !== ($mctExceptionArrayErrorMessage = self::validateMctExceptionForArrayConstraintFromSetMctException($mctException))) {
             throw new InvalidArgumentException($mctExceptionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -264,19 +264,20 @@ class HotelAdd extends AbstractStructBase
     }
     /**
      * Get LoyaltyCard value
-     * @return \Travelport\UniversalRecord\StructType\LoyaltyCard[]
+     * @return \Travelport\UniversalRecord\StructType\LoyaltyCard[]|null
      */
     public function getLoyaltyCard(): ?array
     {
-        return isset($this->LoyaltyCard) ? $this->LoyaltyCard : null;
+        return $this->LoyaltyCard ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setLoyaltyCard method
+     * This method is responsible for validating the value(s) passed to the setLoyaltyCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyCard method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLoyaltyCardForArrayConstraintsFromSetLoyaltyCard(?array $values = []): string
+    public static function validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -297,13 +298,13 @@ class HotelAdd extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setLoyaltyCard method
+     * This method is responsible for validating the value(s) passed to the setLoyaltyCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyCard method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateLoyaltyCardForChoiceConstraintsFromSetLoyaltyCard($value): string
+    public function validateLoyaltyCardForChoiceConstraintFromSetLoyaltyCard($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -347,11 +348,11 @@ class HotelAdd extends AbstractStructBase
     public function setLoyaltyCard(?array $loyaltyCard = null): self
     {
         // validation for constraint: array
-        if ('' !== ($loyaltyCardArrayErrorMessage = self::validateLoyaltyCardForArrayConstraintsFromSetLoyaltyCard($loyaltyCard))) {
+        if ('' !== ($loyaltyCardArrayErrorMessage = self::validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard($loyaltyCard))) {
             throw new InvalidArgumentException($loyaltyCardArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($loyaltyCardChoiceErrorMessage = self::validateLoyaltyCardForChoiceConstraintsFromSetLoyaltyCard($loyaltyCard))) {
+        if ('' !== ($loyaltyCardChoiceErrorMessage = self::validateLoyaltyCardForChoiceConstraintFromSetLoyaltyCard($loyaltyCard))) {
             throw new InvalidArgumentException($loyaltyCardChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -371,13 +372,13 @@ class HotelAdd extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToLoyaltyCard method
+     * This method is responsible for validating the value(s) passed to the addToLoyaltyCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToLoyaltyCard method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToLoyaltyCard($value): string
+    public function validateItemForChoiceConstraintFromAddToLoyaltyCard($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -421,7 +422,7 @@ class HotelAdd extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The LoyaltyCard property can only contain items of type \Travelport\UniversalRecord\StructType\LoyaltyCard, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToLoyaltyCard($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToLoyaltyCard($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -442,16 +443,16 @@ class HotelAdd extends AbstractStructBase
      */
     public function getGuarantee(): ?\Travelport\UniversalRecord\StructType\Guarantee
     {
-        return isset($this->Guarantee) ? $this->Guarantee : null;
+        return $this->Guarantee ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setGuarantee method
+     * This method is responsible for validating the value(s) passed to the setGuarantee method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGuarantee method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateGuaranteeForChoiceConstraintsFromSetGuarantee($value): string
+    public function validateGuaranteeForChoiceConstraintFromSetGuarantee($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -494,7 +495,7 @@ class HotelAdd extends AbstractStructBase
     public function setGuarantee(?\Travelport\UniversalRecord\StructType\Guarantee $guarantee = null): self
     {
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($guaranteeChoiceErrorMessage = self::validateGuaranteeForChoiceConstraintsFromSetGuarantee($guarantee))) {
+        if ('' !== ($guaranteeChoiceErrorMessage = self::validateGuaranteeForChoiceConstraintFromSetGuarantee($guarantee))) {
             throw new InvalidArgumentException($guaranteeChoiceErrorMessage, __LINE__);
         }
         if (is_null($guarantee) || (is_array($guarantee) && empty($guarantee))) {
@@ -511,16 +512,16 @@ class HotelAdd extends AbstractStructBase
      */
     public function getGuestInformation(): ?\Travelport\UniversalRecord\StructType\GuestInformation
     {
-        return isset($this->GuestInformation) ? $this->GuestInformation : null;
+        return $this->GuestInformation ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setGuestInformation method
+     * This method is responsible for validating the value(s) passed to the setGuestInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGuestInformation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateGuestInformationForChoiceConstraintsFromSetGuestInformation($value): string
+    public function validateGuestInformationForChoiceConstraintFromSetGuestInformation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -563,7 +564,7 @@ class HotelAdd extends AbstractStructBase
     public function setGuestInformation(?\Travelport\UniversalRecord\StructType\GuestInformation $guestInformation = null): self
     {
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($guestInformationChoiceErrorMessage = self::validateGuestInformationForChoiceConstraintsFromSetGuestInformation($guestInformation))) {
+        if ('' !== ($guestInformationChoiceErrorMessage = self::validateGuestInformationForChoiceConstraintFromSetGuestInformation($guestInformation))) {
             throw new InvalidArgumentException($guestInformationChoiceErrorMessage, __LINE__);
         }
         if (is_null($guestInformation) || (is_array($guestInformation) && empty($guestInformation))) {
@@ -576,19 +577,20 @@ class HotelAdd extends AbstractStructBase
     }
     /**
      * Get AssociatedRemark value
-     * @return \Travelport\UniversalRecord\StructType\AssociatedRemark[]
+     * @return \Travelport\UniversalRecord\StructType\AssociatedRemark[]|null
      */
     public function getAssociatedRemark(): ?array
     {
-        return isset($this->AssociatedRemark) ? $this->AssociatedRemark : null;
+        return $this->AssociatedRemark ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAssociatedRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark(?array $values = []): string
+    public static function validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -609,13 +611,13 @@ class HotelAdd extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAssociatedRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAssociatedRemarkForChoiceConstraintsFromSetAssociatedRemark($value): string
+    public function validateAssociatedRemarkForChoiceConstraintFromSetAssociatedRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -659,11 +661,11 @@ class HotelAdd extends AbstractStructBase
     public function setAssociatedRemark(?array $associatedRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark($associatedRemark))) {
+        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark($associatedRemark))) {
             throw new InvalidArgumentException($associatedRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($associatedRemarkChoiceErrorMessage = self::validateAssociatedRemarkForChoiceConstraintsFromSetAssociatedRemark($associatedRemark))) {
+        if ('' !== ($associatedRemarkChoiceErrorMessage = self::validateAssociatedRemarkForChoiceConstraintFromSetAssociatedRemark($associatedRemark))) {
             throw new InvalidArgumentException($associatedRemarkChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -683,13 +685,13 @@ class HotelAdd extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the addToAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToAssociatedRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToAssociatedRemark($value): string
+    public function validateItemForChoiceConstraintFromAddToAssociatedRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -733,7 +735,7 @@ class HotelAdd extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The AssociatedRemark property can only contain items of type \Travelport\UniversalRecord\StructType\AssociatedRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToAssociatedRemark($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToAssociatedRemark($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -754,16 +756,16 @@ class HotelAdd extends AbstractStructBase
      */
     public function getBookingSource(): ?\Travelport\UniversalRecord\StructType\BookingSource
     {
-        return isset($this->BookingSource) ? $this->BookingSource : null;
+        return $this->BookingSource ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setBookingSource method
+     * This method is responsible for validating the value(s) passed to the setBookingSource method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingSource method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateBookingSourceForChoiceConstraintsFromSetBookingSource($value): string
+    public function validateBookingSourceForChoiceConstraintFromSetBookingSource($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -806,7 +808,7 @@ class HotelAdd extends AbstractStructBase
     public function setBookingSource(?\Travelport\UniversalRecord\StructType\BookingSource $bookingSource = null): self
     {
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($bookingSourceChoiceErrorMessage = self::validateBookingSourceForChoiceConstraintsFromSetBookingSource($bookingSource))) {
+        if ('' !== ($bookingSourceChoiceErrorMessage = self::validateBookingSourceForChoiceConstraintFromSetBookingSource($bookingSource))) {
             throw new InvalidArgumentException($bookingSourceChoiceErrorMessage, __LINE__);
         }
         if (is_null($bookingSource) || (is_array($bookingSource) && empty($bookingSource))) {
@@ -823,16 +825,16 @@ class HotelAdd extends AbstractStructBase
      */
     public function getHotelSpecialRequest(): ?string
     {
-        return isset($this->HotelSpecialRequest) ? $this->HotelSpecialRequest : null;
+        return $this->HotelSpecialRequest ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelSpecialRequest method
+     * This method is responsible for validating the value(s) passed to the setHotelSpecialRequest method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelSpecialRequest method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelSpecialRequestForChoiceConstraintsFromSetHotelSpecialRequest($value): string
+    public function validateHotelSpecialRequestForChoiceConstraintFromSetHotelSpecialRequest($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -879,7 +881,7 @@ class HotelAdd extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotelSpecialRequest, true), gettype($hotelSpecialRequest)), __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($hotelSpecialRequestChoiceErrorMessage = self::validateHotelSpecialRequestForChoiceConstraintsFromSetHotelSpecialRequest($hotelSpecialRequest))) {
+        if ('' !== ($hotelSpecialRequestChoiceErrorMessage = self::validateHotelSpecialRequestForChoiceConstraintFromSetHotelSpecialRequest($hotelSpecialRequest))) {
             throw new InvalidArgumentException($hotelSpecialRequestChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: maxLength(250)
@@ -900,16 +902,16 @@ class HotelAdd extends AbstractStructBase
      */
     public function getCorporateDiscountID(): ?\Travelport\UniversalRecord\StructType\CorporateDiscountID
     {
-        return isset($this->CorporateDiscountID) ? $this->CorporateDiscountID : null;
+        return $this->CorporateDiscountID ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setCorporateDiscountID method
+     * This method is responsible for validating the value(s) passed to the setCorporateDiscountID method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCorporateDiscountID method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCorporateDiscountIDForChoiceConstraintsFromSetCorporateDiscountID($value): string
+    public function validateCorporateDiscountIDForChoiceConstraintFromSetCorporateDiscountID($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -952,7 +954,7 @@ class HotelAdd extends AbstractStructBase
     public function setCorporateDiscountID(?\Travelport\UniversalRecord\StructType\CorporateDiscountID $corporateDiscountID = null): self
     {
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($corporateDiscountIDChoiceErrorMessage = self::validateCorporateDiscountIDForChoiceConstraintsFromSetCorporateDiscountID($corporateDiscountID))) {
+        if ('' !== ($corporateDiscountIDChoiceErrorMessage = self::validateCorporateDiscountIDForChoiceConstraintFromSetCorporateDiscountID($corporateDiscountID))) {
             throw new InvalidArgumentException($corporateDiscountIDChoiceErrorMessage, __LINE__);
         }
         if (is_null($corporateDiscountID) || (is_array($corporateDiscountID) && empty($corporateDiscountID))) {
@@ -969,16 +971,16 @@ class HotelAdd extends AbstractStructBase
      */
     public function getReservationName(): ?\Travelport\UniversalRecord\StructType\ReservationName
     {
-        return isset($this->ReservationName) ? $this->ReservationName : null;
+        return $this->ReservationName ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setReservationName method
+     * This method is responsible for validating the value(s) passed to the setReservationName method
      * This method is willingly generated in order to preserve the one-line inline validation within the setReservationName method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateReservationNameForChoiceConstraintsFromSetReservationName($value): string
+    public function validateReservationNameForChoiceConstraintFromSetReservationName($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1021,7 +1023,7 @@ class HotelAdd extends AbstractStructBase
     public function setReservationName(?\Travelport\UniversalRecord\StructType\ReservationName $reservationName = null): self
     {
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($reservationNameChoiceErrorMessage = self::validateReservationNameForChoiceConstraintsFromSetReservationName($reservationName))) {
+        if ('' !== ($reservationNameChoiceErrorMessage = self::validateReservationNameForChoiceConstraintFromSetReservationName($reservationName))) {
             throw new InvalidArgumentException($reservationNameChoiceErrorMessage, __LINE__);
         }
         if (is_null($reservationName) || (is_array($reservationName) && empty($reservationName))) {
@@ -1038,16 +1040,16 @@ class HotelAdd extends AbstractStructBase
      */
     public function getThirdPartyInformation(): ?\Travelport\UniversalRecord\StructType\ThirdPartyInformation
     {
-        return isset($this->ThirdPartyInformation) ? $this->ThirdPartyInformation : null;
+        return $this->ThirdPartyInformation ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setThirdPartyInformation method
+     * This method is responsible for validating the value(s) passed to the setThirdPartyInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setThirdPartyInformation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateThirdPartyInformationForChoiceConstraintsFromSetThirdPartyInformation($value): string
+    public function validateThirdPartyInformationForChoiceConstraintFromSetThirdPartyInformation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1090,7 +1092,7 @@ class HotelAdd extends AbstractStructBase
     public function setThirdPartyInformation(?\Travelport\UniversalRecord\StructType\ThirdPartyInformation $thirdPartyInformation = null): self
     {
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($thirdPartyInformationChoiceErrorMessage = self::validateThirdPartyInformationForChoiceConstraintsFromSetThirdPartyInformation($thirdPartyInformation))) {
+        if ('' !== ($thirdPartyInformationChoiceErrorMessage = self::validateThirdPartyInformationForChoiceConstraintFromSetThirdPartyInformation($thirdPartyInformation))) {
             throw new InvalidArgumentException($thirdPartyInformationChoiceErrorMessage, __LINE__);
         }
         if (is_null($thirdPartyInformation) || (is_array($thirdPartyInformation) && empty($thirdPartyInformation))) {
@@ -1103,19 +1105,20 @@ class HotelAdd extends AbstractStructBase
     }
     /**
      * Get TravelComplianceData value
-     * @return \Travelport\UniversalRecord\StructType\TravelComplianceData[]
+     * @return \Travelport\UniversalRecord\StructType\TravelComplianceData[]|null
      */
     public function getTravelComplianceData(): ?array
     {
-        return isset($this->TravelComplianceData) ? $this->TravelComplianceData : null;
+        return $this->TravelComplianceData ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setTravelComplianceData method
+     * This method is responsible for validating the value(s) passed to the setTravelComplianceData method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTravelComplianceData method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTravelComplianceDataForArrayConstraintsFromSetTravelComplianceData(?array $values = []): string
+    public static function validateTravelComplianceDataForArrayConstraintFromSetTravelComplianceData(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1136,13 +1139,13 @@ class HotelAdd extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setTravelComplianceData method
+     * This method is responsible for validating the value(s) passed to the setTravelComplianceData method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTravelComplianceData method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateTravelComplianceDataForChoiceConstraintsFromSetTravelComplianceData($value): string
+    public function validateTravelComplianceDataForChoiceConstraintFromSetTravelComplianceData($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1186,11 +1189,11 @@ class HotelAdd extends AbstractStructBase
     public function setTravelComplianceData(?array $travelComplianceData = null): self
     {
         // validation for constraint: array
-        if ('' !== ($travelComplianceDataArrayErrorMessage = self::validateTravelComplianceDataForArrayConstraintsFromSetTravelComplianceData($travelComplianceData))) {
+        if ('' !== ($travelComplianceDataArrayErrorMessage = self::validateTravelComplianceDataForArrayConstraintFromSetTravelComplianceData($travelComplianceData))) {
             throw new InvalidArgumentException($travelComplianceDataArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($travelComplianceDataChoiceErrorMessage = self::validateTravelComplianceDataForChoiceConstraintsFromSetTravelComplianceData($travelComplianceData))) {
+        if ('' !== ($travelComplianceDataChoiceErrorMessage = self::validateTravelComplianceDataForChoiceConstraintFromSetTravelComplianceData($travelComplianceData))) {
             throw new InvalidArgumentException($travelComplianceDataChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1210,13 +1213,13 @@ class HotelAdd extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToTravelComplianceData method
+     * This method is responsible for validating the value(s) passed to the addToTravelComplianceData method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToTravelComplianceData method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToTravelComplianceData($value): string
+    public function validateItemForChoiceConstraintFromAddToTravelComplianceData($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1260,7 +1263,7 @@ class HotelAdd extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The TravelComplianceData property can only contain items of type \Travelport\UniversalRecord\StructType\TravelComplianceData, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToTravelComplianceData($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToTravelComplianceData($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1277,19 +1280,20 @@ class HotelAdd extends AbstractStructBase
     }
     /**
      * Get HotelBedding value
-     * @return \Travelport\UniversalRecord\StructType\HotelBedding[]
+     * @return \Travelport\UniversalRecord\StructType\HotelBedding[]|null
      */
     public function getHotelBedding(): ?array
     {
-        return isset($this->HotelBedding) ? $this->HotelBedding : null;
+        return $this->HotelBedding ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelBedding method
+     * This method is responsible for validating the value(s) passed to the setHotelBedding method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelBedding method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelBeddingForArrayConstraintsFromSetHotelBedding(?array $values = []): string
+    public static function validateHotelBeddingForArrayConstraintFromSetHotelBedding(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1310,13 +1314,13 @@ class HotelAdd extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelBedding method
+     * This method is responsible for validating the value(s) passed to the setHotelBedding method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelBedding method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelBeddingForChoiceConstraintsFromSetHotelBedding($value): string
+    public function validateHotelBeddingForChoiceConstraintFromSetHotelBedding($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1360,11 +1364,11 @@ class HotelAdd extends AbstractStructBase
     public function setHotelBedding(?array $hotelBedding = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelBeddingArrayErrorMessage = self::validateHotelBeddingForArrayConstraintsFromSetHotelBedding($hotelBedding))) {
+        if ('' !== ($hotelBeddingArrayErrorMessage = self::validateHotelBeddingForArrayConstraintFromSetHotelBedding($hotelBedding))) {
             throw new InvalidArgumentException($hotelBeddingArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($hotelBeddingChoiceErrorMessage = self::validateHotelBeddingForChoiceConstraintsFromSetHotelBedding($hotelBedding))) {
+        if ('' !== ($hotelBeddingChoiceErrorMessage = self::validateHotelBeddingForChoiceConstraintFromSetHotelBedding($hotelBedding))) {
             throw new InvalidArgumentException($hotelBeddingChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1384,13 +1388,13 @@ class HotelAdd extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToHotelBedding method
+     * This method is responsible for validating the value(s) passed to the addToHotelBedding method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToHotelBedding method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToHotelBedding($value): string
+    public function validateItemForChoiceConstraintFromAddToHotelBedding($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1434,7 +1438,7 @@ class HotelAdd extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The HotelBedding property can only contain items of type \Travelport\UniversalRecord\StructType\HotelBedding, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToHotelBedding($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToHotelBedding($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1455,16 +1459,16 @@ class HotelAdd extends AbstractStructBase
      */
     public function getBookingConfirmation(): ?string
     {
-        return isset($this->BookingConfirmation) ? $this->BookingConfirmation : null;
+        return $this->BookingConfirmation ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setBookingConfirmation method
+     * This method is responsible for validating the value(s) passed to the setBookingConfirmation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingConfirmation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateBookingConfirmationForChoiceConstraintsFromSetBookingConfirmation($value): string
+    public function validateBookingConfirmationForChoiceConstraintFromSetBookingConfirmation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1511,7 +1515,7 @@ class HotelAdd extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingConfirmation, true), gettype($bookingConfirmation)), __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, Guarantee, GuestInformation, AssociatedRemark, BookingSource, HotelSpecialRequest, CorporateDiscountID, ReservationName, ThirdPartyInformation, TravelComplianceData, HotelBedding, BookingConfirmation)
-        if ('' !== ($bookingConfirmationChoiceErrorMessage = self::validateBookingConfirmationForChoiceConstraintsFromSetBookingConfirmation($bookingConfirmation))) {
+        if ('' !== ($bookingConfirmationChoiceErrorMessage = self::validateBookingConfirmationForChoiceConstraintFromSetBookingConfirmation($bookingConfirmation))) {
             throw new InvalidArgumentException($bookingConfirmationChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: maxLength(32)

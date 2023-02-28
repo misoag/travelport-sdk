@@ -42,12 +42,13 @@ class AlternateLocationDistanceList extends AbstractStructBase
         return $this->AlternateLocationDistance;
     }
     /**
-     * This method is responsible for validating the values passed to the setAlternateLocationDistance method
+     * This method is responsible for validating the value(s) passed to the setAlternateLocationDistance method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAlternateLocationDistance method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAlternateLocationDistanceForArrayConstraintsFromSetAlternateLocationDistance(?array $values = []): string
+    public static function validateAlternateLocationDistanceForArrayConstraintFromSetAlternateLocationDistance(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class AlternateLocationDistanceList extends AbstractStructBase
     public function setAlternateLocationDistance(?array $alternateLocationDistance = null): self
     {
         // validation for constraint: array
-        if ('' !== ($alternateLocationDistanceArrayErrorMessage = self::validateAlternateLocationDistanceForArrayConstraintsFromSetAlternateLocationDistance($alternateLocationDistance))) {
+        if ('' !== ($alternateLocationDistanceArrayErrorMessage = self::validateAlternateLocationDistanceForArrayConstraintFromSetAlternateLocationDistance($alternateLocationDistance))) {
             throw new InvalidArgumentException($alternateLocationDistanceArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

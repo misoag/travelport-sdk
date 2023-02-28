@@ -414,12 +414,13 @@ class AirExchangeInfo extends AbstractStructBase
         return $this->PaidTax;
     }
     /**
-     * This method is responsible for validating the values passed to the setPaidTax method
+     * This method is responsible for validating the value(s) passed to the setPaidTax method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPaidTax method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePaidTaxForArrayConstraintsFromSetPaidTax(?array $values = []): string
+    public static function validatePaidTaxForArrayConstraintFromSetPaidTax(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -448,7 +449,7 @@ class AirExchangeInfo extends AbstractStructBase
     public function setPaidTax(?array $paidTax = null): self
     {
         // validation for constraint: array
-        if ('' !== ($paidTaxArrayErrorMessage = self::validatePaidTaxForArrayConstraintsFromSetPaidTax($paidTax))) {
+        if ('' !== ($paidTaxArrayErrorMessage = self::validatePaidTaxForArrayConstraintFromSetPaidTax($paidTax))) {
             throw new InvalidArgumentException($paidTaxArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -488,12 +489,13 @@ class AirExchangeInfo extends AbstractStructBase
         return $this->TicketFeeInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setTicketFeeInfo method
+     * This method is responsible for validating the value(s) passed to the setTicketFeeInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTicketFeeInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTicketFeeInfoForArrayConstraintsFromSetTicketFeeInfo(?array $values = []): string
+    public static function validateTicketFeeInfoForArrayConstraintFromSetTicketFeeInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -522,7 +524,7 @@ class AirExchangeInfo extends AbstractStructBase
     public function setTicketFeeInfo(?array $ticketFeeInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($ticketFeeInfoArrayErrorMessage = self::validateTicketFeeInfoForArrayConstraintsFromSetTicketFeeInfo($ticketFeeInfo))) {
+        if ('' !== ($ticketFeeInfoArrayErrorMessage = self::validateTicketFeeInfoForArrayConstraintFromSetTicketFeeInfo($ticketFeeInfo))) {
             throw new InvalidArgumentException($ticketFeeInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -562,12 +564,13 @@ class AirExchangeInfo extends AbstractStructBase
         return $this->Reason;
     }
     /**
-     * This method is responsible for validating the values passed to the setReason method
+     * This method is responsible for validating the value(s) passed to the setReason method
      * This method is willingly generated in order to preserve the one-line inline validation within the setReason method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateReasonForArrayConstraintsFromSetReason(?array $values = []): string
+    public static function validateReasonForArrayConstraintFromSetReason(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -596,7 +599,7 @@ class AirExchangeInfo extends AbstractStructBase
     public function setReason(?array $reason = null): self
     {
         // validation for constraint: array
-        if ('' !== ($reasonArrayErrorMessage = self::validateReasonForArrayConstraintsFromSetReason($reason))) {
+        if ('' !== ($reasonArrayErrorMessage = self::validateReasonForArrayConstraintFromSetReason($reason))) {
             throw new InvalidArgumentException($reasonArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -636,12 +639,13 @@ class AirExchangeInfo extends AbstractStructBase
         return $this->FeeInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setFeeInfo method
+     * This method is responsible for validating the value(s) passed to the setFeeInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFeeInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFeeInfoForArrayConstraintsFromSetFeeInfo(?array $values = []): string
+    public static function validateFeeInfoForArrayConstraintFromSetFeeInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -670,7 +674,7 @@ class AirExchangeInfo extends AbstractStructBase
     public function setFeeInfo(?array $feeInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($feeInfoArrayErrorMessage = self::validateFeeInfoForArrayConstraintsFromSetFeeInfo($feeInfo))) {
+        if ('' !== ($feeInfoArrayErrorMessage = self::validateFeeInfoForArrayConstraintFromSetFeeInfo($feeInfo))) {
             throw new InvalidArgumentException($feeInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -710,12 +714,13 @@ class AirExchangeInfo extends AbstractStructBase
         return $this->TaxInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setTaxInfo method
+     * This method is responsible for validating the value(s) passed to the setTaxInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTaxInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTaxInfoForArrayConstraintsFromSetTaxInfo(?array $values = []): string
+    public static function validateTaxInfoForArrayConstraintFromSetTaxInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -744,7 +749,7 @@ class AirExchangeInfo extends AbstractStructBase
     public function setTaxInfo(?array $taxInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($taxInfoArrayErrorMessage = self::validateTaxInfoForArrayConstraintsFromSetTaxInfo($taxInfo))) {
+        if ('' !== ($taxInfoArrayErrorMessage = self::validateTaxInfoForArrayConstraintFromSetTaxInfo($taxInfo))) {
             throw new InvalidArgumentException($taxInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

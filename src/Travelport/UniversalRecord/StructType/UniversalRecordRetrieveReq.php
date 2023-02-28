@@ -93,7 +93,7 @@ class UniversalRecordRetrieveReq extends BaseReq
      * @param string $travelerFirstName
      * @param bool $returnUnmaskedData
      */
-    public function __construct(string $universalRecordLocatorCode, ?\Travelport\UniversalRecord\StructType\ProviderReservationInfo $providerReservationInfo = null, ?bool $viewOnlyInd = false, ?string $travelerLastName = null, ?string $travelerFirstName = null, ?bool $returnUnmaskedData = null)
+    public function __construct(string $universalRecordLocatorCode = null, ?\Travelport\UniversalRecord\StructType\ProviderReservationInfo $providerReservationInfo = null, ?bool $viewOnlyInd = false, ?string $travelerLastName = null, ?string $travelerFirstName = null, ?bool $returnUnmaskedData = null)
     {
         $this
             ->setUniversalRecordLocatorCode($universalRecordLocatorCode)
@@ -105,20 +105,20 @@ class UniversalRecordRetrieveReq extends BaseReq
     }
     /**
      * Get UniversalRecordLocatorCode value
-     * @return string
+     * @return string|null
      */
-    public function getUniversalRecordLocatorCode(): string
+    public function getUniversalRecordLocatorCode(): ?string
     {
-        return isset($this->UniversalRecordLocatorCode) ? $this->UniversalRecordLocatorCode : null;
+        return $this->UniversalRecordLocatorCode ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setUniversalRecordLocatorCode method
+     * This method is responsible for validating the value(s) passed to the setUniversalRecordLocatorCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setUniversalRecordLocatorCode method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateUniversalRecordLocatorCodeForChoiceConstraintsFromSetUniversalRecordLocatorCode($value): string
+    public function validateUniversalRecordLocatorCodeForChoiceConstraintFromSetUniversalRecordLocatorCode($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -148,14 +148,14 @@ class UniversalRecordRetrieveReq extends BaseReq
      * @param string $universalRecordLocatorCode
      * @return \Travelport\UniversalRecord\StructType\UniversalRecordRetrieveReq
      */
-    public function setUniversalRecordLocatorCode(string $universalRecordLocatorCode): self
+    public function setUniversalRecordLocatorCode(string $universalRecordLocatorCode = null): self
     {
         // validation for constraint: string
         if (!is_null($universalRecordLocatorCode) && !is_string($universalRecordLocatorCode)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($universalRecordLocatorCode, true), gettype($universalRecordLocatorCode)), __LINE__);
         }
         // validation for constraint: choice(UniversalRecordLocatorCode, ProviderReservationInfo)
-        if ('' !== ($universalRecordLocatorCodeChoiceErrorMessage = self::validateUniversalRecordLocatorCodeForChoiceConstraintsFromSetUniversalRecordLocatorCode($universalRecordLocatorCode))) {
+        if ('' !== ($universalRecordLocatorCodeChoiceErrorMessage = self::validateUniversalRecordLocatorCodeForChoiceConstraintFromSetUniversalRecordLocatorCode($universalRecordLocatorCode))) {
             throw new InvalidArgumentException($universalRecordLocatorCodeChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: maxLength(8)
@@ -180,16 +180,16 @@ class UniversalRecordRetrieveReq extends BaseReq
      */
     public function getProviderReservationInfo(): ?\Travelport\UniversalRecord\StructType\ProviderReservationInfo
     {
-        return isset($this->ProviderReservationInfo) ? $this->ProviderReservationInfo : null;
+        return $this->ProviderReservationInfo ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setProviderReservationInfo method
+     * This method is responsible for validating the value(s) passed to the setProviderReservationInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationInfo method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateProviderReservationInfoForChoiceConstraintsFromSetProviderReservationInfo($value): string
+    public function validateProviderReservationInfoForChoiceConstraintFromSetProviderReservationInfo($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -222,7 +222,7 @@ class UniversalRecordRetrieveReq extends BaseReq
     public function setProviderReservationInfo(?\Travelport\UniversalRecord\StructType\ProviderReservationInfo $providerReservationInfo = null): self
     {
         // validation for constraint: choice(UniversalRecordLocatorCode, ProviderReservationInfo)
-        if ('' !== ($providerReservationInfoChoiceErrorMessage = self::validateProviderReservationInfoForChoiceConstraintsFromSetProviderReservationInfo($providerReservationInfo))) {
+        if ('' !== ($providerReservationInfoChoiceErrorMessage = self::validateProviderReservationInfoForChoiceConstraintFromSetProviderReservationInfo($providerReservationInfo))) {
             throw new InvalidArgumentException($providerReservationInfoChoiceErrorMessage, __LINE__);
         }
         if (is_null($providerReservationInfo) || (is_array($providerReservationInfo) && empty($providerReservationInfo))) {

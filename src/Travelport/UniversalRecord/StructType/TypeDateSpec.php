@@ -56,16 +56,16 @@ class TypeDateSpec extends AbstractStructBase
      */
     public function getDateRange(): ?\Travelport\UniversalRecord\StructType\TypeDateRange
     {
-        return isset($this->DateRange) ? $this->DateRange : null;
+        return $this->DateRange ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setDateRange method
+     * This method is responsible for validating the value(s) passed to the setDateRange method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDateRange method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateDateRangeForChoiceConstraintsFromSetDateRange($value): string
+    public function validateDateRangeForChoiceConstraintFromSetDateRange($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -98,7 +98,7 @@ class TypeDateSpec extends AbstractStructBase
     public function setDateRange(?\Travelport\UniversalRecord\StructType\TypeDateRange $dateRange = null): self
     {
         // validation for constraint: choice(DateRange, SpecificDate)
-        if ('' !== ($dateRangeChoiceErrorMessage = self::validateDateRangeForChoiceConstraintsFromSetDateRange($dateRange))) {
+        if ('' !== ($dateRangeChoiceErrorMessage = self::validateDateRangeForChoiceConstraintFromSetDateRange($dateRange))) {
             throw new InvalidArgumentException($dateRangeChoiceErrorMessage, __LINE__);
         }
         if (is_null($dateRange) || (is_array($dateRange) && empty($dateRange))) {
@@ -115,16 +115,16 @@ class TypeDateSpec extends AbstractStructBase
      */
     public function getSpecificDate(): ?string
     {
-        return isset($this->SpecificDate) ? $this->SpecificDate : null;
+        return $this->SpecificDate ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setSpecificDate method
+     * This method is responsible for validating the value(s) passed to the setSpecificDate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSpecificDate method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateSpecificDateForChoiceConstraintsFromSetSpecificDate($value): string
+    public function validateSpecificDateForChoiceConstraintFromSetSpecificDate($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -161,7 +161,7 @@ class TypeDateSpec extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($specificDate, true), gettype($specificDate)), __LINE__);
         }
         // validation for constraint: choice(DateRange, SpecificDate)
-        if ('' !== ($specificDateChoiceErrorMessage = self::validateSpecificDateForChoiceConstraintsFromSetSpecificDate($specificDate))) {
+        if ('' !== ($specificDateChoiceErrorMessage = self::validateSpecificDateForChoiceConstraintFromSetSpecificDate($specificDate))) {
             throw new InvalidArgumentException($specificDateChoiceErrorMessage, __LINE__);
         }
         if (is_null($specificDate) || (is_array($specificDate) && empty($specificDate))) {

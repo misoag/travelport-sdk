@@ -459,12 +459,13 @@ class TicketingModifiers extends AbstractStructBase
         return $this->BookingTravelerRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingTravelerRef method
+     * This method is responsible for validating the value(s) passed to the setBookingTravelerRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTravelerRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef(?array $values = []): string
+    public static function validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -493,7 +494,7 @@ class TicketingModifiers extends AbstractStructBase
     public function setBookingTravelerRef(?array $bookingTravelerRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef($bookingTravelerRef))) {
+        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef($bookingTravelerRef))) {
             throw new InvalidArgumentException($bookingTravelerRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -723,12 +724,13 @@ class TicketingModifiers extends AbstractStructBase
         return $this->TicketEndorsement;
     }
     /**
-     * This method is responsible for validating the values passed to the setTicketEndorsement method
+     * This method is responsible for validating the value(s) passed to the setTicketEndorsement method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTicketEndorsement method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTicketEndorsementForArrayConstraintsFromSetTicketEndorsement(?array $values = []): string
+    public static function validateTicketEndorsementForArrayConstraintFromSetTicketEndorsement(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -757,7 +759,7 @@ class TicketingModifiers extends AbstractStructBase
     public function setTicketEndorsement(?array $ticketEndorsement = null): self
     {
         // validation for constraint: array
-        if ('' !== ($ticketEndorsementArrayErrorMessage = self::validateTicketEndorsementForArrayConstraintsFromSetTicketEndorsement($ticketEndorsement))) {
+        if ('' !== ($ticketEndorsementArrayErrorMessage = self::validateTicketEndorsementForArrayConstraintFromSetTicketEndorsement($ticketEndorsement))) {
             throw new InvalidArgumentException($ticketEndorsementArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(3)
@@ -873,12 +875,13 @@ class TicketingModifiers extends AbstractStructBase
         return $this->SegmentModifiers;
     }
     /**
-     * This method is responsible for validating the values passed to the setSegmentModifiers method
+     * This method is responsible for validating the value(s) passed to the setSegmentModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSegmentModifiers method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSegmentModifiersForArrayConstraintsFromSetSegmentModifiers(?array $values = []): string
+    public static function validateSegmentModifiersForArrayConstraintFromSetSegmentModifiers(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -907,7 +910,7 @@ class TicketingModifiers extends AbstractStructBase
     public function setSegmentModifiers(?array $segmentModifiers = null): self
     {
         // validation for constraint: array
-        if ('' !== ($segmentModifiersArrayErrorMessage = self::validateSegmentModifiersForArrayConstraintsFromSetSegmentModifiers($segmentModifiers))) {
+        if ('' !== ($segmentModifiersArrayErrorMessage = self::validateSegmentModifiersForArrayConstraintFromSetSegmentModifiers($segmentModifiers))) {
             throw new InvalidArgumentException($segmentModifiersArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -985,12 +988,13 @@ class TicketingModifiers extends AbstractStructBase
         return $this->LanguageOption;
     }
     /**
-     * This method is responsible for validating the values passed to the setLanguageOption method
+     * This method is responsible for validating the value(s) passed to the setLanguageOption method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLanguageOption method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLanguageOptionForArrayConstraintsFromSetLanguageOption(?array $values = []): string
+    public static function validateLanguageOptionForArrayConstraintFromSetLanguageOption(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1019,7 +1023,7 @@ class TicketingModifiers extends AbstractStructBase
     public function setLanguageOption(?array $languageOption = null): self
     {
         // validation for constraint: array
-        if ('' !== ($languageOptionArrayErrorMessage = self::validateLanguageOptionForArrayConstraintsFromSetLanguageOption($languageOption))) {
+        if ('' !== ($languageOptionArrayErrorMessage = self::validateLanguageOptionForArrayConstraintFromSetLanguageOption($languageOption))) {
             throw new InvalidArgumentException($languageOptionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(2)

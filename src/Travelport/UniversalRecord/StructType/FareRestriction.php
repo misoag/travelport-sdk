@@ -88,12 +88,13 @@ class FareRestriction extends AbstractStructBase
         return $this->FareRestrictionDaysOfWeek;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareRestrictionDaysOfWeek method
+     * This method is responsible for validating the value(s) passed to the setFareRestrictionDaysOfWeek method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareRestrictionDaysOfWeek method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareRestrictionDaysOfWeekForArrayConstraintsFromSetFareRestrictionDaysOfWeek(?array $values = []): string
+    public static function validateFareRestrictionDaysOfWeekForArrayConstraintFromSetFareRestrictionDaysOfWeek(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -122,7 +123,7 @@ class FareRestriction extends AbstractStructBase
     public function setFareRestrictionDaysOfWeek(?array $fareRestrictionDaysOfWeek = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareRestrictionDaysOfWeekArrayErrorMessage = self::validateFareRestrictionDaysOfWeekForArrayConstraintsFromSetFareRestrictionDaysOfWeek($fareRestrictionDaysOfWeek))) {
+        if ('' !== ($fareRestrictionDaysOfWeekArrayErrorMessage = self::validateFareRestrictionDaysOfWeekForArrayConstraintFromSetFareRestrictionDaysOfWeek($fareRestrictionDaysOfWeek))) {
             throw new InvalidArgumentException($fareRestrictionDaysOfWeekArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(3)
@@ -162,12 +163,13 @@ class FareRestriction extends AbstractStructBase
         return $this->FareRestrictionDate;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareRestrictionDate method
+     * This method is responsible for validating the value(s) passed to the setFareRestrictionDate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareRestrictionDate method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareRestrictionDateForArrayConstraintsFromSetFareRestrictionDate(?array $values = []): string
+    public static function validateFareRestrictionDateForArrayConstraintFromSetFareRestrictionDate(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -196,7 +198,7 @@ class FareRestriction extends AbstractStructBase
     public function setFareRestrictionDate(?array $fareRestrictionDate = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareRestrictionDateArrayErrorMessage = self::validateFareRestrictionDateForArrayConstraintsFromSetFareRestrictionDate($fareRestrictionDate))) {
+        if ('' !== ($fareRestrictionDateArrayErrorMessage = self::validateFareRestrictionDateForArrayConstraintFromSetFareRestrictionDate($fareRestrictionDate))) {
             throw new InvalidArgumentException($fareRestrictionDateArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -255,12 +257,13 @@ class FareRestriction extends AbstractStructBase
         return $this->FareRestrictionSeasonal;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareRestrictionSeasonal method
+     * This method is responsible for validating the value(s) passed to the setFareRestrictionSeasonal method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareRestrictionSeasonal method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareRestrictionSeasonalForArrayConstraintsFromSetFareRestrictionSeasonal(?array $values = []): string
+    public static function validateFareRestrictionSeasonalForArrayConstraintFromSetFareRestrictionSeasonal(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -289,7 +292,7 @@ class FareRestriction extends AbstractStructBase
     public function setFareRestrictionSeasonal(?array $fareRestrictionSeasonal = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareRestrictionSeasonalArrayErrorMessage = self::validateFareRestrictionSeasonalForArrayConstraintsFromSetFareRestrictionSeasonal($fareRestrictionSeasonal))) {
+        if ('' !== ($fareRestrictionSeasonalArrayErrorMessage = self::validateFareRestrictionSeasonalForArrayConstraintFromSetFareRestrictionSeasonal($fareRestrictionSeasonal))) {
             throw new InvalidArgumentException($fareRestrictionSeasonalArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

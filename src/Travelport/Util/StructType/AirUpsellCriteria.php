@@ -65,12 +65,13 @@ class AirUpsellCriteria extends AbstractStructBase
         return $this->AirUpsellAdd;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirUpsellAdd method
+     * This method is responsible for validating the value(s) passed to the setAirUpsellAdd method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirUpsellAdd method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirUpsellAddForArrayConstraintsFromSetAirUpsellAdd(?array $values = []): string
+    public static function validateAirUpsellAddForArrayConstraintFromSetAirUpsellAdd(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -99,7 +100,7 @@ class AirUpsellCriteria extends AbstractStructBase
     public function setAirUpsellAdd(?array $airUpsellAdd = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airUpsellAddArrayErrorMessage = self::validateAirUpsellAddForArrayConstraintsFromSetAirUpsellAdd($airUpsellAdd))) {
+        if ('' !== ($airUpsellAddArrayErrorMessage = self::validateAirUpsellAddForArrayConstraintFromSetAirUpsellAdd($airUpsellAdd))) {
             throw new InvalidArgumentException($airUpsellAddArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -139,12 +140,13 @@ class AirUpsellCriteria extends AbstractStructBase
         return $this->AirUpsellUpdate;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirUpsellUpdate method
+     * This method is responsible for validating the value(s) passed to the setAirUpsellUpdate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirUpsellUpdate method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirUpsellUpdateForArrayConstraintsFromSetAirUpsellUpdate(?array $values = []): string
+    public static function validateAirUpsellUpdateForArrayConstraintFromSetAirUpsellUpdate(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -173,7 +175,7 @@ class AirUpsellCriteria extends AbstractStructBase
     public function setAirUpsellUpdate(?array $airUpsellUpdate = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airUpsellUpdateArrayErrorMessage = self::validateAirUpsellUpdateForArrayConstraintsFromSetAirUpsellUpdate($airUpsellUpdate))) {
+        if ('' !== ($airUpsellUpdateArrayErrorMessage = self::validateAirUpsellUpdateForArrayConstraintFromSetAirUpsellUpdate($airUpsellUpdate))) {
             throw new InvalidArgumentException($airUpsellUpdateArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -213,12 +215,13 @@ class AirUpsellCriteria extends AbstractStructBase
         return $this->AirUpsellDelete;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirUpsellDelete method
+     * This method is responsible for validating the value(s) passed to the setAirUpsellDelete method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirUpsellDelete method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirUpsellDeleteForArrayConstraintsFromSetAirUpsellDelete(?array $values = []): string
+    public static function validateAirUpsellDeleteForArrayConstraintFromSetAirUpsellDelete(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -247,7 +250,7 @@ class AirUpsellCriteria extends AbstractStructBase
     public function setAirUpsellDelete(?array $airUpsellDelete = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airUpsellDeleteArrayErrorMessage = self::validateAirUpsellDeleteForArrayConstraintsFromSetAirUpsellDelete($airUpsellDelete))) {
+        if ('' !== ($airUpsellDeleteArrayErrorMessage = self::validateAirUpsellDeleteForArrayConstraintFromSetAirUpsellDelete($airUpsellDelete))) {
             throw new InvalidArgumentException($airUpsellDeleteArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

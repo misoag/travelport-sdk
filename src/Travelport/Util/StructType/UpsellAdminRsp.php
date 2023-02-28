@@ -69,19 +69,20 @@ class UpsellAdminRsp extends BaseRsp
     }
     /**
      * Get AirUpsellRule value
-     * @return \Travelport\Util\StructType\AirUpsellRule[]
+     * @return \Travelport\Util\StructType\AirUpsellRule[]|null
      */
     public function getAirUpsellRule(): ?array
     {
-        return isset($this->AirUpsellRule) ? $this->AirUpsellRule : null;
+        return $this->AirUpsellRule ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirUpsellRule method
+     * This method is responsible for validating the value(s) passed to the setAirUpsellRule method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirUpsellRule method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirUpsellRuleForArrayConstraintsFromSetAirUpsellRule(?array $values = []): string
+    public static function validateAirUpsellRuleForArrayConstraintFromSetAirUpsellRule(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -102,13 +103,13 @@ class UpsellAdminRsp extends BaseRsp
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirUpsellRule method
+     * This method is responsible for validating the value(s) passed to the setAirUpsellRule method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirUpsellRule method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirUpsellRuleForChoiceConstraintsFromSetAirUpsellRule($value): string
+    public function validateAirUpsellRuleForChoiceConstraintFromSetAirUpsellRule($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -143,11 +144,11 @@ class UpsellAdminRsp extends BaseRsp
     public function setAirUpsellRule(?array $airUpsellRule = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airUpsellRuleArrayErrorMessage = self::validateAirUpsellRuleForArrayConstraintsFromSetAirUpsellRule($airUpsellRule))) {
+        if ('' !== ($airUpsellRuleArrayErrorMessage = self::validateAirUpsellRuleForArrayConstraintFromSetAirUpsellRule($airUpsellRule))) {
             throw new InvalidArgumentException($airUpsellRuleArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AirUpsellRule, VehicleUpsellRule, HotelUpsellRule)
-        if ('' !== ($airUpsellRuleChoiceErrorMessage = self::validateAirUpsellRuleForChoiceConstraintsFromSetAirUpsellRule($airUpsellRule))) {
+        if ('' !== ($airUpsellRuleChoiceErrorMessage = self::validateAirUpsellRuleForChoiceConstraintFromSetAirUpsellRule($airUpsellRule))) {
             throw new InvalidArgumentException($airUpsellRuleChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -167,13 +168,13 @@ class UpsellAdminRsp extends BaseRsp
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToAirUpsellRule method
+     * This method is responsible for validating the value(s) passed to the addToAirUpsellRule method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToAirUpsellRule method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToAirUpsellRule($value): string
+    public function validateItemForChoiceConstraintFromAddToAirUpsellRule($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -208,7 +209,7 @@ class UpsellAdminRsp extends BaseRsp
             throw new InvalidArgumentException(sprintf('The AirUpsellRule property can only contain items of type \Travelport\Util\StructType\AirUpsellRule, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AirUpsellRule, VehicleUpsellRule, HotelUpsellRule)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToAirUpsellRule($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToAirUpsellRule($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -225,19 +226,20 @@ class UpsellAdminRsp extends BaseRsp
     }
     /**
      * Get VehicleUpsellRule value
-     * @return \Travelport\Util\StructType\VehicleUpsellRule[]
+     * @return \Travelport\Util\StructType\VehicleUpsellRule[]|null
      */
     public function getVehicleUpsellRule(): ?array
     {
-        return isset($this->VehicleUpsellRule) ? $this->VehicleUpsellRule : null;
+        return $this->VehicleUpsellRule ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleUpsellRule method
+     * This method is responsible for validating the value(s) passed to the setVehicleUpsellRule method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleUpsellRule method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleUpsellRuleForArrayConstraintsFromSetVehicleUpsellRule(?array $values = []): string
+    public static function validateVehicleUpsellRuleForArrayConstraintFromSetVehicleUpsellRule(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -258,13 +260,13 @@ class UpsellAdminRsp extends BaseRsp
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicleUpsellRule method
+     * This method is responsible for validating the value(s) passed to the setVehicleUpsellRule method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleUpsellRule method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleUpsellRuleForChoiceConstraintsFromSetVehicleUpsellRule($value): string
+    public function validateVehicleUpsellRuleForChoiceConstraintFromSetVehicleUpsellRule($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -299,11 +301,11 @@ class UpsellAdminRsp extends BaseRsp
     public function setVehicleUpsellRule(?array $vehicleUpsellRule = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleUpsellRuleArrayErrorMessage = self::validateVehicleUpsellRuleForArrayConstraintsFromSetVehicleUpsellRule($vehicleUpsellRule))) {
+        if ('' !== ($vehicleUpsellRuleArrayErrorMessage = self::validateVehicleUpsellRuleForArrayConstraintFromSetVehicleUpsellRule($vehicleUpsellRule))) {
             throw new InvalidArgumentException($vehicleUpsellRuleArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AirUpsellRule, VehicleUpsellRule, HotelUpsellRule)
-        if ('' !== ($vehicleUpsellRuleChoiceErrorMessage = self::validateVehicleUpsellRuleForChoiceConstraintsFromSetVehicleUpsellRule($vehicleUpsellRule))) {
+        if ('' !== ($vehicleUpsellRuleChoiceErrorMessage = self::validateVehicleUpsellRuleForChoiceConstraintFromSetVehicleUpsellRule($vehicleUpsellRule))) {
             throw new InvalidArgumentException($vehicleUpsellRuleChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -323,13 +325,13 @@ class UpsellAdminRsp extends BaseRsp
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToVehicleUpsellRule method
+     * This method is responsible for validating the value(s) passed to the addToVehicleUpsellRule method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToVehicleUpsellRule method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToVehicleUpsellRule($value): string
+    public function validateItemForChoiceConstraintFromAddToVehicleUpsellRule($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -364,7 +366,7 @@ class UpsellAdminRsp extends BaseRsp
             throw new InvalidArgumentException(sprintf('The VehicleUpsellRule property can only contain items of type \Travelport\Util\StructType\VehicleUpsellRule, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AirUpsellRule, VehicleUpsellRule, HotelUpsellRule)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToVehicleUpsellRule($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToVehicleUpsellRule($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -381,19 +383,20 @@ class UpsellAdminRsp extends BaseRsp
     }
     /**
      * Get HotelUpsellRule value
-     * @return \Travelport\Util\StructType\HotelUpsellRule[]
+     * @return \Travelport\Util\StructType\HotelUpsellRule[]|null
      */
     public function getHotelUpsellRule(): ?array
     {
-        return isset($this->HotelUpsellRule) ? $this->HotelUpsellRule : null;
+        return $this->HotelUpsellRule ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelUpsellRule method
+     * This method is responsible for validating the value(s) passed to the setHotelUpsellRule method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelUpsellRule method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelUpsellRuleForArrayConstraintsFromSetHotelUpsellRule(?array $values = []): string
+    public static function validateHotelUpsellRuleForArrayConstraintFromSetHotelUpsellRule(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -414,13 +417,13 @@ class UpsellAdminRsp extends BaseRsp
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelUpsellRule method
+     * This method is responsible for validating the value(s) passed to the setHotelUpsellRule method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelUpsellRule method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelUpsellRuleForChoiceConstraintsFromSetHotelUpsellRule($value): string
+    public function validateHotelUpsellRuleForChoiceConstraintFromSetHotelUpsellRule($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -455,11 +458,11 @@ class UpsellAdminRsp extends BaseRsp
     public function setHotelUpsellRule(?array $hotelUpsellRule = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelUpsellRuleArrayErrorMessage = self::validateHotelUpsellRuleForArrayConstraintsFromSetHotelUpsellRule($hotelUpsellRule))) {
+        if ('' !== ($hotelUpsellRuleArrayErrorMessage = self::validateHotelUpsellRuleForArrayConstraintFromSetHotelUpsellRule($hotelUpsellRule))) {
             throw new InvalidArgumentException($hotelUpsellRuleArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AirUpsellRule, VehicleUpsellRule, HotelUpsellRule)
-        if ('' !== ($hotelUpsellRuleChoiceErrorMessage = self::validateHotelUpsellRuleForChoiceConstraintsFromSetHotelUpsellRule($hotelUpsellRule))) {
+        if ('' !== ($hotelUpsellRuleChoiceErrorMessage = self::validateHotelUpsellRuleForChoiceConstraintFromSetHotelUpsellRule($hotelUpsellRule))) {
             throw new InvalidArgumentException($hotelUpsellRuleChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -479,13 +482,13 @@ class UpsellAdminRsp extends BaseRsp
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToHotelUpsellRule method
+     * This method is responsible for validating the value(s) passed to the addToHotelUpsellRule method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToHotelUpsellRule method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToHotelUpsellRule($value): string
+    public function validateItemForChoiceConstraintFromAddToHotelUpsellRule($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -520,7 +523,7 @@ class UpsellAdminRsp extends BaseRsp
             throw new InvalidArgumentException(sprintf('The HotelUpsellRule property can only contain items of type \Travelport\Util\StructType\HotelUpsellRule, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AirUpsellRule, VehicleUpsellRule, HotelUpsellRule)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToHotelUpsellRule($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToHotelUpsellRule($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)

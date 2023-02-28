@@ -41,12 +41,13 @@ class PromoCodes extends AbstractStructBase
         return $this->PromoCode;
     }
     /**
-     * This method is responsible for validating the values passed to the setPromoCode method
+     * This method is responsible for validating the value(s) passed to the setPromoCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPromoCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePromoCodeForArrayConstraintsFromSetPromoCode(?array $values = []): string
+    public static function validatePromoCodeForArrayConstraintFromSetPromoCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -75,7 +76,7 @@ class PromoCodes extends AbstractStructBase
     public function setPromoCode(array $promoCode): self
     {
         // validation for constraint: array
-        if ('' !== ($promoCodeArrayErrorMessage = self::validatePromoCodeForArrayConstraintsFromSetPromoCode($promoCode))) {
+        if ('' !== ($promoCodeArrayErrorMessage = self::validatePromoCodeForArrayConstraintFromSetPromoCode($promoCode))) {
             throw new InvalidArgumentException($promoCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

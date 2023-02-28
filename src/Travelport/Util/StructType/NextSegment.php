@@ -86,16 +86,16 @@ class NextSegment extends AbstractStructBase
      */
     public function getAirSegmentRef(): ?\Travelport\Util\StructType\TypeSegmentRef
     {
-        return isset($this->AirSegmentRef) ? $this->AirSegmentRef : null;
+        return $this->AirSegmentRef ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirSegmentRef method
+     * This method is responsible for validating the value(s) passed to the setAirSegmentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegmentRef method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirSegmentRefForChoiceConstraintsFromSetAirSegmentRef($value): string
+    public function validateAirSegmentRefForChoiceConstraintFromSetAirSegmentRef($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -130,7 +130,7 @@ class NextSegment extends AbstractStructBase
     public function setAirSegmentRef(?\Travelport\Util\StructType\TypeSegmentRef $airSegmentRef = null): self
     {
         // validation for constraint: choice(AirSegmentRef, HotelReservationRef, VehicleReservationRef, PassiveSegmentRef)
-        if ('' !== ($airSegmentRefChoiceErrorMessage = self::validateAirSegmentRefForChoiceConstraintsFromSetAirSegmentRef($airSegmentRef))) {
+        if ('' !== ($airSegmentRefChoiceErrorMessage = self::validateAirSegmentRefForChoiceConstraintFromSetAirSegmentRef($airSegmentRef))) {
             throw new InvalidArgumentException($airSegmentRefChoiceErrorMessage, __LINE__);
         }
         if (is_null($airSegmentRef) || (is_array($airSegmentRef) && empty($airSegmentRef))) {
@@ -147,16 +147,16 @@ class NextSegment extends AbstractStructBase
      */
     public function getHotelReservationRef(): ?\Travelport\Util\StructType\TypeNonAirReservationRef
     {
-        return isset($this->HotelReservationRef) ? $this->HotelReservationRef : null;
+        return $this->HotelReservationRef ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelReservationRef method
+     * This method is responsible for validating the value(s) passed to the setHotelReservationRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelReservationRef method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelReservationRefForChoiceConstraintsFromSetHotelReservationRef($value): string
+    public function validateHotelReservationRefForChoiceConstraintFromSetHotelReservationRef($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -191,7 +191,7 @@ class NextSegment extends AbstractStructBase
     public function setHotelReservationRef(?\Travelport\Util\StructType\TypeNonAirReservationRef $hotelReservationRef = null): self
     {
         // validation for constraint: choice(AirSegmentRef, HotelReservationRef, VehicleReservationRef, PassiveSegmentRef)
-        if ('' !== ($hotelReservationRefChoiceErrorMessage = self::validateHotelReservationRefForChoiceConstraintsFromSetHotelReservationRef($hotelReservationRef))) {
+        if ('' !== ($hotelReservationRefChoiceErrorMessage = self::validateHotelReservationRefForChoiceConstraintFromSetHotelReservationRef($hotelReservationRef))) {
             throw new InvalidArgumentException($hotelReservationRefChoiceErrorMessage, __LINE__);
         }
         if (is_null($hotelReservationRef) || (is_array($hotelReservationRef) && empty($hotelReservationRef))) {
@@ -208,16 +208,16 @@ class NextSegment extends AbstractStructBase
      */
     public function getVehicleReservationRef(): ?\Travelport\Util\StructType\TypeNonAirReservationRef
     {
-        return isset($this->VehicleReservationRef) ? $this->VehicleReservationRef : null;
+        return $this->VehicleReservationRef ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicleReservationRef method
+     * This method is responsible for validating the value(s) passed to the setVehicleReservationRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleReservationRef method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleReservationRefForChoiceConstraintsFromSetVehicleReservationRef($value): string
+    public function validateVehicleReservationRefForChoiceConstraintFromSetVehicleReservationRef($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -252,7 +252,7 @@ class NextSegment extends AbstractStructBase
     public function setVehicleReservationRef(?\Travelport\Util\StructType\TypeNonAirReservationRef $vehicleReservationRef = null): self
     {
         // validation for constraint: choice(AirSegmentRef, HotelReservationRef, VehicleReservationRef, PassiveSegmentRef)
-        if ('' !== ($vehicleReservationRefChoiceErrorMessage = self::validateVehicleReservationRefForChoiceConstraintsFromSetVehicleReservationRef($vehicleReservationRef))) {
+        if ('' !== ($vehicleReservationRefChoiceErrorMessage = self::validateVehicleReservationRefForChoiceConstraintFromSetVehicleReservationRef($vehicleReservationRef))) {
             throw new InvalidArgumentException($vehicleReservationRefChoiceErrorMessage, __LINE__);
         }
         if (is_null($vehicleReservationRef) || (is_array($vehicleReservationRef) && empty($vehicleReservationRef))) {
@@ -269,16 +269,16 @@ class NextSegment extends AbstractStructBase
      */
     public function getPassiveSegmentRef(): ?\Travelport\Util\StructType\TypeSegmentRef
     {
-        return isset($this->PassiveSegmentRef) ? $this->PassiveSegmentRef : null;
+        return $this->PassiveSegmentRef ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setPassiveSegmentRef method
+     * This method is responsible for validating the value(s) passed to the setPassiveSegmentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassiveSegmentRef method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validatePassiveSegmentRefForChoiceConstraintsFromSetPassiveSegmentRef($value): string
+    public function validatePassiveSegmentRefForChoiceConstraintFromSetPassiveSegmentRef($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -313,7 +313,7 @@ class NextSegment extends AbstractStructBase
     public function setPassiveSegmentRef(?\Travelport\Util\StructType\TypeSegmentRef $passiveSegmentRef = null): self
     {
         // validation for constraint: choice(AirSegmentRef, HotelReservationRef, VehicleReservationRef, PassiveSegmentRef)
-        if ('' !== ($passiveSegmentRefChoiceErrorMessage = self::validatePassiveSegmentRefForChoiceConstraintsFromSetPassiveSegmentRef($passiveSegmentRef))) {
+        if ('' !== ($passiveSegmentRefChoiceErrorMessage = self::validatePassiveSegmentRefForChoiceConstraintFromSetPassiveSegmentRef($passiveSegmentRef))) {
             throw new InvalidArgumentException($passiveSegmentRefChoiceErrorMessage, __LINE__);
         }
         if (is_null($passiveSegmentRef) || (is_array($passiveSegmentRef) && empty($passiveSegmentRef))) {

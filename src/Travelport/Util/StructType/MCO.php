@@ -307,12 +307,13 @@ class MCO extends MCOInformation
         return $this->FormOfPayment;
     }
     /**
-     * This method is responsible for validating the values passed to the setFormOfPayment method
+     * This method is responsible for validating the value(s) passed to the setFormOfPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPayment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFormOfPaymentForArrayConstraintsFromSetFormOfPayment(?array $values = []): string
+    public static function validateFormOfPaymentForArrayConstraintFromSetFormOfPayment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -341,7 +342,7 @@ class MCO extends MCOInformation
     public function setFormOfPayment(?array $formOfPayment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintsFromSetFormOfPayment($formOfPayment))) {
+        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintFromSetFormOfPayment($formOfPayment))) {
             throw new InvalidArgumentException($formOfPaymentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -438,12 +439,13 @@ class MCO extends MCOInformation
         return $this->MCORemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setMCORemark method
+     * This method is responsible for validating the value(s) passed to the setMCORemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMCORemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMCORemarkForArrayConstraintsFromSetMCORemark(?array $values = []): string
+    public static function validateMCORemarkForArrayConstraintFromSetMCORemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -472,7 +474,7 @@ class MCO extends MCOInformation
     public function setMCORemark(?array $mCORemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mCORemarkArrayErrorMessage = self::validateMCORemarkForArrayConstraintsFromSetMCORemark($mCORemark))) {
+        if ('' !== ($mCORemarkArrayErrorMessage = self::validateMCORemarkForArrayConstraintFromSetMCORemark($mCORemark))) {
             throw new InvalidArgumentException($mCORemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -531,12 +533,13 @@ class MCO extends MCOInformation
         return $this->StockControl;
     }
     /**
-     * This method is responsible for validating the values passed to the setStockControl method
+     * This method is responsible for validating the value(s) passed to the setStockControl method
      * This method is willingly generated in order to preserve the one-line inline validation within the setStockControl method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateStockControlForArrayConstraintsFromSetStockControl(?array $values = []): string
+    public static function validateStockControlForArrayConstraintFromSetStockControl(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -565,7 +568,7 @@ class MCO extends MCOInformation
     public function setStockControl(?array $stockControl = null): self
     {
         // validation for constraint: array
-        if ('' !== ($stockControlArrayErrorMessage = self::validateStockControlForArrayConstraintsFromSetStockControl($stockControl))) {
+        if ('' !== ($stockControlArrayErrorMessage = self::validateStockControlForArrayConstraintFromSetStockControl($stockControl))) {
             throw new InvalidArgumentException($stockControlArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -605,12 +608,13 @@ class MCO extends MCOInformation
         return $this->MCOText;
     }
     /**
-     * This method is responsible for validating the values passed to the setMCOText method
+     * This method is responsible for validating the value(s) passed to the setMCOText method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMCOText method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMCOTextForArrayConstraintsFromSetMCOText(?array $values = []): string
+    public static function validateMCOTextForArrayConstraintFromSetMCOText(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -639,7 +643,7 @@ class MCO extends MCOInformation
     public function setMCOText(?array $mCOText = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mCOTextArrayErrorMessage = self::validateMCOTextForArrayConstraintsFromSetMCOText($mCOText))) {
+        if ('' !== ($mCOTextArrayErrorMessage = self::validateMCOTextForArrayConstraintFromSetMCOText($mCOText))) {
             throw new InvalidArgumentException($mCOTextArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

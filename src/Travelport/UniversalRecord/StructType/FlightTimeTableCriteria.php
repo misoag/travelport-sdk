@@ -54,16 +54,16 @@ class FlightTimeTableCriteria extends AbstractStructBase
      */
     public function getGeneralTimeTable(): ?\Travelport\UniversalRecord\StructType\GeneralTimeTable
     {
-        return isset($this->GeneralTimeTable) ? $this->GeneralTimeTable : null;
+        return $this->GeneralTimeTable ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setGeneralTimeTable method
+     * This method is responsible for validating the value(s) passed to the setGeneralTimeTable method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGeneralTimeTable method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateGeneralTimeTableForChoiceConstraintsFromSetGeneralTimeTable($value): string
+    public function validateGeneralTimeTableForChoiceConstraintFromSetGeneralTimeTable($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -96,7 +96,7 @@ class FlightTimeTableCriteria extends AbstractStructBase
     public function setGeneralTimeTable(?\Travelport\UniversalRecord\StructType\GeneralTimeTable $generalTimeTable = null): self
     {
         // validation for constraint: choice(GeneralTimeTable, SpecificTimeTable)
-        if ('' !== ($generalTimeTableChoiceErrorMessage = self::validateGeneralTimeTableForChoiceConstraintsFromSetGeneralTimeTable($generalTimeTable))) {
+        if ('' !== ($generalTimeTableChoiceErrorMessage = self::validateGeneralTimeTableForChoiceConstraintFromSetGeneralTimeTable($generalTimeTable))) {
             throw new InvalidArgumentException($generalTimeTableChoiceErrorMessage, __LINE__);
         }
         if (is_null($generalTimeTable) || (is_array($generalTimeTable) && empty($generalTimeTable))) {
@@ -113,16 +113,16 @@ class FlightTimeTableCriteria extends AbstractStructBase
      */
     public function getSpecificTimeTable(): ?\Travelport\UniversalRecord\StructType\SpecificTimeTable
     {
-        return isset($this->SpecificTimeTable) ? $this->SpecificTimeTable : null;
+        return $this->SpecificTimeTable ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setSpecificTimeTable method
+     * This method is responsible for validating the value(s) passed to the setSpecificTimeTable method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSpecificTimeTable method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateSpecificTimeTableForChoiceConstraintsFromSetSpecificTimeTable($value): string
+    public function validateSpecificTimeTableForChoiceConstraintFromSetSpecificTimeTable($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -155,7 +155,7 @@ class FlightTimeTableCriteria extends AbstractStructBase
     public function setSpecificTimeTable(?\Travelport\UniversalRecord\StructType\SpecificTimeTable $specificTimeTable = null): self
     {
         // validation for constraint: choice(GeneralTimeTable, SpecificTimeTable)
-        if ('' !== ($specificTimeTableChoiceErrorMessage = self::validateSpecificTimeTableForChoiceConstraintsFromSetSpecificTimeTable($specificTimeTable))) {
+        if ('' !== ($specificTimeTableChoiceErrorMessage = self::validateSpecificTimeTableForChoiceConstraintFromSetSpecificTimeTable($specificTimeTable))) {
             throw new InvalidArgumentException($specificTimeTableChoiceErrorMessage, __LINE__);
         }
         if (is_null($specificTimeTable) || (is_array($specificTimeTable) && empty($specificTimeTable))) {

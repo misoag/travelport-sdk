@@ -42,12 +42,13 @@ class HotelAlternateProperties extends AbstractStructBase
         return $this->HotelProperty;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelProperty method
+     * This method is responsible for validating the value(s) passed to the setHotelProperty method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelProperty method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelPropertyForArrayConstraintsFromSetHotelProperty(?array $values = []): string
+    public static function validateHotelPropertyForArrayConstraintFromSetHotelProperty(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class HotelAlternateProperties extends AbstractStructBase
     public function setHotelProperty(?array $hotelProperty = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelPropertyArrayErrorMessage = self::validateHotelPropertyForArrayConstraintsFromSetHotelProperty($hotelProperty))) {
+        if ('' !== ($hotelPropertyArrayErrorMessage = self::validateHotelPropertyForArrayConstraintFromSetHotelProperty($hotelProperty))) {
             throw new InvalidArgumentException($hotelPropertyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

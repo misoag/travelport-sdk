@@ -66,12 +66,13 @@ class BaggageRestriction extends AbstractStructBase
         return $this->Dimension;
     }
     /**
-     * This method is responsible for validating the values passed to the setDimension method
+     * This method is responsible for validating the value(s) passed to the setDimension method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDimension method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDimensionForArrayConstraintsFromSetDimension(?array $values = []): string
+    public static function validateDimensionForArrayConstraintFromSetDimension(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -100,7 +101,7 @@ class BaggageRestriction extends AbstractStructBase
     public function setDimension(?array $dimension = null): self
     {
         // validation for constraint: array
-        if ('' !== ($dimensionArrayErrorMessage = self::validateDimensionForArrayConstraintsFromSetDimension($dimension))) {
+        if ('' !== ($dimensionArrayErrorMessage = self::validateDimensionForArrayConstraintFromSetDimension($dimension))) {
             throw new InvalidArgumentException($dimensionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -140,12 +141,13 @@ class BaggageRestriction extends AbstractStructBase
         return $this->MaxWeight;
     }
     /**
-     * This method is responsible for validating the values passed to the setMaxWeight method
+     * This method is responsible for validating the value(s) passed to the setMaxWeight method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMaxWeight method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMaxWeightForArrayConstraintsFromSetMaxWeight(?array $values = []): string
+    public static function validateMaxWeightForArrayConstraintFromSetMaxWeight(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -174,7 +176,7 @@ class BaggageRestriction extends AbstractStructBase
     public function setMaxWeight(?array $maxWeight = null): self
     {
         // validation for constraint: array
-        if ('' !== ($maxWeightArrayErrorMessage = self::validateMaxWeightForArrayConstraintsFromSetMaxWeight($maxWeight))) {
+        if ('' !== ($maxWeightArrayErrorMessage = self::validateMaxWeightForArrayConstraintFromSetMaxWeight($maxWeight))) {
             throw new InvalidArgumentException($maxWeightArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -214,12 +216,13 @@ class BaggageRestriction extends AbstractStructBase
         return $this->TextInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setTextInfo method
+     * This method is responsible for validating the value(s) passed to the setTextInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTextInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTextInfoForArrayConstraintsFromSetTextInfo(?array $values = []): string
+    public static function validateTextInfoForArrayConstraintFromSetTextInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -248,7 +251,7 @@ class BaggageRestriction extends AbstractStructBase
     public function setTextInfo(?array $textInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($textInfoArrayErrorMessage = self::validateTextInfoForArrayConstraintsFromSetTextInfo($textInfo))) {
+        if ('' !== ($textInfoArrayErrorMessage = self::validateTextInfoForArrayConstraintFromSetTextInfo($textInfo))) {
             throw new InvalidArgumentException($textInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

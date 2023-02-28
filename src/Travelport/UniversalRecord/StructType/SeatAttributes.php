@@ -43,12 +43,13 @@ class SeatAttributes extends AbstractStructBase
         return $this->SeatAttribute;
     }
     /**
-     * This method is responsible for validating the values passed to the setSeatAttribute method
+     * This method is responsible for validating the value(s) passed to the setSeatAttribute method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSeatAttribute method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSeatAttributeForArrayConstraintsFromSetSeatAttribute(?array $values = []): string
+    public static function validateSeatAttributeForArrayConstraintFromSetSeatAttribute(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -77,7 +78,7 @@ class SeatAttributes extends AbstractStructBase
     public function setSeatAttribute(?array $seatAttribute = null): self
     {
         // validation for constraint: array
-        if ('' !== ($seatAttributeArrayErrorMessage = self::validateSeatAttributeForArrayConstraintsFromSetSeatAttribute($seatAttribute))) {
+        if ('' !== ($seatAttributeArrayErrorMessage = self::validateSeatAttributeForArrayConstraintFromSetSeatAttribute($seatAttribute))) {
             throw new InvalidArgumentException($seatAttributeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(10)

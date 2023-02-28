@@ -275,12 +275,13 @@ class PolicyInformation extends AbstractStructBase
         return $this->AirPolicy;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirPolicy method
+     * This method is responsible for validating the value(s) passed to the setAirPolicy method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPolicy method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirPolicyForArrayConstraintsFromSetAirPolicy(?array $values = []): string
+    public static function validateAirPolicyForArrayConstraintFromSetAirPolicy(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -309,7 +310,7 @@ class PolicyInformation extends AbstractStructBase
     public function setAirPolicy(?array $airPolicy = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airPolicyArrayErrorMessage = self::validateAirPolicyForArrayConstraintsFromSetAirPolicy($airPolicy))) {
+        if ('' !== ($airPolicyArrayErrorMessage = self::validateAirPolicyForArrayConstraintFromSetAirPolicy($airPolicy))) {
             throw new InvalidArgumentException($airPolicyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -349,12 +350,13 @@ class PolicyInformation extends AbstractStructBase
         return $this->RailPolicy;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailPolicy method
+     * This method is responsible for validating the value(s) passed to the setRailPolicy method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailPolicy method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailPolicyForArrayConstraintsFromSetRailPolicy(?array $values = []): string
+    public static function validateRailPolicyForArrayConstraintFromSetRailPolicy(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -383,7 +385,7 @@ class PolicyInformation extends AbstractStructBase
     public function setRailPolicy(?array $railPolicy = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railPolicyArrayErrorMessage = self::validateRailPolicyForArrayConstraintsFromSetRailPolicy($railPolicy))) {
+        if ('' !== ($railPolicyArrayErrorMessage = self::validateRailPolicyForArrayConstraintFromSetRailPolicy($railPolicy))) {
             throw new InvalidArgumentException($railPolicyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -423,12 +425,13 @@ class PolicyInformation extends AbstractStructBase
         return $this->HotelPolicy;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelPolicy method
+     * This method is responsible for validating the value(s) passed to the setHotelPolicy method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelPolicy method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelPolicyForArrayConstraintsFromSetHotelPolicy(?array $values = []): string
+    public static function validateHotelPolicyForArrayConstraintFromSetHotelPolicy(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -457,7 +460,7 @@ class PolicyInformation extends AbstractStructBase
     public function setHotelPolicy(?array $hotelPolicy = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelPolicyArrayErrorMessage = self::validateHotelPolicyForArrayConstraintsFromSetHotelPolicy($hotelPolicy))) {
+        if ('' !== ($hotelPolicyArrayErrorMessage = self::validateHotelPolicyForArrayConstraintFromSetHotelPolicy($hotelPolicy))) {
             throw new InvalidArgumentException($hotelPolicyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -497,12 +500,13 @@ class PolicyInformation extends AbstractStructBase
         return $this->VehiclePolicy;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehiclePolicy method
+     * This method is responsible for validating the value(s) passed to the setVehiclePolicy method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehiclePolicy method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehiclePolicyForArrayConstraintsFromSetVehiclePolicy(?array $values = []): string
+    public static function validateVehiclePolicyForArrayConstraintFromSetVehiclePolicy(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -531,7 +535,7 @@ class PolicyInformation extends AbstractStructBase
     public function setVehiclePolicy(?array $vehiclePolicy = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehiclePolicyArrayErrorMessage = self::validateVehiclePolicyForArrayConstraintsFromSetVehiclePolicy($vehiclePolicy))) {
+        if ('' !== ($vehiclePolicyArrayErrorMessage = self::validateVehiclePolicyForArrayConstraintFromSetVehiclePolicy($vehiclePolicy))) {
             throw new InvalidArgumentException($vehiclePolicyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

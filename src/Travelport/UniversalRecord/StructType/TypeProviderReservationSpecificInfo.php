@@ -76,12 +76,13 @@ class TypeProviderReservationSpecificInfo extends AbstractStructBase
         return $this->OperatedBy;
     }
     /**
-     * This method is responsible for validating the values passed to the setOperatedBy method
+     * This method is responsible for validating the value(s) passed to the setOperatedBy method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOperatedBy method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateOperatedByForArrayConstraintsFromSetOperatedBy(?array $values = []): string
+    public static function validateOperatedByForArrayConstraintFromSetOperatedBy(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -110,7 +111,7 @@ class TypeProviderReservationSpecificInfo extends AbstractStructBase
     public function setOperatedBy(?array $operatedBy = null): self
     {
         // validation for constraint: array
-        if ('' !== ($operatedByArrayErrorMessage = self::validateOperatedByForArrayConstraintsFromSetOperatedBy($operatedBy))) {
+        if ('' !== ($operatedByArrayErrorMessage = self::validateOperatedByForArrayConstraintFromSetOperatedBy($operatedBy))) {
             throw new InvalidArgumentException($operatedByArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

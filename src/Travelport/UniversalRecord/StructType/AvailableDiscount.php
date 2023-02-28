@@ -88,12 +88,13 @@ class AvailableDiscount extends AbstractStructBase
         return $this->LoyaltyProgram;
     }
     /**
-     * This method is responsible for validating the values passed to the setLoyaltyProgram method
+     * This method is responsible for validating the value(s) passed to the setLoyaltyProgram method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyProgram method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLoyaltyProgramForArrayConstraintsFromSetLoyaltyProgram(?array $values = []): string
+    public static function validateLoyaltyProgramForArrayConstraintFromSetLoyaltyProgram(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -122,7 +123,7 @@ class AvailableDiscount extends AbstractStructBase
     public function setLoyaltyProgram(?array $loyaltyProgram = null): self
     {
         // validation for constraint: array
-        if ('' !== ($loyaltyProgramArrayErrorMessage = self::validateLoyaltyProgramForArrayConstraintsFromSetLoyaltyProgram($loyaltyProgram))) {
+        if ('' !== ($loyaltyProgramArrayErrorMessage = self::validateLoyaltyProgramForArrayConstraintFromSetLoyaltyProgram($loyaltyProgram))) {
             throw new InvalidArgumentException($loyaltyProgramArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -70,16 +70,16 @@ class ApplicableSegment extends AbstractStructBase
      */
     public function getResponseMessage(): ?\Travelport\Util\StructType\ResponseMessage
     {
-        return isset($this->ResponseMessage) ? $this->ResponseMessage : null;
+        return $this->ResponseMessage ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setResponseMessage method
+     * This method is responsible for validating the value(s) passed to the setResponseMessage method
      * This method is willingly generated in order to preserve the one-line inline validation within the setResponseMessage method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateResponseMessageForChoiceConstraintsFromSetResponseMessage($value): string
+    public function validateResponseMessageForChoiceConstraintFromSetResponseMessage($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -112,7 +112,7 @@ class ApplicableSegment extends AbstractStructBase
     public function setResponseMessage(?\Travelport\Util\StructType\ResponseMessage $responseMessage = null): self
     {
         // validation for constraint: choice(ResponseMessage, OptionalServiceRef)
-        if ('' !== ($responseMessageChoiceErrorMessage = self::validateResponseMessageForChoiceConstraintsFromSetResponseMessage($responseMessage))) {
+        if ('' !== ($responseMessageChoiceErrorMessage = self::validateResponseMessageForChoiceConstraintFromSetResponseMessage($responseMessage))) {
             throw new InvalidArgumentException($responseMessageChoiceErrorMessage, __LINE__);
         }
         if (is_null($responseMessage) || (is_array($responseMessage) && empty($responseMessage))) {
@@ -129,16 +129,16 @@ class ApplicableSegment extends AbstractStructBase
      */
     public function getOptionalServiceRef(): ?string
     {
-        return isset($this->OptionalServiceRef) ? $this->OptionalServiceRef : null;
+        return $this->OptionalServiceRef ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setOptionalServiceRef method
+     * This method is responsible for validating the value(s) passed to the setOptionalServiceRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOptionalServiceRef method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateOptionalServiceRefForChoiceConstraintsFromSetOptionalServiceRef($value): string
+    public function validateOptionalServiceRefForChoiceConstraintFromSetOptionalServiceRef($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -175,7 +175,7 @@ class ApplicableSegment extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionalServiceRef, true), gettype($optionalServiceRef)), __LINE__);
         }
         // validation for constraint: choice(ResponseMessage, OptionalServiceRef)
-        if ('' !== ($optionalServiceRefChoiceErrorMessage = self::validateOptionalServiceRefForChoiceConstraintsFromSetOptionalServiceRef($optionalServiceRef))) {
+        if ('' !== ($optionalServiceRefChoiceErrorMessage = self::validateOptionalServiceRefForChoiceConstraintFromSetOptionalServiceRef($optionalServiceRef))) {
             throw new InvalidArgumentException($optionalServiceRefChoiceErrorMessage, __LINE__);
         }
         if (is_null($optionalServiceRef) || (is_array($optionalServiceRef) && empty($optionalServiceRef))) {

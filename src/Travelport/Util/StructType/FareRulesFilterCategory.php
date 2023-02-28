@@ -54,12 +54,13 @@ class FareRulesFilterCategory extends AbstractStructBase
         return $this->CategoryCode;
     }
     /**
-     * This method is responsible for validating the values passed to the setCategoryCode method
+     * This method is responsible for validating the value(s) passed to the setCategoryCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCategoryCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCategoryCodeForArrayConstraintsFromSetCategoryCode(?array $values = []): string
+    public static function validateCategoryCodeForArrayConstraintFromSetCategoryCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -88,7 +89,7 @@ class FareRulesFilterCategory extends AbstractStructBase
     public function setCategoryCode(array $categoryCode): self
     {
         // validation for constraint: array
-        if ('' !== ($categoryCodeArrayErrorMessage = self::validateCategoryCodeForArrayConstraintsFromSetCategoryCode($categoryCode))) {
+        if ('' !== ($categoryCodeArrayErrorMessage = self::validateCategoryCodeForArrayConstraintFromSetCategoryCode($categoryCode))) {
             throw new InvalidArgumentException($categoryCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(35)

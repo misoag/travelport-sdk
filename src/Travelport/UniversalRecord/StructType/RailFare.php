@@ -440,12 +440,13 @@ class RailFare extends AbstractStructBase
         return $this->RailFareNoteRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailFareNoteRef method
+     * This method is responsible for validating the value(s) passed to the setRailFareNoteRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailFareNoteRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailFareNoteRefForArrayConstraintsFromSetRailFareNoteRef(?array $values = []): string
+    public static function validateRailFareNoteRefForArrayConstraintFromSetRailFareNoteRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -474,7 +475,7 @@ class RailFare extends AbstractStructBase
     public function setRailFareNoteRef(?array $railFareNoteRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railFareNoteRefArrayErrorMessage = self::validateRailFareNoteRefForArrayConstraintsFromSetRailFareNoteRef($railFareNoteRef))) {
+        if ('' !== ($railFareNoteRefArrayErrorMessage = self::validateRailFareNoteRefForArrayConstraintFromSetRailFareNoteRef($railFareNoteRef))) {
             throw new InvalidArgumentException($railFareNoteRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -507,19 +508,20 @@ class RailFare extends AbstractStructBase
     }
     /**
      * Get RailFareID value
-     * @return \Travelport\UniversalRecord\StructType\RailFareID[]
+     * @return \Travelport\UniversalRecord\StructType\RailFareID[]|null
      */
     public function getRailFareID(): ?array
     {
-        return isset($this->RailFareID) ? $this->RailFareID : null;
+        return $this->RailFareID ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailFareID method
+     * This method is responsible for validating the value(s) passed to the setRailFareID method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailFareID method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailFareIDForArrayConstraintsFromSetRailFareID(?array $values = []): string
+    public static function validateRailFareIDForArrayConstraintFromSetRailFareID(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -540,13 +542,13 @@ class RailFare extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setRailFareID method
+     * This method is responsible for validating the value(s) passed to the setRailFareID method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailFareID method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateRailFareIDForChoiceConstraintsFromSetRailFareID($value): string
+    public function validateRailFareIDForChoiceConstraintFromSetRailFareID($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -580,11 +582,11 @@ class RailFare extends AbstractStructBase
     public function setRailFareID(?array $railFareID = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railFareIDArrayErrorMessage = self::validateRailFareIDForArrayConstraintsFromSetRailFareID($railFareID))) {
+        if ('' !== ($railFareIDArrayErrorMessage = self::validateRailFareIDForArrayConstraintFromSetRailFareID($railFareID))) {
             throw new InvalidArgumentException($railFareIDArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(RailFareID, RailFareIDRef)
-        if ('' !== ($railFareIDChoiceErrorMessage = self::validateRailFareIDForChoiceConstraintsFromSetRailFareID($railFareID))) {
+        if ('' !== ($railFareIDChoiceErrorMessage = self::validateRailFareIDForChoiceConstraintFromSetRailFareID($railFareID))) {
             throw new InvalidArgumentException($railFareIDChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -604,13 +606,13 @@ class RailFare extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToRailFareID method
+     * This method is responsible for validating the value(s) passed to the addToRailFareID method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToRailFareID method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToRailFareID($value): string
+    public function validateItemForChoiceConstraintFromAddToRailFareID($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -644,7 +646,7 @@ class RailFare extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The RailFareID property can only contain items of type \Travelport\UniversalRecord\StructType\RailFareID, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(RailFareID, RailFareIDRef)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToRailFareID($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToRailFareID($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -661,19 +663,20 @@ class RailFare extends AbstractStructBase
     }
     /**
      * Get RailFareIDRef value
-     * @return \Travelport\UniversalRecord\StructType\RailFareIDRef[]
+     * @return \Travelport\UniversalRecord\StructType\RailFareIDRef[]|null
      */
     public function getRailFareIDRef(): ?array
     {
-        return isset($this->RailFareIDRef) ? $this->RailFareIDRef : null;
+        return $this->RailFareIDRef ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailFareIDRef method
+     * This method is responsible for validating the value(s) passed to the setRailFareIDRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailFareIDRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailFareIDRefForArrayConstraintsFromSetRailFareIDRef(?array $values = []): string
+    public static function validateRailFareIDRefForArrayConstraintFromSetRailFareIDRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -694,13 +697,13 @@ class RailFare extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setRailFareIDRef method
+     * This method is responsible for validating the value(s) passed to the setRailFareIDRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailFareIDRef method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateRailFareIDRefForChoiceConstraintsFromSetRailFareIDRef($value): string
+    public function validateRailFareIDRefForChoiceConstraintFromSetRailFareIDRef($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -734,11 +737,11 @@ class RailFare extends AbstractStructBase
     public function setRailFareIDRef(?array $railFareIDRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railFareIDRefArrayErrorMessage = self::validateRailFareIDRefForArrayConstraintsFromSetRailFareIDRef($railFareIDRef))) {
+        if ('' !== ($railFareIDRefArrayErrorMessage = self::validateRailFareIDRefForArrayConstraintFromSetRailFareIDRef($railFareIDRef))) {
             throw new InvalidArgumentException($railFareIDRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(RailFareID, RailFareIDRef)
-        if ('' !== ($railFareIDRefChoiceErrorMessage = self::validateRailFareIDRefForChoiceConstraintsFromSetRailFareIDRef($railFareIDRef))) {
+        if ('' !== ($railFareIDRefChoiceErrorMessage = self::validateRailFareIDRefForChoiceConstraintFromSetRailFareIDRef($railFareIDRef))) {
             throw new InvalidArgumentException($railFareIDRefChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -758,13 +761,13 @@ class RailFare extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToRailFareIDRef method
+     * This method is responsible for validating the value(s) passed to the addToRailFareIDRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToRailFareIDRef method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToRailFareIDRef($value): string
+    public function validateItemForChoiceConstraintFromAddToRailFareIDRef($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -798,7 +801,7 @@ class RailFare extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The RailFareIDRef property can only contain items of type \Travelport\UniversalRecord\StructType\RailFareIDRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(RailFareID, RailFareIDRef)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToRailFareIDRef($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToRailFareIDRef($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -822,12 +825,13 @@ class RailFare extends AbstractStructBase
         return $this->FareValidity;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareValidity method
+     * This method is responsible for validating the value(s) passed to the setFareValidity method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareValidity method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareValidityForArrayConstraintsFromSetFareValidity(?array $values = []): string
+    public static function validateFareValidityForArrayConstraintFromSetFareValidity(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -856,7 +860,7 @@ class RailFare extends AbstractStructBase
     public function setFareValidity(?array $fareValidity = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareValidityArrayErrorMessage = self::validateFareValidityForArrayConstraintsFromSetFareValidity($fareValidity))) {
+        if ('' !== ($fareValidityArrayErrorMessage = self::validateFareValidityForArrayConstraintFromSetFareValidity($fareValidity))) {
             throw new InvalidArgumentException($fareValidityArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -915,12 +919,13 @@ class RailFare extends AbstractStructBase
         return $this->FulFillmentType;
     }
     /**
-     * This method is responsible for validating the values passed to the setFulFillmentType method
+     * This method is responsible for validating the value(s) passed to the setFulFillmentType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFulFillmentType method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFulFillmentTypeForArrayConstraintsFromSetFulFillmentType(?array $values = []): string
+    public static function validateFulFillmentTypeForArrayConstraintFromSetFulFillmentType(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -941,17 +946,17 @@ class RailFare extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setFulFillmentType method
+     * This method is responsible for validating the value(s) passed to the setFulFillmentType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFulFillmentType method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFulFillmentTypeForMaxLengthConstraintFromSetFulFillmentType($values): string
+    public static function validateFulFillmentTypeForMaxLengthConstraintFromSetFulFillmentType(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $railFareFulFillmentTypeItem) {
+        foreach (($values ?? []) as $railFareFulFillmentTypeItem) {
             // validation for constraint: maxLength(255)
             if (mb_strlen((string) $railFareFulFillmentTypeItem) > 255) {
                 $invalidValues[] = var_export($railFareFulFillmentTypeItem, true);
@@ -965,17 +970,17 @@ class RailFare extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setFulFillmentType method
+     * This method is responsible for validating the value(s) passed to the setFulFillmentType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFulFillmentType method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFulFillmentTypeForMinLengthConstraintFromSetFulFillmentType($values): string
+    public static function validateFulFillmentTypeForMinLengthConstraintFromSetFulFillmentType(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $railFareFulFillmentTypeItem) {
+        foreach (($values ?? []) as $railFareFulFillmentTypeItem) {
             // validation for constraint: minLength
             if (mb_strlen((string) $railFareFulFillmentTypeItem) < 0) {
                 $invalidValues[] = var_export($railFareFulFillmentTypeItem, true);
@@ -997,7 +1002,7 @@ class RailFare extends AbstractStructBase
     public function setFulFillmentType(?array $fulFillmentType = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fulFillmentTypeArrayErrorMessage = self::validateFulFillmentTypeForArrayConstraintsFromSetFulFillmentType($fulFillmentType))) {
+        if ('' !== ($fulFillmentTypeArrayErrorMessage = self::validateFulFillmentTypeForArrayConstraintFromSetFulFillmentType($fulFillmentType))) {
             throw new InvalidArgumentException($fulFillmentTypeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxLength(255)
@@ -1053,12 +1058,13 @@ class RailFare extends AbstractStructBase
         return $this->RailFareComponent;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailFareComponent method
+     * This method is responsible for validating the value(s) passed to the setRailFareComponent method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailFareComponent method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailFareComponentForArrayConstraintsFromSetRailFareComponent(?array $values = []): string
+    public static function validateRailFareComponentForArrayConstraintFromSetRailFareComponent(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1087,7 +1093,7 @@ class RailFare extends AbstractStructBase
     public function setRailFareComponent(?array $railFareComponent = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railFareComponentArrayErrorMessage = self::validateRailFareComponentForArrayConstraintsFromSetRailFareComponent($railFareComponent))) {
+        if ('' !== ($railFareComponentArrayErrorMessage = self::validateRailFareComponentForArrayConstraintFromSetRailFareComponent($railFareComponent))) {
             throw new InvalidArgumentException($railFareComponentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)

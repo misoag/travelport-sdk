@@ -162,12 +162,13 @@ class AirCancelReq extends BaseReq
         return $this->AirSegment;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirSegment method
+     * This method is responsible for validating the value(s) passed to the setAirSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirSegmentForArrayConstraintsFromSetAirSegment(?array $values = []): string
+    public static function validateAirSegmentForArrayConstraintFromSetAirSegment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -196,7 +197,7 @@ class AirCancelReq extends BaseReq
     public function setAirSegment(?array $airSegment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airSegmentArrayErrorMessage = self::validateAirSegmentForArrayConstraintsFromSetAirSegment($airSegment))) {
+        if ('' !== ($airSegmentArrayErrorMessage = self::validateAirSegmentForArrayConstraintFromSetAirSegment($airSegment))) {
             throw new InvalidArgumentException($airSegmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -236,12 +237,13 @@ class AirCancelReq extends BaseReq
         return $this->AirSegmentRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirSegmentRef method
+     * This method is responsible for validating the value(s) passed to the setAirSegmentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegmentRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirSegmentRefForArrayConstraintsFromSetAirSegmentRef(?array $values = []): string
+    public static function validateAirSegmentRefForArrayConstraintFromSetAirSegmentRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -270,7 +272,7 @@ class AirCancelReq extends BaseReq
     public function setAirSegmentRef(?array $airSegmentRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airSegmentRefArrayErrorMessage = self::validateAirSegmentRefForArrayConstraintsFromSetAirSegmentRef($airSegmentRef))) {
+        if ('' !== ($airSegmentRefArrayErrorMessage = self::validateAirSegmentRefForArrayConstraintFromSetAirSegmentRef($airSegmentRef))) {
             throw new InvalidArgumentException($airSegmentRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

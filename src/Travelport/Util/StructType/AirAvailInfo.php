@@ -78,12 +78,13 @@ class AirAvailInfo extends AbstractStructBase
         return $this->BookingCodeInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingCodeInfo method
+     * This method is responsible for validating the value(s) passed to the setBookingCodeInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingCodeInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingCodeInfoForArrayConstraintsFromSetBookingCodeInfo(?array $values = []): string
+    public static function validateBookingCodeInfoForArrayConstraintFromSetBookingCodeInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -112,7 +113,7 @@ class AirAvailInfo extends AbstractStructBase
     public function setBookingCodeInfo(?array $bookingCodeInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingCodeInfoArrayErrorMessage = self::validateBookingCodeInfoForArrayConstraintsFromSetBookingCodeInfo($bookingCodeInfo))) {
+        if ('' !== ($bookingCodeInfoArrayErrorMessage = self::validateBookingCodeInfoForArrayConstraintFromSetBookingCodeInfo($bookingCodeInfo))) {
             throw new InvalidArgumentException($bookingCodeInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -152,12 +153,13 @@ class AirAvailInfo extends AbstractStructBase
         return $this->FareTokenInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareTokenInfo method
+     * This method is responsible for validating the value(s) passed to the setFareTokenInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareTokenInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareTokenInfoForArrayConstraintsFromSetFareTokenInfo(?array $values = []): string
+    public static function validateFareTokenInfoForArrayConstraintFromSetFareTokenInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -186,7 +188,7 @@ class AirAvailInfo extends AbstractStructBase
     public function setFareTokenInfo(?array $fareTokenInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareTokenInfoArrayErrorMessage = self::validateFareTokenInfoForArrayConstraintsFromSetFareTokenInfo($fareTokenInfo))) {
+        if ('' !== ($fareTokenInfoArrayErrorMessage = self::validateFareTokenInfoForArrayConstraintFromSetFareTokenInfo($fareTokenInfo))) {
             throw new InvalidArgumentException($fareTokenInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -148,12 +148,13 @@ class ReferenceDataItem extends AbstractStructBase
         return $this->AdditionalInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setAdditionalInfo method
+     * This method is responsible for validating the value(s) passed to the setAdditionalInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAdditionalInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAdditionalInfoForArrayConstraintsFromSetAdditionalInfo(?array $values = []): string
+    public static function validateAdditionalInfoForArrayConstraintFromSetAdditionalInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -182,7 +183,7 @@ class ReferenceDataItem extends AbstractStructBase
     public function setAdditionalInfo(?array $additionalInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($additionalInfoArrayErrorMessage = self::validateAdditionalInfoForArrayConstraintsFromSetAdditionalInfo($additionalInfo))) {
+        if ('' !== ($additionalInfoArrayErrorMessage = self::validateAdditionalInfoForArrayConstraintFromSetAdditionalInfo($additionalInfo))) {
             throw new InvalidArgumentException($additionalInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

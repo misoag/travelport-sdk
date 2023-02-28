@@ -67,12 +67,13 @@ class AirExchangeMultiQuoteOption extends AbstractStructBase
         return $this->AirSegmentData;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirSegmentData method
+     * This method is responsible for validating the value(s) passed to the setAirSegmentData method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegmentData method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirSegmentDataForArrayConstraintsFromSetAirSegmentData(?array $values = []): string
+    public static function validateAirSegmentDataForArrayConstraintFromSetAirSegmentData(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -101,7 +102,7 @@ class AirExchangeMultiQuoteOption extends AbstractStructBase
     public function setAirSegmentData(?array $airSegmentData = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airSegmentDataArrayErrorMessage = self::validateAirSegmentDataForArrayConstraintsFromSetAirSegmentData($airSegmentData))) {
+        if ('' !== ($airSegmentDataArrayErrorMessage = self::validateAirSegmentDataForArrayConstraintFromSetAirSegmentData($airSegmentData))) {
             throw new InvalidArgumentException($airSegmentDataArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -160,12 +161,13 @@ class AirExchangeMultiQuoteOption extends AbstractStructBase
         return $this->AirExchangeBundleList;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirExchangeBundleList method
+     * This method is responsible for validating the value(s) passed to the setAirExchangeBundleList method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirExchangeBundleList method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirExchangeBundleListForArrayConstraintsFromSetAirExchangeBundleList(?array $values = []): string
+    public static function validateAirExchangeBundleListForArrayConstraintFromSetAirExchangeBundleList(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -194,7 +196,7 @@ class AirExchangeMultiQuoteOption extends AbstractStructBase
     public function setAirExchangeBundleList(?array $airExchangeBundleList = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airExchangeBundleListArrayErrorMessage = self::validateAirExchangeBundleListForArrayConstraintsFromSetAirExchangeBundleList($airExchangeBundleList))) {
+        if ('' !== ($airExchangeBundleListArrayErrorMessage = self::validateAirExchangeBundleListForArrayConstraintFromSetAirExchangeBundleList($airExchangeBundleList))) {
             throw new InvalidArgumentException($airExchangeBundleListArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

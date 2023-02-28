@@ -43,12 +43,13 @@ class RequestKeyMappings extends AbstractStructBase
         return $this->KeyMapping;
     }
     /**
-     * This method is responsible for validating the values passed to the setKeyMapping method
+     * This method is responsible for validating the value(s) passed to the setKeyMapping method
      * This method is willingly generated in order to preserve the one-line inline validation within the setKeyMapping method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateKeyMappingForArrayConstraintsFromSetKeyMapping(?array $values = []): string
+    public static function validateKeyMappingForArrayConstraintFromSetKeyMapping(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -77,7 +78,7 @@ class RequestKeyMappings extends AbstractStructBase
     public function setKeyMapping(?array $keyMapping = null): self
     {
         // validation for constraint: array
-        if ('' !== ($keyMappingArrayErrorMessage = self::validateKeyMappingForArrayConstraintsFromSetKeyMapping($keyMapping))) {
+        if ('' !== ($keyMappingArrayErrorMessage = self::validateKeyMappingForArrayConstraintFromSetKeyMapping($keyMapping))) {
             throw new InvalidArgumentException($keyMappingArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

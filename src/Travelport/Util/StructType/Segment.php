@@ -145,12 +145,13 @@ class Segment extends AbstractStructBase
         return $this->SegmentRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setSegmentRemark method
+     * This method is responsible for validating the value(s) passed to the setSegmentRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSegmentRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSegmentRemarkForArrayConstraintsFromSetSegmentRemark(?array $values = []): string
+    public static function validateSegmentRemarkForArrayConstraintFromSetSegmentRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -179,7 +180,7 @@ class Segment extends AbstractStructBase
     public function setSegmentRemark(?array $segmentRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($segmentRemarkArrayErrorMessage = self::validateSegmentRemarkForArrayConstraintsFromSetSegmentRemark($segmentRemark))) {
+        if ('' !== ($segmentRemarkArrayErrorMessage = self::validateSegmentRemarkForArrayConstraintFromSetSegmentRemark($segmentRemark))) {
             throw new InvalidArgumentException($segmentRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

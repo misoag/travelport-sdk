@@ -41,12 +41,13 @@ class MctCountRsp extends BaseRsp
         return $this->MctCount;
     }
     /**
-     * This method is responsible for validating the values passed to the setMctCount method
+     * This method is responsible for validating the value(s) passed to the setMctCount method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMctCount method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMctCountForArrayConstraintsFromSetMctCount(?array $values = []): string
+    public static function validateMctCountForArrayConstraintFromSetMctCount(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -75,7 +76,7 @@ class MctCountRsp extends BaseRsp
     public function setMctCount(?array $mctCount = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mctCountArrayErrorMessage = self::validateMctCountForArrayConstraintsFromSetMctCount($mctCount))) {
+        if ('' !== ($mctCountArrayErrorMessage = self::validateMctCountForArrayConstraintFromSetMctCount($mctCount))) {
             throw new InvalidArgumentException($mctCountArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

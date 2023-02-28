@@ -42,12 +42,13 @@ class RailFareList extends AbstractStructBase
         return $this->RailFare;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailFare method
+     * This method is responsible for validating the value(s) passed to the setRailFare method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailFare method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailFareForArrayConstraintsFromSetRailFare(?array $values = []): string
+    public static function validateRailFareForArrayConstraintFromSetRailFare(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class RailFareList extends AbstractStructBase
     public function setRailFare(?array $railFare = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railFareArrayErrorMessage = self::validateRailFareForArrayConstraintsFromSetRailFare($railFare))) {
+        if ('' !== ($railFareArrayErrorMessage = self::validateRailFareForArrayConstraintFromSetRailFare($railFare))) {
             throw new InvalidArgumentException($railFareArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

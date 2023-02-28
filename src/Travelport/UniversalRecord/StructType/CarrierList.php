@@ -73,12 +73,13 @@ class CarrierList extends AbstractStructBase
         return $this->CarrierCode;
     }
     /**
-     * This method is responsible for validating the values passed to the setCarrierCode method
+     * This method is responsible for validating the value(s) passed to the setCarrierCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCarrierCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCarrierCodeForArrayConstraintsFromSetCarrierCode(?array $values = []): string
+    public static function validateCarrierCodeForArrayConstraintFromSetCarrierCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -107,7 +108,7 @@ class CarrierList extends AbstractStructBase
     public function setCarrierCode(?array $carrierCode = null): self
     {
         // validation for constraint: array
-        if ('' !== ($carrierCodeArrayErrorMessage = self::validateCarrierCodeForArrayConstraintsFromSetCarrierCode($carrierCode))) {
+        if ('' !== ($carrierCodeArrayErrorMessage = self::validateCarrierCodeForArrayConstraintFromSetCarrierCode($carrierCode))) {
             throw new InvalidArgumentException($carrierCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(6)

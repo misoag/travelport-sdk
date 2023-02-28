@@ -42,12 +42,13 @@ class APISRequirementsList extends AbstractStructBase
         return $this->APISRequirements;
     }
     /**
-     * This method is responsible for validating the values passed to the setAPISRequirements method
+     * This method is responsible for validating the value(s) passed to the setAPISRequirements method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAPISRequirements method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAPISRequirementsForArrayConstraintsFromSetAPISRequirements(?array $values = []): string
+    public static function validateAPISRequirementsForArrayConstraintFromSetAPISRequirements(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class APISRequirementsList extends AbstractStructBase
     public function setAPISRequirements(?array $aPISRequirements = null): self
     {
         // validation for constraint: array
-        if ('' !== ($aPISRequirementsArrayErrorMessage = self::validateAPISRequirementsForArrayConstraintsFromSetAPISRequirements($aPISRequirements))) {
+        if ('' !== ($aPISRequirementsArrayErrorMessage = self::validateAPISRequirementsForArrayConstraintFromSetAPISRequirements($aPISRequirements))) {
             throw new InvalidArgumentException($aPISRequirementsArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

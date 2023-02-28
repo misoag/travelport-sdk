@@ -55,12 +55,13 @@ class VehiclePolicy extends AbstractStructBase
         return $this->VehicleDisclaimer;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleDisclaimer method
+     * This method is responsible for validating the value(s) passed to the setVehicleDisclaimer method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleDisclaimer method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleDisclaimerForArrayConstraintsFromSetVehicleDisclaimer(?array $values = []): string
+    public static function validateVehicleDisclaimerForArrayConstraintFromSetVehicleDisclaimer(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -89,7 +90,7 @@ class VehiclePolicy extends AbstractStructBase
     public function setVehicleDisclaimer(?array $vehicleDisclaimer = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleDisclaimerArrayErrorMessage = self::validateVehicleDisclaimerForArrayConstraintsFromSetVehicleDisclaimer($vehicleDisclaimer))) {
+        if ('' !== ($vehicleDisclaimerArrayErrorMessage = self::validateVehicleDisclaimerForArrayConstraintFromSetVehicleDisclaimer($vehicleDisclaimer))) {
             throw new InvalidArgumentException($vehicleDisclaimerArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -129,12 +130,13 @@ class VehiclePolicy extends AbstractStructBase
         return $this->VehicleDetail;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleDetail method
+     * This method is responsible for validating the value(s) passed to the setVehicleDetail method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleDetail method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleDetailForArrayConstraintsFromSetVehicleDetail(?array $values = []): string
+    public static function validateVehicleDetailForArrayConstraintFromSetVehicleDetail(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -163,7 +165,7 @@ class VehiclePolicy extends AbstractStructBase
     public function setVehicleDetail(?array $vehicleDetail = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleDetailArrayErrorMessage = self::validateVehicleDetailForArrayConstraintsFromSetVehicleDetail($vehicleDetail))) {
+        if ('' !== ($vehicleDetailArrayErrorMessage = self::validateVehicleDetailForArrayConstraintFromSetVehicleDetail($vehicleDetail))) {
             throw new InvalidArgumentException($vehicleDetailArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

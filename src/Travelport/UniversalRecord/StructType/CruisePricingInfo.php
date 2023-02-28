@@ -320,12 +320,13 @@ class CruisePricingInfo extends AbstractStructBase
         return $this->Discount;
     }
     /**
-     * This method is responsible for validating the values passed to the setDiscount method
+     * This method is responsible for validating the value(s) passed to the setDiscount method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDiscount method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDiscountForArrayConstraintsFromSetDiscount(?array $values = []): string
+    public static function validateDiscountForArrayConstraintFromSetDiscount(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -354,7 +355,7 @@ class CruisePricingInfo extends AbstractStructBase
     public function setDiscount(?array $discount = null): self
     {
         // validation for constraint: array
-        if ('' !== ($discountArrayErrorMessage = self::validateDiscountForArrayConstraintsFromSetDiscount($discount))) {
+        if ('' !== ($discountArrayErrorMessage = self::validateDiscountForArrayConstraintFromSetDiscount($discount))) {
             throw new InvalidArgumentException($discountArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(2)
@@ -394,12 +395,13 @@ class CruisePricingInfo extends AbstractStructBase
         return $this->Deposit;
     }
     /**
-     * This method is responsible for validating the values passed to the setDeposit method
+     * This method is responsible for validating the value(s) passed to the setDeposit method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDeposit method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDepositForArrayConstraintsFromSetDeposit(?array $values = []): string
+    public static function validateDepositForArrayConstraintFromSetDeposit(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -428,7 +430,7 @@ class CruisePricingInfo extends AbstractStructBase
     public function setDeposit(?array $deposit = null): self
     {
         // validation for constraint: array
-        if ('' !== ($depositArrayErrorMessage = self::validateDepositForArrayConstraintsFromSetDeposit($deposit))) {
+        if ('' !== ($depositArrayErrorMessage = self::validateDepositForArrayConstraintFromSetDeposit($deposit))) {
             throw new InvalidArgumentException($depositArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(2)
@@ -525,12 +527,13 @@ class CruisePricingInfo extends AbstractStructBase
         return $this->CruiseBookingTravelerRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setCruiseBookingTravelerRef method
+     * This method is responsible for validating the value(s) passed to the setCruiseBookingTravelerRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCruiseBookingTravelerRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCruiseBookingTravelerRefForArrayConstraintsFromSetCruiseBookingTravelerRef(?array $values = []): string
+    public static function validateCruiseBookingTravelerRefForArrayConstraintFromSetCruiseBookingTravelerRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -559,7 +562,7 @@ class CruisePricingInfo extends AbstractStructBase
     public function setCruiseBookingTravelerRef(?array $cruiseBookingTravelerRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($cruiseBookingTravelerRefArrayErrorMessage = self::validateCruiseBookingTravelerRefForArrayConstraintsFromSetCruiseBookingTravelerRef($cruiseBookingTravelerRef))) {
+        if ('' !== ($cruiseBookingTravelerRefArrayErrorMessage = self::validateCruiseBookingTravelerRefForArrayConstraintFromSetCruiseBookingTravelerRef($cruiseBookingTravelerRef))) {
             throw new InvalidArgumentException($cruiseBookingTravelerRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -333,19 +333,20 @@ abstract class TypeRailPricingSolution extends AbstractStructBase
     }
     /**
      * Get RailJourney value
-     * @return \Travelport\UniversalRecord\StructType\RailJourney[]
+     * @return \Travelport\UniversalRecord\StructType\RailJourney[]|null
      */
     public function getRailJourney(): ?array
     {
-        return isset($this->RailJourney) ? $this->RailJourney : null;
+        return $this->RailJourney ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailJourney method
+     * This method is responsible for validating the value(s) passed to the setRailJourney method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailJourney method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailJourneyForArrayConstraintsFromSetRailJourney(?array $values = []): string
+    public static function validateRailJourneyForArrayConstraintFromSetRailJourney(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -366,13 +367,13 @@ abstract class TypeRailPricingSolution extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setRailJourney method
+     * This method is responsible for validating the value(s) passed to the setRailJourney method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailJourney method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateRailJourneyForChoiceConstraintsFromSetRailJourney($value): string
+    public function validateRailJourneyForChoiceConstraintFromSetRailJourney($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -406,11 +407,11 @@ abstract class TypeRailPricingSolution extends AbstractStructBase
     public function setRailJourney(?array $railJourney = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railJourneyArrayErrorMessage = self::validateRailJourneyForArrayConstraintsFromSetRailJourney($railJourney))) {
+        if ('' !== ($railJourneyArrayErrorMessage = self::validateRailJourneyForArrayConstraintFromSetRailJourney($railJourney))) {
             throw new InvalidArgumentException($railJourneyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(RailJourney, RailJourneyRef)
-        if ('' !== ($railJourneyChoiceErrorMessage = self::validateRailJourneyForChoiceConstraintsFromSetRailJourney($railJourney))) {
+        if ('' !== ($railJourneyChoiceErrorMessage = self::validateRailJourneyForChoiceConstraintFromSetRailJourney($railJourney))) {
             throw new InvalidArgumentException($railJourneyChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -430,13 +431,13 @@ abstract class TypeRailPricingSolution extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToRailJourney method
+     * This method is responsible for validating the value(s) passed to the addToRailJourney method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToRailJourney method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToRailJourney($value): string
+    public function validateItemForChoiceConstraintFromAddToRailJourney($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -470,7 +471,7 @@ abstract class TypeRailPricingSolution extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The RailJourney property can only contain items of type \Travelport\UniversalRecord\StructType\RailJourney, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(RailJourney, RailJourneyRef)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToRailJourney($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToRailJourney($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -487,19 +488,20 @@ abstract class TypeRailPricingSolution extends AbstractStructBase
     }
     /**
      * Get RailJourneyRef value
-     * @return \Travelport\UniversalRecord\StructType\RailJourneyRef[]
+     * @return \Travelport\UniversalRecord\StructType\RailJourneyRef[]|null
      */
     public function getRailJourneyRef(): ?array
     {
-        return isset($this->RailJourneyRef) ? $this->RailJourneyRef : null;
+        return $this->RailJourneyRef ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailJourneyRef method
+     * This method is responsible for validating the value(s) passed to the setRailJourneyRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailJourneyRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailJourneyRefForArrayConstraintsFromSetRailJourneyRef(?array $values = []): string
+    public static function validateRailJourneyRefForArrayConstraintFromSetRailJourneyRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -520,13 +522,13 @@ abstract class TypeRailPricingSolution extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setRailJourneyRef method
+     * This method is responsible for validating the value(s) passed to the setRailJourneyRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailJourneyRef method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateRailJourneyRefForChoiceConstraintsFromSetRailJourneyRef($value): string
+    public function validateRailJourneyRefForChoiceConstraintFromSetRailJourneyRef($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -560,11 +562,11 @@ abstract class TypeRailPricingSolution extends AbstractStructBase
     public function setRailJourneyRef(?array $railJourneyRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railJourneyRefArrayErrorMessage = self::validateRailJourneyRefForArrayConstraintsFromSetRailJourneyRef($railJourneyRef))) {
+        if ('' !== ($railJourneyRefArrayErrorMessage = self::validateRailJourneyRefForArrayConstraintFromSetRailJourneyRef($railJourneyRef))) {
             throw new InvalidArgumentException($railJourneyRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(RailJourney, RailJourneyRef)
-        if ('' !== ($railJourneyRefChoiceErrorMessage = self::validateRailJourneyRefForChoiceConstraintsFromSetRailJourneyRef($railJourneyRef))) {
+        if ('' !== ($railJourneyRefChoiceErrorMessage = self::validateRailJourneyRefForChoiceConstraintFromSetRailJourneyRef($railJourneyRef))) {
             throw new InvalidArgumentException($railJourneyRefChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -584,13 +586,13 @@ abstract class TypeRailPricingSolution extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToRailJourneyRef method
+     * This method is responsible for validating the value(s) passed to the addToRailJourneyRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToRailJourneyRef method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToRailJourneyRef($value): string
+    public function validateItemForChoiceConstraintFromAddToRailJourneyRef($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -624,7 +626,7 @@ abstract class TypeRailPricingSolution extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The RailJourneyRef property can only contain items of type \Travelport\UniversalRecord\StructType\RailJourneyRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(RailJourney, RailJourneyRef)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToRailJourneyRef($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToRailJourneyRef($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -648,12 +650,13 @@ abstract class TypeRailPricingSolution extends AbstractStructBase
         return $this->RailPricingInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailPricingInfo method
+     * This method is responsible for validating the value(s) passed to the setRailPricingInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailPricingInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailPricingInfoForArrayConstraintsFromSetRailPricingInfo(?array $values = []): string
+    public static function validateRailPricingInfoForArrayConstraintFromSetRailPricingInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -682,7 +685,7 @@ abstract class TypeRailPricingSolution extends AbstractStructBase
     public function setRailPricingInfo(?array $railPricingInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railPricingInfoArrayErrorMessage = self::validateRailPricingInfoForArrayConstraintsFromSetRailPricingInfo($railPricingInfo))) {
+        if ('' !== ($railPricingInfoArrayErrorMessage = self::validateRailPricingInfoForArrayConstraintFromSetRailPricingInfo($railPricingInfo))) {
             throw new InvalidArgumentException($railPricingInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

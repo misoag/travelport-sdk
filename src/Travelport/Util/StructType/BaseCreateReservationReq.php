@@ -326,12 +326,13 @@ class BaseCreateReservationReq extends BaseReq
         return $this->LinkedUniversalRecord;
     }
     /**
-     * This method is responsible for validating the values passed to the setLinkedUniversalRecord method
+     * This method is responsible for validating the value(s) passed to the setLinkedUniversalRecord method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLinkedUniversalRecord method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLinkedUniversalRecordForArrayConstraintsFromSetLinkedUniversalRecord(?array $values = []): string
+    public static function validateLinkedUniversalRecordForArrayConstraintFromSetLinkedUniversalRecord(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -360,7 +361,7 @@ class BaseCreateReservationReq extends BaseReq
     public function setLinkedUniversalRecord(?array $linkedUniversalRecord = null): self
     {
         // validation for constraint: array
-        if ('' !== ($linkedUniversalRecordArrayErrorMessage = self::validateLinkedUniversalRecordForArrayConstraintsFromSetLinkedUniversalRecord($linkedUniversalRecord))) {
+        if ('' !== ($linkedUniversalRecordArrayErrorMessage = self::validateLinkedUniversalRecordForArrayConstraintFromSetLinkedUniversalRecord($linkedUniversalRecord))) {
             throw new InvalidArgumentException($linkedUniversalRecordArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -400,12 +401,13 @@ class BaseCreateReservationReq extends BaseReq
         return $this->BookingTraveler;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingTraveler method
+     * This method is responsible for validating the value(s) passed to the setBookingTraveler method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTraveler method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingTravelerForArrayConstraintsFromSetBookingTraveler(?array $values = []): string
+    public static function validateBookingTravelerForArrayConstraintFromSetBookingTraveler(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -434,7 +436,7 @@ class BaseCreateReservationReq extends BaseReq
     public function setBookingTraveler(?array $bookingTraveler = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingTravelerArrayErrorMessage = self::validateBookingTravelerForArrayConstraintsFromSetBookingTraveler($bookingTraveler))) {
+        if ('' !== ($bookingTravelerArrayErrorMessage = self::validateBookingTravelerForArrayConstraintFromSetBookingTraveler($bookingTraveler))) {
             throw new InvalidArgumentException($bookingTravelerArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -474,12 +476,13 @@ class BaseCreateReservationReq extends BaseReq
         return $this->OSI;
     }
     /**
-     * This method is responsible for validating the values passed to the setOSI method
+     * This method is responsible for validating the value(s) passed to the setOSI method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOSI method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateOSIForArrayConstraintsFromSetOSI(?array $values = []): string
+    public static function validateOSIForArrayConstraintFromSetOSI(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -508,7 +511,7 @@ class BaseCreateReservationReq extends BaseReq
     public function setOSI(?array $oSI = null): self
     {
         // validation for constraint: array
-        if ('' !== ($oSIArrayErrorMessage = self::validateOSIForArrayConstraintsFromSetOSI($oSI))) {
+        if ('' !== ($oSIArrayErrorMessage = self::validateOSIForArrayConstraintFromSetOSI($oSI))) {
             throw new InvalidArgumentException($oSIArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -548,12 +551,13 @@ class BaseCreateReservationReq extends BaseReq
         return $this->AccountingRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setAccountingRemark method
+     * This method is responsible for validating the value(s) passed to the setAccountingRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAccountingRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAccountingRemarkForArrayConstraintsFromSetAccountingRemark(?array $values = []): string
+    public static function validateAccountingRemarkForArrayConstraintFromSetAccountingRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -582,7 +586,7 @@ class BaseCreateReservationReq extends BaseReq
     public function setAccountingRemark(?array $accountingRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($accountingRemarkArrayErrorMessage = self::validateAccountingRemarkForArrayConstraintsFromSetAccountingRemark($accountingRemark))) {
+        if ('' !== ($accountingRemarkArrayErrorMessage = self::validateAccountingRemarkForArrayConstraintFromSetAccountingRemark($accountingRemark))) {
             throw new InvalidArgumentException($accountingRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -622,12 +626,13 @@ class BaseCreateReservationReq extends BaseReq
         return $this->GeneralRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setGeneralRemark method
+     * This method is responsible for validating the value(s) passed to the setGeneralRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGeneralRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark(?array $values = []): string
+    public static function validateGeneralRemarkForArrayConstraintFromSetGeneralRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -656,7 +661,7 @@ class BaseCreateReservationReq extends BaseReq
     public function setGeneralRemark(?array $generalRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark($generalRemark))) {
+        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintFromSetGeneralRemark($generalRemark))) {
             throw new InvalidArgumentException($generalRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -696,12 +701,13 @@ class BaseCreateReservationReq extends BaseReq
         return $this->XMLRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setXMLRemark method
+     * This method is responsible for validating the value(s) passed to the setXMLRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setXMLRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateXMLRemarkForArrayConstraintsFromSetXMLRemark(?array $values = []): string
+    public static function validateXMLRemarkForArrayConstraintFromSetXMLRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -730,7 +736,7 @@ class BaseCreateReservationReq extends BaseReq
     public function setXMLRemark(?array $xMLRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($xMLRemarkArrayErrorMessage = self::validateXMLRemarkForArrayConstraintsFromSetXMLRemark($xMLRemark))) {
+        if ('' !== ($xMLRemarkArrayErrorMessage = self::validateXMLRemarkForArrayConstraintFromSetXMLRemark($xMLRemark))) {
             throw new InvalidArgumentException($xMLRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -770,12 +776,13 @@ class BaseCreateReservationReq extends BaseReq
         return $this->UnassociatedRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setUnassociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setUnassociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setUnassociatedRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateUnassociatedRemarkForArrayConstraintsFromSetUnassociatedRemark(?array $values = []): string
+    public static function validateUnassociatedRemarkForArrayConstraintFromSetUnassociatedRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -804,7 +811,7 @@ class BaseCreateReservationReq extends BaseReq
     public function setUnassociatedRemark(?array $unassociatedRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($unassociatedRemarkArrayErrorMessage = self::validateUnassociatedRemarkForArrayConstraintsFromSetUnassociatedRemark($unassociatedRemark))) {
+        if ('' !== ($unassociatedRemarkArrayErrorMessage = self::validateUnassociatedRemarkForArrayConstraintFromSetUnassociatedRemark($unassociatedRemark))) {
             throw new InvalidArgumentException($unassociatedRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -996,12 +1003,13 @@ class BaseCreateReservationReq extends BaseReq
         return $this->InvoiceRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setInvoiceRemark method
+     * This method is responsible for validating the value(s) passed to the setInvoiceRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setInvoiceRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateInvoiceRemarkForArrayConstraintsFromSetInvoiceRemark(?array $values = []): string
+    public static function validateInvoiceRemarkForArrayConstraintFromSetInvoiceRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1030,7 +1038,7 @@ class BaseCreateReservationReq extends BaseReq
     public function setInvoiceRemark(?array $invoiceRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($invoiceRemarkArrayErrorMessage = self::validateInvoiceRemarkForArrayConstraintsFromSetInvoiceRemark($invoiceRemark))) {
+        if ('' !== ($invoiceRemarkArrayErrorMessage = self::validateInvoiceRemarkForArrayConstraintFromSetInvoiceRemark($invoiceRemark))) {
             throw new InvalidArgumentException($invoiceRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1070,12 +1078,13 @@ class BaseCreateReservationReq extends BaseReq
         return $this->SSR;
     }
     /**
-     * This method is responsible for validating the values passed to the setSSR method
+     * This method is responsible for validating the value(s) passed to the setSSR method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSSR method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSSRForArrayConstraintsFromSetSSR(?array $values = []): string
+    public static function validateSSRForArrayConstraintFromSetSSR(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1104,7 +1113,7 @@ class BaseCreateReservationReq extends BaseReq
     public function setSSR(?array $sSR = null): self
     {
         // validation for constraint: array
-        if ('' !== ($sSRArrayErrorMessage = self::validateSSRForArrayConstraintsFromSetSSR($sSR))) {
+        if ('' !== ($sSRArrayErrorMessage = self::validateSSRForArrayConstraintFromSetSSR($sSR))) {
             throw new InvalidArgumentException($sSRArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

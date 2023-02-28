@@ -273,16 +273,16 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function getVehicleAdd(): ?\Travelport\UniversalRecord\StructType\VehicleAdd
     {
-        return isset($this->VehicleAdd) ? $this->VehicleAdd : null;
+        return $this->VehicleAdd ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicleAdd method
+     * This method is responsible for validating the value(s) passed to the setVehicleAdd method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleAdd method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleAddForChoiceConstraintsFromSetVehicleAdd($value): string
+    public function validateVehicleAddForChoiceConstraintFromSetVehicleAdd($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -328,7 +328,7 @@ class UniversalModifyCmd extends AbstractStructBase
     public function setVehicleAdd(?\Travelport\UniversalRecord\StructType\VehicleAdd $vehicleAdd = null): self
     {
         // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($vehicleAddChoiceErrorMessage = self::validateVehicleAddForChoiceConstraintsFromSetVehicleAdd($vehicleAdd))) {
+        if ('' !== ($vehicleAddChoiceErrorMessage = self::validateVehicleAddForChoiceConstraintFromSetVehicleAdd($vehicleAdd))) {
             throw new InvalidArgumentException($vehicleAddChoiceErrorMessage, __LINE__);
         }
         if (is_null($vehicleAdd) || (is_array($vehicleAdd) && empty($vehicleAdd))) {
@@ -345,16 +345,16 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function getVehicleDelete(): ?\Travelport\UniversalRecord\StructType\VehicleDelete
     {
-        return isset($this->VehicleDelete) ? $this->VehicleDelete : null;
+        return $this->VehicleDelete ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicleDelete method
+     * This method is responsible for validating the value(s) passed to the setVehicleDelete method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleDelete method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleDeleteForChoiceConstraintsFromSetVehicleDelete($value): string
+    public function validateVehicleDeleteForChoiceConstraintFromSetVehicleDelete($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -400,7 +400,7 @@ class UniversalModifyCmd extends AbstractStructBase
     public function setVehicleDelete(?\Travelport\UniversalRecord\StructType\VehicleDelete $vehicleDelete = null): self
     {
         // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($vehicleDeleteChoiceErrorMessage = self::validateVehicleDeleteForChoiceConstraintsFromSetVehicleDelete($vehicleDelete))) {
+        if ('' !== ($vehicleDeleteChoiceErrorMessage = self::validateVehicleDeleteForChoiceConstraintFromSetVehicleDelete($vehicleDelete))) {
             throw new InvalidArgumentException($vehicleDeleteChoiceErrorMessage, __LINE__);
         }
         if (is_null($vehicleDelete) || (is_array($vehicleDelete) && empty($vehicleDelete))) {
@@ -417,16 +417,16 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function getVehicleUpdate(): ?\Travelport\UniversalRecord\StructType\VehicleUpdate
     {
-        return isset($this->VehicleUpdate) ? $this->VehicleUpdate : null;
+        return $this->VehicleUpdate ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicleUpdate method
+     * This method is responsible for validating the value(s) passed to the setVehicleUpdate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleUpdate method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleUpdateForChoiceConstraintsFromSetVehicleUpdate($value): string
+    public function validateVehicleUpdateForChoiceConstraintFromSetVehicleUpdate($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -472,7 +472,7 @@ class UniversalModifyCmd extends AbstractStructBase
     public function setVehicleUpdate(?\Travelport\UniversalRecord\StructType\VehicleUpdate $vehicleUpdate = null): self
     {
         // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($vehicleUpdateChoiceErrorMessage = self::validateVehicleUpdateForChoiceConstraintsFromSetVehicleUpdate($vehicleUpdate))) {
+        if ('' !== ($vehicleUpdateChoiceErrorMessage = self::validateVehicleUpdateForChoiceConstraintFromSetVehicleUpdate($vehicleUpdate))) {
             throw new InvalidArgumentException($vehicleUpdateChoiceErrorMessage, __LINE__);
         }
         if (is_null($vehicleUpdate) || (is_array($vehicleUpdate) && empty($vehicleUpdate))) {
@@ -489,16 +489,16 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function getAirAdd(): ?\Travelport\UniversalRecord\StructType\AirAdd
     {
-        return isset($this->AirAdd) ? $this->AirAdd : null;
+        return $this->AirAdd ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirAdd method
+     * This method is responsible for validating the value(s) passed to the setAirAdd method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirAdd method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirAddForChoiceConstraintsFromSetAirAdd($value): string
+    public function validateAirAddForChoiceConstraintFromSetAirAdd($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -544,7 +544,7 @@ class UniversalModifyCmd extends AbstractStructBase
     public function setAirAdd(?\Travelport\UniversalRecord\StructType\AirAdd $airAdd = null): self
     {
         // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($airAddChoiceErrorMessage = self::validateAirAddForChoiceConstraintsFromSetAirAdd($airAdd))) {
+        if ('' !== ($airAddChoiceErrorMessage = self::validateAirAddForChoiceConstraintFromSetAirAdd($airAdd))) {
             throw new InvalidArgumentException($airAddChoiceErrorMessage, __LINE__);
         }
         if (is_null($airAdd) || (is_array($airAdd) && empty($airAdd))) {
@@ -561,16 +561,16 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function getAirDelete(): ?\Travelport\UniversalRecord\StructType\AirDelete
     {
-        return isset($this->AirDelete) ? $this->AirDelete : null;
+        return $this->AirDelete ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirDelete method
+     * This method is responsible for validating the value(s) passed to the setAirDelete method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirDelete method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirDeleteForChoiceConstraintsFromSetAirDelete($value): string
+    public function validateAirDeleteForChoiceConstraintFromSetAirDelete($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -616,7 +616,7 @@ class UniversalModifyCmd extends AbstractStructBase
     public function setAirDelete(?\Travelport\UniversalRecord\StructType\AirDelete $airDelete = null): self
     {
         // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($airDeleteChoiceErrorMessage = self::validateAirDeleteForChoiceConstraintsFromSetAirDelete($airDelete))) {
+        if ('' !== ($airDeleteChoiceErrorMessage = self::validateAirDeleteForChoiceConstraintFromSetAirDelete($airDelete))) {
             throw new InvalidArgumentException($airDeleteChoiceErrorMessage, __LINE__);
         }
         if (is_null($airDelete) || (is_array($airDelete) && empty($airDelete))) {
@@ -633,16 +633,16 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function getAirUpdate(): ?\Travelport\UniversalRecord\StructType\AirUpdate
     {
-        return isset($this->AirUpdate) ? $this->AirUpdate : null;
+        return $this->AirUpdate ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirUpdate method
+     * This method is responsible for validating the value(s) passed to the setAirUpdate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirUpdate method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirUpdateForChoiceConstraintsFromSetAirUpdate($value): string
+    public function validateAirUpdateForChoiceConstraintFromSetAirUpdate($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -688,7 +688,7 @@ class UniversalModifyCmd extends AbstractStructBase
     public function setAirUpdate(?\Travelport\UniversalRecord\StructType\AirUpdate $airUpdate = null): self
     {
         // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($airUpdateChoiceErrorMessage = self::validateAirUpdateForChoiceConstraintsFromSetAirUpdate($airUpdate))) {
+        if ('' !== ($airUpdateChoiceErrorMessage = self::validateAirUpdateForChoiceConstraintFromSetAirUpdate($airUpdate))) {
             throw new InvalidArgumentException($airUpdateChoiceErrorMessage, __LINE__);
         }
         if (is_null($airUpdate) || (is_array($airUpdate) && empty($airUpdate))) {
@@ -705,16 +705,16 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function getUniversalAdd(): ?\Travelport\UniversalRecord\StructType\UniversalAdd
     {
-        return isset($this->UniversalAdd) ? $this->UniversalAdd : null;
+        return $this->UniversalAdd ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setUniversalAdd method
+     * This method is responsible for validating the value(s) passed to the setUniversalAdd method
      * This method is willingly generated in order to preserve the one-line inline validation within the setUniversalAdd method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateUniversalAddForChoiceConstraintsFromSetUniversalAdd($value): string
+    public function validateUniversalAddForChoiceConstraintFromSetUniversalAdd($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -760,7 +760,7 @@ class UniversalModifyCmd extends AbstractStructBase
     public function setUniversalAdd(?\Travelport\UniversalRecord\StructType\UniversalAdd $universalAdd = null): self
     {
         // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($universalAddChoiceErrorMessage = self::validateUniversalAddForChoiceConstraintsFromSetUniversalAdd($universalAdd))) {
+        if ('' !== ($universalAddChoiceErrorMessage = self::validateUniversalAddForChoiceConstraintFromSetUniversalAdd($universalAdd))) {
             throw new InvalidArgumentException($universalAddChoiceErrorMessage, __LINE__);
         }
         if (is_null($universalAdd) || (is_array($universalAdd) && empty($universalAdd))) {
@@ -777,16 +777,16 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function getUniversalDelete(): ?\Travelport\UniversalRecord\StructType\UniversalDelete
     {
-        return isset($this->UniversalDelete) ? $this->UniversalDelete : null;
+        return $this->UniversalDelete ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setUniversalDelete method
+     * This method is responsible for validating the value(s) passed to the setUniversalDelete method
      * This method is willingly generated in order to preserve the one-line inline validation within the setUniversalDelete method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateUniversalDeleteForChoiceConstraintsFromSetUniversalDelete($value): string
+    public function validateUniversalDeleteForChoiceConstraintFromSetUniversalDelete($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -832,7 +832,7 @@ class UniversalModifyCmd extends AbstractStructBase
     public function setUniversalDelete(?\Travelport\UniversalRecord\StructType\UniversalDelete $universalDelete = null): self
     {
         // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($universalDeleteChoiceErrorMessage = self::validateUniversalDeleteForChoiceConstraintsFromSetUniversalDelete($universalDelete))) {
+        if ('' !== ($universalDeleteChoiceErrorMessage = self::validateUniversalDeleteForChoiceConstraintFromSetUniversalDelete($universalDelete))) {
             throw new InvalidArgumentException($universalDeleteChoiceErrorMessage, __LINE__);
         }
         if (is_null($universalDelete) || (is_array($universalDelete) && empty($universalDelete))) {
@@ -849,16 +849,16 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function getUniversalUpdate(): ?\Travelport\UniversalRecord\StructType\UniversalUpdate
     {
-        return isset($this->UniversalUpdate) ? $this->UniversalUpdate : null;
+        return $this->UniversalUpdate ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setUniversalUpdate method
+     * This method is responsible for validating the value(s) passed to the setUniversalUpdate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setUniversalUpdate method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateUniversalUpdateForChoiceConstraintsFromSetUniversalUpdate($value): string
+    public function validateUniversalUpdateForChoiceConstraintFromSetUniversalUpdate($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -904,7 +904,7 @@ class UniversalModifyCmd extends AbstractStructBase
     public function setUniversalUpdate(?\Travelport\UniversalRecord\StructType\UniversalUpdate $universalUpdate = null): self
     {
         // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($universalUpdateChoiceErrorMessage = self::validateUniversalUpdateForChoiceConstraintsFromSetUniversalUpdate($universalUpdate))) {
+        if ('' !== ($universalUpdateChoiceErrorMessage = self::validateUniversalUpdateForChoiceConstraintFromSetUniversalUpdate($universalUpdate))) {
             throw new InvalidArgumentException($universalUpdateChoiceErrorMessage, __LINE__);
         }
         if (is_null($universalUpdate) || (is_array($universalUpdate) && empty($universalUpdate))) {
@@ -921,16 +921,16 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function getHotelAdd(): ?\Travelport\UniversalRecord\StructType\HotelAdd
     {
-        return isset($this->HotelAdd) ? $this->HotelAdd : null;
+        return $this->HotelAdd ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelAdd method
+     * This method is responsible for validating the value(s) passed to the setHotelAdd method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelAdd method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelAddForChoiceConstraintsFromSetHotelAdd($value): string
+    public function validateHotelAddForChoiceConstraintFromSetHotelAdd($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -976,7 +976,7 @@ class UniversalModifyCmd extends AbstractStructBase
     public function setHotelAdd(?\Travelport\UniversalRecord\StructType\HotelAdd $hotelAdd = null): self
     {
         // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($hotelAddChoiceErrorMessage = self::validateHotelAddForChoiceConstraintsFromSetHotelAdd($hotelAdd))) {
+        if ('' !== ($hotelAddChoiceErrorMessage = self::validateHotelAddForChoiceConstraintFromSetHotelAdd($hotelAdd))) {
             throw new InvalidArgumentException($hotelAddChoiceErrorMessage, __LINE__);
         }
         if (is_null($hotelAdd) || (is_array($hotelAdd) && empty($hotelAdd))) {
@@ -993,16 +993,16 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function getHotelUpdate(): ?\Travelport\UniversalRecord\StructType\HotelUpdate
     {
-        return isset($this->HotelUpdate) ? $this->HotelUpdate : null;
+        return $this->HotelUpdate ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelUpdate method
+     * This method is responsible for validating the value(s) passed to the setHotelUpdate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelUpdate method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelUpdateForChoiceConstraintsFromSetHotelUpdate($value): string
+    public function validateHotelUpdateForChoiceConstraintFromSetHotelUpdate($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1048,7 +1048,7 @@ class UniversalModifyCmd extends AbstractStructBase
     public function setHotelUpdate(?\Travelport\UniversalRecord\StructType\HotelUpdate $hotelUpdate = null): self
     {
         // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($hotelUpdateChoiceErrorMessage = self::validateHotelUpdateForChoiceConstraintsFromSetHotelUpdate($hotelUpdate))) {
+        if ('' !== ($hotelUpdateChoiceErrorMessage = self::validateHotelUpdateForChoiceConstraintFromSetHotelUpdate($hotelUpdate))) {
             throw new InvalidArgumentException($hotelUpdateChoiceErrorMessage, __LINE__);
         }
         if (is_null($hotelUpdate) || (is_array($hotelUpdate) && empty($hotelUpdate))) {
@@ -1065,16 +1065,16 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function getHotelDelete(): ?\Travelport\UniversalRecord\StructType\HotelDelete
     {
-        return isset($this->HotelDelete) ? $this->HotelDelete : null;
+        return $this->HotelDelete ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelDelete method
+     * This method is responsible for validating the value(s) passed to the setHotelDelete method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelDelete method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelDeleteForChoiceConstraintsFromSetHotelDelete($value): string
+    public function validateHotelDeleteForChoiceConstraintFromSetHotelDelete($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1120,7 +1120,7 @@ class UniversalModifyCmd extends AbstractStructBase
     public function setHotelDelete(?\Travelport\UniversalRecord\StructType\HotelDelete $hotelDelete = null): self
     {
         // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($hotelDeleteChoiceErrorMessage = self::validateHotelDeleteForChoiceConstraintsFromSetHotelDelete($hotelDelete))) {
+        if ('' !== ($hotelDeleteChoiceErrorMessage = self::validateHotelDeleteForChoiceConstraintFromSetHotelDelete($hotelDelete))) {
             throw new InvalidArgumentException($hotelDeleteChoiceErrorMessage, __LINE__);
         }
         if (is_null($hotelDelete) || (is_array($hotelDelete) && empty($hotelDelete))) {
@@ -1137,16 +1137,16 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function getPassiveAdd(): ?\Travelport\UniversalRecord\StructType\PassiveAdd
     {
-        return isset($this->PassiveAdd) ? $this->PassiveAdd : null;
+        return $this->PassiveAdd ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setPassiveAdd method
+     * This method is responsible for validating the value(s) passed to the setPassiveAdd method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassiveAdd method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validatePassiveAddForChoiceConstraintsFromSetPassiveAdd($value): string
+    public function validatePassiveAddForChoiceConstraintFromSetPassiveAdd($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1192,7 +1192,7 @@ class UniversalModifyCmd extends AbstractStructBase
     public function setPassiveAdd(?\Travelport\UniversalRecord\StructType\PassiveAdd $passiveAdd = null): self
     {
         // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($passiveAddChoiceErrorMessage = self::validatePassiveAddForChoiceConstraintsFromSetPassiveAdd($passiveAdd))) {
+        if ('' !== ($passiveAddChoiceErrorMessage = self::validatePassiveAddForChoiceConstraintFromSetPassiveAdd($passiveAdd))) {
             throw new InvalidArgumentException($passiveAddChoiceErrorMessage, __LINE__);
         }
         if (is_null($passiveAdd) || (is_array($passiveAdd) && empty($passiveAdd))) {
@@ -1209,16 +1209,16 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function getPassiveDelete(): ?\Travelport\UniversalRecord\StructType\PassiveDelete
     {
-        return isset($this->PassiveDelete) ? $this->PassiveDelete : null;
+        return $this->PassiveDelete ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setPassiveDelete method
+     * This method is responsible for validating the value(s) passed to the setPassiveDelete method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassiveDelete method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validatePassiveDeleteForChoiceConstraintsFromSetPassiveDelete($value): string
+    public function validatePassiveDeleteForChoiceConstraintFromSetPassiveDelete($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1264,7 +1264,7 @@ class UniversalModifyCmd extends AbstractStructBase
     public function setPassiveDelete(?\Travelport\UniversalRecord\StructType\PassiveDelete $passiveDelete = null): self
     {
         // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($passiveDeleteChoiceErrorMessage = self::validatePassiveDeleteForChoiceConstraintsFromSetPassiveDelete($passiveDelete))) {
+        if ('' !== ($passiveDeleteChoiceErrorMessage = self::validatePassiveDeleteForChoiceConstraintFromSetPassiveDelete($passiveDelete))) {
             throw new InvalidArgumentException($passiveDeleteChoiceErrorMessage, __LINE__);
         }
         if (is_null($passiveDelete) || (is_array($passiveDelete) && empty($passiveDelete))) {
@@ -1281,16 +1281,16 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function getRailUpdate(): ?\Travelport\UniversalRecord\StructType\RailUpdate
     {
-        return isset($this->RailUpdate) ? $this->RailUpdate : null;
+        return $this->RailUpdate ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setRailUpdate method
+     * This method is responsible for validating the value(s) passed to the setRailUpdate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailUpdate method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateRailUpdateForChoiceConstraintsFromSetRailUpdate($value): string
+    public function validateRailUpdateForChoiceConstraintFromSetRailUpdate($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1336,7 +1336,7 @@ class UniversalModifyCmd extends AbstractStructBase
     public function setRailUpdate(?\Travelport\UniversalRecord\StructType\RailUpdate $railUpdate = null): self
     {
         // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($railUpdateChoiceErrorMessage = self::validateRailUpdateForChoiceConstraintsFromSetRailUpdate($railUpdate))) {
+        if ('' !== ($railUpdateChoiceErrorMessage = self::validateRailUpdateForChoiceConstraintFromSetRailUpdate($railUpdate))) {
             throw new InvalidArgumentException($railUpdateChoiceErrorMessage, __LINE__);
         }
         if (is_null($railUpdate) || (is_array($railUpdate) && empty($railUpdate))) {

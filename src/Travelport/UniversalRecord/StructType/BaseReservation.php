@@ -199,12 +199,13 @@ class BaseReservation extends AbstractStructBase
         return $this->AccountingRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setAccountingRemark method
+     * This method is responsible for validating the value(s) passed to the setAccountingRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAccountingRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAccountingRemarkForArrayConstraintsFromSetAccountingRemark(?array $values = []): string
+    public static function validateAccountingRemarkForArrayConstraintFromSetAccountingRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -233,7 +234,7 @@ class BaseReservation extends AbstractStructBase
     public function setAccountingRemark(?array $accountingRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($accountingRemarkArrayErrorMessage = self::validateAccountingRemarkForArrayConstraintsFromSetAccountingRemark($accountingRemark))) {
+        if ('' !== ($accountingRemarkArrayErrorMessage = self::validateAccountingRemarkForArrayConstraintFromSetAccountingRemark($accountingRemark))) {
             throw new InvalidArgumentException($accountingRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -273,12 +274,13 @@ class BaseReservation extends AbstractStructBase
         return $this->GeneralRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setGeneralRemark method
+     * This method is responsible for validating the value(s) passed to the setGeneralRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGeneralRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark(?array $values = []): string
+    public static function validateGeneralRemarkForArrayConstraintFromSetGeneralRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -307,7 +309,7 @@ class BaseReservation extends AbstractStructBase
     public function setGeneralRemark(?array $generalRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark($generalRemark))) {
+        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintFromSetGeneralRemark($generalRemark))) {
             throw new InvalidArgumentException($generalRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -347,12 +349,13 @@ class BaseReservation extends AbstractStructBase
         return $this->Restriction;
     }
     /**
-     * This method is responsible for validating the values passed to the setRestriction method
+     * This method is responsible for validating the value(s) passed to the setRestriction method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRestriction method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRestrictionForArrayConstraintsFromSetRestriction(?array $values = []): string
+    public static function validateRestrictionForArrayConstraintFromSetRestriction(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -381,7 +384,7 @@ class BaseReservation extends AbstractStructBase
     public function setRestriction(?array $restriction = null): self
     {
         // validation for constraint: array
-        if ('' !== ($restrictionArrayErrorMessage = self::validateRestrictionForArrayConstraintsFromSetRestriction($restriction))) {
+        if ('' !== ($restrictionArrayErrorMessage = self::validateRestrictionForArrayConstraintFromSetRestriction($restriction))) {
             throw new InvalidArgumentException($restrictionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

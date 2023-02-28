@@ -68,16 +68,16 @@ class TypeLocation extends AbstractStructBase
      */
     public function getAirport(): ?\Travelport\Util\StructType\Airport
     {
-        return isset($this->Airport) ? $this->Airport : null;
+        return $this->Airport ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirport method
+     * This method is responsible for validating the value(s) passed to the setAirport method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirport method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirportForChoiceConstraintsFromSetAirport($value): string
+    public function validateAirportForChoiceConstraintFromSetAirport($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -111,7 +111,7 @@ class TypeLocation extends AbstractStructBase
     public function setAirport(?\Travelport\Util\StructType\Airport $airport = null): self
     {
         // validation for constraint: choice(Airport, City, CityOrAirport)
-        if ('' !== ($airportChoiceErrorMessage = self::validateAirportForChoiceConstraintsFromSetAirport($airport))) {
+        if ('' !== ($airportChoiceErrorMessage = self::validateAirportForChoiceConstraintFromSetAirport($airport))) {
             throw new InvalidArgumentException($airportChoiceErrorMessage, __LINE__);
         }
         if (is_null($airport) || (is_array($airport) && empty($airport))) {
@@ -128,16 +128,16 @@ class TypeLocation extends AbstractStructBase
      */
     public function getCity(): ?\Travelport\Util\StructType\City
     {
-        return isset($this->City) ? $this->City : null;
+        return $this->City ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setCity method
+     * This method is responsible for validating the value(s) passed to the setCity method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCity method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCityForChoiceConstraintsFromSetCity($value): string
+    public function validateCityForChoiceConstraintFromSetCity($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -171,7 +171,7 @@ class TypeLocation extends AbstractStructBase
     public function setCity(?\Travelport\Util\StructType\City $city = null): self
     {
         // validation for constraint: choice(Airport, City, CityOrAirport)
-        if ('' !== ($cityChoiceErrorMessage = self::validateCityForChoiceConstraintsFromSetCity($city))) {
+        if ('' !== ($cityChoiceErrorMessage = self::validateCityForChoiceConstraintFromSetCity($city))) {
             throw new InvalidArgumentException($cityChoiceErrorMessage, __LINE__);
         }
         if (is_null($city) || (is_array($city) && empty($city))) {
@@ -188,16 +188,16 @@ class TypeLocation extends AbstractStructBase
      */
     public function getCityOrAirport(): ?\Travelport\Util\StructType\CityOrAirport
     {
-        return isset($this->CityOrAirport) ? $this->CityOrAirport : null;
+        return $this->CityOrAirport ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setCityOrAirport method
+     * This method is responsible for validating the value(s) passed to the setCityOrAirport method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCityOrAirport method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCityOrAirportForChoiceConstraintsFromSetCityOrAirport($value): string
+    public function validateCityOrAirportForChoiceConstraintFromSetCityOrAirport($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -231,7 +231,7 @@ class TypeLocation extends AbstractStructBase
     public function setCityOrAirport(?\Travelport\Util\StructType\CityOrAirport $cityOrAirport = null): self
     {
         // validation for constraint: choice(Airport, City, CityOrAirport)
-        if ('' !== ($cityOrAirportChoiceErrorMessage = self::validateCityOrAirportForChoiceConstraintsFromSetCityOrAirport($cityOrAirport))) {
+        if ('' !== ($cityOrAirportChoiceErrorMessage = self::validateCityOrAirportForChoiceConstraintFromSetCityOrAirport($cityOrAirport))) {
             throw new InvalidArgumentException($cityOrAirportChoiceErrorMessage, __LINE__);
         }
         if (is_null($cityOrAirport) || (is_array($cityOrAirport) && empty($cityOrAirport))) {

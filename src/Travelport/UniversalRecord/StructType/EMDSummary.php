@@ -178,12 +178,13 @@ class EMDSummary extends AbstractStructBase
         return $this->EMDCoupon;
     }
     /**
-     * This method is responsible for validating the values passed to the setEMDCoupon method
+     * This method is responsible for validating the value(s) passed to the setEMDCoupon method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEMDCoupon method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEMDCouponForArrayConstraintsFromSetEMDCoupon(?array $values = []): string
+    public static function validateEMDCouponForArrayConstraintFromSetEMDCoupon(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -212,7 +213,7 @@ class EMDSummary extends AbstractStructBase
     public function setEMDCoupon(?array $eMDCoupon = null): self
     {
         // validation for constraint: array
-        if ('' !== ($eMDCouponArrayErrorMessage = self::validateEMDCouponForArrayConstraintsFromSetEMDCoupon($eMDCoupon))) {
+        if ('' !== ($eMDCouponArrayErrorMessage = self::validateEMDCouponForArrayConstraintFromSetEMDCoupon($eMDCoupon))) {
             throw new InvalidArgumentException($eMDCouponArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

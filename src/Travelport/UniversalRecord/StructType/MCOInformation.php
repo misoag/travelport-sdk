@@ -74,12 +74,13 @@ class MCOInformation extends AbstractStructBase
         return $this->PassengerInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setPassengerInfo method
+     * This method is responsible for validating the value(s) passed to the setPassengerInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassengerInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePassengerInfoForArrayConstraintsFromSetPassengerInfo(?array $values = []): string
+    public static function validatePassengerInfoForArrayConstraintFromSetPassengerInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -108,7 +109,7 @@ class MCOInformation extends AbstractStructBase
     public function setPassengerInfo(?array $passengerInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($passengerInfoArrayErrorMessage = self::validatePassengerInfoForArrayConstraintsFromSetPassengerInfo($passengerInfo))) {
+        if ('' !== ($passengerInfoArrayErrorMessage = self::validatePassengerInfoForArrayConstraintFromSetPassengerInfo($passengerInfo))) {
             throw new InvalidArgumentException($passengerInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

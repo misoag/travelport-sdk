@@ -53,12 +53,13 @@ class AccountRelatedRules extends AbstractStructBase
         return $this->BookingRules;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingRules method
+     * This method is responsible for validating the value(s) passed to the setBookingRules method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingRules method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingRulesForArrayConstraintsFromSetBookingRules(?array $values = []): string
+    public static function validateBookingRulesForArrayConstraintFromSetBookingRules(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -87,7 +88,7 @@ class AccountRelatedRules extends AbstractStructBase
     public function setBookingRules(?array $bookingRules = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingRulesArrayErrorMessage = self::validateBookingRulesForArrayConstraintsFromSetBookingRules($bookingRules))) {
+        if ('' !== ($bookingRulesArrayErrorMessage = self::validateBookingRulesForArrayConstraintFromSetBookingRules($bookingRules))) {
             throw new InvalidArgumentException($bookingRulesArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

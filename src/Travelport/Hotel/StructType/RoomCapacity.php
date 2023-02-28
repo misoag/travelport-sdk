@@ -54,12 +54,13 @@ class RoomCapacity extends AbstractStructBase
         return $this->Capacity;
     }
     /**
-     * This method is responsible for validating the values passed to the setCapacity method
+     * This method is responsible for validating the value(s) passed to the setCapacity method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCapacity method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCapacityForArrayConstraintsFromSetCapacity(?array $values = []): string
+    public static function validateCapacityForArrayConstraintFromSetCapacity(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -88,7 +89,7 @@ class RoomCapacity extends AbstractStructBase
     public function setCapacity(?array $capacity = null): self
     {
         // validation for constraint: array
-        if ('' !== ($capacityArrayErrorMessage = self::validateCapacityForArrayConstraintsFromSetCapacity($capacity))) {
+        if ('' !== ($capacityArrayErrorMessage = self::validateCapacityForArrayConstraintFromSetCapacity($capacity))) {
             throw new InvalidArgumentException($capacityArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)

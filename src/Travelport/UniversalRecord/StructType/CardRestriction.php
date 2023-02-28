@@ -119,12 +119,13 @@ class CardRestriction extends AbstractStructBase
         return $this->RequiredField;
     }
     /**
-     * This method is responsible for validating the values passed to the setRequiredField method
+     * This method is responsible for validating the value(s) passed to the setRequiredField method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRequiredField method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRequiredFieldForArrayConstraintsFromSetRequiredField(?array $values = []): string
+    public static function validateRequiredFieldForArrayConstraintFromSetRequiredField(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -153,7 +154,7 @@ class CardRestriction extends AbstractStructBase
     public function setRequiredField(?array $requiredField = null): self
     {
         // validation for constraint: array
-        if ('' !== ($requiredFieldArrayErrorMessage = self::validateRequiredFieldForArrayConstraintsFromSetRequiredField($requiredField))) {
+        if ('' !== ($requiredFieldArrayErrorMessage = self::validateRequiredFieldForArrayConstraintFromSetRequiredField($requiredField))) {
             throw new InvalidArgumentException($requiredFieldArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

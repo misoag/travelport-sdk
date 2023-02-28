@@ -157,12 +157,13 @@ class FaxDetails extends AbstractStructBase
         return $this->Remark;
     }
     /**
-     * This method is responsible for validating the values passed to the setRemark method
+     * This method is responsible for validating the value(s) passed to the setRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRemarkForArrayConstraintsFromSetRemark(?array $values = []): string
+    public static function validateRemarkForArrayConstraintFromSetRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -191,7 +192,7 @@ class FaxDetails extends AbstractStructBase
     public function setRemark(?array $remark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($remarkArrayErrorMessage = self::validateRemarkForArrayConstraintsFromSetRemark($remark))) {
+        if ('' !== ($remarkArrayErrorMessage = self::validateRemarkForArrayConstraintFromSetRemark($remark))) {
             throw new InvalidArgumentException($remarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

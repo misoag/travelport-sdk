@@ -113,12 +113,13 @@ class VehiclePickupLocation extends AbstractStructBase
         return $this->VehicleModifier;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleModifier method
+     * This method is responsible for validating the value(s) passed to the setVehicleModifier method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleModifier method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleModifierForArrayConstraintsFromSetVehicleModifier(?array $values = []): string
+    public static function validateVehicleModifierForArrayConstraintFromSetVehicleModifier(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -147,7 +148,7 @@ class VehiclePickupLocation extends AbstractStructBase
     public function setVehicleModifier(?array $vehicleModifier = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleModifierArrayErrorMessage = self::validateVehicleModifierForArrayConstraintsFromSetVehicleModifier($vehicleModifier))) {
+        if ('' !== ($vehicleModifierArrayErrorMessage = self::validateVehicleModifierForArrayConstraintFromSetVehicleModifier($vehicleModifier))) {
             throw new InvalidArgumentException($vehicleModifierArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

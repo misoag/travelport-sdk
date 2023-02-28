@@ -52,12 +52,13 @@ class ServiceInfo extends AbstractStructBase
         return $this->Description;
     }
     /**
-     * This method is responsible for validating the values passed to the setDescription method
+     * This method is responsible for validating the value(s) passed to the setDescription method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDescription method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDescriptionForArrayConstraintsFromSetDescription(?array $values = []): string
+    public static function validateDescriptionForArrayConstraintFromSetDescription(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -86,7 +87,7 @@ class ServiceInfo extends AbstractStructBase
     public function setDescription(?array $description = null): self
     {
         // validation for constraint: array
-        if ('' !== ($descriptionArrayErrorMessage = self::validateDescriptionForArrayConstraintsFromSetDescription($description))) {
+        if ('' !== ($descriptionArrayErrorMessage = self::validateDescriptionForArrayConstraintFromSetDescription($description))) {
             throw new InvalidArgumentException($descriptionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -126,12 +127,13 @@ class ServiceInfo extends AbstractStructBase
         return $this->MediaItem;
     }
     /**
-     * This method is responsible for validating the values passed to the setMediaItem method
+     * This method is responsible for validating the value(s) passed to the setMediaItem method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMediaItem method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMediaItemForArrayConstraintsFromSetMediaItem(?array $values = []): string
+    public static function validateMediaItemForArrayConstraintFromSetMediaItem(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -160,7 +162,7 @@ class ServiceInfo extends AbstractStructBase
     public function setMediaItem(?array $mediaItem = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mediaItemArrayErrorMessage = self::validateMediaItemForArrayConstraintsFromSetMediaItem($mediaItem))) {
+        if ('' !== ($mediaItemArrayErrorMessage = self::validateMediaItemForArrayConstraintFromSetMediaItem($mediaItem))) {
             throw new InvalidArgumentException($mediaItemArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(3)

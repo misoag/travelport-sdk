@@ -114,16 +114,16 @@ class Adjustment extends AbstractStructBase
      */
     public function getAmount(): ?string
     {
-        return isset($this->Amount) ? $this->Amount : null;
+        return $this->Amount ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAmount method
+     * This method is responsible for validating the value(s) passed to the setAmount method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAmount method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAmountForChoiceConstraintsFromSetAmount($value): string
+    public function validateAmountForChoiceConstraintFromSetAmount($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -160,7 +160,7 @@ class Adjustment extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
         // validation for constraint: choice(Amount, Percent)
-        if ('' !== ($amountChoiceErrorMessage = self::validateAmountForChoiceConstraintsFromSetAmount($amount))) {
+        if ('' !== ($amountChoiceErrorMessage = self::validateAmountForChoiceConstraintFromSetAmount($amount))) {
             throw new InvalidArgumentException($amountChoiceErrorMessage, __LINE__);
         }
         if (is_null($amount) || (is_array($amount) && empty($amount))) {
@@ -177,16 +177,16 @@ class Adjustment extends AbstractStructBase
      */
     public function getPercent(): ?float
     {
-        return isset($this->Percent) ? $this->Percent : null;
+        return $this->Percent ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setPercent method
+     * This method is responsible for validating the value(s) passed to the setPercent method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPercent method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validatePercentForChoiceConstraintsFromSetPercent($value): string
+    public function validatePercentForChoiceConstraintFromSetPercent($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -223,7 +223,7 @@ class Adjustment extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($percent, true), gettype($percent)), __LINE__);
         }
         // validation for constraint: choice(Amount, Percent)
-        if ('' !== ($percentChoiceErrorMessage = self::validatePercentForChoiceConstraintsFromSetPercent($percent))) {
+        if ('' !== ($percentChoiceErrorMessage = self::validatePercentForChoiceConstraintFromSetPercent($percent))) {
             throw new InvalidArgumentException($percentChoiceErrorMessage, __LINE__);
         }
         if (is_null($percent) || (is_array($percent) && empty($percent))) {

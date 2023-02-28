@@ -42,12 +42,13 @@ class ExpertSolutionList extends AbstractStructBase
         return $this->ExpertSolution;
     }
     /**
-     * This method is responsible for validating the values passed to the setExpertSolution method
+     * This method is responsible for validating the value(s) passed to the setExpertSolution method
      * This method is willingly generated in order to preserve the one-line inline validation within the setExpertSolution method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateExpertSolutionForArrayConstraintsFromSetExpertSolution(?array $values = []): string
+    public static function validateExpertSolutionForArrayConstraintFromSetExpertSolution(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class ExpertSolutionList extends AbstractStructBase
     public function setExpertSolution(?array $expertSolution = null): self
     {
         // validation for constraint: array
-        if ('' !== ($expertSolutionArrayErrorMessage = self::validateExpertSolutionForArrayConstraintsFromSetExpertSolution($expertSolution))) {
+        if ('' !== ($expertSolutionArrayErrorMessage = self::validateExpertSolutionForArrayConstraintFromSetExpertSolution($expertSolution))) {
             throw new InvalidArgumentException($expertSolutionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

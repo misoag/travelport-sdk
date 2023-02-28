@@ -84,12 +84,13 @@ class VehicleWithMediaItems extends AbstractStructBase
         return $this->MediaItem;
     }
     /**
-     * This method is responsible for validating the values passed to the setMediaItem method
+     * This method is responsible for validating the value(s) passed to the setMediaItem method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMediaItem method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMediaItemForArrayConstraintsFromSetMediaItem(?array $values = []): string
+    public static function validateMediaItemForArrayConstraintFromSetMediaItem(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -118,7 +119,7 @@ class VehicleWithMediaItems extends AbstractStructBase
     public function setMediaItem(?array $mediaItem = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mediaItemArrayErrorMessage = self::validateMediaItemForArrayConstraintsFromSetMediaItem($mediaItem))) {
+        if ('' !== ($mediaItemArrayErrorMessage = self::validateMediaItemForArrayConstraintFromSetMediaItem($mediaItem))) {
             throw new InvalidArgumentException($mediaItemArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -158,12 +159,13 @@ class VehicleWithMediaItems extends AbstractStructBase
         return $this->MediaResultMessage;
     }
     /**
-     * This method is responsible for validating the values passed to the setMediaResultMessage method
+     * This method is responsible for validating the value(s) passed to the setMediaResultMessage method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMediaResultMessage method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMediaResultMessageForArrayConstraintsFromSetMediaResultMessage(?array $values = []): string
+    public static function validateMediaResultMessageForArrayConstraintFromSetMediaResultMessage(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -192,7 +194,7 @@ class VehicleWithMediaItems extends AbstractStructBase
     public function setMediaResultMessage(?array $mediaResultMessage = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mediaResultMessageArrayErrorMessage = self::validateMediaResultMessageForArrayConstraintsFromSetMediaResultMessage($mediaResultMessage))) {
+        if ('' !== ($mediaResultMessageArrayErrorMessage = self::validateMediaResultMessageForArrayConstraintFromSetMediaResultMessage($mediaResultMessage))) {
             throw new InvalidArgumentException($mediaResultMessageArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

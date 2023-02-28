@@ -155,12 +155,13 @@ class AirMerchandisingFulfillmentReq extends BaseReq
         return $this->HostToken;
     }
     /**
-     * This method is responsible for validating the values passed to the setHostToken method
+     * This method is responsible for validating the value(s) passed to the setHostToken method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHostToken method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHostTokenForArrayConstraintsFromSetHostToken(?array $values = []): string
+    public static function validateHostTokenForArrayConstraintFromSetHostToken(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -189,7 +190,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
     public function setHostToken(?array $hostToken = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hostTokenArrayErrorMessage = self::validateHostTokenForArrayConstraintsFromSetHostToken($hostToken))) {
+        if ('' !== ($hostTokenArrayErrorMessage = self::validateHostTokenForArrayConstraintFromSetHostToken($hostToken))) {
             throw new InvalidArgumentException($hostTokenArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -229,12 +230,13 @@ class AirMerchandisingFulfillmentReq extends BaseReq
         return $this->HostReservation;
     }
     /**
-     * This method is responsible for validating the values passed to the setHostReservation method
+     * This method is responsible for validating the value(s) passed to the setHostReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHostReservation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHostReservationForArrayConstraintsFromSetHostReservation(?array $values = []): string
+    public static function validateHostReservationForArrayConstraintFromSetHostReservation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -263,7 +265,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
     public function setHostReservation(?array $hostReservation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hostReservationArrayErrorMessage = self::validateHostReservationForArrayConstraintsFromSetHostReservation($hostReservation))) {
+        if ('' !== ($hostReservationArrayErrorMessage = self::validateHostReservationForArrayConstraintFromSetHostReservation($hostReservation))) {
             throw new InvalidArgumentException($hostReservationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -398,12 +400,13 @@ class AirMerchandisingFulfillmentReq extends BaseReq
         return $this->SpecificSeatAssignment;
     }
     /**
-     * This method is responsible for validating the values passed to the setSpecificSeatAssignment method
+     * This method is responsible for validating the value(s) passed to the setSpecificSeatAssignment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSpecificSeatAssignment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSpecificSeatAssignmentForArrayConstraintsFromSetSpecificSeatAssignment(?array $values = []): string
+    public static function validateSpecificSeatAssignmentForArrayConstraintFromSetSpecificSeatAssignment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -432,7 +435,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
     public function setSpecificSeatAssignment(?array $specificSeatAssignment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($specificSeatAssignmentArrayErrorMessage = self::validateSpecificSeatAssignmentForArrayConstraintsFromSetSpecificSeatAssignment($specificSeatAssignment))) {
+        if ('' !== ($specificSeatAssignmentArrayErrorMessage = self::validateSpecificSeatAssignmentForArrayConstraintFromSetSpecificSeatAssignment($specificSeatAssignment))) {
             throw new InvalidArgumentException($specificSeatAssignmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -472,12 +475,13 @@ class AirMerchandisingFulfillmentReq extends BaseReq
         return $this->GeneralRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setGeneralRemark method
+     * This method is responsible for validating the value(s) passed to the setGeneralRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGeneralRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark(?array $values = []): string
+    public static function validateGeneralRemarkForArrayConstraintFromSetGeneralRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -506,7 +510,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
     public function setGeneralRemark(?array $generalRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark($generalRemark))) {
+        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintFromSetGeneralRemark($generalRemark))) {
             throw new InvalidArgumentException($generalRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

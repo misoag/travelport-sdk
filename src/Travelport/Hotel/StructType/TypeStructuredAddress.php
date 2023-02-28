@@ -183,12 +183,13 @@ class TypeStructuredAddress extends AbstractStructBase
         return $this->Street;
     }
     /**
-     * This method is responsible for validating the values passed to the setStreet method
+     * This method is responsible for validating the value(s) passed to the setStreet method
      * This method is willingly generated in order to preserve the one-line inline validation within the setStreet method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateStreetForArrayConstraintsFromSetStreet(?array $values = []): string
+    public static function validateStreetForArrayConstraintFromSetStreet(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -209,17 +210,17 @@ class TypeStructuredAddress extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setStreet method
+     * This method is responsible for validating the value(s) passed to the setStreet method
      * This method is willingly generated in order to preserve the one-line inline validation within the setStreet method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateStreetForMaxLengthConstraintFromSetStreet($values): string
+    public static function validateStreetForMaxLengthConstraintFromSetStreet(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $typeStructuredAddressStreetItem) {
+        foreach (($values ?? []) as $typeStructuredAddressStreetItem) {
             // validation for constraint: maxLength(255)
             if (mb_strlen((string) $typeStructuredAddressStreetItem) > 255) {
                 $invalidValues[] = var_export($typeStructuredAddressStreetItem, true);
@@ -233,17 +234,17 @@ class TypeStructuredAddress extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setStreet method
+     * This method is responsible for validating the value(s) passed to the setStreet method
      * This method is willingly generated in order to preserve the one-line inline validation within the setStreet method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateStreetForMinLengthConstraintFromSetStreet($values): string
+    public static function validateStreetForMinLengthConstraintFromSetStreet(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $typeStructuredAddressStreetItem) {
+        foreach (($values ?? []) as $typeStructuredAddressStreetItem) {
             // validation for constraint: minLength(1)
             if (mb_strlen((string) $typeStructuredAddressStreetItem) < 1) {
                 $invalidValues[] = var_export($typeStructuredAddressStreetItem, true);
@@ -265,7 +266,7 @@ class TypeStructuredAddress extends AbstractStructBase
     public function setStreet(?array $street = null): self
     {
         // validation for constraint: array
-        if ('' !== ($streetArrayErrorMessage = self::validateStreetForArrayConstraintsFromSetStreet($street))) {
+        if ('' !== ($streetArrayErrorMessage = self::validateStreetForArrayConstraintFromSetStreet($street))) {
             throw new InvalidArgumentException($streetArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxLength(255)
@@ -429,12 +430,13 @@ class TypeStructuredAddress extends AbstractStructBase
         return $this->ProviderReservationInfoRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setProviderReservationInfoRef method
+     * This method is responsible for validating the value(s) passed to the setProviderReservationInfoRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationInfoRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateProviderReservationInfoRefForArrayConstraintsFromSetProviderReservationInfoRef(?array $values = []): string
+    public static function validateProviderReservationInfoRefForArrayConstraintFromSetProviderReservationInfoRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -463,7 +465,7 @@ class TypeStructuredAddress extends AbstractStructBase
     public function setProviderReservationInfoRef(?array $providerReservationInfoRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($providerReservationInfoRefArrayErrorMessage = self::validateProviderReservationInfoRefForArrayConstraintsFromSetProviderReservationInfoRef($providerReservationInfoRef))) {
+        if ('' !== ($providerReservationInfoRefArrayErrorMessage = self::validateProviderReservationInfoRefForArrayConstraintFromSetProviderReservationInfoRef($providerReservationInfoRef))) {
             throw new InvalidArgumentException($providerReservationInfoRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)

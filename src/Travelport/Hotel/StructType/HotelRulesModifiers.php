@@ -174,12 +174,13 @@ class HotelRulesModifiers extends AbstractStructBase
         return $this->HotelBedding;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelBedding method
+     * This method is responsible for validating the value(s) passed to the setHotelBedding method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelBedding method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelBeddingForArrayConstraintsFromSetHotelBedding(?array $values = []): string
+    public static function validateHotelBeddingForArrayConstraintFromSetHotelBedding(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -208,7 +209,7 @@ class HotelRulesModifiers extends AbstractStructBase
     public function setHotelBedding(?array $hotelBedding = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelBeddingArrayErrorMessage = self::validateHotelBeddingForArrayConstraintsFromSetHotelBedding($hotelBedding))) {
+        if ('' !== ($hotelBeddingArrayErrorMessage = self::validateHotelBeddingForArrayConstraintFromSetHotelBedding($hotelBedding))) {
             throw new InvalidArgumentException($hotelBeddingArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(4)
@@ -271,12 +272,13 @@ class HotelRulesModifiers extends AbstractStructBase
         return $this->CorporateDiscountID;
     }
     /**
-     * This method is responsible for validating the values passed to the setCorporateDiscountID method
+     * This method is responsible for validating the value(s) passed to the setCorporateDiscountID method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCorporateDiscountID method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCorporateDiscountIDForArrayConstraintsFromSetCorporateDiscountID(?array $values = []): string
+    public static function validateCorporateDiscountIDForArrayConstraintFromSetCorporateDiscountID(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -305,7 +307,7 @@ class HotelRulesModifiers extends AbstractStructBase
     public function setCorporateDiscountID(?array $corporateDiscountID = null): self
     {
         // validation for constraint: array
-        if ('' !== ($corporateDiscountIDArrayErrorMessage = self::validateCorporateDiscountIDForArrayConstraintsFromSetCorporateDiscountID($corporateDiscountID))) {
+        if ('' !== ($corporateDiscountIDArrayErrorMessage = self::validateCorporateDiscountIDForArrayConstraintFromSetCorporateDiscountID($corporateDiscountID))) {
             throw new InvalidArgumentException($corporateDiscountIDArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(2)

@@ -67,12 +67,13 @@ class BaggageAllowances extends AbstractStructBase
         return $this->BaggageAllowanceInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setBaggageAllowanceInfo method
+     * This method is responsible for validating the value(s) passed to the setBaggageAllowanceInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBaggageAllowanceInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBaggageAllowanceInfoForArrayConstraintsFromSetBaggageAllowanceInfo(?array $values = []): string
+    public static function validateBaggageAllowanceInfoForArrayConstraintFromSetBaggageAllowanceInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -101,7 +102,7 @@ class BaggageAllowances extends AbstractStructBase
     public function setBaggageAllowanceInfo(array $baggageAllowanceInfo): self
     {
         // validation for constraint: array
-        if ('' !== ($baggageAllowanceInfoArrayErrorMessage = self::validateBaggageAllowanceInfoForArrayConstraintsFromSetBaggageAllowanceInfo($baggageAllowanceInfo))) {
+        if ('' !== ($baggageAllowanceInfoArrayErrorMessage = self::validateBaggageAllowanceInfoForArrayConstraintFromSetBaggageAllowanceInfo($baggageAllowanceInfo))) {
             throw new InvalidArgumentException($baggageAllowanceInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -141,12 +142,13 @@ class BaggageAllowances extends AbstractStructBase
         return $this->CarryOnAllowanceInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setCarryOnAllowanceInfo method
+     * This method is responsible for validating the value(s) passed to the setCarryOnAllowanceInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCarryOnAllowanceInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCarryOnAllowanceInfoForArrayConstraintsFromSetCarryOnAllowanceInfo(?array $values = []): string
+    public static function validateCarryOnAllowanceInfoForArrayConstraintFromSetCarryOnAllowanceInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -175,7 +177,7 @@ class BaggageAllowances extends AbstractStructBase
     public function setCarryOnAllowanceInfo(?array $carryOnAllowanceInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($carryOnAllowanceInfoArrayErrorMessage = self::validateCarryOnAllowanceInfoForArrayConstraintsFromSetCarryOnAllowanceInfo($carryOnAllowanceInfo))) {
+        if ('' !== ($carryOnAllowanceInfoArrayErrorMessage = self::validateCarryOnAllowanceInfoForArrayConstraintFromSetCarryOnAllowanceInfo($carryOnAllowanceInfo))) {
             throw new InvalidArgumentException($carryOnAllowanceInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -215,12 +217,13 @@ class BaggageAllowances extends AbstractStructBase
         return $this->EmbargoInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setEmbargoInfo method
+     * This method is responsible for validating the value(s) passed to the setEmbargoInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEmbargoInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEmbargoInfoForArrayConstraintsFromSetEmbargoInfo(?array $values = []): string
+    public static function validateEmbargoInfoForArrayConstraintFromSetEmbargoInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -249,7 +252,7 @@ class BaggageAllowances extends AbstractStructBase
     public function setEmbargoInfo(?array $embargoInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($embargoInfoArrayErrorMessage = self::validateEmbargoInfoForArrayConstraintsFromSetEmbargoInfo($embargoInfo))) {
+        if ('' !== ($embargoInfoArrayErrorMessage = self::validateEmbargoInfoForArrayConstraintFromSetEmbargoInfo($embargoInfo))) {
             throw new InvalidArgumentException($embargoInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

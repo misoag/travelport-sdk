@@ -66,12 +66,13 @@ class DocumentInfo extends AbstractStructBase
         return $this->TicketInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setTicketInfo method
+     * This method is responsible for validating the value(s) passed to the setTicketInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTicketInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTicketInfoForArrayConstraintsFromSetTicketInfo(?array $values = []): string
+    public static function validateTicketInfoForArrayConstraintFromSetTicketInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -100,7 +101,7 @@ class DocumentInfo extends AbstractStructBase
     public function setTicketInfo(?array $ticketInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($ticketInfoArrayErrorMessage = self::validateTicketInfoForArrayConstraintsFromSetTicketInfo($ticketInfo))) {
+        if ('' !== ($ticketInfoArrayErrorMessage = self::validateTicketInfoForArrayConstraintFromSetTicketInfo($ticketInfo))) {
             throw new InvalidArgumentException($ticketInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -140,12 +141,13 @@ class DocumentInfo extends AbstractStructBase
         return $this->MCOInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setMCOInfo method
+     * This method is responsible for validating the value(s) passed to the setMCOInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMCOInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMCOInfoForArrayConstraintsFromSetMCOInfo(?array $values = []): string
+    public static function validateMCOInfoForArrayConstraintFromSetMCOInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -174,7 +176,7 @@ class DocumentInfo extends AbstractStructBase
     public function setMCOInfo(?array $mCOInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($mCOInfoArrayErrorMessage = self::validateMCOInfoForArrayConstraintsFromSetMCOInfo($mCOInfo))) {
+        if ('' !== ($mCOInfoArrayErrorMessage = self::validateMCOInfoForArrayConstraintFromSetMCOInfo($mCOInfo))) {
             throw new InvalidArgumentException($mCOInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -214,12 +216,13 @@ class DocumentInfo extends AbstractStructBase
         return $this->TCRInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setTCRInfo method
+     * This method is responsible for validating the value(s) passed to the setTCRInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTCRInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTCRInfoForArrayConstraintsFromSetTCRInfo(?array $values = []): string
+    public static function validateTCRInfoForArrayConstraintFromSetTCRInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -248,7 +251,7 @@ class DocumentInfo extends AbstractStructBase
     public function setTCRInfo(?array $tCRInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($tCRInfoArrayErrorMessage = self::validateTCRInfoForArrayConstraintsFromSetTCRInfo($tCRInfo))) {
+        if ('' !== ($tCRInfoArrayErrorMessage = self::validateTCRInfoForArrayConstraintFromSetTCRInfo($tCRInfo))) {
             throw new InvalidArgumentException($tCRInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -42,12 +42,13 @@ class BrandedFareAdminRsp extends BaseRsp
         return $this->FareFamily;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareFamily method
+     * This method is responsible for validating the value(s) passed to the setFareFamily method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareFamily method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareFamilyForArrayConstraintsFromSetFareFamily(?array $values = []): string
+    public static function validateFareFamilyForArrayConstraintFromSetFareFamily(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class BrandedFareAdminRsp extends BaseRsp
     public function setFareFamily(?array $fareFamily = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareFamilyArrayErrorMessage = self::validateFareFamilyForArrayConstraintsFromSetFareFamily($fareFamily))) {
+        if ('' !== ($fareFamilyArrayErrorMessage = self::validateFareFamilyForArrayConstraintFromSetFareFamily($fareFamily))) {
             throw new InvalidArgumentException($fareFamilyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

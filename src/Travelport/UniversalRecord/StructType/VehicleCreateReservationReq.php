@@ -435,19 +435,20 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
     }
     /**
      * Get AssociatedRemark value
-     * @return \Travelport\UniversalRecord\StructType\AssociatedRemark[]
+     * @return \Travelport\UniversalRecord\StructType\AssociatedRemark[]|null
      */
     public function getAssociatedRemark(): ?array
     {
-        return isset($this->AssociatedRemark) ? $this->AssociatedRemark : null;
+        return $this->AssociatedRemark ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAssociatedRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark(?array $values = []): string
+    public static function validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -468,13 +469,13 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAssociatedRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAssociatedRemarkForChoiceConstraintsFromSetAssociatedRemark($value): string
+    public function validateAssociatedRemarkForChoiceConstraintFromSetAssociatedRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -507,11 +508,11 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
     public function setAssociatedRemark(?array $associatedRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark($associatedRemark))) {
+        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark($associatedRemark))) {
             throw new InvalidArgumentException($associatedRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AssociatedRemark)
-        if ('' !== ($associatedRemarkChoiceErrorMessage = self::validateAssociatedRemarkForChoiceConstraintsFromSetAssociatedRemark($associatedRemark))) {
+        if ('' !== ($associatedRemarkChoiceErrorMessage = self::validateAssociatedRemarkForChoiceConstraintFromSetAssociatedRemark($associatedRemark))) {
             throw new InvalidArgumentException($associatedRemarkChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -531,13 +532,13 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the addToAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToAssociatedRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToAssociatedRemark($value): string
+    public function validateItemForChoiceConstraintFromAddToAssociatedRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -570,7 +571,7 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
             throw new InvalidArgumentException(sprintf('The AssociatedRemark property can only contain items of type \Travelport\UniversalRecord\StructType\AssociatedRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AssociatedRemark)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToAssociatedRemark($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToAssociatedRemark($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -670,12 +671,13 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->ReviewBooking;
     }
     /**
-     * This method is responsible for validating the values passed to the setReviewBooking method
+     * This method is responsible for validating the value(s) passed to the setReviewBooking method
      * This method is willingly generated in order to preserve the one-line inline validation within the setReviewBooking method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateReviewBookingForArrayConstraintsFromSetReviewBooking(?array $values = []): string
+    public static function validateReviewBookingForArrayConstraintFromSetReviewBooking(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -704,7 +706,7 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
     public function setReviewBooking(?array $reviewBooking = null): self
     {
         // validation for constraint: array
-        if ('' !== ($reviewBookingArrayErrorMessage = self::validateReviewBookingForArrayConstraintsFromSetReviewBooking($reviewBooking))) {
+        if ('' !== ($reviewBookingArrayErrorMessage = self::validateReviewBookingForArrayConstraintFromSetReviewBooking($reviewBooking))) {
             throw new InvalidArgumentException($reviewBookingArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

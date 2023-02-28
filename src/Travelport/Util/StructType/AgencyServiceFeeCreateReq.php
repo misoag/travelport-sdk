@@ -166,12 +166,13 @@ class AgencyServiceFeeCreateReq extends BaseReq
         return $this->ServiceFeeInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setServiceFeeInfo method
+     * This method is responsible for validating the value(s) passed to the setServiceFeeInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setServiceFeeInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateServiceFeeInfoForArrayConstraintsFromSetServiceFeeInfo(?array $values = []): string
+    public static function validateServiceFeeInfoForArrayConstraintFromSetServiceFeeInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -200,7 +201,7 @@ class AgencyServiceFeeCreateReq extends BaseReq
     public function setServiceFeeInfo(?array $serviceFeeInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($serviceFeeInfoArrayErrorMessage = self::validateServiceFeeInfoForArrayConstraintsFromSetServiceFeeInfo($serviceFeeInfo))) {
+        if ('' !== ($serviceFeeInfoArrayErrorMessage = self::validateServiceFeeInfoForArrayConstraintFromSetServiceFeeInfo($serviceFeeInfo))) {
             throw new InvalidArgumentException($serviceFeeInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

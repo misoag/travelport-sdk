@@ -102,12 +102,13 @@ class FlexExploreModifiers extends AbstractStructBase
         return $this->Destination;
     }
     /**
-     * This method is responsible for validating the values passed to the setDestination method
+     * This method is responsible for validating the value(s) passed to the setDestination method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDestination method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDestinationForArrayConstraintsFromSetDestination(?array $values = []): string
+    public static function validateDestinationForArrayConstraintFromSetDestination(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -128,17 +129,17 @@ class FlexExploreModifiers extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setDestination method
+     * This method is responsible for validating the value(s) passed to the setDestination method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDestination method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDestinationForLengthConstraintFromSetDestination($values): string
+    public static function validateDestinationForLengthConstraintFromSetDestination(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $flexExploreModifiersDestinationItem) {
+        foreach (($values ?? []) as $flexExploreModifiersDestinationItem) {
             // validation for constraint: length(3)
             if (mb_strlen((string) $flexExploreModifiersDestinationItem) !== 3) {
                 $invalidValues[] = var_export($flexExploreModifiersDestinationItem, true);
@@ -160,7 +161,7 @@ class FlexExploreModifiers extends AbstractStructBase
     public function setDestination(?array $destination = null): self
     {
         // validation for constraint: array
-        if ('' !== ($destinationArrayErrorMessage = self::validateDestinationForArrayConstraintsFromSetDestination($destination))) {
+        if ('' !== ($destinationArrayErrorMessage = self::validateDestinationForArrayConstraintFromSetDestination($destination))) {
             throw new InvalidArgumentException($destinationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: length(3)

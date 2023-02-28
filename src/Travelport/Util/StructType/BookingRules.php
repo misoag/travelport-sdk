@@ -89,12 +89,13 @@ class BookingRules extends AbstractStructBase
         return $this->BookingRulesFareReference;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingRulesFareReference method
+     * This method is responsible for validating the value(s) passed to the setBookingRulesFareReference method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingRulesFareReference method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingRulesFareReferenceForArrayConstraintsFromSetBookingRulesFareReference(?array $values = []): string
+    public static function validateBookingRulesFareReferenceForArrayConstraintFromSetBookingRulesFareReference(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -123,7 +124,7 @@ class BookingRules extends AbstractStructBase
     public function setBookingRulesFareReference(?array $bookingRulesFareReference = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingRulesFareReferenceArrayErrorMessage = self::validateBookingRulesFareReferenceForArrayConstraintsFromSetBookingRulesFareReference($bookingRulesFareReference))) {
+        if ('' !== ($bookingRulesFareReferenceArrayErrorMessage = self::validateBookingRulesFareReferenceForArrayConstraintFromSetBookingRulesFareReference($bookingRulesFareReference))) {
             throw new InvalidArgumentException($bookingRulesFareReferenceArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -163,12 +164,13 @@ class BookingRules extends AbstractStructBase
         return $this->RuleInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setRuleInfo method
+     * This method is responsible for validating the value(s) passed to the setRuleInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRuleInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRuleInfoForArrayConstraintsFromSetRuleInfo(?array $values = []): string
+    public static function validateRuleInfoForArrayConstraintFromSetRuleInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -197,7 +199,7 @@ class BookingRules extends AbstractStructBase
     public function setRuleInfo(?array $ruleInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($ruleInfoArrayErrorMessage = self::validateRuleInfoForArrayConstraintsFromSetRuleInfo($ruleInfo))) {
+        if ('' !== ($ruleInfoArrayErrorMessage = self::validateRuleInfoForArrayConstraintFromSetRuleInfo($ruleInfo))) {
             throw new InvalidArgumentException($ruleInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -237,12 +239,13 @@ class BookingRules extends AbstractStructBase
         return $this->Restriction;
     }
     /**
-     * This method is responsible for validating the values passed to the setRestriction method
+     * This method is responsible for validating the value(s) passed to the setRestriction method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRestriction method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRestrictionForArrayConstraintsFromSetRestriction(?array $values = []): string
+    public static function validateRestrictionForArrayConstraintFromSetRestriction(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -271,7 +274,7 @@ class BookingRules extends AbstractStructBase
     public function setRestriction(?array $restriction = null): self
     {
         // validation for constraint: array
-        if ('' !== ($restrictionArrayErrorMessage = self::validateRestrictionForArrayConstraintsFromSetRestriction($restriction))) {
+        if ('' !== ($restrictionArrayErrorMessage = self::validateRestrictionForArrayConstraintFromSetRestriction($restriction))) {
             throw new InvalidArgumentException($restrictionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -311,12 +314,13 @@ class BookingRules extends AbstractStructBase
         return $this->DocumentRequired;
     }
     /**
-     * This method is responsible for validating the values passed to the setDocumentRequired method
+     * This method is responsible for validating the value(s) passed to the setDocumentRequired method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDocumentRequired method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDocumentRequiredForArrayConstraintsFromSetDocumentRequired(?array $values = []): string
+    public static function validateDocumentRequiredForArrayConstraintFromSetDocumentRequired(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -345,7 +349,7 @@ class BookingRules extends AbstractStructBase
     public function setDocumentRequired(?array $documentRequired = null): self
     {
         // validation for constraint: array
-        if ('' !== ($documentRequiredArrayErrorMessage = self::validateDocumentRequiredForArrayConstraintsFromSetDocumentRequired($documentRequired))) {
+        if ('' !== ($documentRequiredArrayErrorMessage = self::validateDocumentRequiredForArrayConstraintFromSetDocumentRequired($documentRequired))) {
             throw new InvalidArgumentException($documentRequiredArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

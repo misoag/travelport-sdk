@@ -63,7 +63,7 @@ class ReferenceDataSearchItem extends AbstractStructBase
      * @param string $type
      * @param string $name
      */
-    public function __construct(string $code, string $type, ?string $name = null)
+    public function __construct(string $code = null, string $type, ?string $name = null)
     {
         $this
             ->setCode($code)
@@ -72,20 +72,20 @@ class ReferenceDataSearchItem extends AbstractStructBase
     }
     /**
      * Get Code value
-     * @return string
+     * @return string|null
      */
-    public function getCode(): string
+    public function getCode(): ?string
     {
-        return isset($this->Code) ? $this->Code : null;
+        return $this->Code ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setCode method
+     * This method is responsible for validating the value(s) passed to the setCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCode method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCodeForChoiceConstraintsFromSetCode($value): string
+    public function validateCodeForChoiceConstraintFromSetCode($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -115,14 +115,14 @@ class ReferenceDataSearchItem extends AbstractStructBase
      * @param string $code
      * @return \Travelport\Util\StructType\ReferenceDataSearchItem
      */
-    public function setCode(string $code): self
+    public function setCode(string $code = null): self
     {
         // validation for constraint: string
         if (!is_null($code) && !is_string($code)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
         }
         // validation for constraint: choice(Code, Name)
-        if ('' !== ($codeChoiceErrorMessage = self::validateCodeForChoiceConstraintsFromSetCode($code))) {
+        if ('' !== ($codeChoiceErrorMessage = self::validateCodeForChoiceConstraintFromSetCode($code))) {
             throw new InvalidArgumentException($codeChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: minLength(1)
@@ -166,16 +166,16 @@ class ReferenceDataSearchItem extends AbstractStructBase
      */
     public function getName(): ?string
     {
-        return isset($this->Name) ? $this->Name : null;
+        return $this->Name ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setName method
+     * This method is responsible for validating the value(s) passed to the setName method
      * This method is willingly generated in order to preserve the one-line inline validation within the setName method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateNameForChoiceConstraintsFromSetName($value): string
+    public function validateNameForChoiceConstraintFromSetName($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -215,7 +215,7 @@ class ReferenceDataSearchItem extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Util\EnumType\Name', is_array($name) ? implode(', ', $name) : var_export($name, true), implode(', ', \Travelport\Util\EnumType\Name::getValidValues())), __LINE__);
         }
         // validation for constraint: choice(Code, Name)
-        if ('' !== ($nameChoiceErrorMessage = self::validateNameForChoiceConstraintsFromSetName($name))) {
+        if ('' !== ($nameChoiceErrorMessage = self::validateNameForChoiceConstraintFromSetName($name))) {
             throw new InvalidArgumentException($nameChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: minLength(1)

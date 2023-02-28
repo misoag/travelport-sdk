@@ -32,26 +32,27 @@ class GroupedOptionInfo extends AbstractStructBase
      * @uses GroupedOptionInfo::setGroupedOption()
      * @param \Travelport\Util\StructType\GroupedOption[] $groupedOption
      */
-    public function __construct(array $groupedOption)
+    public function __construct(array $groupedOption = null)
     {
         $this
             ->setGroupedOption($groupedOption);
     }
     /**
      * Get GroupedOption value
-     * @return \Travelport\Util\StructType\GroupedOption[]
+     * @return \Travelport\Util\StructType\GroupedOption[]|null
      */
-    public function getGroupedOption(): array
+    public function getGroupedOption(): ?array
     {
-        return isset($this->GroupedOption) ? $this->GroupedOption : null;
+        return $this->GroupedOption ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setGroupedOption method
+     * This method is responsible for validating the value(s) passed to the setGroupedOption method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGroupedOption method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateGroupedOptionForArrayConstraintsFromSetGroupedOption(?array $values = []): string
+    public static function validateGroupedOptionForArrayConstraintFromSetGroupedOption(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -72,13 +73,13 @@ class GroupedOptionInfo extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setGroupedOption method
+     * This method is responsible for validating the value(s) passed to the setGroupedOption method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGroupedOption method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateGroupedOptionForChoiceConstraintsFromSetGroupedOption($value): string
+    public function validateGroupedOptionForChoiceConstraintFromSetGroupedOption($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -108,14 +109,14 @@ class GroupedOptionInfo extends AbstractStructBase
      * @param \Travelport\Util\StructType\GroupedOption[] $groupedOption
      * @return \Travelport\Util\StructType\GroupedOptionInfo
      */
-    public function setGroupedOption(array $groupedOption): self
+    public function setGroupedOption(array $groupedOption = null): self
     {
         // validation for constraint: array
-        if ('' !== ($groupedOptionArrayErrorMessage = self::validateGroupedOptionForArrayConstraintsFromSetGroupedOption($groupedOption))) {
+        if ('' !== ($groupedOptionArrayErrorMessage = self::validateGroupedOptionForArrayConstraintFromSetGroupedOption($groupedOption))) {
             throw new InvalidArgumentException($groupedOptionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(GroupedOption)
-        if ('' !== ($groupedOptionChoiceErrorMessage = self::validateGroupedOptionForChoiceConstraintsFromSetGroupedOption($groupedOption))) {
+        if ('' !== ($groupedOptionChoiceErrorMessage = self::validateGroupedOptionForChoiceConstraintFromSetGroupedOption($groupedOption))) {
             throw new InvalidArgumentException($groupedOptionChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -135,13 +136,13 @@ class GroupedOptionInfo extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToGroupedOption method
+     * This method is responsible for validating the value(s) passed to the addToGroupedOption method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToGroupedOption method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToGroupedOption($value): string
+    public function validateItemForChoiceConstraintFromAddToGroupedOption($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -174,7 +175,7 @@ class GroupedOptionInfo extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The GroupedOption property can only contain items of type \Travelport\Util\StructType\GroupedOption, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(GroupedOption)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToGroupedOption($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToGroupedOption($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)

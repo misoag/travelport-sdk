@@ -228,13 +228,13 @@ class MediaItem extends AbstractStructBase
         return $this->sizeCode;
     }
     /**
-     * This method is responsible for validating the value passed to the setSizeCode method
+     * This method is responsible for validating the value(s) passed to the setSizeCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSizeCode method
-     * This is a set of validation rules based on the union types associated to the property being set by the setSizeCode method
+     * This is a set of validation rules based on the union types associated to the property SizeCode
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSizeCodeForUnionConstraintsFromSetSizeCode($value): string
+    public static function validateSizeCodeForUnionConstraintFromSetSizeCode($value): string
     {
         $message = '';
         // validation for constraint: enumeration
@@ -264,7 +264,7 @@ class MediaItem extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sizeCode, true), gettype($sizeCode)), __LINE__);
         }
         // validation for constraint: union(typeImageSize, typeOtherImageSize)
-        if ('' !== ($sizeCodeUnionErrorMessage = self::validateSizeCodeForUnionConstraintsFromSetSizeCode($sizeCode))) {
+        if ('' !== ($sizeCodeUnionErrorMessage = self::validateSizeCodeForUnionConstraintFromSetSizeCode($sizeCode))) {
             throw new InvalidArgumentException($sizeCodeUnionErrorMessage, __LINE__);
         }
         $this->sizeCode = $sizeCode;

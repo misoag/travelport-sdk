@@ -42,12 +42,13 @@ class FareRemarkList extends AbstractStructBase
         return $this->FareRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareRemark method
+     * This method is responsible for validating the value(s) passed to the setFareRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareRemarkForArrayConstraintsFromSetFareRemark(?array $values = []): string
+    public static function validateFareRemarkForArrayConstraintFromSetFareRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class FareRemarkList extends AbstractStructBase
     public function setFareRemark(?array $fareRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareRemarkArrayErrorMessage = self::validateFareRemarkForArrayConstraintsFromSetFareRemark($fareRemark))) {
+        if ('' !== ($fareRemarkArrayErrorMessage = self::validateFareRemarkForArrayConstraintFromSetFareRemark($fareRemark))) {
             throw new InvalidArgumentException($fareRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

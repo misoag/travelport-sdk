@@ -500,19 +500,20 @@ class RailJourney extends AbstractStructBase
     }
     /**
      * Get RailSegment value
-     * @return \Travelport\UniversalRecord\StructType\RailSegment[]
+     * @return \Travelport\UniversalRecord\StructType\RailSegment[]|null
      */
     public function getRailSegment(): ?array
     {
-        return isset($this->RailSegment) ? $this->RailSegment : null;
+        return $this->RailSegment ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailSegment method
+     * This method is responsible for validating the value(s) passed to the setRailSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailSegment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailSegmentForArrayConstraintsFromSetRailSegment(?array $values = []): string
+    public static function validateRailSegmentForArrayConstraintFromSetRailSegment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -533,13 +534,13 @@ class RailJourney extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setRailSegment method
+     * This method is responsible for validating the value(s) passed to the setRailSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailSegment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateRailSegmentForChoiceConstraintsFromSetRailSegment($value): string
+    public function validateRailSegmentForChoiceConstraintFromSetRailSegment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -573,11 +574,11 @@ class RailJourney extends AbstractStructBase
     public function setRailSegment(?array $railSegment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railSegmentArrayErrorMessage = self::validateRailSegmentForArrayConstraintsFromSetRailSegment($railSegment))) {
+        if ('' !== ($railSegmentArrayErrorMessage = self::validateRailSegmentForArrayConstraintFromSetRailSegment($railSegment))) {
             throw new InvalidArgumentException($railSegmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(RailSegment, RailSegmentRef)
-        if ('' !== ($railSegmentChoiceErrorMessage = self::validateRailSegmentForChoiceConstraintsFromSetRailSegment($railSegment))) {
+        if ('' !== ($railSegmentChoiceErrorMessage = self::validateRailSegmentForChoiceConstraintFromSetRailSegment($railSegment))) {
             throw new InvalidArgumentException($railSegmentChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -597,13 +598,13 @@ class RailJourney extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToRailSegment method
+     * This method is responsible for validating the value(s) passed to the addToRailSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToRailSegment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToRailSegment($value): string
+    public function validateItemForChoiceConstraintFromAddToRailSegment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -637,7 +638,7 @@ class RailJourney extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The RailSegment property can only contain items of type \Travelport\UniversalRecord\StructType\RailSegment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(RailSegment, RailSegmentRef)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToRailSegment($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToRailSegment($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -654,19 +655,20 @@ class RailJourney extends AbstractStructBase
     }
     /**
      * Get RailSegmentRef value
-     * @return \Travelport\UniversalRecord\StructType\RailSegmentRef[]
+     * @return \Travelport\UniversalRecord\StructType\RailSegmentRef[]|null
      */
     public function getRailSegmentRef(): ?array
     {
-        return isset($this->RailSegmentRef) ? $this->RailSegmentRef : null;
+        return $this->RailSegmentRef ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailSegmentRef method
+     * This method is responsible for validating the value(s) passed to the setRailSegmentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailSegmentRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailSegmentRefForArrayConstraintsFromSetRailSegmentRef(?array $values = []): string
+    public static function validateRailSegmentRefForArrayConstraintFromSetRailSegmentRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -687,13 +689,13 @@ class RailJourney extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setRailSegmentRef method
+     * This method is responsible for validating the value(s) passed to the setRailSegmentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailSegmentRef method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateRailSegmentRefForChoiceConstraintsFromSetRailSegmentRef($value): string
+    public function validateRailSegmentRefForChoiceConstraintFromSetRailSegmentRef($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -727,11 +729,11 @@ class RailJourney extends AbstractStructBase
     public function setRailSegmentRef(?array $railSegmentRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railSegmentRefArrayErrorMessage = self::validateRailSegmentRefForArrayConstraintsFromSetRailSegmentRef($railSegmentRef))) {
+        if ('' !== ($railSegmentRefArrayErrorMessage = self::validateRailSegmentRefForArrayConstraintFromSetRailSegmentRef($railSegmentRef))) {
             throw new InvalidArgumentException($railSegmentRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(RailSegment, RailSegmentRef)
-        if ('' !== ($railSegmentRefChoiceErrorMessage = self::validateRailSegmentRefForChoiceConstraintsFromSetRailSegmentRef($railSegmentRef))) {
+        if ('' !== ($railSegmentRefChoiceErrorMessage = self::validateRailSegmentRefForChoiceConstraintFromSetRailSegmentRef($railSegmentRef))) {
             throw new InvalidArgumentException($railSegmentRefChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -751,13 +753,13 @@ class RailJourney extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToRailSegmentRef method
+     * This method is responsible for validating the value(s) passed to the addToRailSegmentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToRailSegmentRef method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToRailSegmentRef($value): string
+    public function validateItemForChoiceConstraintFromAddToRailSegmentRef($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -791,7 +793,7 @@ class RailJourney extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The RailSegmentRef property can only contain items of type \Travelport\UniversalRecord\StructType\RailSegmentRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(RailSegment, RailSegmentRef)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToRailSegmentRef($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToRailSegmentRef($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -815,12 +817,13 @@ class RailJourney extends AbstractStructBase
         return $this->JourneyRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setJourneyRemark method
+     * This method is responsible for validating the value(s) passed to the setJourneyRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setJourneyRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateJourneyRemarkForArrayConstraintsFromSetJourneyRemark(?array $values = []): string
+    public static function validateJourneyRemarkForArrayConstraintFromSetJourneyRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -849,7 +852,7 @@ class RailJourney extends AbstractStructBase
     public function setJourneyRemark(?array $journeyRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($journeyRemarkArrayErrorMessage = self::validateJourneyRemarkForArrayConstraintsFromSetJourneyRemark($journeyRemark))) {
+        if ('' !== ($journeyRemarkArrayErrorMessage = self::validateJourneyRemarkForArrayConstraintFromSetJourneyRemark($journeyRemark))) {
             throw new InvalidArgumentException($journeyRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -889,12 +892,13 @@ class RailJourney extends AbstractStructBase
         return $this->HostToken;
     }
     /**
-     * This method is responsible for validating the values passed to the setHostToken method
+     * This method is responsible for validating the value(s) passed to the setHostToken method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHostToken method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHostTokenForArrayConstraintsFromSetHostToken(?array $values = []): string
+    public static function validateHostTokenForArrayConstraintFromSetHostToken(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -923,7 +927,7 @@ class RailJourney extends AbstractStructBase
     public function setHostToken(?array $hostToken = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hostTokenArrayErrorMessage = self::validateHostTokenForArrayConstraintsFromSetHostToken($hostToken))) {
+        if ('' !== ($hostTokenArrayErrorMessage = self::validateHostTokenForArrayConstraintFromSetHostToken($hostToken))) {
             throw new InvalidArgumentException($hostTokenArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

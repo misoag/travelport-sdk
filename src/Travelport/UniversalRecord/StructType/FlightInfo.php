@@ -244,12 +244,13 @@ class FlightInfo extends AbstractStructBase
         return $this->FlightInfoDetail;
     }
     /**
-     * This method is responsible for validating the values passed to the setFlightInfoDetail method
+     * This method is responsible for validating the value(s) passed to the setFlightInfoDetail method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFlightInfoDetail method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFlightInfoDetailForArrayConstraintsFromSetFlightInfoDetail(?array $values = []): string
+    public static function validateFlightInfoDetailForArrayConstraintFromSetFlightInfoDetail(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -278,7 +279,7 @@ class FlightInfo extends AbstractStructBase
     public function setFlightInfoDetail(?array $flightInfoDetail = null): self
     {
         // validation for constraint: array
-        if ('' !== ($flightInfoDetailArrayErrorMessage = self::validateFlightInfoDetailForArrayConstraintsFromSetFlightInfoDetail($flightInfoDetail))) {
+        if ('' !== ($flightInfoDetailArrayErrorMessage = self::validateFlightInfoDetailForArrayConstraintFromSetFlightInfoDetail($flightInfoDetail))) {
             throw new InvalidArgumentException($flightInfoDetailArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -318,12 +319,13 @@ class FlightInfo extends AbstractStructBase
         return $this->FlightInfoErrorMessage;
     }
     /**
-     * This method is responsible for validating the values passed to the setFlightInfoErrorMessage method
+     * This method is responsible for validating the value(s) passed to the setFlightInfoErrorMessage method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFlightInfoErrorMessage method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFlightInfoErrorMessageForArrayConstraintsFromSetFlightInfoErrorMessage(?array $values = []): string
+    public static function validateFlightInfoErrorMessageForArrayConstraintFromSetFlightInfoErrorMessage(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -352,7 +354,7 @@ class FlightInfo extends AbstractStructBase
     public function setFlightInfoErrorMessage(?array $flightInfoErrorMessage = null): self
     {
         // validation for constraint: array
-        if ('' !== ($flightInfoErrorMessageArrayErrorMessage = self::validateFlightInfoErrorMessageForArrayConstraintsFromSetFlightInfoErrorMessage($flightInfoErrorMessage))) {
+        if ('' !== ($flightInfoErrorMessageArrayErrorMessage = self::validateFlightInfoErrorMessageForArrayConstraintFromSetFlightInfoErrorMessage($flightInfoErrorMessage))) {
             throw new InvalidArgumentException($flightInfoErrorMessageArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

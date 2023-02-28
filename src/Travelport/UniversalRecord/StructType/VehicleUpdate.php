@@ -327,19 +327,20 @@ class VehicleUpdate extends AbstractStructBase
     }
     /**
      * Get LoyaltyCard value
-     * @return \Travelport\UniversalRecord\StructType\LoyaltyCard[]
+     * @return \Travelport\UniversalRecord\StructType\LoyaltyCard[]|null
      */
     public function getLoyaltyCard(): ?array
     {
-        return isset($this->LoyaltyCard) ? $this->LoyaltyCard : null;
+        return $this->LoyaltyCard ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setLoyaltyCard method
+     * This method is responsible for validating the value(s) passed to the setLoyaltyCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyCard method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLoyaltyCardForArrayConstraintsFromSetLoyaltyCard(?array $values = []): string
+    public static function validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -360,13 +361,13 @@ class VehicleUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setLoyaltyCard method
+     * This method is responsible for validating the value(s) passed to the setLoyaltyCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyCard method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateLoyaltyCardForChoiceConstraintsFromSetLoyaltyCard($value): string
+    public function validateLoyaltyCardForChoiceConstraintFromSetLoyaltyCard($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -414,11 +415,11 @@ class VehicleUpdate extends AbstractStructBase
     public function setLoyaltyCard(?array $loyaltyCard = null): self
     {
         // validation for constraint: array
-        if ('' !== ($loyaltyCardArrayErrorMessage = self::validateLoyaltyCardForArrayConstraintsFromSetLoyaltyCard($loyaltyCard))) {
+        if ('' !== ($loyaltyCardArrayErrorMessage = self::validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard($loyaltyCard))) {
             throw new InvalidArgumentException($loyaltyCardArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($loyaltyCardChoiceErrorMessage = self::validateLoyaltyCardForChoiceConstraintsFromSetLoyaltyCard($loyaltyCard))) {
+        if ('' !== ($loyaltyCardChoiceErrorMessage = self::validateLoyaltyCardForChoiceConstraintFromSetLoyaltyCard($loyaltyCard))) {
             throw new InvalidArgumentException($loyaltyCardChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -438,13 +439,13 @@ class VehicleUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToLoyaltyCard method
+     * This method is responsible for validating the value(s) passed to the addToLoyaltyCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToLoyaltyCard method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToLoyaltyCard($value): string
+    public function validateItemForChoiceConstraintFromAddToLoyaltyCard($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -492,7 +493,7 @@ class VehicleUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The LoyaltyCard property can only contain items of type \Travelport\UniversalRecord\StructType\LoyaltyCard, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToLoyaltyCard($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToLoyaltyCard($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -513,16 +514,16 @@ class VehicleUpdate extends AbstractStructBase
      */
     public function getDriversLicense(): ?\Travelport\UniversalRecord\StructType\DriversLicense
     {
-        return isset($this->DriversLicense) ? $this->DriversLicense : null;
+        return $this->DriversLicense ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setDriversLicense method
+     * This method is responsible for validating the value(s) passed to the setDriversLicense method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDriversLicense method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateDriversLicenseForChoiceConstraintsFromSetDriversLicense($value): string
+    public function validateDriversLicenseForChoiceConstraintFromSetDriversLicense($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -569,7 +570,7 @@ class VehicleUpdate extends AbstractStructBase
     public function setDriversLicense(?\Travelport\UniversalRecord\StructType\DriversLicense $driversLicense = null): self
     {
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($driversLicenseChoiceErrorMessage = self::validateDriversLicenseForChoiceConstraintsFromSetDriversLicense($driversLicense))) {
+        if ('' !== ($driversLicenseChoiceErrorMessage = self::validateDriversLicenseForChoiceConstraintFromSetDriversLicense($driversLicense))) {
             throw new InvalidArgumentException($driversLicenseChoiceErrorMessage, __LINE__);
         }
         if (is_null($driversLicense) || (is_array($driversLicense) && empty($driversLicense))) {
@@ -586,16 +587,16 @@ class VehicleUpdate extends AbstractStructBase
      */
     public function getGuarantee(): ?\Travelport\UniversalRecord\StructType\Guarantee
     {
-        return isset($this->Guarantee) ? $this->Guarantee : null;
+        return $this->Guarantee ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setGuarantee method
+     * This method is responsible for validating the value(s) passed to the setGuarantee method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGuarantee method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateGuaranteeForChoiceConstraintsFromSetGuarantee($value): string
+    public function validateGuaranteeForChoiceConstraintFromSetGuarantee($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -642,7 +643,7 @@ class VehicleUpdate extends AbstractStructBase
     public function setGuarantee(?\Travelport\UniversalRecord\StructType\Guarantee $guarantee = null): self
     {
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($guaranteeChoiceErrorMessage = self::validateGuaranteeForChoiceConstraintsFromSetGuarantee($guarantee))) {
+        if ('' !== ($guaranteeChoiceErrorMessage = self::validateGuaranteeForChoiceConstraintFromSetGuarantee($guarantee))) {
             throw new InvalidArgumentException($guaranteeChoiceErrorMessage, __LINE__);
         }
         if (is_null($guarantee) || (is_array($guarantee) && empty($guarantee))) {
@@ -659,16 +660,16 @@ class VehicleUpdate extends AbstractStructBase
      */
     public function getBookingSource(): ?\Travelport\UniversalRecord\StructType\BookingSource
     {
-        return isset($this->BookingSource) ? $this->BookingSource : null;
+        return $this->BookingSource ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setBookingSource method
+     * This method is responsible for validating the value(s) passed to the setBookingSource method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingSource method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateBookingSourceForChoiceConstraintsFromSetBookingSource($value): string
+    public function validateBookingSourceForChoiceConstraintFromSetBookingSource($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -715,7 +716,7 @@ class VehicleUpdate extends AbstractStructBase
     public function setBookingSource(?\Travelport\UniversalRecord\StructType\BookingSource $bookingSource = null): self
     {
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($bookingSourceChoiceErrorMessage = self::validateBookingSourceForChoiceConstraintsFromSetBookingSource($bookingSource))) {
+        if ('' !== ($bookingSourceChoiceErrorMessage = self::validateBookingSourceForChoiceConstraintFromSetBookingSource($bookingSource))) {
             throw new InvalidArgumentException($bookingSourceChoiceErrorMessage, __LINE__);
         }
         if (is_null($bookingSource) || (is_array($bookingSource) && empty($bookingSource))) {
@@ -732,16 +733,16 @@ class VehicleUpdate extends AbstractStructBase
      */
     public function getVehicleRateInfo(): ?\Travelport\UniversalRecord\StructType\VehicleRateInfo
     {
-        return isset($this->VehicleRateInfo) ? $this->VehicleRateInfo : null;
+        return $this->VehicleRateInfo ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicleRateInfo method
+     * This method is responsible for validating the value(s) passed to the setVehicleRateInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleRateInfo method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleRateInfoForChoiceConstraintsFromSetVehicleRateInfo($value): string
+    public function validateVehicleRateInfoForChoiceConstraintFromSetVehicleRateInfo($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -788,7 +789,7 @@ class VehicleUpdate extends AbstractStructBase
     public function setVehicleRateInfo(?\Travelport\UniversalRecord\StructType\VehicleRateInfo $vehicleRateInfo = null): self
     {
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($vehicleRateInfoChoiceErrorMessage = self::validateVehicleRateInfoForChoiceConstraintsFromSetVehicleRateInfo($vehicleRateInfo))) {
+        if ('' !== ($vehicleRateInfoChoiceErrorMessage = self::validateVehicleRateInfoForChoiceConstraintFromSetVehicleRateInfo($vehicleRateInfo))) {
             throw new InvalidArgumentException($vehicleRateInfoChoiceErrorMessage, __LINE__);
         }
         if (is_null($vehicleRateInfo) || (is_array($vehicleRateInfo) && empty($vehicleRateInfo))) {
@@ -805,16 +806,16 @@ class VehicleUpdate extends AbstractStructBase
      */
     public function getPaymentInformation(): ?\Travelport\UniversalRecord\StructType\PaymentInformation
     {
-        return isset($this->PaymentInformation) ? $this->PaymentInformation : null;
+        return $this->PaymentInformation ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setPaymentInformation method
+     * This method is responsible for validating the value(s) passed to the setPaymentInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentInformation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validatePaymentInformationForChoiceConstraintsFromSetPaymentInformation($value): string
+    public function validatePaymentInformationForChoiceConstraintFromSetPaymentInformation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -861,7 +862,7 @@ class VehicleUpdate extends AbstractStructBase
     public function setPaymentInformation(?\Travelport\UniversalRecord\StructType\PaymentInformation $paymentInformation = null): self
     {
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($paymentInformationChoiceErrorMessage = self::validatePaymentInformationForChoiceConstraintsFromSetPaymentInformation($paymentInformation))) {
+        if ('' !== ($paymentInformationChoiceErrorMessage = self::validatePaymentInformationForChoiceConstraintFromSetPaymentInformation($paymentInformation))) {
             throw new InvalidArgumentException($paymentInformationChoiceErrorMessage, __LINE__);
         }
         if (is_null($paymentInformation) || (is_array($paymentInformation) && empty($paymentInformation))) {
@@ -874,19 +875,20 @@ class VehicleUpdate extends AbstractStructBase
     }
     /**
      * Get AssociatedRemark value
-     * @return \Travelport\UniversalRecord\StructType\AssociatedRemark[]
+     * @return \Travelport\UniversalRecord\StructType\AssociatedRemark[]|null
      */
     public function getAssociatedRemark(): ?array
     {
-        return isset($this->AssociatedRemark) ? $this->AssociatedRemark : null;
+        return $this->AssociatedRemark ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAssociatedRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark(?array $values = []): string
+    public static function validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -907,13 +909,13 @@ class VehicleUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAssociatedRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAssociatedRemarkForChoiceConstraintsFromSetAssociatedRemark($value): string
+    public function validateAssociatedRemarkForChoiceConstraintFromSetAssociatedRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -961,11 +963,11 @@ class VehicleUpdate extends AbstractStructBase
     public function setAssociatedRemark(?array $associatedRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark($associatedRemark))) {
+        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark($associatedRemark))) {
             throw new InvalidArgumentException($associatedRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($associatedRemarkChoiceErrorMessage = self::validateAssociatedRemarkForChoiceConstraintsFromSetAssociatedRemark($associatedRemark))) {
+        if ('' !== ($associatedRemarkChoiceErrorMessage = self::validateAssociatedRemarkForChoiceConstraintFromSetAssociatedRemark($associatedRemark))) {
             throw new InvalidArgumentException($associatedRemarkChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -985,13 +987,13 @@ class VehicleUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the addToAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToAssociatedRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToAssociatedRemark($value): string
+    public function validateItemForChoiceConstraintFromAddToAssociatedRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1039,7 +1041,7 @@ class VehicleUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The AssociatedRemark property can only contain items of type \Travelport\UniversalRecord\StructType\AssociatedRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToAssociatedRemark($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToAssociatedRemark($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1060,16 +1062,16 @@ class VehicleUpdate extends AbstractStructBase
      */
     public function getVehicleSpecialRequest(): ?\Travelport\UniversalRecord\StructType\VehicleSpecialRequest
     {
-        return isset($this->VehicleSpecialRequest) ? $this->VehicleSpecialRequest : null;
+        return $this->VehicleSpecialRequest ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicleSpecialRequest method
+     * This method is responsible for validating the value(s) passed to the setVehicleSpecialRequest method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleSpecialRequest method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleSpecialRequestForChoiceConstraintsFromSetVehicleSpecialRequest($value): string
+    public function validateVehicleSpecialRequestForChoiceConstraintFromSetVehicleSpecialRequest($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1116,7 +1118,7 @@ class VehicleUpdate extends AbstractStructBase
     public function setVehicleSpecialRequest(?\Travelport\UniversalRecord\StructType\VehicleSpecialRequest $vehicleSpecialRequest = null): self
     {
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($vehicleSpecialRequestChoiceErrorMessage = self::validateVehicleSpecialRequestForChoiceConstraintsFromSetVehicleSpecialRequest($vehicleSpecialRequest))) {
+        if ('' !== ($vehicleSpecialRequestChoiceErrorMessage = self::validateVehicleSpecialRequestForChoiceConstraintFromSetVehicleSpecialRequest($vehicleSpecialRequest))) {
             throw new InvalidArgumentException($vehicleSpecialRequestChoiceErrorMessage, __LINE__);
         }
         if (is_null($vehicleSpecialRequest) || (is_array($vehicleSpecialRequest) && empty($vehicleSpecialRequest))) {
@@ -1133,16 +1135,16 @@ class VehicleUpdate extends AbstractStructBase
      */
     public function getDeliveryAddress(): ?\Travelport\UniversalRecord\StructType\DeliveryAddress
     {
-        return isset($this->DeliveryAddress) ? $this->DeliveryAddress : null;
+        return $this->DeliveryAddress ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setDeliveryAddress method
+     * This method is responsible for validating the value(s) passed to the setDeliveryAddress method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDeliveryAddress method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateDeliveryAddressForChoiceConstraintsFromSetDeliveryAddress($value): string
+    public function validateDeliveryAddressForChoiceConstraintFromSetDeliveryAddress($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1189,7 +1191,7 @@ class VehicleUpdate extends AbstractStructBase
     public function setDeliveryAddress(?\Travelport\UniversalRecord\StructType\DeliveryAddress $deliveryAddress = null): self
     {
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($deliveryAddressChoiceErrorMessage = self::validateDeliveryAddressForChoiceConstraintsFromSetDeliveryAddress($deliveryAddress))) {
+        if ('' !== ($deliveryAddressChoiceErrorMessage = self::validateDeliveryAddressForChoiceConstraintFromSetDeliveryAddress($deliveryAddress))) {
             throw new InvalidArgumentException($deliveryAddressChoiceErrorMessage, __LINE__);
         }
         if (is_null($deliveryAddress) || (is_array($deliveryAddress) && empty($deliveryAddress))) {
@@ -1206,16 +1208,16 @@ class VehicleUpdate extends AbstractStructBase
      */
     public function getCollectionAddress(): ?\Travelport\UniversalRecord\StructType\CollectionAddress
     {
-        return isset($this->CollectionAddress) ? $this->CollectionAddress : null;
+        return $this->CollectionAddress ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setCollectionAddress method
+     * This method is responsible for validating the value(s) passed to the setCollectionAddress method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCollectionAddress method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCollectionAddressForChoiceConstraintsFromSetCollectionAddress($value): string
+    public function validateCollectionAddressForChoiceConstraintFromSetCollectionAddress($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1262,7 +1264,7 @@ class VehicleUpdate extends AbstractStructBase
     public function setCollectionAddress(?\Travelport\UniversalRecord\StructType\CollectionAddress $collectionAddress = null): self
     {
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($collectionAddressChoiceErrorMessage = self::validateCollectionAddressForChoiceConstraintsFromSetCollectionAddress($collectionAddress))) {
+        if ('' !== ($collectionAddressChoiceErrorMessage = self::validateCollectionAddressForChoiceConstraintFromSetCollectionAddress($collectionAddress))) {
             throw new InvalidArgumentException($collectionAddressChoiceErrorMessage, __LINE__);
         }
         if (is_null($collectionAddress) || (is_array($collectionAddress) && empty($collectionAddress))) {
@@ -1279,16 +1281,16 @@ class VehicleUpdate extends AbstractStructBase
      */
     public function getVehicleReturnDateLocation(): ?\Travelport\UniversalRecord\StructType\VehicleReturnDateLocation
     {
-        return isset($this->VehicleReturnDateLocation) ? $this->VehicleReturnDateLocation : null;
+        return $this->VehicleReturnDateLocation ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicleReturnDateLocation method
+     * This method is responsible for validating the value(s) passed to the setVehicleReturnDateLocation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleReturnDateLocation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleReturnDateLocationForChoiceConstraintsFromSetVehicleReturnDateLocation($value): string
+    public function validateVehicleReturnDateLocationForChoiceConstraintFromSetVehicleReturnDateLocation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1335,7 +1337,7 @@ class VehicleUpdate extends AbstractStructBase
     public function setVehicleReturnDateLocation(?\Travelport\UniversalRecord\StructType\VehicleReturnDateLocation $vehicleReturnDateLocation = null): self
     {
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($vehicleReturnDateLocationChoiceErrorMessage = self::validateVehicleReturnDateLocationForChoiceConstraintsFromSetVehicleReturnDateLocation($vehicleReturnDateLocation))) {
+        if ('' !== ($vehicleReturnDateLocationChoiceErrorMessage = self::validateVehicleReturnDateLocationForChoiceConstraintFromSetVehicleReturnDateLocation($vehicleReturnDateLocation))) {
             throw new InvalidArgumentException($vehicleReturnDateLocationChoiceErrorMessage, __LINE__);
         }
         if (is_null($vehicleReturnDateLocation) || (is_array($vehicleReturnDateLocation) && empty($vehicleReturnDateLocation))) {
@@ -1352,16 +1354,16 @@ class VehicleUpdate extends AbstractStructBase
      */
     public function getVehiclePickupDateLocation(): ?\Travelport\UniversalRecord\StructType\VehiclePickupDateLocation
     {
-        return isset($this->VehiclePickupDateLocation) ? $this->VehiclePickupDateLocation : null;
+        return $this->VehiclePickupDateLocation ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehiclePickupDateLocation method
+     * This method is responsible for validating the value(s) passed to the setVehiclePickupDateLocation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehiclePickupDateLocation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehiclePickupDateLocationForChoiceConstraintsFromSetVehiclePickupDateLocation($value): string
+    public function validateVehiclePickupDateLocationForChoiceConstraintFromSetVehiclePickupDateLocation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1408,7 +1410,7 @@ class VehicleUpdate extends AbstractStructBase
     public function setVehiclePickupDateLocation(?\Travelport\UniversalRecord\StructType\VehiclePickupDateLocation $vehiclePickupDateLocation = null): self
     {
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($vehiclePickupDateLocationChoiceErrorMessage = self::validateVehiclePickupDateLocationForChoiceConstraintsFromSetVehiclePickupDateLocation($vehiclePickupDateLocation))) {
+        if ('' !== ($vehiclePickupDateLocationChoiceErrorMessage = self::validateVehiclePickupDateLocationForChoiceConstraintFromSetVehiclePickupDateLocation($vehiclePickupDateLocation))) {
             throw new InvalidArgumentException($vehiclePickupDateLocationChoiceErrorMessage, __LINE__);
         }
         if (is_null($vehiclePickupDateLocation) || (is_array($vehiclePickupDateLocation) && empty($vehiclePickupDateLocation))) {
@@ -1425,16 +1427,16 @@ class VehicleUpdate extends AbstractStructBase
      */
     public function getThirdPartyInformation(): ?\Travelport\UniversalRecord\StructType\ThirdPartyInformation
     {
-        return isset($this->ThirdPartyInformation) ? $this->ThirdPartyInformation : null;
+        return $this->ThirdPartyInformation ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setThirdPartyInformation method
+     * This method is responsible for validating the value(s) passed to the setThirdPartyInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setThirdPartyInformation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateThirdPartyInformationForChoiceConstraintsFromSetThirdPartyInformation($value): string
+    public function validateThirdPartyInformationForChoiceConstraintFromSetThirdPartyInformation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1481,7 +1483,7 @@ class VehicleUpdate extends AbstractStructBase
     public function setThirdPartyInformation(?\Travelport\UniversalRecord\StructType\ThirdPartyInformation $thirdPartyInformation = null): self
     {
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($thirdPartyInformationChoiceErrorMessage = self::validateThirdPartyInformationForChoiceConstraintsFromSetThirdPartyInformation($thirdPartyInformation))) {
+        if ('' !== ($thirdPartyInformationChoiceErrorMessage = self::validateThirdPartyInformationForChoiceConstraintFromSetThirdPartyInformation($thirdPartyInformation))) {
             throw new InvalidArgumentException($thirdPartyInformationChoiceErrorMessage, __LINE__);
         }
         if (is_null($thirdPartyInformation) || (is_array($thirdPartyInformation) && empty($thirdPartyInformation))) {
@@ -1494,19 +1496,20 @@ class VehicleUpdate extends AbstractStructBase
     }
     /**
      * Get TravelComplianceData value
-     * @return \Travelport\UniversalRecord\StructType\TravelComplianceData[]
+     * @return \Travelport\UniversalRecord\StructType\TravelComplianceData[]|null
      */
     public function getTravelComplianceData(): ?array
     {
-        return isset($this->TravelComplianceData) ? $this->TravelComplianceData : null;
+        return $this->TravelComplianceData ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setTravelComplianceData method
+     * This method is responsible for validating the value(s) passed to the setTravelComplianceData method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTravelComplianceData method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTravelComplianceDataForArrayConstraintsFromSetTravelComplianceData(?array $values = []): string
+    public static function validateTravelComplianceDataForArrayConstraintFromSetTravelComplianceData(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1527,13 +1530,13 @@ class VehicleUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setTravelComplianceData method
+     * This method is responsible for validating the value(s) passed to the setTravelComplianceData method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTravelComplianceData method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateTravelComplianceDataForChoiceConstraintsFromSetTravelComplianceData($value): string
+    public function validateTravelComplianceDataForChoiceConstraintFromSetTravelComplianceData($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1581,11 +1584,11 @@ class VehicleUpdate extends AbstractStructBase
     public function setTravelComplianceData(?array $travelComplianceData = null): self
     {
         // validation for constraint: array
-        if ('' !== ($travelComplianceDataArrayErrorMessage = self::validateTravelComplianceDataForArrayConstraintsFromSetTravelComplianceData($travelComplianceData))) {
+        if ('' !== ($travelComplianceDataArrayErrorMessage = self::validateTravelComplianceDataForArrayConstraintFromSetTravelComplianceData($travelComplianceData))) {
             throw new InvalidArgumentException($travelComplianceDataArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($travelComplianceDataChoiceErrorMessage = self::validateTravelComplianceDataForChoiceConstraintsFromSetTravelComplianceData($travelComplianceData))) {
+        if ('' !== ($travelComplianceDataChoiceErrorMessage = self::validateTravelComplianceDataForChoiceConstraintFromSetTravelComplianceData($travelComplianceData))) {
             throw new InvalidArgumentException($travelComplianceDataChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1605,13 +1608,13 @@ class VehicleUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToTravelComplianceData method
+     * This method is responsible for validating the value(s) passed to the addToTravelComplianceData method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToTravelComplianceData method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToTravelComplianceData($value): string
+    public function validateItemForChoiceConstraintFromAddToTravelComplianceData($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1659,7 +1662,7 @@ class VehicleUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The TravelComplianceData property can only contain items of type \Travelport\UniversalRecord\StructType\TravelComplianceData, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToTravelComplianceData($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToTravelComplianceData($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1680,16 +1683,16 @@ class VehicleUpdate extends AbstractStructBase
      */
     public function getVehicleTypeIdentifier(): ?\Travelport\UniversalRecord\StructType\VehicleTypeIdentifier
     {
-        return isset($this->VehicleTypeIdentifier) ? $this->VehicleTypeIdentifier : null;
+        return $this->VehicleTypeIdentifier ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicleTypeIdentifier method
+     * This method is responsible for validating the value(s) passed to the setVehicleTypeIdentifier method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleTypeIdentifier method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleTypeIdentifierForChoiceConstraintsFromSetVehicleTypeIdentifier($value): string
+    public function validateVehicleTypeIdentifierForChoiceConstraintFromSetVehicleTypeIdentifier($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1736,7 +1739,7 @@ class VehicleUpdate extends AbstractStructBase
     public function setVehicleTypeIdentifier(?\Travelport\UniversalRecord\StructType\VehicleTypeIdentifier $vehicleTypeIdentifier = null): self
     {
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($vehicleTypeIdentifierChoiceErrorMessage = self::validateVehicleTypeIdentifierForChoiceConstraintsFromSetVehicleTypeIdentifier($vehicleTypeIdentifier))) {
+        if ('' !== ($vehicleTypeIdentifierChoiceErrorMessage = self::validateVehicleTypeIdentifierForChoiceConstraintFromSetVehicleTypeIdentifier($vehicleTypeIdentifier))) {
             throw new InvalidArgumentException($vehicleTypeIdentifierChoiceErrorMessage, __LINE__);
         }
         if (is_null($vehicleTypeIdentifier) || (is_array($vehicleTypeIdentifier) && empty($vehicleTypeIdentifier))) {
@@ -1753,16 +1756,16 @@ class VehicleUpdate extends AbstractStructBase
      */
     public function getFlightArrivalInformation(): ?\Travelport\UniversalRecord\StructType\FlightArrivalInformation
     {
-        return isset($this->FlightArrivalInformation) ? $this->FlightArrivalInformation : null;
+        return $this->FlightArrivalInformation ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setFlightArrivalInformation method
+     * This method is responsible for validating the value(s) passed to the setFlightArrivalInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFlightArrivalInformation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateFlightArrivalInformationForChoiceConstraintsFromSetFlightArrivalInformation($value): string
+    public function validateFlightArrivalInformationForChoiceConstraintFromSetFlightArrivalInformation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1809,7 +1812,7 @@ class VehicleUpdate extends AbstractStructBase
     public function setFlightArrivalInformation(?\Travelport\UniversalRecord\StructType\FlightArrivalInformation $flightArrivalInformation = null): self
     {
         // validation for constraint: choice(LoyaltyCard, DriversLicense, Guarantee, BookingSource, VehicleRateInfo, PaymentInformation, AssociatedRemark, VehicleSpecialRequest, DeliveryAddress, CollectionAddress, VehicleReturnDateLocation, VehiclePickupDateLocation, ThirdPartyInformation, TravelComplianceData, VehicleTypeIdentifier, FlightArrivalInformation)
-        if ('' !== ($flightArrivalInformationChoiceErrorMessage = self::validateFlightArrivalInformationForChoiceConstraintsFromSetFlightArrivalInformation($flightArrivalInformation))) {
+        if ('' !== ($flightArrivalInformationChoiceErrorMessage = self::validateFlightArrivalInformationForChoiceConstraintFromSetFlightArrivalInformation($flightArrivalInformation))) {
             throw new InvalidArgumentException($flightArrivalInformationChoiceErrorMessage, __LINE__);
         }
         if (is_null($flightArrivalInformation) || (is_array($flightArrivalInformation) && empty($flightArrivalInformation))) {

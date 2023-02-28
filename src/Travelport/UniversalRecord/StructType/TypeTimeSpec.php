@@ -65,16 +65,16 @@ class TypeTimeSpec extends AbstractStructBase
      */
     public function getTimeRange(): ?\Travelport\UniversalRecord\StructType\TypeTimeRange
     {
-        return isset($this->TimeRange) ? $this->TimeRange : null;
+        return $this->TimeRange ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setTimeRange method
+     * This method is responsible for validating the value(s) passed to the setTimeRange method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTimeRange method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateTimeRangeForChoiceConstraintsFromSetTimeRange($value): string
+    public function validateTimeRangeForChoiceConstraintFromSetTimeRange($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -107,7 +107,7 @@ class TypeTimeSpec extends AbstractStructBase
     public function setTimeRange(?\Travelport\UniversalRecord\StructType\TypeTimeRange $timeRange = null): self
     {
         // validation for constraint: choice(TimeRange, SpecificTime)
-        if ('' !== ($timeRangeChoiceErrorMessage = self::validateTimeRangeForChoiceConstraintsFromSetTimeRange($timeRange))) {
+        if ('' !== ($timeRangeChoiceErrorMessage = self::validateTimeRangeForChoiceConstraintFromSetTimeRange($timeRange))) {
             throw new InvalidArgumentException($timeRangeChoiceErrorMessage, __LINE__);
         }
         if (is_null($timeRange) || (is_array($timeRange) && empty($timeRange))) {
@@ -124,16 +124,16 @@ class TypeTimeSpec extends AbstractStructBase
      */
     public function getSpecificTime(): ?\Travelport\UniversalRecord\StructType\TypeSpecificTime
     {
-        return isset($this->SpecificTime) ? $this->SpecificTime : null;
+        return $this->SpecificTime ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setSpecificTime method
+     * This method is responsible for validating the value(s) passed to the setSpecificTime method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSpecificTime method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateSpecificTimeForChoiceConstraintsFromSetSpecificTime($value): string
+    public function validateSpecificTimeForChoiceConstraintFromSetSpecificTime($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -166,7 +166,7 @@ class TypeTimeSpec extends AbstractStructBase
     public function setSpecificTime(?\Travelport\UniversalRecord\StructType\TypeSpecificTime $specificTime = null): self
     {
         // validation for constraint: choice(TimeRange, SpecificTime)
-        if ('' !== ($specificTimeChoiceErrorMessage = self::validateSpecificTimeForChoiceConstraintsFromSetSpecificTime($specificTime))) {
+        if ('' !== ($specificTimeChoiceErrorMessage = self::validateSpecificTimeForChoiceConstraintFromSetSpecificTime($specificTime))) {
             throw new InvalidArgumentException($specificTimeChoiceErrorMessage, __LINE__);
         }
         if (is_null($specificTime) || (is_array($specificTime) && empty($specificTime))) {

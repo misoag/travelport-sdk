@@ -43,12 +43,13 @@ class EmbargoList extends AbstractStructBase
         return $this->Embargo;
     }
     /**
-     * This method is responsible for validating the values passed to the setEmbargo method
+     * This method is responsible for validating the value(s) passed to the setEmbargo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEmbargo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEmbargoForArrayConstraintsFromSetEmbargo(?array $values = []): string
+    public static function validateEmbargoForArrayConstraintFromSetEmbargo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -77,7 +78,7 @@ class EmbargoList extends AbstractStructBase
     public function setEmbargo(array $embargo): self
     {
         // validation for constraint: array
-        if ('' !== ($embargoArrayErrorMessage = self::validateEmbargoForArrayConstraintsFromSetEmbargo($embargo))) {
+        if ('' !== ($embargoArrayErrorMessage = self::validateEmbargoForArrayConstraintFromSetEmbargo($embargo))) {
             throw new InvalidArgumentException($embargoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)

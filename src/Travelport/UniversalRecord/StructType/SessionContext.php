@@ -53,16 +53,16 @@ class SessionContext extends AbstractStructBase
      */
     public function getSessTok(): ?\Travelport\UniversalRecord\StructType\SessTok
     {
-        return isset($this->SessTok) ? $this->SessTok : null;
+        return $this->SessTok ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setSessTok method
+     * This method is responsible for validating the value(s) passed to the setSessTok method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSessTok method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateSessTokForChoiceConstraintsFromSetSessTok($value): string
+    public function validateSessTokForChoiceConstraintFromSetSessTok($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -95,7 +95,7 @@ class SessionContext extends AbstractStructBase
     public function setSessTok(?\Travelport\UniversalRecord\StructType\SessTok $sessTok = null): self
     {
         // validation for constraint: choice(SessTok, SessProp)
-        if ('' !== ($sessTokChoiceErrorMessage = self::validateSessTokForChoiceConstraintsFromSetSessTok($sessTok))) {
+        if ('' !== ($sessTokChoiceErrorMessage = self::validateSessTokForChoiceConstraintFromSetSessTok($sessTok))) {
             throw new InvalidArgumentException($sessTokChoiceErrorMessage, __LINE__);
         }
         if (is_null($sessTok) || (is_array($sessTok) && empty($sessTok))) {
@@ -108,19 +108,20 @@ class SessionContext extends AbstractStructBase
     }
     /**
      * Get SessProp value
-     * @return \Travelport\UniversalRecord\StructType\SessProp[]
+     * @return \Travelport\UniversalRecord\StructType\SessProp[]|null
      */
     public function getSessProp(): ?array
     {
-        return isset($this->SessProp) ? $this->SessProp : null;
+        return $this->SessProp ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setSessProp method
+     * This method is responsible for validating the value(s) passed to the setSessProp method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSessProp method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSessPropForArrayConstraintsFromSetSessProp(?array $values = []): string
+    public static function validateSessPropForArrayConstraintFromSetSessProp(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -141,13 +142,13 @@ class SessionContext extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setSessProp method
+     * This method is responsible for validating the value(s) passed to the setSessProp method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSessProp method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateSessPropForChoiceConstraintsFromSetSessProp($value): string
+    public function validateSessPropForChoiceConstraintFromSetSessProp($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -181,11 +182,11 @@ class SessionContext extends AbstractStructBase
     public function setSessProp(?array $sessProp = null): self
     {
         // validation for constraint: array
-        if ('' !== ($sessPropArrayErrorMessage = self::validateSessPropForArrayConstraintsFromSetSessProp($sessProp))) {
+        if ('' !== ($sessPropArrayErrorMessage = self::validateSessPropForArrayConstraintFromSetSessProp($sessProp))) {
             throw new InvalidArgumentException($sessPropArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(SessTok, SessProp)
-        if ('' !== ($sessPropChoiceErrorMessage = self::validateSessPropForChoiceConstraintsFromSetSessProp($sessProp))) {
+        if ('' !== ($sessPropChoiceErrorMessage = self::validateSessPropForChoiceConstraintFromSetSessProp($sessProp))) {
             throw new InvalidArgumentException($sessPropChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -205,13 +206,13 @@ class SessionContext extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToSessProp method
+     * This method is responsible for validating the value(s) passed to the addToSessProp method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToSessProp method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToSessProp($value): string
+    public function validateItemForChoiceConstraintFromAddToSessProp($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -245,7 +246,7 @@ class SessionContext extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The SessProp property can only contain items of type \Travelport\UniversalRecord\StructType\SessProp, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(SessTok, SessProp)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToSessProp($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToSessProp($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)

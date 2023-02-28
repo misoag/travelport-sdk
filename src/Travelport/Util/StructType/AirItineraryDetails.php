@@ -66,12 +66,13 @@ class AirItineraryDetails extends AbstractStructBase
         return $this->AirSegmentDetails;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirSegmentDetails method
+     * This method is responsible for validating the value(s) passed to the setAirSegmentDetails method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegmentDetails method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirSegmentDetailsForArrayConstraintsFromSetAirSegmentDetails(?array $values = []): string
+    public static function validateAirSegmentDetailsForArrayConstraintFromSetAirSegmentDetails(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -100,7 +101,7 @@ class AirItineraryDetails extends AbstractStructBase
     public function setAirSegmentDetails(array $airSegmentDetails): self
     {
         // validation for constraint: array
-        if ('' !== ($airSegmentDetailsArrayErrorMessage = self::validateAirSegmentDetailsForArrayConstraintsFromSetAirSegmentDetails($airSegmentDetails))) {
+        if ('' !== ($airSegmentDetailsArrayErrorMessage = self::validateAirSegmentDetailsForArrayConstraintFromSetAirSegmentDetails($airSegmentDetails))) {
             throw new InvalidArgumentException($airSegmentDetailsArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(16)
@@ -163,12 +164,13 @@ class AirItineraryDetails extends AbstractStructBase
         return $this->PassengerDetails;
     }
     /**
-     * This method is responsible for validating the values passed to the setPassengerDetails method
+     * This method is responsible for validating the value(s) passed to the setPassengerDetails method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassengerDetails method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePassengerDetailsForArrayConstraintsFromSetPassengerDetails(?array $values = []): string
+    public static function validatePassengerDetailsForArrayConstraintFromSetPassengerDetails(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -197,7 +199,7 @@ class AirItineraryDetails extends AbstractStructBase
     public function setPassengerDetails(?array $passengerDetails = null): self
     {
         // validation for constraint: array
-        if ('' !== ($passengerDetailsArrayErrorMessage = self::validatePassengerDetailsForArrayConstraintsFromSetPassengerDetails($passengerDetails))) {
+        if ('' !== ($passengerDetailsArrayErrorMessage = self::validatePassengerDetailsForArrayConstraintFromSetPassengerDetails($passengerDetails))) {
             throw new InvalidArgumentException($passengerDetailsArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(15)

@@ -124,12 +124,13 @@ class LegPrice extends AbstractStructBase
         return $this->LegDetail;
     }
     /**
-     * This method is responsible for validating the values passed to the setLegDetail method
+     * This method is responsible for validating the value(s) passed to the setLegDetail method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLegDetail method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLegDetailForArrayConstraintsFromSetLegDetail(?array $values = []): string
+    public static function validateLegDetailForArrayConstraintFromSetLegDetail(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -158,7 +159,7 @@ class LegPrice extends AbstractStructBase
     public function setLegDetail(?array $legDetail = null): self
     {
         // validation for constraint: array
-        if ('' !== ($legDetailArrayErrorMessage = self::validateLegDetailForArrayConstraintsFromSetLegDetail($legDetail))) {
+        if ('' !== ($legDetailArrayErrorMessage = self::validateLegDetailForArrayConstraintFromSetLegDetail($legDetail))) {
             throw new InvalidArgumentException($legDetailArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

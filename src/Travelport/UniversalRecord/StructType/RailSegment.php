@@ -351,12 +351,13 @@ class RailSegment extends Segment
         return $this->RailSegmentInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailSegmentInfo method
+     * This method is responsible for validating the value(s) passed to the setRailSegmentInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailSegmentInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailSegmentInfoForArrayConstraintsFromSetRailSegmentInfo(?array $values = []): string
+    public static function validateRailSegmentInfoForArrayConstraintFromSetRailSegmentInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -385,7 +386,7 @@ class RailSegment extends Segment
     public function setRailSegmentInfo(?array $railSegmentInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railSegmentInfoArrayErrorMessage = self::validateRailSegmentInfoForArrayConstraintsFromSetRailSegmentInfo($railSegmentInfo))) {
+        if ('' !== ($railSegmentInfoArrayErrorMessage = self::validateRailSegmentInfoForArrayConstraintFromSetRailSegmentInfo($railSegmentInfo))) {
             throw new InvalidArgumentException($railSegmentInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -444,12 +445,13 @@ class RailSegment extends Segment
         return $this->RailAvailInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailAvailInfo method
+     * This method is responsible for validating the value(s) passed to the setRailAvailInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailAvailInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailAvailInfoForArrayConstraintsFromSetRailAvailInfo(?array $values = []): string
+    public static function validateRailAvailInfoForArrayConstraintFromSetRailAvailInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -478,7 +480,7 @@ class RailSegment extends Segment
     public function setRailAvailInfo(?array $railAvailInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railAvailInfoArrayErrorMessage = self::validateRailAvailInfoForArrayConstraintsFromSetRailAvailInfo($railAvailInfo))) {
+        if ('' !== ($railAvailInfoArrayErrorMessage = self::validateRailAvailInfoForArrayConstraintFromSetRailAvailInfo($railAvailInfo))) {
             throw new InvalidArgumentException($railAvailInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -518,12 +520,13 @@ class RailSegment extends Segment
         return $this->FulFillmentType;
     }
     /**
-     * This method is responsible for validating the values passed to the setFulFillmentType method
+     * This method is responsible for validating the value(s) passed to the setFulFillmentType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFulFillmentType method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFulFillmentTypeForArrayConstraintsFromSetFulFillmentType(?array $values = []): string
+    public static function validateFulFillmentTypeForArrayConstraintFromSetFulFillmentType(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -544,17 +547,17 @@ class RailSegment extends Segment
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setFulFillmentType method
+     * This method is responsible for validating the value(s) passed to the setFulFillmentType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFulFillmentType method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFulFillmentTypeForMaxLengthConstraintFromSetFulFillmentType($values): string
+    public static function validateFulFillmentTypeForMaxLengthConstraintFromSetFulFillmentType(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $railSegmentFulFillmentTypeItem) {
+        foreach (($values ?? []) as $railSegmentFulFillmentTypeItem) {
             // validation for constraint: maxLength(255)
             if (mb_strlen((string) $railSegmentFulFillmentTypeItem) > 255) {
                 $invalidValues[] = var_export($railSegmentFulFillmentTypeItem, true);
@@ -568,17 +571,17 @@ class RailSegment extends Segment
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setFulFillmentType method
+     * This method is responsible for validating the value(s) passed to the setFulFillmentType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFulFillmentType method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFulFillmentTypeForMinLengthConstraintFromSetFulFillmentType($values): string
+    public static function validateFulFillmentTypeForMinLengthConstraintFromSetFulFillmentType(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $railSegmentFulFillmentTypeItem) {
+        foreach (($values ?? []) as $railSegmentFulFillmentTypeItem) {
             // validation for constraint: minLength
             if (mb_strlen((string) $railSegmentFulFillmentTypeItem) < 0) {
                 $invalidValues[] = var_export($railSegmentFulFillmentTypeItem, true);
@@ -600,7 +603,7 @@ class RailSegment extends Segment
     public function setFulFillmentType(?array $fulFillmentType = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fulFillmentTypeArrayErrorMessage = self::validateFulFillmentTypeForArrayConstraintsFromSetFulFillmentType($fulFillmentType))) {
+        if ('' !== ($fulFillmentTypeArrayErrorMessage = self::validateFulFillmentTypeForArrayConstraintFromSetFulFillmentType($fulFillmentType))) {
             throw new InvalidArgumentException($fulFillmentTypeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxLength(255)

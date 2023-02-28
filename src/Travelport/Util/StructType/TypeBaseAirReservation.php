@@ -276,12 +276,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->SupplierLocator;
     }
     /**
-     * This method is responsible for validating the values passed to the setSupplierLocator method
+     * This method is responsible for validating the value(s) passed to the setSupplierLocator method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSupplierLocator method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSupplierLocatorForArrayConstraintsFromSetSupplierLocator(?array $values = []): string
+    public static function validateSupplierLocatorForArrayConstraintFromSetSupplierLocator(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -310,7 +311,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setSupplierLocator(?array $supplierLocator = null): self
     {
         // validation for constraint: array
-        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintsFromSetSupplierLocator($supplierLocator))) {
+        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintFromSetSupplierLocator($supplierLocator))) {
             throw new InvalidArgumentException($supplierLocatorArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -350,12 +351,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->ThirdPartyInformation;
     }
     /**
-     * This method is responsible for validating the values passed to the setThirdPartyInformation method
+     * This method is responsible for validating the value(s) passed to the setThirdPartyInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setThirdPartyInformation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateThirdPartyInformationForArrayConstraintsFromSetThirdPartyInformation(?array $values = []): string
+    public static function validateThirdPartyInformationForArrayConstraintFromSetThirdPartyInformation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -384,7 +386,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setThirdPartyInformation(?array $thirdPartyInformation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($thirdPartyInformationArrayErrorMessage = self::validateThirdPartyInformationForArrayConstraintsFromSetThirdPartyInformation($thirdPartyInformation))) {
+        if ('' !== ($thirdPartyInformationArrayErrorMessage = self::validateThirdPartyInformationForArrayConstraintFromSetThirdPartyInformation($thirdPartyInformation))) {
             throw new InvalidArgumentException($thirdPartyInformationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -443,12 +445,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->BookingTravelerRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingTravelerRef method
+     * This method is responsible for validating the value(s) passed to the setBookingTravelerRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTravelerRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef(?array $values = []): string
+    public static function validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -477,7 +480,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setBookingTravelerRef(?array $bookingTravelerRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef($bookingTravelerRef))) {
+        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef($bookingTravelerRef))) {
             throw new InvalidArgumentException($bookingTravelerRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -517,12 +520,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->ProviderReservationInfoRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setProviderReservationInfoRef method
+     * This method is responsible for validating the value(s) passed to the setProviderReservationInfoRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationInfoRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateProviderReservationInfoRefForArrayConstraintsFromSetProviderReservationInfoRef(?array $values = []): string
+    public static function validateProviderReservationInfoRefForArrayConstraintFromSetProviderReservationInfoRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -551,7 +555,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setProviderReservationInfoRef(?array $providerReservationInfoRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($providerReservationInfoRefArrayErrorMessage = self::validateProviderReservationInfoRefForArrayConstraintsFromSetProviderReservationInfoRef($providerReservationInfoRef))) {
+        if ('' !== ($providerReservationInfoRefArrayErrorMessage = self::validateProviderReservationInfoRefForArrayConstraintFromSetProviderReservationInfoRef($providerReservationInfoRef))) {
             throw new InvalidArgumentException($providerReservationInfoRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -591,12 +595,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->AirSegment;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirSegment method
+     * This method is responsible for validating the value(s) passed to the setAirSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirSegmentForArrayConstraintsFromSetAirSegment(?array $values = []): string
+    public static function validateAirSegmentForArrayConstraintFromSetAirSegment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -625,7 +630,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setAirSegment(?array $airSegment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airSegmentArrayErrorMessage = self::validateAirSegmentForArrayConstraintsFromSetAirSegment($airSegment))) {
+        if ('' !== ($airSegmentArrayErrorMessage = self::validateAirSegmentForArrayConstraintFromSetAirSegment($airSegment))) {
             throw new InvalidArgumentException($airSegmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -665,12 +670,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->SvcSegment;
     }
     /**
-     * This method is responsible for validating the values passed to the setSvcSegment method
+     * This method is responsible for validating the value(s) passed to the setSvcSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSvcSegment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSvcSegmentForArrayConstraintsFromSetSvcSegment(?array $values = []): string
+    public static function validateSvcSegmentForArrayConstraintFromSetSvcSegment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -699,7 +705,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setSvcSegment(?array $svcSegment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($svcSegmentArrayErrorMessage = self::validateSvcSegmentForArrayConstraintsFromSetSvcSegment($svcSegment))) {
+        if ('' !== ($svcSegmentArrayErrorMessage = self::validateSvcSegmentForArrayConstraintFromSetSvcSegment($svcSegment))) {
             throw new InvalidArgumentException($svcSegmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -739,12 +745,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->AirPricingInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirPricingInfo method
+     * This method is responsible for validating the value(s) passed to the setAirPricingInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirPricingInfoForArrayConstraintsFromSetAirPricingInfo(?array $values = []): string
+    public static function validateAirPricingInfoForArrayConstraintFromSetAirPricingInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -773,7 +780,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setAirPricingInfo(?array $airPricingInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airPricingInfoArrayErrorMessage = self::validateAirPricingInfoForArrayConstraintsFromSetAirPricingInfo($airPricingInfo))) {
+        if ('' !== ($airPricingInfoArrayErrorMessage = self::validateAirPricingInfoForArrayConstraintFromSetAirPricingInfo($airPricingInfo))) {
             throw new InvalidArgumentException($airPricingInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -813,12 +820,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->Payment;
     }
     /**
-     * This method is responsible for validating the values passed to the setPayment method
+     * This method is responsible for validating the value(s) passed to the setPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPayment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePaymentForArrayConstraintsFromSetPayment(?array $values = []): string
+    public static function validatePaymentForArrayConstraintFromSetPayment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -847,7 +855,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setPayment(?array $payment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($paymentArrayErrorMessage = self::validatePaymentForArrayConstraintsFromSetPayment($payment))) {
+        if ('' !== ($paymentArrayErrorMessage = self::validatePaymentForArrayConstraintFromSetPayment($payment))) {
             throw new InvalidArgumentException($paymentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -887,12 +895,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->CreditCardAuth;
     }
     /**
-     * This method is responsible for validating the values passed to the setCreditCardAuth method
+     * This method is responsible for validating the value(s) passed to the setCreditCardAuth method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCreditCardAuth method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCreditCardAuthForArrayConstraintsFromSetCreditCardAuth(?array $values = []): string
+    public static function validateCreditCardAuthForArrayConstraintFromSetCreditCardAuth(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -921,7 +930,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setCreditCardAuth(?array $creditCardAuth = null): self
     {
         // validation for constraint: array
-        if ('' !== ($creditCardAuthArrayErrorMessage = self::validateCreditCardAuthForArrayConstraintsFromSetCreditCardAuth($creditCardAuth))) {
+        if ('' !== ($creditCardAuthArrayErrorMessage = self::validateCreditCardAuthForArrayConstraintFromSetCreditCardAuth($creditCardAuth))) {
             throw new InvalidArgumentException($creditCardAuthArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -961,12 +970,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->FareNote;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareNote method
+     * This method is responsible for validating the value(s) passed to the setFareNote method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareNote method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareNoteForArrayConstraintsFromSetFareNote(?array $values = []): string
+    public static function validateFareNoteForArrayConstraintFromSetFareNote(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -995,7 +1005,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setFareNote(?array $fareNote = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareNoteArrayErrorMessage = self::validateFareNoteForArrayConstraintsFromSetFareNote($fareNote))) {
+        if ('' !== ($fareNoteArrayErrorMessage = self::validateFareNoteForArrayConstraintFromSetFareNote($fareNote))) {
             throw new InvalidArgumentException($fareNoteArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1035,12 +1045,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->FeeInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setFeeInfo method
+     * This method is responsible for validating the value(s) passed to the setFeeInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFeeInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFeeInfoForArrayConstraintsFromSetFeeInfo(?array $values = []): string
+    public static function validateFeeInfoForArrayConstraintFromSetFeeInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1069,7 +1080,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setFeeInfo(?array $feeInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($feeInfoArrayErrorMessage = self::validateFeeInfoForArrayConstraintsFromSetFeeInfo($feeInfo))) {
+        if ('' !== ($feeInfoArrayErrorMessage = self::validateFeeInfoForArrayConstraintFromSetFeeInfo($feeInfo))) {
             throw new InvalidArgumentException($feeInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1109,12 +1120,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->TaxInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setTaxInfo method
+     * This method is responsible for validating the value(s) passed to the setTaxInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTaxInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTaxInfoForArrayConstraintsFromSetTaxInfo(?array $values = []): string
+    public static function validateTaxInfoForArrayConstraintFromSetTaxInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1143,7 +1155,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setTaxInfo(?array $taxInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($taxInfoArrayErrorMessage = self::validateTaxInfoForArrayConstraintsFromSetTaxInfo($taxInfo))) {
+        if ('' !== ($taxInfoArrayErrorMessage = self::validateTaxInfoForArrayConstraintFromSetTaxInfo($taxInfo))) {
             throw new InvalidArgumentException($taxInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1183,12 +1195,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->TicketingModifiers;
     }
     /**
-     * This method is responsible for validating the values passed to the setTicketingModifiers method
+     * This method is responsible for validating the value(s) passed to the setTicketingModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTicketingModifiers method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTicketingModifiersForArrayConstraintsFromSetTicketingModifiers(?array $values = []): string
+    public static function validateTicketingModifiersForArrayConstraintFromSetTicketingModifiers(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1217,7 +1230,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setTicketingModifiers(?array $ticketingModifiers = null): self
     {
         // validation for constraint: array
-        if ('' !== ($ticketingModifiersArrayErrorMessage = self::validateTicketingModifiersForArrayConstraintsFromSetTicketingModifiers($ticketingModifiers))) {
+        if ('' !== ($ticketingModifiersArrayErrorMessage = self::validateTicketingModifiersForArrayConstraintFromSetTicketingModifiers($ticketingModifiers))) {
             throw new InvalidArgumentException($ticketingModifiersArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1257,12 +1270,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->AssociatedRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAssociatedRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark(?array $values = []): string
+    public static function validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1291,7 +1305,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setAssociatedRemark(?array $associatedRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark($associatedRemark))) {
+        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark($associatedRemark))) {
             throw new InvalidArgumentException($associatedRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1331,12 +1345,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->PocketItineraryRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setPocketItineraryRemark method
+     * This method is responsible for validating the value(s) passed to the setPocketItineraryRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPocketItineraryRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePocketItineraryRemarkForArrayConstraintsFromSetPocketItineraryRemark(?array $values = []): string
+    public static function validatePocketItineraryRemarkForArrayConstraintFromSetPocketItineraryRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1365,7 +1380,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setPocketItineraryRemark(?array $pocketItineraryRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($pocketItineraryRemarkArrayErrorMessage = self::validatePocketItineraryRemarkForArrayConstraintsFromSetPocketItineraryRemark($pocketItineraryRemark))) {
+        if ('' !== ($pocketItineraryRemarkArrayErrorMessage = self::validatePocketItineraryRemarkForArrayConstraintFromSetPocketItineraryRemark($pocketItineraryRemark))) {
             throw new InvalidArgumentException($pocketItineraryRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1424,12 +1439,13 @@ class TypeBaseAirReservation extends BaseReservation
         return $this->AirExchangeBundle;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirExchangeBundle method
+     * This method is responsible for validating the value(s) passed to the setAirExchangeBundle method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirExchangeBundle method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirExchangeBundleForArrayConstraintsFromSetAirExchangeBundle(?array $values = []): string
+    public static function validateAirExchangeBundleForArrayConstraintFromSetAirExchangeBundle(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1458,7 +1474,7 @@ class TypeBaseAirReservation extends BaseReservation
     public function setAirExchangeBundle(?array $airExchangeBundle = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airExchangeBundleArrayErrorMessage = self::validateAirExchangeBundleForArrayConstraintsFromSetAirExchangeBundle($airExchangeBundle))) {
+        if ('' !== ($airExchangeBundleArrayErrorMessage = self::validateAirExchangeBundleForArrayConstraintFromSetAirExchangeBundle($airExchangeBundle))) {
             throw new InvalidArgumentException($airExchangeBundleArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

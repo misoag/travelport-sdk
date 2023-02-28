@@ -334,12 +334,13 @@ class RepricingModifiers extends AbstractStructBase
         return $this->FareType;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareType method
+     * This method is responsible for validating the value(s) passed to the setFareType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareType method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareTypeForArrayConstraintsFromSetFareType(?array $values = []): string
+    public static function validateFareTypeForArrayConstraintFromSetFareType(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -368,7 +369,7 @@ class RepricingModifiers extends AbstractStructBase
     public function setFareType(?array $fareType = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareTypeArrayErrorMessage = self::validateFareTypeForArrayConstraintsFromSetFareType($fareType))) {
+        if ('' !== ($fareTypeArrayErrorMessage = self::validateFareTypeForArrayConstraintFromSetFareType($fareType))) {
             throw new InvalidArgumentException($fareTypeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(100)
@@ -446,12 +447,13 @@ class RepricingModifiers extends AbstractStructBase
         return $this->AirSegmentPricingModifiers;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirSegmentPricingModifiers method
+     * This method is responsible for validating the value(s) passed to the setAirSegmentPricingModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegmentPricingModifiers method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirSegmentPricingModifiersForArrayConstraintsFromSetAirSegmentPricingModifiers(?array $values = []): string
+    public static function validateAirSegmentPricingModifiersForArrayConstraintFromSetAirSegmentPricingModifiers(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -480,7 +482,7 @@ class RepricingModifiers extends AbstractStructBase
     public function setAirSegmentPricingModifiers(?array $airSegmentPricingModifiers = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airSegmentPricingModifiersArrayErrorMessage = self::validateAirSegmentPricingModifiersForArrayConstraintsFromSetAirSegmentPricingModifiers($airSegmentPricingModifiers))) {
+        if ('' !== ($airSegmentPricingModifiersArrayErrorMessage = self::validateAirSegmentPricingModifiersForArrayConstraintFromSetAirSegmentPricingModifiers($airSegmentPricingModifiers))) {
             throw new InvalidArgumentException($airSegmentPricingModifiersArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -520,12 +522,13 @@ class RepricingModifiers extends AbstractStructBase
         return $this->WithholdTaxCode;
     }
     /**
-     * This method is responsible for validating the values passed to the setWithholdTaxCode method
+     * This method is responsible for validating the value(s) passed to the setWithholdTaxCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setWithholdTaxCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateWithholdTaxCodeForArrayConstraintsFromSetWithholdTaxCode(?array $values = []): string
+    public static function validateWithholdTaxCodeForArrayConstraintFromSetWithholdTaxCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -546,17 +549,17 @@ class RepricingModifiers extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setWithholdTaxCode method
+     * This method is responsible for validating the value(s) passed to the setWithholdTaxCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setWithholdTaxCode method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateWithholdTaxCodeForLengthConstraintFromSetWithholdTaxCode($values): string
+    public static function validateWithholdTaxCodeForLengthConstraintFromSetWithholdTaxCode(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $repricingModifiersWithholdTaxCodeItem) {
+        foreach (($values ?? []) as $repricingModifiersWithholdTaxCodeItem) {
             // validation for constraint: length(2)
             if (mb_strlen((string) $repricingModifiersWithholdTaxCodeItem) !== 2) {
                 $invalidValues[] = var_export($repricingModifiersWithholdTaxCodeItem, true);
@@ -578,7 +581,7 @@ class RepricingModifiers extends AbstractStructBase
     public function setWithholdTaxCode(?array $withholdTaxCode = null): self
     {
         // validation for constraint: array
-        if ('' !== ($withholdTaxCodeArrayErrorMessage = self::validateWithholdTaxCodeForArrayConstraintsFromSetWithholdTaxCode($withholdTaxCode))) {
+        if ('' !== ($withholdTaxCodeArrayErrorMessage = self::validateWithholdTaxCodeForArrayConstraintFromSetWithholdTaxCode($withholdTaxCode))) {
             throw new InvalidArgumentException($withholdTaxCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: length(2)

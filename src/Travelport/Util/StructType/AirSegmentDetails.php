@@ -217,12 +217,13 @@ class AirSegmentDetails extends AbstractStructBase
         return $this->PassengerDetailsRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setPassengerDetailsRef method
+     * This method is responsible for validating the value(s) passed to the setPassengerDetailsRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassengerDetailsRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePassengerDetailsRefForArrayConstraintsFromSetPassengerDetailsRef(?array $values = []): string
+    public static function validatePassengerDetailsRefForArrayConstraintFromSetPassengerDetailsRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -251,7 +252,7 @@ class AirSegmentDetails extends AbstractStructBase
     public function setPassengerDetailsRef(array $passengerDetailsRef): self
     {
         // validation for constraint: array
-        if ('' !== ($passengerDetailsRefArrayErrorMessage = self::validatePassengerDetailsRefForArrayConstraintsFromSetPassengerDetailsRef($passengerDetailsRef))) {
+        if ('' !== ($passengerDetailsRefArrayErrorMessage = self::validatePassengerDetailsRefForArrayConstraintFromSetPassengerDetailsRef($passengerDetailsRef))) {
             throw new InvalidArgumentException($passengerDetailsRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -499,12 +500,13 @@ class AirSegmentDetails extends AbstractStructBase
         return $this->BrandID;
     }
     /**
-     * This method is responsible for validating the values passed to the setBrandID method
+     * This method is responsible for validating the value(s) passed to the setBrandID method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBrandID method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBrandIDForArrayConstraintsFromSetBrandID(?array $values = []): string
+    public static function validateBrandIDForArrayConstraintFromSetBrandID(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -533,7 +535,7 @@ class AirSegmentDetails extends AbstractStructBase
     public function setBrandID(?array $brandID = null): self
     {
         // validation for constraint: array
-        if ('' !== ($brandIDArrayErrorMessage = self::validateBrandIDForArrayConstraintsFromSetBrandID($brandID))) {
+        if ('' !== ($brandIDArrayErrorMessage = self::validateBrandIDForArrayConstraintFromSetBrandID($brandID))) {
             throw new InvalidArgumentException($brandIDArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)

@@ -118,12 +118,13 @@ class FileFinishingInfo extends AbstractStructBase
         return $this->PolicyInformation;
     }
     /**
-     * This method is responsible for validating the values passed to the setPolicyInformation method
+     * This method is responsible for validating the value(s) passed to the setPolicyInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPolicyInformation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePolicyInformationForArrayConstraintsFromSetPolicyInformation(?array $values = []): string
+    public static function validatePolicyInformationForArrayConstraintFromSetPolicyInformation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -152,7 +153,7 @@ class FileFinishingInfo extends AbstractStructBase
     public function setPolicyInformation(?array $policyInformation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($policyInformationArrayErrorMessage = self::validatePolicyInformationForArrayConstraintsFromSetPolicyInformation($policyInformation))) {
+        if ('' !== ($policyInformationArrayErrorMessage = self::validatePolicyInformationForArrayConstraintFromSetPolicyInformation($policyInformation))) {
             throw new InvalidArgumentException($policyInformationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -230,12 +231,13 @@ class FileFinishingInfo extends AbstractStructBase
         return $this->TravelerInformation;
     }
     /**
-     * This method is responsible for validating the values passed to the setTravelerInformation method
+     * This method is responsible for validating the value(s) passed to the setTravelerInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTravelerInformation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTravelerInformationForArrayConstraintsFromSetTravelerInformation(?array $values = []): string
+    public static function validateTravelerInformationForArrayConstraintFromSetTravelerInformation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -264,7 +266,7 @@ class FileFinishingInfo extends AbstractStructBase
     public function setTravelerInformation(?array $travelerInformation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($travelerInformationArrayErrorMessage = self::validateTravelerInformationForArrayConstraintsFromSetTravelerInformation($travelerInformation))) {
+        if ('' !== ($travelerInformationArrayErrorMessage = self::validateTravelerInformationForArrayConstraintFromSetTravelerInformation($travelerInformation))) {
             throw new InvalidArgumentException($travelerInformationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

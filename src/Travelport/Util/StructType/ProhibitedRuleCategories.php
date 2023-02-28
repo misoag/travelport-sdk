@@ -40,12 +40,13 @@ class ProhibitedRuleCategories extends AbstractStructBase
         return $this->FareRuleCategory;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareRuleCategory method
+     * This method is responsible for validating the value(s) passed to the setFareRuleCategory method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareRuleCategory method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareRuleCategoryForArrayConstraintsFromSetFareRuleCategory(?array $values = []): string
+    public static function validateFareRuleCategoryForArrayConstraintFromSetFareRuleCategory(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -74,7 +75,7 @@ class ProhibitedRuleCategories extends AbstractStructBase
     public function setFareRuleCategory(?array $fareRuleCategory = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareRuleCategoryArrayErrorMessage = self::validateFareRuleCategoryForArrayConstraintsFromSetFareRuleCategory($fareRuleCategory))) {
+        if ('' !== ($fareRuleCategoryArrayErrorMessage = self::validateFareRuleCategoryForArrayConstraintFromSetFareRuleCategory($fareRuleCategory))) {
             throw new InvalidArgumentException($fareRuleCategoryArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

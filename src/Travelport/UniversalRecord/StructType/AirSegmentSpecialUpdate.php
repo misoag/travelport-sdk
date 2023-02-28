@@ -72,16 +72,16 @@ class AirSegmentSpecialUpdate extends AbstractStructBase
      */
     public function getAirSegment(): ?\Travelport\UniversalRecord\StructType\TypeBaseAirSegment
     {
-        return isset($this->AirSegment) ? $this->AirSegment : null;
+        return $this->AirSegment ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirSegment method
+     * This method is responsible for validating the value(s) passed to the setAirSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirSegmentForChoiceConstraintsFromSetAirSegment($value): string
+    public function validateAirSegmentForChoiceConstraintFromSetAirSegment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -113,7 +113,7 @@ class AirSegmentSpecialUpdate extends AbstractStructBase
     public function setAirSegment(?\Travelport\UniversalRecord\StructType\TypeBaseAirSegment $airSegment = null): self
     {
         // validation for constraint: choice(AirSegment)
-        if ('' !== ($airSegmentChoiceErrorMessage = self::validateAirSegmentForChoiceConstraintsFromSetAirSegment($airSegment))) {
+        if ('' !== ($airSegmentChoiceErrorMessage = self::validateAirSegmentForChoiceConstraintFromSetAirSegment($airSegment))) {
             throw new InvalidArgumentException($airSegmentChoiceErrorMessage, __LINE__);
         }
         if (is_null($airSegment) || (is_array($airSegment) && empty($airSegment))) {

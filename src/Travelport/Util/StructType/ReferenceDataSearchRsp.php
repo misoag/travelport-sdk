@@ -150,19 +150,20 @@ class ReferenceDataSearchRsp extends BaseRsp
     }
     /**
      * Get Airport value
-     * @return \Travelport\Util\StructType\Airport[]
+     * @return \Travelport\Util\StructType\Airport[]|null
      */
     public function getAirport(): ?array
     {
-        return isset($this->Airport) ? $this->Airport : null;
+        return $this->Airport ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirport method
+     * This method is responsible for validating the value(s) passed to the setAirport method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirport method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirportForArrayConstraintsFromSetAirport(?array $values = []): string
+    public static function validateAirportForArrayConstraintFromSetAirport(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -183,13 +184,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirport method
+     * This method is responsible for validating the value(s) passed to the setAirport method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirport method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirportForChoiceConstraintsFromSetAirport($value): string
+    public function validateAirportForChoiceConstraintFromSetAirport($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -230,11 +231,11 @@ class ReferenceDataSearchRsp extends BaseRsp
     public function setAirport(?array $airport = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airportArrayErrorMessage = self::validateAirportForArrayConstraintsFromSetAirport($airport))) {
+        if ('' !== ($airportArrayErrorMessage = self::validateAirportForArrayConstraintFromSetAirport($airport))) {
             throw new InvalidArgumentException($airportArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($airportChoiceErrorMessage = self::validateAirportForChoiceConstraintsFromSetAirport($airport))) {
+        if ('' !== ($airportChoiceErrorMessage = self::validateAirportForChoiceConstraintFromSetAirport($airport))) {
             throw new InvalidArgumentException($airportChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -254,13 +255,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToAirport method
+     * This method is responsible for validating the value(s) passed to the addToAirport method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToAirport method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToAirport($value): string
+    public function validateItemForChoiceConstraintFromAddToAirport($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -301,7 +302,7 @@ class ReferenceDataSearchRsp extends BaseRsp
             throw new InvalidArgumentException(sprintf('The Airport property can only contain items of type \Travelport\Util\StructType\Airport, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToAirport($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToAirport($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -318,19 +319,20 @@ class ReferenceDataSearchRsp extends BaseRsp
     }
     /**
      * Get Carrier value
-     * @return \Travelport\Util\StructType\Carrier[]
+     * @return \Travelport\Util\StructType\Carrier[]|null
      */
     public function getCarrier(): ?array
     {
-        return isset($this->Carrier) ? $this->Carrier : null;
+        return $this->Carrier ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setCarrier method
+     * This method is responsible for validating the value(s) passed to the setCarrier method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCarrier method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCarrierForArrayConstraintsFromSetCarrier(?array $values = []): string
+    public static function validateCarrierForArrayConstraintFromSetCarrier(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -351,13 +353,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setCarrier method
+     * This method is responsible for validating the value(s) passed to the setCarrier method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCarrier method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCarrierForChoiceConstraintsFromSetCarrier($value): string
+    public function validateCarrierForChoiceConstraintFromSetCarrier($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -398,11 +400,11 @@ class ReferenceDataSearchRsp extends BaseRsp
     public function setCarrier(?array $carrier = null): self
     {
         // validation for constraint: array
-        if ('' !== ($carrierArrayErrorMessage = self::validateCarrierForArrayConstraintsFromSetCarrier($carrier))) {
+        if ('' !== ($carrierArrayErrorMessage = self::validateCarrierForArrayConstraintFromSetCarrier($carrier))) {
             throw new InvalidArgumentException($carrierArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($carrierChoiceErrorMessage = self::validateCarrierForChoiceConstraintsFromSetCarrier($carrier))) {
+        if ('' !== ($carrierChoiceErrorMessage = self::validateCarrierForChoiceConstraintFromSetCarrier($carrier))) {
             throw new InvalidArgumentException($carrierChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -422,13 +424,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToCarrier method
+     * This method is responsible for validating the value(s) passed to the addToCarrier method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToCarrier method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToCarrier($value): string
+    public function validateItemForChoiceConstraintFromAddToCarrier($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -469,7 +471,7 @@ class ReferenceDataSearchRsp extends BaseRsp
             throw new InvalidArgumentException(sprintf('The Carrier property can only contain items of type \Travelport\Util\StructType\Carrier, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToCarrier($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToCarrier($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -486,19 +488,20 @@ class ReferenceDataSearchRsp extends BaseRsp
     }
     /**
      * Get City value
-     * @return \Travelport\Util\StructType\City[]
+     * @return \Travelport\Util\StructType\City[]|null
      */
     public function getCity(): ?array
     {
-        return isset($this->City) ? $this->City : null;
+        return $this->City ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setCity method
+     * This method is responsible for validating the value(s) passed to the setCity method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCity method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCityForArrayConstraintsFromSetCity(?array $values = []): string
+    public static function validateCityForArrayConstraintFromSetCity(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -519,13 +522,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setCity method
+     * This method is responsible for validating the value(s) passed to the setCity method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCity method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCityForChoiceConstraintsFromSetCity($value): string
+    public function validateCityForChoiceConstraintFromSetCity($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -566,11 +569,11 @@ class ReferenceDataSearchRsp extends BaseRsp
     public function setCity(?array $city = null): self
     {
         // validation for constraint: array
-        if ('' !== ($cityArrayErrorMessage = self::validateCityForArrayConstraintsFromSetCity($city))) {
+        if ('' !== ($cityArrayErrorMessage = self::validateCityForArrayConstraintFromSetCity($city))) {
             throw new InvalidArgumentException($cityArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($cityChoiceErrorMessage = self::validateCityForChoiceConstraintsFromSetCity($city))) {
+        if ('' !== ($cityChoiceErrorMessage = self::validateCityForChoiceConstraintFromSetCity($city))) {
             throw new InvalidArgumentException($cityChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -590,13 +593,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToCity method
+     * This method is responsible for validating the value(s) passed to the addToCity method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToCity method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToCity($value): string
+    public function validateItemForChoiceConstraintFromAddToCity($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -637,7 +640,7 @@ class ReferenceDataSearchRsp extends BaseRsp
             throw new InvalidArgumentException(sprintf('The City property can only contain items of type \Travelport\Util\StructType\City, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToCity($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToCity($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -654,19 +657,20 @@ class ReferenceDataSearchRsp extends BaseRsp
     }
     /**
      * Get Country value
-     * @return \Travelport\Util\StructType\Country[]
+     * @return \Travelport\Util\StructType\Country[]|null
      */
     public function getCountry(): ?array
     {
-        return isset($this->Country) ? $this->Country : null;
+        return $this->Country ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setCountry method
+     * This method is responsible for validating the value(s) passed to the setCountry method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCountry method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCountryForArrayConstraintsFromSetCountry(?array $values = []): string
+    public static function validateCountryForArrayConstraintFromSetCountry(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -687,13 +691,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setCountry method
+     * This method is responsible for validating the value(s) passed to the setCountry method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCountry method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCountryForChoiceConstraintsFromSetCountry($value): string
+    public function validateCountryForChoiceConstraintFromSetCountry($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -734,11 +738,11 @@ class ReferenceDataSearchRsp extends BaseRsp
     public function setCountry(?array $country = null): self
     {
         // validation for constraint: array
-        if ('' !== ($countryArrayErrorMessage = self::validateCountryForArrayConstraintsFromSetCountry($country))) {
+        if ('' !== ($countryArrayErrorMessage = self::validateCountryForArrayConstraintFromSetCountry($country))) {
             throw new InvalidArgumentException($countryArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($countryChoiceErrorMessage = self::validateCountryForChoiceConstraintsFromSetCountry($country))) {
+        if ('' !== ($countryChoiceErrorMessage = self::validateCountryForChoiceConstraintFromSetCountry($country))) {
             throw new InvalidArgumentException($countryChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -758,13 +762,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToCountry method
+     * This method is responsible for validating the value(s) passed to the addToCountry method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToCountry method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToCountry($value): string
+    public function validateItemForChoiceConstraintFromAddToCountry($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -805,7 +809,7 @@ class ReferenceDataSearchRsp extends BaseRsp
             throw new InvalidArgumentException(sprintf('The Country property can only contain items of type \Travelport\Util\StructType\Country, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToCountry($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToCountry($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -822,19 +826,20 @@ class ReferenceDataSearchRsp extends BaseRsp
     }
     /**
      * Get Currency value
-     * @return \Travelport\Util\StructType\Currency[]
+     * @return \Travelport\Util\StructType\Currency[]|null
      */
     public function getCurrency(): ?array
     {
-        return isset($this->Currency) ? $this->Currency : null;
+        return $this->Currency ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setCurrency method
+     * This method is responsible for validating the value(s) passed to the setCurrency method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCurrency method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCurrencyForArrayConstraintsFromSetCurrency(?array $values = []): string
+    public static function validateCurrencyForArrayConstraintFromSetCurrency(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -855,13 +860,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setCurrency method
+     * This method is responsible for validating the value(s) passed to the setCurrency method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCurrency method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCurrencyForChoiceConstraintsFromSetCurrency($value): string
+    public function validateCurrencyForChoiceConstraintFromSetCurrency($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -902,11 +907,11 @@ class ReferenceDataSearchRsp extends BaseRsp
     public function setCurrency(?array $currency = null): self
     {
         // validation for constraint: array
-        if ('' !== ($currencyArrayErrorMessage = self::validateCurrencyForArrayConstraintsFromSetCurrency($currency))) {
+        if ('' !== ($currencyArrayErrorMessage = self::validateCurrencyForArrayConstraintFromSetCurrency($currency))) {
             throw new InvalidArgumentException($currencyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($currencyChoiceErrorMessage = self::validateCurrencyForChoiceConstraintsFromSetCurrency($currency))) {
+        if ('' !== ($currencyChoiceErrorMessage = self::validateCurrencyForChoiceConstraintFromSetCurrency($currency))) {
             throw new InvalidArgumentException($currencyChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -926,13 +931,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToCurrency method
+     * This method is responsible for validating the value(s) passed to the addToCurrency method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToCurrency method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToCurrency($value): string
+    public function validateItemForChoiceConstraintFromAddToCurrency($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -973,7 +978,7 @@ class ReferenceDataSearchRsp extends BaseRsp
             throw new InvalidArgumentException(sprintf('The Currency property can only contain items of type \Travelport\Util\StructType\Currency, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToCurrency($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToCurrency($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -990,19 +995,20 @@ class ReferenceDataSearchRsp extends BaseRsp
     }
     /**
      * Get Equipment value
-     * @return \Travelport\Util\StructType\Equipment[]
+     * @return \Travelport\Util\StructType\Equipment[]|null
      */
     public function getEquipment(): ?array
     {
-        return isset($this->Equipment) ? $this->Equipment : null;
+        return $this->Equipment ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setEquipment method
+     * This method is responsible for validating the value(s) passed to the setEquipment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEquipment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEquipmentForArrayConstraintsFromSetEquipment(?array $values = []): string
+    public static function validateEquipmentForArrayConstraintFromSetEquipment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1023,13 +1029,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setEquipment method
+     * This method is responsible for validating the value(s) passed to the setEquipment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEquipment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateEquipmentForChoiceConstraintsFromSetEquipment($value): string
+    public function validateEquipmentForChoiceConstraintFromSetEquipment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1070,11 +1076,11 @@ class ReferenceDataSearchRsp extends BaseRsp
     public function setEquipment(?array $equipment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($equipmentArrayErrorMessage = self::validateEquipmentForArrayConstraintsFromSetEquipment($equipment))) {
+        if ('' !== ($equipmentArrayErrorMessage = self::validateEquipmentForArrayConstraintFromSetEquipment($equipment))) {
             throw new InvalidArgumentException($equipmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($equipmentChoiceErrorMessage = self::validateEquipmentForChoiceConstraintsFromSetEquipment($equipment))) {
+        if ('' !== ($equipmentChoiceErrorMessage = self::validateEquipmentForChoiceConstraintFromSetEquipment($equipment))) {
             throw new InvalidArgumentException($equipmentChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1094,13 +1100,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToEquipment method
+     * This method is responsible for validating the value(s) passed to the addToEquipment method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToEquipment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToEquipment($value): string
+    public function validateItemForChoiceConstraintFromAddToEquipment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1141,7 +1147,7 @@ class ReferenceDataSearchRsp extends BaseRsp
             throw new InvalidArgumentException(sprintf('The Equipment property can only contain items of type \Travelport\Util\StructType\Equipment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToEquipment($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToEquipment($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1158,19 +1164,20 @@ class ReferenceDataSearchRsp extends BaseRsp
     }
     /**
      * Get PassengerType value
-     * @return \Travelport\Util\StructType\PassengerType[]
+     * @return \Travelport\Util\StructType\PassengerType[]|null
      */
     public function getPassengerType(): ?array
     {
-        return isset($this->PassengerType) ? $this->PassengerType : null;
+        return $this->PassengerType ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setPassengerType method
+     * This method is responsible for validating the value(s) passed to the setPassengerType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassengerType method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePassengerTypeForArrayConstraintsFromSetPassengerType(?array $values = []): string
+    public static function validatePassengerTypeForArrayConstraintFromSetPassengerType(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1191,13 +1198,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setPassengerType method
+     * This method is responsible for validating the value(s) passed to the setPassengerType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassengerType method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validatePassengerTypeForChoiceConstraintsFromSetPassengerType($value): string
+    public function validatePassengerTypeForChoiceConstraintFromSetPassengerType($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1238,11 +1245,11 @@ class ReferenceDataSearchRsp extends BaseRsp
     public function setPassengerType(?array $passengerType = null): self
     {
         // validation for constraint: array
-        if ('' !== ($passengerTypeArrayErrorMessage = self::validatePassengerTypeForArrayConstraintsFromSetPassengerType($passengerType))) {
+        if ('' !== ($passengerTypeArrayErrorMessage = self::validatePassengerTypeForArrayConstraintFromSetPassengerType($passengerType))) {
             throw new InvalidArgumentException($passengerTypeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($passengerTypeChoiceErrorMessage = self::validatePassengerTypeForChoiceConstraintsFromSetPassengerType($passengerType))) {
+        if ('' !== ($passengerTypeChoiceErrorMessage = self::validatePassengerTypeForChoiceConstraintFromSetPassengerType($passengerType))) {
             throw new InvalidArgumentException($passengerTypeChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1262,13 +1269,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToPassengerType method
+     * This method is responsible for validating the value(s) passed to the addToPassengerType method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToPassengerType method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToPassengerType($value): string
+    public function validateItemForChoiceConstraintFromAddToPassengerType($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1309,7 +1316,7 @@ class ReferenceDataSearchRsp extends BaseRsp
             throw new InvalidArgumentException(sprintf('The PassengerType property can only contain items of type \Travelport\Util\StructType\PassengerType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToPassengerType($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToPassengerType($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1326,19 +1333,20 @@ class ReferenceDataSearchRsp extends BaseRsp
     }
     /**
      * Get State value
-     * @return \Travelport\Util\StructType\State[]
+     * @return \Travelport\Util\StructType\State[]|null
      */
     public function getState(): ?array
     {
-        return isset($this->State) ? $this->State : null;
+        return $this->State ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setState method
+     * This method is responsible for validating the value(s) passed to the setState method
      * This method is willingly generated in order to preserve the one-line inline validation within the setState method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateStateForArrayConstraintsFromSetState(?array $values = []): string
+    public static function validateStateForArrayConstraintFromSetState(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1359,13 +1367,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setState method
+     * This method is responsible for validating the value(s) passed to the setState method
      * This method is willingly generated in order to preserve the one-line inline validation within the setState method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateStateForChoiceConstraintsFromSetState($value): string
+    public function validateStateForChoiceConstraintFromSetState($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1406,11 +1414,11 @@ class ReferenceDataSearchRsp extends BaseRsp
     public function setState(?array $state = null): self
     {
         // validation for constraint: array
-        if ('' !== ($stateArrayErrorMessage = self::validateStateForArrayConstraintsFromSetState($state))) {
+        if ('' !== ($stateArrayErrorMessage = self::validateStateForArrayConstraintFromSetState($state))) {
             throw new InvalidArgumentException($stateArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($stateChoiceErrorMessage = self::validateStateForChoiceConstraintsFromSetState($state))) {
+        if ('' !== ($stateChoiceErrorMessage = self::validateStateForChoiceConstraintFromSetState($state))) {
             throw new InvalidArgumentException($stateChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1430,13 +1438,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToState method
+     * This method is responsible for validating the value(s) passed to the addToState method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToState method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToState($value): string
+    public function validateItemForChoiceConstraintFromAddToState($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1477,7 +1485,7 @@ class ReferenceDataSearchRsp extends BaseRsp
             throw new InvalidArgumentException(sprintf('The State property can only contain items of type \Travelport\Util\StructType\State, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToState($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToState($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1494,19 +1502,20 @@ class ReferenceDataSearchRsp extends BaseRsp
     }
     /**
      * Get SsrType value
-     * @return \Travelport\Util\StructType\SsrType[]
+     * @return \Travelport\Util\StructType\SsrType[]|null
      */
     public function getSsrType(): ?array
     {
-        return isset($this->SsrType) ? $this->SsrType : null;
+        return $this->SsrType ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setSsrType method
+     * This method is responsible for validating the value(s) passed to the setSsrType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSsrType method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSsrTypeForArrayConstraintsFromSetSsrType(?array $values = []): string
+    public static function validateSsrTypeForArrayConstraintFromSetSsrType(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1527,13 +1536,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setSsrType method
+     * This method is responsible for validating the value(s) passed to the setSsrType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSsrType method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateSsrTypeForChoiceConstraintsFromSetSsrType($value): string
+    public function validateSsrTypeForChoiceConstraintFromSetSsrType($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1574,11 +1583,11 @@ class ReferenceDataSearchRsp extends BaseRsp
     public function setSsrType(?array $ssrType = null): self
     {
         // validation for constraint: array
-        if ('' !== ($ssrTypeArrayErrorMessage = self::validateSsrTypeForArrayConstraintsFromSetSsrType($ssrType))) {
+        if ('' !== ($ssrTypeArrayErrorMessage = self::validateSsrTypeForArrayConstraintFromSetSsrType($ssrType))) {
             throw new InvalidArgumentException($ssrTypeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($ssrTypeChoiceErrorMessage = self::validateSsrTypeForChoiceConstraintsFromSetSsrType($ssrType))) {
+        if ('' !== ($ssrTypeChoiceErrorMessage = self::validateSsrTypeForChoiceConstraintFromSetSsrType($ssrType))) {
             throw new InvalidArgumentException($ssrTypeChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1598,13 +1607,13 @@ class ReferenceDataSearchRsp extends BaseRsp
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToSsrType method
+     * This method is responsible for validating the value(s) passed to the addToSsrType method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToSsrType method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToSsrType($value): string
+    public function validateItemForChoiceConstraintFromAddToSsrType($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1645,7 +1654,7 @@ class ReferenceDataSearchRsp extends BaseRsp
             throw new InvalidArgumentException(sprintf('The SsrType property can only contain items of type \Travelport\Util\StructType\SsrType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(Airport, Carrier, City, Country, Currency, Equipment, PassengerType, State, SsrType)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToSsrType($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToSsrType($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)

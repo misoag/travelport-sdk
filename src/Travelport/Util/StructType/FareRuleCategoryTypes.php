@@ -86,12 +86,13 @@ class FareRuleCategoryTypes extends AbstractStructBase
         return $this->CategoryDetails;
     }
     /**
-     * This method is responsible for validating the values passed to the setCategoryDetails method
+     * This method is responsible for validating the value(s) passed to the setCategoryDetails method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCategoryDetails method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCategoryDetailsForArrayConstraintsFromSetCategoryDetails(?array $values = []): string
+    public static function validateCategoryDetailsForArrayConstraintFromSetCategoryDetails(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -120,7 +121,7 @@ class FareRuleCategoryTypes extends AbstractStructBase
     public function setCategoryDetails(?array $categoryDetails = null): self
     {
         // validation for constraint: array
-        if ('' !== ($categoryDetailsArrayErrorMessage = self::validateCategoryDetailsForArrayConstraintsFromSetCategoryDetails($categoryDetails))) {
+        if ('' !== ($categoryDetailsArrayErrorMessage = self::validateCategoryDetailsForArrayConstraintFromSetCategoryDetails($categoryDetails))) {
             throw new InvalidArgumentException($categoryDetailsArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)
@@ -160,12 +161,13 @@ class FareRuleCategoryTypes extends AbstractStructBase
         return $this->VariableCategoryDetails;
     }
     /**
-     * This method is responsible for validating the values passed to the setVariableCategoryDetails method
+     * This method is responsible for validating the value(s) passed to the setVariableCategoryDetails method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVariableCategoryDetails method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVariableCategoryDetailsForArrayConstraintsFromSetVariableCategoryDetails(?array $values = []): string
+    public static function validateVariableCategoryDetailsForArrayConstraintFromSetVariableCategoryDetails(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -194,7 +196,7 @@ class FareRuleCategoryTypes extends AbstractStructBase
     public function setVariableCategoryDetails(?array $variableCategoryDetails = null): self
     {
         // validation for constraint: array
-        if ('' !== ($variableCategoryDetailsArrayErrorMessage = self::validateVariableCategoryDetailsForArrayConstraintsFromSetVariableCategoryDetails($variableCategoryDetails))) {
+        if ('' !== ($variableCategoryDetailsArrayErrorMessage = self::validateVariableCategoryDetailsForArrayConstraintFromSetVariableCategoryDetails($variableCategoryDetails))) {
             throw new InvalidArgumentException($variableCategoryDetailsArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)

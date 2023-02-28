@@ -41,12 +41,13 @@ class BundledServices extends AbstractStructBase
         return $this->BundledService;
     }
     /**
-     * This method is responsible for validating the values passed to the setBundledService method
+     * This method is responsible for validating the value(s) passed to the setBundledService method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBundledService method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBundledServiceForArrayConstraintsFromSetBundledService(?array $values = []): string
+    public static function validateBundledServiceForArrayConstraintFromSetBundledService(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -75,7 +76,7 @@ class BundledServices extends AbstractStructBase
     public function setBundledService(?array $bundledService = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bundledServiceArrayErrorMessage = self::validateBundledServiceForArrayConstraintsFromSetBundledService($bundledService))) {
+        if ('' !== ($bundledServiceArrayErrorMessage = self::validateBundledServiceForArrayConstraintFromSetBundledService($bundledService))) {
             throw new InvalidArgumentException($bundledServiceArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(16)

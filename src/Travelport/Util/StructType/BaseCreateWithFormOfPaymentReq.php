@@ -43,12 +43,13 @@ class BaseCreateWithFormOfPaymentReq extends BaseCreateReservationReq
         return $this->FormOfPayment;
     }
     /**
-     * This method is responsible for validating the values passed to the setFormOfPayment method
+     * This method is responsible for validating the value(s) passed to the setFormOfPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPayment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFormOfPaymentForArrayConstraintsFromSetFormOfPayment(?array $values = []): string
+    public static function validateFormOfPaymentForArrayConstraintFromSetFormOfPayment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -77,7 +78,7 @@ class BaseCreateWithFormOfPaymentReq extends BaseCreateReservationReq
     public function setFormOfPayment(?array $formOfPayment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintsFromSetFormOfPayment($formOfPayment))) {
+        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintFromSetFormOfPayment($formOfPayment))) {
             throw new InvalidArgumentException($formOfPaymentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

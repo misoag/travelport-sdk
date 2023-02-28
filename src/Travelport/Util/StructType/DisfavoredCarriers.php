@@ -40,12 +40,13 @@ class DisfavoredCarriers extends AbstractStructBase
         return $this->Carrier;
     }
     /**
-     * This method is responsible for validating the values passed to the setCarrier method
+     * This method is responsible for validating the value(s) passed to the setCarrier method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCarrier method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCarrierForArrayConstraintsFromSetCarrier(?array $values = []): string
+    public static function validateCarrierForArrayConstraintFromSetCarrier(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -74,7 +75,7 @@ class DisfavoredCarriers extends AbstractStructBase
     public function setCarrier(?array $carrier = null): self
     {
         // validation for constraint: array
-        if ('' !== ($carrierArrayErrorMessage = self::validateCarrierForArrayConstraintsFromSetCarrier($carrier))) {
+        if ('' !== ($carrierArrayErrorMessage = self::validateCarrierForArrayConstraintFromSetCarrier($carrier))) {
             throw new InvalidArgumentException($carrierArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

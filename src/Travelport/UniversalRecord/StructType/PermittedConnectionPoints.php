@@ -42,12 +42,13 @@ class PermittedConnectionPoints extends AbstractStructBase
         return $this->ConnectionPoint;
     }
     /**
-     * This method is responsible for validating the values passed to the setConnectionPoint method
+     * This method is responsible for validating the value(s) passed to the setConnectionPoint method
      * This method is willingly generated in order to preserve the one-line inline validation within the setConnectionPoint method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateConnectionPointForArrayConstraintsFromSetConnectionPoint(?array $values = []): string
+    public static function validateConnectionPointForArrayConstraintFromSetConnectionPoint(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class PermittedConnectionPoints extends AbstractStructBase
     public function setConnectionPoint(?array $connectionPoint = null): self
     {
         // validation for constraint: array
-        if ('' !== ($connectionPointArrayErrorMessage = self::validateConnectionPointForArrayConstraintsFromSetConnectionPoint($connectionPoint))) {
+        if ('' !== ($connectionPointArrayErrorMessage = self::validateConnectionPointForArrayConstraintFromSetConnectionPoint($connectionPoint))) {
             throw new InvalidArgumentException($connectionPointArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

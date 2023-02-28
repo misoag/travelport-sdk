@@ -43,12 +43,13 @@ class RailJourneyList extends AbstractStructBase
         return $this->RailJourney;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailJourney method
+     * This method is responsible for validating the value(s) passed to the setRailJourney method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailJourney method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailJourneyForArrayConstraintsFromSetRailJourney(?array $values = []): string
+    public static function validateRailJourneyForArrayConstraintFromSetRailJourney(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -77,7 +78,7 @@ class RailJourneyList extends AbstractStructBase
     public function setRailJourney(?array $railJourney = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railJourneyArrayErrorMessage = self::validateRailJourneyForArrayConstraintsFromSetRailJourney($railJourney))) {
+        if ('' !== ($railJourneyArrayErrorMessage = self::validateRailJourneyForArrayConstraintFromSetRailJourney($railJourney))) {
             throw new InvalidArgumentException($railJourneyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

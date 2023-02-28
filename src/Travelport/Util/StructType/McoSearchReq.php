@@ -122,12 +122,13 @@ class McoSearchReq extends BaseReq
         return $this->Carrier;
     }
     /**
-     * This method is responsible for validating the values passed to the setCarrier method
+     * This method is responsible for validating the value(s) passed to the setCarrier method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCarrier method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCarrierForArrayConstraintsFromSetCarrier(?array $values = []): string
+    public static function validateCarrierForArrayConstraintFromSetCarrier(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -156,7 +157,7 @@ class McoSearchReq extends BaseReq
     public function setCarrier(?array $carrier = null): self
     {
         // validation for constraint: array
-        if ('' !== ($carrierArrayErrorMessage = self::validateCarrierForArrayConstraintsFromSetCarrier($carrier))) {
+        if ('' !== ($carrierArrayErrorMessage = self::validateCarrierForArrayConstraintFromSetCarrier($carrier))) {
             throw new InvalidArgumentException($carrierArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(10)
@@ -196,12 +197,13 @@ class McoSearchReq extends BaseReq
         return $this->Airport;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirport method
+     * This method is responsible for validating the value(s) passed to the setAirport method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirport method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirportForArrayConstraintsFromSetAirport(?array $values = []): string
+    public static function validateAirportForArrayConstraintFromSetAirport(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -230,7 +232,7 @@ class McoSearchReq extends BaseReq
     public function setAirport(?array $airport = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airportArrayErrorMessage = self::validateAirportForArrayConstraintsFromSetAirport($airport))) {
+        if ('' !== ($airportArrayErrorMessage = self::validateAirportForArrayConstraintFromSetAirport($airport))) {
             throw new InvalidArgumentException($airportArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(10)

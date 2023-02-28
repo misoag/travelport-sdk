@@ -78,16 +78,16 @@ class TravelerCriteria extends AbstractStructBase
      */
     public function getNameCriteria(): ?\Travelport\UniversalRecord\StructType\NameCriteria
     {
-        return isset($this->NameCriteria) ? $this->NameCriteria : null;
+        return $this->NameCriteria ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setNameCriteria method
+     * This method is responsible for validating the value(s) passed to the setNameCriteria method
      * This method is willingly generated in order to preserve the one-line inline validation within the setNameCriteria method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateNameCriteriaForChoiceConstraintsFromSetNameCriteria($value): string
+    public function validateNameCriteriaForChoiceConstraintFromSetNameCriteria($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -120,7 +120,7 @@ class TravelerCriteria extends AbstractStructBase
     public function setNameCriteria(?\Travelport\UniversalRecord\StructType\NameCriteria $nameCriteria = null): self
     {
         // validation for constraint: choice(NameCriteria, AppliedProfileCriteria)
-        if ('' !== ($nameCriteriaChoiceErrorMessage = self::validateNameCriteriaForChoiceConstraintsFromSetNameCriteria($nameCriteria))) {
+        if ('' !== ($nameCriteriaChoiceErrorMessage = self::validateNameCriteriaForChoiceConstraintFromSetNameCriteria($nameCriteria))) {
             throw new InvalidArgumentException($nameCriteriaChoiceErrorMessage, __LINE__);
         }
         if (is_null($nameCriteria) || (is_array($nameCriteria) && empty($nameCriteria))) {
@@ -137,16 +137,16 @@ class TravelerCriteria extends AbstractStructBase
      */
     public function getAppliedProfileCriteria(): ?\Travelport\UniversalRecord\StructType\AppliedProfileCriteria
     {
-        return isset($this->AppliedProfileCriteria) ? $this->AppliedProfileCriteria : null;
+        return $this->AppliedProfileCriteria ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAppliedProfileCriteria method
+     * This method is responsible for validating the value(s) passed to the setAppliedProfileCriteria method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAppliedProfileCriteria method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAppliedProfileCriteriaForChoiceConstraintsFromSetAppliedProfileCriteria($value): string
+    public function validateAppliedProfileCriteriaForChoiceConstraintFromSetAppliedProfileCriteria($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -179,7 +179,7 @@ class TravelerCriteria extends AbstractStructBase
     public function setAppliedProfileCriteria(?\Travelport\UniversalRecord\StructType\AppliedProfileCriteria $appliedProfileCriteria = null): self
     {
         // validation for constraint: choice(NameCriteria, AppliedProfileCriteria)
-        if ('' !== ($appliedProfileCriteriaChoiceErrorMessage = self::validateAppliedProfileCriteriaForChoiceConstraintsFromSetAppliedProfileCriteria($appliedProfileCriteria))) {
+        if ('' !== ($appliedProfileCriteriaChoiceErrorMessage = self::validateAppliedProfileCriteriaForChoiceConstraintFromSetAppliedProfileCriteria($appliedProfileCriteria))) {
             throw new InvalidArgumentException($appliedProfileCriteriaChoiceErrorMessage, __LINE__);
         }
         if (is_null($appliedProfileCriteria) || (is_array($appliedProfileCriteria) && empty($appliedProfileCriteria))) {

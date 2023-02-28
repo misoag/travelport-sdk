@@ -43,12 +43,13 @@ class TypeMostRestrictivePenalties extends AbstractStructBase
         return $this->RestrictionType;
     }
     /**
-     * This method is responsible for validating the values passed to the setRestrictionType method
+     * This method is responsible for validating the value(s) passed to the setRestrictionType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRestrictionType method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRestrictionTypeForArrayConstraintsFromSetRestrictionType(?array $values = []): string
+    public static function validateRestrictionTypeForArrayConstraintFromSetRestrictionType(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -77,7 +78,7 @@ class TypeMostRestrictivePenalties extends AbstractStructBase
     public function setRestrictionType(?array $restrictionType = null): self
     {
         // validation for constraint: array
-        if ('' !== ($restrictionTypeArrayErrorMessage = self::validateRestrictionTypeForArrayConstraintsFromSetRestrictionType($restrictionType))) {
+        if ('' !== ($restrictionTypeArrayErrorMessage = self::validateRestrictionTypeForArrayConstraintFromSetRestrictionType($restrictionType))) {
             throw new InvalidArgumentException($restrictionTypeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

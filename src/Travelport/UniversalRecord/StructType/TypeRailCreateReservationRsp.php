@@ -71,12 +71,13 @@ abstract class TypeRailCreateReservationRsp extends BaseRsp
         return $this->RailSolutionChangedInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailSolutionChangedInfo method
+     * This method is responsible for validating the value(s) passed to the setRailSolutionChangedInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailSolutionChangedInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailSolutionChangedInfoForArrayConstraintsFromSetRailSolutionChangedInfo(?array $values = []): string
+    public static function validateRailSolutionChangedInfoForArrayConstraintFromSetRailSolutionChangedInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -105,7 +106,7 @@ abstract class TypeRailCreateReservationRsp extends BaseRsp
     public function setRailSolutionChangedInfo(?array $railSolutionChangedInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railSolutionChangedInfoArrayErrorMessage = self::validateRailSolutionChangedInfoForArrayConstraintsFromSetRailSolutionChangedInfo($railSolutionChangedInfo))) {
+        if ('' !== ($railSolutionChangedInfoArrayErrorMessage = self::validateRailSolutionChangedInfoForArrayConstraintFromSetRailSolutionChangedInfo($railSolutionChangedInfo))) {
             throw new InvalidArgumentException($railSolutionChangedInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

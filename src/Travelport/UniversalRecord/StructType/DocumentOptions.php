@@ -106,12 +106,13 @@ class DocumentOptions extends AbstractStructBase
         return $this->OverrideOption;
     }
     /**
-     * This method is responsible for validating the values passed to the setOverrideOption method
+     * This method is responsible for validating the value(s) passed to the setOverrideOption method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOverrideOption method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateOverrideOptionForArrayConstraintsFromSetOverrideOption(?array $values = []): string
+    public static function validateOverrideOptionForArrayConstraintFromSetOverrideOption(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -132,17 +133,17 @@ class DocumentOptions extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setOverrideOption method
+     * This method is responsible for validating the value(s) passed to the setOverrideOption method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOverrideOption method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateOverrideOptionForMaxLengthConstraintFromSetOverrideOption($values): string
+    public static function validateOverrideOptionForMaxLengthConstraintFromSetOverrideOption(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $documentOptionsOverrideOptionItem) {
+        foreach (($values ?? []) as $documentOptionsOverrideOptionItem) {
             // validation for constraint: maxLength(50)
             if (mb_strlen((string) $documentOptionsOverrideOptionItem) > 50) {
                 $invalidValues[] = var_export($documentOptionsOverrideOptionItem, true);
@@ -164,7 +165,7 @@ class DocumentOptions extends AbstractStructBase
     public function setOverrideOption(?array $overrideOption = null): self
     {
         // validation for constraint: array
-        if ('' !== ($overrideOptionArrayErrorMessage = self::validateOverrideOptionForArrayConstraintsFromSetOverrideOption($overrideOption))) {
+        if ('' !== ($overrideOptionArrayErrorMessage = self::validateOverrideOptionForArrayConstraintFromSetOverrideOption($overrideOption))) {
             throw new InvalidArgumentException($overrideOptionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxLength(50)

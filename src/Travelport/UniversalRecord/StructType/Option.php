@@ -101,12 +101,13 @@ class Option extends AbstractStructBase
         return $this->BookingInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingInfo method
+     * This method is responsible for validating the value(s) passed to the setBookingInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingInfoForArrayConstraintsFromSetBookingInfo(?array $values = []): string
+    public static function validateBookingInfoForArrayConstraintFromSetBookingInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -135,7 +136,7 @@ class Option extends AbstractStructBase
     public function setBookingInfo(?array $bookingInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingInfoArrayErrorMessage = self::validateBookingInfoForArrayConstraintsFromSetBookingInfo($bookingInfo))) {
+        if ('' !== ($bookingInfoArrayErrorMessage = self::validateBookingInfoForArrayConstraintFromSetBookingInfo($bookingInfo))) {
             throw new InvalidArgumentException($bookingInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -175,12 +176,13 @@ class Option extends AbstractStructBase
         return $this->Connection;
     }
     /**
-     * This method is responsible for validating the values passed to the setConnection method
+     * This method is responsible for validating the value(s) passed to the setConnection method
      * This method is willingly generated in order to preserve the one-line inline validation within the setConnection method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateConnectionForArrayConstraintsFromSetConnection(?array $values = []): string
+    public static function validateConnectionForArrayConstraintFromSetConnection(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -209,7 +211,7 @@ class Option extends AbstractStructBase
     public function setConnection(?array $connection = null): self
     {
         // validation for constraint: array
-        if ('' !== ($connectionArrayErrorMessage = self::validateConnectionForArrayConstraintsFromSetConnection($connection))) {
+        if ('' !== ($connectionArrayErrorMessage = self::validateConnectionForArrayConstraintFromSetConnection($connection))) {
             throw new InvalidArgumentException($connectionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

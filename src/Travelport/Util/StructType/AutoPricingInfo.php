@@ -155,12 +155,13 @@ class AutoPricingInfo extends AbstractStructBase
         return $this->AirSegmentRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirSegmentRef method
+     * This method is responsible for validating the value(s) passed to the setAirSegmentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegmentRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirSegmentRefForArrayConstraintsFromSetAirSegmentRef(?array $values = []): string
+    public static function validateAirSegmentRefForArrayConstraintFromSetAirSegmentRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -189,7 +190,7 @@ class AutoPricingInfo extends AbstractStructBase
     public function setAirSegmentRef(?array $airSegmentRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airSegmentRefArrayErrorMessage = self::validateAirSegmentRefForArrayConstraintsFromSetAirSegmentRef($airSegmentRef))) {
+        if ('' !== ($airSegmentRefArrayErrorMessage = self::validateAirSegmentRefForArrayConstraintFromSetAirSegmentRef($airSegmentRef))) {
             throw new InvalidArgumentException($airSegmentRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(100)
@@ -229,12 +230,13 @@ class AutoPricingInfo extends AbstractStructBase
         return $this->BookingTravelerRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingTravelerRef method
+     * This method is responsible for validating the value(s) passed to the setBookingTravelerRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTravelerRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef(?array $values = []): string
+    public static function validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -263,7 +265,7 @@ class AutoPricingInfo extends AbstractStructBase
     public function setBookingTravelerRef(?array $bookingTravelerRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef($bookingTravelerRef))) {
+        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef($bookingTravelerRef))) {
             throw new InvalidArgumentException($bookingTravelerRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(100)
@@ -322,12 +324,13 @@ class AutoPricingInfo extends AbstractStructBase
         return $this->AirSegmentPricingModifiers;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirSegmentPricingModifiers method
+     * This method is responsible for validating the value(s) passed to the setAirSegmentPricingModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegmentPricingModifiers method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirSegmentPricingModifiersForArrayConstraintsFromSetAirSegmentPricingModifiers(?array $values = []): string
+    public static function validateAirSegmentPricingModifiersForArrayConstraintFromSetAirSegmentPricingModifiers(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -356,7 +359,7 @@ class AutoPricingInfo extends AbstractStructBase
     public function setAirSegmentPricingModifiers(?array $airSegmentPricingModifiers = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airSegmentPricingModifiersArrayErrorMessage = self::validateAirSegmentPricingModifiersForArrayConstraintsFromSetAirSegmentPricingModifiers($airSegmentPricingModifiers))) {
+        if ('' !== ($airSegmentPricingModifiersArrayErrorMessage = self::validateAirSegmentPricingModifiersForArrayConstraintFromSetAirSegmentPricingModifiers($airSegmentPricingModifiers))) {
             throw new InvalidArgumentException($airSegmentPricingModifiersArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(100)

@@ -40,12 +40,13 @@ class PreferredSuppliers extends AbstractStructBase
         return $this->RailSupplier;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailSupplier method
+     * This method is responsible for validating the value(s) passed to the setRailSupplier method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailSupplier method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailSupplierForArrayConstraintsFromSetRailSupplier(?array $values = []): string
+    public static function validateRailSupplierForArrayConstraintFromSetRailSupplier(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -74,7 +75,7 @@ class PreferredSuppliers extends AbstractStructBase
     public function setRailSupplier(?array $railSupplier = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railSupplierArrayErrorMessage = self::validateRailSupplierForArrayConstraintsFromSetRailSupplier($railSupplier))) {
+        if ('' !== ($railSupplierArrayErrorMessage = self::validateRailSupplierForArrayConstraintFromSetRailSupplier($railSupplier))) {
             throw new InvalidArgumentException($railSupplierArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -43,12 +43,13 @@ class HostTokenList extends AbstractStructBase
         return $this->HostToken;
     }
     /**
-     * This method is responsible for validating the values passed to the setHostToken method
+     * This method is responsible for validating the value(s) passed to the setHostToken method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHostToken method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHostTokenForArrayConstraintsFromSetHostToken(?array $values = []): string
+    public static function validateHostTokenForArrayConstraintFromSetHostToken(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -77,7 +78,7 @@ class HostTokenList extends AbstractStructBase
     public function setHostToken(array $hostToken): self
     {
         // validation for constraint: array
-        if ('' !== ($hostTokenArrayErrorMessage = self::validateHostTokenForArrayConstraintsFromSetHostToken($hostToken))) {
+        if ('' !== ($hostTokenArrayErrorMessage = self::validateHostTokenForArrayConstraintFromSetHostToken($hostToken))) {
             throw new InvalidArgumentException($hostTokenArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

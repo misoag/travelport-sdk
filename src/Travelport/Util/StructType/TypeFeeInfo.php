@@ -303,12 +303,13 @@ class TypeFeeInfo extends AbstractStructBase
         return $this->TaxInfoRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setTaxInfoRef method
+     * This method is responsible for validating the value(s) passed to the setTaxInfoRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTaxInfoRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTaxInfoRefForArrayConstraintsFromSetTaxInfoRef(?array $values = []): string
+    public static function validateTaxInfoRefForArrayConstraintFromSetTaxInfoRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -337,7 +338,7 @@ class TypeFeeInfo extends AbstractStructBase
     public function setTaxInfoRef(?array $taxInfoRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($taxInfoRefArrayErrorMessage = self::validateTaxInfoRefForArrayConstraintsFromSetTaxInfoRef($taxInfoRef))) {
+        if ('' !== ($taxInfoRefArrayErrorMessage = self::validateTaxInfoRefForArrayConstraintFromSetTaxInfoRef($taxInfoRef))) {
             throw new InvalidArgumentException($taxInfoRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

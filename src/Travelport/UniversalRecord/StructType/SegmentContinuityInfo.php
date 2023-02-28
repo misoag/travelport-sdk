@@ -65,12 +65,13 @@ class SegmentContinuityInfo extends AbstractStructBase
         return $this->ArvlUnknSegment;
     }
     /**
-     * This method is responsible for validating the values passed to the setArvlUnknSegment method
+     * This method is responsible for validating the value(s) passed to the setArvlUnknSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setArvlUnknSegment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateArvlUnknSegmentForArrayConstraintsFromSetArvlUnknSegment(?array $values = []): string
+    public static function validateArvlUnknSegmentForArrayConstraintFromSetArvlUnknSegment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -99,7 +100,7 @@ class SegmentContinuityInfo extends AbstractStructBase
     public function setArvlUnknSegment(?array $arvlUnknSegment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($arvlUnknSegmentArrayErrorMessage = self::validateArvlUnknSegmentForArrayConstraintsFromSetArvlUnknSegment($arvlUnknSegment))) {
+        if ('' !== ($arvlUnknSegmentArrayErrorMessage = self::validateArvlUnknSegmentForArrayConstraintFromSetArvlUnknSegment($arvlUnknSegment))) {
             throw new InvalidArgumentException($arvlUnknSegmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -139,12 +140,13 @@ class SegmentContinuityInfo extends AbstractStructBase
         return $this->ContinuityOverrideRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setContinuityOverrideRemark method
+     * This method is responsible for validating the value(s) passed to the setContinuityOverrideRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setContinuityOverrideRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateContinuityOverrideRemarkForArrayConstraintsFromSetContinuityOverrideRemark(?array $values = []): string
+    public static function validateContinuityOverrideRemarkForArrayConstraintFromSetContinuityOverrideRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -173,7 +175,7 @@ class SegmentContinuityInfo extends AbstractStructBase
     public function setContinuityOverrideRemark(?array $continuityOverrideRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($continuityOverrideRemarkArrayErrorMessage = self::validateContinuityOverrideRemarkForArrayConstraintsFromSetContinuityOverrideRemark($continuityOverrideRemark))) {
+        if ('' !== ($continuityOverrideRemarkArrayErrorMessage = self::validateContinuityOverrideRemarkForArrayConstraintFromSetContinuityOverrideRemark($continuityOverrideRemark))) {
             throw new InvalidArgumentException($continuityOverrideRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

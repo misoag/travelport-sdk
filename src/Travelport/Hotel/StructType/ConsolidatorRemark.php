@@ -104,12 +104,13 @@ class ConsolidatorRemark extends AbstractStructBase
         return $this->PseudoCityCode;
     }
     /**
-     * This method is responsible for validating the values passed to the setPseudoCityCode method
+     * This method is responsible for validating the value(s) passed to the setPseudoCityCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPseudoCityCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePseudoCityCodeForArrayConstraintsFromSetPseudoCityCode(?array $values = []): string
+    public static function validatePseudoCityCodeForArrayConstraintFromSetPseudoCityCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -138,7 +139,7 @@ class ConsolidatorRemark extends AbstractStructBase
     public function setPseudoCityCode(array $pseudoCityCode): self
     {
         // validation for constraint: array
-        if ('' !== ($pseudoCityCodeArrayErrorMessage = self::validatePseudoCityCodeForArrayConstraintsFromSetPseudoCityCode($pseudoCityCode))) {
+        if ('' !== ($pseudoCityCodeArrayErrorMessage = self::validatePseudoCityCodeForArrayConstraintFromSetPseudoCityCode($pseudoCityCode))) {
             throw new InvalidArgumentException($pseudoCityCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(5)

@@ -150,12 +150,13 @@ class TravelComplianceData extends AbstractStructBase
         return $this->PolicyCompliance;
     }
     /**
-     * This method is responsible for validating the values passed to the setPolicyCompliance method
+     * This method is responsible for validating the value(s) passed to the setPolicyCompliance method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPolicyCompliance method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePolicyComplianceForArrayConstraintsFromSetPolicyCompliance(?array $values = []): string
+    public static function validatePolicyComplianceForArrayConstraintFromSetPolicyCompliance(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -184,7 +185,7 @@ class TravelComplianceData extends AbstractStructBase
     public function setPolicyCompliance(?array $policyCompliance = null): self
     {
         // validation for constraint: array
-        if ('' !== ($policyComplianceArrayErrorMessage = self::validatePolicyComplianceForArrayConstraintsFromSetPolicyCompliance($policyCompliance))) {
+        if ('' !== ($policyComplianceArrayErrorMessage = self::validatePolicyComplianceForArrayConstraintFromSetPolicyCompliance($policyCompliance))) {
             throw new InvalidArgumentException($policyComplianceArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(2)
@@ -224,12 +225,13 @@ class TravelComplianceData extends AbstractStructBase
         return $this->ContractCompliance;
     }
     /**
-     * This method is responsible for validating the values passed to the setContractCompliance method
+     * This method is responsible for validating the value(s) passed to the setContractCompliance method
      * This method is willingly generated in order to preserve the one-line inline validation within the setContractCompliance method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateContractComplianceForArrayConstraintsFromSetContractCompliance(?array $values = []): string
+    public static function validateContractComplianceForArrayConstraintFromSetContractCompliance(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -258,7 +260,7 @@ class TravelComplianceData extends AbstractStructBase
     public function setContractCompliance(?array $contractCompliance = null): self
     {
         // validation for constraint: array
-        if ('' !== ($contractComplianceArrayErrorMessage = self::validateContractComplianceForArrayConstraintsFromSetContractCompliance($contractCompliance))) {
+        if ('' !== ($contractComplianceArrayErrorMessage = self::validateContractComplianceForArrayConstraintFromSetContractCompliance($contractCompliance))) {
             throw new InvalidArgumentException($contractComplianceArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(2)
@@ -298,12 +300,13 @@ class TravelComplianceData extends AbstractStructBase
         return $this->PreferredSupplier;
     }
     /**
-     * This method is responsible for validating the values passed to the setPreferredSupplier method
+     * This method is responsible for validating the value(s) passed to the setPreferredSupplier method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPreferredSupplier method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePreferredSupplierForArrayConstraintsFromSetPreferredSupplier(?array $values = []): string
+    public static function validatePreferredSupplierForArrayConstraintFromSetPreferredSupplier(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -332,7 +335,7 @@ class TravelComplianceData extends AbstractStructBase
     public function setPreferredSupplier(?array $preferredSupplier = null): self
     {
         // validation for constraint: array
-        if ('' !== ($preferredSupplierArrayErrorMessage = self::validatePreferredSupplierForArrayConstraintsFromSetPreferredSupplier($preferredSupplier))) {
+        if ('' !== ($preferredSupplierArrayErrorMessage = self::validatePreferredSupplierForArrayConstraintFromSetPreferredSupplier($preferredSupplier))) {
             throw new InvalidArgumentException($preferredSupplierArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

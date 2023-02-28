@@ -53,12 +53,13 @@ class TypeAdaptedRoomGuestAllocation extends AbstractStructBase
         return $this->Child;
     }
     /**
-     * This method is responsible for validating the values passed to the setChild method
+     * This method is responsible for validating the value(s) passed to the setChild method
      * This method is willingly generated in order to preserve the one-line inline validation within the setChild method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateChildForArrayConstraintsFromSetChild(?array $values = []): string
+    public static function validateChildForArrayConstraintFromSetChild(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -87,7 +88,7 @@ class TypeAdaptedRoomGuestAllocation extends AbstractStructBase
     public function setChild(?array $child = null): self
     {
         // validation for constraint: array
-        if ('' !== ($childArrayErrorMessage = self::validateChildForArrayConstraintsFromSetChild($child))) {
+        if ('' !== ($childArrayErrorMessage = self::validateChildForArrayConstraintFromSetChild($child))) {
             throw new InvalidArgumentException($childArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(6)

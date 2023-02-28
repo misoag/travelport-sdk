@@ -312,12 +312,13 @@ class VehicleSearchModifiers extends AbstractStructBase
         return $this->VehicleModifier;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleModifier method
+     * This method is responsible for validating the value(s) passed to the setVehicleModifier method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleModifier method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleModifierForArrayConstraintsFromSetVehicleModifier(?array $values = []): string
+    public static function validateVehicleModifierForArrayConstraintFromSetVehicleModifier(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -346,7 +347,7 @@ class VehicleSearchModifiers extends AbstractStructBase
     public function setVehicleModifier(?array $vehicleModifier = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleModifierArrayErrorMessage = self::validateVehicleModifierForArrayConstraintsFromSetVehicleModifier($vehicleModifier))) {
+        if ('' !== ($vehicleModifierArrayErrorMessage = self::validateVehicleModifierForArrayConstraintFromSetVehicleModifier($vehicleModifier))) {
             throw new InvalidArgumentException($vehicleModifierArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -386,12 +387,13 @@ class VehicleSearchModifiers extends AbstractStructBase
         return $this->VehicleType;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleType method
+     * This method is responsible for validating the value(s) passed to the setVehicleType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleType method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleTypeForArrayConstraintsFromSetVehicleType(?array $values = []): string
+    public static function validateVehicleTypeForArrayConstraintFromSetVehicleType(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -420,7 +422,7 @@ class VehicleSearchModifiers extends AbstractStructBase
     public function setVehicleType(?array $vehicleType = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleTypeArrayErrorMessage = self::validateVehicleTypeForArrayConstraintsFromSetVehicleType($vehicleType))) {
+        if ('' !== ($vehicleTypeArrayErrorMessage = self::validateVehicleTypeForArrayConstraintFromSetVehicleType($vehicleType))) {
             throw new InvalidArgumentException($vehicleTypeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -460,12 +462,13 @@ class VehicleSearchModifiers extends AbstractStructBase
         return $this->RateModifiers;
     }
     /**
-     * This method is responsible for validating the values passed to the setRateModifiers method
+     * This method is responsible for validating the value(s) passed to the setRateModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRateModifiers method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRateModifiersForArrayConstraintsFromSetRateModifiers(?array $values = []): string
+    public static function validateRateModifiersForArrayConstraintFromSetRateModifiers(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -494,7 +497,7 @@ class VehicleSearchModifiers extends AbstractStructBase
     public function setRateModifiers(?array $rateModifiers = null): self
     {
         // validation for constraint: array
-        if ('' !== ($rateModifiersArrayErrorMessage = self::validateRateModifiersForArrayConstraintsFromSetRateModifiers($rateModifiers))) {
+        if ('' !== ($rateModifiersArrayErrorMessage = self::validateRateModifiersForArrayConstraintFromSetRateModifiers($rateModifiers))) {
             throw new InvalidArgumentException($rateModifiersArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -553,12 +556,13 @@ class VehicleSearchModifiers extends AbstractStructBase
         return $this->LoyaltyCard;
     }
     /**
-     * This method is responsible for validating the values passed to the setLoyaltyCard method
+     * This method is responsible for validating the value(s) passed to the setLoyaltyCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyCard method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLoyaltyCardForArrayConstraintsFromSetLoyaltyCard(?array $values = []): string
+    public static function validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -587,7 +591,7 @@ class VehicleSearchModifiers extends AbstractStructBase
     public function setLoyaltyCard(?array $loyaltyCard = null): self
     {
         // validation for constraint: array
-        if ('' !== ($loyaltyCardArrayErrorMessage = self::validateLoyaltyCardForArrayConstraintsFromSetLoyaltyCard($loyaltyCard))) {
+        if ('' !== ($loyaltyCardArrayErrorMessage = self::validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard($loyaltyCard))) {
             throw new InvalidArgumentException($loyaltyCardArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -673,12 +677,13 @@ class VehicleSearchModifiers extends AbstractStructBase
         return $this->SpecialEquipment;
     }
     /**
-     * This method is responsible for validating the values passed to the setSpecialEquipment method
+     * This method is responsible for validating the value(s) passed to the setSpecialEquipment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSpecialEquipment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSpecialEquipmentForArrayConstraintsFromSetSpecialEquipment(?array $values = []): string
+    public static function validateSpecialEquipmentForArrayConstraintFromSetSpecialEquipment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -707,7 +712,7 @@ class VehicleSearchModifiers extends AbstractStructBase
     public function setSpecialEquipment(?array $specialEquipment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($specialEquipmentArrayErrorMessage = self::validateSpecialEquipmentForArrayConstraintsFromSetSpecialEquipment($specialEquipment))) {
+        if ('' !== ($specialEquipmentArrayErrorMessage = self::validateSpecialEquipmentForArrayConstraintFromSetSpecialEquipment($specialEquipment))) {
             throw new InvalidArgumentException($specialEquipmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(5)
@@ -766,12 +771,13 @@ class VehicleSearchModifiers extends AbstractStructBase
         return $this->Policy;
     }
     /**
-     * This method is responsible for validating the values passed to the setPolicy method
+     * This method is responsible for validating the value(s) passed to the setPolicy method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPolicy method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePolicyForArrayConstraintsFromSetPolicy(?array $values = []): string
+    public static function validatePolicyForArrayConstraintFromSetPolicy(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -800,7 +806,7 @@ class VehicleSearchModifiers extends AbstractStructBase
     public function setPolicy(?array $policy = null): self
     {
         // validation for constraint: array
-        if ('' !== ($policyArrayErrorMessage = self::validatePolicyForArrayConstraintsFromSetPolicy($policy))) {
+        if ('' !== ($policyArrayErrorMessage = self::validatePolicyForArrayConstraintFromSetPolicy($policy))) {
             throw new InvalidArgumentException($policyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

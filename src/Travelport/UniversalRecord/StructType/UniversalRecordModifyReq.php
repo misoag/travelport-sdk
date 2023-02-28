@@ -182,12 +182,13 @@ class UniversalRecordModifyReq extends BaseReq
         return $this->UniversalModifyCmd;
     }
     /**
-     * This method is responsible for validating the values passed to the setUniversalModifyCmd method
+     * This method is responsible for validating the value(s) passed to the setUniversalModifyCmd method
      * This method is willingly generated in order to preserve the one-line inline validation within the setUniversalModifyCmd method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateUniversalModifyCmdForArrayConstraintsFromSetUniversalModifyCmd(?array $values = []): string
+    public static function validateUniversalModifyCmdForArrayConstraintFromSetUniversalModifyCmd(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -216,7 +217,7 @@ class UniversalRecordModifyReq extends BaseReq
     public function setUniversalModifyCmd(?array $universalModifyCmd = null): self
     {
         // validation for constraint: array
-        if ('' !== ($universalModifyCmdArrayErrorMessage = self::validateUniversalModifyCmdForArrayConstraintsFromSetUniversalModifyCmd($universalModifyCmd))) {
+        if ('' !== ($universalModifyCmdArrayErrorMessage = self::validateUniversalModifyCmdForArrayConstraintFromSetUniversalModifyCmd($universalModifyCmd))) {
             throw new InvalidArgumentException($universalModifyCmdArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -133,12 +133,13 @@ class RailFareComponent extends AbstractStructBase
         return $this->Discount;
     }
     /**
-     * This method is responsible for validating the values passed to the setDiscount method
+     * This method is responsible for validating the value(s) passed to the setDiscount method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDiscount method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDiscountForArrayConstraintsFromSetDiscount(?array $values = []): string
+    public static function validateDiscountForArrayConstraintFromSetDiscount(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -167,7 +168,7 @@ class RailFareComponent extends AbstractStructBase
     public function setDiscount(?array $discount = null): self
     {
         // validation for constraint: array
-        if ('' !== ($discountArrayErrorMessage = self::validateDiscountForArrayConstraintsFromSetDiscount($discount))) {
+        if ('' !== ($discountArrayErrorMessage = self::validateDiscountForArrayConstraintFromSetDiscount($discount))) {
             throw new InvalidArgumentException($discountArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(5)

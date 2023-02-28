@@ -586,12 +586,13 @@ class AirPricingModifiers extends AbstractStructBase
         return $this->DiscountCard;
     }
     /**
-     * This method is responsible for validating the values passed to the setDiscountCard method
+     * This method is responsible for validating the value(s) passed to the setDiscountCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDiscountCard method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDiscountCardForArrayConstraintsFromSetDiscountCard(?array $values = []): string
+    public static function validateDiscountCardForArrayConstraintFromSetDiscountCard(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -620,7 +621,7 @@ class AirPricingModifiers extends AbstractStructBase
     public function setDiscountCard(?array $discountCard = null): self
     {
         // validation for constraint: array
-        if ('' !== ($discountCardArrayErrorMessage = self::validateDiscountCardForArrayConstraintsFromSetDiscountCard($discountCard))) {
+        if ('' !== ($discountCardArrayErrorMessage = self::validateDiscountCardForArrayConstraintFromSetDiscountCard($discountCard))) {
             throw new InvalidArgumentException($discountCardArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(9)
@@ -679,12 +680,13 @@ class AirPricingModifiers extends AbstractStructBase
         return $this->ManualFareAdjustment;
     }
     /**
-     * This method is responsible for validating the values passed to the setManualFareAdjustment method
+     * This method is responsible for validating the value(s) passed to the setManualFareAdjustment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setManualFareAdjustment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateManualFareAdjustmentForArrayConstraintsFromSetManualFareAdjustment(?array $values = []): string
+    public static function validateManualFareAdjustmentForArrayConstraintFromSetManualFareAdjustment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -713,7 +715,7 @@ class AirPricingModifiers extends AbstractStructBase
     public function setManualFareAdjustment(?array $manualFareAdjustment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($manualFareAdjustmentArrayErrorMessage = self::validateManualFareAdjustmentForArrayConstraintsFromSetManualFareAdjustment($manualFareAdjustment))) {
+        if ('' !== ($manualFareAdjustmentArrayErrorMessage = self::validateManualFareAdjustmentForArrayConstraintFromSetManualFareAdjustment($manualFareAdjustment))) {
             throw new InvalidArgumentException($manualFareAdjustmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -791,12 +793,13 @@ class AirPricingModifiers extends AbstractStructBase
         return $this->MultiGDSSearchIndicator;
     }
     /**
-     * This method is responsible for validating the values passed to the setMultiGDSSearchIndicator method
+     * This method is responsible for validating the value(s) passed to the setMultiGDSSearchIndicator method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMultiGDSSearchIndicator method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMultiGDSSearchIndicatorForArrayConstraintsFromSetMultiGDSSearchIndicator(?array $values = []): string
+    public static function validateMultiGDSSearchIndicatorForArrayConstraintFromSetMultiGDSSearchIndicator(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -825,7 +828,7 @@ class AirPricingModifiers extends AbstractStructBase
     public function setMultiGDSSearchIndicator(?array $multiGDSSearchIndicator = null): self
     {
         // validation for constraint: array
-        if ('' !== ($multiGDSSearchIndicatorArrayErrorMessage = self::validateMultiGDSSearchIndicatorForArrayConstraintsFromSetMultiGDSSearchIndicator($multiGDSSearchIndicator))) {
+        if ('' !== ($multiGDSSearchIndicatorArrayErrorMessage = self::validateMultiGDSSearchIndicatorForArrayConstraintFromSetMultiGDSSearchIndicator($multiGDSSearchIndicator))) {
             throw new InvalidArgumentException($multiGDSSearchIndicatorArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -865,12 +868,13 @@ class AirPricingModifiers extends AbstractStructBase
         return $this->PreferredCabins;
     }
     /**
-     * This method is responsible for validating the values passed to the setPreferredCabins method
+     * This method is responsible for validating the value(s) passed to the setPreferredCabins method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPreferredCabins method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePreferredCabinsForArrayConstraintsFromSetPreferredCabins(?array $values = []): string
+    public static function validatePreferredCabinsForArrayConstraintFromSetPreferredCabins(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -899,7 +903,7 @@ class AirPricingModifiers extends AbstractStructBase
     public function setPreferredCabins(?array $preferredCabins = null): self
     {
         // validation for constraint: array
-        if ('' !== ($preferredCabinsArrayErrorMessage = self::validatePreferredCabinsForArrayConstraintsFromSetPreferredCabins($preferredCabins))) {
+        if ('' !== ($preferredCabinsArrayErrorMessage = self::validatePreferredCabinsForArrayConstraintFromSetPreferredCabins($preferredCabins))) {
             throw new InvalidArgumentException($preferredCabinsArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)

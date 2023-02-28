@@ -77,12 +77,13 @@ class ServiceGroup extends AbstractStructBase
         return $this->ServiceSubGroup;
     }
     /**
-     * This method is responsible for validating the values passed to the setServiceSubGroup method
+     * This method is responsible for validating the value(s) passed to the setServiceSubGroup method
      * This method is willingly generated in order to preserve the one-line inline validation within the setServiceSubGroup method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateServiceSubGroupForArrayConstraintsFromSetServiceSubGroup(?array $values = []): string
+    public static function validateServiceSubGroupForArrayConstraintFromSetServiceSubGroup(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -111,7 +112,7 @@ class ServiceGroup extends AbstractStructBase
     public function setServiceSubGroup(?array $serviceSubGroup = null): self
     {
         // validation for constraint: array
-        if ('' !== ($serviceSubGroupArrayErrorMessage = self::validateServiceSubGroupForArrayConstraintsFromSetServiceSubGroup($serviceSubGroup))) {
+        if ('' !== ($serviceSubGroupArrayErrorMessage = self::validateServiceSubGroupForArrayConstraintFromSetServiceSubGroup($serviceSubGroup))) {
             throw new InvalidArgumentException($serviceSubGroupArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(15)

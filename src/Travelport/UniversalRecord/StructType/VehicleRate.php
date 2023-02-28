@@ -561,12 +561,13 @@ class VehicleRate extends AbstractStructBase
         return $this->VehicleCharge;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleCharge method
+     * This method is responsible for validating the value(s) passed to the setVehicleCharge method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleCharge method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleChargeForArrayConstraintsFromSetVehicleCharge(?array $values = []): string
+    public static function validateVehicleChargeForArrayConstraintFromSetVehicleCharge(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -595,7 +596,7 @@ class VehicleRate extends AbstractStructBase
     public function setVehicleCharge(?array $vehicleCharge = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleChargeArrayErrorMessage = self::validateVehicleChargeForArrayConstraintsFromSetVehicleCharge($vehicleCharge))) {
+        if ('' !== ($vehicleChargeArrayErrorMessage = self::validateVehicleChargeForArrayConstraintFromSetVehicleCharge($vehicleCharge))) {
             throw new InvalidArgumentException($vehicleChargeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -635,12 +636,13 @@ class VehicleRate extends AbstractStructBase
         return $this->VehicleRateDescription;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleRateDescription method
+     * This method is responsible for validating the value(s) passed to the setVehicleRateDescription method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleRateDescription method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleRateDescriptionForArrayConstraintsFromSetVehicleRateDescription(?array $values = []): string
+    public static function validateVehicleRateDescriptionForArrayConstraintFromSetVehicleRateDescription(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -669,7 +671,7 @@ class VehicleRate extends AbstractStructBase
     public function setVehicleRateDescription(?array $vehicleRateDescription = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleRateDescriptionArrayErrorMessage = self::validateVehicleRateDescriptionForArrayConstraintsFromSetVehicleRateDescription($vehicleRateDescription))) {
+        if ('' !== ($vehicleRateDescriptionArrayErrorMessage = self::validateVehicleRateDescriptionForArrayConstraintFromSetVehicleRateDescription($vehicleRateDescription))) {
             throw new InvalidArgumentException($vehicleRateDescriptionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)
@@ -766,12 +768,13 @@ class VehicleRate extends AbstractStructBase
         return $this->PricedEquip;
     }
     /**
-     * This method is responsible for validating the values passed to the setPricedEquip method
+     * This method is responsible for validating the value(s) passed to the setPricedEquip method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPricedEquip method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePricedEquipForArrayConstraintsFromSetPricedEquip(?array $values = []): string
+    public static function validatePricedEquipForArrayConstraintFromSetPricedEquip(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -800,7 +803,7 @@ class VehicleRate extends AbstractStructBase
     public function setPricedEquip(?array $pricedEquip = null): self
     {
         // validation for constraint: array
-        if ('' !== ($pricedEquipArrayErrorMessage = self::validatePricedEquipForArrayConstraintsFromSetPricedEquip($pricedEquip))) {
+        if ('' !== ($pricedEquipArrayErrorMessage = self::validatePricedEquipForArrayConstraintFromSetPricedEquip($pricedEquip))) {
             throw new InvalidArgumentException($pricedEquipArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -86,19 +86,20 @@ class HotelRating extends AbstractStructBase
     }
     /**
      * Get Rating value
-     * @return int[]
+     * @return int[]|null
      */
     public function getRating(): ?array
     {
-        return isset($this->Rating) ? $this->Rating : null;
+        return $this->Rating ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setRating method
+     * This method is responsible for validating the value(s) passed to the setRating method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRating method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRatingForArrayConstraintsFromSetRating(?array $values = []): string
+    public static function validateRatingForArrayConstraintFromSetRating(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -119,13 +120,13 @@ class HotelRating extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setRating method
+     * This method is responsible for validating the value(s) passed to the setRating method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRating method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateRatingForChoiceConstraintsFromSetRating($value): string
+    public function validateRatingForChoiceConstraintFromSetRating($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -159,11 +160,11 @@ class HotelRating extends AbstractStructBase
     public function setRating(?array $rating = null): self
     {
         // validation for constraint: array
-        if ('' !== ($ratingArrayErrorMessage = self::validateRatingForArrayConstraintsFromSetRating($rating))) {
+        if ('' !== ($ratingArrayErrorMessage = self::validateRatingForArrayConstraintFromSetRating($rating))) {
             throw new InvalidArgumentException($ratingArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(Rating, RatingRange)
-        if ('' !== ($ratingChoiceErrorMessage = self::validateRatingForChoiceConstraintsFromSetRating($rating))) {
+        if ('' !== ($ratingChoiceErrorMessage = self::validateRatingForChoiceConstraintFromSetRating($rating))) {
             throw new InvalidArgumentException($ratingChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -183,13 +184,13 @@ class HotelRating extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToRating method
+     * This method is responsible for validating the value(s) passed to the addToRating method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToRating method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToRating($value): string
+    public function validateItemForChoiceConstraintFromAddToRating($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -223,7 +224,7 @@ class HotelRating extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The Rating property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(Rating, RatingRange)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToRating($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToRating($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -244,16 +245,16 @@ class HotelRating extends AbstractStructBase
      */
     public function getRatingRange(): ?\Travelport\Hotel\StructType\RatingRange
     {
-        return isset($this->RatingRange) ? $this->RatingRange : null;
+        return $this->RatingRange ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setRatingRange method
+     * This method is responsible for validating the value(s) passed to the setRatingRange method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRatingRange method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateRatingRangeForChoiceConstraintsFromSetRatingRange($value): string
+    public function validateRatingRangeForChoiceConstraintFromSetRatingRange($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -286,7 +287,7 @@ class HotelRating extends AbstractStructBase
     public function setRatingRange(?\Travelport\Hotel\StructType\RatingRange $ratingRange = null): self
     {
         // validation for constraint: choice(Rating, RatingRange)
-        if ('' !== ($ratingRangeChoiceErrorMessage = self::validateRatingRangeForChoiceConstraintsFromSetRatingRange($ratingRange))) {
+        if ('' !== ($ratingRangeChoiceErrorMessage = self::validateRatingRangeForChoiceConstraintFromSetRatingRange($ratingRange))) {
             throw new InvalidArgumentException($ratingRangeChoiceErrorMessage, __LINE__);
         }
         if (is_null($ratingRange) || (is_array($ratingRange) && empty($ratingRange))) {

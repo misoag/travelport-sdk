@@ -40,12 +40,13 @@ class AvailabilityErrorInfo extends TypeErrorInfo
         return $this->AirSegmentError;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirSegmentError method
+     * This method is responsible for validating the value(s) passed to the setAirSegmentError method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegmentError method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirSegmentErrorForArrayConstraintsFromSetAirSegmentError(?array $values = []): string
+    public static function validateAirSegmentErrorForArrayConstraintFromSetAirSegmentError(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -74,7 +75,7 @@ class AvailabilityErrorInfo extends TypeErrorInfo
     public function setAirSegmentError(?array $airSegmentError = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airSegmentErrorArrayErrorMessage = self::validateAirSegmentErrorForArrayConstraintsFromSetAirSegmentError($airSegmentError))) {
+        if ('' !== ($airSegmentErrorArrayErrorMessage = self::validateAirSegmentErrorForArrayConstraintFromSetAirSegmentError($airSegmentError))) {
             throw new InvalidArgumentException($airSegmentErrorArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

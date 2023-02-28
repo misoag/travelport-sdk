@@ -108,12 +108,13 @@ class CarryOnDetails extends AbstractStructBase
         return $this->BaggageRestriction;
     }
     /**
-     * This method is responsible for validating the values passed to the setBaggageRestriction method
+     * This method is responsible for validating the value(s) passed to the setBaggageRestriction method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBaggageRestriction method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBaggageRestrictionForArrayConstraintsFromSetBaggageRestriction(?array $values = []): string
+    public static function validateBaggageRestrictionForArrayConstraintFromSetBaggageRestriction(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -142,7 +143,7 @@ class CarryOnDetails extends AbstractStructBase
     public function setBaggageRestriction(?array $baggageRestriction = null): self
     {
         // validation for constraint: array
-        if ('' !== ($baggageRestrictionArrayErrorMessage = self::validateBaggageRestrictionForArrayConstraintsFromSetBaggageRestriction($baggageRestriction))) {
+        if ('' !== ($baggageRestrictionArrayErrorMessage = self::validateBaggageRestrictionForArrayConstraintFromSetBaggageRestriction($baggageRestriction))) {
             throw new InvalidArgumentException($baggageRestrictionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)

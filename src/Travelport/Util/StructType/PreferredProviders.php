@@ -40,12 +40,13 @@ class PreferredProviders extends AbstractStructBase
         return $this->Provider;
     }
     /**
-     * This method is responsible for validating the values passed to the setProvider method
+     * This method is responsible for validating the value(s) passed to the setProvider method
      * This method is willingly generated in order to preserve the one-line inline validation within the setProvider method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateProviderForArrayConstraintsFromSetProvider(?array $values = []): string
+    public static function validateProviderForArrayConstraintFromSetProvider(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -74,7 +75,7 @@ class PreferredProviders extends AbstractStructBase
     public function setProvider(?array $provider = null): self
     {
         // validation for constraint: array
-        if ('' !== ($providerArrayErrorMessage = self::validateProviderForArrayConstraintsFromSetProvider($provider))) {
+        if ('' !== ($providerArrayErrorMessage = self::validateProviderForArrayConstraintFromSetProvider($provider))) {
             throw new InvalidArgumentException($providerArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -375,19 +375,20 @@ class AirUpdate extends AbstractStructBase
     }
     /**
      * Get AccountingRemark value
-     * @return \Travelport\UniversalRecord\StructType\AccountingRemark[]
+     * @return \Travelport\UniversalRecord\StructType\AccountingRemark[]|null
      */
     public function getAccountingRemark(): ?array
     {
-        return isset($this->AccountingRemark) ? $this->AccountingRemark : null;
+        return $this->AccountingRemark ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setAccountingRemark method
+     * This method is responsible for validating the value(s) passed to the setAccountingRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAccountingRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAccountingRemarkForArrayConstraintsFromSetAccountingRemark(?array $values = []): string
+    public static function validateAccountingRemarkForArrayConstraintFromSetAccountingRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -408,13 +409,13 @@ class AirUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAccountingRemark method
+     * This method is responsible for validating the value(s) passed to the setAccountingRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAccountingRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAccountingRemarkForChoiceConstraintsFromSetAccountingRemark($value): string
+    public function validateAccountingRemarkForChoiceConstraintFromSetAccountingRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -464,11 +465,11 @@ class AirUpdate extends AbstractStructBase
     public function setAccountingRemark(?array $accountingRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($accountingRemarkArrayErrorMessage = self::validateAccountingRemarkForArrayConstraintsFromSetAccountingRemark($accountingRemark))) {
+        if ('' !== ($accountingRemarkArrayErrorMessage = self::validateAccountingRemarkForArrayConstraintFromSetAccountingRemark($accountingRemark))) {
             throw new InvalidArgumentException($accountingRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($accountingRemarkChoiceErrorMessage = self::validateAccountingRemarkForChoiceConstraintsFromSetAccountingRemark($accountingRemark))) {
+        if ('' !== ($accountingRemarkChoiceErrorMessage = self::validateAccountingRemarkForChoiceConstraintFromSetAccountingRemark($accountingRemark))) {
             throw new InvalidArgumentException($accountingRemarkChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -488,13 +489,13 @@ class AirUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToAccountingRemark method
+     * This method is responsible for validating the value(s) passed to the addToAccountingRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToAccountingRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToAccountingRemark($value): string
+    public function validateItemForChoiceConstraintFromAddToAccountingRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -544,7 +545,7 @@ class AirUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The AccountingRemark property can only contain items of type \Travelport\UniversalRecord\StructType\AccountingRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToAccountingRemark($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToAccountingRemark($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -561,19 +562,20 @@ class AirUpdate extends AbstractStructBase
     }
     /**
      * Get AirSegment value
-     * @return \Travelport\UniversalRecord\StructType\TypeBaseAirSegment[]
+     * @return \Travelport\UniversalRecord\StructType\TypeBaseAirSegment[]|null
      */
     public function getAirSegment(): ?array
     {
-        return isset($this->AirSegment) ? $this->AirSegment : null;
+        return $this->AirSegment ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirSegment method
+     * This method is responsible for validating the value(s) passed to the setAirSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirSegmentForArrayConstraintsFromSetAirSegment(?array $values = []): string
+    public static function validateAirSegmentForArrayConstraintFromSetAirSegment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -594,13 +596,13 @@ class AirUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirSegment method
+     * This method is responsible for validating the value(s) passed to the setAirSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirSegmentForChoiceConstraintsFromSetAirSegment($value): string
+    public function validateAirSegmentForChoiceConstraintFromSetAirSegment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -650,11 +652,11 @@ class AirUpdate extends AbstractStructBase
     public function setAirSegment(?array $airSegment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airSegmentArrayErrorMessage = self::validateAirSegmentForArrayConstraintsFromSetAirSegment($airSegment))) {
+        if ('' !== ($airSegmentArrayErrorMessage = self::validateAirSegmentForArrayConstraintFromSetAirSegment($airSegment))) {
             throw new InvalidArgumentException($airSegmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($airSegmentChoiceErrorMessage = self::validateAirSegmentForChoiceConstraintsFromSetAirSegment($airSegment))) {
+        if ('' !== ($airSegmentChoiceErrorMessage = self::validateAirSegmentForChoiceConstraintFromSetAirSegment($airSegment))) {
             throw new InvalidArgumentException($airSegmentChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -674,13 +676,13 @@ class AirUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToAirSegment method
+     * This method is responsible for validating the value(s) passed to the addToAirSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToAirSegment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToAirSegment($value): string
+    public function validateItemForChoiceConstraintFromAddToAirSegment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -730,7 +732,7 @@ class AirUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The AirSegment property can only contain items of type \Travelport\UniversalRecord\StructType\TypeBaseAirSegment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToAirSegment($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToAirSegment($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -747,19 +749,20 @@ class AirUpdate extends AbstractStructBase
     }
     /**
      * Get CreditCardAuth value
-     * @return \Travelport\UniversalRecord\StructType\CreditCardAuth[]
+     * @return \Travelport\UniversalRecord\StructType\CreditCardAuth[]|null
      */
     public function getCreditCardAuth(): ?array
     {
-        return isset($this->CreditCardAuth) ? $this->CreditCardAuth : null;
+        return $this->CreditCardAuth ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setCreditCardAuth method
+     * This method is responsible for validating the value(s) passed to the setCreditCardAuth method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCreditCardAuth method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCreditCardAuthForArrayConstraintsFromSetCreditCardAuth(?array $values = []): string
+    public static function validateCreditCardAuthForArrayConstraintFromSetCreditCardAuth(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -780,13 +783,13 @@ class AirUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setCreditCardAuth method
+     * This method is responsible for validating the value(s) passed to the setCreditCardAuth method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCreditCardAuth method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCreditCardAuthForChoiceConstraintsFromSetCreditCardAuth($value): string
+    public function validateCreditCardAuthForChoiceConstraintFromSetCreditCardAuth($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -836,11 +839,11 @@ class AirUpdate extends AbstractStructBase
     public function setCreditCardAuth(?array $creditCardAuth = null): self
     {
         // validation for constraint: array
-        if ('' !== ($creditCardAuthArrayErrorMessage = self::validateCreditCardAuthForArrayConstraintsFromSetCreditCardAuth($creditCardAuth))) {
+        if ('' !== ($creditCardAuthArrayErrorMessage = self::validateCreditCardAuthForArrayConstraintFromSetCreditCardAuth($creditCardAuth))) {
             throw new InvalidArgumentException($creditCardAuthArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($creditCardAuthChoiceErrorMessage = self::validateCreditCardAuthForChoiceConstraintsFromSetCreditCardAuth($creditCardAuth))) {
+        if ('' !== ($creditCardAuthChoiceErrorMessage = self::validateCreditCardAuthForChoiceConstraintFromSetCreditCardAuth($creditCardAuth))) {
             throw new InvalidArgumentException($creditCardAuthChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -860,13 +863,13 @@ class AirUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToCreditCardAuth method
+     * This method is responsible for validating the value(s) passed to the addToCreditCardAuth method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToCreditCardAuth method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToCreditCardAuth($value): string
+    public function validateItemForChoiceConstraintFromAddToCreditCardAuth($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -916,7 +919,7 @@ class AirUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The CreditCardAuth property can only contain items of type \Travelport\UniversalRecord\StructType\CreditCardAuth, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToCreditCardAuth($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToCreditCardAuth($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -933,19 +936,20 @@ class AirUpdate extends AbstractStructBase
     }
     /**
      * Get AirPricingAdjustment value
-     * @return \Travelport\UniversalRecord\StructType\AirPricingAdjustment[]
+     * @return \Travelport\UniversalRecord\StructType\AirPricingAdjustment[]|null
      */
     public function getAirPricingAdjustment(): ?array
     {
-        return isset($this->AirPricingAdjustment) ? $this->AirPricingAdjustment : null;
+        return $this->AirPricingAdjustment ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirPricingAdjustment method
+     * This method is responsible for validating the value(s) passed to the setAirPricingAdjustment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingAdjustment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirPricingAdjustmentForArrayConstraintsFromSetAirPricingAdjustment(?array $values = []): string
+    public static function validateAirPricingAdjustmentForArrayConstraintFromSetAirPricingAdjustment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -966,13 +970,13 @@ class AirUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirPricingAdjustment method
+     * This method is responsible for validating the value(s) passed to the setAirPricingAdjustment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingAdjustment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirPricingAdjustmentForChoiceConstraintsFromSetAirPricingAdjustment($value): string
+    public function validateAirPricingAdjustmentForChoiceConstraintFromSetAirPricingAdjustment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1022,11 +1026,11 @@ class AirUpdate extends AbstractStructBase
     public function setAirPricingAdjustment(?array $airPricingAdjustment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airPricingAdjustmentArrayErrorMessage = self::validateAirPricingAdjustmentForArrayConstraintsFromSetAirPricingAdjustment($airPricingAdjustment))) {
+        if ('' !== ($airPricingAdjustmentArrayErrorMessage = self::validateAirPricingAdjustmentForArrayConstraintFromSetAirPricingAdjustment($airPricingAdjustment))) {
             throw new InvalidArgumentException($airPricingAdjustmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($airPricingAdjustmentChoiceErrorMessage = self::validateAirPricingAdjustmentForChoiceConstraintsFromSetAirPricingAdjustment($airPricingAdjustment))) {
+        if ('' !== ($airPricingAdjustmentChoiceErrorMessage = self::validateAirPricingAdjustmentForChoiceConstraintFromSetAirPricingAdjustment($airPricingAdjustment))) {
             throw new InvalidArgumentException($airPricingAdjustmentChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1046,13 +1050,13 @@ class AirUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToAirPricingAdjustment method
+     * This method is responsible for validating the value(s) passed to the addToAirPricingAdjustment method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToAirPricingAdjustment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToAirPricingAdjustment($value): string
+    public function validateItemForChoiceConstraintFromAddToAirPricingAdjustment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1102,7 +1106,7 @@ class AirUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The AirPricingAdjustment property can only contain items of type \Travelport\UniversalRecord\StructType\AirPricingAdjustment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToAirPricingAdjustment($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToAirPricingAdjustment($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1119,19 +1123,20 @@ class AirUpdate extends AbstractStructBase
     }
     /**
      * Get AirPricingTicketingModifiers value
-     * @return \Travelport\UniversalRecord\StructType\AirPricingTicketingModifiers[]
+     * @return \Travelport\UniversalRecord\StructType\AirPricingTicketingModifiers[]|null
      */
     public function getAirPricingTicketingModifiers(): ?array
     {
-        return isset($this->AirPricingTicketingModifiers) ? $this->AirPricingTicketingModifiers : null;
+        return $this->AirPricingTicketingModifiers ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirPricingTicketingModifiers method
+     * This method is responsible for validating the value(s) passed to the setAirPricingTicketingModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingTicketingModifiers method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirPricingTicketingModifiersForArrayConstraintsFromSetAirPricingTicketingModifiers(?array $values = []): string
+    public static function validateAirPricingTicketingModifiersForArrayConstraintFromSetAirPricingTicketingModifiers(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1152,13 +1157,13 @@ class AirUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirPricingTicketingModifiers method
+     * This method is responsible for validating the value(s) passed to the setAirPricingTicketingModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingTicketingModifiers method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirPricingTicketingModifiersForChoiceConstraintsFromSetAirPricingTicketingModifiers($value): string
+    public function validateAirPricingTicketingModifiersForChoiceConstraintFromSetAirPricingTicketingModifiers($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1208,11 +1213,11 @@ class AirUpdate extends AbstractStructBase
     public function setAirPricingTicketingModifiers(?array $airPricingTicketingModifiers = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airPricingTicketingModifiersArrayErrorMessage = self::validateAirPricingTicketingModifiersForArrayConstraintsFromSetAirPricingTicketingModifiers($airPricingTicketingModifiers))) {
+        if ('' !== ($airPricingTicketingModifiersArrayErrorMessage = self::validateAirPricingTicketingModifiersForArrayConstraintFromSetAirPricingTicketingModifiers($airPricingTicketingModifiers))) {
             throw new InvalidArgumentException($airPricingTicketingModifiersArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($airPricingTicketingModifiersChoiceErrorMessage = self::validateAirPricingTicketingModifiersForChoiceConstraintsFromSetAirPricingTicketingModifiers($airPricingTicketingModifiers))) {
+        if ('' !== ($airPricingTicketingModifiersChoiceErrorMessage = self::validateAirPricingTicketingModifiersForChoiceConstraintFromSetAirPricingTicketingModifiers($airPricingTicketingModifiers))) {
             throw new InvalidArgumentException($airPricingTicketingModifiersChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1232,13 +1237,13 @@ class AirUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToAirPricingTicketingModifiers method
+     * This method is responsible for validating the value(s) passed to the addToAirPricingTicketingModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToAirPricingTicketingModifiers method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToAirPricingTicketingModifiers($value): string
+    public function validateItemForChoiceConstraintFromAddToAirPricingTicketingModifiers($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1288,7 +1293,7 @@ class AirUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The AirPricingTicketingModifiers property can only contain items of type \Travelport\UniversalRecord\StructType\AirPricingTicketingModifiers, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToAirPricingTicketingModifiers($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToAirPricingTicketingModifiers($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1309,16 +1314,16 @@ class AirUpdate extends AbstractStructBase
      */
     public function getDeliveryInfo(): ?\Travelport\UniversalRecord\StructType\DeliveryInfo
     {
-        return isset($this->DeliveryInfo) ? $this->DeliveryInfo : null;
+        return $this->DeliveryInfo ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setDeliveryInfo method
+     * This method is responsible for validating the value(s) passed to the setDeliveryInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDeliveryInfo method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateDeliveryInfoForChoiceConstraintsFromSetDeliveryInfo($value): string
+    public function validateDeliveryInfoForChoiceConstraintFromSetDeliveryInfo($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1367,7 +1372,7 @@ class AirUpdate extends AbstractStructBase
     public function setDeliveryInfo(?\Travelport\UniversalRecord\StructType\DeliveryInfo $deliveryInfo = null): self
     {
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($deliveryInfoChoiceErrorMessage = self::validateDeliveryInfoForChoiceConstraintsFromSetDeliveryInfo($deliveryInfo))) {
+        if ('' !== ($deliveryInfoChoiceErrorMessage = self::validateDeliveryInfoForChoiceConstraintFromSetDeliveryInfo($deliveryInfo))) {
             throw new InvalidArgumentException($deliveryInfoChoiceErrorMessage, __LINE__);
         }
         if (is_null($deliveryInfo) || (is_array($deliveryInfo) && empty($deliveryInfo))) {
@@ -1384,16 +1389,16 @@ class AirUpdate extends AbstractStructBase
      */
     public function getAirSegmentSpecialUpdate(): ?\Travelport\UniversalRecord\StructType\AirSegmentSpecialUpdate
     {
-        return isset($this->AirSegmentSpecialUpdate) ? $this->AirSegmentSpecialUpdate : null;
+        return $this->AirSegmentSpecialUpdate ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirSegmentSpecialUpdate method
+     * This method is responsible for validating the value(s) passed to the setAirSegmentSpecialUpdate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegmentSpecialUpdate method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirSegmentSpecialUpdateForChoiceConstraintsFromSetAirSegmentSpecialUpdate($value): string
+    public function validateAirSegmentSpecialUpdateForChoiceConstraintFromSetAirSegmentSpecialUpdate($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1442,7 +1447,7 @@ class AirUpdate extends AbstractStructBase
     public function setAirSegmentSpecialUpdate(?\Travelport\UniversalRecord\StructType\AirSegmentSpecialUpdate $airSegmentSpecialUpdate = null): self
     {
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($airSegmentSpecialUpdateChoiceErrorMessage = self::validateAirSegmentSpecialUpdateForChoiceConstraintsFromSetAirSegmentSpecialUpdate($airSegmentSpecialUpdate))) {
+        if ('' !== ($airSegmentSpecialUpdateChoiceErrorMessage = self::validateAirSegmentSpecialUpdateForChoiceConstraintFromSetAirSegmentSpecialUpdate($airSegmentSpecialUpdate))) {
             throw new InvalidArgumentException($airSegmentSpecialUpdateChoiceErrorMessage, __LINE__);
         }
         if (is_null($airSegmentSpecialUpdate) || (is_array($airSegmentSpecialUpdate) && empty($airSegmentSpecialUpdate))) {
@@ -1455,19 +1460,20 @@ class AirUpdate extends AbstractStructBase
     }
     /**
      * Get LoyaltyCard value
-     * @return \Travelport\UniversalRecord\StructType\LoyaltyCard[]
+     * @return \Travelport\UniversalRecord\StructType\LoyaltyCard[]|null
      */
     public function getLoyaltyCard(): ?array
     {
-        return isset($this->LoyaltyCard) ? $this->LoyaltyCard : null;
+        return $this->LoyaltyCard ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setLoyaltyCard method
+     * This method is responsible for validating the value(s) passed to the setLoyaltyCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyCard method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLoyaltyCardForArrayConstraintsFromSetLoyaltyCard(?array $values = []): string
+    public static function validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1488,13 +1494,13 @@ class AirUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setLoyaltyCard method
+     * This method is responsible for validating the value(s) passed to the setLoyaltyCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyCard method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateLoyaltyCardForChoiceConstraintsFromSetLoyaltyCard($value): string
+    public function validateLoyaltyCardForChoiceConstraintFromSetLoyaltyCard($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1544,11 +1550,11 @@ class AirUpdate extends AbstractStructBase
     public function setLoyaltyCard(?array $loyaltyCard = null): self
     {
         // validation for constraint: array
-        if ('' !== ($loyaltyCardArrayErrorMessage = self::validateLoyaltyCardForArrayConstraintsFromSetLoyaltyCard($loyaltyCard))) {
+        if ('' !== ($loyaltyCardArrayErrorMessage = self::validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard($loyaltyCard))) {
             throw new InvalidArgumentException($loyaltyCardArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($loyaltyCardChoiceErrorMessage = self::validateLoyaltyCardForChoiceConstraintsFromSetLoyaltyCard($loyaltyCard))) {
+        if ('' !== ($loyaltyCardChoiceErrorMessage = self::validateLoyaltyCardForChoiceConstraintFromSetLoyaltyCard($loyaltyCard))) {
             throw new InvalidArgumentException($loyaltyCardChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1568,13 +1574,13 @@ class AirUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToLoyaltyCard method
+     * This method is responsible for validating the value(s) passed to the addToLoyaltyCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToLoyaltyCard method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToLoyaltyCard($value): string
+    public function validateItemForChoiceConstraintFromAddToLoyaltyCard($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1624,7 +1630,7 @@ class AirUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The LoyaltyCard property can only contain items of type \Travelport\UniversalRecord\StructType\LoyaltyCard, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToLoyaltyCard($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToLoyaltyCard($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1641,19 +1647,20 @@ class AirUpdate extends AbstractStructBase
     }
     /**
      * Get SSR value
-     * @return \Travelport\UniversalRecord\StructType\SSR[]
+     * @return \Travelport\UniversalRecord\StructType\SSR[]|null
      */
     public function getSSR(): ?array
     {
-        return isset($this->SSR) ? $this->SSR : null;
+        return $this->SSR ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setSSR method
+     * This method is responsible for validating the value(s) passed to the setSSR method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSSR method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSSRForArrayConstraintsFromSetSSR(?array $values = []): string
+    public static function validateSSRForArrayConstraintFromSetSSR(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1674,13 +1681,13 @@ class AirUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setSSR method
+     * This method is responsible for validating the value(s) passed to the setSSR method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSSR method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateSSRForChoiceConstraintsFromSetSSR($value): string
+    public function validateSSRForChoiceConstraintFromSetSSR($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1730,11 +1737,11 @@ class AirUpdate extends AbstractStructBase
     public function setSSR(?array $sSR = null): self
     {
         // validation for constraint: array
-        if ('' !== ($sSRArrayErrorMessage = self::validateSSRForArrayConstraintsFromSetSSR($sSR))) {
+        if ('' !== ($sSRArrayErrorMessage = self::validateSSRForArrayConstraintFromSetSSR($sSR))) {
             throw new InvalidArgumentException($sSRArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($sSRChoiceErrorMessage = self::validateSSRForChoiceConstraintsFromSetSSR($sSR))) {
+        if ('' !== ($sSRChoiceErrorMessage = self::validateSSRForChoiceConstraintFromSetSSR($sSR))) {
             throw new InvalidArgumentException($sSRChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1754,13 +1761,13 @@ class AirUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToSSR method
+     * This method is responsible for validating the value(s) passed to the addToSSR method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToSSR method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToSSR($value): string
+    public function validateItemForChoiceConstraintFromAddToSSR($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1810,7 +1817,7 @@ class AirUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The SSR property can only contain items of type \Travelport\UniversalRecord\StructType\SSR, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToSSR($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToSSR($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1827,19 +1834,20 @@ class AirUpdate extends AbstractStructBase
     }
     /**
      * Get GeneralRemark value
-     * @return \Travelport\UniversalRecord\StructType\GeneralRemark[]
+     * @return \Travelport\UniversalRecord\StructType\GeneralRemark[]|null
      */
     public function getGeneralRemark(): ?array
     {
-        return isset($this->GeneralRemark) ? $this->GeneralRemark : null;
+        return $this->GeneralRemark ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setGeneralRemark method
+     * This method is responsible for validating the value(s) passed to the setGeneralRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGeneralRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark(?array $values = []): string
+    public static function validateGeneralRemarkForArrayConstraintFromSetGeneralRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1860,13 +1868,13 @@ class AirUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setGeneralRemark method
+     * This method is responsible for validating the value(s) passed to the setGeneralRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGeneralRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateGeneralRemarkForChoiceConstraintsFromSetGeneralRemark($value): string
+    public function validateGeneralRemarkForChoiceConstraintFromSetGeneralRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1916,11 +1924,11 @@ class AirUpdate extends AbstractStructBase
     public function setGeneralRemark(?array $generalRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark($generalRemark))) {
+        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintFromSetGeneralRemark($generalRemark))) {
             throw new InvalidArgumentException($generalRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($generalRemarkChoiceErrorMessage = self::validateGeneralRemarkForChoiceConstraintsFromSetGeneralRemark($generalRemark))) {
+        if ('' !== ($generalRemarkChoiceErrorMessage = self::validateGeneralRemarkForChoiceConstraintFromSetGeneralRemark($generalRemark))) {
             throw new InvalidArgumentException($generalRemarkChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1940,13 +1948,13 @@ class AirUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToGeneralRemark method
+     * This method is responsible for validating the value(s) passed to the addToGeneralRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToGeneralRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToGeneralRemark($value): string
+    public function validateItemForChoiceConstraintFromAddToGeneralRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1996,7 +2004,7 @@ class AirUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The GeneralRemark property can only contain items of type \Travelport\UniversalRecord\StructType\GeneralRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToGeneralRemark($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToGeneralRemark($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2017,16 +2025,16 @@ class AirUpdate extends AbstractStructBase
      */
     public function getAutoSeatAssignment(): ?\Travelport\UniversalRecord\StructType\AutoSeatAssignment
     {
-        return isset($this->AutoSeatAssignment) ? $this->AutoSeatAssignment : null;
+        return $this->AutoSeatAssignment ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAutoSeatAssignment method
+     * This method is responsible for validating the value(s) passed to the setAutoSeatAssignment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAutoSeatAssignment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAutoSeatAssignmentForChoiceConstraintsFromSetAutoSeatAssignment($value): string
+    public function validateAutoSeatAssignmentForChoiceConstraintFromSetAutoSeatAssignment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2075,7 +2083,7 @@ class AirUpdate extends AbstractStructBase
     public function setAutoSeatAssignment(?\Travelport\UniversalRecord\StructType\AutoSeatAssignment $autoSeatAssignment = null): self
     {
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($autoSeatAssignmentChoiceErrorMessage = self::validateAutoSeatAssignmentForChoiceConstraintsFromSetAutoSeatAssignment($autoSeatAssignment))) {
+        if ('' !== ($autoSeatAssignmentChoiceErrorMessage = self::validateAutoSeatAssignmentForChoiceConstraintFromSetAutoSeatAssignment($autoSeatAssignment))) {
             throw new InvalidArgumentException($autoSeatAssignmentChoiceErrorMessage, __LINE__);
         }
         if (is_null($autoSeatAssignment) || (is_array($autoSeatAssignment) && empty($autoSeatAssignment))) {
@@ -2088,19 +2096,20 @@ class AirUpdate extends AbstractStructBase
     }
     /**
      * Get SpecificSeatAssignment value
-     * @return \Travelport\UniversalRecord\StructType\SpecificSeatAssignment[]
+     * @return \Travelport\UniversalRecord\StructType\SpecificSeatAssignment[]|null
      */
     public function getSpecificSeatAssignment(): ?array
     {
-        return isset($this->SpecificSeatAssignment) ? $this->SpecificSeatAssignment : null;
+        return $this->SpecificSeatAssignment ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setSpecificSeatAssignment method
+     * This method is responsible for validating the value(s) passed to the setSpecificSeatAssignment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSpecificSeatAssignment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSpecificSeatAssignmentForArrayConstraintsFromSetSpecificSeatAssignment(?array $values = []): string
+    public static function validateSpecificSeatAssignmentForArrayConstraintFromSetSpecificSeatAssignment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2121,13 +2130,13 @@ class AirUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setSpecificSeatAssignment method
+     * This method is responsible for validating the value(s) passed to the setSpecificSeatAssignment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSpecificSeatAssignment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateSpecificSeatAssignmentForChoiceConstraintsFromSetSpecificSeatAssignment($value): string
+    public function validateSpecificSeatAssignmentForChoiceConstraintFromSetSpecificSeatAssignment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2177,11 +2186,11 @@ class AirUpdate extends AbstractStructBase
     public function setSpecificSeatAssignment(?array $specificSeatAssignment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($specificSeatAssignmentArrayErrorMessage = self::validateSpecificSeatAssignmentForArrayConstraintsFromSetSpecificSeatAssignment($specificSeatAssignment))) {
+        if ('' !== ($specificSeatAssignmentArrayErrorMessage = self::validateSpecificSeatAssignmentForArrayConstraintFromSetSpecificSeatAssignment($specificSeatAssignment))) {
             throw new InvalidArgumentException($specificSeatAssignmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($specificSeatAssignmentChoiceErrorMessage = self::validateSpecificSeatAssignmentForChoiceConstraintsFromSetSpecificSeatAssignment($specificSeatAssignment))) {
+        if ('' !== ($specificSeatAssignmentChoiceErrorMessage = self::validateSpecificSeatAssignmentForChoiceConstraintFromSetSpecificSeatAssignment($specificSeatAssignment))) {
             throw new InvalidArgumentException($specificSeatAssignmentChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2201,13 +2210,13 @@ class AirUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToSpecificSeatAssignment method
+     * This method is responsible for validating the value(s) passed to the addToSpecificSeatAssignment method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToSpecificSeatAssignment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToSpecificSeatAssignment($value): string
+    public function validateItemForChoiceConstraintFromAddToSpecificSeatAssignment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2257,7 +2266,7 @@ class AirUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The SpecificSeatAssignment property can only contain items of type \Travelport\UniversalRecord\StructType\SpecificSeatAssignment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToSpecificSeatAssignment($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToSpecificSeatAssignment($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2278,16 +2287,16 @@ class AirUpdate extends AbstractStructBase
      */
     public function getAirPricingPayment(): ?\Travelport\UniversalRecord\StructType\AirPricingPayment
     {
-        return isset($this->AirPricingPayment) ? $this->AirPricingPayment : null;
+        return $this->AirPricingPayment ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirPricingPayment method
+     * This method is responsible for validating the value(s) passed to the setAirPricingPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingPayment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirPricingPaymentForChoiceConstraintsFromSetAirPricingPayment($value): string
+    public function validateAirPricingPaymentForChoiceConstraintFromSetAirPricingPayment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2336,7 +2345,7 @@ class AirUpdate extends AbstractStructBase
     public function setAirPricingPayment(?\Travelport\UniversalRecord\StructType\AirPricingPayment $airPricingPayment = null): self
     {
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($airPricingPaymentChoiceErrorMessage = self::validateAirPricingPaymentForChoiceConstraintsFromSetAirPricingPayment($airPricingPayment))) {
+        if ('' !== ($airPricingPaymentChoiceErrorMessage = self::validateAirPricingPaymentForChoiceConstraintFromSetAirPricingPayment($airPricingPayment))) {
             throw new InvalidArgumentException($airPricingPaymentChoiceErrorMessage, __LINE__);
         }
         if (is_null($airPricingPayment) || (is_array($airPricingPayment) && empty($airPricingPayment))) {
@@ -2349,19 +2358,20 @@ class AirUpdate extends AbstractStructBase
     }
     /**
      * Get AssociatedRemark value
-     * @return \Travelport\UniversalRecord\StructType\AssociatedRemark[]
+     * @return \Travelport\UniversalRecord\StructType\AssociatedRemark[]|null
      */
     public function getAssociatedRemark(): ?array
     {
-        return isset($this->AssociatedRemark) ? $this->AssociatedRemark : null;
+        return $this->AssociatedRemark ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAssociatedRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark(?array $values = []): string
+    public static function validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2382,13 +2392,13 @@ class AirUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAssociatedRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAssociatedRemarkForChoiceConstraintsFromSetAssociatedRemark($value): string
+    public function validateAssociatedRemarkForChoiceConstraintFromSetAssociatedRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2438,11 +2448,11 @@ class AirUpdate extends AbstractStructBase
     public function setAssociatedRemark(?array $associatedRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark($associatedRemark))) {
+        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark($associatedRemark))) {
             throw new InvalidArgumentException($associatedRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($associatedRemarkChoiceErrorMessage = self::validateAssociatedRemarkForChoiceConstraintsFromSetAssociatedRemark($associatedRemark))) {
+        if ('' !== ($associatedRemarkChoiceErrorMessage = self::validateAssociatedRemarkForChoiceConstraintFromSetAssociatedRemark($associatedRemark))) {
             throw new InvalidArgumentException($associatedRemarkChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2462,13 +2472,13 @@ class AirUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the addToAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToAssociatedRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToAssociatedRemark($value): string
+    public function validateItemForChoiceConstraintFromAddToAssociatedRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2518,7 +2528,7 @@ class AirUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The AssociatedRemark property can only contain items of type \Travelport\UniversalRecord\StructType\AssociatedRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToAssociatedRemark($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToAssociatedRemark($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2535,19 +2545,20 @@ class AirUpdate extends AbstractStructBase
     }
     /**
      * Get PocketItineraryRemark value
-     * @return \Travelport\UniversalRecord\StructType\PocketItineraryRemark[]
+     * @return \Travelport\UniversalRecord\StructType\PocketItineraryRemark[]|null
      */
     public function getPocketItineraryRemark(): ?array
     {
-        return isset($this->PocketItineraryRemark) ? $this->PocketItineraryRemark : null;
+        return $this->PocketItineraryRemark ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setPocketItineraryRemark method
+     * This method is responsible for validating the value(s) passed to the setPocketItineraryRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPocketItineraryRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePocketItineraryRemarkForArrayConstraintsFromSetPocketItineraryRemark(?array $values = []): string
+    public static function validatePocketItineraryRemarkForArrayConstraintFromSetPocketItineraryRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2568,13 +2579,13 @@ class AirUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setPocketItineraryRemark method
+     * This method is responsible for validating the value(s) passed to the setPocketItineraryRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPocketItineraryRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validatePocketItineraryRemarkForChoiceConstraintsFromSetPocketItineraryRemark($value): string
+    public function validatePocketItineraryRemarkForChoiceConstraintFromSetPocketItineraryRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2624,11 +2635,11 @@ class AirUpdate extends AbstractStructBase
     public function setPocketItineraryRemark(?array $pocketItineraryRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($pocketItineraryRemarkArrayErrorMessage = self::validatePocketItineraryRemarkForArrayConstraintsFromSetPocketItineraryRemark($pocketItineraryRemark))) {
+        if ('' !== ($pocketItineraryRemarkArrayErrorMessage = self::validatePocketItineraryRemarkForArrayConstraintFromSetPocketItineraryRemark($pocketItineraryRemark))) {
             throw new InvalidArgumentException($pocketItineraryRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($pocketItineraryRemarkChoiceErrorMessage = self::validatePocketItineraryRemarkForChoiceConstraintsFromSetPocketItineraryRemark($pocketItineraryRemark))) {
+        if ('' !== ($pocketItineraryRemarkChoiceErrorMessage = self::validatePocketItineraryRemarkForChoiceConstraintFromSetPocketItineraryRemark($pocketItineraryRemark))) {
             throw new InvalidArgumentException($pocketItineraryRemarkChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2648,13 +2659,13 @@ class AirUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToPocketItineraryRemark method
+     * This method is responsible for validating the value(s) passed to the addToPocketItineraryRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToPocketItineraryRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToPocketItineraryRemark($value): string
+    public function validateItemForChoiceConstraintFromAddToPocketItineraryRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2704,7 +2715,7 @@ class AirUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The PocketItineraryRemark property can only contain items of type \Travelport\UniversalRecord\StructType\PocketItineraryRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToPocketItineraryRemark($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToPocketItineraryRemark($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2725,16 +2736,16 @@ class AirUpdate extends AbstractStructBase
      */
     public function getOptionalServicesInfo(): ?\Travelport\UniversalRecord\StructType\OptionalServicesInfo
     {
-        return isset($this->OptionalServicesInfo) ? $this->OptionalServicesInfo : null;
+        return $this->OptionalServicesInfo ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setOptionalServicesInfo method
+     * This method is responsible for validating the value(s) passed to the setOptionalServicesInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOptionalServicesInfo method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateOptionalServicesInfoForChoiceConstraintsFromSetOptionalServicesInfo($value): string
+    public function validateOptionalServicesInfoForChoiceConstraintFromSetOptionalServicesInfo($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2783,7 +2794,7 @@ class AirUpdate extends AbstractStructBase
     public function setOptionalServicesInfo(?\Travelport\UniversalRecord\StructType\OptionalServicesInfo $optionalServicesInfo = null): self
     {
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($optionalServicesInfoChoiceErrorMessage = self::validateOptionalServicesInfoForChoiceConstraintsFromSetOptionalServicesInfo($optionalServicesInfo))) {
+        if ('' !== ($optionalServicesInfoChoiceErrorMessage = self::validateOptionalServicesInfoForChoiceConstraintFromSetOptionalServicesInfo($optionalServicesInfo))) {
             throw new InvalidArgumentException($optionalServicesInfoChoiceErrorMessage, __LINE__);
         }
         if (is_null($optionalServicesInfo) || (is_array($optionalServicesInfo) && empty($optionalServicesInfo))) {
@@ -2796,19 +2807,20 @@ class AirUpdate extends AbstractStructBase
     }
     /**
      * Get ThirdPartyInformation value
-     * @return \Travelport\UniversalRecord\StructType\ThirdPartyInformation[]
+     * @return \Travelport\UniversalRecord\StructType\ThirdPartyInformation[]|null
      */
     public function getThirdPartyInformation(): ?array
     {
-        return isset($this->ThirdPartyInformation) ? $this->ThirdPartyInformation : null;
+        return $this->ThirdPartyInformation ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setThirdPartyInformation method
+     * This method is responsible for validating the value(s) passed to the setThirdPartyInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setThirdPartyInformation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateThirdPartyInformationForArrayConstraintsFromSetThirdPartyInformation(?array $values = []): string
+    public static function validateThirdPartyInformationForArrayConstraintFromSetThirdPartyInformation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2829,13 +2841,13 @@ class AirUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setThirdPartyInformation method
+     * This method is responsible for validating the value(s) passed to the setThirdPartyInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setThirdPartyInformation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateThirdPartyInformationForChoiceConstraintsFromSetThirdPartyInformation($value): string
+    public function validateThirdPartyInformationForChoiceConstraintFromSetThirdPartyInformation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2885,11 +2897,11 @@ class AirUpdate extends AbstractStructBase
     public function setThirdPartyInformation(?array $thirdPartyInformation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($thirdPartyInformationArrayErrorMessage = self::validateThirdPartyInformationForArrayConstraintsFromSetThirdPartyInformation($thirdPartyInformation))) {
+        if ('' !== ($thirdPartyInformationArrayErrorMessage = self::validateThirdPartyInformationForArrayConstraintFromSetThirdPartyInformation($thirdPartyInformation))) {
             throw new InvalidArgumentException($thirdPartyInformationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($thirdPartyInformationChoiceErrorMessage = self::validateThirdPartyInformationForChoiceConstraintsFromSetThirdPartyInformation($thirdPartyInformation))) {
+        if ('' !== ($thirdPartyInformationChoiceErrorMessage = self::validateThirdPartyInformationForChoiceConstraintFromSetThirdPartyInformation($thirdPartyInformation))) {
             throw new InvalidArgumentException($thirdPartyInformationChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2909,13 +2921,13 @@ class AirUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToThirdPartyInformation method
+     * This method is responsible for validating the value(s) passed to the addToThirdPartyInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToThirdPartyInformation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToThirdPartyInformation($value): string
+    public function validateItemForChoiceConstraintFromAddToThirdPartyInformation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2965,7 +2977,7 @@ class AirUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The ThirdPartyInformation property can only contain items of type \Travelport\UniversalRecord\StructType\ThirdPartyInformation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToThirdPartyInformation($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToThirdPartyInformation($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2982,19 +2994,20 @@ class AirUpdate extends AbstractStructBase
     }
     /**
      * Get TravelComplianceData value
-     * @return \Travelport\UniversalRecord\StructType\TravelComplianceData[]
+     * @return \Travelport\UniversalRecord\StructType\TravelComplianceData[]|null
      */
     public function getTravelComplianceData(): ?array
     {
-        return isset($this->TravelComplianceData) ? $this->TravelComplianceData : null;
+        return $this->TravelComplianceData ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setTravelComplianceData method
+     * This method is responsible for validating the value(s) passed to the setTravelComplianceData method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTravelComplianceData method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTravelComplianceDataForArrayConstraintsFromSetTravelComplianceData(?array $values = []): string
+    public static function validateTravelComplianceDataForArrayConstraintFromSetTravelComplianceData(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -3015,13 +3028,13 @@ class AirUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setTravelComplianceData method
+     * This method is responsible for validating the value(s) passed to the setTravelComplianceData method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTravelComplianceData method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateTravelComplianceDataForChoiceConstraintsFromSetTravelComplianceData($value): string
+    public function validateTravelComplianceDataForChoiceConstraintFromSetTravelComplianceData($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3071,11 +3084,11 @@ class AirUpdate extends AbstractStructBase
     public function setTravelComplianceData(?array $travelComplianceData = null): self
     {
         // validation for constraint: array
-        if ('' !== ($travelComplianceDataArrayErrorMessage = self::validateTravelComplianceDataForArrayConstraintsFromSetTravelComplianceData($travelComplianceData))) {
+        if ('' !== ($travelComplianceDataArrayErrorMessage = self::validateTravelComplianceDataForArrayConstraintFromSetTravelComplianceData($travelComplianceData))) {
             throw new InvalidArgumentException($travelComplianceDataArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($travelComplianceDataChoiceErrorMessage = self::validateTravelComplianceDataForChoiceConstraintsFromSetTravelComplianceData($travelComplianceData))) {
+        if ('' !== ($travelComplianceDataChoiceErrorMessage = self::validateTravelComplianceDataForChoiceConstraintFromSetTravelComplianceData($travelComplianceData))) {
             throw new InvalidArgumentException($travelComplianceDataChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -3095,13 +3108,13 @@ class AirUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToTravelComplianceData method
+     * This method is responsible for validating the value(s) passed to the addToTravelComplianceData method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToTravelComplianceData method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToTravelComplianceData($value): string
+    public function validateItemForChoiceConstraintFromAddToTravelComplianceData($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3151,7 +3164,7 @@ class AirUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The TravelComplianceData property can only contain items of type \Travelport\UniversalRecord\StructType\TravelComplianceData, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, AirSegment, CreditCardAuth, AirPricingAdjustment, AirPricingTicketingModifiers, DeliveryInfo, AirSegmentSpecialUpdate, LoyaltyCard, SSR, GeneralRemark, AutoSeatAssignment, SpecificSeatAssignment, AirPricingPayment, AssociatedRemark, PocketItineraryRemark, OptionalServicesInfo, ThirdPartyInformation, TravelComplianceData)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToTravelComplianceData($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToTravelComplianceData($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)

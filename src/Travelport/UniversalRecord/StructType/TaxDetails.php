@@ -41,12 +41,13 @@ class TaxDetails extends AbstractStructBase
         return $this->Tax;
     }
     /**
-     * This method is responsible for validating the values passed to the setTax method
+     * This method is responsible for validating the value(s) passed to the setTax method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTax method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTaxForArrayConstraintsFromSetTax(?array $values = []): string
+    public static function validateTaxForArrayConstraintFromSetTax(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -75,7 +76,7 @@ class TaxDetails extends AbstractStructBase
     public function setTax(array $tax): self
     {
         // validation for constraint: array
-        if ('' !== ($taxArrayErrorMessage = self::validateTaxForArrayConstraintsFromSetTax($tax))) {
+        if ('' !== ($taxArrayErrorMessage = self::validateTaxForArrayConstraintFromSetTax($tax))) {
             throw new InvalidArgumentException($taxArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

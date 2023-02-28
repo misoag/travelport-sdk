@@ -40,12 +40,13 @@ class DisfavoredAlliances extends AbstractStructBase
         return $this->Alliance;
     }
     /**
-     * This method is responsible for validating the values passed to the setAlliance method
+     * This method is responsible for validating the value(s) passed to the setAlliance method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAlliance method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAllianceForArrayConstraintsFromSetAlliance(?array $values = []): string
+    public static function validateAllianceForArrayConstraintFromSetAlliance(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -74,7 +75,7 @@ class DisfavoredAlliances extends AbstractStructBase
     public function setAlliance(?array $alliance = null): self
     {
         // validation for constraint: array
-        if ('' !== ($allianceArrayErrorMessage = self::validateAllianceForArrayConstraintsFromSetAlliance($alliance))) {
+        if ('' !== ($allianceArrayErrorMessage = self::validateAllianceForArrayConstraintFromSetAlliance($alliance))) {
             throw new InvalidArgumentException($allianceArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

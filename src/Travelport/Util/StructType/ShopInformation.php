@@ -80,12 +80,13 @@ class ShopInformation extends AbstractStructBase
         return $this->SearchRequest;
     }
     /**
-     * This method is responsible for validating the values passed to the setSearchRequest method
+     * This method is responsible for validating the value(s) passed to the setSearchRequest method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSearchRequest method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSearchRequestForArrayConstraintsFromSetSearchRequest(?array $values = []): string
+    public static function validateSearchRequestForArrayConstraintFromSetSearchRequest(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -114,7 +115,7 @@ class ShopInformation extends AbstractStructBase
     public function setSearchRequest(?array $searchRequest = null): self
     {
         // validation for constraint: array
-        if ('' !== ($searchRequestArrayErrorMessage = self::validateSearchRequestForArrayConstraintsFromSetSearchRequest($searchRequest))) {
+        if ('' !== ($searchRequestArrayErrorMessage = self::validateSearchRequestForArrayConstraintFromSetSearchRequest($searchRequest))) {
             throw new InvalidArgumentException($searchRequestArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -154,12 +155,13 @@ class ShopInformation extends AbstractStructBase
         return $this->FlightsOffered;
     }
     /**
-     * This method is responsible for validating the values passed to the setFlightsOffered method
+     * This method is responsible for validating the value(s) passed to the setFlightsOffered method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFlightsOffered method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFlightsOfferedForArrayConstraintsFromSetFlightsOffered(?array $values = []): string
+    public static function validateFlightsOfferedForArrayConstraintFromSetFlightsOffered(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -188,7 +190,7 @@ class ShopInformation extends AbstractStructBase
     public function setFlightsOffered(?array $flightsOffered = null): self
     {
         // validation for constraint: array
-        if ('' !== ($flightsOfferedArrayErrorMessage = self::validateFlightsOfferedForArrayConstraintsFromSetFlightsOffered($flightsOffered))) {
+        if ('' !== ($flightsOfferedArrayErrorMessage = self::validateFlightsOfferedForArrayConstraintFromSetFlightsOffered($flightsOffered))) {
             throw new InvalidArgumentException($flightsOfferedArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

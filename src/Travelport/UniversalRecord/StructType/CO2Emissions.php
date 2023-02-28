@@ -96,12 +96,13 @@ class CO2Emissions extends AbstractStructBase
         return $this->CO2Emission;
     }
     /**
-     * This method is responsible for validating the values passed to the setCO2Emission method
+     * This method is responsible for validating the value(s) passed to the setCO2Emission method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCO2Emission method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCO2EmissionForArrayConstraintsFromSetCO2Emission(?array $values = []): string
+    public static function validateCO2EmissionForArrayConstraintFromSetCO2Emission(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -130,7 +131,7 @@ class CO2Emissions extends AbstractStructBase
     public function setCO2Emission(?array $cO2Emission = null): self
     {
         // validation for constraint: array
-        if ('' !== ($cO2EmissionArrayErrorMessage = self::validateCO2EmissionForArrayConstraintsFromSetCO2Emission($cO2Emission))) {
+        if ('' !== ($cO2EmissionArrayErrorMessage = self::validateCO2EmissionForArrayConstraintFromSetCO2Emission($cO2Emission))) {
             throw new InvalidArgumentException($cO2EmissionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)

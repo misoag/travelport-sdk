@@ -194,12 +194,13 @@ class ServiceRuleType extends AbstractStructBase
         return $this->Remarks;
     }
     /**
-     * This method is responsible for validating the values passed to the setRemarks method
+     * This method is responsible for validating the value(s) passed to the setRemarks method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRemarks method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRemarksForArrayConstraintsFromSetRemarks(?array $values = []): string
+    public static function validateRemarksForArrayConstraintFromSetRemarks(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -228,7 +229,7 @@ class ServiceRuleType extends AbstractStructBase
     public function setRemarks(?array $remarks = null): self
     {
         // validation for constraint: array
-        if ('' !== ($remarksArrayErrorMessage = self::validateRemarksForArrayConstraintsFromSetRemarks($remarks))) {
+        if ('' !== ($remarksArrayErrorMessage = self::validateRemarksForArrayConstraintFromSetRemarks($remarks))) {
             throw new InvalidArgumentException($remarksArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)

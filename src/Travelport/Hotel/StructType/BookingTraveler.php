@@ -425,12 +425,13 @@ class BookingTraveler extends AbstractStructBase
         return $this->SSR;
     }
     /**
-     * This method is responsible for validating the values passed to the setSSR method
+     * This method is responsible for validating the value(s) passed to the setSSR method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSSR method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSSRForArrayConstraintsFromSetSSR(?array $values = []): string
+    public static function validateSSRForArrayConstraintFromSetSSR(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -459,7 +460,7 @@ class BookingTraveler extends AbstractStructBase
     public function setSSR(?array $sSR = null): self
     {
         // validation for constraint: array
-        if ('' !== ($sSRArrayErrorMessage = self::validateSSRForArrayConstraintsFromSetSSR($sSR))) {
+        if ('' !== ($sSRArrayErrorMessage = self::validateSSRForArrayConstraintFromSetSSR($sSR))) {
             throw new InvalidArgumentException($sSRArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -499,12 +500,13 @@ class BookingTraveler extends AbstractStructBase
         return $this->NameRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setNameRemark method
+     * This method is responsible for validating the value(s) passed to the setNameRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setNameRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateNameRemarkForArrayConstraintsFromSetNameRemark(?array $values = []): string
+    public static function validateNameRemarkForArrayConstraintFromSetNameRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -533,7 +535,7 @@ class BookingTraveler extends AbstractStructBase
     public function setNameRemark(?array $nameRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($nameRemarkArrayErrorMessage = self::validateNameRemarkForArrayConstraintsFromSetNameRemark($nameRemark))) {
+        if ('' !== ($nameRemarkArrayErrorMessage = self::validateNameRemarkForArrayConstraintFromSetNameRemark($nameRemark))) {
             throw new InvalidArgumentException($nameRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -573,12 +575,13 @@ class BookingTraveler extends AbstractStructBase
         return $this->AirSeatAssignment;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirSeatAssignment method
+     * This method is responsible for validating the value(s) passed to the setAirSeatAssignment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirSeatAssignment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirSeatAssignmentForArrayConstraintsFromSetAirSeatAssignment(?array $values = []): string
+    public static function validateAirSeatAssignmentForArrayConstraintFromSetAirSeatAssignment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -607,7 +610,7 @@ class BookingTraveler extends AbstractStructBase
     public function setAirSeatAssignment(?array $airSeatAssignment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airSeatAssignmentArrayErrorMessage = self::validateAirSeatAssignmentForArrayConstraintsFromSetAirSeatAssignment($airSeatAssignment))) {
+        if ('' !== ($airSeatAssignmentArrayErrorMessage = self::validateAirSeatAssignmentForArrayConstraintFromSetAirSeatAssignment($airSeatAssignment))) {
             throw new InvalidArgumentException($airSeatAssignmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -647,12 +650,13 @@ class BookingTraveler extends AbstractStructBase
         return $this->RailSeatAssignment;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailSeatAssignment method
+     * This method is responsible for validating the value(s) passed to the setRailSeatAssignment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailSeatAssignment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailSeatAssignmentForArrayConstraintsFromSetRailSeatAssignment(?array $values = []): string
+    public static function validateRailSeatAssignmentForArrayConstraintFromSetRailSeatAssignment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -681,7 +685,7 @@ class BookingTraveler extends AbstractStructBase
     public function setRailSeatAssignment(?array $railSeatAssignment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railSeatAssignmentArrayErrorMessage = self::validateRailSeatAssignmentForArrayConstraintsFromSetRailSeatAssignment($railSeatAssignment))) {
+        if ('' !== ($railSeatAssignmentArrayErrorMessage = self::validateRailSeatAssignmentForArrayConstraintFromSetRailSeatAssignment($railSeatAssignment))) {
             throw new InvalidArgumentException($railSeatAssignmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

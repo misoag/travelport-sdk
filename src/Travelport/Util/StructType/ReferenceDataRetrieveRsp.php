@@ -78,12 +78,13 @@ class ReferenceDataRetrieveRsp extends BaseRsp
         return $this->ReferenceDataItem;
     }
     /**
-     * This method is responsible for validating the values passed to the setReferenceDataItem method
+     * This method is responsible for validating the value(s) passed to the setReferenceDataItem method
      * This method is willingly generated in order to preserve the one-line inline validation within the setReferenceDataItem method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateReferenceDataItemForArrayConstraintsFromSetReferenceDataItem(?array $values = []): string
+    public static function validateReferenceDataItemForArrayConstraintFromSetReferenceDataItem(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -112,7 +113,7 @@ class ReferenceDataRetrieveRsp extends BaseRsp
     public function setReferenceDataItem(?array $referenceDataItem = null): self
     {
         // validation for constraint: array
-        if ('' !== ($referenceDataItemArrayErrorMessage = self::validateReferenceDataItemForArrayConstraintsFromSetReferenceDataItem($referenceDataItem))) {
+        if ('' !== ($referenceDataItemArrayErrorMessage = self::validateReferenceDataItemForArrayConstraintFromSetReferenceDataItem($referenceDataItem))) {
             throw new InvalidArgumentException($referenceDataItemArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

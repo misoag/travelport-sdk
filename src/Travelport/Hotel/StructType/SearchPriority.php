@@ -41,12 +41,13 @@ class SearchPriority extends AbstractStructBase
         return $this->Criteria;
     }
     /**
-     * This method is responsible for validating the values passed to the setCriteria method
+     * This method is responsible for validating the value(s) passed to the setCriteria method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCriteria method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCriteriaForArrayConstraintsFromSetCriteria(?array $values = []): string
+    public static function validateCriteriaForArrayConstraintFromSetCriteria(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -75,7 +76,7 @@ class SearchPriority extends AbstractStructBase
     public function setCriteria(?array $criteria = null): self
     {
         // validation for constraint: array
-        if ('' !== ($criteriaArrayErrorMessage = self::validateCriteriaForArrayConstraintsFromSetCriteria($criteria))) {
+        if ('' !== ($criteriaArrayErrorMessage = self::validateCriteriaForArrayConstraintFromSetCriteria($criteria))) {
             throw new InvalidArgumentException($criteriaArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(8)

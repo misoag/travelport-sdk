@@ -52,12 +52,13 @@ class AirUpsellSearchResult extends AbstractStructBase
         return $this->AirUpsellQualify;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirUpsellQualify method
+     * This method is responsible for validating the value(s) passed to the setAirUpsellQualify method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirUpsellQualify method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirUpsellQualifyForArrayConstraintsFromSetAirUpsellQualify(?array $values = []): string
+    public static function validateAirUpsellQualifyForArrayConstraintFromSetAirUpsellQualify(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -86,7 +87,7 @@ class AirUpsellSearchResult extends AbstractStructBase
     public function setAirUpsellQualify(?array $airUpsellQualify = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airUpsellQualifyArrayErrorMessage = self::validateAirUpsellQualifyForArrayConstraintsFromSetAirUpsellQualify($airUpsellQualify))) {
+        if ('' !== ($airUpsellQualifyArrayErrorMessage = self::validateAirUpsellQualifyForArrayConstraintFromSetAirUpsellQualify($airUpsellQualify))) {
             throw new InvalidArgumentException($airUpsellQualifyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

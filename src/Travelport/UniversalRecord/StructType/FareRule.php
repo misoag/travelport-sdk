@@ -175,12 +175,13 @@ class FareRule extends AbstractStructBase
         return $this->FareRuleLong;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareRuleLong method
+     * This method is responsible for validating the value(s) passed to the setFareRuleLong method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareRuleLong method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareRuleLongForArrayConstraintsFromSetFareRuleLong(?array $values = []): string
+    public static function validateFareRuleLongForArrayConstraintFromSetFareRuleLong(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -209,7 +210,7 @@ class FareRule extends AbstractStructBase
     public function setFareRuleLong(?array $fareRuleLong = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareRuleLongArrayErrorMessage = self::validateFareRuleLongForArrayConstraintsFromSetFareRuleLong($fareRuleLong))) {
+        if ('' !== ($fareRuleLongArrayErrorMessage = self::validateFareRuleLongForArrayConstraintFromSetFareRuleLong($fareRuleLong))) {
             throw new InvalidArgumentException($fareRuleLongArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -249,12 +250,13 @@ class FareRule extends AbstractStructBase
         return $this->FareRuleShort;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareRuleShort method
+     * This method is responsible for validating the value(s) passed to the setFareRuleShort method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareRuleShort method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareRuleShortForArrayConstraintsFromSetFareRuleShort(?array $values = []): string
+    public static function validateFareRuleShortForArrayConstraintFromSetFareRuleShort(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -283,7 +285,7 @@ class FareRule extends AbstractStructBase
     public function setFareRuleShort(?array $fareRuleShort = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareRuleShortArrayErrorMessage = self::validateFareRuleShortForArrayConstraintsFromSetFareRuleShort($fareRuleShort))) {
+        if ('' !== ($fareRuleShortArrayErrorMessage = self::validateFareRuleShortForArrayConstraintFromSetFareRuleShort($fareRuleShort))) {
             throw new InvalidArgumentException($fareRuleShortArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -380,12 +382,13 @@ class FareRule extends AbstractStructBase
         return $this->FareRuleResultMessage;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareRuleResultMessage method
+     * This method is responsible for validating the value(s) passed to the setFareRuleResultMessage method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareRuleResultMessage method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareRuleResultMessageForArrayConstraintsFromSetFareRuleResultMessage(?array $values = []): string
+    public static function validateFareRuleResultMessageForArrayConstraintFromSetFareRuleResultMessage(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -414,7 +417,7 @@ class FareRule extends AbstractStructBase
     public function setFareRuleResultMessage(?array $fareRuleResultMessage = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareRuleResultMessageArrayErrorMessage = self::validateFareRuleResultMessageForArrayConstraintsFromSetFareRuleResultMessage($fareRuleResultMessage))) {
+        if ('' !== ($fareRuleResultMessageArrayErrorMessage = self::validateFareRuleResultMessageForArrayConstraintFromSetFareRuleResultMessage($fareRuleResultMessage))) {
             throw new InvalidArgumentException($fareRuleResultMessageArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -136,16 +136,16 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
      */
     public function getModifiedDate(): ?string
     {
-        return isset($this->ModifiedDate) ? $this->ModifiedDate : null;
+        return $this->ModifiedDate ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setModifiedDate method
+     * This method is responsible for validating the value(s) passed to the setModifiedDate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setModifiedDate method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateModifiedDateForChoiceConstraintsFromSetModifiedDate($value): string
+    public function validateModifiedDateForChoiceConstraintFromSetModifiedDate($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -182,7 +182,7 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($modifiedDate, true), gettype($modifiedDate)), __LINE__);
         }
         // validation for constraint: choice(ModifiedDate, ModifiedRange)
-        if ('' !== ($modifiedDateChoiceErrorMessage = self::validateModifiedDateForChoiceConstraintsFromSetModifiedDate($modifiedDate))) {
+        if ('' !== ($modifiedDateChoiceErrorMessage = self::validateModifiedDateForChoiceConstraintFromSetModifiedDate($modifiedDate))) {
             throw new InvalidArgumentException($modifiedDateChoiceErrorMessage, __LINE__);
         }
         if (is_null($modifiedDate) || (is_array($modifiedDate) && empty($modifiedDate))) {
@@ -199,16 +199,16 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
      */
     public function getModifiedRange(): ?\Travelport\UniversalRecord\StructType\ModifiedRange
     {
-        return isset($this->ModifiedRange) ? $this->ModifiedRange : null;
+        return $this->ModifiedRange ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setModifiedRange method
+     * This method is responsible for validating the value(s) passed to the setModifiedRange method
      * This method is willingly generated in order to preserve the one-line inline validation within the setModifiedRange method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateModifiedRangeForChoiceConstraintsFromSetModifiedRange($value): string
+    public function validateModifiedRangeForChoiceConstraintFromSetModifiedRange($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -241,7 +241,7 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
     public function setModifiedRange(?\Travelport\UniversalRecord\StructType\ModifiedRange $modifiedRange = null): self
     {
         // validation for constraint: choice(ModifiedDate, ModifiedRange)
-        if ('' !== ($modifiedRangeChoiceErrorMessage = self::validateModifiedRangeForChoiceConstraintsFromSetModifiedRange($modifiedRange))) {
+        if ('' !== ($modifiedRangeChoiceErrorMessage = self::validateModifiedRangeForChoiceConstraintFromSetModifiedRange($modifiedRange))) {
             throw new InvalidArgumentException($modifiedRangeChoiceErrorMessage, __LINE__);
         }
         if (is_null($modifiedRange) || (is_array($modifiedRange) && empty($modifiedRange))) {

@@ -126,16 +126,16 @@ class HotelDetailsRsp extends BaseRsp
      */
     public function getRequestedHotelDetails(): ?\Travelport\Hotel\StructType\RequestedHotelDetails
     {
-        return isset($this->RequestedHotelDetails) ? $this->RequestedHotelDetails : null;
+        return $this->RequestedHotelDetails ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setRequestedHotelDetails method
+     * This method is responsible for validating the value(s) passed to the setRequestedHotelDetails method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRequestedHotelDetails method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateRequestedHotelDetailsForChoiceConstraintsFromSetRequestedHotelDetails($value): string
+    public function validateRequestedHotelDetailsForChoiceConstraintFromSetRequestedHotelDetails($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -168,7 +168,7 @@ class HotelDetailsRsp extends BaseRsp
     public function setRequestedHotelDetails(?\Travelport\Hotel\StructType\RequestedHotelDetails $requestedHotelDetails = null): self
     {
         // validation for constraint: choice(RequestedHotelDetails, HotelAlternateProperties)
-        if ('' !== ($requestedHotelDetailsChoiceErrorMessage = self::validateRequestedHotelDetailsForChoiceConstraintsFromSetRequestedHotelDetails($requestedHotelDetails))) {
+        if ('' !== ($requestedHotelDetailsChoiceErrorMessage = self::validateRequestedHotelDetailsForChoiceConstraintFromSetRequestedHotelDetails($requestedHotelDetails))) {
             throw new InvalidArgumentException($requestedHotelDetailsChoiceErrorMessage, __LINE__);
         }
         if (is_null($requestedHotelDetails) || (is_array($requestedHotelDetails) && empty($requestedHotelDetails))) {
@@ -185,16 +185,16 @@ class HotelDetailsRsp extends BaseRsp
      */
     public function getHotelAlternateProperties(): ?\Travelport\Hotel\StructType\HotelAlternateProperties
     {
-        return isset($this->HotelAlternateProperties) ? $this->HotelAlternateProperties : null;
+        return $this->HotelAlternateProperties ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelAlternateProperties method
+     * This method is responsible for validating the value(s) passed to the setHotelAlternateProperties method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelAlternateProperties method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelAlternatePropertiesForChoiceConstraintsFromSetHotelAlternateProperties($value): string
+    public function validateHotelAlternatePropertiesForChoiceConstraintFromSetHotelAlternateProperties($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -227,7 +227,7 @@ class HotelDetailsRsp extends BaseRsp
     public function setHotelAlternateProperties(?\Travelport\Hotel\StructType\HotelAlternateProperties $hotelAlternateProperties = null): self
     {
         // validation for constraint: choice(RequestedHotelDetails, HotelAlternateProperties)
-        if ('' !== ($hotelAlternatePropertiesChoiceErrorMessage = self::validateHotelAlternatePropertiesForChoiceConstraintsFromSetHotelAlternateProperties($hotelAlternateProperties))) {
+        if ('' !== ($hotelAlternatePropertiesChoiceErrorMessage = self::validateHotelAlternatePropertiesForChoiceConstraintFromSetHotelAlternateProperties($hotelAlternateProperties))) {
             throw new InvalidArgumentException($hotelAlternatePropertiesChoiceErrorMessage, __LINE__);
         }
         if (is_null($hotelAlternateProperties) || (is_array($hotelAlternateProperties) && empty($hotelAlternateProperties))) {

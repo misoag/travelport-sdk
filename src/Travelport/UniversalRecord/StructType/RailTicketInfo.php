@@ -188,12 +188,13 @@ class RailTicketInfo extends AbstractStructBase
         return $this->RailJourneyRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailJourneyRef method
+     * This method is responsible for validating the value(s) passed to the setRailJourneyRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailJourneyRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailJourneyRefForArrayConstraintsFromSetRailJourneyRef(?array $values = []): string
+    public static function validateRailJourneyRefForArrayConstraintFromSetRailJourneyRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -222,7 +223,7 @@ class RailTicketInfo extends AbstractStructBase
     public function setRailJourneyRef(?array $railJourneyRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railJourneyRefArrayErrorMessage = self::validateRailJourneyRefForArrayConstraintsFromSetRailJourneyRef($railJourneyRef))) {
+        if ('' !== ($railJourneyRefArrayErrorMessage = self::validateRailJourneyRefForArrayConstraintFromSetRailJourneyRef($railJourneyRef))) {
             throw new InvalidArgumentException($railJourneyRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -262,12 +263,13 @@ class RailTicketInfo extends AbstractStructBase
         return $this->TicketAdvisory;
     }
     /**
-     * This method is responsible for validating the values passed to the setTicketAdvisory method
+     * This method is responsible for validating the value(s) passed to the setTicketAdvisory method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTicketAdvisory method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTicketAdvisoryForArrayConstraintsFromSetTicketAdvisory(?array $values = []): string
+    public static function validateTicketAdvisoryForArrayConstraintFromSetTicketAdvisory(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -296,7 +298,7 @@ class RailTicketInfo extends AbstractStructBase
     public function setTicketAdvisory(?array $ticketAdvisory = null): self
     {
         // validation for constraint: array
-        if ('' !== ($ticketAdvisoryArrayErrorMessage = self::validateTicketAdvisoryForArrayConstraintsFromSetTicketAdvisory($ticketAdvisory))) {
+        if ('' !== ($ticketAdvisoryArrayErrorMessage = self::validateTicketAdvisoryForArrayConstraintFromSetTicketAdvisory($ticketAdvisory))) {
             throw new InvalidArgumentException($ticketAdvisoryArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(10)

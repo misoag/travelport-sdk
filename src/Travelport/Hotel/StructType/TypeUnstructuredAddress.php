@@ -46,12 +46,13 @@ class TypeUnstructuredAddress extends AbstractStructBase
         return $this->Address;
     }
     /**
-     * This method is responsible for validating the values passed to the setAddress method
+     * This method is responsible for validating the value(s) passed to the setAddress method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAddress method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAddressForArrayConstraintsFromSetAddress(?array $values = []): string
+    public static function validateAddressForArrayConstraintFromSetAddress(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -72,17 +73,17 @@ class TypeUnstructuredAddress extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAddress method
+     * This method is responsible for validating the value(s) passed to the setAddress method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAddress method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAddressForMaxLengthConstraintFromSetAddress($values): string
+    public static function validateAddressForMaxLengthConstraintFromSetAddress(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $typeUnstructuredAddressAddressItem) {
+        foreach (($values ?? []) as $typeUnstructuredAddressAddressItem) {
             // validation for constraint: maxLength(50)
             if (mb_strlen((string) $typeUnstructuredAddressAddressItem) > 50) {
                 $invalidValues[] = var_export($typeUnstructuredAddressAddressItem, true);
@@ -96,17 +97,17 @@ class TypeUnstructuredAddress extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAddress method
+     * This method is responsible for validating the value(s) passed to the setAddress method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAddress method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAddressForMinLengthConstraintFromSetAddress($values): string
+    public static function validateAddressForMinLengthConstraintFromSetAddress(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $typeUnstructuredAddressAddressItem) {
+        foreach (($values ?? []) as $typeUnstructuredAddressAddressItem) {
             // validation for constraint: minLength
             if (mb_strlen((string) $typeUnstructuredAddressAddressItem) < 0) {
                 $invalidValues[] = var_export($typeUnstructuredAddressAddressItem, true);
@@ -128,7 +129,7 @@ class TypeUnstructuredAddress extends AbstractStructBase
     public function setAddress(?array $address = null): self
     {
         // validation for constraint: array
-        if ('' !== ($addressArrayErrorMessage = self::validateAddressForArrayConstraintsFromSetAddress($address))) {
+        if ('' !== ($addressArrayErrorMessage = self::validateAddressForArrayConstraintFromSetAddress($address))) {
             throw new InvalidArgumentException($addressArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxLength(50)

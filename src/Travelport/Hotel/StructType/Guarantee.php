@@ -162,16 +162,16 @@ class Guarantee extends AbstractStructBase
      */
     public function getCreditCard(): ?\Travelport\Hotel\StructType\CreditCard
     {
-        return isset($this->CreditCard) ? $this->CreditCard : null;
+        return $this->CreditCard ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setCreditCard method
+     * This method is responsible for validating the value(s) passed to the setCreditCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCreditCard method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCreditCardForChoiceConstraintsFromSetCreditCard($value): string
+    public function validateCreditCardForChoiceConstraintFromSetCreditCard($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -204,7 +204,7 @@ class Guarantee extends AbstractStructBase
     public function setCreditCard(?\Travelport\Hotel\StructType\CreditCard $creditCard = null): self
     {
         // validation for constraint: choice(CreditCard, OtherGuaranteeInfo)
-        if ('' !== ($creditCardChoiceErrorMessage = self::validateCreditCardForChoiceConstraintsFromSetCreditCard($creditCard))) {
+        if ('' !== ($creditCardChoiceErrorMessage = self::validateCreditCardForChoiceConstraintFromSetCreditCard($creditCard))) {
             throw new InvalidArgumentException($creditCardChoiceErrorMessage, __LINE__);
         }
         if (is_null($creditCard) || (is_array($creditCard) && empty($creditCard))) {
@@ -221,16 +221,16 @@ class Guarantee extends AbstractStructBase
      */
     public function getOtherGuaranteeInfo(): ?\Travelport\Hotel\StructType\OtherGuaranteeInfo
     {
-        return isset($this->OtherGuaranteeInfo) ? $this->OtherGuaranteeInfo : null;
+        return $this->OtherGuaranteeInfo ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setOtherGuaranteeInfo method
+     * This method is responsible for validating the value(s) passed to the setOtherGuaranteeInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOtherGuaranteeInfo method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateOtherGuaranteeInfoForChoiceConstraintsFromSetOtherGuaranteeInfo($value): string
+    public function validateOtherGuaranteeInfoForChoiceConstraintFromSetOtherGuaranteeInfo($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -263,7 +263,7 @@ class Guarantee extends AbstractStructBase
     public function setOtherGuaranteeInfo(?\Travelport\Hotel\StructType\OtherGuaranteeInfo $otherGuaranteeInfo = null): self
     {
         // validation for constraint: choice(CreditCard, OtherGuaranteeInfo)
-        if ('' !== ($otherGuaranteeInfoChoiceErrorMessage = self::validateOtherGuaranteeInfoForChoiceConstraintsFromSetOtherGuaranteeInfo($otherGuaranteeInfo))) {
+        if ('' !== ($otherGuaranteeInfoChoiceErrorMessage = self::validateOtherGuaranteeInfoForChoiceConstraintFromSetOtherGuaranteeInfo($otherGuaranteeInfo))) {
             throw new InvalidArgumentException($otherGuaranteeInfoChoiceErrorMessage, __LINE__);
         }
         if (is_null($otherGuaranteeInfo) || (is_array($otherGuaranteeInfo) && empty($otherGuaranteeInfo))) {

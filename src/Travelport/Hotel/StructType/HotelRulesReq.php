@@ -56,16 +56,16 @@ class HotelRulesReq extends BaseReq
      */
     public function getHotelReservationLocatorCode(): ?string
     {
-        return isset($this->HotelReservationLocatorCode) ? $this->HotelReservationLocatorCode : null;
+        return $this->HotelReservationLocatorCode ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelReservationLocatorCode method
+     * This method is responsible for validating the value(s) passed to the setHotelReservationLocatorCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelReservationLocatorCode method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelReservationLocatorCodeForChoiceConstraintsFromSetHotelReservationLocatorCode($value): string
+    public function validateHotelReservationLocatorCodeForChoiceConstraintFromSetHotelReservationLocatorCode($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -102,7 +102,7 @@ class HotelRulesReq extends BaseReq
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotelReservationLocatorCode, true), gettype($hotelReservationLocatorCode)), __LINE__);
         }
         // validation for constraint: choice(HotelReservationLocatorCode, HotelRulesLookup)
-        if ('' !== ($hotelReservationLocatorCodeChoiceErrorMessage = self::validateHotelReservationLocatorCodeForChoiceConstraintsFromSetHotelReservationLocatorCode($hotelReservationLocatorCode))) {
+        if ('' !== ($hotelReservationLocatorCodeChoiceErrorMessage = self::validateHotelReservationLocatorCodeForChoiceConstraintFromSetHotelReservationLocatorCode($hotelReservationLocatorCode))) {
             throw new InvalidArgumentException($hotelReservationLocatorCodeChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: maxLength(8)
@@ -127,16 +127,16 @@ class HotelRulesReq extends BaseReq
      */
     public function getHotelRulesLookup(): ?\Travelport\Hotel\StructType\HotelRulesLookup
     {
-        return isset($this->HotelRulesLookup) ? $this->HotelRulesLookup : null;
+        return $this->HotelRulesLookup ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelRulesLookup method
+     * This method is responsible for validating the value(s) passed to the setHotelRulesLookup method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelRulesLookup method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelRulesLookupForChoiceConstraintsFromSetHotelRulesLookup($value): string
+    public function validateHotelRulesLookupForChoiceConstraintFromSetHotelRulesLookup($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -169,7 +169,7 @@ class HotelRulesReq extends BaseReq
     public function setHotelRulesLookup(?\Travelport\Hotel\StructType\HotelRulesLookup $hotelRulesLookup = null): self
     {
         // validation for constraint: choice(HotelReservationLocatorCode, HotelRulesLookup)
-        if ('' !== ($hotelRulesLookupChoiceErrorMessage = self::validateHotelRulesLookupForChoiceConstraintsFromSetHotelRulesLookup($hotelRulesLookup))) {
+        if ('' !== ($hotelRulesLookupChoiceErrorMessage = self::validateHotelRulesLookupForChoiceConstraintFromSetHotelRulesLookup($hotelRulesLookup))) {
             throw new InvalidArgumentException($hotelRulesLookupChoiceErrorMessage, __LINE__);
         }
         if (is_null($hotelRulesLookup) || (is_array($hotelRulesLookup) && empty($hotelRulesLookup))) {

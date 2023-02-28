@@ -82,12 +82,13 @@ class OptionalServicesInfo extends AbstractStructBase
         return $this->FormOfPayment;
     }
     /**
-     * This method is responsible for validating the values passed to the setFormOfPayment method
+     * This method is responsible for validating the value(s) passed to the setFormOfPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPayment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFormOfPaymentForArrayConstraintsFromSetFormOfPayment(?array $values = []): string
+    public static function validateFormOfPaymentForArrayConstraintFromSetFormOfPayment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -116,7 +117,7 @@ class OptionalServicesInfo extends AbstractStructBase
     public function setFormOfPayment(?array $formOfPayment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintsFromSetFormOfPayment($formOfPayment))) {
+        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintFromSetFormOfPayment($formOfPayment))) {
             throw new InvalidArgumentException($formOfPaymentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -156,12 +157,13 @@ class OptionalServicesInfo extends AbstractStructBase
         return $this->FormOfPaymentRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setFormOfPaymentRef method
+     * This method is responsible for validating the value(s) passed to the setFormOfPaymentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPaymentRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFormOfPaymentRefForArrayConstraintsFromSetFormOfPaymentRef(?array $values = []): string
+    public static function validateFormOfPaymentRefForArrayConstraintFromSetFormOfPaymentRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -190,7 +192,7 @@ class OptionalServicesInfo extends AbstractStructBase
     public function setFormOfPaymentRef(?array $formOfPaymentRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($formOfPaymentRefArrayErrorMessage = self::validateFormOfPaymentRefForArrayConstraintsFromSetFormOfPaymentRef($formOfPaymentRef))) {
+        if ('' !== ($formOfPaymentRefArrayErrorMessage = self::validateFormOfPaymentRefForArrayConstraintFromSetFormOfPaymentRef($formOfPaymentRef))) {
             throw new InvalidArgumentException($formOfPaymentRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

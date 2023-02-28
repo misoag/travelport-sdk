@@ -223,12 +223,13 @@ class EMDInfo extends AbstractStructBase
         return $this->SupplierLocator;
     }
     /**
-     * This method is responsible for validating the values passed to the setSupplierLocator method
+     * This method is responsible for validating the value(s) passed to the setSupplierLocator method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSupplierLocator method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSupplierLocatorForArrayConstraintsFromSetSupplierLocator(?array $values = []): string
+    public static function validateSupplierLocatorForArrayConstraintFromSetSupplierLocator(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -257,7 +258,7 @@ class EMDInfo extends AbstractStructBase
     public function setSupplierLocator(?array $supplierLocator = null): self
     {
         // validation for constraint: array
-        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintsFromSetSupplierLocator($supplierLocator))) {
+        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintFromSetSupplierLocator($supplierLocator))) {
             throw new InvalidArgumentException($supplierLocatorArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -297,12 +298,13 @@ class EMDInfo extends AbstractStructBase
         return $this->ElectronicMiscDocument;
     }
     /**
-     * This method is responsible for validating the values passed to the setElectronicMiscDocument method
+     * This method is responsible for validating the value(s) passed to the setElectronicMiscDocument method
      * This method is willingly generated in order to preserve the one-line inline validation within the setElectronicMiscDocument method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateElectronicMiscDocumentForArrayConstraintsFromSetElectronicMiscDocument(?array $values = []): string
+    public static function validateElectronicMiscDocumentForArrayConstraintFromSetElectronicMiscDocument(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -331,7 +333,7 @@ class EMDInfo extends AbstractStructBase
     public function setElectronicMiscDocument(?array $electronicMiscDocument = null): self
     {
         // validation for constraint: array
-        if ('' !== ($electronicMiscDocumentArrayErrorMessage = self::validateElectronicMiscDocumentForArrayConstraintsFromSetElectronicMiscDocument($electronicMiscDocument))) {
+        if ('' !== ($electronicMiscDocumentArrayErrorMessage = self::validateElectronicMiscDocumentForArrayConstraintFromSetElectronicMiscDocument($electronicMiscDocument))) {
             throw new InvalidArgumentException($electronicMiscDocumentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -428,12 +430,13 @@ class EMDInfo extends AbstractStructBase
         return $this->EMDEndorsement;
     }
     /**
-     * This method is responsible for validating the values passed to the setEMDEndorsement method
+     * This method is responsible for validating the value(s) passed to the setEMDEndorsement method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEMDEndorsement method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEMDEndorsementForArrayConstraintsFromSetEMDEndorsement(?array $values = []): string
+    public static function validateEMDEndorsementForArrayConstraintFromSetEMDEndorsement(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -454,17 +457,17 @@ class EMDInfo extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setEMDEndorsement method
+     * This method is responsible for validating the value(s) passed to the setEMDEndorsement method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEMDEndorsement method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEMDEndorsementForMaxLengthConstraintFromSetEMDEndorsement($values): string
+    public static function validateEMDEndorsementForMaxLengthConstraintFromSetEMDEndorsement(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $eMDInfoEMDEndorsementItem) {
+        foreach (($values ?? []) as $eMDInfoEMDEndorsementItem) {
             // validation for constraint: maxLength(255)
             if (mb_strlen((string) $eMDInfoEMDEndorsementItem) > 255) {
                 $invalidValues[] = var_export($eMDInfoEMDEndorsementItem, true);
@@ -478,17 +481,17 @@ class EMDInfo extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setEMDEndorsement method
+     * This method is responsible for validating the value(s) passed to the setEMDEndorsement method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEMDEndorsement method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEMDEndorsementForMinLengthConstraintFromSetEMDEndorsement($values): string
+    public static function validateEMDEndorsementForMinLengthConstraintFromSetEMDEndorsement(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $eMDInfoEMDEndorsementItem) {
+        foreach (($values ?? []) as $eMDInfoEMDEndorsementItem) {
             // validation for constraint: minLength(1)
             if (mb_strlen((string) $eMDInfoEMDEndorsementItem) < 1) {
                 $invalidValues[] = var_export($eMDInfoEMDEndorsementItem, true);
@@ -510,7 +513,7 @@ class EMDInfo extends AbstractStructBase
     public function setEMDEndorsement(?array $eMDEndorsement = null): self
     {
         // validation for constraint: array
-        if ('' !== ($eMDEndorsementArrayErrorMessage = self::validateEMDEndorsementForArrayConstraintsFromSetEMDEndorsement($eMDEndorsement))) {
+        if ('' !== ($eMDEndorsementArrayErrorMessage = self::validateEMDEndorsementForArrayConstraintFromSetEMDEndorsement($eMDEndorsement))) {
             throw new InvalidArgumentException($eMDEndorsementArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxLength(255)

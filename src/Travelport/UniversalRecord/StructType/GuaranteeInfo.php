@@ -168,16 +168,16 @@ class GuaranteeInfo extends AbstractStructBase
      */
     public function getDepositAmount(): ?\Travelport\UniversalRecord\StructType\DepositAmount
     {
-        return isset($this->DepositAmount) ? $this->DepositAmount : null;
+        return $this->DepositAmount ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setDepositAmount method
+     * This method is responsible for validating the value(s) passed to the setDepositAmount method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDepositAmount method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateDepositAmountForChoiceConstraintsFromSetDepositAmount($value): string
+    public function validateDepositAmountForChoiceConstraintFromSetDepositAmount($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -211,7 +211,7 @@ class GuaranteeInfo extends AbstractStructBase
     public function setDepositAmount(?\Travelport\UniversalRecord\StructType\DepositAmount $depositAmount = null): self
     {
         // validation for constraint: choice(DepositAmount, DepositNights, DepositPercent)
-        if ('' !== ($depositAmountChoiceErrorMessage = self::validateDepositAmountForChoiceConstraintsFromSetDepositAmount($depositAmount))) {
+        if ('' !== ($depositAmountChoiceErrorMessage = self::validateDepositAmountForChoiceConstraintFromSetDepositAmount($depositAmount))) {
             throw new InvalidArgumentException($depositAmountChoiceErrorMessage, __LINE__);
         }
         if (is_null($depositAmount) || (is_array($depositAmount) && empty($depositAmount))) {
@@ -228,16 +228,16 @@ class GuaranteeInfo extends AbstractStructBase
      */
     public function getDepositNights(): ?int
     {
-        return isset($this->DepositNights) ? $this->DepositNights : null;
+        return $this->DepositNights ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setDepositNights method
+     * This method is responsible for validating the value(s) passed to the setDepositNights method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDepositNights method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateDepositNightsForChoiceConstraintsFromSetDepositNights($value): string
+    public function validateDepositNightsForChoiceConstraintFromSetDepositNights($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -275,7 +275,7 @@ class GuaranteeInfo extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($depositNights, true), gettype($depositNights)), __LINE__);
         }
         // validation for constraint: choice(DepositAmount, DepositNights, DepositPercent)
-        if ('' !== ($depositNightsChoiceErrorMessage = self::validateDepositNightsForChoiceConstraintsFromSetDepositNights($depositNights))) {
+        if ('' !== ($depositNightsChoiceErrorMessage = self::validateDepositNightsForChoiceConstraintFromSetDepositNights($depositNights))) {
             throw new InvalidArgumentException($depositNightsChoiceErrorMessage, __LINE__);
         }
         if (is_null($depositNights) || (is_array($depositNights) && empty($depositNights))) {
@@ -292,16 +292,16 @@ class GuaranteeInfo extends AbstractStructBase
      */
     public function getDepositPercent(): ?int
     {
-        return isset($this->DepositPercent) ? $this->DepositPercent : null;
+        return $this->DepositPercent ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setDepositPercent method
+     * This method is responsible for validating the value(s) passed to the setDepositPercent method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDepositPercent method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateDepositPercentForChoiceConstraintsFromSetDepositPercent($value): string
+    public function validateDepositPercentForChoiceConstraintFromSetDepositPercent($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -339,7 +339,7 @@ class GuaranteeInfo extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($depositPercent, true), gettype($depositPercent)), __LINE__);
         }
         // validation for constraint: choice(DepositAmount, DepositNights, DepositPercent)
-        if ('' !== ($depositPercentChoiceErrorMessage = self::validateDepositPercentForChoiceConstraintsFromSetDepositPercent($depositPercent))) {
+        if ('' !== ($depositPercentChoiceErrorMessage = self::validateDepositPercentForChoiceConstraintFromSetDepositPercent($depositPercent))) {
             throw new InvalidArgumentException($depositPercentChoiceErrorMessage, __LINE__);
         }
         if (is_null($depositPercent) || (is_array($depositPercent) && empty($depositPercent))) {
@@ -359,12 +359,13 @@ class GuaranteeInfo extends AbstractStructBase
         return $this->GuaranteePaymentType;
     }
     /**
-     * This method is responsible for validating the values passed to the setGuaranteePaymentType method
+     * This method is responsible for validating the value(s) passed to the setGuaranteePaymentType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGuaranteePaymentType method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateGuaranteePaymentTypeForArrayConstraintsFromSetGuaranteePaymentType(?array $values = []): string
+    public static function validateGuaranteePaymentTypeForArrayConstraintFromSetGuaranteePaymentType(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -393,7 +394,7 @@ class GuaranteeInfo extends AbstractStructBase
     public function setGuaranteePaymentType(?array $guaranteePaymentType = null): self
     {
         // validation for constraint: array
-        if ('' !== ($guaranteePaymentTypeArrayErrorMessage = self::validateGuaranteePaymentTypeForArrayConstraintsFromSetGuaranteePaymentType($guaranteePaymentType))) {
+        if ('' !== ($guaranteePaymentTypeArrayErrorMessage = self::validateGuaranteePaymentTypeForArrayConstraintFromSetGuaranteePaymentType($guaranteePaymentType))) {
             throw new InvalidArgumentException($guaranteePaymentTypeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

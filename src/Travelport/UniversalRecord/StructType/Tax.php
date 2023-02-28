@@ -106,7 +106,7 @@ class Tax extends AbstractStructBase
      * @param string $term
      * @param string $collectionFreq
      */
-    public function __construct(string $amount, float $percentage, int $code, ?string $category = null, ?string $effectiveDate = null, ?string $expirationDate = null, ?string $term = null, ?string $collectionFreq = null)
+    public function __construct(string $amount = null, float $percentage = null, int $code, ?string $category = null, ?string $effectiveDate = null, ?string $expirationDate = null, ?string $term = null, ?string $collectionFreq = null)
     {
         $this
             ->setAmount($amount)
@@ -120,20 +120,20 @@ class Tax extends AbstractStructBase
     }
     /**
      * Get Amount value
-     * @return string
+     * @return string|null
      */
-    public function getAmount(): string
+    public function getAmount(): ?string
     {
-        return isset($this->Amount) ? $this->Amount : null;
+        return $this->Amount ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAmount method
+     * This method is responsible for validating the value(s) passed to the setAmount method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAmount method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAmountForChoiceConstraintsFromSetAmount($value): string
+    public function validateAmountForChoiceConstraintFromSetAmount($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -163,14 +163,14 @@ class Tax extends AbstractStructBase
      * @param string $amount
      * @return \Travelport\UniversalRecord\StructType\Tax
      */
-    public function setAmount(string $amount): self
+    public function setAmount(string $amount = null): self
     {
         // validation for constraint: string
         if (!is_null($amount) && !is_string($amount)) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
         }
         // validation for constraint: choice(Amount, Percentage)
-        if ('' !== ($amountChoiceErrorMessage = self::validateAmountForChoiceConstraintsFromSetAmount($amount))) {
+        if ('' !== ($amountChoiceErrorMessage = self::validateAmountForChoiceConstraintFromSetAmount($amount))) {
             throw new InvalidArgumentException($amountChoiceErrorMessage, __LINE__);
         }
         if (is_null($amount) || (is_array($amount) && empty($amount))) {
@@ -183,20 +183,20 @@ class Tax extends AbstractStructBase
     }
     /**
      * Get Percentage value
-     * @return float
+     * @return float|null
      */
-    public function getPercentage(): float
+    public function getPercentage(): ?float
     {
-        return isset($this->Percentage) ? $this->Percentage : null;
+        return $this->Percentage ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setPercentage method
+     * This method is responsible for validating the value(s) passed to the setPercentage method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPercentage method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validatePercentageForChoiceConstraintsFromSetPercentage($value): string
+    public function validatePercentageForChoiceConstraintFromSetPercentage($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -226,14 +226,14 @@ class Tax extends AbstractStructBase
      * @param float $percentage
      * @return \Travelport\UniversalRecord\StructType\Tax
      */
-    public function setPercentage(float $percentage): self
+    public function setPercentage(float $percentage = null): self
     {
         // validation for constraint: float
         if (!is_null($percentage) && !(is_float($percentage) || is_numeric($percentage))) {
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($percentage, true), gettype($percentage)), __LINE__);
         }
         // validation for constraint: choice(Amount, Percentage)
-        if ('' !== ($percentageChoiceErrorMessage = self::validatePercentageForChoiceConstraintsFromSetPercentage($percentage))) {
+        if ('' !== ($percentageChoiceErrorMessage = self::validatePercentageForChoiceConstraintFromSetPercentage($percentage))) {
             throw new InvalidArgumentException($percentageChoiceErrorMessage, __LINE__);
         }
         if (is_null($percentage) || (is_array($percentage) && empty($percentage))) {

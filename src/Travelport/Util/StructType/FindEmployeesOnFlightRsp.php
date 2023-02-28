@@ -42,12 +42,13 @@ class FindEmployeesOnFlightRsp extends BaseRsp
         return $this->EmployeesOnFlight;
     }
     /**
-     * This method is responsible for validating the values passed to the setEmployeesOnFlight method
+     * This method is responsible for validating the value(s) passed to the setEmployeesOnFlight method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEmployeesOnFlight method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEmployeesOnFlightForArrayConstraintsFromSetEmployeesOnFlight(?array $values = []): string
+    public static function validateEmployeesOnFlightForArrayConstraintFromSetEmployeesOnFlight(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class FindEmployeesOnFlightRsp extends BaseRsp
     public function setEmployeesOnFlight(?array $employeesOnFlight = null): self
     {
         // validation for constraint: array
-        if ('' !== ($employeesOnFlightArrayErrorMessage = self::validateEmployeesOnFlightForArrayConstraintsFromSetEmployeesOnFlight($employeesOnFlight))) {
+        if ('' !== ($employeesOnFlightArrayErrorMessage = self::validateEmployeesOnFlightForArrayConstraintFromSetEmployeesOnFlight($employeesOnFlight))) {
             throw new InvalidArgumentException($employeesOnFlightArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

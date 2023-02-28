@@ -239,12 +239,13 @@ class PricingDetails extends AbstractStructBase
         return $this->AdvisoryMessage;
     }
     /**
-     * This method is responsible for validating the values passed to the setAdvisoryMessage method
+     * This method is responsible for validating the value(s) passed to the setAdvisoryMessage method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAdvisoryMessage method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAdvisoryMessageForArrayConstraintsFromSetAdvisoryMessage(?array $values = []): string
+    public static function validateAdvisoryMessageForArrayConstraintFromSetAdvisoryMessage(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -273,7 +274,7 @@ class PricingDetails extends AbstractStructBase
     public function setAdvisoryMessage(?array $advisoryMessage = null): self
     {
         // validation for constraint: array
-        if ('' !== ($advisoryMessageArrayErrorMessage = self::validateAdvisoryMessageForArrayConstraintsFromSetAdvisoryMessage($advisoryMessage))) {
+        if ('' !== ($advisoryMessageArrayErrorMessage = self::validateAdvisoryMessageForArrayConstraintFromSetAdvisoryMessage($advisoryMessage))) {
             throw new InvalidArgumentException($advisoryMessageArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -313,12 +314,13 @@ class PricingDetails extends AbstractStructBase
         return $this->EndorsementText;
     }
     /**
-     * This method is responsible for validating the values passed to the setEndorsementText method
+     * This method is responsible for validating the value(s) passed to the setEndorsementText method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEndorsementText method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEndorsementTextForArrayConstraintsFromSetEndorsementText(?array $values = []): string
+    public static function validateEndorsementTextForArrayConstraintFromSetEndorsementText(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -347,7 +349,7 @@ class PricingDetails extends AbstractStructBase
     public function setEndorsementText(?array $endorsementText = null): self
     {
         // validation for constraint: array
-        if ('' !== ($endorsementTextArrayErrorMessage = self::validateEndorsementTextForArrayConstraintsFromSetEndorsementText($endorsementText))) {
+        if ('' !== ($endorsementTextArrayErrorMessage = self::validateEndorsementTextForArrayConstraintFromSetEndorsementText($endorsementText))) {
             throw new InvalidArgumentException($endorsementTextArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

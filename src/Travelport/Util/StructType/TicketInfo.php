@@ -257,12 +257,13 @@ class TicketInfo extends AbstractStructBase
         return $this->ConjunctedTicketInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setConjunctedTicketInfo method
+     * This method is responsible for validating the value(s) passed to the setConjunctedTicketInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setConjunctedTicketInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateConjunctedTicketInfoForArrayConstraintsFromSetConjunctedTicketInfo(?array $values = []): string
+    public static function validateConjunctedTicketInfoForArrayConstraintFromSetConjunctedTicketInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -291,7 +292,7 @@ class TicketInfo extends AbstractStructBase
     public function setConjunctedTicketInfo(?array $conjunctedTicketInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($conjunctedTicketInfoArrayErrorMessage = self::validateConjunctedTicketInfoForArrayConstraintsFromSetConjunctedTicketInfo($conjunctedTicketInfo))) {
+        if ('' !== ($conjunctedTicketInfoArrayErrorMessage = self::validateConjunctedTicketInfoForArrayConstraintFromSetConjunctedTicketInfo($conjunctedTicketInfo))) {
             throw new InvalidArgumentException($conjunctedTicketInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(3)
@@ -331,12 +332,13 @@ class TicketInfo extends AbstractStructBase
         return $this->ExchangedTicketInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setExchangedTicketInfo method
+     * This method is responsible for validating the value(s) passed to the setExchangedTicketInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setExchangedTicketInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateExchangedTicketInfoForArrayConstraintsFromSetExchangedTicketInfo(?array $values = []): string
+    public static function validateExchangedTicketInfoForArrayConstraintFromSetExchangedTicketInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -365,7 +367,7 @@ class TicketInfo extends AbstractStructBase
     public function setExchangedTicketInfo(?array $exchangedTicketInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($exchangedTicketInfoArrayErrorMessage = self::validateExchangedTicketInfoForArrayConstraintsFromSetExchangedTicketInfo($exchangedTicketInfo))) {
+        if ('' !== ($exchangedTicketInfoArrayErrorMessage = self::validateExchangedTicketInfoForArrayConstraintFromSetExchangedTicketInfo($exchangedTicketInfo))) {
             throw new InvalidArgumentException($exchangedTicketInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

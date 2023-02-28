@@ -328,12 +328,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->BookingTravelerRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingTravelerRef method
+     * This method is responsible for validating the value(s) passed to the setBookingTravelerRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTravelerRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef(?array $values = []): string
+    public static function validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -362,7 +363,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setBookingTravelerRef(?array $bookingTravelerRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef($bookingTravelerRef))) {
+        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef($bookingTravelerRef))) {
             throw new InvalidArgumentException($bookingTravelerRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -402,12 +403,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->SearchPassengerRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setSearchPassengerRef method
+     * This method is responsible for validating the value(s) passed to the setSearchPassengerRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSearchPassengerRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSearchPassengerRefForArrayConstraintsFromSetSearchPassengerRef(?array $values = []): string
+    public static function validateSearchPassengerRefForArrayConstraintFromSetSearchPassengerRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -436,7 +438,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setSearchPassengerRef(?array $searchPassengerRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($searchPassengerRefArrayErrorMessage = self::validateSearchPassengerRefForArrayConstraintsFromSetSearchPassengerRef($searchPassengerRef))) {
+        if ('' !== ($searchPassengerRefArrayErrorMessage = self::validateSearchPassengerRefForArrayConstraintFromSetSearchPassengerRef($searchPassengerRef))) {
             throw new InvalidArgumentException($searchPassengerRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -476,12 +478,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->PointOfSaleRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setPointOfSaleRef method
+     * This method is responsible for validating the value(s) passed to the setPointOfSaleRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPointOfSaleRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePointOfSaleRefForArrayConstraintsFromSetPointOfSaleRef(?array $values = []): string
+    public static function validatePointOfSaleRefForArrayConstraintFromSetPointOfSaleRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -510,7 +513,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setPointOfSaleRef(?array $pointOfSaleRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($pointOfSaleRefArrayErrorMessage = self::validatePointOfSaleRefForArrayConstraintsFromSetPointOfSaleRef($pointOfSaleRef))) {
+        if ('' !== ($pointOfSaleRefArrayErrorMessage = self::validatePointOfSaleRefForArrayConstraintFromSetPointOfSaleRef($pointOfSaleRef))) {
             throw new InvalidArgumentException($pointOfSaleRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -550,12 +553,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->AccountingRemarkRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setAccountingRemarkRef method
+     * This method is responsible for validating the value(s) passed to the setAccountingRemarkRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAccountingRemarkRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAccountingRemarkRefForArrayConstraintsFromSetAccountingRemarkRef(?array $values = []): string
+    public static function validateAccountingRemarkRefForArrayConstraintFromSetAccountingRemarkRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -584,7 +588,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setAccountingRemarkRef(?array $accountingRemarkRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($accountingRemarkRefArrayErrorMessage = self::validateAccountingRemarkRefForArrayConstraintsFromSetAccountingRemarkRef($accountingRemarkRef))) {
+        if ('' !== ($accountingRemarkRefArrayErrorMessage = self::validateAccountingRemarkRefForArrayConstraintFromSetAccountingRemarkRef($accountingRemarkRef))) {
             throw new InvalidArgumentException($accountingRemarkRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -624,12 +628,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->GeneralRemarkRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setGeneralRemarkRef method
+     * This method is responsible for validating the value(s) passed to the setGeneralRemarkRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGeneralRemarkRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateGeneralRemarkRefForArrayConstraintsFromSetGeneralRemarkRef(?array $values = []): string
+    public static function validateGeneralRemarkRefForArrayConstraintFromSetGeneralRemarkRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -658,7 +663,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setGeneralRemarkRef(?array $generalRemarkRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($generalRemarkRefArrayErrorMessage = self::validateGeneralRemarkRefForArrayConstraintsFromSetGeneralRemarkRef($generalRemarkRef))) {
+        if ('' !== ($generalRemarkRefArrayErrorMessage = self::validateGeneralRemarkRefForArrayConstraintFromSetGeneralRemarkRef($generalRemarkRef))) {
             throw new InvalidArgumentException($generalRemarkRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -698,12 +703,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->AirPricingModifierRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirPricingModifierRef method
+     * This method is responsible for validating the value(s) passed to the setAirPricingModifierRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingModifierRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirPricingModifierRefForArrayConstraintsFromSetAirPricingModifierRef(?array $values = []): string
+    public static function validateAirPricingModifierRefForArrayConstraintFromSetAirPricingModifierRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -732,7 +738,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setAirPricingModifierRef(?array $airPricingModifierRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airPricingModifierRefArrayErrorMessage = self::validateAirPricingModifierRefForArrayConstraintsFromSetAirPricingModifierRef($airPricingModifierRef))) {
+        if ('' !== ($airPricingModifierRefArrayErrorMessage = self::validateAirPricingModifierRefForArrayConstraintFromSetAirPricingModifierRef($airPricingModifierRef))) {
             throw new InvalidArgumentException($airPricingModifierRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -772,12 +778,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->AirPricingSolutionRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirPricingSolutionRef method
+     * This method is responsible for validating the value(s) passed to the setAirPricingSolutionRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingSolutionRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirPricingSolutionRefForArrayConstraintsFromSetAirPricingSolutionRef(?array $values = []): string
+    public static function validateAirPricingSolutionRefForArrayConstraintFromSetAirPricingSolutionRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -806,7 +813,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setAirPricingSolutionRef(?array $airPricingSolutionRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airPricingSolutionRefArrayErrorMessage = self::validateAirPricingSolutionRefForArrayConstraintsFromSetAirPricingSolutionRef($airPricingSolutionRef))) {
+        if ('' !== ($airPricingSolutionRefArrayErrorMessage = self::validateAirPricingSolutionRefForArrayConstraintFromSetAirPricingSolutionRef($airPricingSolutionRef))) {
             throw new InvalidArgumentException($airPricingSolutionRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -846,12 +853,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->VehicleSearchModifiersRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleSearchModifiersRef method
+     * This method is responsible for validating the value(s) passed to the setVehicleSearchModifiersRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleSearchModifiersRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleSearchModifiersRefForArrayConstraintsFromSetVehicleSearchModifiersRef(?array $values = []): string
+    public static function validateVehicleSearchModifiersRefForArrayConstraintFromSetVehicleSearchModifiersRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -880,7 +888,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setVehicleSearchModifiersRef(?array $vehicleSearchModifiersRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleSearchModifiersRefArrayErrorMessage = self::validateVehicleSearchModifiersRefForArrayConstraintsFromSetVehicleSearchModifiersRef($vehicleSearchModifiersRef))) {
+        if ('' !== ($vehicleSearchModifiersRefArrayErrorMessage = self::validateVehicleSearchModifiersRefForArrayConstraintFromSetVehicleSearchModifiersRef($vehicleSearchModifiersRef))) {
             throw new InvalidArgumentException($vehicleSearchModifiersRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -920,12 +928,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->VehicleDateLocationRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleDateLocationRef method
+     * This method is responsible for validating the value(s) passed to the setVehicleDateLocationRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleDateLocationRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleDateLocationRefForArrayConstraintsFromSetVehicleDateLocationRef(?array $values = []): string
+    public static function validateVehicleDateLocationRefForArrayConstraintFromSetVehicleDateLocationRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -954,7 +963,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setVehicleDateLocationRef(?array $vehicleDateLocationRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleDateLocationRefArrayErrorMessage = self::validateVehicleDateLocationRefForArrayConstraintsFromSetVehicleDateLocationRef($vehicleDateLocationRef))) {
+        if ('' !== ($vehicleDateLocationRefArrayErrorMessage = self::validateVehicleDateLocationRefForArrayConstraintFromSetVehicleDateLocationRef($vehicleDateLocationRef))) {
             throw new InvalidArgumentException($vehicleDateLocationRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -994,12 +1003,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->SpecialEquipmentRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setSpecialEquipmentRef method
+     * This method is responsible for validating the value(s) passed to the setSpecialEquipmentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSpecialEquipmentRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSpecialEquipmentRefForArrayConstraintsFromSetSpecialEquipmentRef(?array $values = []): string
+    public static function validateSpecialEquipmentRefForArrayConstraintFromSetSpecialEquipmentRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1028,7 +1038,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setSpecialEquipmentRef(?array $specialEquipmentRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($specialEquipmentRefArrayErrorMessage = self::validateSpecialEquipmentRefForArrayConstraintsFromSetSpecialEquipmentRef($specialEquipmentRef))) {
+        if ('' !== ($specialEquipmentRefArrayErrorMessage = self::validateSpecialEquipmentRefForArrayConstraintFromSetSpecialEquipmentRef($specialEquipmentRef))) {
             throw new InvalidArgumentException($specialEquipmentRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1068,12 +1078,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->VehicleSpecialRequestRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleSpecialRequestRef method
+     * This method is responsible for validating the value(s) passed to the setVehicleSpecialRequestRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleSpecialRequestRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleSpecialRequestRefForArrayConstraintsFromSetVehicleSpecialRequestRef(?array $values = []): string
+    public static function validateVehicleSpecialRequestRefForArrayConstraintFromSetVehicleSpecialRequestRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1102,7 +1113,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setVehicleSpecialRequestRef(?array $vehicleSpecialRequestRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleSpecialRequestRefArrayErrorMessage = self::validateVehicleSpecialRequestRefForArrayConstraintsFromSetVehicleSpecialRequestRef($vehicleSpecialRequestRef))) {
+        if ('' !== ($vehicleSpecialRequestRefArrayErrorMessage = self::validateVehicleSpecialRequestRefForArrayConstraintFromSetVehicleSpecialRequestRef($vehicleSpecialRequestRef))) {
             throw new InvalidArgumentException($vehicleSpecialRequestRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1142,12 +1153,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->PaymentInformationRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setPaymentInformationRef method
+     * This method is responsible for validating the value(s) passed to the setPaymentInformationRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentInformationRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePaymentInformationRefForArrayConstraintsFromSetPaymentInformationRef(?array $values = []): string
+    public static function validatePaymentInformationRefForArrayConstraintFromSetPaymentInformationRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1176,7 +1188,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setPaymentInformationRef(?array $paymentInformationRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($paymentInformationRefArrayErrorMessage = self::validatePaymentInformationRefForArrayConstraintsFromSetPaymentInformationRef($paymentInformationRef))) {
+        if ('' !== ($paymentInformationRefArrayErrorMessage = self::validatePaymentInformationRefForArrayConstraintFromSetPaymentInformationRef($paymentInformationRef))) {
             throw new InvalidArgumentException($paymentInformationRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1216,12 +1228,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->DeliveryAddressRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setDeliveryAddressRef method
+     * This method is responsible for validating the value(s) passed to the setDeliveryAddressRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDeliveryAddressRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDeliveryAddressRefForArrayConstraintsFromSetDeliveryAddressRef(?array $values = []): string
+    public static function validateDeliveryAddressRefForArrayConstraintFromSetDeliveryAddressRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1250,7 +1263,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setDeliveryAddressRef(?array $deliveryAddressRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($deliveryAddressRefArrayErrorMessage = self::validateDeliveryAddressRefForArrayConstraintsFromSetDeliveryAddressRef($deliveryAddressRef))) {
+        if ('' !== ($deliveryAddressRefArrayErrorMessage = self::validateDeliveryAddressRefForArrayConstraintFromSetDeliveryAddressRef($deliveryAddressRef))) {
             throw new InvalidArgumentException($deliveryAddressRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1290,12 +1303,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->CollectionAddressRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setCollectionAddressRef method
+     * This method is responsible for validating the value(s) passed to the setCollectionAddressRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCollectionAddressRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCollectionAddressRefForArrayConstraintsFromSetCollectionAddressRef(?array $values = []): string
+    public static function validateCollectionAddressRefForArrayConstraintFromSetCollectionAddressRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1324,7 +1338,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setCollectionAddressRef(?array $collectionAddressRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($collectionAddressRefArrayErrorMessage = self::validateCollectionAddressRefForArrayConstraintsFromSetCollectionAddressRef($collectionAddressRef))) {
+        if ('' !== ($collectionAddressRefArrayErrorMessage = self::validateCollectionAddressRefForArrayConstraintFromSetCollectionAddressRef($collectionAddressRef))) {
             throw new InvalidArgumentException($collectionAddressRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1364,12 +1378,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->FlightArrivalInformationRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setFlightArrivalInformationRef method
+     * This method is responsible for validating the value(s) passed to the setFlightArrivalInformationRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFlightArrivalInformationRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFlightArrivalInformationRefForArrayConstraintsFromSetFlightArrivalInformationRef(?array $values = []): string
+    public static function validateFlightArrivalInformationRefForArrayConstraintFromSetFlightArrivalInformationRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1398,7 +1413,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setFlightArrivalInformationRef(?array $flightArrivalInformationRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($flightArrivalInformationRefArrayErrorMessage = self::validateFlightArrivalInformationRefForArrayConstraintsFromSetFlightArrivalInformationRef($flightArrivalInformationRef))) {
+        if ('' !== ($flightArrivalInformationRefArrayErrorMessage = self::validateFlightArrivalInformationRefForArrayConstraintFromSetFlightArrivalInformationRef($flightArrivalInformationRef))) {
             throw new InvalidArgumentException($flightArrivalInformationRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1438,12 +1453,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->VehicleRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleRef method
+     * This method is responsible for validating the value(s) passed to the setVehicleRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleRefForArrayConstraintsFromSetVehicleRef(?array $values = []): string
+    public static function validateVehicleRefForArrayConstraintFromSetVehicleRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1472,7 +1488,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setVehicleRef(?array $vehicleRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleRefArrayErrorMessage = self::validateVehicleRefForArrayConstraintsFromSetVehicleRef($vehicleRef))) {
+        if ('' !== ($vehicleRefArrayErrorMessage = self::validateVehicleRefForArrayConstraintFromSetVehicleRef($vehicleRef))) {
             throw new InvalidArgumentException($vehicleRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1512,12 +1528,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->VendorLocationRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setVendorLocationRef method
+     * This method is responsible for validating the value(s) passed to the setVendorLocationRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVendorLocationRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVendorLocationRefForArrayConstraintsFromSetVendorLocationRef(?array $values = []): string
+    public static function validateVendorLocationRefForArrayConstraintFromSetVendorLocationRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1546,7 +1563,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setVendorLocationRef(?array $vendorLocationRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vendorLocationRefArrayErrorMessage = self::validateVendorLocationRefForArrayConstraintsFromSetVendorLocationRef($vendorLocationRef))) {
+        if ('' !== ($vendorLocationRefArrayErrorMessage = self::validateVendorLocationRefForArrayConstraintFromSetVendorLocationRef($vendorLocationRef))) {
             throw new InvalidArgumentException($vendorLocationRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1586,12 +1603,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->HotelPropertyRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelPropertyRef method
+     * This method is responsible for validating the value(s) passed to the setHotelPropertyRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelPropertyRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelPropertyRefForArrayConstraintsFromSetHotelPropertyRef(?array $values = []): string
+    public static function validateHotelPropertyRefForArrayConstraintFromSetHotelPropertyRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1620,7 +1638,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setHotelPropertyRef(?array $hotelPropertyRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelPropertyRefArrayErrorMessage = self::validateHotelPropertyRefForArrayConstraintsFromSetHotelPropertyRef($hotelPropertyRef))) {
+        if ('' !== ($hotelPropertyRefArrayErrorMessage = self::validateHotelPropertyRefForArrayConstraintFromSetHotelPropertyRef($hotelPropertyRef))) {
             throw new InvalidArgumentException($hotelPropertyRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1660,12 +1678,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->HotelStayRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelStayRef method
+     * This method is responsible for validating the value(s) passed to the setHotelStayRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelStayRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelStayRefForArrayConstraintsFromSetHotelStayRef(?array $values = []): string
+    public static function validateHotelStayRefForArrayConstraintFromSetHotelStayRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1694,7 +1713,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setHotelStayRef(?array $hotelStayRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelStayRefArrayErrorMessage = self::validateHotelStayRefForArrayConstraintsFromSetHotelStayRef($hotelStayRef))) {
+        if ('' !== ($hotelStayRefArrayErrorMessage = self::validateHotelStayRefForArrayConstraintFromSetHotelStayRef($hotelStayRef))) {
             throw new InvalidArgumentException($hotelStayRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1734,12 +1753,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->HotelRulesModifiersRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelRulesModifiersRef method
+     * This method is responsible for validating the value(s) passed to the setHotelRulesModifiersRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelRulesModifiersRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelRulesModifiersRefForArrayConstraintsFromSetHotelRulesModifiersRef(?array $values = []): string
+    public static function validateHotelRulesModifiersRefForArrayConstraintFromSetHotelRulesModifiersRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1768,7 +1788,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setHotelRulesModifiersRef(?array $hotelRulesModifiersRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelRulesModifiersRefArrayErrorMessage = self::validateHotelRulesModifiersRefForArrayConstraintsFromSetHotelRulesModifiersRef($hotelRulesModifiersRef))) {
+        if ('' !== ($hotelRulesModifiersRefArrayErrorMessage = self::validateHotelRulesModifiersRefForArrayConstraintFromSetHotelRulesModifiersRef($hotelRulesModifiersRef))) {
             throw new InvalidArgumentException($hotelRulesModifiersRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1808,12 +1828,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->HotelDetailsModifiersRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelDetailsModifiersRef method
+     * This method is responsible for validating the value(s) passed to the setHotelDetailsModifiersRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelDetailsModifiersRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelDetailsModifiersRefForArrayConstraintsFromSetHotelDetailsModifiersRef(?array $values = []): string
+    public static function validateHotelDetailsModifiersRefForArrayConstraintFromSetHotelDetailsModifiersRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1842,7 +1863,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setHotelDetailsModifiersRef(?array $hotelDetailsModifiersRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelDetailsModifiersRefArrayErrorMessage = self::validateHotelDetailsModifiersRefForArrayConstraintsFromSetHotelDetailsModifiersRef($hotelDetailsModifiersRef))) {
+        if ('' !== ($hotelDetailsModifiersRefArrayErrorMessage = self::validateHotelDetailsModifiersRefForArrayConstraintFromSetHotelDetailsModifiersRef($hotelDetailsModifiersRef))) {
             throw new InvalidArgumentException($hotelDetailsModifiersRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1882,12 +1903,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->HotelRateDetailRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelRateDetailRef method
+     * This method is responsible for validating the value(s) passed to the setHotelRateDetailRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelRateDetailRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelRateDetailRefForArrayConstraintsFromSetHotelRateDetailRef(?array $values = []): string
+    public static function validateHotelRateDetailRefForArrayConstraintFromSetHotelRateDetailRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1916,7 +1938,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setHotelRateDetailRef(?array $hotelRateDetailRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelRateDetailRefArrayErrorMessage = self::validateHotelRateDetailRefForArrayConstraintsFromSetHotelRateDetailRef($hotelRateDetailRef))) {
+        if ('' !== ($hotelRateDetailRefArrayErrorMessage = self::validateHotelRateDetailRefForArrayConstraintFromSetHotelRateDetailRef($hotelRateDetailRef))) {
             throw new InvalidArgumentException($hotelRateDetailRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1956,12 +1978,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->PromotionCodeRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setPromotionCodeRef method
+     * This method is responsible for validating the value(s) passed to the setPromotionCodeRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPromotionCodeRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePromotionCodeRefForArrayConstraintsFromSetPromotionCodeRef(?array $values = []): string
+    public static function validatePromotionCodeRefForArrayConstraintFromSetPromotionCodeRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1990,7 +2013,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setPromotionCodeRef(?array $promotionCodeRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($promotionCodeRefArrayErrorMessage = self::validatePromotionCodeRefForArrayConstraintsFromSetPromotionCodeRef($promotionCodeRef))) {
+        if ('' !== ($promotionCodeRefArrayErrorMessage = self::validatePromotionCodeRefForArrayConstraintFromSetPromotionCodeRef($promotionCodeRef))) {
             throw new InvalidArgumentException($promotionCodeRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -2030,12 +2053,13 @@ class SavedTripActivity extends AbstractStructBase
         return $this->RailPricingSolutionRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailPricingSolutionRef method
+     * This method is responsible for validating the value(s) passed to the setRailPricingSolutionRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailPricingSolutionRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailPricingSolutionRefForArrayConstraintsFromSetRailPricingSolutionRef(?array $values = []): string
+    public static function validateRailPricingSolutionRefForArrayConstraintFromSetRailPricingSolutionRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2064,7 +2088,7 @@ class SavedTripActivity extends AbstractStructBase
     public function setRailPricingSolutionRef(?array $railPricingSolutionRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railPricingSolutionRefArrayErrorMessage = self::validateRailPricingSolutionRefForArrayConstraintsFromSetRailPricingSolutionRef($railPricingSolutionRef))) {
+        if ('' !== ($railPricingSolutionRefArrayErrorMessage = self::validateRailPricingSolutionRefForArrayConstraintFromSetRailPricingSolutionRef($railPricingSolutionRef))) {
             throw new InvalidArgumentException($railPricingSolutionRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

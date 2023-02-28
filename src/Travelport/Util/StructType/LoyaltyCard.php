@@ -264,12 +264,13 @@ class LoyaltyCard extends AbstractStructBase
         return $this->ProviderReservationSpecificInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setProviderReservationSpecificInfo method
+     * This method is responsible for validating the value(s) passed to the setProviderReservationSpecificInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationSpecificInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateProviderReservationSpecificInfoForArrayConstraintsFromSetProviderReservationSpecificInfo(?array $values = []): string
+    public static function validateProviderReservationSpecificInfoForArrayConstraintFromSetProviderReservationSpecificInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -298,7 +299,7 @@ class LoyaltyCard extends AbstractStructBase
     public function setProviderReservationSpecificInfo(?array $providerReservationSpecificInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($providerReservationSpecificInfoArrayErrorMessage = self::validateProviderReservationSpecificInfoForArrayConstraintsFromSetProviderReservationSpecificInfo($providerReservationSpecificInfo))) {
+        if ('' !== ($providerReservationSpecificInfoArrayErrorMessage = self::validateProviderReservationSpecificInfoForArrayConstraintFromSetProviderReservationSpecificInfo($providerReservationSpecificInfo))) {
             throw new InvalidArgumentException($providerReservationSpecificInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

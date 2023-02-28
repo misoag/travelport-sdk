@@ -123,12 +123,13 @@ class CreditCardAuthReq extends BaseReq
         return $this->CreditCardPaymentAuth;
     }
     /**
-     * This method is responsible for validating the values passed to the setCreditCardPaymentAuth method
+     * This method is responsible for validating the value(s) passed to the setCreditCardPaymentAuth method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCreditCardPaymentAuth method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCreditCardPaymentAuthForArrayConstraintsFromSetCreditCardPaymentAuth(?array $values = []): string
+    public static function validateCreditCardPaymentAuthForArrayConstraintFromSetCreditCardPaymentAuth(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -157,7 +158,7 @@ class CreditCardAuthReq extends BaseReq
     public function setCreditCardPaymentAuth(?array $creditCardPaymentAuth = null): self
     {
         // validation for constraint: array
-        if ('' !== ($creditCardPaymentAuthArrayErrorMessage = self::validateCreditCardPaymentAuthForArrayConstraintsFromSetCreditCardPaymentAuth($creditCardPaymentAuth))) {
+        if ('' !== ($creditCardPaymentAuthArrayErrorMessage = self::validateCreditCardPaymentAuthForArrayConstraintFromSetCreditCardPaymentAuth($creditCardPaymentAuth))) {
             throw new InvalidArgumentException($creditCardPaymentAuthArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

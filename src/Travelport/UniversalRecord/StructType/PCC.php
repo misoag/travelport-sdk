@@ -84,12 +84,13 @@ class PCC extends AbstractStructBase
         return $this->PointOfSale;
     }
     /**
-     * This method is responsible for validating the values passed to the setPointOfSale method
+     * This method is responsible for validating the value(s) passed to the setPointOfSale method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPointOfSale method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePointOfSaleForArrayConstraintsFromSetPointOfSale(?array $values = []): string
+    public static function validatePointOfSaleForArrayConstraintFromSetPointOfSale(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -118,7 +119,7 @@ class PCC extends AbstractStructBase
     public function setPointOfSale(?array $pointOfSale = null): self
     {
         // validation for constraint: array
-        if ('' !== ($pointOfSaleArrayErrorMessage = self::validatePointOfSaleForArrayConstraintsFromSetPointOfSale($pointOfSale))) {
+        if ('' !== ($pointOfSaleArrayErrorMessage = self::validatePointOfSaleForArrayConstraintFromSetPointOfSale($pointOfSale))) {
             throw new InvalidArgumentException($pointOfSaleArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(5)

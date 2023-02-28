@@ -146,12 +146,13 @@ class RailReservation extends BaseReservation
         return $this->BookingTravelerRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingTravelerRef method
+     * This method is responsible for validating the value(s) passed to the setBookingTravelerRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTravelerRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef(?array $values = []): string
+    public static function validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -180,7 +181,7 @@ class RailReservation extends BaseReservation
     public function setBookingTravelerRef(?array $bookingTravelerRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef($bookingTravelerRef))) {
+        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef($bookingTravelerRef))) {
             throw new InvalidArgumentException($bookingTravelerRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(9)
@@ -220,12 +221,13 @@ class RailReservation extends BaseReservation
         return $this->RailJourney;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailJourney method
+     * This method is responsible for validating the value(s) passed to the setRailJourney method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailJourney method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailJourneyForArrayConstraintsFromSetRailJourney(?array $values = []): string
+    public static function validateRailJourneyForArrayConstraintFromSetRailJourney(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -254,7 +256,7 @@ class RailReservation extends BaseReservation
     public function setRailJourney(?array $railJourney = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railJourneyArrayErrorMessage = self::validateRailJourneyForArrayConstraintsFromSetRailJourney($railJourney))) {
+        if ('' !== ($railJourneyArrayErrorMessage = self::validateRailJourneyForArrayConstraintFromSetRailJourney($railJourney))) {
             throw new InvalidArgumentException($railJourneyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -294,12 +296,13 @@ class RailReservation extends BaseReservation
         return $this->RailPricingInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailPricingInfo method
+     * This method is responsible for validating the value(s) passed to the setRailPricingInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailPricingInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailPricingInfoForArrayConstraintsFromSetRailPricingInfo(?array $values = []): string
+    public static function validateRailPricingInfoForArrayConstraintFromSetRailPricingInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -328,7 +331,7 @@ class RailReservation extends BaseReservation
     public function setRailPricingInfo(?array $railPricingInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railPricingInfoArrayErrorMessage = self::validateRailPricingInfoForArrayConstraintsFromSetRailPricingInfo($railPricingInfo))) {
+        if ('' !== ($railPricingInfoArrayErrorMessage = self::validateRailPricingInfoForArrayConstraintFromSetRailPricingInfo($railPricingInfo))) {
             throw new InvalidArgumentException($railPricingInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -368,12 +371,13 @@ class RailReservation extends BaseReservation
         return $this->Payment;
     }
     /**
-     * This method is responsible for validating the values passed to the setPayment method
+     * This method is responsible for validating the value(s) passed to the setPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPayment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePaymentForArrayConstraintsFromSetPayment(?array $values = []): string
+    public static function validatePaymentForArrayConstraintFromSetPayment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -402,7 +406,7 @@ class RailReservation extends BaseReservation
     public function setPayment(?array $payment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($paymentArrayErrorMessage = self::validatePaymentForArrayConstraintsFromSetPayment($payment))) {
+        if ('' !== ($paymentArrayErrorMessage = self::validatePaymentForArrayConstraintFromSetPayment($payment))) {
             throw new InvalidArgumentException($paymentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -442,12 +446,13 @@ class RailReservation extends BaseReservation
         return $this->RailTicketInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailTicketInfo method
+     * This method is responsible for validating the value(s) passed to the setRailTicketInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailTicketInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailTicketInfoForArrayConstraintsFromSetRailTicketInfo(?array $values = []): string
+    public static function validateRailTicketInfoForArrayConstraintFromSetRailTicketInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -476,7 +481,7 @@ class RailReservation extends BaseReservation
     public function setRailTicketInfo(?array $railTicketInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railTicketInfoArrayErrorMessage = self::validateRailTicketInfoForArrayConstraintsFromSetRailTicketInfo($railTicketInfo))) {
+        if ('' !== ($railTicketInfoArrayErrorMessage = self::validateRailTicketInfoForArrayConstraintFromSetRailTicketInfo($railTicketInfo))) {
             throw new InvalidArgumentException($railTicketInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -535,12 +540,13 @@ class RailReservation extends BaseReservation
         return $this->SupplierLocator;
     }
     /**
-     * This method is responsible for validating the values passed to the setSupplierLocator method
+     * This method is responsible for validating the value(s) passed to the setSupplierLocator method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSupplierLocator method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSupplierLocatorForArrayConstraintsFromSetSupplierLocator(?array $values = []): string
+    public static function validateSupplierLocatorForArrayConstraintFromSetSupplierLocator(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -569,7 +575,7 @@ class RailReservation extends BaseReservation
     public function setSupplierLocator(?array $supplierLocator = null): self
     {
         // validation for constraint: array
-        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintsFromSetSupplierLocator($supplierLocator))) {
+        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintFromSetSupplierLocator($supplierLocator))) {
             throw new InvalidArgumentException($supplierLocatorArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -618,12 +618,13 @@ class SavedTrip extends AbstractStructBase
         return $this->BookingTraveler;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingTraveler method
+     * This method is responsible for validating the value(s) passed to the setBookingTraveler method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTraveler method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingTravelerForArrayConstraintsFromSetBookingTraveler(?array $values = []): string
+    public static function validateBookingTravelerForArrayConstraintFromSetBookingTraveler(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -652,7 +653,7 @@ class SavedTrip extends AbstractStructBase
     public function setBookingTraveler(array $bookingTraveler): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingTravelerArrayErrorMessage = self::validateBookingTravelerForArrayConstraintsFromSetBookingTraveler($bookingTraveler))) {
+        if ('' !== ($bookingTravelerArrayErrorMessage = self::validateBookingTravelerForArrayConstraintFromSetBookingTraveler($bookingTraveler))) {
             throw new InvalidArgumentException($bookingTravelerArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -765,12 +766,13 @@ class SavedTrip extends AbstractStructBase
         return $this->SearchPassenger;
     }
     /**
-     * This method is responsible for validating the values passed to the setSearchPassenger method
+     * This method is responsible for validating the value(s) passed to the setSearchPassenger method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSearchPassenger method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSearchPassengerForArrayConstraintsFromSetSearchPassenger(?array $values = []): string
+    public static function validateSearchPassengerForArrayConstraintFromSetSearchPassenger(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -799,7 +801,7 @@ class SavedTrip extends AbstractStructBase
     public function setSearchPassenger(?array $searchPassenger = null): self
     {
         // validation for constraint: array
-        if ('' !== ($searchPassengerArrayErrorMessage = self::validateSearchPassengerForArrayConstraintsFromSetSearchPassenger($searchPassenger))) {
+        if ('' !== ($searchPassengerArrayErrorMessage = self::validateSearchPassengerForArrayConstraintFromSetSearchPassenger($searchPassenger))) {
             throw new InvalidArgumentException($searchPassengerArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -839,12 +841,13 @@ class SavedTrip extends AbstractStructBase
         return $this->PointOfSale;
     }
     /**
-     * This method is responsible for validating the values passed to the setPointOfSale method
+     * This method is responsible for validating the value(s) passed to the setPointOfSale method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPointOfSale method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePointOfSaleForArrayConstraintsFromSetPointOfSale(?array $values = []): string
+    public static function validatePointOfSaleForArrayConstraintFromSetPointOfSale(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -873,7 +876,7 @@ class SavedTrip extends AbstractStructBase
     public function setPointOfSale(?array $pointOfSale = null): self
     {
         // validation for constraint: array
-        if ('' !== ($pointOfSaleArrayErrorMessage = self::validatePointOfSaleForArrayConstraintsFromSetPointOfSale($pointOfSale))) {
+        if ('' !== ($pointOfSaleArrayErrorMessage = self::validatePointOfSaleForArrayConstraintFromSetPointOfSale($pointOfSale))) {
             throw new InvalidArgumentException($pointOfSaleArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -913,12 +916,13 @@ class SavedTrip extends AbstractStructBase
         return $this->AccountingRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setAccountingRemark method
+     * This method is responsible for validating the value(s) passed to the setAccountingRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAccountingRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAccountingRemarkForArrayConstraintsFromSetAccountingRemark(?array $values = []): string
+    public static function validateAccountingRemarkForArrayConstraintFromSetAccountingRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -947,7 +951,7 @@ class SavedTrip extends AbstractStructBase
     public function setAccountingRemark(?array $accountingRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($accountingRemarkArrayErrorMessage = self::validateAccountingRemarkForArrayConstraintsFromSetAccountingRemark($accountingRemark))) {
+        if ('' !== ($accountingRemarkArrayErrorMessage = self::validateAccountingRemarkForArrayConstraintFromSetAccountingRemark($accountingRemark))) {
             throw new InvalidArgumentException($accountingRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -987,12 +991,13 @@ class SavedTrip extends AbstractStructBase
         return $this->GeneralRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setGeneralRemark method
+     * This method is responsible for validating the value(s) passed to the setGeneralRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGeneralRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark(?array $values = []): string
+    public static function validateGeneralRemarkForArrayConstraintFromSetGeneralRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1021,7 +1026,7 @@ class SavedTrip extends AbstractStructBase
     public function setGeneralRemark(?array $generalRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark($generalRemark))) {
+        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintFromSetGeneralRemark($generalRemark))) {
             throw new InvalidArgumentException($generalRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1092,19 +1097,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get AirPricingModifiers value
-     * @return \Travelport\UniversalRecord\StructType\AirPricingModifiers[]
+     * @return \Travelport\UniversalRecord\StructType\AirPricingModifiers[]|null
      */
     public function getAirPricingModifiers(): ?array
     {
-        return isset($this->AirPricingModifiers) ? $this->AirPricingModifiers : null;
+        return $this->AirPricingModifiers ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirPricingModifiers method
+     * This method is responsible for validating the value(s) passed to the setAirPricingModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingModifiers method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirPricingModifiersForArrayConstraintsFromSetAirPricingModifiers(?array $values = []): string
+    public static function validateAirPricingModifiersForArrayConstraintFromSetAirPricingModifiers(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1125,13 +1131,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirPricingModifiers method
+     * This method is responsible for validating the value(s) passed to the setAirPricingModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingModifiers method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirPricingModifiersForChoiceConstraintsFromSetAirPricingModifiers($value): string
+    public function validateAirPricingModifiersForChoiceConstraintFromSetAirPricingModifiers($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1164,11 +1170,11 @@ class SavedTrip extends AbstractStructBase
     public function setAirPricingModifiers(?array $airPricingModifiers = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airPricingModifiersArrayErrorMessage = self::validateAirPricingModifiersForArrayConstraintsFromSetAirPricingModifiers($airPricingModifiers))) {
+        if ('' !== ($airPricingModifiersArrayErrorMessage = self::validateAirPricingModifiersForArrayConstraintFromSetAirPricingModifiers($airPricingModifiers))) {
             throw new InvalidArgumentException($airPricingModifiersArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AirPricingModifiers)
-        if ('' !== ($airPricingModifiersChoiceErrorMessage = self::validateAirPricingModifiersForChoiceConstraintsFromSetAirPricingModifiers($airPricingModifiers))) {
+        if ('' !== ($airPricingModifiersChoiceErrorMessage = self::validateAirPricingModifiersForChoiceConstraintFromSetAirPricingModifiers($airPricingModifiers))) {
             throw new InvalidArgumentException($airPricingModifiersChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1188,13 +1194,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToAirPricingModifiers method
+     * This method is responsible for validating the value(s) passed to the addToAirPricingModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToAirPricingModifiers method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToAirPricingModifiers($value): string
+    public function validateItemForChoiceConstraintFromAddToAirPricingModifiers($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1227,7 +1233,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The AirPricingModifiers property can only contain items of type \Travelport\UniversalRecord\StructType\AirPricingModifiers, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AirPricingModifiers)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToAirPricingModifiers($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToAirPricingModifiers($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1244,19 +1250,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get AirPricingSolution value
-     * @return \Travelport\UniversalRecord\StructType\AirPricingSolution[]
+     * @return \Travelport\UniversalRecord\StructType\AirPricingSolution[]|null
      */
     public function getAirPricingSolution(): ?array
     {
-        return isset($this->AirPricingSolution) ? $this->AirPricingSolution : null;
+        return $this->AirPricingSolution ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirPricingSolution method
+     * This method is responsible for validating the value(s) passed to the setAirPricingSolution method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingSolution method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirPricingSolutionForArrayConstraintsFromSetAirPricingSolution(?array $values = []): string
+    public static function validateAirPricingSolutionForArrayConstraintFromSetAirPricingSolution(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1277,13 +1284,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirPricingSolution method
+     * This method is responsible for validating the value(s) passed to the setAirPricingSolution method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingSolution method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirPricingSolutionForChoiceConstraintsFromSetAirPricingSolution($value): string
+    public function validateAirPricingSolutionForChoiceConstraintFromSetAirPricingSolution($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1316,11 +1323,11 @@ class SavedTrip extends AbstractStructBase
     public function setAirPricingSolution(?array $airPricingSolution = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airPricingSolutionArrayErrorMessage = self::validateAirPricingSolutionForArrayConstraintsFromSetAirPricingSolution($airPricingSolution))) {
+        if ('' !== ($airPricingSolutionArrayErrorMessage = self::validateAirPricingSolutionForArrayConstraintFromSetAirPricingSolution($airPricingSolution))) {
             throw new InvalidArgumentException($airPricingSolutionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AirPricingSolution)
-        if ('' !== ($airPricingSolutionChoiceErrorMessage = self::validateAirPricingSolutionForChoiceConstraintsFromSetAirPricingSolution($airPricingSolution))) {
+        if ('' !== ($airPricingSolutionChoiceErrorMessage = self::validateAirPricingSolutionForChoiceConstraintFromSetAirPricingSolution($airPricingSolution))) {
             throw new InvalidArgumentException($airPricingSolutionChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1340,13 +1347,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToAirPricingSolution method
+     * This method is responsible for validating the value(s) passed to the addToAirPricingSolution method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToAirPricingSolution method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToAirPricingSolution($value): string
+    public function validateItemForChoiceConstraintFromAddToAirPricingSolution($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1379,7 +1386,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The AirPricingSolution property can only contain items of type \Travelport\UniversalRecord\StructType\AirPricingSolution, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AirPricingSolution)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToAirPricingSolution($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToAirPricingSolution($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1403,12 +1410,13 @@ class SavedTrip extends AbstractStructBase
         return $this->AirTripNote;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirTripNote method
+     * This method is responsible for validating the value(s) passed to the setAirTripNote method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirTripNote method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirTripNoteForArrayConstraintsFromSetAirTripNote(?array $values = []): string
+    public static function validateAirTripNoteForArrayConstraintFromSetAirTripNote(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1437,7 +1445,7 @@ class SavedTrip extends AbstractStructBase
     public function setAirTripNote(?array $airTripNote = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airTripNoteArrayErrorMessage = self::validateAirTripNoteForArrayConstraintsFromSetAirTripNote($airTripNote))) {
+        if ('' !== ($airTripNoteArrayErrorMessage = self::validateAirTripNoteForArrayConstraintFromSetAirTripNote($airTripNote))) {
             throw new InvalidArgumentException($airTripNoteArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(9)
@@ -1470,19 +1478,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get VehicleSearchModifiers value
-     * @return \Travelport\UniversalRecord\StructType\VehicleSearchModifiers[]
+     * @return \Travelport\UniversalRecord\StructType\VehicleSearchModifiers[]|null
      */
     public function getVehicleSearchModifiers(): ?array
     {
-        return isset($this->VehicleSearchModifiers) ? $this->VehicleSearchModifiers : null;
+        return $this->VehicleSearchModifiers ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleSearchModifiers method
+     * This method is responsible for validating the value(s) passed to the setVehicleSearchModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleSearchModifiers method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleSearchModifiersForArrayConstraintsFromSetVehicleSearchModifiers(?array $values = []): string
+    public static function validateVehicleSearchModifiersForArrayConstraintFromSetVehicleSearchModifiers(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1503,13 +1512,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicleSearchModifiers method
+     * This method is responsible for validating the value(s) passed to the setVehicleSearchModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleSearchModifiers method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleSearchModifiersForChoiceConstraintsFromSetVehicleSearchModifiers($value): string
+    public function validateVehicleSearchModifiersForChoiceConstraintFromSetVehicleSearchModifiers($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1542,11 +1551,11 @@ class SavedTrip extends AbstractStructBase
     public function setVehicleSearchModifiers(?array $vehicleSearchModifiers = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleSearchModifiersArrayErrorMessage = self::validateVehicleSearchModifiersForArrayConstraintsFromSetVehicleSearchModifiers($vehicleSearchModifiers))) {
+        if ('' !== ($vehicleSearchModifiersArrayErrorMessage = self::validateVehicleSearchModifiersForArrayConstraintFromSetVehicleSearchModifiers($vehicleSearchModifiers))) {
             throw new InvalidArgumentException($vehicleSearchModifiersArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(VehicleSearchModifiers)
-        if ('' !== ($vehicleSearchModifiersChoiceErrorMessage = self::validateVehicleSearchModifiersForChoiceConstraintsFromSetVehicleSearchModifiers($vehicleSearchModifiers))) {
+        if ('' !== ($vehicleSearchModifiersChoiceErrorMessage = self::validateVehicleSearchModifiersForChoiceConstraintFromSetVehicleSearchModifiers($vehicleSearchModifiers))) {
             throw new InvalidArgumentException($vehicleSearchModifiersChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1566,13 +1575,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToVehicleSearchModifiers method
+     * This method is responsible for validating the value(s) passed to the addToVehicleSearchModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToVehicleSearchModifiers method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToVehicleSearchModifiers($value): string
+    public function validateItemForChoiceConstraintFromAddToVehicleSearchModifiers($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1605,7 +1614,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The VehicleSearchModifiers property can only contain items of type \Travelport\UniversalRecord\StructType\VehicleSearchModifiers, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(VehicleSearchModifiers)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToVehicleSearchModifiers($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToVehicleSearchModifiers($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1622,19 +1631,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get VehicleDateLocation value
-     * @return \Travelport\UniversalRecord\StructType\VehicleDateLocation[]
+     * @return \Travelport\UniversalRecord\StructType\VehicleDateLocation[]|null
      */
     public function getVehicleDateLocation(): ?array
     {
-        return isset($this->VehicleDateLocation) ? $this->VehicleDateLocation : null;
+        return $this->VehicleDateLocation ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleDateLocation method
+     * This method is responsible for validating the value(s) passed to the setVehicleDateLocation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleDateLocation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleDateLocationForArrayConstraintsFromSetVehicleDateLocation(?array $values = []): string
+    public static function validateVehicleDateLocationForArrayConstraintFromSetVehicleDateLocation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1655,13 +1665,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicleDateLocation method
+     * This method is responsible for validating the value(s) passed to the setVehicleDateLocation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleDateLocation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleDateLocationForChoiceConstraintsFromSetVehicleDateLocation($value): string
+    public function validateVehicleDateLocationForChoiceConstraintFromSetVehicleDateLocation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1694,11 +1704,11 @@ class SavedTrip extends AbstractStructBase
     public function setVehicleDateLocation(?array $vehicleDateLocation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleDateLocationArrayErrorMessage = self::validateVehicleDateLocationForArrayConstraintsFromSetVehicleDateLocation($vehicleDateLocation))) {
+        if ('' !== ($vehicleDateLocationArrayErrorMessage = self::validateVehicleDateLocationForArrayConstraintFromSetVehicleDateLocation($vehicleDateLocation))) {
             throw new InvalidArgumentException($vehicleDateLocationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(VehicleDateLocation)
-        if ('' !== ($vehicleDateLocationChoiceErrorMessage = self::validateVehicleDateLocationForChoiceConstraintsFromSetVehicleDateLocation($vehicleDateLocation))) {
+        if ('' !== ($vehicleDateLocationChoiceErrorMessage = self::validateVehicleDateLocationForChoiceConstraintFromSetVehicleDateLocation($vehicleDateLocation))) {
             throw new InvalidArgumentException($vehicleDateLocationChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1718,13 +1728,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToVehicleDateLocation method
+     * This method is responsible for validating the value(s) passed to the addToVehicleDateLocation method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToVehicleDateLocation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToVehicleDateLocation($value): string
+    public function validateItemForChoiceConstraintFromAddToVehicleDateLocation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1757,7 +1767,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The VehicleDateLocation property can only contain items of type \Travelport\UniversalRecord\StructType\VehicleDateLocation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(VehicleDateLocation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToVehicleDateLocation($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToVehicleDateLocation($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1781,12 +1791,13 @@ class SavedTrip extends AbstractStructBase
         return $this->SpecialEquipment;
     }
     /**
-     * This method is responsible for validating the values passed to the setSpecialEquipment method
+     * This method is responsible for validating the value(s) passed to the setSpecialEquipment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSpecialEquipment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSpecialEquipmentForArrayConstraintsFromSetSpecialEquipment(?array $values = []): string
+    public static function validateSpecialEquipmentForArrayConstraintFromSetSpecialEquipment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1815,7 +1826,7 @@ class SavedTrip extends AbstractStructBase
     public function setSpecialEquipment(?array $specialEquipment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($specialEquipmentArrayErrorMessage = self::validateSpecialEquipmentForArrayConstraintsFromSetSpecialEquipment($specialEquipment))) {
+        if ('' !== ($specialEquipmentArrayErrorMessage = self::validateSpecialEquipmentForArrayConstraintFromSetSpecialEquipment($specialEquipment))) {
             throw new InvalidArgumentException($specialEquipmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1848,19 +1859,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get VehicleSpecialRequest value
-     * @return \Travelport\UniversalRecord\StructType\VehicleSpecialRequest[]
+     * @return \Travelport\UniversalRecord\StructType\VehicleSpecialRequest[]|null
      */
     public function getVehicleSpecialRequest(): ?array
     {
-        return isset($this->VehicleSpecialRequest) ? $this->VehicleSpecialRequest : null;
+        return $this->VehicleSpecialRequest ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleSpecialRequest method
+     * This method is responsible for validating the value(s) passed to the setVehicleSpecialRequest method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleSpecialRequest method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleSpecialRequestForArrayConstraintsFromSetVehicleSpecialRequest(?array $values = []): string
+    public static function validateVehicleSpecialRequestForArrayConstraintFromSetVehicleSpecialRequest(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1881,13 +1893,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicleSpecialRequest method
+     * This method is responsible for validating the value(s) passed to the setVehicleSpecialRequest method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleSpecialRequest method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleSpecialRequestForChoiceConstraintsFromSetVehicleSpecialRequest($value): string
+    public function validateVehicleSpecialRequestForChoiceConstraintFromSetVehicleSpecialRequest($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1920,11 +1932,11 @@ class SavedTrip extends AbstractStructBase
     public function setVehicleSpecialRequest(?array $vehicleSpecialRequest = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleSpecialRequestArrayErrorMessage = self::validateVehicleSpecialRequestForArrayConstraintsFromSetVehicleSpecialRequest($vehicleSpecialRequest))) {
+        if ('' !== ($vehicleSpecialRequestArrayErrorMessage = self::validateVehicleSpecialRequestForArrayConstraintFromSetVehicleSpecialRequest($vehicleSpecialRequest))) {
             throw new InvalidArgumentException($vehicleSpecialRequestArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(VehicleSpecialRequest)
-        if ('' !== ($vehicleSpecialRequestChoiceErrorMessage = self::validateVehicleSpecialRequestForChoiceConstraintsFromSetVehicleSpecialRequest($vehicleSpecialRequest))) {
+        if ('' !== ($vehicleSpecialRequestChoiceErrorMessage = self::validateVehicleSpecialRequestForChoiceConstraintFromSetVehicleSpecialRequest($vehicleSpecialRequest))) {
             throw new InvalidArgumentException($vehicleSpecialRequestChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1944,13 +1956,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToVehicleSpecialRequest method
+     * This method is responsible for validating the value(s) passed to the addToVehicleSpecialRequest method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToVehicleSpecialRequest method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToVehicleSpecialRequest($value): string
+    public function validateItemForChoiceConstraintFromAddToVehicleSpecialRequest($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1983,7 +1995,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The VehicleSpecialRequest property can only contain items of type \Travelport\UniversalRecord\StructType\VehicleSpecialRequest, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(VehicleSpecialRequest)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToVehicleSpecialRequest($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToVehicleSpecialRequest($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2000,19 +2012,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get PaymentInformation value
-     * @return \Travelport\UniversalRecord\StructType\PaymentInformation[]
+     * @return \Travelport\UniversalRecord\StructType\PaymentInformation[]|null
      */
     public function getPaymentInformation(): ?array
     {
-        return isset($this->PaymentInformation) ? $this->PaymentInformation : null;
+        return $this->PaymentInformation ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setPaymentInformation method
+     * This method is responsible for validating the value(s) passed to the setPaymentInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentInformation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePaymentInformationForArrayConstraintsFromSetPaymentInformation(?array $values = []): string
+    public static function validatePaymentInformationForArrayConstraintFromSetPaymentInformation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2033,13 +2046,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setPaymentInformation method
+     * This method is responsible for validating the value(s) passed to the setPaymentInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentInformation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validatePaymentInformationForChoiceConstraintsFromSetPaymentInformation($value): string
+    public function validatePaymentInformationForChoiceConstraintFromSetPaymentInformation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2072,11 +2085,11 @@ class SavedTrip extends AbstractStructBase
     public function setPaymentInformation(?array $paymentInformation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($paymentInformationArrayErrorMessage = self::validatePaymentInformationForArrayConstraintsFromSetPaymentInformation($paymentInformation))) {
+        if ('' !== ($paymentInformationArrayErrorMessage = self::validatePaymentInformationForArrayConstraintFromSetPaymentInformation($paymentInformation))) {
             throw new InvalidArgumentException($paymentInformationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(PaymentInformation)
-        if ('' !== ($paymentInformationChoiceErrorMessage = self::validatePaymentInformationForChoiceConstraintsFromSetPaymentInformation($paymentInformation))) {
+        if ('' !== ($paymentInformationChoiceErrorMessage = self::validatePaymentInformationForChoiceConstraintFromSetPaymentInformation($paymentInformation))) {
             throw new InvalidArgumentException($paymentInformationChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2096,13 +2109,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToPaymentInformation method
+     * This method is responsible for validating the value(s) passed to the addToPaymentInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToPaymentInformation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToPaymentInformation($value): string
+    public function validateItemForChoiceConstraintFromAddToPaymentInformation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2135,7 +2148,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The PaymentInformation property can only contain items of type \Travelport\UniversalRecord\StructType\PaymentInformation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(PaymentInformation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToPaymentInformation($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToPaymentInformation($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2152,19 +2165,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get DeliveryAddress value
-     * @return \Travelport\UniversalRecord\StructType\DeliveryAddress[]
+     * @return \Travelport\UniversalRecord\StructType\DeliveryAddress[]|null
      */
     public function getDeliveryAddress(): ?array
     {
-        return isset($this->DeliveryAddress) ? $this->DeliveryAddress : null;
+        return $this->DeliveryAddress ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setDeliveryAddress method
+     * This method is responsible for validating the value(s) passed to the setDeliveryAddress method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDeliveryAddress method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDeliveryAddressForArrayConstraintsFromSetDeliveryAddress(?array $values = []): string
+    public static function validateDeliveryAddressForArrayConstraintFromSetDeliveryAddress(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2185,13 +2199,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setDeliveryAddress method
+     * This method is responsible for validating the value(s) passed to the setDeliveryAddress method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDeliveryAddress method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateDeliveryAddressForChoiceConstraintsFromSetDeliveryAddress($value): string
+    public function validateDeliveryAddressForChoiceConstraintFromSetDeliveryAddress($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2224,11 +2238,11 @@ class SavedTrip extends AbstractStructBase
     public function setDeliveryAddress(?array $deliveryAddress = null): self
     {
         // validation for constraint: array
-        if ('' !== ($deliveryAddressArrayErrorMessage = self::validateDeliveryAddressForArrayConstraintsFromSetDeliveryAddress($deliveryAddress))) {
+        if ('' !== ($deliveryAddressArrayErrorMessage = self::validateDeliveryAddressForArrayConstraintFromSetDeliveryAddress($deliveryAddress))) {
             throw new InvalidArgumentException($deliveryAddressArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(DeliveryAddress)
-        if ('' !== ($deliveryAddressChoiceErrorMessage = self::validateDeliveryAddressForChoiceConstraintsFromSetDeliveryAddress($deliveryAddress))) {
+        if ('' !== ($deliveryAddressChoiceErrorMessage = self::validateDeliveryAddressForChoiceConstraintFromSetDeliveryAddress($deliveryAddress))) {
             throw new InvalidArgumentException($deliveryAddressChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2248,13 +2262,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToDeliveryAddress method
+     * This method is responsible for validating the value(s) passed to the addToDeliveryAddress method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToDeliveryAddress method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToDeliveryAddress($value): string
+    public function validateItemForChoiceConstraintFromAddToDeliveryAddress($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2287,7 +2301,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The DeliveryAddress property can only contain items of type \Travelport\UniversalRecord\StructType\DeliveryAddress, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(DeliveryAddress)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToDeliveryAddress($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToDeliveryAddress($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2304,19 +2318,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get CollectionAddress value
-     * @return \Travelport\UniversalRecord\StructType\CollectionAddress[]
+     * @return \Travelport\UniversalRecord\StructType\CollectionAddress[]|null
      */
     public function getCollectionAddress(): ?array
     {
-        return isset($this->CollectionAddress) ? $this->CollectionAddress : null;
+        return $this->CollectionAddress ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setCollectionAddress method
+     * This method is responsible for validating the value(s) passed to the setCollectionAddress method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCollectionAddress method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCollectionAddressForArrayConstraintsFromSetCollectionAddress(?array $values = []): string
+    public static function validateCollectionAddressForArrayConstraintFromSetCollectionAddress(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2337,13 +2352,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setCollectionAddress method
+     * This method is responsible for validating the value(s) passed to the setCollectionAddress method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCollectionAddress method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCollectionAddressForChoiceConstraintsFromSetCollectionAddress($value): string
+    public function validateCollectionAddressForChoiceConstraintFromSetCollectionAddress($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2376,11 +2391,11 @@ class SavedTrip extends AbstractStructBase
     public function setCollectionAddress(?array $collectionAddress = null): self
     {
         // validation for constraint: array
-        if ('' !== ($collectionAddressArrayErrorMessage = self::validateCollectionAddressForArrayConstraintsFromSetCollectionAddress($collectionAddress))) {
+        if ('' !== ($collectionAddressArrayErrorMessage = self::validateCollectionAddressForArrayConstraintFromSetCollectionAddress($collectionAddress))) {
             throw new InvalidArgumentException($collectionAddressArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(CollectionAddress)
-        if ('' !== ($collectionAddressChoiceErrorMessage = self::validateCollectionAddressForChoiceConstraintsFromSetCollectionAddress($collectionAddress))) {
+        if ('' !== ($collectionAddressChoiceErrorMessage = self::validateCollectionAddressForChoiceConstraintFromSetCollectionAddress($collectionAddress))) {
             throw new InvalidArgumentException($collectionAddressChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2400,13 +2415,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToCollectionAddress method
+     * This method is responsible for validating the value(s) passed to the addToCollectionAddress method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToCollectionAddress method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToCollectionAddress($value): string
+    public function validateItemForChoiceConstraintFromAddToCollectionAddress($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2439,7 +2454,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The CollectionAddress property can only contain items of type \Travelport\UniversalRecord\StructType\CollectionAddress, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(CollectionAddress)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToCollectionAddress($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToCollectionAddress($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2456,19 +2471,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get FlightArrivalInformation value
-     * @return \Travelport\UniversalRecord\StructType\FlightArrivalInformation[]
+     * @return \Travelport\UniversalRecord\StructType\FlightArrivalInformation[]|null
      */
     public function getFlightArrivalInformation(): ?array
     {
-        return isset($this->FlightArrivalInformation) ? $this->FlightArrivalInformation : null;
+        return $this->FlightArrivalInformation ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setFlightArrivalInformation method
+     * This method is responsible for validating the value(s) passed to the setFlightArrivalInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFlightArrivalInformation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFlightArrivalInformationForArrayConstraintsFromSetFlightArrivalInformation(?array $values = []): string
+    public static function validateFlightArrivalInformationForArrayConstraintFromSetFlightArrivalInformation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2489,13 +2505,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setFlightArrivalInformation method
+     * This method is responsible for validating the value(s) passed to the setFlightArrivalInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFlightArrivalInformation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateFlightArrivalInformationForChoiceConstraintsFromSetFlightArrivalInformation($value): string
+    public function validateFlightArrivalInformationForChoiceConstraintFromSetFlightArrivalInformation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2528,11 +2544,11 @@ class SavedTrip extends AbstractStructBase
     public function setFlightArrivalInformation(?array $flightArrivalInformation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($flightArrivalInformationArrayErrorMessage = self::validateFlightArrivalInformationForArrayConstraintsFromSetFlightArrivalInformation($flightArrivalInformation))) {
+        if ('' !== ($flightArrivalInformationArrayErrorMessage = self::validateFlightArrivalInformationForArrayConstraintFromSetFlightArrivalInformation($flightArrivalInformation))) {
             throw new InvalidArgumentException($flightArrivalInformationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(FlightArrivalInformation)
-        if ('' !== ($flightArrivalInformationChoiceErrorMessage = self::validateFlightArrivalInformationForChoiceConstraintsFromSetFlightArrivalInformation($flightArrivalInformation))) {
+        if ('' !== ($flightArrivalInformationChoiceErrorMessage = self::validateFlightArrivalInformationForChoiceConstraintFromSetFlightArrivalInformation($flightArrivalInformation))) {
             throw new InvalidArgumentException($flightArrivalInformationChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2552,13 +2568,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToFlightArrivalInformation method
+     * This method is responsible for validating the value(s) passed to the addToFlightArrivalInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToFlightArrivalInformation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToFlightArrivalInformation($value): string
+    public function validateItemForChoiceConstraintFromAddToFlightArrivalInformation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2591,7 +2607,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The FlightArrivalInformation property can only contain items of type \Travelport\UniversalRecord\StructType\FlightArrivalInformation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(FlightArrivalInformation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToFlightArrivalInformation($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToFlightArrivalInformation($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2608,19 +2624,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get Vehicle value
-     * @return \Travelport\UniversalRecord\StructType\Vehicle[]
+     * @return \Travelport\UniversalRecord\StructType\Vehicle[]|null
      */
     public function getVehicle(): ?array
     {
-        return isset($this->Vehicle) ? $this->Vehicle : null;
+        return $this->Vehicle ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicle method
+     * This method is responsible for validating the value(s) passed to the setVehicle method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicle method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleForArrayConstraintsFromSetVehicle(?array $values = []): string
+    public static function validateVehicleForArrayConstraintFromSetVehicle(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2641,13 +2658,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicle method
+     * This method is responsible for validating the value(s) passed to the setVehicle method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicle method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleForChoiceConstraintsFromSetVehicle($value): string
+    public function validateVehicleForChoiceConstraintFromSetVehicle($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2680,11 +2697,11 @@ class SavedTrip extends AbstractStructBase
     public function setVehicle(?array $vehicle = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleArrayErrorMessage = self::validateVehicleForArrayConstraintsFromSetVehicle($vehicle))) {
+        if ('' !== ($vehicleArrayErrorMessage = self::validateVehicleForArrayConstraintFromSetVehicle($vehicle))) {
             throw new InvalidArgumentException($vehicleArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(Vehicle)
-        if ('' !== ($vehicleChoiceErrorMessage = self::validateVehicleForChoiceConstraintsFromSetVehicle($vehicle))) {
+        if ('' !== ($vehicleChoiceErrorMessage = self::validateVehicleForChoiceConstraintFromSetVehicle($vehicle))) {
             throw new InvalidArgumentException($vehicleChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2704,13 +2721,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToVehicle method
+     * This method is responsible for validating the value(s) passed to the addToVehicle method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToVehicle method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToVehicle($value): string
+    public function validateItemForChoiceConstraintFromAddToVehicle($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2743,7 +2760,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The Vehicle property can only contain items of type \Travelport\UniversalRecord\StructType\Vehicle, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(Vehicle)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToVehicle($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToVehicle($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2767,12 +2784,13 @@ class SavedTrip extends AbstractStructBase
         return $this->VehicleTripNote;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleTripNote method
+     * This method is responsible for validating the value(s) passed to the setVehicleTripNote method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleTripNote method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleTripNoteForArrayConstraintsFromSetVehicleTripNote(?array $values = []): string
+    public static function validateVehicleTripNoteForArrayConstraintFromSetVehicleTripNote(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2801,7 +2819,7 @@ class SavedTrip extends AbstractStructBase
     public function setVehicleTripNote(?array $vehicleTripNote = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleTripNoteArrayErrorMessage = self::validateVehicleTripNoteForArrayConstraintsFromSetVehicleTripNote($vehicleTripNote))) {
+        if ('' !== ($vehicleTripNoteArrayErrorMessage = self::validateVehicleTripNoteForArrayConstraintFromSetVehicleTripNote($vehicleTripNote))) {
             throw new InvalidArgumentException($vehicleTripNoteArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(9)
@@ -2841,12 +2859,13 @@ class SavedTrip extends AbstractStructBase
         return $this->VendorLocation;
     }
     /**
-     * This method is responsible for validating the values passed to the setVendorLocation method
+     * This method is responsible for validating the value(s) passed to the setVendorLocation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVendorLocation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVendorLocationForArrayConstraintsFromSetVendorLocation(?array $values = []): string
+    public static function validateVendorLocationForArrayConstraintFromSetVendorLocation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2875,7 +2894,7 @@ class SavedTrip extends AbstractStructBase
     public function setVendorLocation(?array $vendorLocation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vendorLocationArrayErrorMessage = self::validateVendorLocationForArrayConstraintsFromSetVendorLocation($vendorLocation))) {
+        if ('' !== ($vendorLocationArrayErrorMessage = self::validateVendorLocationForArrayConstraintFromSetVendorLocation($vendorLocation))) {
             throw new InvalidArgumentException($vendorLocationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -2908,19 +2927,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get HotelProperty value
-     * @return \Travelport\UniversalRecord\StructType\HotelProperty[]
+     * @return \Travelport\UniversalRecord\StructType\HotelProperty[]|null
      */
     public function getHotelProperty(): ?array
     {
-        return isset($this->HotelProperty) ? $this->HotelProperty : null;
+        return $this->HotelProperty ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelProperty method
+     * This method is responsible for validating the value(s) passed to the setHotelProperty method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelProperty method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelPropertyForArrayConstraintsFromSetHotelProperty(?array $values = []): string
+    public static function validateHotelPropertyForArrayConstraintFromSetHotelProperty(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2941,13 +2961,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelProperty method
+     * This method is responsible for validating the value(s) passed to the setHotelProperty method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelProperty method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelPropertyForChoiceConstraintsFromSetHotelProperty($value): string
+    public function validateHotelPropertyForChoiceConstraintFromSetHotelProperty($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2980,11 +3000,11 @@ class SavedTrip extends AbstractStructBase
     public function setHotelProperty(?array $hotelProperty = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelPropertyArrayErrorMessage = self::validateHotelPropertyForArrayConstraintsFromSetHotelProperty($hotelProperty))) {
+        if ('' !== ($hotelPropertyArrayErrorMessage = self::validateHotelPropertyForArrayConstraintFromSetHotelProperty($hotelProperty))) {
             throw new InvalidArgumentException($hotelPropertyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(HotelProperty)
-        if ('' !== ($hotelPropertyChoiceErrorMessage = self::validateHotelPropertyForChoiceConstraintsFromSetHotelProperty($hotelProperty))) {
+        if ('' !== ($hotelPropertyChoiceErrorMessage = self::validateHotelPropertyForChoiceConstraintFromSetHotelProperty($hotelProperty))) {
             throw new InvalidArgumentException($hotelPropertyChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -3004,13 +3024,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToHotelProperty method
+     * This method is responsible for validating the value(s) passed to the addToHotelProperty method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToHotelProperty method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToHotelProperty($value): string
+    public function validateItemForChoiceConstraintFromAddToHotelProperty($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3043,7 +3063,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The HotelProperty property can only contain items of type \Travelport\UniversalRecord\StructType\HotelProperty, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(HotelProperty)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToHotelProperty($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToHotelProperty($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -3060,19 +3080,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get HotelStay value
-     * @return \Travelport\UniversalRecord\StructType\HotelStay[]
+     * @return \Travelport\UniversalRecord\StructType\HotelStay[]|null
      */
     public function getHotelStay(): ?array
     {
-        return isset($this->HotelStay) ? $this->HotelStay : null;
+        return $this->HotelStay ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelStay method
+     * This method is responsible for validating the value(s) passed to the setHotelStay method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelStay method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelStayForArrayConstraintsFromSetHotelStay(?array $values = []): string
+    public static function validateHotelStayForArrayConstraintFromSetHotelStay(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -3093,13 +3114,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelStay method
+     * This method is responsible for validating the value(s) passed to the setHotelStay method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelStay method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelStayForChoiceConstraintsFromSetHotelStay($value): string
+    public function validateHotelStayForChoiceConstraintFromSetHotelStay($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3132,11 +3153,11 @@ class SavedTrip extends AbstractStructBase
     public function setHotelStay(?array $hotelStay = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelStayArrayErrorMessage = self::validateHotelStayForArrayConstraintsFromSetHotelStay($hotelStay))) {
+        if ('' !== ($hotelStayArrayErrorMessage = self::validateHotelStayForArrayConstraintFromSetHotelStay($hotelStay))) {
             throw new InvalidArgumentException($hotelStayArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(HotelStay)
-        if ('' !== ($hotelStayChoiceErrorMessage = self::validateHotelStayForChoiceConstraintsFromSetHotelStay($hotelStay))) {
+        if ('' !== ($hotelStayChoiceErrorMessage = self::validateHotelStayForChoiceConstraintFromSetHotelStay($hotelStay))) {
             throw new InvalidArgumentException($hotelStayChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -3156,13 +3177,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToHotelStay method
+     * This method is responsible for validating the value(s) passed to the addToHotelStay method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToHotelStay method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToHotelStay($value): string
+    public function validateItemForChoiceConstraintFromAddToHotelStay($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3195,7 +3216,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The HotelStay property can only contain items of type \Travelport\UniversalRecord\StructType\HotelStay, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(HotelStay)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToHotelStay($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToHotelStay($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -3212,19 +3233,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get HotelRulesModifiers value
-     * @return \Travelport\UniversalRecord\StructType\HotelRulesModifiers[]
+     * @return \Travelport\UniversalRecord\StructType\HotelRulesModifiers[]|null
      */
     public function getHotelRulesModifiers(): ?array
     {
-        return isset($this->HotelRulesModifiers) ? $this->HotelRulesModifiers : null;
+        return $this->HotelRulesModifiers ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelRulesModifiers method
+     * This method is responsible for validating the value(s) passed to the setHotelRulesModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelRulesModifiers method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelRulesModifiersForArrayConstraintsFromSetHotelRulesModifiers(?array $values = []): string
+    public static function validateHotelRulesModifiersForArrayConstraintFromSetHotelRulesModifiers(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -3245,13 +3267,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelRulesModifiers method
+     * This method is responsible for validating the value(s) passed to the setHotelRulesModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelRulesModifiers method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelRulesModifiersForChoiceConstraintsFromSetHotelRulesModifiers($value): string
+    public function validateHotelRulesModifiersForChoiceConstraintFromSetHotelRulesModifiers($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3284,11 +3306,11 @@ class SavedTrip extends AbstractStructBase
     public function setHotelRulesModifiers(?array $hotelRulesModifiers = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelRulesModifiersArrayErrorMessage = self::validateHotelRulesModifiersForArrayConstraintsFromSetHotelRulesModifiers($hotelRulesModifiers))) {
+        if ('' !== ($hotelRulesModifiersArrayErrorMessage = self::validateHotelRulesModifiersForArrayConstraintFromSetHotelRulesModifiers($hotelRulesModifiers))) {
             throw new InvalidArgumentException($hotelRulesModifiersArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(HotelRulesModifiers)
-        if ('' !== ($hotelRulesModifiersChoiceErrorMessage = self::validateHotelRulesModifiersForChoiceConstraintsFromSetHotelRulesModifiers($hotelRulesModifiers))) {
+        if ('' !== ($hotelRulesModifiersChoiceErrorMessage = self::validateHotelRulesModifiersForChoiceConstraintFromSetHotelRulesModifiers($hotelRulesModifiers))) {
             throw new InvalidArgumentException($hotelRulesModifiersChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -3308,13 +3330,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToHotelRulesModifiers method
+     * This method is responsible for validating the value(s) passed to the addToHotelRulesModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToHotelRulesModifiers method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToHotelRulesModifiers($value): string
+    public function validateItemForChoiceConstraintFromAddToHotelRulesModifiers($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3347,7 +3369,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The HotelRulesModifiers property can only contain items of type \Travelport\UniversalRecord\StructType\HotelRulesModifiers, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(HotelRulesModifiers)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToHotelRulesModifiers($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToHotelRulesModifiers($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -3364,19 +3386,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get HotelDetailsModifiers value
-     * @return \Travelport\UniversalRecord\StructType\HotelDetailsModifiers[]
+     * @return \Travelport\UniversalRecord\StructType\HotelDetailsModifiers[]|null
      */
     public function getHotelDetailsModifiers(): ?array
     {
-        return isset($this->HotelDetailsModifiers) ? $this->HotelDetailsModifiers : null;
+        return $this->HotelDetailsModifiers ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelDetailsModifiers method
+     * This method is responsible for validating the value(s) passed to the setHotelDetailsModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelDetailsModifiers method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelDetailsModifiersForArrayConstraintsFromSetHotelDetailsModifiers(?array $values = []): string
+    public static function validateHotelDetailsModifiersForArrayConstraintFromSetHotelDetailsModifiers(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -3397,13 +3420,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelDetailsModifiers method
+     * This method is responsible for validating the value(s) passed to the setHotelDetailsModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelDetailsModifiers method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelDetailsModifiersForChoiceConstraintsFromSetHotelDetailsModifiers($value): string
+    public function validateHotelDetailsModifiersForChoiceConstraintFromSetHotelDetailsModifiers($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3436,11 +3459,11 @@ class SavedTrip extends AbstractStructBase
     public function setHotelDetailsModifiers(?array $hotelDetailsModifiers = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelDetailsModifiersArrayErrorMessage = self::validateHotelDetailsModifiersForArrayConstraintsFromSetHotelDetailsModifiers($hotelDetailsModifiers))) {
+        if ('' !== ($hotelDetailsModifiersArrayErrorMessage = self::validateHotelDetailsModifiersForArrayConstraintFromSetHotelDetailsModifiers($hotelDetailsModifiers))) {
             throw new InvalidArgumentException($hotelDetailsModifiersArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(HotelDetailsModifiers)
-        if ('' !== ($hotelDetailsModifiersChoiceErrorMessage = self::validateHotelDetailsModifiersForChoiceConstraintsFromSetHotelDetailsModifiers($hotelDetailsModifiers))) {
+        if ('' !== ($hotelDetailsModifiersChoiceErrorMessage = self::validateHotelDetailsModifiersForChoiceConstraintFromSetHotelDetailsModifiers($hotelDetailsModifiers))) {
             throw new InvalidArgumentException($hotelDetailsModifiersChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -3460,13 +3483,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToHotelDetailsModifiers method
+     * This method is responsible for validating the value(s) passed to the addToHotelDetailsModifiers method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToHotelDetailsModifiers method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToHotelDetailsModifiers($value): string
+    public function validateItemForChoiceConstraintFromAddToHotelDetailsModifiers($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3499,7 +3522,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The HotelDetailsModifiers property can only contain items of type \Travelport\UniversalRecord\StructType\HotelDetailsModifiers, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(HotelDetailsModifiers)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToHotelDetailsModifiers($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToHotelDetailsModifiers($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -3516,19 +3539,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get HotelRateDetail value
-     * @return \Travelport\UniversalRecord\StructType\HotelRateDetail[]
+     * @return \Travelport\UniversalRecord\StructType\HotelRateDetail[]|null
      */
     public function getHotelRateDetail(): ?array
     {
-        return isset($this->HotelRateDetail) ? $this->HotelRateDetail : null;
+        return $this->HotelRateDetail ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelRateDetail method
+     * This method is responsible for validating the value(s) passed to the setHotelRateDetail method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelRateDetail method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelRateDetailForArrayConstraintsFromSetHotelRateDetail(?array $values = []): string
+    public static function validateHotelRateDetailForArrayConstraintFromSetHotelRateDetail(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -3549,13 +3573,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelRateDetail method
+     * This method is responsible for validating the value(s) passed to the setHotelRateDetail method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelRateDetail method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelRateDetailForChoiceConstraintsFromSetHotelRateDetail($value): string
+    public function validateHotelRateDetailForChoiceConstraintFromSetHotelRateDetail($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3588,11 +3612,11 @@ class SavedTrip extends AbstractStructBase
     public function setHotelRateDetail(?array $hotelRateDetail = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelRateDetailArrayErrorMessage = self::validateHotelRateDetailForArrayConstraintsFromSetHotelRateDetail($hotelRateDetail))) {
+        if ('' !== ($hotelRateDetailArrayErrorMessage = self::validateHotelRateDetailForArrayConstraintFromSetHotelRateDetail($hotelRateDetail))) {
             throw new InvalidArgumentException($hotelRateDetailArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(HotelRateDetail)
-        if ('' !== ($hotelRateDetailChoiceErrorMessage = self::validateHotelRateDetailForChoiceConstraintsFromSetHotelRateDetail($hotelRateDetail))) {
+        if ('' !== ($hotelRateDetailChoiceErrorMessage = self::validateHotelRateDetailForChoiceConstraintFromSetHotelRateDetail($hotelRateDetail))) {
             throw new InvalidArgumentException($hotelRateDetailChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -3612,13 +3636,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToHotelRateDetail method
+     * This method is responsible for validating the value(s) passed to the addToHotelRateDetail method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToHotelRateDetail method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToHotelRateDetail($value): string
+    public function validateItemForChoiceConstraintFromAddToHotelRateDetail($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3651,7 +3675,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The HotelRateDetail property can only contain items of type \Travelport\UniversalRecord\StructType\HotelRateDetail, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(HotelRateDetail)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToHotelRateDetail($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToHotelRateDetail($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -3668,19 +3692,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get PromotionCode value
-     * @return \Travelport\UniversalRecord\StructType\PromotionCode[]
+     * @return \Travelport\UniversalRecord\StructType\PromotionCode[]|null
      */
     public function getPromotionCode(): ?array
     {
-        return isset($this->PromotionCode) ? $this->PromotionCode : null;
+        return $this->PromotionCode ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setPromotionCode method
+     * This method is responsible for validating the value(s) passed to the setPromotionCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPromotionCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePromotionCodeForArrayConstraintsFromSetPromotionCode(?array $values = []): string
+    public static function validatePromotionCodeForArrayConstraintFromSetPromotionCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -3701,13 +3726,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setPromotionCode method
+     * This method is responsible for validating the value(s) passed to the setPromotionCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPromotionCode method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validatePromotionCodeForChoiceConstraintsFromSetPromotionCode($value): string
+    public function validatePromotionCodeForChoiceConstraintFromSetPromotionCode($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3740,11 +3765,11 @@ class SavedTrip extends AbstractStructBase
     public function setPromotionCode(?array $promotionCode = null): self
     {
         // validation for constraint: array
-        if ('' !== ($promotionCodeArrayErrorMessage = self::validatePromotionCodeForArrayConstraintsFromSetPromotionCode($promotionCode))) {
+        if ('' !== ($promotionCodeArrayErrorMessage = self::validatePromotionCodeForArrayConstraintFromSetPromotionCode($promotionCode))) {
             throw new InvalidArgumentException($promotionCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(PromotionCode)
-        if ('' !== ($promotionCodeChoiceErrorMessage = self::validatePromotionCodeForChoiceConstraintsFromSetPromotionCode($promotionCode))) {
+        if ('' !== ($promotionCodeChoiceErrorMessage = self::validatePromotionCodeForChoiceConstraintFromSetPromotionCode($promotionCode))) {
             throw new InvalidArgumentException($promotionCodeChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -3764,13 +3789,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToPromotionCode method
+     * This method is responsible for validating the value(s) passed to the addToPromotionCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToPromotionCode method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToPromotionCode($value): string
+    public function validateItemForChoiceConstraintFromAddToPromotionCode($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3803,7 +3828,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The PromotionCode property can only contain items of type \Travelport\UniversalRecord\StructType\PromotionCode, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(PromotionCode)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToPromotionCode($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToPromotionCode($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -3827,12 +3852,13 @@ class SavedTrip extends AbstractStructBase
         return $this->HotelTripNote;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelTripNote method
+     * This method is responsible for validating the value(s) passed to the setHotelTripNote method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelTripNote method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelTripNoteForArrayConstraintsFromSetHotelTripNote(?array $values = []): string
+    public static function validateHotelTripNoteForArrayConstraintFromSetHotelTripNote(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -3861,7 +3887,7 @@ class SavedTrip extends AbstractStructBase
     public function setHotelTripNote(?array $hotelTripNote = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelTripNoteArrayErrorMessage = self::validateHotelTripNoteForArrayConstraintsFromSetHotelTripNote($hotelTripNote))) {
+        if ('' !== ($hotelTripNoteArrayErrorMessage = self::validateHotelTripNoteForArrayConstraintFromSetHotelTripNote($hotelTripNote))) {
             throw new InvalidArgumentException($hotelTripNoteArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(9)
@@ -3894,19 +3920,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get RailPricingSolution value
-     * @return \Travelport\UniversalRecord\StructType\RailPricingSolution[]
+     * @return \Travelport\UniversalRecord\StructType\RailPricingSolution[]|null
      */
     public function getRailPricingSolution(): ?array
     {
-        return isset($this->RailPricingSolution) ? $this->RailPricingSolution : null;
+        return $this->RailPricingSolution ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailPricingSolution method
+     * This method is responsible for validating the value(s) passed to the setRailPricingSolution method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailPricingSolution method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailPricingSolutionForArrayConstraintsFromSetRailPricingSolution(?array $values = []): string
+    public static function validateRailPricingSolutionForArrayConstraintFromSetRailPricingSolution(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -3927,13 +3954,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setRailPricingSolution method
+     * This method is responsible for validating the value(s) passed to the setRailPricingSolution method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailPricingSolution method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateRailPricingSolutionForChoiceConstraintsFromSetRailPricingSolution($value): string
+    public function validateRailPricingSolutionForChoiceConstraintFromSetRailPricingSolution($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -3966,11 +3993,11 @@ class SavedTrip extends AbstractStructBase
     public function setRailPricingSolution(?array $railPricingSolution = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railPricingSolutionArrayErrorMessage = self::validateRailPricingSolutionForArrayConstraintsFromSetRailPricingSolution($railPricingSolution))) {
+        if ('' !== ($railPricingSolutionArrayErrorMessage = self::validateRailPricingSolutionForArrayConstraintFromSetRailPricingSolution($railPricingSolution))) {
             throw new InvalidArgumentException($railPricingSolutionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(RailPricingSolution)
-        if ('' !== ($railPricingSolutionChoiceErrorMessage = self::validateRailPricingSolutionForChoiceConstraintsFromSetRailPricingSolution($railPricingSolution))) {
+        if ('' !== ($railPricingSolutionChoiceErrorMessage = self::validateRailPricingSolutionForChoiceConstraintFromSetRailPricingSolution($railPricingSolution))) {
             throw new InvalidArgumentException($railPricingSolutionChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -3990,13 +4017,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToRailPricingSolution method
+     * This method is responsible for validating the value(s) passed to the addToRailPricingSolution method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToRailPricingSolution method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToRailPricingSolution($value): string
+    public function validateItemForChoiceConstraintFromAddToRailPricingSolution($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -4029,7 +4056,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The RailPricingSolution property can only contain items of type \Travelport\UniversalRecord\StructType\RailPricingSolution, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(RailPricingSolution)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToRailPricingSolution($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToRailPricingSolution($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -4046,19 +4073,20 @@ class SavedTrip extends AbstractStructBase
     }
     /**
      * Get RailFareNote value
-     * @return \Travelport\UniversalRecord\StructType\RailFareNote[]
+     * @return \Travelport\UniversalRecord\StructType\RailFareNote[]|null
      */
     public function getRailFareNote(): ?array
     {
-        return isset($this->RailFareNote) ? $this->RailFareNote : null;
+        return $this->RailFareNote ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailFareNote method
+     * This method is responsible for validating the value(s) passed to the setRailFareNote method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailFareNote method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailFareNoteForArrayConstraintsFromSetRailFareNote(?array $values = []): string
+    public static function validateRailFareNoteForArrayConstraintFromSetRailFareNote(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -4079,13 +4107,13 @@ class SavedTrip extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setRailFareNote method
+     * This method is responsible for validating the value(s) passed to the setRailFareNote method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailFareNote method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateRailFareNoteForChoiceConstraintsFromSetRailFareNote($value): string
+    public function validateRailFareNoteForChoiceConstraintFromSetRailFareNote($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -4118,11 +4146,11 @@ class SavedTrip extends AbstractStructBase
     public function setRailFareNote(?array $railFareNote = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railFareNoteArrayErrorMessage = self::validateRailFareNoteForArrayConstraintsFromSetRailFareNote($railFareNote))) {
+        if ('' !== ($railFareNoteArrayErrorMessage = self::validateRailFareNoteForArrayConstraintFromSetRailFareNote($railFareNote))) {
             throw new InvalidArgumentException($railFareNoteArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(RailFareNote)
-        if ('' !== ($railFareNoteChoiceErrorMessage = self::validateRailFareNoteForChoiceConstraintsFromSetRailFareNote($railFareNote))) {
+        if ('' !== ($railFareNoteChoiceErrorMessage = self::validateRailFareNoteForChoiceConstraintFromSetRailFareNote($railFareNote))) {
             throw new InvalidArgumentException($railFareNoteChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -4142,13 +4170,13 @@ class SavedTrip extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToRailFareNote method
+     * This method is responsible for validating the value(s) passed to the addToRailFareNote method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToRailFareNote method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToRailFareNote($value): string
+    public function validateItemForChoiceConstraintFromAddToRailFareNote($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -4181,7 +4209,7 @@ class SavedTrip extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The RailFareNote property can only contain items of type \Travelport\UniversalRecord\StructType\RailFareNote, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(RailFareNote)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToRailFareNote($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToRailFareNote($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -4205,12 +4233,13 @@ class SavedTrip extends AbstractStructBase
         return $this->RailTripNote;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailTripNote method
+     * This method is responsible for validating the value(s) passed to the setRailTripNote method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailTripNote method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailTripNoteForArrayConstraintsFromSetRailTripNote(?array $values = []): string
+    public static function validateRailTripNoteForArrayConstraintFromSetRailTripNote(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -4239,7 +4268,7 @@ class SavedTrip extends AbstractStructBase
     public function setRailTripNote(?array $railTripNote = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railTripNoteArrayErrorMessage = self::validateRailTripNoteForArrayConstraintsFromSetRailTripNote($railTripNote))) {
+        if ('' !== ($railTripNoteArrayErrorMessage = self::validateRailTripNoteForArrayConstraintFromSetRailTripNote($railTripNote))) {
             throw new InvalidArgumentException($railTripNoteArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(9)
@@ -4279,12 +4308,13 @@ class SavedTrip extends AbstractStructBase
         return $this->SavedTripNote;
     }
     /**
-     * This method is responsible for validating the values passed to the setSavedTripNote method
+     * This method is responsible for validating the value(s) passed to the setSavedTripNote method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSavedTripNote method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSavedTripNoteForArrayConstraintsFromSetSavedTripNote(?array $values = []): string
+    public static function validateSavedTripNoteForArrayConstraintFromSetSavedTripNote(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -4313,7 +4343,7 @@ class SavedTrip extends AbstractStructBase
     public function setSavedTripNote(?array $savedTripNote = null): self
     {
         // validation for constraint: array
-        if ('' !== ($savedTripNoteArrayErrorMessage = self::validateSavedTripNoteForArrayConstraintsFromSetSavedTripNote($savedTripNote))) {
+        if ('' !== ($savedTripNoteArrayErrorMessage = self::validateSavedTripNoteForArrayConstraintFromSetSavedTripNote($savedTripNote))) {
             throw new InvalidArgumentException($savedTripNoteArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(3)
@@ -4353,12 +4383,13 @@ class SavedTrip extends AbstractStructBase
         return $this->SavedTripActivity;
     }
     /**
-     * This method is responsible for validating the values passed to the setSavedTripActivity method
+     * This method is responsible for validating the value(s) passed to the setSavedTripActivity method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSavedTripActivity method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSavedTripActivityForArrayConstraintsFromSetSavedTripActivity(?array $values = []): string
+    public static function validateSavedTripActivityForArrayConstraintFromSetSavedTripActivity(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -4387,7 +4418,7 @@ class SavedTrip extends AbstractStructBase
     public function setSavedTripActivity(?array $savedTripActivity = null): self
     {
         // validation for constraint: array
-        if ('' !== ($savedTripActivityArrayErrorMessage = self::validateSavedTripActivityForArrayConstraintsFromSetSavedTripActivity($savedTripActivity))) {
+        if ('' !== ($savedTripActivityArrayErrorMessage = self::validateSavedTripActivityForArrayConstraintFromSetSavedTripActivity($savedTripActivity))) {
             throw new InvalidArgumentException($savedTripActivityArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -4427,12 +4458,13 @@ class SavedTrip extends AbstractStructBase
         return $this->ProfileAssociation;
     }
     /**
-     * This method is responsible for validating the values passed to the setProfileAssociation method
+     * This method is responsible for validating the value(s) passed to the setProfileAssociation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setProfileAssociation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateProfileAssociationForArrayConstraintsFromSetProfileAssociation(?array $values = []): string
+    public static function validateProfileAssociationForArrayConstraintFromSetProfileAssociation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -4461,7 +4493,7 @@ class SavedTrip extends AbstractStructBase
     public function setProfileAssociation(?array $profileAssociation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($profileAssociationArrayErrorMessage = self::validateProfileAssociationForArrayConstraintsFromSetProfileAssociation($profileAssociation))) {
+        if ('' !== ($profileAssociationArrayErrorMessage = self::validateProfileAssociationForArrayConstraintFromSetProfileAssociation($profileAssociation))) {
             throw new InvalidArgumentException($profileAssociationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

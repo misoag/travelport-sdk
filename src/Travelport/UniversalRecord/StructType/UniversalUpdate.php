@@ -310,19 +310,20 @@ class UniversalUpdate extends AbstractStructBase
     }
     /**
      * Get AccountingRemark value
-     * @return \Travelport\UniversalRecord\StructType\AccountingRemark[]
+     * @return \Travelport\UniversalRecord\StructType\AccountingRemark[]|null
      */
     public function getAccountingRemark(): ?array
     {
-        return isset($this->AccountingRemark) ? $this->AccountingRemark : null;
+        return $this->AccountingRemark ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setAccountingRemark method
+     * This method is responsible for validating the value(s) passed to the setAccountingRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAccountingRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAccountingRemarkForArrayConstraintsFromSetAccountingRemark(?array $values = []): string
+    public static function validateAccountingRemarkForArrayConstraintFromSetAccountingRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -343,13 +344,13 @@ class UniversalUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAccountingRemark method
+     * This method is responsible for validating the value(s) passed to the setAccountingRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAccountingRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAccountingRemarkForChoiceConstraintsFromSetAccountingRemark($value): string
+    public function validateAccountingRemarkForChoiceConstraintFromSetAccountingRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -399,11 +400,11 @@ class UniversalUpdate extends AbstractStructBase
     public function setAccountingRemark(?array $accountingRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($accountingRemarkArrayErrorMessage = self::validateAccountingRemarkForArrayConstraintsFromSetAccountingRemark($accountingRemark))) {
+        if ('' !== ($accountingRemarkArrayErrorMessage = self::validateAccountingRemarkForArrayConstraintFromSetAccountingRemark($accountingRemark))) {
             throw new InvalidArgumentException($accountingRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($accountingRemarkChoiceErrorMessage = self::validateAccountingRemarkForChoiceConstraintsFromSetAccountingRemark($accountingRemark))) {
+        if ('' !== ($accountingRemarkChoiceErrorMessage = self::validateAccountingRemarkForChoiceConstraintFromSetAccountingRemark($accountingRemark))) {
             throw new InvalidArgumentException($accountingRemarkChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -423,13 +424,13 @@ class UniversalUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToAccountingRemark method
+     * This method is responsible for validating the value(s) passed to the addToAccountingRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToAccountingRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToAccountingRemark($value): string
+    public function validateItemForChoiceConstraintFromAddToAccountingRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -479,7 +480,7 @@ class UniversalUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The AccountingRemark property can only contain items of type \Travelport\UniversalRecord\StructType\AccountingRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToAccountingRemark($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToAccountingRemark($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -496,19 +497,20 @@ class UniversalUpdate extends AbstractStructBase
     }
     /**
      * Get GeneralRemark value
-     * @return \Travelport\UniversalRecord\StructType\GeneralRemark[]
+     * @return \Travelport\UniversalRecord\StructType\GeneralRemark[]|null
      */
     public function getGeneralRemark(): ?array
     {
-        return isset($this->GeneralRemark) ? $this->GeneralRemark : null;
+        return $this->GeneralRemark ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setGeneralRemark method
+     * This method is responsible for validating the value(s) passed to the setGeneralRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGeneralRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark(?array $values = []): string
+    public static function validateGeneralRemarkForArrayConstraintFromSetGeneralRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -529,13 +531,13 @@ class UniversalUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setGeneralRemark method
+     * This method is responsible for validating the value(s) passed to the setGeneralRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGeneralRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateGeneralRemarkForChoiceConstraintsFromSetGeneralRemark($value): string
+    public function validateGeneralRemarkForChoiceConstraintFromSetGeneralRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -585,11 +587,11 @@ class UniversalUpdate extends AbstractStructBase
     public function setGeneralRemark(?array $generalRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark($generalRemark))) {
+        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintFromSetGeneralRemark($generalRemark))) {
             throw new InvalidArgumentException($generalRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($generalRemarkChoiceErrorMessage = self::validateGeneralRemarkForChoiceConstraintsFromSetGeneralRemark($generalRemark))) {
+        if ('' !== ($generalRemarkChoiceErrorMessage = self::validateGeneralRemarkForChoiceConstraintFromSetGeneralRemark($generalRemark))) {
             throw new InvalidArgumentException($generalRemarkChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -609,13 +611,13 @@ class UniversalUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToGeneralRemark method
+     * This method is responsible for validating the value(s) passed to the addToGeneralRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToGeneralRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToGeneralRemark($value): string
+    public function validateItemForChoiceConstraintFromAddToGeneralRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -665,7 +667,7 @@ class UniversalUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The GeneralRemark property can only contain items of type \Travelport\UniversalRecord\StructType\GeneralRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToGeneralRemark($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToGeneralRemark($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -682,19 +684,20 @@ class UniversalUpdate extends AbstractStructBase
     }
     /**
      * Get OSI value
-     * @return \Travelport\UniversalRecord\StructType\OSI[]
+     * @return \Travelport\UniversalRecord\StructType\OSI[]|null
      */
     public function getOSI(): ?array
     {
-        return isset($this->OSI) ? $this->OSI : null;
+        return $this->OSI ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setOSI method
+     * This method is responsible for validating the value(s) passed to the setOSI method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOSI method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateOSIForArrayConstraintsFromSetOSI(?array $values = []): string
+    public static function validateOSIForArrayConstraintFromSetOSI(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -715,13 +718,13 @@ class UniversalUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setOSI method
+     * This method is responsible for validating the value(s) passed to the setOSI method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOSI method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateOSIForChoiceConstraintsFromSetOSI($value): string
+    public function validateOSIForChoiceConstraintFromSetOSI($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -771,11 +774,11 @@ class UniversalUpdate extends AbstractStructBase
     public function setOSI(?array $oSI = null): self
     {
         // validation for constraint: array
-        if ('' !== ($oSIArrayErrorMessage = self::validateOSIForArrayConstraintsFromSetOSI($oSI))) {
+        if ('' !== ($oSIArrayErrorMessage = self::validateOSIForArrayConstraintFromSetOSI($oSI))) {
             throw new InvalidArgumentException($oSIArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($oSIChoiceErrorMessage = self::validateOSIForChoiceConstraintsFromSetOSI($oSI))) {
+        if ('' !== ($oSIChoiceErrorMessage = self::validateOSIForChoiceConstraintFromSetOSI($oSI))) {
             throw new InvalidArgumentException($oSIChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -795,13 +798,13 @@ class UniversalUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToOSI method
+     * This method is responsible for validating the value(s) passed to the addToOSI method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToOSI method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToOSI($value): string
+    public function validateItemForChoiceConstraintFromAddToOSI($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -851,7 +854,7 @@ class UniversalUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The OSI property can only contain items of type \Travelport\UniversalRecord\StructType\OSI, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToOSI($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToOSI($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -868,19 +871,20 @@ class UniversalUpdate extends AbstractStructBase
     }
     /**
      * Get UnassociatedRemark value
-     * @return \Travelport\UniversalRecord\StructType\UnassociatedRemark[]
+     * @return \Travelport\UniversalRecord\StructType\UnassociatedRemark[]|null
      */
     public function getUnassociatedRemark(): ?array
     {
-        return isset($this->UnassociatedRemark) ? $this->UnassociatedRemark : null;
+        return $this->UnassociatedRemark ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setUnassociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setUnassociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setUnassociatedRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateUnassociatedRemarkForArrayConstraintsFromSetUnassociatedRemark(?array $values = []): string
+    public static function validateUnassociatedRemarkForArrayConstraintFromSetUnassociatedRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -901,13 +905,13 @@ class UniversalUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setUnassociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setUnassociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setUnassociatedRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateUnassociatedRemarkForChoiceConstraintsFromSetUnassociatedRemark($value): string
+    public function validateUnassociatedRemarkForChoiceConstraintFromSetUnassociatedRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -957,11 +961,11 @@ class UniversalUpdate extends AbstractStructBase
     public function setUnassociatedRemark(?array $unassociatedRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($unassociatedRemarkArrayErrorMessage = self::validateUnassociatedRemarkForArrayConstraintsFromSetUnassociatedRemark($unassociatedRemark))) {
+        if ('' !== ($unassociatedRemarkArrayErrorMessage = self::validateUnassociatedRemarkForArrayConstraintFromSetUnassociatedRemark($unassociatedRemark))) {
             throw new InvalidArgumentException($unassociatedRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($unassociatedRemarkChoiceErrorMessage = self::validateUnassociatedRemarkForChoiceConstraintsFromSetUnassociatedRemark($unassociatedRemark))) {
+        if ('' !== ($unassociatedRemarkChoiceErrorMessage = self::validateUnassociatedRemarkForChoiceConstraintFromSetUnassociatedRemark($unassociatedRemark))) {
             throw new InvalidArgumentException($unassociatedRemarkChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -981,13 +985,13 @@ class UniversalUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToUnassociatedRemark method
+     * This method is responsible for validating the value(s) passed to the addToUnassociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToUnassociatedRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToUnassociatedRemark($value): string
+    public function validateItemForChoiceConstraintFromAddToUnassociatedRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1037,7 +1041,7 @@ class UniversalUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The UnassociatedRemark property can only contain items of type \Travelport\UniversalRecord\StructType\UnassociatedRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToUnassociatedRemark($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToUnassociatedRemark($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1054,19 +1058,20 @@ class UniversalUpdate extends AbstractStructBase
     }
     /**
      * Get XMLRemark value
-     * @return \Travelport\UniversalRecord\StructType\XMLRemark[]
+     * @return \Travelport\UniversalRecord\StructType\XMLRemark[]|null
      */
     public function getXMLRemark(): ?array
     {
-        return isset($this->XMLRemark) ? $this->XMLRemark : null;
+        return $this->XMLRemark ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setXMLRemark method
+     * This method is responsible for validating the value(s) passed to the setXMLRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setXMLRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateXMLRemarkForArrayConstraintsFromSetXMLRemark(?array $values = []): string
+    public static function validateXMLRemarkForArrayConstraintFromSetXMLRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1087,13 +1092,13 @@ class UniversalUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setXMLRemark method
+     * This method is responsible for validating the value(s) passed to the setXMLRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setXMLRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateXMLRemarkForChoiceConstraintsFromSetXMLRemark($value): string
+    public function validateXMLRemarkForChoiceConstraintFromSetXMLRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1143,11 +1148,11 @@ class UniversalUpdate extends AbstractStructBase
     public function setXMLRemark(?array $xMLRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($xMLRemarkArrayErrorMessage = self::validateXMLRemarkForArrayConstraintsFromSetXMLRemark($xMLRemark))) {
+        if ('' !== ($xMLRemarkArrayErrorMessage = self::validateXMLRemarkForArrayConstraintFromSetXMLRemark($xMLRemark))) {
             throw new InvalidArgumentException($xMLRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($xMLRemarkChoiceErrorMessage = self::validateXMLRemarkForChoiceConstraintsFromSetXMLRemark($xMLRemark))) {
+        if ('' !== ($xMLRemarkChoiceErrorMessage = self::validateXMLRemarkForChoiceConstraintFromSetXMLRemark($xMLRemark))) {
             throw new InvalidArgumentException($xMLRemarkChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1167,13 +1172,13 @@ class UniversalUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToXMLRemark method
+     * This method is responsible for validating the value(s) passed to the addToXMLRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToXMLRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToXMLRemark($value): string
+    public function validateItemForChoiceConstraintFromAddToXMLRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1223,7 +1228,7 @@ class UniversalUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The XMLRemark property can only contain items of type \Travelport\UniversalRecord\StructType\XMLRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToXMLRemark($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToXMLRemark($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1244,16 +1249,16 @@ class UniversalUpdate extends AbstractStructBase
      */
     public function getPostscript(): ?\Travelport\UniversalRecord\StructType\Postscript
     {
-        return isset($this->Postscript) ? $this->Postscript : null;
+        return $this->Postscript ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setPostscript method
+     * This method is responsible for validating the value(s) passed to the setPostscript method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPostscript method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validatePostscriptForChoiceConstraintsFromSetPostscript($value): string
+    public function validatePostscriptForChoiceConstraintFromSetPostscript($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1302,7 +1307,7 @@ class UniversalUpdate extends AbstractStructBase
     public function setPostscript(?\Travelport\UniversalRecord\StructType\Postscript $postscript = null): self
     {
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($postscriptChoiceErrorMessage = self::validatePostscriptForChoiceConstraintsFromSetPostscript($postscript))) {
+        if ('' !== ($postscriptChoiceErrorMessage = self::validatePostscriptForChoiceConstraintFromSetPostscript($postscript))) {
             throw new InvalidArgumentException($postscriptChoiceErrorMessage, __LINE__);
         }
         if (is_null($postscript) || (is_array($postscript) && empty($postscript))) {
@@ -1319,16 +1324,16 @@ class UniversalUpdate extends AbstractStructBase
      */
     public function getBookingTravelerInfo(): ?\Travelport\UniversalRecord\StructType\BookingTravelerInfo
     {
-        return isset($this->BookingTravelerInfo) ? $this->BookingTravelerInfo : null;
+        return $this->BookingTravelerInfo ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setBookingTravelerInfo method
+     * This method is responsible for validating the value(s) passed to the setBookingTravelerInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTravelerInfo method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateBookingTravelerInfoForChoiceConstraintsFromSetBookingTravelerInfo($value): string
+    public function validateBookingTravelerInfoForChoiceConstraintFromSetBookingTravelerInfo($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1377,7 +1382,7 @@ class UniversalUpdate extends AbstractStructBase
     public function setBookingTravelerInfo(?\Travelport\UniversalRecord\StructType\BookingTravelerInfo $bookingTravelerInfo = null): self
     {
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($bookingTravelerInfoChoiceErrorMessage = self::validateBookingTravelerInfoForChoiceConstraintsFromSetBookingTravelerInfo($bookingTravelerInfo))) {
+        if ('' !== ($bookingTravelerInfoChoiceErrorMessage = self::validateBookingTravelerInfoForChoiceConstraintFromSetBookingTravelerInfo($bookingTravelerInfo))) {
             throw new InvalidArgumentException($bookingTravelerInfoChoiceErrorMessage, __LINE__);
         }
         if (is_null($bookingTravelerInfo) || (is_array($bookingTravelerInfo) && empty($bookingTravelerInfo))) {
@@ -1390,19 +1395,20 @@ class UniversalUpdate extends AbstractStructBase
     }
     /**
      * Get ServiceFeeInfo value
-     * @return \Travelport\UniversalRecord\StructType\ServiceFeeInfo[]
+     * @return \Travelport\UniversalRecord\StructType\ServiceFeeInfo[]|null
      */
     public function getServiceFeeInfo(): ?array
     {
-        return isset($this->ServiceFeeInfo) ? $this->ServiceFeeInfo : null;
+        return $this->ServiceFeeInfo ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setServiceFeeInfo method
+     * This method is responsible for validating the value(s) passed to the setServiceFeeInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setServiceFeeInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateServiceFeeInfoForArrayConstraintsFromSetServiceFeeInfo(?array $values = []): string
+    public static function validateServiceFeeInfoForArrayConstraintFromSetServiceFeeInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1423,13 +1429,13 @@ class UniversalUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setServiceFeeInfo method
+     * This method is responsible for validating the value(s) passed to the setServiceFeeInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setServiceFeeInfo method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateServiceFeeInfoForChoiceConstraintsFromSetServiceFeeInfo($value): string
+    public function validateServiceFeeInfoForChoiceConstraintFromSetServiceFeeInfo($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1479,11 +1485,11 @@ class UniversalUpdate extends AbstractStructBase
     public function setServiceFeeInfo(?array $serviceFeeInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($serviceFeeInfoArrayErrorMessage = self::validateServiceFeeInfoForArrayConstraintsFromSetServiceFeeInfo($serviceFeeInfo))) {
+        if ('' !== ($serviceFeeInfoArrayErrorMessage = self::validateServiceFeeInfoForArrayConstraintFromSetServiceFeeInfo($serviceFeeInfo))) {
             throw new InvalidArgumentException($serviceFeeInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($serviceFeeInfoChoiceErrorMessage = self::validateServiceFeeInfoForChoiceConstraintsFromSetServiceFeeInfo($serviceFeeInfo))) {
+        if ('' !== ($serviceFeeInfoChoiceErrorMessage = self::validateServiceFeeInfoForChoiceConstraintFromSetServiceFeeInfo($serviceFeeInfo))) {
             throw new InvalidArgumentException($serviceFeeInfoChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1503,13 +1509,13 @@ class UniversalUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToServiceFeeInfo method
+     * This method is responsible for validating the value(s) passed to the addToServiceFeeInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToServiceFeeInfo method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToServiceFeeInfo($value): string
+    public function validateItemForChoiceConstraintFromAddToServiceFeeInfo($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1559,7 +1565,7 @@ class UniversalUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The ServiceFeeInfo property can only contain items of type \Travelport\UniversalRecord\StructType\ServiceFeeInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToServiceFeeInfo($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToServiceFeeInfo($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1580,16 +1586,16 @@ class UniversalUpdate extends AbstractStructBase
      */
     public function getStatus(): ?string
     {
-        return isset($this->Status) ? $this->Status : null;
+        return $this->Status ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setStatus method
+     * This method is responsible for validating the value(s) passed to the setStatus method
      * This method is willingly generated in order to preserve the one-line inline validation within the setStatus method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateStatusForChoiceConstraintsFromSetStatus($value): string
+    public function validateStatusForChoiceConstraintFromSetStatus($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1645,7 +1651,7 @@ class UniversalUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\Status', is_array($status) ? implode(', ', $status) : var_export($status, true), implode(', ', \Travelport\UniversalRecord\EnumType\Status::getValidValues())), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($statusChoiceErrorMessage = self::validateStatusForChoiceConstraintsFromSetStatus($status))) {
+        if ('' !== ($statusChoiceErrorMessage = self::validateStatusForChoiceConstraintFromSetStatus($status))) {
             throw new InvalidArgumentException($statusChoiceErrorMessage, __LINE__);
         }
         if (is_null($status) || (is_array($status) && empty($status))) {
@@ -1662,16 +1668,16 @@ class UniversalUpdate extends AbstractStructBase
      */
     public function getAgencyContactInfo(): ?\Travelport\UniversalRecord\StructType\AgencyContactInfo
     {
-        return isset($this->AgencyContactInfo) ? $this->AgencyContactInfo : null;
+        return $this->AgencyContactInfo ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAgencyContactInfo method
+     * This method is responsible for validating the value(s) passed to the setAgencyContactInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAgencyContactInfo method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAgencyContactInfoForChoiceConstraintsFromSetAgencyContactInfo($value): string
+    public function validateAgencyContactInfoForChoiceConstraintFromSetAgencyContactInfo($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1720,7 +1726,7 @@ class UniversalUpdate extends AbstractStructBase
     public function setAgencyContactInfo(?\Travelport\UniversalRecord\StructType\AgencyContactInfo $agencyContactInfo = null): self
     {
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($agencyContactInfoChoiceErrorMessage = self::validateAgencyContactInfoForChoiceConstraintsFromSetAgencyContactInfo($agencyContactInfo))) {
+        if ('' !== ($agencyContactInfoChoiceErrorMessage = self::validateAgencyContactInfoForChoiceConstraintFromSetAgencyContactInfo($agencyContactInfo))) {
             throw new InvalidArgumentException($agencyContactInfoChoiceErrorMessage, __LINE__);
         }
         if (is_null($agencyContactInfo) || (is_array($agencyContactInfo) && empty($agencyContactInfo))) {
@@ -1737,16 +1743,16 @@ class UniversalUpdate extends AbstractStructBase
      */
     public function getCustomerID(): ?\Travelport\UniversalRecord\StructType\CustomerID
     {
-        return isset($this->CustomerID) ? $this->CustomerID : null;
+        return $this->CustomerID ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setCustomerID method
+     * This method is responsible for validating the value(s) passed to the setCustomerID method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCustomerID method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCustomerIDForChoiceConstraintsFromSetCustomerID($value): string
+    public function validateCustomerIDForChoiceConstraintFromSetCustomerID($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1795,7 +1801,7 @@ class UniversalUpdate extends AbstractStructBase
     public function setCustomerID(?\Travelport\UniversalRecord\StructType\CustomerID $customerID = null): self
     {
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($customerIDChoiceErrorMessage = self::validateCustomerIDForChoiceConstraintsFromSetCustomerID($customerID))) {
+        if ('' !== ($customerIDChoiceErrorMessage = self::validateCustomerIDForChoiceConstraintFromSetCustomerID($customerID))) {
             throw new InvalidArgumentException($customerIDChoiceErrorMessage, __LINE__);
         }
         if (is_null($customerID) || (is_array($customerID) && empty($customerID))) {
@@ -1812,16 +1818,16 @@ class UniversalUpdate extends AbstractStructBase
      */
     public function getCommissionRemark(): ?\Travelport\UniversalRecord\StructType\CommissionRemark
     {
-        return isset($this->CommissionRemark) ? $this->CommissionRemark : null;
+        return $this->CommissionRemark ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setCommissionRemark method
+     * This method is responsible for validating the value(s) passed to the setCommissionRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCommissionRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCommissionRemarkForChoiceConstraintsFromSetCommissionRemark($value): string
+    public function validateCommissionRemarkForChoiceConstraintFromSetCommissionRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1870,7 +1876,7 @@ class UniversalUpdate extends AbstractStructBase
     public function setCommissionRemark(?\Travelport\UniversalRecord\StructType\CommissionRemark $commissionRemark = null): self
     {
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($commissionRemarkChoiceErrorMessage = self::validateCommissionRemarkForChoiceConstraintsFromSetCommissionRemark($commissionRemark))) {
+        if ('' !== ($commissionRemarkChoiceErrorMessage = self::validateCommissionRemarkForChoiceConstraintFromSetCommissionRemark($commissionRemark))) {
             throw new InvalidArgumentException($commissionRemarkChoiceErrorMessage, __LINE__);
         }
         if (is_null($commissionRemark) || (is_array($commissionRemark) && empty($commissionRemark))) {
@@ -1887,16 +1893,16 @@ class UniversalUpdate extends AbstractStructBase
      */
     public function getConsolidatorRemark(): ?\Travelport\UniversalRecord\StructType\ConsolidatorRemark
     {
-        return isset($this->ConsolidatorRemark) ? $this->ConsolidatorRemark : null;
+        return $this->ConsolidatorRemark ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setConsolidatorRemark method
+     * This method is responsible for validating the value(s) passed to the setConsolidatorRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setConsolidatorRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateConsolidatorRemarkForChoiceConstraintsFromSetConsolidatorRemark($value): string
+    public function validateConsolidatorRemarkForChoiceConstraintFromSetConsolidatorRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1945,7 +1951,7 @@ class UniversalUpdate extends AbstractStructBase
     public function setConsolidatorRemark(?\Travelport\UniversalRecord\StructType\ConsolidatorRemark $consolidatorRemark = null): self
     {
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($consolidatorRemarkChoiceErrorMessage = self::validateConsolidatorRemarkForChoiceConstraintsFromSetConsolidatorRemark($consolidatorRemark))) {
+        if ('' !== ($consolidatorRemarkChoiceErrorMessage = self::validateConsolidatorRemarkForChoiceConstraintFromSetConsolidatorRemark($consolidatorRemark))) {
             throw new InvalidArgumentException($consolidatorRemarkChoiceErrorMessage, __LINE__);
         }
         if (is_null($consolidatorRemark) || (is_array($consolidatorRemark) && empty($consolidatorRemark))) {
@@ -1958,19 +1964,20 @@ class UniversalUpdate extends AbstractStructBase
     }
     /**
      * Get InvoiceRemark value
-     * @return \Travelport\UniversalRecord\StructType\InvoiceRemark[]
+     * @return \Travelport\UniversalRecord\StructType\InvoiceRemark[]|null
      */
     public function getInvoiceRemark(): ?array
     {
-        return isset($this->InvoiceRemark) ? $this->InvoiceRemark : null;
+        return $this->InvoiceRemark ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setInvoiceRemark method
+     * This method is responsible for validating the value(s) passed to the setInvoiceRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setInvoiceRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateInvoiceRemarkForArrayConstraintsFromSetInvoiceRemark(?array $values = []): string
+    public static function validateInvoiceRemarkForArrayConstraintFromSetInvoiceRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1991,13 +1998,13 @@ class UniversalUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setInvoiceRemark method
+     * This method is responsible for validating the value(s) passed to the setInvoiceRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setInvoiceRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateInvoiceRemarkForChoiceConstraintsFromSetInvoiceRemark($value): string
+    public function validateInvoiceRemarkForChoiceConstraintFromSetInvoiceRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2047,11 +2054,11 @@ class UniversalUpdate extends AbstractStructBase
     public function setInvoiceRemark(?array $invoiceRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($invoiceRemarkArrayErrorMessage = self::validateInvoiceRemarkForArrayConstraintsFromSetInvoiceRemark($invoiceRemark))) {
+        if ('' !== ($invoiceRemarkArrayErrorMessage = self::validateInvoiceRemarkForArrayConstraintFromSetInvoiceRemark($invoiceRemark))) {
             throw new InvalidArgumentException($invoiceRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($invoiceRemarkChoiceErrorMessage = self::validateInvoiceRemarkForChoiceConstraintsFromSetInvoiceRemark($invoiceRemark))) {
+        if ('' !== ($invoiceRemarkChoiceErrorMessage = self::validateInvoiceRemarkForChoiceConstraintFromSetInvoiceRemark($invoiceRemark))) {
             throw new InvalidArgumentException($invoiceRemarkChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2071,13 +2078,13 @@ class UniversalUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToInvoiceRemark method
+     * This method is responsible for validating the value(s) passed to the addToInvoiceRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToInvoiceRemark method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToInvoiceRemark($value): string
+    public function validateItemForChoiceConstraintFromAddToInvoiceRemark($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2127,7 +2134,7 @@ class UniversalUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The InvoiceRemark property can only contain items of type \Travelport\UniversalRecord\StructType\InvoiceRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToInvoiceRemark($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToInvoiceRemark($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2148,16 +2155,16 @@ class UniversalUpdate extends AbstractStructBase
      */
     public function getActionStatus(): ?\Travelport\UniversalRecord\StructType\ActionStatus
     {
-        return isset($this->ActionStatus) ? $this->ActionStatus : null;
+        return $this->ActionStatus ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setActionStatus method
+     * This method is responsible for validating the value(s) passed to the setActionStatus method
      * This method is willingly generated in order to preserve the one-line inline validation within the setActionStatus method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateActionStatusForChoiceConstraintsFromSetActionStatus($value): string
+    public function validateActionStatusForChoiceConstraintFromSetActionStatus($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2206,7 +2213,7 @@ class UniversalUpdate extends AbstractStructBase
     public function setActionStatus(?\Travelport\UniversalRecord\StructType\ActionStatus $actionStatus = null): self
     {
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($actionStatusChoiceErrorMessage = self::validateActionStatusForChoiceConstraintsFromSetActionStatus($actionStatus))) {
+        if ('' !== ($actionStatusChoiceErrorMessage = self::validateActionStatusForChoiceConstraintFromSetActionStatus($actionStatus))) {
             throw new InvalidArgumentException($actionStatusChoiceErrorMessage, __LINE__);
         }
         if (is_null($actionStatus) || (is_array($actionStatus) && empty($actionStatus))) {
@@ -2219,19 +2226,20 @@ class UniversalUpdate extends AbstractStructBase
     }
     /**
      * Get ReviewBooking value
-     * @return \Travelport\UniversalRecord\StructType\ReviewBooking[]
+     * @return \Travelport\UniversalRecord\StructType\ReviewBooking[]|null
      */
     public function getReviewBooking(): ?array
     {
-        return isset($this->ReviewBooking) ? $this->ReviewBooking : null;
+        return $this->ReviewBooking ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setReviewBooking method
+     * This method is responsible for validating the value(s) passed to the setReviewBooking method
      * This method is willingly generated in order to preserve the one-line inline validation within the setReviewBooking method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateReviewBookingForArrayConstraintsFromSetReviewBooking(?array $values = []): string
+    public static function validateReviewBookingForArrayConstraintFromSetReviewBooking(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2252,13 +2260,13 @@ class UniversalUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setReviewBooking method
+     * This method is responsible for validating the value(s) passed to the setReviewBooking method
      * This method is willingly generated in order to preserve the one-line inline validation within the setReviewBooking method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateReviewBookingForChoiceConstraintsFromSetReviewBooking($value): string
+    public function validateReviewBookingForChoiceConstraintFromSetReviewBooking($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2308,11 +2316,11 @@ class UniversalUpdate extends AbstractStructBase
     public function setReviewBooking(?array $reviewBooking = null): self
     {
         // validation for constraint: array
-        if ('' !== ($reviewBookingArrayErrorMessage = self::validateReviewBookingForArrayConstraintsFromSetReviewBooking($reviewBooking))) {
+        if ('' !== ($reviewBookingArrayErrorMessage = self::validateReviewBookingForArrayConstraintFromSetReviewBooking($reviewBooking))) {
             throw new InvalidArgumentException($reviewBookingArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($reviewBookingChoiceErrorMessage = self::validateReviewBookingForChoiceConstraintsFromSetReviewBooking($reviewBooking))) {
+        if ('' !== ($reviewBookingChoiceErrorMessage = self::validateReviewBookingForChoiceConstraintFromSetReviewBooking($reviewBooking))) {
             throw new InvalidArgumentException($reviewBookingChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2332,13 +2340,13 @@ class UniversalUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToReviewBooking method
+     * This method is responsible for validating the value(s) passed to the addToReviewBooking method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToReviewBooking method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToReviewBooking($value): string
+    public function validateItemForChoiceConstraintFromAddToReviewBooking($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2388,7 +2396,7 @@ class UniversalUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The ReviewBooking property can only contain items of type \Travelport\UniversalRecord\StructType\ReviewBooking, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToReviewBooking($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToReviewBooking($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2409,16 +2417,16 @@ class UniversalUpdate extends AbstractStructBase
      */
     public function getOwnershipChange(): ?\Travelport\UniversalRecord\StructType\OwnershipChange
     {
-        return isset($this->OwnershipChange) ? $this->OwnershipChange : null;
+        return $this->OwnershipChange ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setOwnershipChange method
+     * This method is responsible for validating the value(s) passed to the setOwnershipChange method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOwnershipChange method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateOwnershipChangeForChoiceConstraintsFromSetOwnershipChange($value): string
+    public function validateOwnershipChangeForChoiceConstraintFromSetOwnershipChange($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2467,7 +2475,7 @@ class UniversalUpdate extends AbstractStructBase
     public function setOwnershipChange(?\Travelport\UniversalRecord\StructType\OwnershipChange $ownershipChange = null): self
     {
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($ownershipChangeChoiceErrorMessage = self::validateOwnershipChangeForChoiceConstraintsFromSetOwnershipChange($ownershipChange))) {
+        if ('' !== ($ownershipChangeChoiceErrorMessage = self::validateOwnershipChangeForChoiceConstraintFromSetOwnershipChange($ownershipChange))) {
             throw new InvalidArgumentException($ownershipChangeChoiceErrorMessage, __LINE__);
         }
         if (is_null($ownershipChange) || (is_array($ownershipChange) && empty($ownershipChange))) {
@@ -2480,19 +2488,20 @@ class UniversalUpdate extends AbstractStructBase
     }
     /**
      * Get FormOfPayment value
-     * @return \Travelport\UniversalRecord\StructType\FormOfPayment[]
+     * @return \Travelport\UniversalRecord\StructType\FormOfPayment[]|null
      */
     public function getFormOfPayment(): ?array
     {
-        return isset($this->FormOfPayment) ? $this->FormOfPayment : null;
+        return $this->FormOfPayment ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setFormOfPayment method
+     * This method is responsible for validating the value(s) passed to the setFormOfPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPayment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFormOfPaymentForArrayConstraintsFromSetFormOfPayment(?array $values = []): string
+    public static function validateFormOfPaymentForArrayConstraintFromSetFormOfPayment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2513,13 +2522,13 @@ class UniversalUpdate extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setFormOfPayment method
+     * This method is responsible for validating the value(s) passed to the setFormOfPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPayment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateFormOfPaymentForChoiceConstraintsFromSetFormOfPayment($value): string
+    public function validateFormOfPaymentForChoiceConstraintFromSetFormOfPayment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2569,11 +2578,11 @@ class UniversalUpdate extends AbstractStructBase
     public function setFormOfPayment(?array $formOfPayment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintsFromSetFormOfPayment($formOfPayment))) {
+        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintFromSetFormOfPayment($formOfPayment))) {
             throw new InvalidArgumentException($formOfPaymentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($formOfPaymentChoiceErrorMessage = self::validateFormOfPaymentForChoiceConstraintsFromSetFormOfPayment($formOfPayment))) {
+        if ('' !== ($formOfPaymentChoiceErrorMessage = self::validateFormOfPaymentForChoiceConstraintFromSetFormOfPayment($formOfPayment))) {
             throw new InvalidArgumentException($formOfPaymentChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2593,13 +2602,13 @@ class UniversalUpdate extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToFormOfPayment method
+     * This method is responsible for validating the value(s) passed to the addToFormOfPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToFormOfPayment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToFormOfPayment($value): string
+    public function validateItemForChoiceConstraintFromAddToFormOfPayment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2649,7 +2658,7 @@ class UniversalUpdate extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The FormOfPayment property can only contain items of type \Travelport\UniversalRecord\StructType\FormOfPayment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AccountingRemark, GeneralRemark, OSI, UnassociatedRemark, XMLRemark, Postscript, BookingTravelerInfo, ServiceFeeInfo, Status, AgencyContactInfo, CustomerID, CommissionRemark, ConsolidatorRemark, InvoiceRemark, ActionStatus, ReviewBooking, OwnershipChange, FormOfPayment)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToFormOfPayment($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToFormOfPayment($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)

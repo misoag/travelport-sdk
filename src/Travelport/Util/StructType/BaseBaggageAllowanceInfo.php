@@ -97,12 +97,13 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
         return $this->URLInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setURLInfo method
+     * This method is responsible for validating the value(s) passed to the setURLInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setURLInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateURLInfoForArrayConstraintsFromSetURLInfo(?array $values = []): string
+    public static function validateURLInfoForArrayConstraintFromSetURLInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -131,7 +132,7 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
     public function setURLInfo(?array $uRLInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($uRLInfoArrayErrorMessage = self::validateURLInfoForArrayConstraintsFromSetURLInfo($uRLInfo))) {
+        if ('' !== ($uRLInfoArrayErrorMessage = self::validateURLInfoForArrayConstraintFromSetURLInfo($uRLInfo))) {
             throw new InvalidArgumentException($uRLInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -171,12 +172,13 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
         return $this->TextInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setTextInfo method
+     * This method is responsible for validating the value(s) passed to the setTextInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTextInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTextInfoForArrayConstraintsFromSetTextInfo(?array $values = []): string
+    public static function validateTextInfoForArrayConstraintFromSetTextInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -205,7 +207,7 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
     public function setTextInfo(?array $textInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($textInfoArrayErrorMessage = self::validateTextInfoForArrayConstraintsFromSetTextInfo($textInfo))) {
+        if ('' !== ($textInfoArrayErrorMessage = self::validateTextInfoForArrayConstraintFromSetTextInfo($textInfo))) {
             throw new InvalidArgumentException($textInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

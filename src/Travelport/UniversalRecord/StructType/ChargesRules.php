@@ -53,12 +53,13 @@ class ChargesRules extends AbstractStructBase
         return $this->VoluntaryChanges;
     }
     /**
-     * This method is responsible for validating the values passed to the setVoluntaryChanges method
+     * This method is responsible for validating the value(s) passed to the setVoluntaryChanges method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVoluntaryChanges method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVoluntaryChangesForArrayConstraintsFromSetVoluntaryChanges(?array $values = []): string
+    public static function validateVoluntaryChangesForArrayConstraintFromSetVoluntaryChanges(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -87,7 +88,7 @@ class ChargesRules extends AbstractStructBase
     public function setVoluntaryChanges(?array $voluntaryChanges = null): self
     {
         // validation for constraint: array
-        if ('' !== ($voluntaryChangesArrayErrorMessage = self::validateVoluntaryChangesForArrayConstraintsFromSetVoluntaryChanges($voluntaryChanges))) {
+        if ('' !== ($voluntaryChangesArrayErrorMessage = self::validateVoluntaryChangesForArrayConstraintFromSetVoluntaryChanges($voluntaryChanges))) {
             throw new InvalidArgumentException($voluntaryChangesArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -127,12 +128,13 @@ class ChargesRules extends AbstractStructBase
         return $this->VoluntaryRefunds;
     }
     /**
-     * This method is responsible for validating the values passed to the setVoluntaryRefunds method
+     * This method is responsible for validating the value(s) passed to the setVoluntaryRefunds method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVoluntaryRefunds method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVoluntaryRefundsForArrayConstraintsFromSetVoluntaryRefunds(?array $values = []): string
+    public static function validateVoluntaryRefundsForArrayConstraintFromSetVoluntaryRefunds(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -161,7 +163,7 @@ class ChargesRules extends AbstractStructBase
     public function setVoluntaryRefunds(?array $voluntaryRefunds = null): self
     {
         // validation for constraint: array
-        if ('' !== ($voluntaryRefundsArrayErrorMessage = self::validateVoluntaryRefundsForArrayConstraintsFromSetVoluntaryRefunds($voluntaryRefunds))) {
+        if ('' !== ($voluntaryRefundsArrayErrorMessage = self::validateVoluntaryRefundsForArrayConstraintFromSetVoluntaryRefunds($voluntaryRefunds))) {
             throw new InvalidArgumentException($voluntaryRefundsArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

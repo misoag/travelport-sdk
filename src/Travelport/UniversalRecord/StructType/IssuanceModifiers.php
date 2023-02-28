@@ -107,16 +107,16 @@ class IssuanceModifiers extends AbstractStructBase
      */
     public function getFormOfPaymentRef(): ?\Travelport\UniversalRecord\StructType\FormOfPaymentRef
     {
-        return isset($this->FormOfPaymentRef) ? $this->FormOfPaymentRef : null;
+        return $this->FormOfPaymentRef ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setFormOfPaymentRef method
+     * This method is responsible for validating the value(s) passed to the setFormOfPaymentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPaymentRef method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateFormOfPaymentRefForChoiceConstraintsFromSetFormOfPaymentRef($value): string
+    public function validateFormOfPaymentRefForChoiceConstraintFromSetFormOfPaymentRef($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -149,7 +149,7 @@ class IssuanceModifiers extends AbstractStructBase
     public function setFormOfPaymentRef(?\Travelport\UniversalRecord\StructType\FormOfPaymentRef $formOfPaymentRef = null): self
     {
         // validation for constraint: choice(FormOfPaymentRef, FormOfPayment)
-        if ('' !== ($formOfPaymentRefChoiceErrorMessage = self::validateFormOfPaymentRefForChoiceConstraintsFromSetFormOfPaymentRef($formOfPaymentRef))) {
+        if ('' !== ($formOfPaymentRefChoiceErrorMessage = self::validateFormOfPaymentRefForChoiceConstraintFromSetFormOfPaymentRef($formOfPaymentRef))) {
             throw new InvalidArgumentException($formOfPaymentRefChoiceErrorMessage, __LINE__);
         }
         if (is_null($formOfPaymentRef) || (is_array($formOfPaymentRef) && empty($formOfPaymentRef))) {
@@ -166,16 +166,16 @@ class IssuanceModifiers extends AbstractStructBase
      */
     public function getFormOfPayment(): ?\Travelport\UniversalRecord\StructType\FormOfPayment
     {
-        return isset($this->FormOfPayment) ? $this->FormOfPayment : null;
+        return $this->FormOfPayment ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setFormOfPayment method
+     * This method is responsible for validating the value(s) passed to the setFormOfPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPayment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateFormOfPaymentForChoiceConstraintsFromSetFormOfPayment($value): string
+    public function validateFormOfPaymentForChoiceConstraintFromSetFormOfPayment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -208,7 +208,7 @@ class IssuanceModifiers extends AbstractStructBase
     public function setFormOfPayment(?\Travelport\UniversalRecord\StructType\FormOfPayment $formOfPayment = null): self
     {
         // validation for constraint: choice(FormOfPaymentRef, FormOfPayment)
-        if ('' !== ($formOfPaymentChoiceErrorMessage = self::validateFormOfPaymentForChoiceConstraintsFromSetFormOfPayment($formOfPayment))) {
+        if ('' !== ($formOfPaymentChoiceErrorMessage = self::validateFormOfPaymentForChoiceConstraintFromSetFormOfPayment($formOfPayment))) {
             throw new InvalidArgumentException($formOfPaymentChoiceErrorMessage, __LINE__);
         }
         if (is_null($formOfPayment) || (is_array($formOfPayment) && empty($formOfPayment))) {

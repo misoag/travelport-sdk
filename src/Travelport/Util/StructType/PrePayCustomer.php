@@ -109,12 +109,13 @@ class PrePayCustomer extends AbstractStructBase
         return $this->Email;
     }
     /**
-     * This method is responsible for validating the values passed to the setEmail method
+     * This method is responsible for validating the value(s) passed to the setEmail method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEmail method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEmailForArrayConstraintsFromSetEmail(?array $values = []): string
+    public static function validateEmailForArrayConstraintFromSetEmail(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -143,7 +144,7 @@ class PrePayCustomer extends AbstractStructBase
     public function setEmail(?array $email = null): self
     {
         // validation for constraint: array
-        if ('' !== ($emailArrayErrorMessage = self::validateEmailForArrayConstraintsFromSetEmail($email))) {
+        if ('' !== ($emailArrayErrorMessage = self::validateEmailForArrayConstraintFromSetEmail($email))) {
             throw new InvalidArgumentException($emailArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -183,12 +184,13 @@ class PrePayCustomer extends AbstractStructBase
         return $this->Address;
     }
     /**
-     * This method is responsible for validating the values passed to the setAddress method
+     * This method is responsible for validating the value(s) passed to the setAddress method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAddress method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAddressForArrayConstraintsFromSetAddress(?array $values = []): string
+    public static function validateAddressForArrayConstraintFromSetAddress(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -217,7 +219,7 @@ class PrePayCustomer extends AbstractStructBase
     public function setAddress(?array $address = null): self
     {
         // validation for constraint: array
-        if ('' !== ($addressArrayErrorMessage = self::validateAddressForArrayConstraintsFromSetAddress($address))) {
+        if ('' !== ($addressArrayErrorMessage = self::validateAddressForArrayConstraintFromSetAddress($address))) {
             throw new InvalidArgumentException($addressArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -257,12 +259,13 @@ class PrePayCustomer extends AbstractStructBase
         return $this->RelatedTraveler;
     }
     /**
-     * This method is responsible for validating the values passed to the setRelatedTraveler method
+     * This method is responsible for validating the value(s) passed to the setRelatedTraveler method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRelatedTraveler method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRelatedTravelerForArrayConstraintsFromSetRelatedTraveler(?array $values = []): string
+    public static function validateRelatedTravelerForArrayConstraintFromSetRelatedTraveler(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -291,7 +294,7 @@ class PrePayCustomer extends AbstractStructBase
     public function setRelatedTraveler(?array $relatedTraveler = null): self
     {
         // validation for constraint: array
-        if ('' !== ($relatedTravelerArrayErrorMessage = self::validateRelatedTravelerForArrayConstraintsFromSetRelatedTraveler($relatedTraveler))) {
+        if ('' !== ($relatedTravelerArrayErrorMessage = self::validateRelatedTravelerForArrayConstraintFromSetRelatedTraveler($relatedTraveler))) {
             throw new InvalidArgumentException($relatedTravelerArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -331,12 +334,13 @@ class PrePayCustomer extends AbstractStructBase
         return $this->LoyaltyCard;
     }
     /**
-     * This method is responsible for validating the values passed to the setLoyaltyCard method
+     * This method is responsible for validating the value(s) passed to the setLoyaltyCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyCard method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLoyaltyCardForArrayConstraintsFromSetLoyaltyCard(?array $values = []): string
+    public static function validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -365,7 +369,7 @@ class PrePayCustomer extends AbstractStructBase
     public function setLoyaltyCard(?array $loyaltyCard = null): self
     {
         // validation for constraint: array
-        if ('' !== ($loyaltyCardArrayErrorMessage = self::validateLoyaltyCardForArrayConstraintsFromSetLoyaltyCard($loyaltyCard))) {
+        if ('' !== ($loyaltyCardArrayErrorMessage = self::validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard($loyaltyCard))) {
             throw new InvalidArgumentException($loyaltyCardArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

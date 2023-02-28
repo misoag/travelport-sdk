@@ -67,12 +67,13 @@ class BrandedFareAdminReq extends BaseReq
         return $this->FareFamilyAdd;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareFamilyAdd method
+     * This method is responsible for validating the value(s) passed to the setFareFamilyAdd method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareFamilyAdd method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareFamilyAddForArrayConstraintsFromSetFareFamilyAdd(?array $values = []): string
+    public static function validateFareFamilyAddForArrayConstraintFromSetFareFamilyAdd(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -101,7 +102,7 @@ class BrandedFareAdminReq extends BaseReq
     public function setFareFamilyAdd(?array $fareFamilyAdd = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareFamilyAddArrayErrorMessage = self::validateFareFamilyAddForArrayConstraintsFromSetFareFamilyAdd($fareFamilyAdd))) {
+        if ('' !== ($fareFamilyAddArrayErrorMessage = self::validateFareFamilyAddForArrayConstraintFromSetFareFamilyAdd($fareFamilyAdd))) {
             throw new InvalidArgumentException($fareFamilyAddArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -141,12 +142,13 @@ class BrandedFareAdminReq extends BaseReq
         return $this->FareFamilyUpdate;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareFamilyUpdate method
+     * This method is responsible for validating the value(s) passed to the setFareFamilyUpdate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareFamilyUpdate method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareFamilyUpdateForArrayConstraintsFromSetFareFamilyUpdate(?array $values = []): string
+    public static function validateFareFamilyUpdateForArrayConstraintFromSetFareFamilyUpdate(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -175,7 +177,7 @@ class BrandedFareAdminReq extends BaseReq
     public function setFareFamilyUpdate(?array $fareFamilyUpdate = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareFamilyUpdateArrayErrorMessage = self::validateFareFamilyUpdateForArrayConstraintsFromSetFareFamilyUpdate($fareFamilyUpdate))) {
+        if ('' !== ($fareFamilyUpdateArrayErrorMessage = self::validateFareFamilyUpdateForArrayConstraintFromSetFareFamilyUpdate($fareFamilyUpdate))) {
             throw new InvalidArgumentException($fareFamilyUpdateArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -215,12 +217,13 @@ class BrandedFareAdminReq extends BaseReq
         return $this->FareFamilyDelete;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareFamilyDelete method
+     * This method is responsible for validating the value(s) passed to the setFareFamilyDelete method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareFamilyDelete method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareFamilyDeleteForArrayConstraintsFromSetFareFamilyDelete(?array $values = []): string
+    public static function validateFareFamilyDeleteForArrayConstraintFromSetFareFamilyDelete(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -249,7 +252,7 @@ class BrandedFareAdminReq extends BaseReq
     public function setFareFamilyDelete(?array $fareFamilyDelete = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareFamilyDeleteArrayErrorMessage = self::validateFareFamilyDeleteForArrayConstraintsFromSetFareFamilyDelete($fareFamilyDelete))) {
+        if ('' !== ($fareFamilyDeleteArrayErrorMessage = self::validateFareFamilyDeleteForArrayConstraintFromSetFareFamilyDelete($fareFamilyDelete))) {
             throw new InvalidArgumentException($fareFamilyDeleteArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

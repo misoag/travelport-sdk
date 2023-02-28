@@ -121,12 +121,13 @@ class Restriction extends AbstractStructBase
         return $this->DaysOfWeekRestriction;
     }
     /**
-     * This method is responsible for validating the values passed to the setDaysOfWeekRestriction method
+     * This method is responsible for validating the value(s) passed to the setDaysOfWeekRestriction method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDaysOfWeekRestriction method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDaysOfWeekRestrictionForArrayConstraintsFromSetDaysOfWeekRestriction(?array $values = []): string
+    public static function validateDaysOfWeekRestrictionForArrayConstraintFromSetDaysOfWeekRestriction(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -155,7 +156,7 @@ class Restriction extends AbstractStructBase
     public function setDaysOfWeekRestriction(?array $daysOfWeekRestriction = null): self
     {
         // validation for constraint: array
-        if ('' !== ($daysOfWeekRestrictionArrayErrorMessage = self::validateDaysOfWeekRestrictionForArrayConstraintsFromSetDaysOfWeekRestriction($daysOfWeekRestriction))) {
+        if ('' !== ($daysOfWeekRestrictionArrayErrorMessage = self::validateDaysOfWeekRestrictionForArrayConstraintFromSetDaysOfWeekRestriction($daysOfWeekRestriction))) {
             throw new InvalidArgumentException($daysOfWeekRestrictionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(3)
@@ -195,12 +196,13 @@ class Restriction extends AbstractStructBase
         return $this->RestrictionPassengerTypes;
     }
     /**
-     * This method is responsible for validating the values passed to the setRestrictionPassengerTypes method
+     * This method is responsible for validating the value(s) passed to the setRestrictionPassengerTypes method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRestrictionPassengerTypes method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRestrictionPassengerTypesForArrayConstraintsFromSetRestrictionPassengerTypes(?array $values = []): string
+    public static function validateRestrictionPassengerTypesForArrayConstraintFromSetRestrictionPassengerTypes(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -229,7 +231,7 @@ class Restriction extends AbstractStructBase
     public function setRestrictionPassengerTypes(?array $restrictionPassengerTypes = null): self
     {
         // validation for constraint: array
-        if ('' !== ($restrictionPassengerTypesArrayErrorMessage = self::validateRestrictionPassengerTypesForArrayConstraintsFromSetRestrictionPassengerTypes($restrictionPassengerTypes))) {
+        if ('' !== ($restrictionPassengerTypesArrayErrorMessage = self::validateRestrictionPassengerTypesForArrayConstraintFromSetRestrictionPassengerTypes($restrictionPassengerTypes))) {
             throw new InvalidArgumentException($restrictionPassengerTypesArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

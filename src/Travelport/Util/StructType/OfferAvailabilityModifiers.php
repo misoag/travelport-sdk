@@ -70,12 +70,13 @@ class OfferAvailabilityModifiers extends AbstractStructBase
         return $this->ServiceType;
     }
     /**
-     * This method is responsible for validating the values passed to the setServiceType method
+     * This method is responsible for validating the value(s) passed to the setServiceType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setServiceType method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateServiceTypeForArrayConstraintsFromSetServiceType(?array $values = []): string
+    public static function validateServiceTypeForArrayConstraintFromSetServiceType(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -96,17 +97,17 @@ class OfferAvailabilityModifiers extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setServiceType method
+     * This method is responsible for validating the value(s) passed to the setServiceType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setServiceType method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateServiceTypeForMaxLengthConstraintFromSetServiceType($values): string
+    public static function validateServiceTypeForMaxLengthConstraintFromSetServiceType(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $offerAvailabilityModifiersServiceTypeItem) {
+        foreach (($values ?? []) as $offerAvailabilityModifiersServiceTypeItem) {
             // validation for constraint: maxLength(128)
             if (mb_strlen((string) $offerAvailabilityModifiersServiceTypeItem) > 128) {
                 $invalidValues[] = var_export($offerAvailabilityModifiersServiceTypeItem, true);
@@ -120,17 +121,17 @@ class OfferAvailabilityModifiers extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setServiceType method
+     * This method is responsible for validating the value(s) passed to the setServiceType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setServiceType method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateServiceTypeForMinLengthConstraintFromSetServiceType($values): string
+    public static function validateServiceTypeForMinLengthConstraintFromSetServiceType(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $offerAvailabilityModifiersServiceTypeItem) {
+        foreach (($values ?? []) as $offerAvailabilityModifiersServiceTypeItem) {
             // validation for constraint: minLength(1)
             if (mb_strlen((string) $offerAvailabilityModifiersServiceTypeItem) < 1) {
                 $invalidValues[] = var_export($offerAvailabilityModifiersServiceTypeItem, true);
@@ -152,7 +153,7 @@ class OfferAvailabilityModifiers extends AbstractStructBase
     public function setServiceType(?array $serviceType = null): self
     {
         // validation for constraint: array
-        if ('' !== ($serviceTypeArrayErrorMessage = self::validateServiceTypeForArrayConstraintsFromSetServiceType($serviceType))) {
+        if ('' !== ($serviceTypeArrayErrorMessage = self::validateServiceTypeForArrayConstraintFromSetServiceType($serviceType))) {
             throw new InvalidArgumentException($serviceTypeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxLength(128)
@@ -208,12 +209,13 @@ class OfferAvailabilityModifiers extends AbstractStructBase
         return $this->Carrier;
     }
     /**
-     * This method is responsible for validating the values passed to the setCarrier method
+     * This method is responsible for validating the value(s) passed to the setCarrier method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCarrier method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCarrierForArrayConstraintsFromSetCarrier(?array $values = []): string
+    public static function validateCarrierForArrayConstraintFromSetCarrier(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -234,17 +236,17 @@ class OfferAvailabilityModifiers extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setCarrier method
+     * This method is responsible for validating the value(s) passed to the setCarrier method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCarrier method
      * This has to validate that the items contained by the array match the length constraint
-     * @param mixed $values
+     * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCarrierForLengthConstraintFromSetCarrier($values): string
+    public static function validateCarrierForLengthConstraintFromSetCarrier(?array $values = null): string
     {
         $message = '';
         $invalidValues = [];
-        foreach ($values as $offerAvailabilityModifiersCarrierItem) {
+        foreach (($values ?? []) as $offerAvailabilityModifiersCarrierItem) {
             // validation for constraint: length(2)
             if (mb_strlen((string) $offerAvailabilityModifiersCarrierItem) !== 2) {
                 $invalidValues[] = var_export($offerAvailabilityModifiersCarrierItem, true);
@@ -266,7 +268,7 @@ class OfferAvailabilityModifiers extends AbstractStructBase
     public function setCarrier(?array $carrier = null): self
     {
         // validation for constraint: array
-        if ('' !== ($carrierArrayErrorMessage = self::validateCarrierForArrayConstraintsFromSetCarrier($carrier))) {
+        if ('' !== ($carrierArrayErrorMessage = self::validateCarrierForArrayConstraintFromSetCarrier($carrier))) {
             throw new InvalidArgumentException($carrierArrayErrorMessage, __LINE__);
         }
         // validation for constraint: length(2)

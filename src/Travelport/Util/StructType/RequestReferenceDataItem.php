@@ -42,12 +42,13 @@ class RequestReferenceDataItem extends AbstractStructBase
         return $this->RequestAmenity;
     }
     /**
-     * This method is responsible for validating the values passed to the setRequestAmenity method
+     * This method is responsible for validating the value(s) passed to the setRequestAmenity method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRequestAmenity method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRequestAmenityForArrayConstraintsFromSetRequestAmenity(?array $values = []): string
+    public static function validateRequestAmenityForArrayConstraintFromSetRequestAmenity(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class RequestReferenceDataItem extends AbstractStructBase
     public function setRequestAmenity(?array $requestAmenity = null): self
     {
         // validation for constraint: array
-        if ('' !== ($requestAmenityArrayErrorMessage = self::validateRequestAmenityForArrayConstraintsFromSetRequestAmenity($requestAmenity))) {
+        if ('' !== ($requestAmenityArrayErrorMessage = self::validateRequestAmenityForArrayConstraintFromSetRequestAmenity($requestAmenity))) {
             throw new InvalidArgumentException($requestAmenityArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(9)

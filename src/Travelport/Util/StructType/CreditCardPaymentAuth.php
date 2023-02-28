@@ -135,16 +135,16 @@ class CreditCardPaymentAuth extends AbstractStructBase
      */
     public function getCreditCard(): ?\Travelport\Util\StructType\CreditCard
     {
-        return isset($this->CreditCard) ? $this->CreditCard : null;
+        return $this->CreditCard ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setCreditCard method
+     * This method is responsible for validating the value(s) passed to the setCreditCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCreditCard method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCreditCardForChoiceConstraintsFromSetCreditCard($value): string
+    public function validateCreditCardForChoiceConstraintFromSetCreditCard($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -177,7 +177,7 @@ class CreditCardPaymentAuth extends AbstractStructBase
     public function setCreditCard(?\Travelport\Util\StructType\CreditCard $creditCard = null): self
     {
         // validation for constraint: choice(CreditCard, FormOfPaymentRef)
-        if ('' !== ($creditCardChoiceErrorMessage = self::validateCreditCardForChoiceConstraintsFromSetCreditCard($creditCard))) {
+        if ('' !== ($creditCardChoiceErrorMessage = self::validateCreditCardForChoiceConstraintFromSetCreditCard($creditCard))) {
             throw new InvalidArgumentException($creditCardChoiceErrorMessage, __LINE__);
         }
         if (is_null($creditCard) || (is_array($creditCard) && empty($creditCard))) {
@@ -194,16 +194,16 @@ class CreditCardPaymentAuth extends AbstractStructBase
      */
     public function getFormOfPaymentRef(): ?\Travelport\Util\StructType\FormOfPaymentRef
     {
-        return isset($this->FormOfPaymentRef) ? $this->FormOfPaymentRef : null;
+        return $this->FormOfPaymentRef ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setFormOfPaymentRef method
+     * This method is responsible for validating the value(s) passed to the setFormOfPaymentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPaymentRef method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateFormOfPaymentRefForChoiceConstraintsFromSetFormOfPaymentRef($value): string
+    public function validateFormOfPaymentRefForChoiceConstraintFromSetFormOfPaymentRef($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -236,7 +236,7 @@ class CreditCardPaymentAuth extends AbstractStructBase
     public function setFormOfPaymentRef(?\Travelport\Util\StructType\FormOfPaymentRef $formOfPaymentRef = null): self
     {
         // validation for constraint: choice(CreditCard, FormOfPaymentRef)
-        if ('' !== ($formOfPaymentRefChoiceErrorMessage = self::validateFormOfPaymentRefForChoiceConstraintsFromSetFormOfPaymentRef($formOfPaymentRef))) {
+        if ('' !== ($formOfPaymentRefChoiceErrorMessage = self::validateFormOfPaymentRefForChoiceConstraintFromSetFormOfPaymentRef($formOfPaymentRef))) {
             throw new InvalidArgumentException($formOfPaymentRefChoiceErrorMessage, __LINE__);
         }
         if (is_null($formOfPaymentRef) || (is_array($formOfPaymentRef) && empty($formOfPaymentRef))) {

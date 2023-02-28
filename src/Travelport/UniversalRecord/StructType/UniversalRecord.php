@@ -564,12 +564,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->LinkedUniversalRecord;
     }
     /**
-     * This method is responsible for validating the values passed to the setLinkedUniversalRecord method
+     * This method is responsible for validating the value(s) passed to the setLinkedUniversalRecord method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLinkedUniversalRecord method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLinkedUniversalRecordForArrayConstraintsFromSetLinkedUniversalRecord(?array $values = []): string
+    public static function validateLinkedUniversalRecordForArrayConstraintFromSetLinkedUniversalRecord(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -598,7 +599,7 @@ class UniversalRecord extends AbstractStructBase
     public function setLinkedUniversalRecord(?array $linkedUniversalRecord = null): self
     {
         // validation for constraint: array
-        if ('' !== ($linkedUniversalRecordArrayErrorMessage = self::validateLinkedUniversalRecordForArrayConstraintsFromSetLinkedUniversalRecord($linkedUniversalRecord))) {
+        if ('' !== ($linkedUniversalRecordArrayErrorMessage = self::validateLinkedUniversalRecordForArrayConstraintFromSetLinkedUniversalRecord($linkedUniversalRecord))) {
             throw new InvalidArgumentException($linkedUniversalRecordArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -657,12 +658,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->BookingTraveler;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingTraveler method
+     * This method is responsible for validating the value(s) passed to the setBookingTraveler method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTraveler method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingTravelerForArrayConstraintsFromSetBookingTraveler(?array $values = []): string
+    public static function validateBookingTravelerForArrayConstraintFromSetBookingTraveler(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -691,7 +693,7 @@ class UniversalRecord extends AbstractStructBase
     public function setBookingTraveler(?array $bookingTraveler = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingTravelerArrayErrorMessage = self::validateBookingTravelerForArrayConstraintsFromSetBookingTraveler($bookingTraveler))) {
+        if ('' !== ($bookingTravelerArrayErrorMessage = self::validateBookingTravelerForArrayConstraintFromSetBookingTraveler($bookingTraveler))) {
             throw new InvalidArgumentException($bookingTravelerArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -731,12 +733,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->ServiceFeeInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setServiceFeeInfo method
+     * This method is responsible for validating the value(s) passed to the setServiceFeeInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setServiceFeeInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateServiceFeeInfoForArrayConstraintsFromSetServiceFeeInfo(?array $values = []): string
+    public static function validateServiceFeeInfoForArrayConstraintFromSetServiceFeeInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -765,7 +768,7 @@ class UniversalRecord extends AbstractStructBase
     public function setServiceFeeInfo(?array $serviceFeeInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($serviceFeeInfoArrayErrorMessage = self::validateServiceFeeInfoForArrayConstraintsFromSetServiceFeeInfo($serviceFeeInfo))) {
+        if ('' !== ($serviceFeeInfoArrayErrorMessage = self::validateServiceFeeInfoForArrayConstraintFromSetServiceFeeInfo($serviceFeeInfo))) {
             throw new InvalidArgumentException($serviceFeeInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -805,12 +808,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->OSI;
     }
     /**
-     * This method is responsible for validating the values passed to the setOSI method
+     * This method is responsible for validating the value(s) passed to the setOSI method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOSI method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateOSIForArrayConstraintsFromSetOSI(?array $values = []): string
+    public static function validateOSIForArrayConstraintFromSetOSI(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -839,7 +843,7 @@ class UniversalRecord extends AbstractStructBase
     public function setOSI(?array $oSI = null): self
     {
         // validation for constraint: array
-        if ('' !== ($oSIArrayErrorMessage = self::validateOSIForArrayConstraintsFromSetOSI($oSI))) {
+        if ('' !== ($oSIArrayErrorMessage = self::validateOSIForArrayConstraintFromSetOSI($oSI))) {
             throw new InvalidArgumentException($oSIArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -879,12 +883,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->ActionStatus;
     }
     /**
-     * This method is responsible for validating the values passed to the setActionStatus method
+     * This method is responsible for validating the value(s) passed to the setActionStatus method
      * This method is willingly generated in order to preserve the one-line inline validation within the setActionStatus method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateActionStatusForArrayConstraintsFromSetActionStatus(?array $values = []): string
+    public static function validateActionStatusForArrayConstraintFromSetActionStatus(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -913,7 +918,7 @@ class UniversalRecord extends AbstractStructBase
     public function setActionStatus(?array $actionStatus = null): self
     {
         // validation for constraint: array
-        if ('' !== ($actionStatusArrayErrorMessage = self::validateActionStatusForArrayConstraintsFromSetActionStatus($actionStatus))) {
+        if ('' !== ($actionStatusArrayErrorMessage = self::validateActionStatusForArrayConstraintFromSetActionStatus($actionStatus))) {
             throw new InvalidArgumentException($actionStatusArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -953,12 +958,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->ProviderReservationInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setProviderReservationInfo method
+     * This method is responsible for validating the value(s) passed to the setProviderReservationInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateProviderReservationInfoForArrayConstraintsFromSetProviderReservationInfo(?array $values = []): string
+    public static function validateProviderReservationInfoForArrayConstraintFromSetProviderReservationInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -987,7 +993,7 @@ class UniversalRecord extends AbstractStructBase
     public function setProviderReservationInfo(?array $providerReservationInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($providerReservationInfoArrayErrorMessage = self::validateProviderReservationInfoForArrayConstraintsFromSetProviderReservationInfo($providerReservationInfo))) {
+        if ('' !== ($providerReservationInfoArrayErrorMessage = self::validateProviderReservationInfoForArrayConstraintFromSetProviderReservationInfo($providerReservationInfo))) {
             throw new InvalidArgumentException($providerReservationInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1020,19 +1026,20 @@ class UniversalRecord extends AbstractStructBase
     }
     /**
      * Get AirReservation value
-     * @return \Travelport\UniversalRecord\StructType\AirReservation[]
+     * @return \Travelport\UniversalRecord\StructType\AirReservation[]|null
      */
     public function getAirReservation(): ?array
     {
-        return isset($this->AirReservation) ? $this->AirReservation : null;
+        return $this->AirReservation ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirReservation method
+     * This method is responsible for validating the value(s) passed to the setAirReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirReservation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirReservationForArrayConstraintsFromSetAirReservation(?array $values = []): string
+    public static function validateAirReservationForArrayConstraintFromSetAirReservation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1053,13 +1060,13 @@ class UniversalRecord extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirReservation method
+     * This method is responsible for validating the value(s) passed to the setAirReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirReservation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirReservationForChoiceConstraintsFromSetAirReservation($value): string
+    public function validateAirReservationForChoiceConstraintFromSetAirReservation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1092,11 +1099,11 @@ class UniversalRecord extends AbstractStructBase
     public function setAirReservation(?array $airReservation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airReservationArrayErrorMessage = self::validateAirReservationForArrayConstraintsFromSetAirReservation($airReservation))) {
+        if ('' !== ($airReservationArrayErrorMessage = self::validateAirReservationForArrayConstraintFromSetAirReservation($airReservation))) {
             throw new InvalidArgumentException($airReservationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(AirReservation)
-        if ('' !== ($airReservationChoiceErrorMessage = self::validateAirReservationForChoiceConstraintsFromSetAirReservation($airReservation))) {
+        if ('' !== ($airReservationChoiceErrorMessage = self::validateAirReservationForChoiceConstraintFromSetAirReservation($airReservation))) {
             throw new InvalidArgumentException($airReservationChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1116,13 +1123,13 @@ class UniversalRecord extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToAirReservation method
+     * This method is responsible for validating the value(s) passed to the addToAirReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToAirReservation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToAirReservation($value): string
+    public function validateItemForChoiceConstraintFromAddToAirReservation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1155,7 +1162,7 @@ class UniversalRecord extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The AirReservation property can only contain items of type \Travelport\UniversalRecord\StructType\AirReservation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(AirReservation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToAirReservation($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToAirReservation($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1172,19 +1179,20 @@ class UniversalRecord extends AbstractStructBase
     }
     /**
      * Get HotelReservation value
-     * @return \Travelport\UniversalRecord\StructType\HotelReservation[]
+     * @return \Travelport\UniversalRecord\StructType\HotelReservation[]|null
      */
     public function getHotelReservation(): ?array
     {
-        return isset($this->HotelReservation) ? $this->HotelReservation : null;
+        return $this->HotelReservation ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelReservation method
+     * This method is responsible for validating the value(s) passed to the setHotelReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelReservation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelReservationForArrayConstraintsFromSetHotelReservation(?array $values = []): string
+    public static function validateHotelReservationForArrayConstraintFromSetHotelReservation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1205,13 +1213,13 @@ class UniversalRecord extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelReservation method
+     * This method is responsible for validating the value(s) passed to the setHotelReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelReservation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelReservationForChoiceConstraintsFromSetHotelReservation($value): string
+    public function validateHotelReservationForChoiceConstraintFromSetHotelReservation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1244,11 +1252,11 @@ class UniversalRecord extends AbstractStructBase
     public function setHotelReservation(?array $hotelReservation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelReservationArrayErrorMessage = self::validateHotelReservationForArrayConstraintsFromSetHotelReservation($hotelReservation))) {
+        if ('' !== ($hotelReservationArrayErrorMessage = self::validateHotelReservationForArrayConstraintFromSetHotelReservation($hotelReservation))) {
             throw new InvalidArgumentException($hotelReservationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(HotelReservation)
-        if ('' !== ($hotelReservationChoiceErrorMessage = self::validateHotelReservationForChoiceConstraintsFromSetHotelReservation($hotelReservation))) {
+        if ('' !== ($hotelReservationChoiceErrorMessage = self::validateHotelReservationForChoiceConstraintFromSetHotelReservation($hotelReservation))) {
             throw new InvalidArgumentException($hotelReservationChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1268,13 +1276,13 @@ class UniversalRecord extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToHotelReservation method
+     * This method is responsible for validating the value(s) passed to the addToHotelReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToHotelReservation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToHotelReservation($value): string
+    public function validateItemForChoiceConstraintFromAddToHotelReservation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1307,7 +1315,7 @@ class UniversalRecord extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The HotelReservation property can only contain items of type \Travelport\UniversalRecord\StructType\HotelReservation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(HotelReservation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToHotelReservation($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToHotelReservation($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1324,19 +1332,20 @@ class UniversalRecord extends AbstractStructBase
     }
     /**
      * Get VehicleReservation value
-     * @return \Travelport\UniversalRecord\StructType\VehicleReservation[]
+     * @return \Travelport\UniversalRecord\StructType\VehicleReservation[]|null
      */
     public function getVehicleReservation(): ?array
     {
-        return isset($this->VehicleReservation) ? $this->VehicleReservation : null;
+        return $this->VehicleReservation ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleReservation method
+     * This method is responsible for validating the value(s) passed to the setVehicleReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleReservation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleReservationForArrayConstraintsFromSetVehicleReservation(?array $values = []): string
+    public static function validateVehicleReservationForArrayConstraintFromSetVehicleReservation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1357,13 +1366,13 @@ class UniversalRecord extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicleReservation method
+     * This method is responsible for validating the value(s) passed to the setVehicleReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleReservation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleReservationForChoiceConstraintsFromSetVehicleReservation($value): string
+    public function validateVehicleReservationForChoiceConstraintFromSetVehicleReservation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1396,11 +1405,11 @@ class UniversalRecord extends AbstractStructBase
     public function setVehicleReservation(?array $vehicleReservation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleReservationArrayErrorMessage = self::validateVehicleReservationForArrayConstraintsFromSetVehicleReservation($vehicleReservation))) {
+        if ('' !== ($vehicleReservationArrayErrorMessage = self::validateVehicleReservationForArrayConstraintFromSetVehicleReservation($vehicleReservation))) {
             throw new InvalidArgumentException($vehicleReservationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(VehicleReservation)
-        if ('' !== ($vehicleReservationChoiceErrorMessage = self::validateVehicleReservationForChoiceConstraintsFromSetVehicleReservation($vehicleReservation))) {
+        if ('' !== ($vehicleReservationChoiceErrorMessage = self::validateVehicleReservationForChoiceConstraintFromSetVehicleReservation($vehicleReservation))) {
             throw new InvalidArgumentException($vehicleReservationChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1420,13 +1429,13 @@ class UniversalRecord extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToVehicleReservation method
+     * This method is responsible for validating the value(s) passed to the addToVehicleReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToVehicleReservation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToVehicleReservation($value): string
+    public function validateItemForChoiceConstraintFromAddToVehicleReservation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1459,7 +1468,7 @@ class UniversalRecord extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The VehicleReservation property can only contain items of type \Travelport\UniversalRecord\StructType\VehicleReservation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(VehicleReservation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToVehicleReservation($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToVehicleReservation($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1476,19 +1485,20 @@ class UniversalRecord extends AbstractStructBase
     }
     /**
      * Get PassiveReservation value
-     * @return \Travelport\UniversalRecord\StructType\PassiveReservation[]
+     * @return \Travelport\UniversalRecord\StructType\PassiveReservation[]|null
      */
     public function getPassiveReservation(): ?array
     {
-        return isset($this->PassiveReservation) ? $this->PassiveReservation : null;
+        return $this->PassiveReservation ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setPassiveReservation method
+     * This method is responsible for validating the value(s) passed to the setPassiveReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassiveReservation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePassiveReservationForArrayConstraintsFromSetPassiveReservation(?array $values = []): string
+    public static function validatePassiveReservationForArrayConstraintFromSetPassiveReservation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1509,13 +1519,13 @@ class UniversalRecord extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setPassiveReservation method
+     * This method is responsible for validating the value(s) passed to the setPassiveReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassiveReservation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validatePassiveReservationForChoiceConstraintsFromSetPassiveReservation($value): string
+    public function validatePassiveReservationForChoiceConstraintFromSetPassiveReservation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1548,11 +1558,11 @@ class UniversalRecord extends AbstractStructBase
     public function setPassiveReservation(?array $passiveReservation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($passiveReservationArrayErrorMessage = self::validatePassiveReservationForArrayConstraintsFromSetPassiveReservation($passiveReservation))) {
+        if ('' !== ($passiveReservationArrayErrorMessage = self::validatePassiveReservationForArrayConstraintFromSetPassiveReservation($passiveReservation))) {
             throw new InvalidArgumentException($passiveReservationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(PassiveReservation)
-        if ('' !== ($passiveReservationChoiceErrorMessage = self::validatePassiveReservationForChoiceConstraintsFromSetPassiveReservation($passiveReservation))) {
+        if ('' !== ($passiveReservationChoiceErrorMessage = self::validatePassiveReservationForChoiceConstraintFromSetPassiveReservation($passiveReservation))) {
             throw new InvalidArgumentException($passiveReservationChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1572,13 +1582,13 @@ class UniversalRecord extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToPassiveReservation method
+     * This method is responsible for validating the value(s) passed to the addToPassiveReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToPassiveReservation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToPassiveReservation($value): string
+    public function validateItemForChoiceConstraintFromAddToPassiveReservation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1611,7 +1621,7 @@ class UniversalRecord extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The PassiveReservation property can only contain items of type \Travelport\UniversalRecord\StructType\PassiveReservation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(PassiveReservation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToPassiveReservation($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToPassiveReservation($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1628,19 +1638,20 @@ class UniversalRecord extends AbstractStructBase
     }
     /**
      * Get RailReservation value
-     * @return \Travelport\UniversalRecord\StructType\RailReservation[]
+     * @return \Travelport\UniversalRecord\StructType\RailReservation[]|null
      */
     public function getRailReservation(): ?array
     {
-        return isset($this->RailReservation) ? $this->RailReservation : null;
+        return $this->RailReservation ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailReservation method
+     * This method is responsible for validating the value(s) passed to the setRailReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailReservation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailReservationForArrayConstraintsFromSetRailReservation(?array $values = []): string
+    public static function validateRailReservationForArrayConstraintFromSetRailReservation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1661,13 +1672,13 @@ class UniversalRecord extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setRailReservation method
+     * This method is responsible for validating the value(s) passed to the setRailReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailReservation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateRailReservationForChoiceConstraintsFromSetRailReservation($value): string
+    public function validateRailReservationForChoiceConstraintFromSetRailReservation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1700,11 +1711,11 @@ class UniversalRecord extends AbstractStructBase
     public function setRailReservation(?array $railReservation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railReservationArrayErrorMessage = self::validateRailReservationForArrayConstraintsFromSetRailReservation($railReservation))) {
+        if ('' !== ($railReservationArrayErrorMessage = self::validateRailReservationForArrayConstraintFromSetRailReservation($railReservation))) {
             throw new InvalidArgumentException($railReservationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(RailReservation)
-        if ('' !== ($railReservationChoiceErrorMessage = self::validateRailReservationForChoiceConstraintsFromSetRailReservation($railReservation))) {
+        if ('' !== ($railReservationChoiceErrorMessage = self::validateRailReservationForChoiceConstraintFromSetRailReservation($railReservation))) {
             throw new InvalidArgumentException($railReservationChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1724,13 +1735,13 @@ class UniversalRecord extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToRailReservation method
+     * This method is responsible for validating the value(s) passed to the addToRailReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToRailReservation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToRailReservation($value): string
+    public function validateItemForChoiceConstraintFromAddToRailReservation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1763,7 +1774,7 @@ class UniversalRecord extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The RailReservation property can only contain items of type \Travelport\UniversalRecord\StructType\RailReservation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(RailReservation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToRailReservation($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToRailReservation($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1780,19 +1791,20 @@ class UniversalRecord extends AbstractStructBase
     }
     /**
      * Get CruiseReservation value
-     * @return \Travelport\UniversalRecord\StructType\CruiseReservation[]
+     * @return \Travelport\UniversalRecord\StructType\CruiseReservation[]|null
      */
     public function getCruiseReservation(): ?array
     {
-        return isset($this->CruiseReservation) ? $this->CruiseReservation : null;
+        return $this->CruiseReservation ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setCruiseReservation method
+     * This method is responsible for validating the value(s) passed to the setCruiseReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCruiseReservation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCruiseReservationForArrayConstraintsFromSetCruiseReservation(?array $values = []): string
+    public static function validateCruiseReservationForArrayConstraintFromSetCruiseReservation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1813,13 +1825,13 @@ class UniversalRecord extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setCruiseReservation method
+     * This method is responsible for validating the value(s) passed to the setCruiseReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCruiseReservation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCruiseReservationForChoiceConstraintsFromSetCruiseReservation($value): string
+    public function validateCruiseReservationForChoiceConstraintFromSetCruiseReservation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1852,11 +1864,11 @@ class UniversalRecord extends AbstractStructBase
     public function setCruiseReservation(?array $cruiseReservation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($cruiseReservationArrayErrorMessage = self::validateCruiseReservationForArrayConstraintsFromSetCruiseReservation($cruiseReservation))) {
+        if ('' !== ($cruiseReservationArrayErrorMessage = self::validateCruiseReservationForArrayConstraintFromSetCruiseReservation($cruiseReservation))) {
             throw new InvalidArgumentException($cruiseReservationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(CruiseReservation)
-        if ('' !== ($cruiseReservationChoiceErrorMessage = self::validateCruiseReservationForChoiceConstraintsFromSetCruiseReservation($cruiseReservation))) {
+        if ('' !== ($cruiseReservationChoiceErrorMessage = self::validateCruiseReservationForChoiceConstraintFromSetCruiseReservation($cruiseReservation))) {
             throw new InvalidArgumentException($cruiseReservationChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1876,13 +1888,13 @@ class UniversalRecord extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToCruiseReservation method
+     * This method is responsible for validating the value(s) passed to the addToCruiseReservation method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToCruiseReservation method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToCruiseReservation($value): string
+    public function validateItemForChoiceConstraintFromAddToCruiseReservation($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -1915,7 +1927,7 @@ class UniversalRecord extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The CruiseReservation property can only contain items of type \Travelport\UniversalRecord\StructType\CruiseReservation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(CruiseReservation)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToCruiseReservation($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToCruiseReservation($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -1932,19 +1944,20 @@ class UniversalRecord extends AbstractStructBase
     }
     /**
      * Get EMDSummaryInfo value
-     * @return \Travelport\UniversalRecord\StructType\EMDSummaryInfo[]
+     * @return \Travelport\UniversalRecord\StructType\EMDSummaryInfo[]|null
      */
     public function getEMDSummaryInfo(): ?array
     {
-        return isset($this->EMDSummaryInfo) ? $this->EMDSummaryInfo : null;
+        return $this->EMDSummaryInfo ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setEMDSummaryInfo method
+     * This method is responsible for validating the value(s) passed to the setEMDSummaryInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEMDSummaryInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEMDSummaryInfoForArrayConstraintsFromSetEMDSummaryInfo(?array $values = []): string
+    public static function validateEMDSummaryInfoForArrayConstraintFromSetEMDSummaryInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1965,13 +1978,13 @@ class UniversalRecord extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setEMDSummaryInfo method
+     * This method is responsible for validating the value(s) passed to the setEMDSummaryInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEMDSummaryInfo method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateEMDSummaryInfoForChoiceConstraintsFromSetEMDSummaryInfo($value): string
+    public function validateEMDSummaryInfoForChoiceConstraintFromSetEMDSummaryInfo($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2004,11 +2017,11 @@ class UniversalRecord extends AbstractStructBase
     public function setEMDSummaryInfo(?array $eMDSummaryInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($eMDSummaryInfoArrayErrorMessage = self::validateEMDSummaryInfoForArrayConstraintsFromSetEMDSummaryInfo($eMDSummaryInfo))) {
+        if ('' !== ($eMDSummaryInfoArrayErrorMessage = self::validateEMDSummaryInfoForArrayConstraintFromSetEMDSummaryInfo($eMDSummaryInfo))) {
             throw new InvalidArgumentException($eMDSummaryInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(EMDSummaryInfo)
-        if ('' !== ($eMDSummaryInfoChoiceErrorMessage = self::validateEMDSummaryInfoForChoiceConstraintsFromSetEMDSummaryInfo($eMDSummaryInfo))) {
+        if ('' !== ($eMDSummaryInfoChoiceErrorMessage = self::validateEMDSummaryInfoForChoiceConstraintFromSetEMDSummaryInfo($eMDSummaryInfo))) {
             throw new InvalidArgumentException($eMDSummaryInfoChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2028,13 +2041,13 @@ class UniversalRecord extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToEMDSummaryInfo method
+     * This method is responsible for validating the value(s) passed to the addToEMDSummaryInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToEMDSummaryInfo method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToEMDSummaryInfo($value): string
+    public function validateItemForChoiceConstraintFromAddToEMDSummaryInfo($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -2067,7 +2080,7 @@ class UniversalRecord extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The EMDSummaryInfo property can only contain items of type \Travelport\UniversalRecord\StructType\EMDSummaryInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(EMDSummaryInfo)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToEMDSummaryInfo($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToEMDSummaryInfo($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -2091,12 +2104,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->ProviderARNKSegment;
     }
     /**
-     * This method is responsible for validating the values passed to the setProviderARNKSegment method
+     * This method is responsible for validating the value(s) passed to the setProviderARNKSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setProviderARNKSegment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateProviderARNKSegmentForArrayConstraintsFromSetProviderARNKSegment(?array $values = []): string
+    public static function validateProviderARNKSegmentForArrayConstraintFromSetProviderARNKSegment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2125,7 +2139,7 @@ class UniversalRecord extends AbstractStructBase
     public function setProviderARNKSegment(?array $providerARNKSegment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($providerARNKSegmentArrayErrorMessage = self::validateProviderARNKSegmentForArrayConstraintsFromSetProviderARNKSegment($providerARNKSegment))) {
+        if ('' !== ($providerARNKSegmentArrayErrorMessage = self::validateProviderARNKSegmentForArrayConstraintFromSetProviderARNKSegment($providerARNKSegment))) {
             throw new InvalidArgumentException($providerARNKSegmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -2184,12 +2198,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->XMLRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setXMLRemark method
+     * This method is responsible for validating the value(s) passed to the setXMLRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setXMLRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateXMLRemarkForArrayConstraintsFromSetXMLRemark(?array $values = []): string
+    public static function validateXMLRemarkForArrayConstraintFromSetXMLRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2218,7 +2233,7 @@ class UniversalRecord extends AbstractStructBase
     public function setXMLRemark(?array $xMLRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($xMLRemarkArrayErrorMessage = self::validateXMLRemarkForArrayConstraintsFromSetXMLRemark($xMLRemark))) {
+        if ('' !== ($xMLRemarkArrayErrorMessage = self::validateXMLRemarkForArrayConstraintFromSetXMLRemark($xMLRemark))) {
             throw new InvalidArgumentException($xMLRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -2258,12 +2273,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->GeneralRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setGeneralRemark method
+     * This method is responsible for validating the value(s) passed to the setGeneralRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGeneralRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark(?array $values = []): string
+    public static function validateGeneralRemarkForArrayConstraintFromSetGeneralRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2292,7 +2308,7 @@ class UniversalRecord extends AbstractStructBase
     public function setGeneralRemark(?array $generalRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark($generalRemark))) {
+        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintFromSetGeneralRemark($generalRemark))) {
             throw new InvalidArgumentException($generalRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -2332,12 +2348,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->AccountingRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setAccountingRemark method
+     * This method is responsible for validating the value(s) passed to the setAccountingRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAccountingRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAccountingRemarkForArrayConstraintsFromSetAccountingRemark(?array $values = []): string
+    public static function validateAccountingRemarkForArrayConstraintFromSetAccountingRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2366,7 +2383,7 @@ class UniversalRecord extends AbstractStructBase
     public function setAccountingRemark(?array $accountingRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($accountingRemarkArrayErrorMessage = self::validateAccountingRemarkForArrayConstraintsFromSetAccountingRemark($accountingRemark))) {
+        if ('' !== ($accountingRemarkArrayErrorMessage = self::validateAccountingRemarkForArrayConstraintFromSetAccountingRemark($accountingRemark))) {
             throw new InvalidArgumentException($accountingRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -2406,12 +2423,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->UnassociatedRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setUnassociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setUnassociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setUnassociatedRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateUnassociatedRemarkForArrayConstraintsFromSetUnassociatedRemark(?array $values = []): string
+    public static function validateUnassociatedRemarkForArrayConstraintFromSetUnassociatedRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2440,7 +2458,7 @@ class UniversalRecord extends AbstractStructBase
     public function setUnassociatedRemark(?array $unassociatedRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($unassociatedRemarkArrayErrorMessage = self::validateUnassociatedRemarkForArrayConstraintsFromSetUnassociatedRemark($unassociatedRemark))) {
+        if ('' !== ($unassociatedRemarkArrayErrorMessage = self::validateUnassociatedRemarkForArrayConstraintFromSetUnassociatedRemark($unassociatedRemark))) {
             throw new InvalidArgumentException($unassociatedRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -2480,12 +2498,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->Postscript;
     }
     /**
-     * This method is responsible for validating the values passed to the setPostscript method
+     * This method is responsible for validating the value(s) passed to the setPostscript method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPostscript method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePostscriptForArrayConstraintsFromSetPostscript(?array $values = []): string
+    public static function validatePostscriptForArrayConstraintFromSetPostscript(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2514,7 +2533,7 @@ class UniversalRecord extends AbstractStructBase
     public function setPostscript(?array $postscript = null): self
     {
         // validation for constraint: array
-        if ('' !== ($postscriptArrayErrorMessage = self::validatePostscriptForArrayConstraintsFromSetPostscript($postscript))) {
+        if ('' !== ($postscriptArrayErrorMessage = self::validatePostscriptForArrayConstraintFromSetPostscript($postscript))) {
             throw new InvalidArgumentException($postscriptArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -2611,12 +2630,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->CustomerID;
     }
     /**
-     * This method is responsible for validating the values passed to the setCustomerID method
+     * This method is responsible for validating the value(s) passed to the setCustomerID method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCustomerID method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCustomerIDForArrayConstraintsFromSetCustomerID(?array $values = []): string
+    public static function validateCustomerIDForArrayConstraintFromSetCustomerID(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2645,7 +2665,7 @@ class UniversalRecord extends AbstractStructBase
     public function setCustomerID(?array $customerID = null): self
     {
         // validation for constraint: array
-        if ('' !== ($customerIDArrayErrorMessage = self::validateCustomerIDForArrayConstraintsFromSetCustomerID($customerID))) {
+        if ('' !== ($customerIDArrayErrorMessage = self::validateCustomerIDForArrayConstraintFromSetCustomerID($customerID))) {
             throw new InvalidArgumentException($customerIDArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -2685,12 +2705,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->CommissionRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setCommissionRemark method
+     * This method is responsible for validating the value(s) passed to the setCommissionRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCommissionRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCommissionRemarkForArrayConstraintsFromSetCommissionRemark(?array $values = []): string
+    public static function validateCommissionRemarkForArrayConstraintFromSetCommissionRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2719,7 +2740,7 @@ class UniversalRecord extends AbstractStructBase
     public function setCommissionRemark(?array $commissionRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($commissionRemarkArrayErrorMessage = self::validateCommissionRemarkForArrayConstraintsFromSetCommissionRemark($commissionRemark))) {
+        if ('' !== ($commissionRemarkArrayErrorMessage = self::validateCommissionRemarkForArrayConstraintFromSetCommissionRemark($commissionRemark))) {
             throw new InvalidArgumentException($commissionRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -2759,12 +2780,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->ConsolidatorRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setConsolidatorRemark method
+     * This method is responsible for validating the value(s) passed to the setConsolidatorRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setConsolidatorRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateConsolidatorRemarkForArrayConstraintsFromSetConsolidatorRemark(?array $values = []): string
+    public static function validateConsolidatorRemarkForArrayConstraintFromSetConsolidatorRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2793,7 +2815,7 @@ class UniversalRecord extends AbstractStructBase
     public function setConsolidatorRemark(?array $consolidatorRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($consolidatorRemarkArrayErrorMessage = self::validateConsolidatorRemarkForArrayConstraintsFromSetConsolidatorRemark($consolidatorRemark))) {
+        if ('' !== ($consolidatorRemarkArrayErrorMessage = self::validateConsolidatorRemarkForArrayConstraintFromSetConsolidatorRemark($consolidatorRemark))) {
             throw new InvalidArgumentException($consolidatorRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -2833,12 +2855,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->InvoiceRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setInvoiceRemark method
+     * This method is responsible for validating the value(s) passed to the setInvoiceRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setInvoiceRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateInvoiceRemarkForArrayConstraintsFromSetInvoiceRemark(?array $values = []): string
+    public static function validateInvoiceRemarkForArrayConstraintFromSetInvoiceRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2867,7 +2890,7 @@ class UniversalRecord extends AbstractStructBase
     public function setInvoiceRemark(?array $invoiceRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($invoiceRemarkArrayErrorMessage = self::validateInvoiceRemarkForArrayConstraintsFromSetInvoiceRemark($invoiceRemark))) {
+        if ('' !== ($invoiceRemarkArrayErrorMessage = self::validateInvoiceRemarkForArrayConstraintFromSetInvoiceRemark($invoiceRemark))) {
             throw new InvalidArgumentException($invoiceRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -2907,12 +2930,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->ReviewBooking;
     }
     /**
-     * This method is responsible for validating the values passed to the setReviewBooking method
+     * This method is responsible for validating the value(s) passed to the setReviewBooking method
      * This method is willingly generated in order to preserve the one-line inline validation within the setReviewBooking method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateReviewBookingForArrayConstraintsFromSetReviewBooking(?array $values = []): string
+    public static function validateReviewBookingForArrayConstraintFromSetReviewBooking(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -2941,7 +2965,7 @@ class UniversalRecord extends AbstractStructBase
     public function setReviewBooking(?array $reviewBooking = null): self
     {
         // validation for constraint: array
-        if ('' !== ($reviewBookingArrayErrorMessage = self::validateReviewBookingForArrayConstraintsFromSetReviewBooking($reviewBooking))) {
+        if ('' !== ($reviewBookingArrayErrorMessage = self::validateReviewBookingForArrayConstraintFromSetReviewBooking($reviewBooking))) {
             throw new InvalidArgumentException($reviewBookingArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -2981,12 +3005,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->SSR;
     }
     /**
-     * This method is responsible for validating the values passed to the setSSR method
+     * This method is responsible for validating the value(s) passed to the setSSR method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSSR method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSSRForArrayConstraintsFromSetSSR(?array $values = []): string
+    public static function validateSSRForArrayConstraintFromSetSSR(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -3015,7 +3040,7 @@ class UniversalRecord extends AbstractStructBase
     public function setSSR(?array $sSR = null): self
     {
         // validation for constraint: array
-        if ('' !== ($sSRArrayErrorMessage = self::validateSSRForArrayConstraintsFromSetSSR($sSR))) {
+        if ('' !== ($sSRArrayErrorMessage = self::validateSSRForArrayConstraintFromSetSSR($sSR))) {
             throw new InvalidArgumentException($sSRArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -3055,12 +3080,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->InvoiceData;
     }
     /**
-     * This method is responsible for validating the values passed to the setInvoiceData method
+     * This method is responsible for validating the value(s) passed to the setInvoiceData method
      * This method is willingly generated in order to preserve the one-line inline validation within the setInvoiceData method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateInvoiceDataForArrayConstraintsFromSetInvoiceData(?array $values = []): string
+    public static function validateInvoiceDataForArrayConstraintFromSetInvoiceData(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -3089,7 +3115,7 @@ class UniversalRecord extends AbstractStructBase
     public function setInvoiceData(?array $invoiceData = null): self
     {
         // validation for constraint: array
-        if ('' !== ($invoiceDataArrayErrorMessage = self::validateInvoiceDataForArrayConstraintsFromSetInvoiceData($invoiceData))) {
+        if ('' !== ($invoiceDataArrayErrorMessage = self::validateInvoiceDataForArrayConstraintFromSetInvoiceData($invoiceData))) {
             throw new InvalidArgumentException($invoiceDataArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -3129,12 +3155,13 @@ class UniversalRecord extends AbstractStructBase
         return $this->FormOfPayment;
     }
     /**
-     * This method is responsible for validating the values passed to the setFormOfPayment method
+     * This method is responsible for validating the value(s) passed to the setFormOfPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPayment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFormOfPaymentForArrayConstraintsFromSetFormOfPayment(?array $values = []): string
+    public static function validateFormOfPaymentForArrayConstraintFromSetFormOfPayment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -3163,7 +3190,7 @@ class UniversalRecord extends AbstractStructBase
     public function setFormOfPayment(?array $formOfPayment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintsFromSetFormOfPayment($formOfPayment))) {
+        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintFromSetFormOfPayment($formOfPayment))) {
             throw new InvalidArgumentException($formOfPaymentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -77,12 +77,13 @@ class AirPriceResult extends AbstractStructBase
         return $this->AirPricingSolution;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirPricingSolution method
+     * This method is responsible for validating the value(s) passed to the setAirPricingSolution method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingSolution method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirPricingSolutionForArrayConstraintsFromSetAirPricingSolution(?array $values = []): string
+    public static function validateAirPricingSolutionForArrayConstraintFromSetAirPricingSolution(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -111,7 +112,7 @@ class AirPriceResult extends AbstractStructBase
     public function setAirPricingSolution(?array $airPricingSolution = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airPricingSolutionArrayErrorMessage = self::validateAirPricingSolutionForArrayConstraintsFromSetAirPricingSolution($airPricingSolution))) {
+        if ('' !== ($airPricingSolutionArrayErrorMessage = self::validateAirPricingSolutionForArrayConstraintFromSetAirPricingSolution($airPricingSolution))) {
             throw new InvalidArgumentException($airPricingSolutionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)
@@ -151,12 +152,13 @@ class AirPriceResult extends AbstractStructBase
         return $this->FareRule;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareRule method
+     * This method is responsible for validating the value(s) passed to the setFareRule method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareRule method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareRuleForArrayConstraintsFromSetFareRule(?array $values = []): string
+    public static function validateFareRuleForArrayConstraintFromSetFareRule(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -185,7 +187,7 @@ class AirPriceResult extends AbstractStructBase
     public function setFareRule(?array $fareRule = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareRuleArrayErrorMessage = self::validateFareRuleForArrayConstraintsFromSetFareRule($fareRule))) {
+        if ('' !== ($fareRuleArrayErrorMessage = self::validateFareRuleForArrayConstraintFromSetFareRule($fareRule))) {
             throw new InvalidArgumentException($fareRuleArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

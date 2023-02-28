@@ -217,12 +217,13 @@ class Group extends AbstractStructBase
         return $this->PhoneNumber;
     }
     /**
-     * This method is responsible for validating the values passed to the setPhoneNumber method
+     * This method is responsible for validating the value(s) passed to the setPhoneNumber method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPhoneNumber method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePhoneNumberForArrayConstraintsFromSetPhoneNumber(?array $values = []): string
+    public static function validatePhoneNumberForArrayConstraintFromSetPhoneNumber(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -251,7 +252,7 @@ class Group extends AbstractStructBase
     public function setPhoneNumber(?array $phoneNumber = null): self
     {
         // validation for constraint: array
-        if ('' !== ($phoneNumberArrayErrorMessage = self::validatePhoneNumberForArrayConstraintsFromSetPhoneNumber($phoneNumber))) {
+        if ('' !== ($phoneNumberArrayErrorMessage = self::validatePhoneNumberForArrayConstraintFromSetPhoneNumber($phoneNumber))) {
             throw new InvalidArgumentException($phoneNumberArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -291,12 +292,13 @@ class Group extends AbstractStructBase
         return $this->SSRRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setSSRRef method
+     * This method is responsible for validating the value(s) passed to the setSSRRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSSRRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSSRRefForArrayConstraintsFromSetSSRRef(?array $values = []): string
+    public static function validateSSRRefForArrayConstraintFromSetSSRRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -325,7 +327,7 @@ class Group extends AbstractStructBase
     public function setSSRRef(?array $sSRRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($sSRRefArrayErrorMessage = self::validateSSRRefForArrayConstraintsFromSetSSRRef($sSRRef))) {
+        if ('' !== ($sSRRefArrayErrorMessage = self::validateSSRRefForArrayConstraintFromSetSSRRef($sSRRef))) {
             throw new InvalidArgumentException($sSRRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -384,12 +386,13 @@ class Group extends AbstractStructBase
         return $this->BookingTravelerRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingTravelerRef method
+     * This method is responsible for validating the value(s) passed to the setBookingTravelerRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTravelerRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef(?array $values = []): string
+    public static function validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -418,7 +421,7 @@ class Group extends AbstractStructBase
     public function setBookingTravelerRef(?array $bookingTravelerRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef($bookingTravelerRef))) {
+        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef($bookingTravelerRef))) {
             throw new InvalidArgumentException($bookingTravelerRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

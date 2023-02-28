@@ -67,12 +67,13 @@ class VehicleUpsellCriteria extends AbstractStructBase
         return $this->VehicleUpsellAdd;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleUpsellAdd method
+     * This method is responsible for validating the value(s) passed to the setVehicleUpsellAdd method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleUpsellAdd method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleUpsellAddForArrayConstraintsFromSetVehicleUpsellAdd(?array $values = []): string
+    public static function validateVehicleUpsellAddForArrayConstraintFromSetVehicleUpsellAdd(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -101,7 +102,7 @@ class VehicleUpsellCriteria extends AbstractStructBase
     public function setVehicleUpsellAdd(?array $vehicleUpsellAdd = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleUpsellAddArrayErrorMessage = self::validateVehicleUpsellAddForArrayConstraintsFromSetVehicleUpsellAdd($vehicleUpsellAdd))) {
+        if ('' !== ($vehicleUpsellAddArrayErrorMessage = self::validateVehicleUpsellAddForArrayConstraintFromSetVehicleUpsellAdd($vehicleUpsellAdd))) {
             throw new InvalidArgumentException($vehicleUpsellAddArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -141,12 +142,13 @@ class VehicleUpsellCriteria extends AbstractStructBase
         return $this->VehicleUpsellUpdate;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleUpsellUpdate method
+     * This method is responsible for validating the value(s) passed to the setVehicleUpsellUpdate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleUpsellUpdate method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleUpsellUpdateForArrayConstraintsFromSetVehicleUpsellUpdate(?array $values = []): string
+    public static function validateVehicleUpsellUpdateForArrayConstraintFromSetVehicleUpsellUpdate(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -175,7 +177,7 @@ class VehicleUpsellCriteria extends AbstractStructBase
     public function setVehicleUpsellUpdate(?array $vehicleUpsellUpdate = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleUpsellUpdateArrayErrorMessage = self::validateVehicleUpsellUpdateForArrayConstraintsFromSetVehicleUpsellUpdate($vehicleUpsellUpdate))) {
+        if ('' !== ($vehicleUpsellUpdateArrayErrorMessage = self::validateVehicleUpsellUpdateForArrayConstraintFromSetVehicleUpsellUpdate($vehicleUpsellUpdate))) {
             throw new InvalidArgumentException($vehicleUpsellUpdateArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -215,12 +217,13 @@ class VehicleUpsellCriteria extends AbstractStructBase
         return $this->VehicleUpsellDelete;
     }
     /**
-     * This method is responsible for validating the values passed to the setVehicleUpsellDelete method
+     * This method is responsible for validating the value(s) passed to the setVehicleUpsellDelete method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleUpsellDelete method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVehicleUpsellDeleteForArrayConstraintsFromSetVehicleUpsellDelete(?array $values = []): string
+    public static function validateVehicleUpsellDeleteForArrayConstraintFromSetVehicleUpsellDelete(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -249,7 +252,7 @@ class VehicleUpsellCriteria extends AbstractStructBase
     public function setVehicleUpsellDelete(?array $vehicleUpsellDelete = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vehicleUpsellDeleteArrayErrorMessage = self::validateVehicleUpsellDeleteForArrayConstraintsFromSetVehicleUpsellDelete($vehicleUpsellDelete))) {
+        if ('' !== ($vehicleUpsellDeleteArrayErrorMessage = self::validateVehicleUpsellDeleteForArrayConstraintFromSetVehicleUpsellDelete($vehicleUpsellDelete))) {
             throw new InvalidArgumentException($vehicleUpsellDeleteArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

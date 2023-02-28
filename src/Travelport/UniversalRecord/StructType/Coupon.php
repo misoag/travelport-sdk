@@ -427,12 +427,13 @@ class Coupon extends AbstractStructBase
         return $this->TicketDesignator;
     }
     /**
-     * This method is responsible for validating the values passed to the setTicketDesignator method
+     * This method is responsible for validating the value(s) passed to the setTicketDesignator method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTicketDesignator method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTicketDesignatorForArrayConstraintsFromSetTicketDesignator(?array $values = []): string
+    public static function validateTicketDesignatorForArrayConstraintFromSetTicketDesignator(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -461,7 +462,7 @@ class Coupon extends AbstractStructBase
     public function setTicketDesignator(?array $ticketDesignator = null): self
     {
         // validation for constraint: array
-        if ('' !== ($ticketDesignatorArrayErrorMessage = self::validateTicketDesignatorForArrayConstraintsFromSetTicketDesignator($ticketDesignator))) {
+        if ('' !== ($ticketDesignatorArrayErrorMessage = self::validateTicketDesignatorForArrayConstraintFromSetTicketDesignator($ticketDesignator))) {
             throw new InvalidArgumentException($ticketDesignatorArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

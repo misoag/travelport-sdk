@@ -125,12 +125,13 @@ class MCOExchangeInfo extends AbstractStructBase
         return $this->ExchangedCoupon;
     }
     /**
-     * This method is responsible for validating the values passed to the setExchangedCoupon method
+     * This method is responsible for validating the value(s) passed to the setExchangedCoupon method
      * This method is willingly generated in order to preserve the one-line inline validation within the setExchangedCoupon method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateExchangedCouponForArrayConstraintsFromSetExchangedCoupon(?array $values = []): string
+    public static function validateExchangedCouponForArrayConstraintFromSetExchangedCoupon(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -159,7 +160,7 @@ class MCOExchangeInfo extends AbstractStructBase
     public function setExchangedCoupon(?array $exchangedCoupon = null): self
     {
         // validation for constraint: array
-        if ('' !== ($exchangedCouponArrayErrorMessage = self::validateExchangedCouponForArrayConstraintsFromSetExchangedCoupon($exchangedCoupon))) {
+        if ('' !== ($exchangedCouponArrayErrorMessage = self::validateExchangedCouponForArrayConstraintFromSetExchangedCoupon($exchangedCoupon))) {
             throw new InvalidArgumentException($exchangedCouponArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(4)

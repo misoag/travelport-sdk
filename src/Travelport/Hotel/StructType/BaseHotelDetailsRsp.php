@@ -84,12 +84,13 @@ class BaseHotelDetailsRsp extends BaseRsp
         return $this->HotelDetailItem;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelDetailItem method
+     * This method is responsible for validating the value(s) passed to the setHotelDetailItem method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelDetailItem method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelDetailItemForArrayConstraintsFromSetHotelDetailItem(?array $values = []): string
+    public static function validateHotelDetailItemForArrayConstraintFromSetHotelDetailItem(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -118,7 +119,7 @@ class BaseHotelDetailsRsp extends BaseRsp
     public function setHotelDetailItem(?array $hotelDetailItem = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelDetailItemArrayErrorMessage = self::validateHotelDetailItemForArrayConstraintsFromSetHotelDetailItem($hotelDetailItem))) {
+        if ('' !== ($hotelDetailItemArrayErrorMessage = self::validateHotelDetailItemForArrayConstraintFromSetHotelDetailItem($hotelDetailItem))) {
             throw new InvalidArgumentException($hotelDetailItemArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -158,12 +159,13 @@ class BaseHotelDetailsRsp extends BaseRsp
         return $this->HotelRateDetail;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelRateDetail method
+     * This method is responsible for validating the value(s) passed to the setHotelRateDetail method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelRateDetail method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelRateDetailForArrayConstraintsFromSetHotelRateDetail(?array $values = []): string
+    public static function validateHotelRateDetailForArrayConstraintFromSetHotelRateDetail(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -192,7 +194,7 @@ class BaseHotelDetailsRsp extends BaseRsp
     public function setHotelRateDetail(?array $hotelRateDetail = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelRateDetailArrayErrorMessage = self::validateHotelRateDetailForArrayConstraintsFromSetHotelRateDetail($hotelRateDetail))) {
+        if ('' !== ($hotelRateDetailArrayErrorMessage = self::validateHotelRateDetailForArrayConstraintFromSetHotelRateDetail($hotelRateDetail))) {
             throw new InvalidArgumentException($hotelRateDetailArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

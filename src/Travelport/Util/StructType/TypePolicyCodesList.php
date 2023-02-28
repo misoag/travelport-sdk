@@ -70,12 +70,13 @@ class TypePolicyCodesList extends AbstractStructBase
         return $this->PolicyCode;
     }
     /**
-     * This method is responsible for validating the values passed to the setPolicyCode method
+     * This method is responsible for validating the value(s) passed to the setPolicyCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPolicyCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePolicyCodeForArrayConstraintsFromSetPolicyCode(?array $values = []): string
+    public static function validatePolicyCodeForArrayConstraintFromSetPolicyCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -104,7 +105,7 @@ class TypePolicyCodesList extends AbstractStructBase
     public function setPolicyCode(?array $policyCode = null): self
     {
         // validation for constraint: array
-        if ('' !== ($policyCodeArrayErrorMessage = self::validatePolicyCodeForArrayConstraintsFromSetPolicyCode($policyCode))) {
+        if ('' !== ($policyCodeArrayErrorMessage = self::validatePolicyCodeForArrayConstraintFromSetPolicyCode($policyCode))) {
             throw new InvalidArgumentException($policyCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(10)
@@ -144,12 +145,13 @@ class TypePolicyCodesList extends AbstractStructBase
         return $this->MinPolicyCode;
     }
     /**
-     * This method is responsible for validating the values passed to the setMinPolicyCode method
+     * This method is responsible for validating the value(s) passed to the setMinPolicyCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMinPolicyCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMinPolicyCodeForArrayConstraintsFromSetMinPolicyCode(?array $values = []): string
+    public static function validateMinPolicyCodeForArrayConstraintFromSetMinPolicyCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -178,7 +180,7 @@ class TypePolicyCodesList extends AbstractStructBase
     public function setMinPolicyCode(?array $minPolicyCode = null): self
     {
         // validation for constraint: array
-        if ('' !== ($minPolicyCodeArrayErrorMessage = self::validateMinPolicyCodeForArrayConstraintsFromSetMinPolicyCode($minPolicyCode))) {
+        if ('' !== ($minPolicyCodeArrayErrorMessage = self::validateMinPolicyCodeForArrayConstraintFromSetMinPolicyCode($minPolicyCode))) {
             throw new InvalidArgumentException($minPolicyCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(10)
@@ -218,12 +220,13 @@ class TypePolicyCodesList extends AbstractStructBase
         return $this->MaxPolicyCode;
     }
     /**
-     * This method is responsible for validating the values passed to the setMaxPolicyCode method
+     * This method is responsible for validating the value(s) passed to the setMaxPolicyCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMaxPolicyCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateMaxPolicyCodeForArrayConstraintsFromSetMaxPolicyCode(?array $values = []): string
+    public static function validateMaxPolicyCodeForArrayConstraintFromSetMaxPolicyCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -252,7 +255,7 @@ class TypePolicyCodesList extends AbstractStructBase
     public function setMaxPolicyCode(?array $maxPolicyCode = null): self
     {
         // validation for constraint: array
-        if ('' !== ($maxPolicyCodeArrayErrorMessage = self::validateMaxPolicyCodeForArrayConstraintsFromSetMaxPolicyCode($maxPolicyCode))) {
+        if ('' !== ($maxPolicyCodeArrayErrorMessage = self::validateMaxPolicyCodeForArrayConstraintFromSetMaxPolicyCode($maxPolicyCode))) {
             throw new InvalidArgumentException($maxPolicyCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(10)

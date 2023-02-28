@@ -123,12 +123,13 @@ class HotelSearchResult extends AbstractStructBase
         return $this->HotelProperty;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelProperty method
+     * This method is responsible for validating the value(s) passed to the setHotelProperty method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelProperty method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelPropertyForArrayConstraintsFromSetHotelProperty(?array $values = []): string
+    public static function validateHotelPropertyForArrayConstraintFromSetHotelProperty(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -157,7 +158,7 @@ class HotelSearchResult extends AbstractStructBase
     public function setHotelProperty(array $hotelProperty): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelPropertyArrayErrorMessage = self::validateHotelPropertyForArrayConstraintsFromSetHotelProperty($hotelProperty))) {
+        if ('' !== ($hotelPropertyArrayErrorMessage = self::validateHotelPropertyForArrayConstraintFromSetHotelProperty($hotelProperty))) {
             throw new InvalidArgumentException($hotelPropertyArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -197,12 +198,13 @@ class HotelSearchResult extends AbstractStructBase
         return $this->VendorLocation;
     }
     /**
-     * This method is responsible for validating the values passed to the setVendorLocation method
+     * This method is responsible for validating the value(s) passed to the setVendorLocation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVendorLocation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateVendorLocationForArrayConstraintsFromSetVendorLocation(?array $values = []): string
+    public static function validateVendorLocationForArrayConstraintFromSetVendorLocation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -231,7 +233,7 @@ class HotelSearchResult extends AbstractStructBase
     public function setVendorLocation(?array $vendorLocation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($vendorLocationArrayErrorMessage = self::validateVendorLocationForArrayConstraintsFromSetVendorLocation($vendorLocation))) {
+        if ('' !== ($vendorLocationArrayErrorMessage = self::validateVendorLocationForArrayConstraintFromSetVendorLocation($vendorLocation))) {
             throw new InvalidArgumentException($vendorLocationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -271,12 +273,13 @@ class HotelSearchResult extends AbstractStructBase
         return $this->HotelSearchError;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelSearchError method
+     * This method is responsible for validating the value(s) passed to the setHotelSearchError method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelSearchError method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelSearchErrorForArrayConstraintsFromSetHotelSearchError(?array $values = []): string
+    public static function validateHotelSearchErrorForArrayConstraintFromSetHotelSearchError(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -305,7 +308,7 @@ class HotelSearchResult extends AbstractStructBase
     public function setHotelSearchError(?array $hotelSearchError = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelSearchErrorArrayErrorMessage = self::validateHotelSearchErrorForArrayConstraintsFromSetHotelSearchError($hotelSearchError))) {
+        if ('' !== ($hotelSearchErrorArrayErrorMessage = self::validateHotelSearchErrorForArrayConstraintFromSetHotelSearchError($hotelSearchError))) {
             throw new InvalidArgumentException($hotelSearchErrorArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -345,12 +348,13 @@ class HotelSearchResult extends AbstractStructBase
         return $this->CorporateDiscountID;
     }
     /**
-     * This method is responsible for validating the values passed to the setCorporateDiscountID method
+     * This method is responsible for validating the value(s) passed to the setCorporateDiscountID method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCorporateDiscountID method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCorporateDiscountIDForArrayConstraintsFromSetCorporateDiscountID(?array $values = []): string
+    public static function validateCorporateDiscountIDForArrayConstraintFromSetCorporateDiscountID(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -379,7 +383,7 @@ class HotelSearchResult extends AbstractStructBase
     public function setCorporateDiscountID(?array $corporateDiscountID = null): self
     {
         // validation for constraint: array
-        if ('' !== ($corporateDiscountIDArrayErrorMessage = self::validateCorporateDiscountIDForArrayConstraintsFromSetCorporateDiscountID($corporateDiscountID))) {
+        if ('' !== ($corporateDiscountIDArrayErrorMessage = self::validateCorporateDiscountIDForArrayConstraintFromSetCorporateDiscountID($corporateDiscountID))) {
             throw new InvalidArgumentException($corporateDiscountIDArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -419,12 +423,13 @@ class HotelSearchResult extends AbstractStructBase
         return $this->RateInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setRateInfo method
+     * This method is responsible for validating the value(s) passed to the setRateInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRateInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRateInfoForArrayConstraintsFromSetRateInfo(?array $values = []): string
+    public static function validateRateInfoForArrayConstraintFromSetRateInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -453,7 +458,7 @@ class HotelSearchResult extends AbstractStructBase
     public function setRateInfo(?array $rateInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($rateInfoArrayErrorMessage = self::validateRateInfoForArrayConstraintsFromSetRateInfo($rateInfo))) {
+        if ('' !== ($rateInfoArrayErrorMessage = self::validateRateInfoForArrayConstraintFromSetRateInfo($rateInfo))) {
             throw new InvalidArgumentException($rateInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -555,12 +555,13 @@ class ETR extends AbstractStructBase
         return $this->FormOfPayment;
     }
     /**
-     * This method is responsible for validating the values passed to the setFormOfPayment method
+     * This method is responsible for validating the value(s) passed to the setFormOfPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPayment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFormOfPaymentForArrayConstraintsFromSetFormOfPayment(?array $values = []): string
+    public static function validateFormOfPaymentForArrayConstraintFromSetFormOfPayment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -589,7 +590,7 @@ class ETR extends AbstractStructBase
     public function setFormOfPayment(?array $formOfPayment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintsFromSetFormOfPayment($formOfPayment))) {
+        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintFromSetFormOfPayment($formOfPayment))) {
             throw new InvalidArgumentException($formOfPaymentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -629,12 +630,13 @@ class ETR extends AbstractStructBase
         return $this->Payment;
     }
     /**
-     * This method is responsible for validating the values passed to the setPayment method
+     * This method is responsible for validating the value(s) passed to the setPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPayment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePaymentForArrayConstraintsFromSetPayment(?array $values = []): string
+    public static function validatePaymentForArrayConstraintFromSetPayment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -663,7 +665,7 @@ class ETR extends AbstractStructBase
     public function setPayment(?array $payment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($paymentArrayErrorMessage = self::validatePaymentForArrayConstraintsFromSetPayment($payment))) {
+        if ('' !== ($paymentArrayErrorMessage = self::validatePaymentForArrayConstraintFromSetPayment($payment))) {
             throw new InvalidArgumentException($paymentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -703,12 +705,13 @@ class ETR extends AbstractStructBase
         return $this->CreditCardAuth;
     }
     /**
-     * This method is responsible for validating the values passed to the setCreditCardAuth method
+     * This method is responsible for validating the value(s) passed to the setCreditCardAuth method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCreditCardAuth method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCreditCardAuthForArrayConstraintsFromSetCreditCardAuth(?array $values = []): string
+    public static function validateCreditCardAuthForArrayConstraintFromSetCreditCardAuth(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -737,7 +740,7 @@ class ETR extends AbstractStructBase
     public function setCreditCardAuth(?array $creditCardAuth = null): self
     {
         // validation for constraint: array
-        if ('' !== ($creditCardAuthArrayErrorMessage = self::validateCreditCardAuthForArrayConstraintsFromSetCreditCardAuth($creditCardAuth))) {
+        if ('' !== ($creditCardAuthArrayErrorMessage = self::validateCreditCardAuthForArrayConstraintFromSetCreditCardAuth($creditCardAuth))) {
             throw new InvalidArgumentException($creditCardAuthArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -777,12 +780,13 @@ class ETR extends AbstractStructBase
         return $this->SupplierLocator;
     }
     /**
-     * This method is responsible for validating the values passed to the setSupplierLocator method
+     * This method is responsible for validating the value(s) passed to the setSupplierLocator method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSupplierLocator method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSupplierLocatorForArrayConstraintsFromSetSupplierLocator(?array $values = []): string
+    public static function validateSupplierLocatorForArrayConstraintFromSetSupplierLocator(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -811,7 +815,7 @@ class ETR extends AbstractStructBase
     public function setSupplierLocator(?array $supplierLocator = null): self
     {
         // validation for constraint: array
-        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintsFromSetSupplierLocator($supplierLocator))) {
+        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintFromSetSupplierLocator($supplierLocator))) {
             throw new InvalidArgumentException($supplierLocatorArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -874,12 +878,13 @@ class ETR extends AbstractStructBase
         return $this->Ticket;
     }
     /**
-     * This method is responsible for validating the values passed to the setTicket method
+     * This method is responsible for validating the value(s) passed to the setTicket method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTicket method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTicketForArrayConstraintsFromSetTicket(?array $values = []): string
+    public static function validateTicketForArrayConstraintFromSetTicket(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -908,7 +913,7 @@ class ETR extends AbstractStructBase
     public function setTicket(?array $ticket = null): self
     {
         // validation for constraint: array
-        if ('' !== ($ticketArrayErrorMessage = self::validateTicketForArrayConstraintsFromSetTicket($ticket))) {
+        if ('' !== ($ticketArrayErrorMessage = self::validateTicketForArrayConstraintFromSetTicket($ticket))) {
             throw new InvalidArgumentException($ticketArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -948,12 +953,13 @@ class ETR extends AbstractStructBase
         return $this->Commission;
     }
     /**
-     * This method is responsible for validating the values passed to the setCommission method
+     * This method is responsible for validating the value(s) passed to the setCommission method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCommission method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCommissionForArrayConstraintsFromSetCommission(?array $values = []): string
+    public static function validateCommissionForArrayConstraintFromSetCommission(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -982,7 +988,7 @@ class ETR extends AbstractStructBase
     public function setCommission(?array $commission = null): self
     {
         // validation for constraint: array
-        if ('' !== ($commissionArrayErrorMessage = self::validateCommissionForArrayConstraintsFromSetCommission($commission))) {
+        if ('' !== ($commissionArrayErrorMessage = self::validateCommissionForArrayConstraintFromSetCommission($commission))) {
             throw new InvalidArgumentException($commissionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1060,12 +1066,13 @@ class ETR extends AbstractStructBase
         return $this->Restriction;
     }
     /**
-     * This method is responsible for validating the values passed to the setRestriction method
+     * This method is responsible for validating the value(s) passed to the setRestriction method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRestriction method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRestrictionForArrayConstraintsFromSetRestriction(?array $values = []): string
+    public static function validateRestrictionForArrayConstraintFromSetRestriction(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1094,7 +1101,7 @@ class ETR extends AbstractStructBase
     public function setRestriction(?array $restriction = null): self
     {
         // validation for constraint: array
-        if ('' !== ($restrictionArrayErrorMessage = self::validateRestrictionForArrayConstraintsFromSetRestriction($restriction))) {
+        if ('' !== ($restrictionArrayErrorMessage = self::validateRestrictionForArrayConstraintFromSetRestriction($restriction))) {
             throw new InvalidArgumentException($restrictionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

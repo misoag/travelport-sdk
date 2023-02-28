@@ -43,12 +43,13 @@ class Amenities extends AbstractStructBase
         return $this->Amenity;
     }
     /**
-     * This method is responsible for validating the values passed to the setAmenity method
+     * This method is responsible for validating the value(s) passed to the setAmenity method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAmenity method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAmenityForArrayConstraintsFromSetAmenity(?array $values = []): string
+    public static function validateAmenityForArrayConstraintFromSetAmenity(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -77,7 +78,7 @@ class Amenities extends AbstractStructBase
     public function setAmenity(?array $amenity = null): self
     {
         // validation for constraint: array
-        if ('' !== ($amenityArrayErrorMessage = self::validateAmenityForArrayConstraintsFromSetAmenity($amenity))) {
+        if ('' !== ($amenityArrayErrorMessage = self::validateAmenityForArrayConstraintFromSetAmenity($amenity))) {
             throw new InvalidArgumentException($amenityArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(8, 999)

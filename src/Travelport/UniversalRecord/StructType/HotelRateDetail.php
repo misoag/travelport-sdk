@@ -458,12 +458,13 @@ class HotelRateDetail extends AbstractStructBase
         return $this->RoomRateDescription;
     }
     /**
-     * This method is responsible for validating the values passed to the setRoomRateDescription method
+     * This method is responsible for validating the value(s) passed to the setRoomRateDescription method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRoomRateDescription method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRoomRateDescriptionForArrayConstraintsFromSetRoomRateDescription(?array $values = []): string
+    public static function validateRoomRateDescriptionForArrayConstraintFromSetRoomRateDescription(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -492,7 +493,7 @@ class HotelRateDetail extends AbstractStructBase
     public function setRoomRateDescription(?array $roomRateDescription = null): self
     {
         // validation for constraint: array
-        if ('' !== ($roomRateDescriptionArrayErrorMessage = self::validateRoomRateDescriptionForArrayConstraintsFromSetRoomRateDescription($roomRateDescription))) {
+        if ('' !== ($roomRateDescriptionArrayErrorMessage = self::validateRoomRateDescriptionForArrayConstraintFromSetRoomRateDescription($roomRateDescription))) {
             throw new InvalidArgumentException($roomRateDescriptionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -532,12 +533,13 @@ class HotelRateDetail extends AbstractStructBase
         return $this->HotelRateByDate;
     }
     /**
-     * This method is responsible for validating the values passed to the setHotelRateByDate method
+     * This method is responsible for validating the value(s) passed to the setHotelRateByDate method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelRateByDate method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateHotelRateByDateForArrayConstraintsFromSetHotelRateByDate(?array $values = []): string
+    public static function validateHotelRateByDateForArrayConstraintFromSetHotelRateByDate(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -566,7 +568,7 @@ class HotelRateDetail extends AbstractStructBase
     public function setHotelRateByDate(?array $hotelRateByDate = null): self
     {
         // validation for constraint: array
-        if ('' !== ($hotelRateByDateArrayErrorMessage = self::validateHotelRateByDateForArrayConstraintsFromSetHotelRateByDate($hotelRateByDate))) {
+        if ('' !== ($hotelRateByDateArrayErrorMessage = self::validateHotelRateByDateForArrayConstraintFromSetHotelRateByDate($hotelRateByDate))) {
             throw new InvalidArgumentException($hotelRateByDateArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -606,12 +608,13 @@ class HotelRateDetail extends AbstractStructBase
         return $this->CorporateDiscountID;
     }
     /**
-     * This method is responsible for validating the values passed to the setCorporateDiscountID method
+     * This method is responsible for validating the value(s) passed to the setCorporateDiscountID method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCorporateDiscountID method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCorporateDiscountIDForArrayConstraintsFromSetCorporateDiscountID(?array $values = []): string
+    public static function validateCorporateDiscountIDForArrayConstraintFromSetCorporateDiscountID(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -640,7 +643,7 @@ class HotelRateDetail extends AbstractStructBase
     public function setCorporateDiscountID(?array $corporateDiscountID = null): self
     {
         // validation for constraint: array
-        if ('' !== ($corporateDiscountIDArrayErrorMessage = self::validateCorporateDiscountIDForArrayConstraintsFromSetCorporateDiscountID($corporateDiscountID))) {
+        if ('' !== ($corporateDiscountIDArrayErrorMessage = self::validateCorporateDiscountIDForArrayConstraintFromSetCorporateDiscountID($corporateDiscountID))) {
             throw new InvalidArgumentException($corporateDiscountIDArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -680,12 +683,13 @@ class HotelRateDetail extends AbstractStructBase
         return $this->AcceptedPayment;
     }
     /**
-     * This method is responsible for validating the values passed to the setAcceptedPayment method
+     * This method is responsible for validating the value(s) passed to the setAcceptedPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAcceptedPayment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAcceptedPaymentForArrayConstraintsFromSetAcceptedPayment(?array $values = []): string
+    public static function validateAcceptedPaymentForArrayConstraintFromSetAcceptedPayment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -714,7 +718,7 @@ class HotelRateDetail extends AbstractStructBase
     public function setAcceptedPayment(?array $acceptedPayment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($acceptedPaymentArrayErrorMessage = self::validateAcceptedPaymentForArrayConstraintsFromSetAcceptedPayment($acceptedPayment))) {
+        if ('' !== ($acceptedPaymentArrayErrorMessage = self::validateAcceptedPaymentForArrayConstraintFromSetAcceptedPayment($acceptedPayment))) {
             throw new InvalidArgumentException($acceptedPaymentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)
@@ -773,12 +777,13 @@ class HotelRateDetail extends AbstractStructBase
         return $this->RateMatchIndicator;
     }
     /**
-     * This method is responsible for validating the values passed to the setRateMatchIndicator method
+     * This method is responsible for validating the value(s) passed to the setRateMatchIndicator method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRateMatchIndicator method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRateMatchIndicatorForArrayConstraintsFromSetRateMatchIndicator(?array $values = []): string
+    public static function validateRateMatchIndicatorForArrayConstraintFromSetRateMatchIndicator(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -807,7 +812,7 @@ class HotelRateDetail extends AbstractStructBase
     public function setRateMatchIndicator(?array $rateMatchIndicator = null): self
     {
         // validation for constraint: array
-        if ('' !== ($rateMatchIndicatorArrayErrorMessage = self::validateRateMatchIndicatorForArrayConstraintsFromSetRateMatchIndicator($rateMatchIndicator))) {
+        if ('' !== ($rateMatchIndicatorArrayErrorMessage = self::validateRateMatchIndicatorForArrayConstraintFromSetRateMatchIndicator($rateMatchIndicator))) {
             throw new InvalidArgumentException($rateMatchIndicatorArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -139,19 +139,20 @@ class DisplayDetails extends AbstractStructBase
     }
     /**
      * Get DisplayDetail value
-     * @return \Travelport\UniversalRecord\StructType\DisplayDetail[]
+     * @return \Travelport\UniversalRecord\StructType\DisplayDetail[]|null
      */
     public function getDisplayDetail(): ?array
     {
-        return isset($this->DisplayDetail) ? $this->DisplayDetail : null;
+        return $this->DisplayDetail ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setDisplayDetail method
+     * This method is responsible for validating the value(s) passed to the setDisplayDetail method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDisplayDetail method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDisplayDetailForArrayConstraintsFromSetDisplayDetail(?array $values = []): string
+    public static function validateDisplayDetailForArrayConstraintFromSetDisplayDetail(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -172,13 +173,13 @@ class DisplayDetails extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setDisplayDetail method
+     * This method is responsible for validating the value(s) passed to the setDisplayDetail method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDisplayDetail method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateDisplayDetailForChoiceConstraintsFromSetDisplayDetail($value): string
+    public function validateDisplayDetailForChoiceConstraintFromSetDisplayDetail($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -212,11 +213,11 @@ class DisplayDetails extends AbstractStructBase
     public function setDisplayDetail(?array $displayDetail = null): self
     {
         // validation for constraint: array
-        if ('' !== ($displayDetailArrayErrorMessage = self::validateDisplayDetailForArrayConstraintsFromSetDisplayDetail($displayDetail))) {
+        if ('' !== ($displayDetailArrayErrorMessage = self::validateDisplayDetailForArrayConstraintFromSetDisplayDetail($displayDetail))) {
             throw new InvalidArgumentException($displayDetailArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(DisplayDetail, DisplayContents)
-        if ('' !== ($displayDetailChoiceErrorMessage = self::validateDisplayDetailForChoiceConstraintsFromSetDisplayDetail($displayDetail))) {
+        if ('' !== ($displayDetailChoiceErrorMessage = self::validateDisplayDetailForChoiceConstraintFromSetDisplayDetail($displayDetail))) {
             throw new InvalidArgumentException($displayDetailChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -236,13 +237,13 @@ class DisplayDetails extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToDisplayDetail method
+     * This method is responsible for validating the value(s) passed to the addToDisplayDetail method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToDisplayDetail method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToDisplayDetail($value): string
+    public function validateItemForChoiceConstraintFromAddToDisplayDetail($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -276,7 +277,7 @@ class DisplayDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The DisplayDetail property can only contain items of type \Travelport\UniversalRecord\StructType\DisplayDetail, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(DisplayDetail, DisplayContents)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToDisplayDetail($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToDisplayDetail($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -297,16 +298,16 @@ class DisplayDetails extends AbstractStructBase
      */
     public function getDisplayContents(): ?string
     {
-        return isset($this->DisplayContents) ? $this->DisplayContents : null;
+        return $this->DisplayContents ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setDisplayContents method
+     * This method is responsible for validating the value(s) passed to the setDisplayContents method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDisplayContents method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateDisplayContentsForChoiceConstraintsFromSetDisplayContents($value): string
+    public function validateDisplayContentsForChoiceConstraintFromSetDisplayContents($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -343,7 +344,7 @@ class DisplayDetails extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($displayContents, true), gettype($displayContents)), __LINE__);
         }
         // validation for constraint: choice(DisplayDetail, DisplayContents)
-        if ('' !== ($displayContentsChoiceErrorMessage = self::validateDisplayContentsForChoiceConstraintsFromSetDisplayContents($displayContents))) {
+        if ('' !== ($displayContentsChoiceErrorMessage = self::validateDisplayContentsForChoiceConstraintFromSetDisplayContents($displayContents))) {
             throw new InvalidArgumentException($displayContentsChoiceErrorMessage, __LINE__);
         }
         if (is_null($displayContents) || (is_array($displayContents) && empty($displayContents))) {

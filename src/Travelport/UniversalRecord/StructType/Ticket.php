@@ -156,12 +156,13 @@ class Ticket extends AbstractStructBase
         return $this->Coupon;
     }
     /**
-     * This method is responsible for validating the values passed to the setCoupon method
+     * This method is responsible for validating the value(s) passed to the setCoupon method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCoupon method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateCouponForArrayConstraintsFromSetCoupon(?array $values = []): string
+    public static function validateCouponForArrayConstraintFromSetCoupon(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -190,7 +191,7 @@ class Ticket extends AbstractStructBase
     public function setCoupon(?array $coupon = null): self
     {
         // validation for constraint: array
-        if ('' !== ($couponArrayErrorMessage = self::validateCouponForArrayConstraintsFromSetCoupon($coupon))) {
+        if ('' !== ($couponArrayErrorMessage = self::validateCouponForArrayConstraintFromSetCoupon($coupon))) {
             throw new InvalidArgumentException($couponArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(4)
@@ -230,12 +231,13 @@ class Ticket extends AbstractStructBase
         return $this->TicketEndorsement;
     }
     /**
-     * This method is responsible for validating the values passed to the setTicketEndorsement method
+     * This method is responsible for validating the value(s) passed to the setTicketEndorsement method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTicketEndorsement method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTicketEndorsementForArrayConstraintsFromSetTicketEndorsement(?array $values = []): string
+    public static function validateTicketEndorsementForArrayConstraintFromSetTicketEndorsement(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -264,7 +266,7 @@ class Ticket extends AbstractStructBase
     public function setTicketEndorsement(?array $ticketEndorsement = null): self
     {
         // validation for constraint: array
-        if ('' !== ($ticketEndorsementArrayErrorMessage = self::validateTicketEndorsementForArrayConstraintsFromSetTicketEndorsement($ticketEndorsement))) {
+        if ('' !== ($ticketEndorsementArrayErrorMessage = self::validateTicketEndorsementForArrayConstraintFromSetTicketEndorsement($ticketEndorsement))) {
             throw new InvalidArgumentException($ticketEndorsementArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(6)
@@ -304,12 +306,13 @@ class Ticket extends AbstractStructBase
         return $this->TourCode;
     }
     /**
-     * This method is responsible for validating the values passed to the setTourCode method
+     * This method is responsible for validating the value(s) passed to the setTourCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTourCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTourCodeForArrayConstraintsFromSetTourCode(?array $values = []): string
+    public static function validateTourCodeForArrayConstraintFromSetTourCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -338,7 +341,7 @@ class Ticket extends AbstractStructBase
     public function setTourCode(?array $tourCode = null): self
     {
         // validation for constraint: array
-        if ('' !== ($tourCodeArrayErrorMessage = self::validateTourCodeForArrayConstraintsFromSetTourCode($tourCode))) {
+        if ('' !== ($tourCodeArrayErrorMessage = self::validateTourCodeForArrayConstraintFromSetTourCode($tourCode))) {
             throw new InvalidArgumentException($tourCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -378,12 +381,13 @@ class Ticket extends AbstractStructBase
         return $this->ExchangedTicketInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setExchangedTicketInfo method
+     * This method is responsible for validating the value(s) passed to the setExchangedTicketInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setExchangedTicketInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateExchangedTicketInfoForArrayConstraintsFromSetExchangedTicketInfo(?array $values = []): string
+    public static function validateExchangedTicketInfoForArrayConstraintFromSetExchangedTicketInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -412,7 +416,7 @@ class Ticket extends AbstractStructBase
     public function setExchangedTicketInfo(?array $exchangedTicketInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($exchangedTicketInfoArrayErrorMessage = self::validateExchangedTicketInfoForArrayConstraintsFromSetExchangedTicketInfo($exchangedTicketInfo))) {
+        if ('' !== ($exchangedTicketInfoArrayErrorMessage = self::validateExchangedTicketInfoForArrayConstraintFromSetExchangedTicketInfo($exchangedTicketInfo))) {
             throw new InvalidArgumentException($exchangedTicketInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -43,12 +43,13 @@ class SavedTripSearchRsp extends BaseRsp
         return $this->SavedTripSearchResult;
     }
     /**
-     * This method is responsible for validating the values passed to the setSavedTripSearchResult method
+     * This method is responsible for validating the value(s) passed to the setSavedTripSearchResult method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSavedTripSearchResult method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSavedTripSearchResultForArrayConstraintsFromSetSavedTripSearchResult(?array $values = []): string
+    public static function validateSavedTripSearchResultForArrayConstraintFromSetSavedTripSearchResult(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -77,7 +78,7 @@ class SavedTripSearchRsp extends BaseRsp
     public function setSavedTripSearchResult(?array $savedTripSearchResult = null): self
     {
         // validation for constraint: array
-        if ('' !== ($savedTripSearchResultArrayErrorMessage = self::validateSavedTripSearchResultForArrayConstraintsFromSetSavedTripSearchResult($savedTripSearchResult))) {
+        if ('' !== ($savedTripSearchResultArrayErrorMessage = self::validateSavedTripSearchResultForArrayConstraintFromSetSavedTripSearchResult($savedTripSearchResult))) {
             throw new InvalidArgumentException($savedTripSearchResultArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

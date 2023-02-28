@@ -53,12 +53,13 @@ class FareRuleFailureInfo extends AbstractStructBase
         return $this->Reason;
     }
     /**
-     * This method is responsible for validating the values passed to the setReason method
+     * This method is responsible for validating the value(s) passed to the setReason method
      * This method is willingly generated in order to preserve the one-line inline validation within the setReason method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateReasonForArrayConstraintsFromSetReason(?array $values = []): string
+    public static function validateReasonForArrayConstraintFromSetReason(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -87,7 +88,7 @@ class FareRuleFailureInfo extends AbstractStructBase
     public function setReason(?array $reason = null): self
     {
         // validation for constraint: array
-        if ('' !== ($reasonArrayErrorMessage = self::validateReasonForArrayConstraintsFromSetReason($reason))) {
+        if ('' !== ($reasonArrayErrorMessage = self::validateReasonForArrayConstraintFromSetReason($reason))) {
             throw new InvalidArgumentException($reasonArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

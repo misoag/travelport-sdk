@@ -171,16 +171,16 @@ class TypeTicketFailureInfo extends AbstractStructBase
      */
     public function getTCRNumber(): ?string
     {
-        return isset($this->TCRNumber) ? $this->TCRNumber : null;
+        return $this->TCRNumber ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setTCRNumber method
+     * This method is responsible for validating the value(s) passed to the setTCRNumber method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTCRNumber method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateTCRNumberForChoiceConstraintsFromSetTCRNumber($value): string
+    public function validateTCRNumberForChoiceConstraintFromSetTCRNumber($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -216,7 +216,7 @@ class TypeTicketFailureInfo extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tCRNumber, true), gettype($tCRNumber)), __LINE__);
         }
         // validation for constraint: choice(TCRNumber)
-        if ('' !== ($tCRNumberChoiceErrorMessage = self::validateTCRNumberForChoiceConstraintsFromSetTCRNumber($tCRNumber))) {
+        if ('' !== ($tCRNumberChoiceErrorMessage = self::validateTCRNumberForChoiceConstraintFromSetTCRNumber($tCRNumber))) {
             throw new InvalidArgumentException($tCRNumberChoiceErrorMessage, __LINE__);
         }
         if (is_null($tCRNumber) || (is_array($tCRNumber) && empty($tCRNumber))) {
@@ -236,12 +236,13 @@ class TypeTicketFailureInfo extends AbstractStructBase
         return $this->BookingTravelerRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingTravelerRef method
+     * This method is responsible for validating the value(s) passed to the setBookingTravelerRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTravelerRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef(?array $values = []): string
+    public static function validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -270,7 +271,7 @@ class TypeTicketFailureInfo extends AbstractStructBase
     public function setBookingTravelerRef(?array $bookingTravelerRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintsFromSetBookingTravelerRef($bookingTravelerRef))) {
+        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef($bookingTravelerRef))) {
             throw new InvalidArgumentException($bookingTravelerRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

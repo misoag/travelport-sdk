@@ -903,12 +903,13 @@ class OptionalService extends AbstractStructBase
         return $this->ServiceData;
     }
     /**
-     * This method is responsible for validating the values passed to the setServiceData method
+     * This method is responsible for validating the value(s) passed to the setServiceData method
      * This method is willingly generated in order to preserve the one-line inline validation within the setServiceData method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateServiceDataForArrayConstraintsFromSetServiceData(?array $values = []): string
+    public static function validateServiceDataForArrayConstraintFromSetServiceData(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -937,7 +938,7 @@ class OptionalService extends AbstractStructBase
     public function setServiceData(?array $serviceData = null): self
     {
         // validation for constraint: array
-        if ('' !== ($serviceDataArrayErrorMessage = self::validateServiceDataForArrayConstraintsFromSetServiceData($serviceData))) {
+        if ('' !== ($serviceDataArrayErrorMessage = self::validateServiceDataForArrayConstraintFromSetServiceData($serviceData))) {
             throw new InvalidArgumentException($serviceDataArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -996,12 +997,13 @@ class OptionalService extends AbstractStructBase
         return $this->Remark;
     }
     /**
-     * This method is responsible for validating the values passed to the setRemark method
+     * This method is responsible for validating the value(s) passed to the setRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRemarkForArrayConstraintsFromSetRemark(?array $values = []): string
+    public static function validateRemarkForArrayConstraintFromSetRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1030,7 +1032,7 @@ class OptionalService extends AbstractStructBase
     public function setRemark(?array $remark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($remarkArrayErrorMessage = self::validateRemarkForArrayConstraintsFromSetRemark($remark))) {
+        if ('' !== ($remarkArrayErrorMessage = self::validateRemarkForArrayConstraintFromSetRemark($remark))) {
             throw new InvalidArgumentException($remarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1070,12 +1072,13 @@ class OptionalService extends AbstractStructBase
         return $this->TaxInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setTaxInfo method
+     * This method is responsible for validating the value(s) passed to the setTaxInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTaxInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTaxInfoForArrayConstraintsFromSetTaxInfo(?array $values = []): string
+    public static function validateTaxInfoForArrayConstraintFromSetTaxInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1104,7 +1107,7 @@ class OptionalService extends AbstractStructBase
     public function setTaxInfo(?array $taxInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($taxInfoArrayErrorMessage = self::validateTaxInfoForArrayConstraintsFromSetTaxInfo($taxInfo))) {
+        if ('' !== ($taxInfoArrayErrorMessage = self::validateTaxInfoForArrayConstraintFromSetTaxInfo($taxInfo))) {
             throw new InvalidArgumentException($taxInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1144,12 +1147,13 @@ class OptionalService extends AbstractStructBase
         return $this->FeeInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setFeeInfo method
+     * This method is responsible for validating the value(s) passed to the setFeeInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFeeInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFeeInfoForArrayConstraintsFromSetFeeInfo(?array $values = []): string
+    public static function validateFeeInfoForArrayConstraintFromSetFeeInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1178,7 +1182,7 @@ class OptionalService extends AbstractStructBase
     public function setFeeInfo(?array $feeInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($feeInfoArrayErrorMessage = self::validateFeeInfoForArrayConstraintsFromSetFeeInfo($feeInfo))) {
+        if ('' !== ($feeInfoArrayErrorMessage = self::validateFeeInfoForArrayConstraintFromSetFeeInfo($feeInfo))) {
             throw new InvalidArgumentException($feeInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1256,12 +1260,13 @@ class OptionalService extends AbstractStructBase
         return $this->AdditionalInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setAdditionalInfo method
+     * This method is responsible for validating the value(s) passed to the setAdditionalInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAdditionalInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAdditionalInfoForArrayConstraintsFromSetAdditionalInfo(?array $values = []): string
+    public static function validateAdditionalInfoForArrayConstraintFromSetAdditionalInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1290,7 +1295,7 @@ class OptionalService extends AbstractStructBase
     public function setAdditionalInfo(?array $additionalInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($additionalInfoArrayErrorMessage = self::validateAdditionalInfoForArrayConstraintsFromSetAdditionalInfo($additionalInfo))) {
+        if ('' !== ($additionalInfoArrayErrorMessage = self::validateAdditionalInfoForArrayConstraintFromSetAdditionalInfo($additionalInfo))) {
             throw new InvalidArgumentException($additionalInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(16)
@@ -1349,12 +1354,13 @@ class OptionalService extends AbstractStructBase
         return $this->Text;
     }
     /**
-     * This method is responsible for validating the values passed to the setText method
+     * This method is responsible for validating the value(s) passed to the setText method
      * This method is willingly generated in order to preserve the one-line inline validation within the setText method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTextForArrayConstraintsFromSetText(?array $values = []): string
+    public static function validateTextForArrayConstraintFromSetText(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1383,7 +1389,7 @@ class OptionalService extends AbstractStructBase
     public function setText(?array $text = null): self
     {
         // validation for constraint: array
-        if ('' !== ($textArrayErrorMessage = self::validateTextForArrayConstraintsFromSetText($text))) {
+        if ('' !== ($textArrayErrorMessage = self::validateTextForArrayConstraintFromSetText($text))) {
             throw new InvalidArgumentException($textArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(4)
@@ -1423,12 +1429,13 @@ class OptionalService extends AbstractStructBase
         return $this->PriceRange;
     }
     /**
-     * This method is responsible for validating the values passed to the setPriceRange method
+     * This method is responsible for validating the value(s) passed to the setPriceRange method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPriceRange method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePriceRangeForArrayConstraintsFromSetPriceRange(?array $values = []): string
+    public static function validatePriceRangeForArrayConstraintFromSetPriceRange(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1457,7 +1464,7 @@ class OptionalService extends AbstractStructBase
     public function setPriceRange(?array $priceRange = null): self
     {
         // validation for constraint: array
-        if ('' !== ($priceRangeArrayErrorMessage = self::validatePriceRangeForArrayConstraintsFromSetPriceRange($priceRange))) {
+        if ('' !== ($priceRangeArrayErrorMessage = self::validatePriceRangeForArrayConstraintFromSetPriceRange($priceRange))) {
             throw new InvalidArgumentException($priceRangeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(5)
@@ -1535,12 +1542,13 @@ class OptionalService extends AbstractStructBase
         return $this->Title;
     }
     /**
-     * This method is responsible for validating the values passed to the setTitle method
+     * This method is responsible for validating the value(s) passed to the setTitle method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTitle method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTitleForArrayConstraintsFromSetTitle(?array $values = []): string
+    public static function validateTitleForArrayConstraintFromSetTitle(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1569,7 +1577,7 @@ class OptionalService extends AbstractStructBase
     public function setTitle(?array $title = null): self
     {
         // validation for constraint: array
-        if ('' !== ($titleArrayErrorMessage = self::validateTitleForArrayConstraintsFromSetTitle($title))) {
+        if ('' !== ($titleArrayErrorMessage = self::validateTitleForArrayConstraintFromSetTitle($title))) {
             throw new InvalidArgumentException($titleArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(2)

@@ -399,16 +399,16 @@ class FormOfPayment extends AbstractStructBase
      */
     public function getCreditCard(): ?\Travelport\Hotel\StructType\CreditCard
     {
-        return isset($this->CreditCard) ? $this->CreditCard : null;
+        return $this->CreditCard ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setCreditCard method
+     * This method is responsible for validating the value(s) passed to the setCreditCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setCreditCard method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateCreditCardForChoiceConstraintsFromSetCreditCard($value): string
+    public function validateCreditCardForChoiceConstraintFromSetCreditCard($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -442,7 +442,7 @@ class FormOfPayment extends AbstractStructBase
     public function setCreditCard(?\Travelport\Hotel\StructType\CreditCard $creditCard = null): self
     {
         // validation for constraint: choice(CreditCard, DebitCard, EnettVan, FormOfPaymentSequenceGroup)
-        if ('' !== ($creditCardChoiceErrorMessage = self::validateCreditCardForChoiceConstraintsFromSetCreditCard($creditCard))) {
+        if ('' !== ($creditCardChoiceErrorMessage = self::validateCreditCardForChoiceConstraintFromSetCreditCard($creditCard))) {
             throw new InvalidArgumentException($creditCardChoiceErrorMessage, __LINE__);
         }
         if (is_null($creditCard) || (is_array($creditCard) && empty($creditCard))) {
@@ -459,16 +459,16 @@ class FormOfPayment extends AbstractStructBase
      */
     public function getDebitCard(): ?\Travelport\Hotel\StructType\DebitCard
     {
-        return isset($this->DebitCard) ? $this->DebitCard : null;
+        return $this->DebitCard ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setDebitCard method
+     * This method is responsible for validating the value(s) passed to the setDebitCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDebitCard method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateDebitCardForChoiceConstraintsFromSetDebitCard($value): string
+    public function validateDebitCardForChoiceConstraintFromSetDebitCard($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -502,7 +502,7 @@ class FormOfPayment extends AbstractStructBase
     public function setDebitCard(?\Travelport\Hotel\StructType\DebitCard $debitCard = null): self
     {
         // validation for constraint: choice(CreditCard, DebitCard, EnettVan, FormOfPaymentSequenceGroup)
-        if ('' !== ($debitCardChoiceErrorMessage = self::validateDebitCardForChoiceConstraintsFromSetDebitCard($debitCard))) {
+        if ('' !== ($debitCardChoiceErrorMessage = self::validateDebitCardForChoiceConstraintFromSetDebitCard($debitCard))) {
             throw new InvalidArgumentException($debitCardChoiceErrorMessage, __LINE__);
         }
         if (is_null($debitCard) || (is_array($debitCard) && empty($debitCard))) {
@@ -519,16 +519,16 @@ class FormOfPayment extends AbstractStructBase
      */
     public function getEnettVan(): ?\Travelport\Hotel\StructType\EnettVan
     {
-        return isset($this->EnettVan) ? $this->EnettVan : null;
+        return $this->EnettVan ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setEnettVan method
+     * This method is responsible for validating the value(s) passed to the setEnettVan method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEnettVan method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateEnettVanForChoiceConstraintsFromSetEnettVan($value): string
+    public function validateEnettVanForChoiceConstraintFromSetEnettVan($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -562,7 +562,7 @@ class FormOfPayment extends AbstractStructBase
     public function setEnettVan(?\Travelport\Hotel\StructType\EnettVan $enettVan = null): self
     {
         // validation for constraint: choice(CreditCard, DebitCard, EnettVan, FormOfPaymentSequenceGroup)
-        if ('' !== ($enettVanChoiceErrorMessage = self::validateEnettVanForChoiceConstraintsFromSetEnettVan($enettVan))) {
+        if ('' !== ($enettVanChoiceErrorMessage = self::validateEnettVanForChoiceConstraintFromSetEnettVan($enettVan))) {
             throw new InvalidArgumentException($enettVanChoiceErrorMessage, __LINE__);
         }
         if (is_null($enettVan) || (is_array($enettVan) && empty($enettVan))) {
@@ -784,12 +784,13 @@ class FormOfPayment extends AbstractStructBase
         return $this->ProviderReservationInfoRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setProviderReservationInfoRef method
+     * This method is responsible for validating the value(s) passed to the setProviderReservationInfoRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationInfoRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateProviderReservationInfoRefForArrayConstraintsFromSetProviderReservationInfoRef(?array $values = []): string
+    public static function validateProviderReservationInfoRefForArrayConstraintFromSetProviderReservationInfoRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -818,7 +819,7 @@ class FormOfPayment extends AbstractStructBase
     public function setProviderReservationInfoRef(?array $providerReservationInfoRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($providerReservationInfoRefArrayErrorMessage = self::validateProviderReservationInfoRefForArrayConstraintsFromSetProviderReservationInfoRef($providerReservationInfoRef))) {
+        if ('' !== ($providerReservationInfoRefArrayErrorMessage = self::validateProviderReservationInfoRefForArrayConstraintFromSetProviderReservationInfoRef($providerReservationInfoRef))) {
             throw new InvalidArgumentException($providerReservationInfoRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -858,12 +859,13 @@ class FormOfPayment extends AbstractStructBase
         return $this->SegmentRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setSegmentRef method
+     * This method is responsible for validating the value(s) passed to the setSegmentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSegmentRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSegmentRefForArrayConstraintsFromSetSegmentRef(?array $values = []): string
+    public static function validateSegmentRefForArrayConstraintFromSetSegmentRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -892,7 +894,7 @@ class FormOfPayment extends AbstractStructBase
     public function setSegmentRef(?array $segmentRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($segmentRefArrayErrorMessage = self::validateSegmentRefForArrayConstraintsFromSetSegmentRef($segmentRef))) {
+        if ('' !== ($segmentRefArrayErrorMessage = self::validateSegmentRefForArrayConstraintFromSetSegmentRef($segmentRef))) {
             throw new InvalidArgumentException($segmentRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

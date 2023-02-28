@@ -73,16 +73,16 @@ class UpsellAdminReq extends BaseReq
      */
     public function getAirUpsellCriteria(): ?\Travelport\Util\StructType\AirUpsellCriteria
     {
-        return isset($this->AirUpsellCriteria) ? $this->AirUpsellCriteria : null;
+        return $this->AirUpsellCriteria ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirUpsellCriteria method
+     * This method is responsible for validating the value(s) passed to the setAirUpsellCriteria method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirUpsellCriteria method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirUpsellCriteriaForChoiceConstraintsFromSetAirUpsellCriteria($value): string
+    public function validateAirUpsellCriteriaForChoiceConstraintFromSetAirUpsellCriteria($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -116,7 +116,7 @@ class UpsellAdminReq extends BaseReq
     public function setAirUpsellCriteria(?\Travelport\Util\StructType\AirUpsellCriteria $airUpsellCriteria = null): self
     {
         // validation for constraint: choice(AirUpsellCriteria, VehicleUpsellCriteria, HotelUpsellCriteria)
-        if ('' !== ($airUpsellCriteriaChoiceErrorMessage = self::validateAirUpsellCriteriaForChoiceConstraintsFromSetAirUpsellCriteria($airUpsellCriteria))) {
+        if ('' !== ($airUpsellCriteriaChoiceErrorMessage = self::validateAirUpsellCriteriaForChoiceConstraintFromSetAirUpsellCriteria($airUpsellCriteria))) {
             throw new InvalidArgumentException($airUpsellCriteriaChoiceErrorMessage, __LINE__);
         }
         if (is_null($airUpsellCriteria) || (is_array($airUpsellCriteria) && empty($airUpsellCriteria))) {
@@ -133,16 +133,16 @@ class UpsellAdminReq extends BaseReq
      */
     public function getVehicleUpsellCriteria(): ?\Travelport\Util\StructType\VehicleUpsellCriteria
     {
-        return isset($this->VehicleUpsellCriteria) ? $this->VehicleUpsellCriteria : null;
+        return $this->VehicleUpsellCriteria ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicleUpsellCriteria method
+     * This method is responsible for validating the value(s) passed to the setVehicleUpsellCriteria method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleUpsellCriteria method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleUpsellCriteriaForChoiceConstraintsFromSetVehicleUpsellCriteria($value): string
+    public function validateVehicleUpsellCriteriaForChoiceConstraintFromSetVehicleUpsellCriteria($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -176,7 +176,7 @@ class UpsellAdminReq extends BaseReq
     public function setVehicleUpsellCriteria(?\Travelport\Util\StructType\VehicleUpsellCriteria $vehicleUpsellCriteria = null): self
     {
         // validation for constraint: choice(AirUpsellCriteria, VehicleUpsellCriteria, HotelUpsellCriteria)
-        if ('' !== ($vehicleUpsellCriteriaChoiceErrorMessage = self::validateVehicleUpsellCriteriaForChoiceConstraintsFromSetVehicleUpsellCriteria($vehicleUpsellCriteria))) {
+        if ('' !== ($vehicleUpsellCriteriaChoiceErrorMessage = self::validateVehicleUpsellCriteriaForChoiceConstraintFromSetVehicleUpsellCriteria($vehicleUpsellCriteria))) {
             throw new InvalidArgumentException($vehicleUpsellCriteriaChoiceErrorMessage, __LINE__);
         }
         if (is_null($vehicleUpsellCriteria) || (is_array($vehicleUpsellCriteria) && empty($vehicleUpsellCriteria))) {
@@ -193,16 +193,16 @@ class UpsellAdminReq extends BaseReq
      */
     public function getHotelUpsellCriteria(): ?\Travelport\Util\StructType\HotelUpsellCriteria
     {
-        return isset($this->HotelUpsellCriteria) ? $this->HotelUpsellCriteria : null;
+        return $this->HotelUpsellCriteria ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelUpsellCriteria method
+     * This method is responsible for validating the value(s) passed to the setHotelUpsellCriteria method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelUpsellCriteria method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelUpsellCriteriaForChoiceConstraintsFromSetHotelUpsellCriteria($value): string
+    public function validateHotelUpsellCriteriaForChoiceConstraintFromSetHotelUpsellCriteria($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -236,7 +236,7 @@ class UpsellAdminReq extends BaseReq
     public function setHotelUpsellCriteria(?\Travelport\Util\StructType\HotelUpsellCriteria $hotelUpsellCriteria = null): self
     {
         // validation for constraint: choice(AirUpsellCriteria, VehicleUpsellCriteria, HotelUpsellCriteria)
-        if ('' !== ($hotelUpsellCriteriaChoiceErrorMessage = self::validateHotelUpsellCriteriaForChoiceConstraintsFromSetHotelUpsellCriteria($hotelUpsellCriteria))) {
+        if ('' !== ($hotelUpsellCriteriaChoiceErrorMessage = self::validateHotelUpsellCriteriaForChoiceConstraintFromSetHotelUpsellCriteria($hotelUpsellCriteria))) {
             throw new InvalidArgumentException($hotelUpsellCriteriaChoiceErrorMessage, __LINE__);
         }
         if (is_null($hotelUpsellCriteria) || (is_array($hotelUpsellCriteria) && empty($hotelUpsellCriteria))) {

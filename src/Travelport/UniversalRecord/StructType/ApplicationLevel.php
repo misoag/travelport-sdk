@@ -91,12 +91,13 @@ class ApplicationLevel extends AbstractStructBase
         return $this->ServiceData;
     }
     /**
-     * This method is responsible for validating the values passed to the setServiceData method
+     * This method is responsible for validating the value(s) passed to the setServiceData method
      * This method is willingly generated in order to preserve the one-line inline validation within the setServiceData method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateServiceDataForArrayConstraintsFromSetServiceData(?array $values = []): string
+    public static function validateServiceDataForArrayConstraintFromSetServiceData(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -125,7 +126,7 @@ class ApplicationLevel extends AbstractStructBase
     public function setServiceData(?array $serviceData = null): self
     {
         // validation for constraint: array
-        if ('' !== ($serviceDataArrayErrorMessage = self::validateServiceDataForArrayConstraintsFromSetServiceData($serviceData))) {
+        if ('' !== ($serviceDataArrayErrorMessage = self::validateServiceDataForArrayConstraintFromSetServiceData($serviceData))) {
             throw new InvalidArgumentException($serviceDataArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -165,12 +166,13 @@ class ApplicationLevel extends AbstractStructBase
         return $this->ApplicableLevels;
     }
     /**
-     * This method is responsible for validating the values passed to the setApplicableLevels method
+     * This method is responsible for validating the value(s) passed to the setApplicableLevels method
      * This method is willingly generated in order to preserve the one-line inline validation within the setApplicableLevels method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateApplicableLevelsForArrayConstraintsFromSetApplicableLevels(?array $values = []): string
+    public static function validateApplicableLevelsForArrayConstraintFromSetApplicableLevels(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -201,7 +203,7 @@ class ApplicationLevel extends AbstractStructBase
     public function setApplicableLevels(?array $applicableLevels = null): self
     {
         // validation for constraint: array
-        if ('' !== ($applicableLevelsArrayErrorMessage = self::validateApplicableLevelsForArrayConstraintsFromSetApplicableLevels($applicableLevels))) {
+        if ('' !== ($applicableLevelsArrayErrorMessage = self::validateApplicableLevelsForArrayConstraintFromSetApplicableLevels($applicableLevels))) {
             throw new InvalidArgumentException($applicableLevelsArrayErrorMessage, __LINE__);
         }
         $this->ApplicableLevels = $applicableLevels;

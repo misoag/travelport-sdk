@@ -285,12 +285,13 @@ class AirFareDisplayModifiers extends AbstractStructBase
         return $this->TripType;
     }
     /**
-     * This method is responsible for validating the values passed to the setTripType method
+     * This method is responsible for validating the value(s) passed to the setTripType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setTripType method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTripTypeForArrayConstraintsFromSetTripType(?array $values = []): string
+    public static function validateTripTypeForArrayConstraintFromSetTripType(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -321,7 +322,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
     public function setTripType(?array $tripType = null): self
     {
         // validation for constraint: array
-        if ('' !== ($tripTypeArrayErrorMessage = self::validateTripTypeForArrayConstraintsFromSetTripType($tripType))) {
+        if ('' !== ($tripTypeArrayErrorMessage = self::validateTripTypeForArrayConstraintFromSetTripType($tripType))) {
             throw new InvalidArgumentException($tripTypeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(3)
@@ -401,12 +402,13 @@ class AirFareDisplayModifiers extends AbstractStructBase
         return $this->FareSearchOption;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareSearchOption method
+     * This method is responsible for validating the value(s) passed to the setFareSearchOption method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareSearchOption method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareSearchOptionForArrayConstraintsFromSetFareSearchOption(?array $values = []): string
+    public static function validateFareSearchOptionForArrayConstraintFromSetFareSearchOption(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -437,7 +439,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
     public function setFareSearchOption(?array $fareSearchOption = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareSearchOptionArrayErrorMessage = self::validateFareSearchOptionForArrayConstraintsFromSetFareSearchOption($fareSearchOption))) {
+        if ('' !== ($fareSearchOptionArrayErrorMessage = self::validateFareSearchOptionForArrayConstraintFromSetFareSearchOption($fareSearchOption))) {
             throw new InvalidArgumentException($fareSearchOptionArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(5)

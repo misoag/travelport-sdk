@@ -40,12 +40,13 @@ class ContractCodes extends AbstractStructBase
         return $this->ContractCode;
     }
     /**
-     * This method is responsible for validating the values passed to the setContractCode method
+     * This method is responsible for validating the value(s) passed to the setContractCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setContractCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateContractCodeForArrayConstraintsFromSetContractCode(?array $values = []): string
+    public static function validateContractCodeForArrayConstraintFromSetContractCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -74,7 +75,7 @@ class ContractCodes extends AbstractStructBase
     public function setContractCode(?array $contractCode = null): self
     {
         // validation for constraint: array
-        if ('' !== ($contractCodeArrayErrorMessage = self::validateContractCodeForArrayConstraintsFromSetContractCode($contractCode))) {
+        if ('' !== ($contractCodeArrayErrorMessage = self::validateContractCodeForArrayConstraintFromSetContractCode($contractCode))) {
             throw new InvalidArgumentException($contractCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -44,12 +44,13 @@ class PolicyCodesList extends AbstractStructBase
         return $this->PolicyCode;
     }
     /**
-     * This method is responsible for validating the values passed to the setPolicyCode method
+     * This method is responsible for validating the value(s) passed to the setPolicyCode method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPolicyCode method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePolicyCodeForArrayConstraintsFromSetPolicyCode(?array $values = []): string
+    public static function validatePolicyCodeForArrayConstraintFromSetPolicyCode(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -78,7 +79,7 @@ class PolicyCodesList extends AbstractStructBase
     public function setPolicyCode(array $policyCode): self
     {
         // validation for constraint: array
-        if ('' !== ($policyCodeArrayErrorMessage = self::validatePolicyCodeForArrayConstraintsFromSetPolicyCode($policyCode))) {
+        if ('' !== ($policyCodeArrayErrorMessage = self::validatePolicyCodeForArrayConstraintFromSetPolicyCode($policyCode))) {
             throw new InvalidArgumentException($policyCodeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxInclusive(9999)

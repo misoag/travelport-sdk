@@ -43,12 +43,13 @@ class AirPricePointList extends AbstractStructBase
         return $this->AirPricePoint;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirPricePoint method
+     * This method is responsible for validating the value(s) passed to the setAirPricePoint method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricePoint method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirPricePointForArrayConstraintsFromSetAirPricePoint(?array $values = []): string
+    public static function validateAirPricePointForArrayConstraintFromSetAirPricePoint(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -77,7 +78,7 @@ class AirPricePointList extends AbstractStructBase
     public function setAirPricePoint(?array $airPricePoint = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airPricePointArrayErrorMessage = self::validateAirPricePointForArrayConstraintsFromSetAirPricePoint($airPricePoint))) {
+        if ('' !== ($airPricePointArrayErrorMessage = self::validateAirPricePointForArrayConstraintFromSetAirPricePoint($airPricePoint))) {
             throw new InvalidArgumentException($airPricePointArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

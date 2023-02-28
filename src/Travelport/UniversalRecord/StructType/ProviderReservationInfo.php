@@ -375,16 +375,16 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function getProviderReservationDetails(): ?\Travelport\UniversalRecord\StructType\ProviderReservationDetails
     {
-        return isset($this->ProviderReservationDetails) ? $this->ProviderReservationDetails : null;
+        return $this->ProviderReservationDetails ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setProviderReservationDetails method
+     * This method is responsible for validating the value(s) passed to the setProviderReservationDetails method
      * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationDetails method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateProviderReservationDetailsForChoiceConstraintsFromSetProviderReservationDetails($value): string
+    public function validateProviderReservationDetailsForChoiceConstraintFromSetProviderReservationDetails($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -417,7 +417,7 @@ class ProviderReservationInfo extends AbstractStructBase
     public function setProviderReservationDetails(?\Travelport\UniversalRecord\StructType\ProviderReservationDetails $providerReservationDetails = null): self
     {
         // validation for constraint: choice(ProviderReservationDetails, ProviderReservationDisplayDetailsList)
-        if ('' !== ($providerReservationDetailsChoiceErrorMessage = self::validateProviderReservationDetailsForChoiceConstraintsFromSetProviderReservationDetails($providerReservationDetails))) {
+        if ('' !== ($providerReservationDetailsChoiceErrorMessage = self::validateProviderReservationDetailsForChoiceConstraintFromSetProviderReservationDetails($providerReservationDetails))) {
             throw new InvalidArgumentException($providerReservationDetailsChoiceErrorMessage, __LINE__);
         }
         if (is_null($providerReservationDetails) || (is_array($providerReservationDetails) && empty($providerReservationDetails))) {
@@ -434,16 +434,16 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function getProviderReservationDisplayDetailsList(): ?\Travelport\UniversalRecord\StructType\ProviderReservationDisplayDetailsList
     {
-        return isset($this->ProviderReservationDisplayDetailsList) ? $this->ProviderReservationDisplayDetailsList : null;
+        return $this->ProviderReservationDisplayDetailsList ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setProviderReservationDisplayDetailsList method
+     * This method is responsible for validating the value(s) passed to the setProviderReservationDisplayDetailsList method
      * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationDisplayDetailsList method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateProviderReservationDisplayDetailsListForChoiceConstraintsFromSetProviderReservationDisplayDetailsList($value): string
+    public function validateProviderReservationDisplayDetailsListForChoiceConstraintFromSetProviderReservationDisplayDetailsList($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -476,7 +476,7 @@ class ProviderReservationInfo extends AbstractStructBase
     public function setProviderReservationDisplayDetailsList(?\Travelport\UniversalRecord\StructType\ProviderReservationDisplayDetailsList $providerReservationDisplayDetailsList = null): self
     {
         // validation for constraint: choice(ProviderReservationDetails, ProviderReservationDisplayDetailsList)
-        if ('' !== ($providerReservationDisplayDetailsListChoiceErrorMessage = self::validateProviderReservationDisplayDetailsListForChoiceConstraintsFromSetProviderReservationDisplayDetailsList($providerReservationDisplayDetailsList))) {
+        if ('' !== ($providerReservationDisplayDetailsListChoiceErrorMessage = self::validateProviderReservationDisplayDetailsListForChoiceConstraintFromSetProviderReservationDisplayDetailsList($providerReservationDisplayDetailsList))) {
             throw new InvalidArgumentException($providerReservationDisplayDetailsListChoiceErrorMessage, __LINE__);
         }
         if (is_null($providerReservationDisplayDetailsList) || (is_array($providerReservationDisplayDetailsList) && empty($providerReservationDisplayDetailsList))) {

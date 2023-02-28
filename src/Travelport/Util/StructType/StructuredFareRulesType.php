@@ -41,12 +41,13 @@ class StructuredFareRulesType extends AbstractStructBase
         return $this->FareRuleCategoryType;
     }
     /**
-     * This method is responsible for validating the values passed to the setFareRuleCategoryType method
+     * This method is responsible for validating the value(s) passed to the setFareRuleCategoryType method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFareRuleCategoryType method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFareRuleCategoryTypeForArrayConstraintsFromSetFareRuleCategoryType(?array $values = []): string
+    public static function validateFareRuleCategoryTypeForArrayConstraintFromSetFareRuleCategoryType(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -75,7 +76,7 @@ class StructuredFareRulesType extends AbstractStructBase
     public function setFareRuleCategoryType(?array $fareRuleCategoryType = null): self
     {
         // validation for constraint: array
-        if ('' !== ($fareRuleCategoryTypeArrayErrorMessage = self::validateFareRuleCategoryTypeForArrayConstraintsFromSetFareRuleCategoryType($fareRuleCategoryType))) {
+        if ('' !== ($fareRuleCategoryTypeArrayErrorMessage = self::validateFareRuleCategoryTypeForArrayConstraintFromSetFareRuleCategoryType($fareRuleCategoryType))) {
             throw new InvalidArgumentException($fareRuleCategoryTypeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)

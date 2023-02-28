@@ -56,16 +56,16 @@ class MctLookupReq extends BaseReq
      */
     public function getMctSearch(): ?\Travelport\Util\StructType\MctSearch
     {
-        return isset($this->MctSearch) ? $this->MctSearch : null;
+        return $this->MctSearch ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setMctSearch method
+     * This method is responsible for validating the value(s) passed to the setMctSearch method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMctSearch method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMctSearchForChoiceConstraintsFromSetMctSearch($value): string
+    public function validateMctSearchForChoiceConstraintFromSetMctSearch($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -98,7 +98,7 @@ class MctLookupReq extends BaseReq
     public function setMctSearch(?\Travelport\Util\StructType\MctSearch $mctSearch = null): self
     {
         // validation for constraint: choice(MctSearch, MctQuery)
-        if ('' !== ($mctSearchChoiceErrorMessage = self::validateMctSearchForChoiceConstraintsFromSetMctSearch($mctSearch))) {
+        if ('' !== ($mctSearchChoiceErrorMessage = self::validateMctSearchForChoiceConstraintFromSetMctSearch($mctSearch))) {
             throw new InvalidArgumentException($mctSearchChoiceErrorMessage, __LINE__);
         }
         if (is_null($mctSearch) || (is_array($mctSearch) && empty($mctSearch))) {
@@ -115,16 +115,16 @@ class MctLookupReq extends BaseReq
      */
     public function getMctQuery(): ?\Travelport\Util\StructType\MctQuery
     {
-        return isset($this->MctQuery) ? $this->MctQuery : null;
+        return $this->MctQuery ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setMctQuery method
+     * This method is responsible for validating the value(s) passed to the setMctQuery method
      * This method is willingly generated in order to preserve the one-line inline validation within the setMctQuery method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateMctQueryForChoiceConstraintsFromSetMctQuery($value): string
+    public function validateMctQueryForChoiceConstraintFromSetMctQuery($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -157,7 +157,7 @@ class MctLookupReq extends BaseReq
     public function setMctQuery(?\Travelport\Util\StructType\MctQuery $mctQuery = null): self
     {
         // validation for constraint: choice(MctSearch, MctQuery)
-        if ('' !== ($mctQueryChoiceErrorMessage = self::validateMctQueryForChoiceConstraintsFromSetMctQuery($mctQuery))) {
+        if ('' !== ($mctQueryChoiceErrorMessage = self::validateMctQueryForChoiceConstraintFromSetMctQuery($mctQuery))) {
             throw new InvalidArgumentException($mctQueryChoiceErrorMessage, __LINE__);
         }
         if (is_null($mctQuery) || (is_array($mctQuery) && empty($mctQuery))) {

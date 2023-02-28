@@ -113,12 +113,13 @@ class PassiveCreateReservationReq extends BaseCreateReservationReq
         return $this->SupplierLocator;
     }
     /**
-     * This method is responsible for validating the values passed to the setSupplierLocator method
+     * This method is responsible for validating the value(s) passed to the setSupplierLocator method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSupplierLocator method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSupplierLocatorForArrayConstraintsFromSetSupplierLocator(?array $values = []): string
+    public static function validateSupplierLocatorForArrayConstraintFromSetSupplierLocator(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -147,7 +148,7 @@ class PassiveCreateReservationReq extends BaseCreateReservationReq
     public function setSupplierLocator(?array $supplierLocator = null): self
     {
         // validation for constraint: array
-        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintsFromSetSupplierLocator($supplierLocator))) {
+        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintFromSetSupplierLocator($supplierLocator))) {
             throw new InvalidArgumentException($supplierLocatorArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -187,12 +188,13 @@ class PassiveCreateReservationReq extends BaseCreateReservationReq
         return $this->ThirdPartyInformation;
     }
     /**
-     * This method is responsible for validating the values passed to the setThirdPartyInformation method
+     * This method is responsible for validating the value(s) passed to the setThirdPartyInformation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setThirdPartyInformation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateThirdPartyInformationForArrayConstraintsFromSetThirdPartyInformation(?array $values = []): string
+    public static function validateThirdPartyInformationForArrayConstraintFromSetThirdPartyInformation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -221,7 +223,7 @@ class PassiveCreateReservationReq extends BaseCreateReservationReq
     public function setThirdPartyInformation(?array $thirdPartyInformation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($thirdPartyInformationArrayErrorMessage = self::validateThirdPartyInformationForArrayConstraintsFromSetThirdPartyInformation($thirdPartyInformation))) {
+        if ('' !== ($thirdPartyInformationArrayErrorMessage = self::validateThirdPartyInformationForArrayConstraintFromSetThirdPartyInformation($thirdPartyInformation))) {
             throw new InvalidArgumentException($thirdPartyInformationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -261,12 +263,13 @@ class PassiveCreateReservationReq extends BaseCreateReservationReq
         return $this->PassiveSegment;
     }
     /**
-     * This method is responsible for validating the values passed to the setPassiveSegment method
+     * This method is responsible for validating the value(s) passed to the setPassiveSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassiveSegment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePassiveSegmentForArrayConstraintsFromSetPassiveSegment(?array $values = []): string
+    public static function validatePassiveSegmentForArrayConstraintFromSetPassiveSegment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -295,7 +298,7 @@ class PassiveCreateReservationReq extends BaseCreateReservationReq
     public function setPassiveSegment(?array $passiveSegment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($passiveSegmentArrayErrorMessage = self::validatePassiveSegmentForArrayConstraintsFromSetPassiveSegment($passiveSegment))) {
+        if ('' !== ($passiveSegmentArrayErrorMessage = self::validatePassiveSegmentForArrayConstraintFromSetPassiveSegment($passiveSegment))) {
             throw new InvalidArgumentException($passiveSegmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -335,12 +338,13 @@ class PassiveCreateReservationReq extends BaseCreateReservationReq
         return $this->PassiveRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setPassiveRemark method
+     * This method is responsible for validating the value(s) passed to the setPassiveRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassiveRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePassiveRemarkForArrayConstraintsFromSetPassiveRemark(?array $values = []): string
+    public static function validatePassiveRemarkForArrayConstraintFromSetPassiveRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -369,7 +373,7 @@ class PassiveCreateReservationReq extends BaseCreateReservationReq
     public function setPassiveRemark(?array $passiveRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($passiveRemarkArrayErrorMessage = self::validatePassiveRemarkForArrayConstraintsFromSetPassiveRemark($passiveRemark))) {
+        if ('' !== ($passiveRemarkArrayErrorMessage = self::validatePassiveRemarkForArrayConstraintFromSetPassiveRemark($passiveRemark))) {
             throw new InvalidArgumentException($passiveRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -409,12 +413,13 @@ class PassiveCreateReservationReq extends BaseCreateReservationReq
         return $this->AssociatedRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setAssociatedRemark method
+     * This method is responsible for validating the value(s) passed to the setAssociatedRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAssociatedRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark(?array $values = []): string
+    public static function validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -443,7 +448,7 @@ class PassiveCreateReservationReq extends BaseCreateReservationReq
     public function setAssociatedRemark(?array $associatedRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintsFromSetAssociatedRemark($associatedRemark))) {
+        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark($associatedRemark))) {
             throw new InvalidArgumentException($associatedRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -502,12 +507,13 @@ class PassiveCreateReservationReq extends BaseCreateReservationReq
         return $this->ReviewBooking;
     }
     /**
-     * This method is responsible for validating the values passed to the setReviewBooking method
+     * This method is responsible for validating the value(s) passed to the setReviewBooking method
      * This method is willingly generated in order to preserve the one-line inline validation within the setReviewBooking method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateReviewBookingForArrayConstraintsFromSetReviewBooking(?array $values = []): string
+    public static function validateReviewBookingForArrayConstraintFromSetReviewBooking(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -536,7 +542,7 @@ class PassiveCreateReservationReq extends BaseCreateReservationReq
     public function setReviewBooking(?array $reviewBooking = null): self
     {
         // validation for constraint: array
-        if ('' !== ($reviewBookingArrayErrorMessage = self::validateReviewBookingForArrayConstraintsFromSetReviewBooking($reviewBooking))) {
+        if ('' !== ($reviewBookingArrayErrorMessage = self::validateReviewBookingForArrayConstraintFromSetReviewBooking($reviewBooking))) {
             throw new InvalidArgumentException($reviewBookingArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

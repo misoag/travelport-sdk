@@ -81,16 +81,16 @@ class UpsellSearchReq extends BaseReq
      */
     public function getAirUpsellSearchCriteria(): ?\Travelport\Util\StructType\AirUpsellSearchCriteria
     {
-        return isset($this->AirUpsellSearchCriteria) ? $this->AirUpsellSearchCriteria : null;
+        return $this->AirUpsellSearchCriteria ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setAirUpsellSearchCriteria method
+     * This method is responsible for validating the value(s) passed to the setAirUpsellSearchCriteria method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirUpsellSearchCriteria method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateAirUpsellSearchCriteriaForChoiceConstraintsFromSetAirUpsellSearchCriteria($value): string
+    public function validateAirUpsellSearchCriteriaForChoiceConstraintFromSetAirUpsellSearchCriteria($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -124,7 +124,7 @@ class UpsellSearchReq extends BaseReq
     public function setAirUpsellSearchCriteria(?\Travelport\Util\StructType\AirUpsellSearchCriteria $airUpsellSearchCriteria = null): self
     {
         // validation for constraint: choice(AirUpsellSearchCriteria, HotelUpsellSearchCriteria, VehicleUpsellSearchCriteria)
-        if ('' !== ($airUpsellSearchCriteriaChoiceErrorMessage = self::validateAirUpsellSearchCriteriaForChoiceConstraintsFromSetAirUpsellSearchCriteria($airUpsellSearchCriteria))) {
+        if ('' !== ($airUpsellSearchCriteriaChoiceErrorMessage = self::validateAirUpsellSearchCriteriaForChoiceConstraintFromSetAirUpsellSearchCriteria($airUpsellSearchCriteria))) {
             throw new InvalidArgumentException($airUpsellSearchCriteriaChoiceErrorMessage, __LINE__);
         }
         if (is_null($airUpsellSearchCriteria) || (is_array($airUpsellSearchCriteria) && empty($airUpsellSearchCriteria))) {
@@ -141,16 +141,16 @@ class UpsellSearchReq extends BaseReq
      */
     public function getHotelUpsellSearchCriteria(): ?\Travelport\Util\StructType\HotelUpsellSearchCriteria
     {
-        return isset($this->HotelUpsellSearchCriteria) ? $this->HotelUpsellSearchCriteria : null;
+        return $this->HotelUpsellSearchCriteria ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setHotelUpsellSearchCriteria method
+     * This method is responsible for validating the value(s) passed to the setHotelUpsellSearchCriteria method
      * This method is willingly generated in order to preserve the one-line inline validation within the setHotelUpsellSearchCriteria method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateHotelUpsellSearchCriteriaForChoiceConstraintsFromSetHotelUpsellSearchCriteria($value): string
+    public function validateHotelUpsellSearchCriteriaForChoiceConstraintFromSetHotelUpsellSearchCriteria($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -184,7 +184,7 @@ class UpsellSearchReq extends BaseReq
     public function setHotelUpsellSearchCriteria(?\Travelport\Util\StructType\HotelUpsellSearchCriteria $hotelUpsellSearchCriteria = null): self
     {
         // validation for constraint: choice(AirUpsellSearchCriteria, HotelUpsellSearchCriteria, VehicleUpsellSearchCriteria)
-        if ('' !== ($hotelUpsellSearchCriteriaChoiceErrorMessage = self::validateHotelUpsellSearchCriteriaForChoiceConstraintsFromSetHotelUpsellSearchCriteria($hotelUpsellSearchCriteria))) {
+        if ('' !== ($hotelUpsellSearchCriteriaChoiceErrorMessage = self::validateHotelUpsellSearchCriteriaForChoiceConstraintFromSetHotelUpsellSearchCriteria($hotelUpsellSearchCriteria))) {
             throw new InvalidArgumentException($hotelUpsellSearchCriteriaChoiceErrorMessage, __LINE__);
         }
         if (is_null($hotelUpsellSearchCriteria) || (is_array($hotelUpsellSearchCriteria) && empty($hotelUpsellSearchCriteria))) {
@@ -201,16 +201,16 @@ class UpsellSearchReq extends BaseReq
      */
     public function getVehicleUpsellSearchCriteria(): ?\Travelport\Util\StructType\VehicleUpsellSearchCriteria
     {
-        return isset($this->VehicleUpsellSearchCriteria) ? $this->VehicleUpsellSearchCriteria : null;
+        return $this->VehicleUpsellSearchCriteria ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setVehicleUpsellSearchCriteria method
+     * This method is responsible for validating the value(s) passed to the setVehicleUpsellSearchCriteria method
      * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleUpsellSearchCriteria method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateVehicleUpsellSearchCriteriaForChoiceConstraintsFromSetVehicleUpsellSearchCriteria($value): string
+    public function validateVehicleUpsellSearchCriteriaForChoiceConstraintFromSetVehicleUpsellSearchCriteria($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -244,7 +244,7 @@ class UpsellSearchReq extends BaseReq
     public function setVehicleUpsellSearchCriteria(?\Travelport\Util\StructType\VehicleUpsellSearchCriteria $vehicleUpsellSearchCriteria = null): self
     {
         // validation for constraint: choice(AirUpsellSearchCriteria, HotelUpsellSearchCriteria, VehicleUpsellSearchCriteria)
-        if ('' !== ($vehicleUpsellSearchCriteriaChoiceErrorMessage = self::validateVehicleUpsellSearchCriteriaForChoiceConstraintsFromSetVehicleUpsellSearchCriteria($vehicleUpsellSearchCriteria))) {
+        if ('' !== ($vehicleUpsellSearchCriteriaChoiceErrorMessage = self::validateVehicleUpsellSearchCriteriaForChoiceConstraintFromSetVehicleUpsellSearchCriteria($vehicleUpsellSearchCriteria))) {
             throw new InvalidArgumentException($vehicleUpsellSearchCriteriaChoiceErrorMessage, __LINE__);
         }
         if (is_null($vehicleUpsellSearchCriteria) || (is_array($vehicleUpsellSearchCriteria) && empty($vehicleUpsellSearchCriteria))) {

@@ -579,12 +579,13 @@ class TCR extends AbstractStructBase
         return $this->FormOfPayment;
     }
     /**
-     * This method is responsible for validating the values passed to the setFormOfPayment method
+     * This method is responsible for validating the value(s) passed to the setFormOfPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPayment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateFormOfPaymentForArrayConstraintsFromSetFormOfPayment(?array $values = []): string
+    public static function validateFormOfPaymentForArrayConstraintFromSetFormOfPayment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -613,7 +614,7 @@ class TCR extends AbstractStructBase
     public function setFormOfPayment(?array $formOfPayment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintsFromSetFormOfPayment($formOfPayment))) {
+        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintFromSetFormOfPayment($formOfPayment))) {
             throw new InvalidArgumentException($formOfPaymentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -653,12 +654,13 @@ class TCR extends AbstractStructBase
         return $this->Payment;
     }
     /**
-     * This method is responsible for validating the values passed to the setPayment method
+     * This method is responsible for validating the value(s) passed to the setPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPayment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePaymentForArrayConstraintsFromSetPayment(?array $values = []): string
+    public static function validatePaymentForArrayConstraintFromSetPayment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -687,7 +689,7 @@ class TCR extends AbstractStructBase
     public function setPayment(?array $payment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($paymentArrayErrorMessage = self::validatePaymentForArrayConstraintsFromSetPayment($payment))) {
+        if ('' !== ($paymentArrayErrorMessage = self::validatePaymentForArrayConstraintFromSetPayment($payment))) {
             throw new InvalidArgumentException($paymentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -727,12 +729,13 @@ class TCR extends AbstractStructBase
         return $this->BookingTraveler;
     }
     /**
-     * This method is responsible for validating the values passed to the setBookingTraveler method
+     * This method is responsible for validating the value(s) passed to the setBookingTraveler method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTraveler method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBookingTravelerForArrayConstraintsFromSetBookingTraveler(?array $values = []): string
+    public static function validateBookingTravelerForArrayConstraintFromSetBookingTraveler(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -761,7 +764,7 @@ class TCR extends AbstractStructBase
     public function setBookingTraveler(?array $bookingTraveler = null): self
     {
         // validation for constraint: array
-        if ('' !== ($bookingTravelerArrayErrorMessage = self::validateBookingTravelerForArrayConstraintsFromSetBookingTraveler($bookingTraveler))) {
+        if ('' !== ($bookingTravelerArrayErrorMessage = self::validateBookingTravelerForArrayConstraintFromSetBookingTraveler($bookingTraveler))) {
             throw new InvalidArgumentException($bookingTravelerArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -801,12 +804,13 @@ class TCR extends AbstractStructBase
         return $this->PassengerTicketNumber;
     }
     /**
-     * This method is responsible for validating the values passed to the setPassengerTicketNumber method
+     * This method is responsible for validating the value(s) passed to the setPassengerTicketNumber method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPassengerTicketNumber method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePassengerTicketNumberForArrayConstraintsFromSetPassengerTicketNumber(?array $values = []): string
+    public static function validatePassengerTicketNumberForArrayConstraintFromSetPassengerTicketNumber(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -835,7 +839,7 @@ class TCR extends AbstractStructBase
     public function setPassengerTicketNumber(?array $passengerTicketNumber = null): self
     {
         // validation for constraint: array
-        if ('' !== ($passengerTicketNumberArrayErrorMessage = self::validatePassengerTicketNumberForArrayConstraintsFromSetPassengerTicketNumber($passengerTicketNumber))) {
+        if ('' !== ($passengerTicketNumberArrayErrorMessage = self::validatePassengerTicketNumberForArrayConstraintFromSetPassengerTicketNumber($passengerTicketNumber))) {
             throw new InvalidArgumentException($passengerTicketNumberArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -875,12 +879,13 @@ class TCR extends AbstractStructBase
         return $this->AirPricingInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirPricingInfo method
+     * This method is responsible for validating the value(s) passed to the setAirPricingInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirPricingInfoForArrayConstraintsFromSetAirPricingInfo(?array $values = []): string
+    public static function validateAirPricingInfoForArrayConstraintFromSetAirPricingInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -909,7 +914,7 @@ class TCR extends AbstractStructBase
     public function setAirPricingInfo(?array $airPricingInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airPricingInfoArrayErrorMessage = self::validateAirPricingInfoForArrayConstraintsFromSetAirPricingInfo($airPricingInfo))) {
+        if ('' !== ($airPricingInfoArrayErrorMessage = self::validateAirPricingInfoForArrayConstraintFromSetAirPricingInfo($airPricingInfo))) {
             throw new InvalidArgumentException($airPricingInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -987,12 +992,13 @@ class TCR extends AbstractStructBase
         return $this->SupplierLocator;
     }
     /**
-     * This method is responsible for validating the values passed to the setSupplierLocator method
+     * This method is responsible for validating the value(s) passed to the setSupplierLocator method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSupplierLocator method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSupplierLocatorForArrayConstraintsFromSetSupplierLocator(?array $values = []): string
+    public static function validateSupplierLocatorForArrayConstraintFromSetSupplierLocator(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1021,7 +1027,7 @@ class TCR extends AbstractStructBase
     public function setSupplierLocator(?array $supplierLocator = null): self
     {
         // validation for constraint: array
-        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintsFromSetSupplierLocator($supplierLocator))) {
+        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintFromSetSupplierLocator($supplierLocator))) {
             throw new InvalidArgumentException($supplierLocatorArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -1061,12 +1067,13 @@ class TCR extends AbstractStructBase
         return $this->RefundRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setRefundRemark method
+     * This method is responsible for validating the value(s) passed to the setRefundRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRefundRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRefundRemarkForArrayConstraintsFromSetRefundRemark(?array $values = []): string
+    public static function validateRefundRemarkForArrayConstraintFromSetRefundRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -1095,7 +1102,7 @@ class TCR extends AbstractStructBase
     public function setRefundRemark(?array $refundRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($refundRemarkArrayErrorMessage = self::validateRefundRemarkForArrayConstraintsFromSetRefundRemark($refundRemark))) {
+        if ('' !== ($refundRemarkArrayErrorMessage = self::validateRefundRemarkForArrayConstraintFromSetRefundRemark($refundRemark))) {
             throw new InvalidArgumentException($refundRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

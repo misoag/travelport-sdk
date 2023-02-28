@@ -81,12 +81,13 @@ class TypeDefaultBrandDetail extends AbstractStructBase
         return $this->Text;
     }
     /**
-     * This method is responsible for validating the values passed to the setText method
+     * This method is responsible for validating the value(s) passed to the setText method
      * This method is willingly generated in order to preserve the one-line inline validation within the setText method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateTextForArrayConstraintsFromSetText(?array $values = []): string
+    public static function validateTextForArrayConstraintFromSetText(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -115,7 +116,7 @@ class TypeDefaultBrandDetail extends AbstractStructBase
     public function setText(?array $text = null): self
     {
         // validation for constraint: array
-        if ('' !== ($textArrayErrorMessage = self::validateTextForArrayConstraintsFromSetText($text))) {
+        if ('' !== ($textArrayErrorMessage = self::validateTextForArrayConstraintFromSetText($text))) {
             throw new InvalidArgumentException($textArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(4)
@@ -155,12 +156,13 @@ class TypeDefaultBrandDetail extends AbstractStructBase
         return $this->ImageLocation;
     }
     /**
-     * This method is responsible for validating the values passed to the setImageLocation method
+     * This method is responsible for validating the value(s) passed to the setImageLocation method
      * This method is willingly generated in order to preserve the one-line inline validation within the setImageLocation method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateImageLocationForArrayConstraintsFromSetImageLocation(?array $values = []): string
+    public static function validateImageLocationForArrayConstraintFromSetImageLocation(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -189,7 +191,7 @@ class TypeDefaultBrandDetail extends AbstractStructBase
     public function setImageLocation(?array $imageLocation = null): self
     {
         // validation for constraint: array
-        if ('' !== ($imageLocationArrayErrorMessage = self::validateImageLocationForArrayConstraintsFromSetImageLocation($imageLocation))) {
+        if ('' !== ($imageLocationArrayErrorMessage = self::validateImageLocationForArrayConstraintFromSetImageLocation($imageLocation))) {
             throw new InvalidArgumentException($imageLocationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(3)
@@ -229,12 +231,13 @@ class TypeDefaultBrandDetail extends AbstractStructBase
         return $this->ApplicableSegment;
     }
     /**
-     * This method is responsible for validating the values passed to the setApplicableSegment method
+     * This method is responsible for validating the value(s) passed to the setApplicableSegment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setApplicableSegment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateApplicableSegmentForArrayConstraintsFromSetApplicableSegment(?array $values = []): string
+    public static function validateApplicableSegmentForArrayConstraintFromSetApplicableSegment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -263,7 +266,7 @@ class TypeDefaultBrandDetail extends AbstractStructBase
     public function setApplicableSegment(?array $applicableSegment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($applicableSegmentArrayErrorMessage = self::validateApplicableSegmentForArrayConstraintsFromSetApplicableSegment($applicableSegment))) {
+        if ('' !== ($applicableSegmentArrayErrorMessage = self::validateApplicableSegmentForArrayConstraintFromSetApplicableSegment($applicableSegment))) {
             throw new InvalidArgumentException($applicableSegmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(99)

@@ -42,12 +42,13 @@ class RateInclusions extends AbstractStructBase
         return $this->IncludedItem;
     }
     /**
-     * This method is responsible for validating the values passed to the setIncludedItem method
+     * This method is responsible for validating the value(s) passed to the setIncludedItem method
      * This method is willingly generated in order to preserve the one-line inline validation within the setIncludedItem method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateIncludedItemForArrayConstraintsFromSetIncludedItem(?array $values = []): string
+    public static function validateIncludedItemForArrayConstraintFromSetIncludedItem(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class RateInclusions extends AbstractStructBase
     public function setIncludedItem(?array $includedItem = null): self
     {
         // validation for constraint: array
-        if ('' !== ($includedItemArrayErrorMessage = self::validateIncludedItemForArrayConstraintsFromSetIncludedItem($includedItem))) {
+        if ('' !== ($includedItemArrayErrorMessage = self::validateIncludedItemForArrayConstraintFromSetIncludedItem($includedItem))) {
             throw new InvalidArgumentException($includedItemArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -104,12 +104,13 @@ class APISRequirements extends AbstractStructBase
         return $this->Document;
     }
     /**
-     * This method is responsible for validating the values passed to the setDocument method
+     * This method is responsible for validating the value(s) passed to the setDocument method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDocument method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDocumentForArrayConstraintsFromSetDocument(?array $values = []): string
+    public static function validateDocumentForArrayConstraintFromSetDocument(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -138,7 +139,7 @@ class APISRequirements extends AbstractStructBase
     public function setDocument(?array $document = null): self
     {
         // validation for constraint: array
-        if ('' !== ($documentArrayErrorMessage = self::validateDocumentForArrayConstraintsFromSetDocument($document))) {
+        if ('' !== ($documentArrayErrorMessage = self::validateDocumentForArrayConstraintFromSetDocument($document))) {
             throw new InvalidArgumentException($documentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

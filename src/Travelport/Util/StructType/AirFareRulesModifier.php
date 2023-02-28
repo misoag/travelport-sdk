@@ -43,12 +43,13 @@ class AirFareRulesModifier extends AbstractStructBase
         return $this->AirFareRuleCategory;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirFareRuleCategory method
+     * This method is responsible for validating the value(s) passed to the setAirFareRuleCategory method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirFareRuleCategory method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirFareRuleCategoryForArrayConstraintsFromSetAirFareRuleCategory(?array $values = []): string
+    public static function validateAirFareRuleCategoryForArrayConstraintFromSetAirFareRuleCategory(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -77,7 +78,7 @@ class AirFareRulesModifier extends AbstractStructBase
     public function setAirFareRuleCategory(?array $airFareRuleCategory = null): self
     {
         // validation for constraint: array
-        if ('' !== ($airFareRuleCategoryArrayErrorMessage = self::validateAirFareRuleCategoryForArrayConstraintsFromSetAirFareRuleCategory($airFareRuleCategory))) {
+        if ('' !== ($airFareRuleCategoryArrayErrorMessage = self::validateAirFareRuleCategoryForArrayConstraintFromSetAirFareRuleCategory($airFareRuleCategory))) {
             throw new InvalidArgumentException($airFareRuleCategoryArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

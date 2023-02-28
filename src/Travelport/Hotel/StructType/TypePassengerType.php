@@ -221,12 +221,13 @@ class TypePassengerType extends AbstractStructBase
         return $this->LoyaltyCard;
     }
     /**
-     * This method is responsible for validating the values passed to the setLoyaltyCard method
+     * This method is responsible for validating the value(s) passed to the setLoyaltyCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyCard method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLoyaltyCardForArrayConstraintsFromSetLoyaltyCard(?array $values = []): string
+    public static function validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -255,7 +256,7 @@ class TypePassengerType extends AbstractStructBase
     public function setLoyaltyCard(?array $loyaltyCard = null): self
     {
         // validation for constraint: array
-        if ('' !== ($loyaltyCardArrayErrorMessage = self::validateLoyaltyCardForArrayConstraintsFromSetLoyaltyCard($loyaltyCard))) {
+        if ('' !== ($loyaltyCardArrayErrorMessage = self::validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard($loyaltyCard))) {
             throw new InvalidArgumentException($loyaltyCardArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -295,12 +296,13 @@ class TypePassengerType extends AbstractStructBase
         return $this->DiscountCard;
     }
     /**
-     * This method is responsible for validating the values passed to the setDiscountCard method
+     * This method is responsible for validating the value(s) passed to the setDiscountCard method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDiscountCard method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDiscountCardForArrayConstraintsFromSetDiscountCard(?array $values = []): string
+    public static function validateDiscountCardForArrayConstraintFromSetDiscountCard(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -329,7 +331,7 @@ class TypePassengerType extends AbstractStructBase
     public function setDiscountCard(?array $discountCard = null): self
     {
         // validation for constraint: array
-        if ('' !== ($discountCardArrayErrorMessage = self::validateDiscountCardForArrayConstraintsFromSetDiscountCard($discountCard))) {
+        if ('' !== ($discountCardArrayErrorMessage = self::validateDiscountCardForArrayConstraintFromSetDiscountCard($discountCard))) {
             throw new InvalidArgumentException($discountCardArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(9)

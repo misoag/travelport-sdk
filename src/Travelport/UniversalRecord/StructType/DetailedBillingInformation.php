@@ -65,12 +65,13 @@ class DetailedBillingInformation extends AbstractStructBase
         return $this->AirPricingInfoRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setAirPricingInfoRef method
+     * This method is responsible for validating the value(s) passed to the setAirPricingInfoRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingInfoRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAirPricingInfoRefForArrayConstraintsFromSetAirPricingInfoRef(?array $values = []): string
+    public static function validateAirPricingInfoRefForArrayConstraintFromSetAirPricingInfoRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -99,7 +100,7 @@ class DetailedBillingInformation extends AbstractStructBase
     public function setAirPricingInfoRef(array $airPricingInfoRef): self
     {
         // validation for constraint: array
-        if ('' !== ($airPricingInfoRefArrayErrorMessage = self::validateAirPricingInfoRefForArrayConstraintsFromSetAirPricingInfoRef($airPricingInfoRef))) {
+        if ('' !== ($airPricingInfoRefArrayErrorMessage = self::validateAirPricingInfoRefForArrayConstraintFromSetAirPricingInfoRef($airPricingInfoRef))) {
             throw new InvalidArgumentException($airPricingInfoRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -158,12 +159,13 @@ class DetailedBillingInformation extends AbstractStructBase
         return $this->BillingDetailItem;
     }
     /**
-     * This method is responsible for validating the values passed to the setBillingDetailItem method
+     * This method is responsible for validating the value(s) passed to the setBillingDetailItem method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBillingDetailItem method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBillingDetailItemForArrayConstraintsFromSetBillingDetailItem(?array $values = []): string
+    public static function validateBillingDetailItemForArrayConstraintFromSetBillingDetailItem(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -192,7 +194,7 @@ class DetailedBillingInformation extends AbstractStructBase
     public function setBillingDetailItem(?array $billingDetailItem = null): self
     {
         // validation for constraint: array
-        if ('' !== ($billingDetailItemArrayErrorMessage = self::validateBillingDetailItemForArrayConstraintsFromSetBillingDetailItem($billingDetailItem))) {
+        if ('' !== ($billingDetailItemArrayErrorMessage = self::validateBillingDetailItemForArrayConstraintFromSetBillingDetailItem($billingDetailItem))) {
             throw new InvalidArgumentException($billingDetailItemArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

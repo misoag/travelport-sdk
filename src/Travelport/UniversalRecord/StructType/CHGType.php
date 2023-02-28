@@ -42,12 +42,13 @@ class CHGType extends AbstractStructBase
         return $this->PenFee;
     }
     /**
-     * This method is responsible for validating the values passed to the setPenFee method
+     * This method is responsible for validating the value(s) passed to the setPenFee method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPenFee method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePenFeeForArrayConstraintsFromSetPenFee(?array $values = []): string
+    public static function validatePenFeeForArrayConstraintFromSetPenFee(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -76,7 +77,7 @@ class CHGType extends AbstractStructBase
     public function setPenFee(?array $penFee = null): self
     {
         // validation for constraint: array
-        if ('' !== ($penFeeArrayErrorMessage = self::validatePenFeeForArrayConstraintsFromSetPenFee($penFee))) {
+        if ('' !== ($penFeeArrayErrorMessage = self::validatePenFeeForArrayConstraintFromSetPenFee($penFee))) {
             throw new InvalidArgumentException($penFeeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(2)

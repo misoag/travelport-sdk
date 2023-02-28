@@ -90,12 +90,13 @@ class SearchAirLeg extends AbstractStructBase
         return $this->SearchOrigin;
     }
     /**
-     * This method is responsible for validating the values passed to the setSearchOrigin method
+     * This method is responsible for validating the value(s) passed to the setSearchOrigin method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSearchOrigin method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSearchOriginForArrayConstraintsFromSetSearchOrigin(?array $values = []): string
+    public static function validateSearchOriginForArrayConstraintFromSetSearchOrigin(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -124,7 +125,7 @@ class SearchAirLeg extends AbstractStructBase
     public function setSearchOrigin(?array $searchOrigin = null): self
     {
         // validation for constraint: array
-        if ('' !== ($searchOriginArrayErrorMessage = self::validateSearchOriginForArrayConstraintsFromSetSearchOrigin($searchOrigin))) {
+        if ('' !== ($searchOriginArrayErrorMessage = self::validateSearchOriginForArrayConstraintFromSetSearchOrigin($searchOrigin))) {
             throw new InvalidArgumentException($searchOriginArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -164,12 +165,13 @@ class SearchAirLeg extends AbstractStructBase
         return $this->SearchDestination;
     }
     /**
-     * This method is responsible for validating the values passed to the setSearchDestination method
+     * This method is responsible for validating the value(s) passed to the setSearchDestination method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSearchDestination method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSearchDestinationForArrayConstraintsFromSetSearchDestination(?array $values = []): string
+    public static function validateSearchDestinationForArrayConstraintFromSetSearchDestination(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -198,7 +200,7 @@ class SearchAirLeg extends AbstractStructBase
     public function setSearchDestination(?array $searchDestination = null): self
     {
         // validation for constraint: array
-        if ('' !== ($searchDestinationArrayErrorMessage = self::validateSearchDestinationForArrayConstraintsFromSetSearchDestination($searchDestination))) {
+        if ('' !== ($searchDestinationArrayErrorMessage = self::validateSearchDestinationForArrayConstraintFromSetSearchDestination($searchDestination))) {
             throw new InvalidArgumentException($searchDestinationArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -231,19 +233,20 @@ class SearchAirLeg extends AbstractStructBase
     }
     /**
      * Get SearchDepTime value
-     * @return \Travelport\Util\StructType\TypeFlexibleTimeSpec[]
+     * @return \Travelport\Util\StructType\TypeFlexibleTimeSpec[]|null
      */
     public function getSearchDepTime(): ?array
     {
-        return isset($this->SearchDepTime) ? $this->SearchDepTime : null;
+        return $this->SearchDepTime ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setSearchDepTime method
+     * This method is responsible for validating the value(s) passed to the setSearchDepTime method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSearchDepTime method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSearchDepTimeForArrayConstraintsFromSetSearchDepTime(?array $values = []): string
+    public static function validateSearchDepTimeForArrayConstraintFromSetSearchDepTime(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -264,13 +267,13 @@ class SearchAirLeg extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setSearchDepTime method
+     * This method is responsible for validating the value(s) passed to the setSearchDepTime method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSearchDepTime method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateSearchDepTimeForChoiceConstraintsFromSetSearchDepTime($value): string
+    public function validateSearchDepTimeForChoiceConstraintFromSetSearchDepTime($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -304,11 +307,11 @@ class SearchAirLeg extends AbstractStructBase
     public function setSearchDepTime(?array $searchDepTime = null): self
     {
         // validation for constraint: array
-        if ('' !== ($searchDepTimeArrayErrorMessage = self::validateSearchDepTimeForArrayConstraintsFromSetSearchDepTime($searchDepTime))) {
+        if ('' !== ($searchDepTimeArrayErrorMessage = self::validateSearchDepTimeForArrayConstraintFromSetSearchDepTime($searchDepTime))) {
             throw new InvalidArgumentException($searchDepTimeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(SearchDepTime, SearchArvTime)
-        if ('' !== ($searchDepTimeChoiceErrorMessage = self::validateSearchDepTimeForChoiceConstraintsFromSetSearchDepTime($searchDepTime))) {
+        if ('' !== ($searchDepTimeChoiceErrorMessage = self::validateSearchDepTimeForChoiceConstraintFromSetSearchDepTime($searchDepTime))) {
             throw new InvalidArgumentException($searchDepTimeChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -328,13 +331,13 @@ class SearchAirLeg extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToSearchDepTime method
+     * This method is responsible for validating the value(s) passed to the addToSearchDepTime method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToSearchDepTime method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToSearchDepTime($value): string
+    public function validateItemForChoiceConstraintFromAddToSearchDepTime($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -368,7 +371,7 @@ class SearchAirLeg extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The SearchDepTime property can only contain items of type \Travelport\Util\StructType\TypeFlexibleTimeSpec, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(SearchDepTime, SearchArvTime)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToSearchDepTime($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToSearchDepTime($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -385,19 +388,20 @@ class SearchAirLeg extends AbstractStructBase
     }
     /**
      * Get SearchArvTime value
-     * @return \Travelport\Util\StructType\TypeTimeSpec[]
+     * @return \Travelport\Util\StructType\TypeTimeSpec[]|null
      */
     public function getSearchArvTime(): ?array
     {
-        return isset($this->SearchArvTime) ? $this->SearchArvTime : null;
+        return $this->SearchArvTime ?? null;
     }
     /**
-     * This method is responsible for validating the values passed to the setSearchArvTime method
+     * This method is responsible for validating the value(s) passed to the setSearchArvTime method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSearchArvTime method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSearchArvTimeForArrayConstraintsFromSetSearchArvTime(?array $values = []): string
+    public static function validateSearchArvTimeForArrayConstraintFromSetSearchArvTime(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -418,13 +422,13 @@ class SearchAirLeg extends AbstractStructBase
         return $message;
     }
     /**
-     * This method is responsible for validating the value passed to the setSearchArvTime method
+     * This method is responsible for validating the value(s) passed to the setSearchArvTime method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSearchArvTime method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateSearchArvTimeForChoiceConstraintsFromSetSearchArvTime($value): string
+    public function validateSearchArvTimeForChoiceConstraintFromSetSearchArvTime($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -458,11 +462,11 @@ class SearchAirLeg extends AbstractStructBase
     public function setSearchArvTime(?array $searchArvTime = null): self
     {
         // validation for constraint: array
-        if ('' !== ($searchArvTimeArrayErrorMessage = self::validateSearchArvTimeForArrayConstraintsFromSetSearchArvTime($searchArvTime))) {
+        if ('' !== ($searchArvTimeArrayErrorMessage = self::validateSearchArvTimeForArrayConstraintFromSetSearchArvTime($searchArvTime))) {
             throw new InvalidArgumentException($searchArvTimeArrayErrorMessage, __LINE__);
         }
         // validation for constraint: choice(SearchDepTime, SearchArvTime)
-        if ('' !== ($searchArvTimeChoiceErrorMessage = self::validateSearchArvTimeForChoiceConstraintsFromSetSearchArvTime($searchArvTime))) {
+        if ('' !== ($searchArvTimeChoiceErrorMessage = self::validateSearchArvTimeForChoiceConstraintFromSetSearchArvTime($searchArvTime))) {
             throw new InvalidArgumentException($searchArvTimeChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)
@@ -482,13 +486,13 @@ class SearchAirLeg extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value passed to the addToSearchArvTime method
+     * This method is responsible for validating the value(s) passed to the addToSearchArvTime method
      * This method is willingly generated in order to preserve the one-line inline validation within the addToSearchArvTime method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateItemForChoiceConstraintsFromAddToSearchArvTime($value): string
+    public function validateItemForChoiceConstraintFromAddToSearchArvTime($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -522,7 +526,7 @@ class SearchAirLeg extends AbstractStructBase
             throw new InvalidArgumentException(sprintf('The SearchArvTime property can only contain items of type \Travelport\Util\StructType\TypeTimeSpec, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         // validation for constraint: choice(SearchDepTime, SearchArvTime)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintsFromAddToSearchArvTime($item))) {
+        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToSearchArvTime($item))) {
             throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
         }
         // validation for constraint: choiceMaxOccurs(1)

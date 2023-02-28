@@ -95,12 +95,13 @@ class OptionalServices extends AbstractStructBase
         return $this->OptionalService;
     }
     /**
-     * This method is responsible for validating the values passed to the setOptionalService method
+     * This method is responsible for validating the value(s) passed to the setOptionalService method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOptionalService method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateOptionalServiceForArrayConstraintsFromSetOptionalService(?array $values = []): string
+    public static function validateOptionalServiceForArrayConstraintFromSetOptionalService(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -129,7 +130,7 @@ class OptionalServices extends AbstractStructBase
     public function setOptionalService(?array $optionalService = null): self
     {
         // validation for constraint: array
-        if ('' !== ($optionalServiceArrayErrorMessage = self::validateOptionalServiceForArrayConstraintsFromSetOptionalService($optionalService))) {
+        if ('' !== ($optionalServiceArrayErrorMessage = self::validateOptionalServiceForArrayConstraintFromSetOptionalService($optionalService))) {
             throw new InvalidArgumentException($optionalServiceArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -169,12 +170,13 @@ class OptionalServices extends AbstractStructBase
         return $this->GroupedOptionInfo;
     }
     /**
-     * This method is responsible for validating the values passed to the setGroupedOptionInfo method
+     * This method is responsible for validating the value(s) passed to the setGroupedOptionInfo method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGroupedOptionInfo method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateGroupedOptionInfoForArrayConstraintsFromSetGroupedOptionInfo(?array $values = []): string
+    public static function validateGroupedOptionInfoForArrayConstraintFromSetGroupedOptionInfo(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -203,7 +205,7 @@ class OptionalServices extends AbstractStructBase
     public function setGroupedOptionInfo(?array $groupedOptionInfo = null): self
     {
         // validation for constraint: array
-        if ('' !== ($groupedOptionInfoArrayErrorMessage = self::validateGroupedOptionInfoForArrayConstraintsFromSetGroupedOptionInfo($groupedOptionInfo))) {
+        if ('' !== ($groupedOptionInfoArrayErrorMessage = self::validateGroupedOptionInfoForArrayConstraintFromSetGroupedOptionInfo($groupedOptionInfo))) {
             throw new InvalidArgumentException($groupedOptionInfoArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -243,12 +245,13 @@ class OptionalServices extends AbstractStructBase
         return $this->OptionalServiceRules;
     }
     /**
-     * This method is responsible for validating the values passed to the setOptionalServiceRules method
+     * This method is responsible for validating the value(s) passed to the setOptionalServiceRules method
      * This method is willingly generated in order to preserve the one-line inline validation within the setOptionalServiceRules method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateOptionalServiceRulesForArrayConstraintsFromSetOptionalServiceRules(?array $values = []): string
+    public static function validateOptionalServiceRulesForArrayConstraintFromSetOptionalServiceRules(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -277,7 +280,7 @@ class OptionalServices extends AbstractStructBase
     public function setOptionalServiceRules(?array $optionalServiceRules = null): self
     {
         // validation for constraint: array
-        if ('' !== ($optionalServiceRulesArrayErrorMessage = self::validateOptionalServiceRulesForArrayConstraintsFromSetOptionalServiceRules($optionalServiceRules))) {
+        if ('' !== ($optionalServiceRulesArrayErrorMessage = self::validateOptionalServiceRulesForArrayConstraintFromSetOptionalServiceRules($optionalServiceRules))) {
             throw new InvalidArgumentException($optionalServiceRulesArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

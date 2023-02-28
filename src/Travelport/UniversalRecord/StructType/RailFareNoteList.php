@@ -43,12 +43,13 @@ class RailFareNoteList extends AbstractStructBase
         return $this->RailFareNote;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailFareNote method
+     * This method is responsible for validating the value(s) passed to the setRailFareNote method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailFareNote method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailFareNoteForArrayConstraintsFromSetRailFareNote(?array $values = []): string
+    public static function validateRailFareNoteForArrayConstraintFromSetRailFareNote(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -77,7 +78,7 @@ class RailFareNoteList extends AbstractStructBase
     public function setRailFareNote(?array $railFareNote = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railFareNoteArrayErrorMessage = self::validateRailFareNoteForArrayConstraintsFromSetRailFareNote($railFareNote))) {
+        if ('' !== ($railFareNoteArrayErrorMessage = self::validateRailFareNoteForArrayConstraintFromSetRailFareNote($railFareNote))) {
             throw new InvalidArgumentException($railFareNoteArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

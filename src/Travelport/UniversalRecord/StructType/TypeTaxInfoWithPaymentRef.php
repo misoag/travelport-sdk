@@ -43,12 +43,13 @@ class TypeTaxInfoWithPaymentRef extends TypeTaxInfo
         return $this->PaymentRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setPaymentRef method
+     * This method is responsible for validating the value(s) passed to the setPaymentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePaymentRefForArrayConstraintsFromSetPaymentRef(?array $values = []): string
+    public static function validatePaymentRefForArrayConstraintFromSetPaymentRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -77,7 +78,7 @@ class TypeTaxInfoWithPaymentRef extends TypeTaxInfo
     public function setPaymentRef(?array $paymentRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($paymentRefArrayErrorMessage = self::validatePaymentRefForArrayConstraintsFromSetPaymentRef($paymentRef))) {
+        if ('' !== ($paymentRefArrayErrorMessage = self::validatePaymentRefForArrayConstraintFromSetPaymentRef($paymentRef))) {
             throw new InvalidArgumentException($paymentRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

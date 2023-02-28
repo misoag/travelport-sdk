@@ -209,12 +209,13 @@ class RailCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->RailAutoSeatAssignment;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailAutoSeatAssignment method
+     * This method is responsible for validating the value(s) passed to the setRailAutoSeatAssignment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailAutoSeatAssignment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailAutoSeatAssignmentForArrayConstraintsFromSetRailAutoSeatAssignment(?array $values = []): string
+    public static function validateRailAutoSeatAssignmentForArrayConstraintFromSetRailAutoSeatAssignment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -243,7 +244,7 @@ class RailCreateReservationReq extends BaseCreateWithFormOfPaymentReq
     public function setRailAutoSeatAssignment(?array $railAutoSeatAssignment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railAutoSeatAssignmentArrayErrorMessage = self::validateRailAutoSeatAssignmentForArrayConstraintsFromSetRailAutoSeatAssignment($railAutoSeatAssignment))) {
+        if ('' !== ($railAutoSeatAssignmentArrayErrorMessage = self::validateRailAutoSeatAssignmentForArrayConstraintFromSetRailAutoSeatAssignment($railAutoSeatAssignment))) {
             throw new InvalidArgumentException($railAutoSeatAssignmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -283,12 +284,13 @@ class RailCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->RailSpecificSeatAssignment;
     }
     /**
-     * This method is responsible for validating the values passed to the setRailSpecificSeatAssignment method
+     * This method is responsible for validating the value(s) passed to the setRailSpecificSeatAssignment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setRailSpecificSeatAssignment method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateRailSpecificSeatAssignmentForArrayConstraintsFromSetRailSpecificSeatAssignment(?array $values = []): string
+    public static function validateRailSpecificSeatAssignmentForArrayConstraintFromSetRailSpecificSeatAssignment(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -317,7 +319,7 @@ class RailCreateReservationReq extends BaseCreateWithFormOfPaymentReq
     public function setRailSpecificSeatAssignment(?array $railSpecificSeatAssignment = null): self
     {
         // validation for constraint: array
-        if ('' !== ($railSpecificSeatAssignmentArrayErrorMessage = self::validateRailSpecificSeatAssignmentForArrayConstraintsFromSetRailSpecificSeatAssignment($railSpecificSeatAssignment))) {
+        if ('' !== ($railSpecificSeatAssignmentArrayErrorMessage = self::validateRailSpecificSeatAssignmentForArrayConstraintFromSetRailSpecificSeatAssignment($railSpecificSeatAssignment))) {
             throw new InvalidArgumentException($railSpecificSeatAssignmentArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

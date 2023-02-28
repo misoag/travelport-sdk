@@ -186,12 +186,13 @@ class ServiceData extends AbstractStructBase
         return $this->SSRRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setSSRRef method
+     * This method is responsible for validating the value(s) passed to the setSSRRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setSSRRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateSSRRefForArrayConstraintsFromSetSSRRef(?array $values = []): string
+    public static function validateSSRRefForArrayConstraintFromSetSSRRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -220,7 +221,7 @@ class ServiceData extends AbstractStructBase
     public function setSSRRef(?array $sSRRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($sSRRefArrayErrorMessage = self::validateSSRRefForArrayConstraintsFromSetSSRRef($sSRRef))) {
+        if ('' !== ($sSRRefArrayErrorMessage = self::validateSSRRefForArrayConstraintFromSetSSRRef($sSRRef))) {
             throw new InvalidArgumentException($sSRRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

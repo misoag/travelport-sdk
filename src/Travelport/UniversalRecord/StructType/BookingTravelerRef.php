@@ -90,12 +90,13 @@ class BookingTravelerRef extends AbstractStructBase
         return $this->LoyaltyCardRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setLoyaltyCardRef method
+     * This method is responsible for validating the value(s) passed to the setLoyaltyCardRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyCardRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLoyaltyCardRefForArrayConstraintsFromSetLoyaltyCardRef(?array $values = []): string
+    public static function validateLoyaltyCardRefForArrayConstraintFromSetLoyaltyCardRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -124,7 +125,7 @@ class BookingTravelerRef extends AbstractStructBase
     public function setLoyaltyCardRef(?array $loyaltyCardRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($loyaltyCardRefArrayErrorMessage = self::validateLoyaltyCardRefForArrayConstraintsFromSetLoyaltyCardRef($loyaltyCardRef))) {
+        if ('' !== ($loyaltyCardRefArrayErrorMessage = self::validateLoyaltyCardRefForArrayConstraintFromSetLoyaltyCardRef($loyaltyCardRef))) {
             throw new InvalidArgumentException($loyaltyCardRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -183,12 +184,13 @@ class BookingTravelerRef extends AbstractStructBase
         return $this->DiscountCardRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setDiscountCardRef method
+     * This method is responsible for validating the value(s) passed to the setDiscountCardRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setDiscountCardRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateDiscountCardRefForArrayConstraintsFromSetDiscountCardRef(?array $values = []): string
+    public static function validateDiscountCardRefForArrayConstraintFromSetDiscountCardRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -217,7 +219,7 @@ class BookingTravelerRef extends AbstractStructBase
     public function setDiscountCardRef(?array $discountCardRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($discountCardRefArrayErrorMessage = self::validateDiscountCardRefForArrayConstraintsFromSetDiscountCardRef($discountCardRef))) {
+        if ('' !== ($discountCardRefArrayErrorMessage = self::validateDiscountCardRefForArrayConstraintFromSetDiscountCardRef($discountCardRef))) {
             throw new InvalidArgumentException($discountCardRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(9)
@@ -257,12 +259,13 @@ class BookingTravelerRef extends AbstractStructBase
         return $this->PaymentRef;
     }
     /**
-     * This method is responsible for validating the values passed to the setPaymentRef method
+     * This method is responsible for validating the value(s) passed to the setPaymentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentRef method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validatePaymentRefForArrayConstraintsFromSetPaymentRef(?array $values = []): string
+    public static function validatePaymentRefForArrayConstraintFromSetPaymentRef(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -291,7 +294,7 @@ class BookingTravelerRef extends AbstractStructBase
     public function setPaymentRef(?array $paymentRef = null): self
     {
         // validation for constraint: array
-        if ('' !== ($paymentRefArrayErrorMessage = self::validatePaymentRefForArrayConstraintsFromSetPaymentRef($paymentRef))) {
+        if ('' !== ($paymentRefArrayErrorMessage = self::validatePaymentRefForArrayConstraintFromSetPaymentRef($paymentRef))) {
             throw new InvalidArgumentException($paymentRefArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(3)

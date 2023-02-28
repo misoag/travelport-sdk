@@ -58,9 +58,9 @@ class TypePaymentCard extends AbstractStructBase
      * Meta information extracted from the WSDL
      * - documentation: The Expiration date of this card in YYYY-MM format.
      * - use: optional
-     * @var int|null
+     * @var string|null
      */
-    public ?string $ExpDate = null;
+    protected ?string $ExpDate = null;
     /**
      * The Name
      * Meta information extracted from the WSDL

@@ -76,12 +76,13 @@ class SearchAgent extends AbstractStructBase
         return $this->BranchId;
     }
     /**
-     * This method is responsible for validating the values passed to the setBranchId method
+     * This method is responsible for validating the value(s) passed to the setBranchId method
      * This method is willingly generated in order to preserve the one-line inline validation within the setBranchId method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateBranchIdForArrayConstraintsFromSetBranchId(?array $values = []): string
+    public static function validateBranchIdForArrayConstraintFromSetBranchId(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -110,7 +111,7 @@ class SearchAgent extends AbstractStructBase
     public function setBranchId(?array $branchId = null): self
     {
         // validation for constraint: array
-        if ('' !== ($branchIdArrayErrorMessage = self::validateBranchIdForArrayConstraintsFromSetBranchId($branchId))) {
+        if ('' !== ($branchIdArrayErrorMessage = self::validateBranchIdForArrayConstraintFromSetBranchId($branchId))) {
             throw new InvalidArgumentException($branchIdArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

@@ -77,12 +77,13 @@ class Route extends AbstractStructBase
         return $this->Leg;
     }
     /**
-     * This method is responsible for validating the values passed to the setLeg method
+     * This method is responsible for validating the value(s) passed to the setLeg method
      * This method is willingly generated in order to preserve the one-line inline validation within the setLeg method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateLegForArrayConstraintsFromSetLeg(?array $values = []): string
+    public static function validateLegForArrayConstraintFromSetLeg(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -111,7 +112,7 @@ class Route extends AbstractStructBase
     public function setLeg(?array $leg = null): self
     {
         // validation for constraint: array
-        if ('' !== ($legArrayErrorMessage = self::validateLegForArrayConstraintsFromSetLeg($leg))) {
+        if ('' !== ($legArrayErrorMessage = self::validateLegForArrayConstraintFromSetLeg($leg))) {
             throw new InvalidArgumentException($legArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)

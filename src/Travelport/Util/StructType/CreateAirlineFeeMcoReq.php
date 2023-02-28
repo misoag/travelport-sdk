@@ -246,16 +246,16 @@ class CreateAirlineFeeMcoReq extends BaseReq
      */
     public function getFormOfPayment(): ?\Travelport\Util\StructType\FormOfPayment
     {
-        return isset($this->FormOfPayment) ? $this->FormOfPayment : null;
+        return $this->FormOfPayment ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setFormOfPayment method
+     * This method is responsible for validating the value(s) passed to the setFormOfPayment method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPayment method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateFormOfPaymentForChoiceConstraintsFromSetFormOfPayment($value): string
+    public function validateFormOfPaymentForChoiceConstraintFromSetFormOfPayment($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -288,7 +288,7 @@ class CreateAirlineFeeMcoReq extends BaseReq
     public function setFormOfPayment(?\Travelport\Util\StructType\FormOfPayment $formOfPayment = null): self
     {
         // validation for constraint: choice(FormOfPayment, FormOfPaymentRef)
-        if ('' !== ($formOfPaymentChoiceErrorMessage = self::validateFormOfPaymentForChoiceConstraintsFromSetFormOfPayment($formOfPayment))) {
+        if ('' !== ($formOfPaymentChoiceErrorMessage = self::validateFormOfPaymentForChoiceConstraintFromSetFormOfPayment($formOfPayment))) {
             throw new InvalidArgumentException($formOfPaymentChoiceErrorMessage, __LINE__);
         }
         if (is_null($formOfPayment) || (is_array($formOfPayment) && empty($formOfPayment))) {
@@ -305,16 +305,16 @@ class CreateAirlineFeeMcoReq extends BaseReq
      */
     public function getFormOfPaymentRef(): ?\Travelport\Util\StructType\FormOfPaymentRef
     {
-        return isset($this->FormOfPaymentRef) ? $this->FormOfPaymentRef : null;
+        return $this->FormOfPaymentRef ?? null;
     }
     /**
-     * This method is responsible for validating the value passed to the setFormOfPaymentRef method
+     * This method is responsible for validating the value(s) passed to the setFormOfPaymentRef method
      * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPaymentRef method
      * This has to validate that the property which is being set is the only one among the given choices
      * @param mixed $value
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public function validateFormOfPaymentRefForChoiceConstraintsFromSetFormOfPaymentRef($value): string
+    public function validateFormOfPaymentRefForChoiceConstraintFromSetFormOfPaymentRef($value): string
     {
         $message = '';
         if (is_null($value)) {
@@ -347,7 +347,7 @@ class CreateAirlineFeeMcoReq extends BaseReq
     public function setFormOfPaymentRef(?\Travelport\Util\StructType\FormOfPaymentRef $formOfPaymentRef = null): self
     {
         // validation for constraint: choice(FormOfPayment, FormOfPaymentRef)
-        if ('' !== ($formOfPaymentRefChoiceErrorMessage = self::validateFormOfPaymentRefForChoiceConstraintsFromSetFormOfPaymentRef($formOfPaymentRef))) {
+        if ('' !== ($formOfPaymentRefChoiceErrorMessage = self::validateFormOfPaymentRefForChoiceConstraintFromSetFormOfPaymentRef($formOfPaymentRef))) {
             throw new InvalidArgumentException($formOfPaymentRefChoiceErrorMessage, __LINE__);
         }
         if (is_null($formOfPaymentRef) || (is_array($formOfPaymentRef) && empty($formOfPaymentRef))) {
@@ -367,12 +367,13 @@ class CreateAirlineFeeMcoReq extends BaseReq
         return $this->GeneralRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setGeneralRemark method
+     * This method is responsible for validating the value(s) passed to the setGeneralRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setGeneralRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark(?array $values = []): string
+    public static function validateGeneralRemarkForArrayConstraintFromSetGeneralRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -401,7 +402,7 @@ class CreateAirlineFeeMcoReq extends BaseReq
     public function setGeneralRemark(?array $generalRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintsFromSetGeneralRemark($generalRemark))) {
+        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintFromSetGeneralRemark($generalRemark))) {
             throw new InvalidArgumentException($generalRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -441,12 +442,13 @@ class CreateAirlineFeeMcoReq extends BaseReq
         return $this->AccountingRemark;
     }
     /**
-     * This method is responsible for validating the values passed to the setAccountingRemark method
+     * This method is responsible for validating the value(s) passed to the setAccountingRemark method
      * This method is willingly generated in order to preserve the one-line inline validation within the setAccountingRemark method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateAccountingRemarkForArrayConstraintsFromSetAccountingRemark(?array $values = []): string
+    public static function validateAccountingRemarkForArrayConstraintFromSetAccountingRemark(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -475,7 +477,7 @@ class CreateAirlineFeeMcoReq extends BaseReq
     public function setAccountingRemark(?array $accountingRemark = null): self
     {
         // validation for constraint: array
-        if ('' !== ($accountingRemarkArrayErrorMessage = self::validateAccountingRemarkForArrayConstraintsFromSetAccountingRemark($accountingRemark))) {
+        if ('' !== ($accountingRemarkArrayErrorMessage = self::validateAccountingRemarkForArrayConstraintFromSetAccountingRemark($accountingRemark))) {
             throw new InvalidArgumentException($accountingRemarkArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
@@ -515,12 +517,13 @@ class CreateAirlineFeeMcoReq extends BaseReq
         return $this->Endorsement;
     }
     /**
-     * This method is responsible for validating the values passed to the setEndorsement method
+     * This method is responsible for validating the value(s) passed to the setEndorsement method
      * This method is willingly generated in order to preserve the one-line inline validation within the setEndorsement method
+     * This has to validate that each item contained by the array match the itemType constraint
      * @param array $values
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateEndorsementForArrayConstraintsFromSetEndorsement(?array $values = []): string
+    public static function validateEndorsementForArrayConstraintFromSetEndorsement(?array $values = []): string
     {
         if (!is_array($values)) {
             return '';
@@ -549,7 +552,7 @@ class CreateAirlineFeeMcoReq extends BaseReq
     public function setEndorsement(?array $endorsement = null): self
     {
         // validation for constraint: array
-        if ('' !== ($endorsementArrayErrorMessage = self::validateEndorsementForArrayConstraintsFromSetEndorsement($endorsement))) {
+        if ('' !== ($endorsementArrayErrorMessage = self::validateEndorsementForArrayConstraintFromSetEndorsement($endorsement))) {
             throw new InvalidArgumentException($endorsementArrayErrorMessage, __LINE__);
         }
         // validation for constraint: maxOccurs(999)
