@@ -16,34 +16,56 @@ class BookingTraveler extends AbstractStructBase
 {
     /**
      * The BookingTravelerName
+     * Meta information extracted from the WSDL
+     * - ref: BookingTravelerName
      * @var \Travelport\UniversalRecord\StructType\BookingTravelerName|null
      */
     public ?\Travelport\UniversalRecord\StructType\BookingTravelerName $BookingTravelerName = null;
     /**
      * The DeliveryInfo
-     * @var \Travelport\UniversalRecord\StructType\DeliveryInfo|null
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 999
+     * - minOccurs: 0
+     * - ref: DeliveryInfo
+     * @var \Travelport\UniversalRecord\StructType\DeliveryInfo[]
      */
-    public ?\Travelport\UniversalRecord\StructType\DeliveryInfo $DeliveryInfo = null;
+    public ?array $DeliveryInfo = null;
     /**
      * The PhoneNumber
-     * @var \Travelport\UniversalRecord\StructType\PhoneNumber|null
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 999
+     * - minOccurs: 0
+     * - ref: PhoneNumber
+     * @var \Travelport\UniversalRecord\StructType\PhoneNumber[]
      */
-    public ?\Travelport\UniversalRecord\StructType\PhoneNumber $PhoneNumber = null;
+    public ?array $PhoneNumber = null;
     /**
      * The Email
-     * @var \Travelport\UniversalRecord\StructType\Email|null
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 999
+     * - minOccurs: 0
+     * - ref: Email
+     * @var \Travelport\UniversalRecord\StructType\Email[]
      */
-    public ?\Travelport\UniversalRecord\StructType\Email $Email = null;
+    public ?array $Email = null;
     /**
      * The LoyaltyCard
-     * @var \Travelport\UniversalRecord\StructType\LoyaltyCard|null
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 999
+     * - minOccurs: 0
+     * - ref: LoyaltyCard
+     * @var \Travelport\UniversalRecord\StructType\LoyaltyCard[]
      */
-    public ?\Travelport\UniversalRecord\StructType\LoyaltyCard $LoyaltyCard = null;
+    public ?array $LoyaltyCard = null;
     /**
      * The DiscountCard
-     * @var \Travelport\UniversalRecord\StructType\DiscountCard|null
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 9
+     * - minOccurs: 0
+     * - ref: DiscountCard
+     * @var \Travelport\UniversalRecord\StructType\DiscountCard[]
      */
-    public ?\Travelport\UniversalRecord\StructType\DiscountCard $DiscountCard = null;
+    public ?array $DiscountCard = null;
     /**
      * The SSR
      * Meta information extracted from the WSDL
@@ -243,11 +265,11 @@ class BookingTraveler extends AbstractStructBase
      * @uses BookingTraveler::setElStat()
      * @uses BookingTraveler::setKeyOverride()
      * @param \Travelport\UniversalRecord\StructType\BookingTravelerName $bookingTravelerName
-     * @param \Travelport\UniversalRecord\StructType\DeliveryInfo $deliveryInfo
-     * @param \Travelport\UniversalRecord\StructType\PhoneNumber $phoneNumber
-     * @param \Travelport\UniversalRecord\StructType\Email $email
-     * @param \Travelport\UniversalRecord\StructType\LoyaltyCard $loyaltyCard
-     * @param \Travelport\UniversalRecord\StructType\DiscountCard $discountCard
+     * @param \Travelport\UniversalRecord\StructType\DeliveryInfo[] $deliveryInfo
+     * @param \Travelport\UniversalRecord\StructType\PhoneNumber[] $phoneNumber
+     * @param \Travelport\UniversalRecord\StructType\Email[] $email
+     * @param \Travelport\UniversalRecord\StructType\LoyaltyCard[] $loyaltyCard
+     * @param \Travelport\UniversalRecord\StructType\DiscountCard[] $discountCard
      * @param \Travelport\UniversalRecord\StructType\SSR[] $sSR
      * @param \Travelport\UniversalRecord\StructType\NameRemark[] $nameRemark
      * @param \Travelport\UniversalRecord\StructType\AirSeatAssignment[] $airSeatAssignment
@@ -270,7 +292,7 @@ class BookingTraveler extends AbstractStructBase
      * @param string $elStat
      * @param bool $keyOverride
      */
-    public function __construct(?\Travelport\UniversalRecord\StructType\BookingTravelerName $bookingTravelerName = null, ?\Travelport\UniversalRecord\StructType\DeliveryInfo $deliveryInfo = null, ?\Travelport\UniversalRecord\StructType\PhoneNumber $phoneNumber = null, ?\Travelport\UniversalRecord\StructType\Email $email = null, ?\Travelport\UniversalRecord\StructType\LoyaltyCard $loyaltyCard = null, ?\Travelport\UniversalRecord\StructType\DiscountCard $discountCard = null, ?array $sSR = null, ?array $nameRemark = null, ?array $airSeatAssignment = null, ?array $railSeatAssignment = null, ?string $emergencyInfo = null, ?\Travelport\UniversalRecord\StructType\TypeStructuredAddress $address = null, ?\Travelport\UniversalRecord\StructType\DriversLicense $driversLicense = null, ?\Travelport\UniversalRecord\StructType\AppliedProfile $appliedProfile = null, ?\Travelport\UniversalRecord\StructType\CustomizedNameData $customizedNameData = null, ?\Travelport\UniversalRecord\StructType\TravelComplianceData $travelComplianceData = null, ?\Travelport\UniversalRecord\StructType\TravelInfo $travelInfo = null, ?string $nameNumber = null, ?string $key = null, ?string $travelerType = null, ?int $age = null, ?bool $vIP = false, ?string $dOB = null, ?string $gender = null, ?string $nationality = null, ?string $elStat = null, ?bool $keyOverride = null)
+    public function __construct(?\Travelport\UniversalRecord\StructType\BookingTravelerName $bookingTravelerName = null, ?array $deliveryInfo = null, ?array $phoneNumber = null, ?array $email = null, ?array $loyaltyCard = null, ?array $discountCard = null, ?array $sSR = null, ?array $nameRemark = null, ?array $airSeatAssignment = null, ?array $railSeatAssignment = null, ?string $emergencyInfo = null, ?\Travelport\UniversalRecord\StructType\TypeStructuredAddress $address = null, ?\Travelport\UniversalRecord\StructType\DriversLicense $driversLicense = null, ?\Travelport\UniversalRecord\StructType\AppliedProfile $appliedProfile = null, ?\Travelport\UniversalRecord\StructType\CustomizedNameData $customizedNameData = null, ?\Travelport\UniversalRecord\StructType\TravelComplianceData $travelComplianceData = null, ?\Travelport\UniversalRecord\StructType\TravelInfo $travelInfo = null, ?string $nameNumber = null, ?string $key = null, ?string $travelerType = null, ?int $age = null, ?bool $vIP = false, ?string $dOB = null, ?string $gender = null, ?string $nationality = null, ?string $elStat = null, ?bool $keyOverride = null)
     {
         $this
             ->setBookingTravelerName($bookingTravelerName)
@@ -322,96 +344,156 @@ class BookingTraveler extends AbstractStructBase
     }
     /**
      * Get DeliveryInfo value
-     * @return \Travelport\UniversalRecord\StructType\DeliveryInfo|null
+     * @return \Travelport\UniversalRecord\StructType\DeliveryInfo[]
      */
-    public function getDeliveryInfo(): ?\Travelport\UniversalRecord\StructType\DeliveryInfo
+    public function getDeliveryInfo(): ?array
     {
         return $this->DeliveryInfo;
     }
     /**
      * Set DeliveryInfo value
-     * @param \Travelport\UniversalRecord\StructType\DeliveryInfo $deliveryInfo
+     * @param \Travelport\UniversalRecord\StructType\DeliveryInfo[] $deliveryInfo
      * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
-    public function setDeliveryInfo(?\Travelport\UniversalRecord\StructType\DeliveryInfo $deliveryInfo = null): self
+    public function setDeliveryInfo(?array $deliveryInfo = null): self
     {
         $this->DeliveryInfo = $deliveryInfo;
         
         return $this;
     }
     /**
-     * Get PhoneNumber value
-     * @return \Travelport\UniversalRecord\StructType\PhoneNumber|null
+     * Add item to DeliveryInfo value
+     * @throws InvalidArgumentException
+     * @param \Travelport\UniversalRecord\StructType\DeliveryInfo $item
+     * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
-    public function getPhoneNumber(): ?\Travelport\UniversalRecord\StructType\PhoneNumber
+    public function addToDeliveryInfo(\Travelport\UniversalRecord\StructType\DeliveryInfo $item): self
+    {
+        $this->DeliveryInfo[] = $item;
+        
+        return $this;
+    }
+    /**
+     * Get PhoneNumber value
+     * @return \Travelport\UniversalRecord\StructType\PhoneNumber[]
+     */
+    public function getPhoneNumber(): ?array
     {
         return $this->PhoneNumber;
     }
     /**
      * Set PhoneNumber value
-     * @param \Travelport\UniversalRecord\StructType\PhoneNumber $phoneNumber
+     * @param \Travelport\UniversalRecord\StructType\PhoneNumber[] $phoneNumber
      * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
-    public function setPhoneNumber(?\Travelport\UniversalRecord\StructType\PhoneNumber $phoneNumber = null): self
+    public function setPhoneNumber(?array $phoneNumber = null): self
     {
         $this->PhoneNumber = $phoneNumber;
         
         return $this;
     }
     /**
-     * Get Email value
-     * @return \Travelport\UniversalRecord\StructType\Email|null
+     * Add item to PhoneNumber value
+     * @throws InvalidArgumentException
+     * @param \Travelport\UniversalRecord\StructType\PhoneNumber $item
+     * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
-    public function getEmail(): ?\Travelport\UniversalRecord\StructType\Email
+    public function addToPhoneNumber(\Travelport\UniversalRecord\StructType\PhoneNumber $item): self
+    {
+        $this->PhoneNumber[] = $item;
+        
+        return $this;
+    }
+    /**
+     * Get Email value
+     * @return \Travelport\UniversalRecord\StructType\Email[]
+     */
+    public function getEmail(): ?array
     {
         return $this->Email;
     }
     /**
      * Set Email value
-     * @param \Travelport\UniversalRecord\StructType\Email $email
+     * @param \Travelport\UniversalRecord\StructType\Email[] $email
      * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
-    public function setEmail(?\Travelport\UniversalRecord\StructType\Email $email = null): self
+    public function setEmail(?array $email = null): self
     {
         $this->Email = $email;
         
         return $this;
     }
     /**
-     * Get LoyaltyCard value
-     * @return \Travelport\UniversalRecord\StructType\LoyaltyCard|null
+     * Add item to Email value
+     * @throws InvalidArgumentException
+     * @param \Travelport\UniversalRecord\StructType\Email $item
+     * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
-    public function getLoyaltyCard(): ?\Travelport\UniversalRecord\StructType\LoyaltyCard
+    public function addToEmail(\Travelport\UniversalRecord\StructType\Email $item): self
+    {
+        $this->Email[] = $item;
+        
+        return $this;
+    }
+    /**
+     * Get LoyaltyCard value
+     * @return \Travelport\UniversalRecord\StructType\LoyaltyCard[]
+     */
+    public function getLoyaltyCard(): ?array
     {
         return $this->LoyaltyCard;
     }
     /**
      * Set LoyaltyCard value
-     * @param \Travelport\UniversalRecord\StructType\LoyaltyCard $loyaltyCard
+     * @param \Travelport\UniversalRecord\StructType\LoyaltyCard[] $loyaltyCard
      * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
-    public function setLoyaltyCard(?\Travelport\UniversalRecord\StructType\LoyaltyCard $loyaltyCard = null): self
+    public function setLoyaltyCard(?array $loyaltyCard = null): self
     {
         $this->LoyaltyCard = $loyaltyCard;
         
         return $this;
     }
     /**
-     * Get DiscountCard value
-     * @return \Travelport\UniversalRecord\StructType\DiscountCard|null
+     * Add item to LoyaltyCard value
+     * @throws InvalidArgumentException
+     * @param \Travelport\UniversalRecord\StructType\LoyaltyCard $item
+     * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
-    public function getDiscountCard(): ?\Travelport\UniversalRecord\StructType\DiscountCard
+    public function addToLoyaltyCard(\Travelport\UniversalRecord\StructType\LoyaltyCard $item): self
+    {
+        $this->LoyaltyCard[] = $item;
+        
+        return $this;
+    }
+    /**
+     * Get DiscountCard value
+     * @return \Travelport\UniversalRecord\StructType\DiscountCard[]
+     */
+    public function getDiscountCard(): ?array
     {
         return $this->DiscountCard;
     }
     /**
      * Set DiscountCard value
-     * @param \Travelport\UniversalRecord\StructType\DiscountCard $discountCard
+     * @param \Travelport\UniversalRecord\StructType\DiscountCard[] $discountCard
      * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
-    public function setDiscountCard(?\Travelport\UniversalRecord\StructType\DiscountCard $discountCard = null): self
+    public function setDiscountCard(?array $discountCard = null): self
     {
         $this->DiscountCard = $discountCard;
+        
+        return $this;
+    }
+    /**
+     * Add item to DiscountCard value
+     * @throws InvalidArgumentException
+     * @param \Travelport\UniversalRecord\StructType\DiscountCard $item
+     * @return \Travelport\UniversalRecord\StructType\BookingTraveler
+     */
+    public function addToDiscountCard(\Travelport\UniversalRecord\StructType\DiscountCard $item): self
+    {
+        $this->DiscountCard[] = $item;
         
         return $this;
     }
