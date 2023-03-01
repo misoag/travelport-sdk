@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class RoomCapacity extends AbstractStructBase
      * - minOccurs: 0
      * @var int[]
      */
-    protected ?array $Capacity = null;
+    public ?array $Capacity = null;
     /**
      * The IsPackage
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class RoomCapacity extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $IsPackage = null;
+    public ?bool $IsPackage = null;
     /**
      * Constructor method for RoomCapacity
      * @uses RoomCapacity::setCapacity()
@@ -54,48 +53,12 @@ class RoomCapacity extends AbstractStructBase
         return $this->Capacity;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setCapacity method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setCapacity method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateCapacityForArrayConstraintFromSetCapacity(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $roomCapacityCapacityItem) {
-            // validation for constraint: itemType
-            if (!(is_int($roomCapacityCapacityItem) || ctype_digit($roomCapacityCapacityItem))) {
-                $invalidValues[] = is_object($roomCapacityCapacityItem) ? get_class($roomCapacityCapacityItem) : sprintf('%s(%s)', gettype($roomCapacityCapacityItem), var_export($roomCapacityCapacityItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Capacity property can only contain items of type int, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Capacity value
-     * @throws InvalidArgumentException
      * @param int[] $capacity
      * @return \Travelport\Hotel\StructType\RoomCapacity
      */
     public function setCapacity(?array $capacity = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($capacityArrayErrorMessage = self::validateCapacityForArrayConstraintFromSetCapacity($capacity))) {
-            throw new InvalidArgumentException($capacityArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($capacity) && count($capacity) > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 99', count($capacity)), __LINE__);
-        }
         $this->Capacity = $capacity;
         
         return $this;
@@ -108,14 +71,6 @@ class RoomCapacity extends AbstractStructBase
      */
     public function addToCapacity(int $item): self
     {
-        // validation for constraint: itemType
-        if (!(is_int($item) || ctype_digit($item))) {
-            throw new InvalidArgumentException(sprintf('The Capacity property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($this->Capacity) && count($this->Capacity) >= 99) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 99', count($this->Capacity)), __LINE__);
-        }
         $this->Capacity[] = $item;
         
         return $this;
@@ -135,10 +90,6 @@ class RoomCapacity extends AbstractStructBase
      */
     public function setIsPackage(?bool $isPackage = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($isPackage) && !is_bool($isPackage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($isPackage, true), gettype($isPackage)), __LINE__);
-        }
         $this->IsPackage = $isPackage;
         
         return $this;

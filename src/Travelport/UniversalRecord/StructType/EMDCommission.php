@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class EMDCommission extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The Value
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class EMDCommission extends AbstractStructBase
      * - use: required
      * @var float
      */
-    protected float $Value;
+    public float $Value;
     /**
      * The CurrencyCode
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class EMDCommission extends AbstractStructBase
      * - length: 3
      * @var string|null
      */
-    protected ?string $CurrencyCode = null;
+    public ?string $CurrencyCode = null;
     /**
      * Constructor method for EMDCommission
      * @uses EMDCommission::setType()
@@ -66,18 +65,11 @@ class EMDCommission extends AbstractStructBase
     }
     /**
      * Set Type value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeAdjustmentType::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeAdjustmentType::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $type
      * @return \Travelport\UniversalRecord\StructType\EMDCommission
      */
     public function setType(string $type): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeAdjustmentType::valueIsValid($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeAdjustmentType', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeAdjustmentType::getValidValues())), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -97,10 +89,6 @@ class EMDCommission extends AbstractStructBase
      */
     public function setValue(float $value): self
     {
-        // validation for constraint: float
-        if (!is_null($value) && !(is_float($value) || is_numeric($value))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($value, true), gettype($value)), __LINE__);
-        }
         $this->Value = $value;
         
         return $this;
@@ -120,14 +108,6 @@ class EMDCommission extends AbstractStructBase
      */
     public function setCurrencyCode(?string $currencyCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($currencyCode) && !is_string($currencyCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currencyCode, true), gettype($currencyCode)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($currencyCode) && mb_strlen((string) $currencyCode) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $currencyCode)), __LINE__);
-        }
         $this->CurrencyCode = $currencyCode;
         
         return $this;

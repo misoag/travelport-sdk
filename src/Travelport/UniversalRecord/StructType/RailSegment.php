@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class RailSegment extends Segment
      * - use: required
      * @var string
      */
-    protected string $DepartureTime;
+    public string $DepartureTime;
     /**
      * The RailSegmentInfo
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class RailSegment extends Segment
      * - ref: RailSegmentInfo
      * @var \Travelport\UniversalRecord\StructType\RailSegmentInfo[]
      */
-    protected ?array $RailSegmentInfo = null;
+    public ?array $RailSegmentInfo = null;
     /**
      * The OperatingCompany
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class RailSegment extends Segment
      * - ref: OperatingCompany
      * @var \Travelport\UniversalRecord\StructType\OperatingCompany|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\OperatingCompany $OperatingCompany = null;
+    public ?\Travelport\UniversalRecord\StructType\OperatingCompany $OperatingCompany = null;
     /**
      * The RailAvailInfo
      * Meta information extracted from the WSDL
@@ -51,7 +50,7 @@ class RailSegment extends Segment
      * - ref: RailAvailInfo
      * @var \Travelport\UniversalRecord\StructType\RailAvailInfo[]
      */
-    protected ?array $RailAvailInfo = null;
+    public ?array $RailAvailInfo = null;
     /**
      * The FulFillmentType
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class RailSegment extends Segment
      * - ref: FulFillmentType
      * @var string[]
      */
-    protected ?array $FulFillmentType = null;
+    public ?array $FulFillmentType = null;
     /**
      * The TrainNumber
      * Meta information extracted from the WSDL
@@ -75,7 +74,7 @@ class RailSegment extends Segment
      * - use: optional
      * @var string|null
      */
-    protected ?string $TrainNumber = null;
+    public ?string $TrainNumber = null;
     /**
      * The TrainType
      * Meta information extracted from the WSDL
@@ -83,7 +82,7 @@ class RailSegment extends Segment
      * - use: optional
      * @var string|null
      */
-    protected ?string $TrainType = null;
+    public ?string $TrainType = null;
     /**
      * The TrainTypeCode
      * Meta information extracted from the WSDL
@@ -94,7 +93,7 @@ class RailSegment extends Segment
      * - use: optional
      * @var string|null
      */
-    protected ?string $TrainTypeCode = null;
+    public ?string $TrainTypeCode = null;
     /**
      * The TransportMode
      * Meta information extracted from the WSDL
@@ -102,7 +101,7 @@ class RailSegment extends Segment
      * - use: optional
      * @var string|null
      */
-    protected ?string $TransportMode = null;
+    public ?string $TransportMode = null;
     /**
      * The SeatAssignable
      * Meta information extracted from the WSDL
@@ -110,7 +109,7 @@ class RailSegment extends Segment
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $SeatAssignable = null;
+    public ?bool $SeatAssignable = null;
     /**
      * The TransportCode
      * Meta information extracted from the WSDL
@@ -118,7 +117,7 @@ class RailSegment extends Segment
      * - use: optional
      * @var string|null
      */
-    protected ?string $TransportCode = null;
+    public ?string $TransportCode = null;
     /**
      * The ReservationRequired
      * Meta information extracted from the WSDL
@@ -126,7 +125,7 @@ class RailSegment extends Segment
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ReservationRequired = null;
+    public ?bool $ReservationRequired = null;
     /**
      * The TravelTime
      * Meta information extracted from the WSDL
@@ -134,7 +133,7 @@ class RailSegment extends Segment
      * - use: optional
      * @var int|null
      */
-    protected ?int $TravelTime = null;
+    public ?int $TravelTime = null;
     /**
      * The HostTokenRef
      * Meta information extracted from the WSDL
@@ -143,7 +142,7 @@ class RailSegment extends Segment
      * - use: optional
      * @var string|null
      */
-    protected ?string $HostTokenRef = null;
+    public ?string $HostTokenRef = null;
     /**
      * The CabinClass
      * Meta information extracted from the WSDL
@@ -154,7 +153,7 @@ class RailSegment extends Segment
      * - use: optional
      * @var string|null
      */
-    protected ?string $CabinClass = null;
+    public ?string $CabinClass = null;
     /**
      * The ClassCode
      * Meta information extracted from the WSDL
@@ -165,7 +164,7 @@ class RailSegment extends Segment
      * - use: optional
      * @var string|null
      */
-    protected ?string $ClassCode = null;
+    public ?string $ClassCode = null;
     /**
      * The Origin
      * Meta information extracted from the WSDL
@@ -177,7 +176,7 @@ class RailSegment extends Segment
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Origin = null;
+    public ?string $Origin = null;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -189,7 +188,7 @@ class RailSegment extends Segment
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Destination = null;
+    public ?string $Destination = null;
     /**
      * The ArrivalTime
      * Meta information extracted from the WSDL
@@ -198,7 +197,7 @@ class RailSegment extends Segment
      * - use: optional
      * @var string|null
      */
-    protected ?string $ArrivalTime = null;
+    public ?string $ArrivalTime = null;
     /**
      * The OriginStationName
      * Meta information extracted from the WSDL
@@ -207,7 +206,7 @@ class RailSegment extends Segment
      * - use: optional
      * @var string|null
      */
-    protected ?string $OriginStationName = null;
+    public ?string $OriginStationName = null;
     /**
      * The DestinationStationName
      * Meta information extracted from the WSDL
@@ -216,7 +215,7 @@ class RailSegment extends Segment
      * - use: optional
      * @var string|null
      */
-    protected ?string $DestinationStationName = null;
+    public ?string $DestinationStationName = null;
     /**
      * The RailLocOrigin
      * Meta information extracted from the WSDL
@@ -229,7 +228,7 @@ class RailSegment extends Segment
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $RailLocOrigin = null;
+    public ?string $RailLocOrigin = null;
     /**
      * The RailLocDestination
      * Meta information extracted from the WSDL
@@ -242,7 +241,7 @@ class RailSegment extends Segment
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $RailLocDestination = null;
+    public ?string $RailLocDestination = null;
     /**
      * Constructor method for RailSegment
      * @uses RailSegment::setDepartureTime()
@@ -334,10 +333,6 @@ class RailSegment extends Segment
      */
     public function setDepartureTime(string $departureTime): self
     {
-        // validation for constraint: string
-        if (!is_null($departureTime) && !is_string($departureTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($departureTime, true), gettype($departureTime)), __LINE__);
-        }
         $this->DepartureTime = $departureTime;
         
         return $this;
@@ -351,48 +346,12 @@ class RailSegment extends Segment
         return $this->RailSegmentInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRailSegmentInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRailSegmentInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateRailSegmentInfoForArrayConstraintFromSetRailSegmentInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $railSegmentRailSegmentInfoItem) {
-            // validation for constraint: itemType
-            if (!$railSegmentRailSegmentInfoItem instanceof \Travelport\UniversalRecord\StructType\RailSegmentInfo) {
-                $invalidValues[] = is_object($railSegmentRailSegmentInfoItem) ? get_class($railSegmentRailSegmentInfoItem) : sprintf('%s(%s)', gettype($railSegmentRailSegmentInfoItem), var_export($railSegmentRailSegmentInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The RailSegmentInfo property can only contain items of type \Travelport\UniversalRecord\StructType\RailSegmentInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set RailSegmentInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\RailSegmentInfo[] $railSegmentInfo
      * @return \Travelport\UniversalRecord\StructType\RailSegment
      */
     public function setRailSegmentInfo(?array $railSegmentInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($railSegmentInfoArrayErrorMessage = self::validateRailSegmentInfoForArrayConstraintFromSetRailSegmentInfo($railSegmentInfo))) {
-            throw new InvalidArgumentException($railSegmentInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($railSegmentInfo) && count($railSegmentInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($railSegmentInfo)), __LINE__);
-        }
         $this->RailSegmentInfo = $railSegmentInfo;
         
         return $this;
@@ -405,14 +364,6 @@ class RailSegment extends Segment
      */
     public function addToRailSegmentInfo(\Travelport\UniversalRecord\StructType\RailSegmentInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\RailSegmentInfo) {
-            throw new InvalidArgumentException(sprintf('The RailSegmentInfo property can only contain items of type \Travelport\UniversalRecord\StructType\RailSegmentInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->RailSegmentInfo) && count($this->RailSegmentInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->RailSegmentInfo)), __LINE__);
-        }
         $this->RailSegmentInfo[] = $item;
         
         return $this;
@@ -445,48 +396,12 @@ class RailSegment extends Segment
         return $this->RailAvailInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRailAvailInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRailAvailInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateRailAvailInfoForArrayConstraintFromSetRailAvailInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $railSegmentRailAvailInfoItem) {
-            // validation for constraint: itemType
-            if (!$railSegmentRailAvailInfoItem instanceof \Travelport\UniversalRecord\StructType\RailAvailInfo) {
-                $invalidValues[] = is_object($railSegmentRailAvailInfoItem) ? get_class($railSegmentRailAvailInfoItem) : sprintf('%s(%s)', gettype($railSegmentRailAvailInfoItem), var_export($railSegmentRailAvailInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The RailAvailInfo property can only contain items of type \Travelport\UniversalRecord\StructType\RailAvailInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set RailAvailInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\RailAvailInfo[] $railAvailInfo
      * @return \Travelport\UniversalRecord\StructType\RailSegment
      */
     public function setRailAvailInfo(?array $railAvailInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($railAvailInfoArrayErrorMessage = self::validateRailAvailInfoForArrayConstraintFromSetRailAvailInfo($railAvailInfo))) {
-            throw new InvalidArgumentException($railAvailInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($railAvailInfo) && count($railAvailInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($railAvailInfo)), __LINE__);
-        }
         $this->RailAvailInfo = $railAvailInfo;
         
         return $this;
@@ -499,14 +414,6 @@ class RailSegment extends Segment
      */
     public function addToRailAvailInfo(\Travelport\UniversalRecord\StructType\RailAvailInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\RailAvailInfo) {
-            throw new InvalidArgumentException(sprintf('The RailAvailInfo property can only contain items of type \Travelport\UniversalRecord\StructType\RailAvailInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->RailAvailInfo) && count($this->RailAvailInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->RailAvailInfo)), __LINE__);
-        }
         $this->RailAvailInfo[] = $item;
         
         return $this;
@@ -520,104 +427,12 @@ class RailSegment extends Segment
         return $this->FulFillmentType;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFulFillmentType method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFulFillmentType method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFulFillmentTypeForArrayConstraintFromSetFulFillmentType(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $railSegmentFulFillmentTypeItem) {
-            // validation for constraint: itemType
-            if (!is_string($railSegmentFulFillmentTypeItem)) {
-                $invalidValues[] = is_object($railSegmentFulFillmentTypeItem) ? get_class($railSegmentFulFillmentTypeItem) : sprintf('%s(%s)', gettype($railSegmentFulFillmentTypeItem), var_export($railSegmentFulFillmentTypeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FulFillmentType property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
-     * This method is responsible for validating the value(s) passed to the setFulFillmentType method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFulFillmentType method
-     * This has to validate that the items contained by the array match the length constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFulFillmentTypeForMaxLengthConstraintFromSetFulFillmentType(?array $values = null): string
-    {
-        $message = '';
-        $invalidValues = [];
-        foreach (($values ?? []) as $railSegmentFulFillmentTypeItem) {
-            // validation for constraint: maxLength(255)
-            if (mb_strlen((string) $railSegmentFulFillmentTypeItem) > 255) {
-                $invalidValues[] = var_export($railSegmentFulFillmentTypeItem, true);
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be less than or equal to 255', implode(', ', $invalidValues));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
-     * This method is responsible for validating the value(s) passed to the setFulFillmentType method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFulFillmentType method
-     * This has to validate that the items contained by the array match the length constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFulFillmentTypeForMinLengthConstraintFromSetFulFillmentType(?array $values = null): string
-    {
-        $message = '';
-        $invalidValues = [];
-        foreach (($values ?? []) as $railSegmentFulFillmentTypeItem) {
-            // validation for constraint: minLength
-            if (mb_strlen((string) $railSegmentFulFillmentTypeItem) < 0) {
-                $invalidValues[] = var_export($railSegmentFulFillmentTypeItem, true);
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be greater than or equal to 0', implode(', ', $invalidValues));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FulFillmentType value
-     * @throws InvalidArgumentException
      * @param string[] $fulFillmentType
      * @return \Travelport\UniversalRecord\StructType\RailSegment
      */
     public function setFulFillmentType(?array $fulFillmentType = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($fulFillmentTypeArrayErrorMessage = self::validateFulFillmentTypeForArrayConstraintFromSetFulFillmentType($fulFillmentType))) {
-            throw new InvalidArgumentException($fulFillmentTypeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxLength(255)
-        if ('' !== ($fulFillmentTypeMaxLengthErrorMessage = self::validateFulFillmentTypeForMaxLengthConstraintFromSetFulFillmentType($fulFillmentType))) {
-            throw new InvalidArgumentException($fulFillmentTypeMaxLengthErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($fulFillmentType) && count($fulFillmentType) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($fulFillmentType)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if ('' !== ($fulFillmentTypeMinLengthErrorMessage = self::validateFulFillmentTypeForMinLengthConstraintFromSetFulFillmentType($fulFillmentType))) {
-            throw new InvalidArgumentException($fulFillmentTypeMinLengthErrorMessage, __LINE__);
-        }
         $this->FulFillmentType = $fulFillmentType;
         
         return $this;
@@ -630,22 +445,6 @@ class RailSegment extends Segment
      */
     public function addToFulFillmentType(string $item): self
     {
-        // validation for constraint: itemType
-        if (!is_string($item)) {
-            throw new InvalidArgumentException(sprintf('The FulFillmentType property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxLength(255)
-        if (mb_strlen((string) $item) > 255) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 255', mb_strlen((string) $item)), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FulFillmentType) && count($this->FulFillmentType) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FulFillmentType)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if (mb_strlen((string) $item) < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $item)), __LINE__);
-        }
         $this->FulFillmentType[] = $item;
         
         return $this;
@@ -665,18 +464,6 @@ class RailSegment extends Segment
      */
     public function setTrainNumber(?string $trainNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($trainNumber) && !is_string($trainNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($trainNumber, true), gettype($trainNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($trainNumber) && mb_strlen((string) $trainNumber) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $trainNumber)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($trainNumber) && mb_strlen((string) $trainNumber) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $trainNumber)), __LINE__);
-        }
         $this->TrainNumber = $trainNumber;
         
         return $this;
@@ -696,10 +483,6 @@ class RailSegment extends Segment
      */
     public function setTrainType(?string $trainType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($trainType) && !is_string($trainType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($trainType, true), gettype($trainType)), __LINE__);
-        }
         $this->TrainType = $trainType;
         
         return $this;
@@ -719,18 +502,6 @@ class RailSegment extends Segment
      */
     public function setTrainTypeCode(?string $trainTypeCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($trainTypeCode) && !is_string($trainTypeCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($trainTypeCode, true), gettype($trainTypeCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($trainTypeCode) && mb_strlen((string) $trainTypeCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $trainTypeCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($trainTypeCode) && mb_strlen((string) $trainTypeCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $trainTypeCode)), __LINE__);
-        }
         $this->TrainTypeCode = $trainTypeCode;
         
         return $this;
@@ -745,18 +516,11 @@ class RailSegment extends Segment
     }
     /**
      * Set TransportMode value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTransportMode::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTransportMode::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $transportMode
      * @return \Travelport\UniversalRecord\StructType\RailSegment
      */
     public function setTransportMode(?string $transportMode = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeTransportMode::valueIsValid($transportMode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeTransportMode', is_array($transportMode) ? implode(', ', $transportMode) : var_export($transportMode, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeTransportMode::getValidValues())), __LINE__);
-        }
         $this->TransportMode = $transportMode;
         
         return $this;
@@ -776,10 +540,6 @@ class RailSegment extends Segment
      */
     public function setSeatAssignable(?bool $seatAssignable = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($seatAssignable) && !is_bool($seatAssignable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($seatAssignable, true), gettype($seatAssignable)), __LINE__);
-        }
         $this->SeatAssignable = $seatAssignable;
         
         return $this;
@@ -799,10 +559,6 @@ class RailSegment extends Segment
      */
     public function setTransportCode(?string $transportCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($transportCode) && !is_string($transportCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transportCode, true), gettype($transportCode)), __LINE__);
-        }
         $this->TransportCode = $transportCode;
         
         return $this;
@@ -822,10 +578,6 @@ class RailSegment extends Segment
      */
     public function setReservationRequired(?bool $reservationRequired = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($reservationRequired) && !is_bool($reservationRequired)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($reservationRequired, true), gettype($reservationRequired)), __LINE__);
-        }
         $this->ReservationRequired = $reservationRequired;
         
         return $this;
@@ -845,10 +597,6 @@ class RailSegment extends Segment
      */
     public function setTravelTime(?int $travelTime = null): self
     {
-        // validation for constraint: int
-        if (!is_null($travelTime) && !(is_int($travelTime) || ctype_digit($travelTime))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($travelTime, true), gettype($travelTime)), __LINE__);
-        }
         $this->TravelTime = $travelTime;
         
         return $this;
@@ -868,10 +616,6 @@ class RailSegment extends Segment
      */
     public function setHostTokenRef(?string $hostTokenRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($hostTokenRef) && !is_string($hostTokenRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hostTokenRef, true), gettype($hostTokenRef)), __LINE__);
-        }
         $this->HostTokenRef = $hostTokenRef;
         
         return $this;
@@ -891,18 +635,6 @@ class RailSegment extends Segment
      */
     public function setCabinClass(?string $cabinClass = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cabinClass) && !is_string($cabinClass)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cabinClass, true), gettype($cabinClass)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($cabinClass) && mb_strlen((string) $cabinClass) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $cabinClass)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($cabinClass) && mb_strlen((string) $cabinClass) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $cabinClass)), __LINE__);
-        }
         $this->CabinClass = $cabinClass;
         
         return $this;
@@ -922,18 +654,6 @@ class RailSegment extends Segment
      */
     public function setClassCode(?string $classCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($classCode) && !is_string($classCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($classCode, true), gettype($classCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($classCode) && mb_strlen((string) $classCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $classCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($classCode) && mb_strlen((string) $classCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $classCode)), __LINE__);
-        }
         $this->ClassCode = $classCode;
         
         return $this;
@@ -953,14 +673,6 @@ class RailSegment extends Segment
      */
     public function setOrigin(?string $origin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($origin) && mb_strlen((string) $origin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -980,14 +692,6 @@ class RailSegment extends Segment
      */
     public function setDestination(?string $destination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destination) && mb_strlen((string) $destination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -1007,10 +711,6 @@ class RailSegment extends Segment
      */
     public function setArrivalTime(?string $arrivalTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($arrivalTime) && !is_string($arrivalTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($arrivalTime, true), gettype($arrivalTime)), __LINE__);
-        }
         $this->ArrivalTime = $arrivalTime;
         
         return $this;
@@ -1030,10 +730,6 @@ class RailSegment extends Segment
      */
     public function setOriginStationName(?string $originStationName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($originStationName) && !is_string($originStationName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($originStationName, true), gettype($originStationName)), __LINE__);
-        }
         $this->OriginStationName = $originStationName;
         
         return $this;
@@ -1053,10 +749,6 @@ class RailSegment extends Segment
      */
     public function setDestinationStationName(?string $destinationStationName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($destinationStationName) && !is_string($destinationStationName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destinationStationName, true), gettype($destinationStationName)), __LINE__);
-        }
         $this->DestinationStationName = $destinationStationName;
         
         return $this;
@@ -1076,18 +768,6 @@ class RailSegment extends Segment
      */
     public function setRailLocOrigin(?string $railLocOrigin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($railLocOrigin) && !is_string($railLocOrigin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($railLocOrigin, true), gettype($railLocOrigin)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($railLocOrigin) && mb_strlen((string) $railLocOrigin) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $railLocOrigin)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($railLocOrigin) && mb_strlen((string) $railLocOrigin) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $railLocOrigin)), __LINE__);
-        }
         $this->RailLocOrigin = $railLocOrigin;
         
         return $this;
@@ -1107,18 +787,6 @@ class RailSegment extends Segment
      */
     public function setRailLocDestination(?string $railLocDestination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($railLocDestination) && !is_string($railLocDestination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($railLocDestination, true), gettype($railLocDestination)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($railLocDestination) && mb_strlen((string) $railLocDestination) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $railLocDestination)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($railLocDestination) && mb_strlen((string) $railLocDestination) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $railLocDestination)), __LINE__);
-        }
         $this->RailLocDestination = $railLocDestination;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class KeyMapping extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ElementName;
+    public string $ElementName;
     /**
      * The OriginalKey
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class KeyMapping extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $OriginalKey;
+    public string $OriginalKey;
     /**
      * The NewKey
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class KeyMapping extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $NewKey;
+    public string $NewKey;
     /**
      * Constructor method for KeyMapping
      * @uses KeyMapping::setElementName()
@@ -70,10 +69,6 @@ class KeyMapping extends AbstractStructBase
      */
     public function setElementName(string $elementName): self
     {
-        // validation for constraint: string
-        if (!is_null($elementName) && !is_string($elementName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($elementName, true), gettype($elementName)), __LINE__);
-        }
         $this->ElementName = $elementName;
         
         return $this;
@@ -93,10 +88,6 @@ class KeyMapping extends AbstractStructBase
      */
     public function setOriginalKey(string $originalKey): self
     {
-        // validation for constraint: string
-        if (!is_null($originalKey) && !is_string($originalKey)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($originalKey, true), gettype($originalKey)), __LINE__);
-        }
         $this->OriginalKey = $originalKey;
         
         return $this;
@@ -116,10 +107,6 @@ class KeyMapping extends AbstractStructBase
      */
     public function setNewKey(string $newKey): self
     {
-        // validation for constraint: string
-        if (!is_null($newKey) && !is_string($newKey)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($newKey, true), gettype($newKey)), __LINE__);
-        }
         $this->NewKey = $newKey;
         
         return $this;

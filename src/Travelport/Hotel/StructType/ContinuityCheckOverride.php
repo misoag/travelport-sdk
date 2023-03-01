@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -27,7 +26,7 @@ class ContinuityCheckOverride extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class ContinuityCheckOverride extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * Constructor method for ContinuityCheckOverride
      * @uses ContinuityCheckOverride::set_()
@@ -65,14 +64,6 @@ class ContinuityCheckOverride extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($_) && mb_strlen((string) $_) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -92,10 +83,6 @@ class ContinuityCheckOverride extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;

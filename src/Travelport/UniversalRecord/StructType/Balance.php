@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class Balance extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CreditCardDueAmount = null;
+    public ?string $CreditCardDueAmount = null;
     /**
      * The CheckDueAmount
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class Balance extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CheckDueAmount = null;
+    public ?string $CheckDueAmount = null;
     /**
      * The DueDate
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class Balance extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DueDate = null;
+    public ?string $DueDate = null;
     /**
      * The ReceivedDate
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class Balance extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ReceivedDate = null;
+    public ?string $ReceivedDate = null;
     /**
      * Constructor method for Balance
      * @uses Balance::setCreditCardDueAmount()
@@ -85,10 +84,6 @@ class Balance extends AbstractStructBase
      */
     public function setCreditCardDueAmount(?string $creditCardDueAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($creditCardDueAmount) && !is_string($creditCardDueAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($creditCardDueAmount, true), gettype($creditCardDueAmount)), __LINE__);
-        }
         $this->CreditCardDueAmount = $creditCardDueAmount;
         
         return $this;
@@ -108,10 +103,6 @@ class Balance extends AbstractStructBase
      */
     public function setCheckDueAmount(?string $checkDueAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($checkDueAmount) && !is_string($checkDueAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($checkDueAmount, true), gettype($checkDueAmount)), __LINE__);
-        }
         $this->CheckDueAmount = $checkDueAmount;
         
         return $this;
@@ -131,10 +122,6 @@ class Balance extends AbstractStructBase
      */
     public function setDueDate(?string $dueDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($dueDate) && !is_string($dueDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dueDate, true), gettype($dueDate)), __LINE__);
-        }
         $this->DueDate = $dueDate;
         
         return $this;
@@ -154,10 +141,6 @@ class Balance extends AbstractStructBase
      */
     public function setReceivedDate(?string $receivedDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($receivedDate) && !is_string($receivedDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($receivedDate, true), gettype($receivedDate)), __LINE__);
-        }
         $this->ReceivedDate = $receivedDate;
         
         return $this;

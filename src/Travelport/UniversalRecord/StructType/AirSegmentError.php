@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,12 +20,12 @@ class AirSegmentError extends AbstractStructBase
      * - ref: AirSegment
      * @var \Travelport\UniversalRecord\StructType\TypeBaseAirSegment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeBaseAirSegment $AirSegment = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeBaseAirSegment $AirSegment = null;
     /**
      * The ErrorMessage
      * @var string|null
      */
-    protected ?string $ErrorMessage = null;
+    public ?string $ErrorMessage = null;
     /**
      * Constructor method for AirSegmentError
      * @uses AirSegmentError::setAirSegment()
@@ -74,10 +73,6 @@ class AirSegmentError extends AbstractStructBase
      */
     public function setErrorMessage(?string $errorMessage = null): self
     {
-        // validation for constraint: string
-        if (!is_null($errorMessage) && !is_string($errorMessage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($errorMessage, true), gettype($errorMessage)), __LINE__);
-        }
         $this->ErrorMessage = $errorMessage;
         
         return $this;

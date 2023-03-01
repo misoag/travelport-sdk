@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class HotelType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $SourceLink = null;
+    public ?bool $SourceLink = null;
     /**
      * Constructor method for HotelType
      * @uses HotelType::setSourceLink()
@@ -47,10 +46,6 @@ class HotelType extends AbstractStructBase
      */
     public function setSourceLink(?bool $sourceLink = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($sourceLink) && !is_bool($sourceLink)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($sourceLink, true), gettype($sourceLink)), __LINE__);
-        }
         $this->SourceLink = $sourceLink;
         
         return $this;

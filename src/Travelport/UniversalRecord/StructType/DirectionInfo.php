@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,12 +21,12 @@ class DirectionInfo extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $LocationCode = null;
+    public ?string $LocationCode = null;
     /**
      * The Direction
      * @var string|null
      */
-    protected ?string $Direction = null;
+    public ?string $Direction = null;
     /**
      * Constructor method for DirectionInfo
      * @uses DirectionInfo::setLocationCode()
@@ -56,14 +55,6 @@ class DirectionInfo extends AbstractStructBase
      */
     public function setLocationCode(?string $locationCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($locationCode) && !is_string($locationCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($locationCode, true), gettype($locationCode)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($locationCode) && mb_strlen((string) $locationCode) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $locationCode)), __LINE__);
-        }
         $this->LocationCode = $locationCode;
         
         return $this;
@@ -83,10 +74,6 @@ class DirectionInfo extends AbstractStructBase
      */
     public function setDirection(?string $direction = null): self
     {
-        // validation for constraint: string
-        if (!is_null($direction) && !is_string($direction)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($direction, true), gettype($direction)), __LINE__);
-        }
         $this->Direction = $direction;
         
         return $this;

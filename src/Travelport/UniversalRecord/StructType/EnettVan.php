@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class EnettVan extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MinPercentage = null;
+    public ?int $MinPercentage = null;
     /**
      * The MaxPercentage
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class EnettVan extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MaxPercentage = null;
+    public ?int $MaxPercentage = null;
     /**
      * The ExpiryDays
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class EnettVan extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ExpiryDays = null;
+    public ?string $ExpiryDays = null;
     /**
      * The MultiUse
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class EnettVan extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $MultiUse = null;
+    public ?bool $MultiUse = null;
     /**
      * Constructor method for EnettVan
      * @uses EnettVan::setMinPercentage()
@@ -92,18 +91,6 @@ class EnettVan extends AbstractStructBase
      */
     public function setMinPercentage(?int $minPercentage = null): self
     {
-        // validation for constraint: int
-        if (!is_null($minPercentage) && !(is_int($minPercentage) || ctype_digit($minPercentage))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($minPercentage, true), gettype($minPercentage)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(100)
-        if (!is_null($minPercentage) && $minPercentage > 100) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 100', var_export($minPercentage, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive
-        if (!is_null($minPercentage) && $minPercentage < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($minPercentage, true)), __LINE__);
-        }
         $this->MinPercentage = $minPercentage;
         
         return $this;
@@ -123,18 +110,6 @@ class EnettVan extends AbstractStructBase
      */
     public function setMaxPercentage(?int $maxPercentage = null): self
     {
-        // validation for constraint: int
-        if (!is_null($maxPercentage) && !(is_int($maxPercentage) || ctype_digit($maxPercentage))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maxPercentage, true), gettype($maxPercentage)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(100)
-        if (!is_null($maxPercentage) && $maxPercentage > 100) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 100', var_export($maxPercentage, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive
-        if (!is_null($maxPercentage) && $maxPercentage < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($maxPercentage, true)), __LINE__);
-        }
         $this->MaxPercentage = $maxPercentage;
         
         return $this;
@@ -154,18 +129,6 @@ class EnettVan extends AbstractStructBase
      */
     public function setExpiryDays(?string $expiryDays = null): self
     {
-        // validation for constraint: string
-        if (!is_null($expiryDays) && !is_string($expiryDays)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($expiryDays, true), gettype($expiryDays)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(P366D)
-        if (!is_null($expiryDays) && false === mb_strpos((string) $expiryDays, '-') && ($time = (string) time()) && \DateTime::createFromFormat('U', $time)->add(new \DateInterval(preg_replace('/(.*)(\.[0-9]*S)/', '$1S', str_replace('-', '', $expiryDays)))) > \DateTime::createFromFormat('U', $time)->add(new \DateInterval(preg_replace('/(.*)(\.[0-9]*S)/', '$1S', 'P366D')))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be chronologically less than or equal to P366D', var_export($expiryDays, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive(P1D)
-        if (!is_null($expiryDays) && false !== mb_strpos((string) $expiryDays, '-') && ($time = (string) time()) && \DateTime::createFromFormat('U', $time)->add(new \DateInterval(preg_replace('/(.*)(\.[0-9]*S)/', '$1S', str_replace('-', '', $expiryDays)))) < \DateTime::createFromFormat('U', $time)->add(new \DateInterval(preg_replace('/(.*)(\.[0-9]*S)/', '$1S', 'P1D')))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be chronologically greater than or equal to P1D', var_export($expiryDays, true)), __LINE__);
-        }
         $this->ExpiryDays = $expiryDays;
         
         return $this;
@@ -185,10 +148,6 @@ class EnettVan extends AbstractStructBase
      */
     public function setMultiUse(?bool $multiUse = true): self
     {
-        // validation for constraint: boolean
-        if (!is_null($multiUse) && !is_bool($multiUse)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($multiUse, true), gettype($multiUse)), __LINE__);
-        }
         $this->MultiUse = $multiUse;
         
         return $this;

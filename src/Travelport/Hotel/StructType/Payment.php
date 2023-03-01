@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class Payment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The FormOfPaymentRef
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class Payment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $FormOfPaymentRef;
+    public string $FormOfPaymentRef;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class Payment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Amount;
+    public string $Amount;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class Payment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class Payment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingTravelerRef = null;
+    public ?string $BookingTravelerRef = null;
     /**
      * The AmountType
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class Payment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AmountType = null;
+    public ?string $AmountType = null;
     /**
      * The ApproximateAmount
      * Meta information extracted from the WSDL
@@ -77,7 +76,7 @@ class Payment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ApproximateAmount = null;
+    public ?string $ApproximateAmount = null;
     /**
      * The Status
      * Meta information extracted from the WSDL
@@ -85,7 +84,7 @@ class Payment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Status = null;
+    public ?string $Status = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -94,7 +93,7 @@ class Payment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -102,7 +101,7 @@ class Payment extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for Payment
      * @uses Payment::setType()
@@ -155,10 +154,6 @@ class Payment extends AbstractStructBase
      */
     public function setType(string $type): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -178,10 +173,6 @@ class Payment extends AbstractStructBase
      */
     public function setFormOfPaymentRef(string $formOfPaymentRef): self
     {
-        // validation for constraint: string
-        if (!is_null($formOfPaymentRef) && !is_string($formOfPaymentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($formOfPaymentRef, true), gettype($formOfPaymentRef)), __LINE__);
-        }
         $this->FormOfPaymentRef = $formOfPaymentRef;
         
         return $this;
@@ -201,10 +192,6 @@ class Payment extends AbstractStructBase
      */
     public function setAmount(string $amount): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -224,10 +211,6 @@ class Payment extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -247,10 +230,6 @@ class Payment extends AbstractStructBase
      */
     public function setBookingTravelerRef(?string $bookingTravelerRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;
@@ -270,18 +249,6 @@ class Payment extends AbstractStructBase
      */
     public function setAmountType(?string $amountType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amountType) && !is_string($amountType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amountType, true), gettype($amountType)), __LINE__);
-        }
-        // validation for constraint: maxLength(32)
-        if (!is_null($amountType) && mb_strlen((string) $amountType) > 32) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $amountType)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($amountType) && mb_strlen((string) $amountType) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $amountType)), __LINE__);
-        }
         $this->AmountType = $amountType;
         
         return $this;
@@ -301,10 +268,6 @@ class Payment extends AbstractStructBase
      */
     public function setApproximateAmount(?string $approximateAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateAmount) && !is_string($approximateAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateAmount, true), gettype($approximateAmount)), __LINE__);
-        }
         $this->ApproximateAmount = $approximateAmount;
         
         return $this;
@@ -324,10 +287,6 @@ class Payment extends AbstractStructBase
      */
     public function setStatus(?string $status = null): self
     {
-        // validation for constraint: string
-        if (!is_null($status) && !is_string($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -342,18 +301,11 @@ class Payment extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\Hotel\StructType\Payment
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -373,10 +325,6 @@ class Payment extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

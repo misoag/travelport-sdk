@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class RailPricingSolutionRef extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * Constructor method for RailPricingSolutionRef
      * @uses RailPricingSolutionRef::setKey()
@@ -49,10 +48,6 @@ class RailPricingSolutionRef extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;

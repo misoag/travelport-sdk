@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class HotelRateInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RatePlanType = null;
+    public ?string $RatePlanType = null;
     /**
      * Constructor method for HotelRateInfo
      * @uses HotelRateInfo::setRatePlanType()
@@ -49,10 +48,6 @@ class HotelRateInfo extends AbstractStructBase
      */
     public function setRatePlanType(?string $ratePlanType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ratePlanType) && !is_string($ratePlanType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ratePlanType, true), gettype($ratePlanType)), __LINE__);
-        }
         $this->RatePlanType = $ratePlanType;
         
         return $this;

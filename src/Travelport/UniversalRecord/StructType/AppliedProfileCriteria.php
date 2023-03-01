@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class AppliedProfileCriteria extends AbstractStructBase
      * - base: common:typeProfileID
      * @var int|null
      */
-    protected ?int $TravelerProfileId = null;
+    public ?int $TravelerProfileId = null;
     /**
      * Constructor method for AppliedProfileCriteria
      * @uses AppliedProfileCriteria::setTravelerProfileId()
@@ -48,10 +47,6 @@ class AppliedProfileCriteria extends AbstractStructBase
      */
     public function setTravelerProfileId(?int $travelerProfileId = null): self
     {
-        // validation for constraint: int
-        if (!is_null($travelerProfileId) && !(is_int($travelerProfileId) || ctype_digit($travelerProfileId))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($travelerProfileId, true), gettype($travelerProfileId)), __LINE__);
-        }
         $this->TravelerProfileId = $travelerProfileId;
         
         return $this;

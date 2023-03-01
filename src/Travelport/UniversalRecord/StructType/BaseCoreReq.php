@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class BaseCoreReq extends AbstractStructBase
      * - ref: BillingPointOfSaleInfo
      * @var \Travelport\UniversalRecord\StructType\BillingPointOfSaleInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\BillingPointOfSaleInfo $BillingPointOfSaleInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\BillingPointOfSaleInfo $BillingPointOfSaleInfo = null;
     /**
      * The AgentIDOverride
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class BaseCoreReq extends AbstractStructBase
      * - ref: AgentIDOverride
      * @var \Travelport\UniversalRecord\StructType\AgentIDOverride[]
      */
-    protected ?array $AgentIDOverride = null;
+    public ?array $AgentIDOverride = null;
     /**
      * The TerminalSessionInfo
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class BaseCoreReq extends AbstractStructBase
      * - ref: TerminalSessionInfo
      * @var string|null
      */
-    protected ?string $TerminalSessionInfo = null;
+    public ?string $TerminalSessionInfo = null;
     /**
      * The TraceId
      * Meta information extracted from the WSDL
@@ -45,7 +44,7 @@ class BaseCoreReq extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TraceId = null;
+    public ?string $TraceId = null;
     /**
      * The TokenId
      * Meta information extracted from the WSDL
@@ -53,7 +52,7 @@ class BaseCoreReq extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TokenId = null;
+    public ?string $TokenId = null;
     /**
      * The AuthorizedBy
      * Meta information extracted from the WSDL
@@ -61,7 +60,7 @@ class BaseCoreReq extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AuthorizedBy = null;
+    public ?string $AuthorizedBy = null;
     /**
      * The TargetBranch
      * Meta information extracted from the WSDL
@@ -72,7 +71,7 @@ class BaseCoreReq extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TargetBranch = null;
+    public ?string $TargetBranch = null;
     /**
      * The OverrideLogging
      * Meta information extracted from the WSDL
@@ -80,7 +79,7 @@ class BaseCoreReq extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OverrideLogging = null;
+    public ?string $OverrideLogging = null;
     /**
      * The LanguageCode
      * Meta information extracted from the WSDL
@@ -89,7 +88,7 @@ class BaseCoreReq extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $LanguageCode = null;
+    public ?string $LanguageCode = null;
     /**
      * Constructor method for BaseCoreReq
      * @uses BaseCoreReq::setBillingPointOfSaleInfo()
@@ -152,48 +151,12 @@ class BaseCoreReq extends AbstractStructBase
         return $this->AgentIDOverride;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAgentIDOverride method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAgentIDOverride method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAgentIDOverrideForArrayConstraintFromSetAgentIDOverride(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $baseCoreReqAgentIDOverrideItem) {
-            // validation for constraint: itemType
-            if (!$baseCoreReqAgentIDOverrideItem instanceof \Travelport\UniversalRecord\StructType\AgentIDOverride) {
-                $invalidValues[] = is_object($baseCoreReqAgentIDOverrideItem) ? get_class($baseCoreReqAgentIDOverrideItem) : sprintf('%s(%s)', gettype($baseCoreReqAgentIDOverrideItem), var_export($baseCoreReqAgentIDOverrideItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AgentIDOverride property can only contain items of type \Travelport\UniversalRecord\StructType\AgentIDOverride, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AgentIDOverride value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AgentIDOverride[] $agentIDOverride
      * @return \Travelport\UniversalRecord\StructType\BaseCoreReq
      */
     public function setAgentIDOverride(?array $agentIDOverride = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($agentIDOverrideArrayErrorMessage = self::validateAgentIDOverrideForArrayConstraintFromSetAgentIDOverride($agentIDOverride))) {
-            throw new InvalidArgumentException($agentIDOverrideArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($agentIDOverride) && count($agentIDOverride) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($agentIDOverride)), __LINE__);
-        }
         $this->AgentIDOverride = $agentIDOverride;
         
         return $this;
@@ -206,14 +169,6 @@ class BaseCoreReq extends AbstractStructBase
      */
     public function addToAgentIDOverride(\Travelport\UniversalRecord\StructType\AgentIDOverride $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AgentIDOverride) {
-            throw new InvalidArgumentException(sprintf('The AgentIDOverride property can only contain items of type \Travelport\UniversalRecord\StructType\AgentIDOverride, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->AgentIDOverride) && count($this->AgentIDOverride) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->AgentIDOverride)), __LINE__);
-        }
         $this->AgentIDOverride[] = $item;
         
         return $this;
@@ -233,10 +188,6 @@ class BaseCoreReq extends AbstractStructBase
      */
     public function setTerminalSessionInfo(?string $terminalSessionInfo = null): self
     {
-        // validation for constraint: string
-        if (!is_null($terminalSessionInfo) && !is_string($terminalSessionInfo)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($terminalSessionInfo, true), gettype($terminalSessionInfo)), __LINE__);
-        }
         $this->TerminalSessionInfo = $terminalSessionInfo;
         
         return $this;
@@ -256,10 +207,6 @@ class BaseCoreReq extends AbstractStructBase
      */
     public function setTraceId(?string $traceId = null): self
     {
-        // validation for constraint: string
-        if (!is_null($traceId) && !is_string($traceId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($traceId, true), gettype($traceId)), __LINE__);
-        }
         $this->TraceId = $traceId;
         
         return $this;
@@ -279,10 +226,6 @@ class BaseCoreReq extends AbstractStructBase
      */
     public function setTokenId(?string $tokenId = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tokenId) && !is_string($tokenId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tokenId, true), gettype($tokenId)), __LINE__);
-        }
         $this->TokenId = $tokenId;
         
         return $this;
@@ -302,10 +245,6 @@ class BaseCoreReq extends AbstractStructBase
      */
     public function setAuthorizedBy(?string $authorizedBy = null): self
     {
-        // validation for constraint: string
-        if (!is_null($authorizedBy) && !is_string($authorizedBy)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authorizedBy, true), gettype($authorizedBy)), __LINE__);
-        }
         $this->AuthorizedBy = $authorizedBy;
         
         return $this;
@@ -325,18 +264,6 @@ class BaseCoreReq extends AbstractStructBase
      */
     public function setTargetBranch(?string $targetBranch = null): self
     {
-        // validation for constraint: string
-        if (!is_null($targetBranch) && !is_string($targetBranch)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($targetBranch, true), gettype($targetBranch)), __LINE__);
-        }
-        // validation for constraint: maxLength(25)
-        if (!is_null($targetBranch) && mb_strlen((string) $targetBranch) > 25) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 25', mb_strlen((string) $targetBranch)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($targetBranch) && mb_strlen((string) $targetBranch) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $targetBranch)), __LINE__);
-        }
         $this->TargetBranch = $targetBranch;
         
         return $this;
@@ -351,18 +278,11 @@ class BaseCoreReq extends AbstractStructBase
     }
     /**
      * Set OverrideLogging value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeLoggingLevel::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeLoggingLevel::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $overrideLogging
      * @return \Travelport\UniversalRecord\StructType\BaseCoreReq
      */
     public function setOverrideLogging(?string $overrideLogging = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeLoggingLevel::valueIsValid($overrideLogging)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeLoggingLevel', is_array($overrideLogging) ? implode(', ', $overrideLogging) : var_export($overrideLogging, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeLoggingLevel::getValidValues())), __LINE__);
-        }
         $this->OverrideLogging = $overrideLogging;
         
         return $this;
@@ -382,10 +302,6 @@ class BaseCoreReq extends AbstractStructBase
      */
     public function setLanguageCode(?string $languageCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($languageCode) && !is_string($languageCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($languageCode, true), gettype($languageCode)), __LINE__);
-        }
         $this->LanguageCode = $languageCode;
         
         return $this;

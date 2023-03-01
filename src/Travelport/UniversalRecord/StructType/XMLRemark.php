@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class XMLRemark extends AbstractStructBase
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class XMLRemark extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The Category
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class XMLRemark extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Category = null;
+    public ?string $Category = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class XMLRemark extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class XMLRemark extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for XMLRemark
      * @uses XMLRemark::set_()
@@ -92,10 +91,6 @@ class XMLRemark extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -115,10 +110,6 @@ class XMLRemark extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -138,14 +129,6 @@ class XMLRemark extends AbstractStructBase
      */
     public function setCategory(?string $category = null): self
     {
-        // validation for constraint: string
-        if (!is_null($category) && !is_string($category)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($category, true), gettype($category)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($category) && mb_strlen((string) $category) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $category)), __LINE__);
-        }
         $this->Category = $category;
         
         return $this;
@@ -160,18 +143,11 @@ class XMLRemark extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\XMLRemark
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -191,10 +167,6 @@ class XMLRemark extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

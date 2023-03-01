@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class InvoiceData extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $InvoiceNumber;
+    public string $InvoiceNumber;
     /**
      * The ProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class InvoiceData extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ProviderReservationInfoRef;
+    public string $ProviderReservationInfoRef;
     /**
      * The BookingTravelerInformation
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class InvoiceData extends AbstractStructBase
      * - ref: BookingTravelerInformation
      * @var \Travelport\Hotel\StructType\BookingTravelerInformation[]
      */
-    protected ?array $BookingTravelerInformation = null;
+    public ?array $BookingTravelerInformation = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -47,14 +46,14 @@ class InvoiceData extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The IssueDate
      * Meta information extracted from the WSDL
      * - documentation: Invoice issue date
      * @var string|null
      */
-    protected ?string $IssueDate = null;
+    public ?string $IssueDate = null;
     /**
      * Constructor method for InvoiceData
      * @uses InvoiceData::setInvoiceNumber()
@@ -92,10 +91,6 @@ class InvoiceData extends AbstractStructBase
      */
     public function setInvoiceNumber(string $invoiceNumber): self
     {
-        // validation for constraint: string
-        if (!is_null($invoiceNumber) && !is_string($invoiceNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($invoiceNumber, true), gettype($invoiceNumber)), __LINE__);
-        }
         $this->InvoiceNumber = $invoiceNumber;
         
         return $this;
@@ -115,10 +110,6 @@ class InvoiceData extends AbstractStructBase
      */
     public function setProviderReservationInfoRef(string $providerReservationInfoRef): self
     {
-        // validation for constraint: string
-        if (!is_null($providerReservationInfoRef) && !is_string($providerReservationInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerReservationInfoRef, true), gettype($providerReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef = $providerReservationInfoRef;
         
         return $this;
@@ -132,48 +123,12 @@ class InvoiceData extends AbstractStructBase
         return $this->BookingTravelerInformation;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setBookingTravelerInformation method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTravelerInformation method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateBookingTravelerInformationForArrayConstraintFromSetBookingTravelerInformation(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $invoiceDataBookingTravelerInformationItem) {
-            // validation for constraint: itemType
-            if (!$invoiceDataBookingTravelerInformationItem instanceof \Travelport\Hotel\StructType\BookingTravelerInformation) {
-                $invalidValues[] = is_object($invoiceDataBookingTravelerInformationItem) ? get_class($invoiceDataBookingTravelerInformationItem) : sprintf('%s(%s)', gettype($invoiceDataBookingTravelerInformationItem), var_export($invoiceDataBookingTravelerInformationItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The BookingTravelerInformation property can only contain items of type \Travelport\Hotel\StructType\BookingTravelerInformation, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set BookingTravelerInformation value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\BookingTravelerInformation[] $bookingTravelerInformation
      * @return \Travelport\Hotel\StructType\InvoiceData
      */
     public function setBookingTravelerInformation(?array $bookingTravelerInformation = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($bookingTravelerInformationArrayErrorMessage = self::validateBookingTravelerInformationForArrayConstraintFromSetBookingTravelerInformation($bookingTravelerInformation))) {
-            throw new InvalidArgumentException($bookingTravelerInformationArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(9)
-        if (is_array($bookingTravelerInformation) && count($bookingTravelerInformation) > 9) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 9', count($bookingTravelerInformation)), __LINE__);
-        }
         $this->BookingTravelerInformation = $bookingTravelerInformation;
         
         return $this;
@@ -186,14 +141,6 @@ class InvoiceData extends AbstractStructBase
      */
     public function addToBookingTravelerInformation(\Travelport\Hotel\StructType\BookingTravelerInformation $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\BookingTravelerInformation) {
-            throw new InvalidArgumentException(sprintf('The BookingTravelerInformation property can only contain items of type \Travelport\Hotel\StructType\BookingTravelerInformation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(9)
-        if (is_array($this->BookingTravelerInformation) && count($this->BookingTravelerInformation) >= 9) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 9', count($this->BookingTravelerInformation)), __LINE__);
-        }
         $this->BookingTravelerInformation[] = $item;
         
         return $this;
@@ -213,10 +160,6 @@ class InvoiceData extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -236,10 +179,6 @@ class InvoiceData extends AbstractStructBase
      */
     public function setIssueDate(?string $issueDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($issueDate) && !is_string($issueDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($issueDate, true), gettype($issueDate)), __LINE__);
-        }
         $this->IssueDate = $issueDate;
         
         return $this;

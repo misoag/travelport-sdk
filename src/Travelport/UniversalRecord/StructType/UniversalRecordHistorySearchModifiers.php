@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $ElementType = null;
+    public ?string $ElementType = null;
     /**
      * The ModifiedDate
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
      * - choiceMinOccurs: 0
      * @var string|null
      */
-    protected ?string $ModifiedDate = null;
+    public ?string $ModifiedDate = null;
     /**
      * The ModifiedRange
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
      * - choiceMinOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\ModifiedRange|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ModifiedRange $ModifiedRange = null;
+    public ?\Travelport\UniversalRecord\StructType\ModifiedRange $ModifiedRange = null;
     /**
      * The MaxResults
      * Meta information extracted from the WSDL
@@ -53,7 +52,7 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MaxResults = null;
+    public ?int $MaxResults = null;
     /**
      * The StartFromResult
      * Meta information extracted from the WSDL
@@ -64,12 +63,12 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $StartFromResult = null;
+    public ?int $StartFromResult = null;
     /**
      * The ModifiedBy
      * @var string|null
      */
-    protected ?string $ModifiedBy = null;
+    public ?string $ModifiedBy = null;
     /**
      * The DebugMode
      * Meta information extracted from the WSDL
@@ -78,7 +77,7 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $DebugMode = null;
+    public ?bool $DebugMode = null;
     /**
      * Constructor method for UniversalRecordHistorySearchModifiers
      * @uses UniversalRecordHistorySearchModifiers::setElementType()
@@ -122,10 +121,6 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
      */
     public function setElementType(?string $elementType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($elementType) && !is_string($elementType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($elementType, true), gettype($elementType)), __LINE__);
-        }
         $this->ElementType = $elementType;
         
         return $this;
@@ -139,52 +134,15 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
         return $this->ModifiedDate ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setModifiedDate method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setModifiedDate method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateModifiedDateForChoiceConstraintFromSetModifiedDate($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'ModifiedRange',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property ModifiedDate can\'t be set as the property %s is already set. Only one property must be set among these properties: ModifiedDate, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set ModifiedDate value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param string $modifiedDate
      * @return \Travelport\UniversalRecord\StructType\UniversalRecordHistorySearchModifiers
      */
     public function setModifiedDate(?string $modifiedDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($modifiedDate) && !is_string($modifiedDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($modifiedDate, true), gettype($modifiedDate)), __LINE__);
-        }
-        // validation for constraint: choice(ModifiedDate, ModifiedRange)
-        if ('' !== ($modifiedDateChoiceErrorMessage = self::validateModifiedDateForChoiceConstraintFromSetModifiedDate($modifiedDate))) {
-            throw new InvalidArgumentException($modifiedDateChoiceErrorMessage, __LINE__);
-        }
         if (is_null($modifiedDate) || (is_array($modifiedDate) && empty($modifiedDate))) {
             unset($this->ModifiedDate);
         } else {
@@ -202,48 +160,15 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
         return $this->ModifiedRange ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setModifiedRange method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setModifiedRange method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateModifiedRangeForChoiceConstraintFromSetModifiedRange($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'ModifiedDate',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property ModifiedRange can\'t be set as the property %s is already set. Only one property must be set among these properties: ModifiedRange, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set ModifiedRange value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\ModifiedRange $modifiedRange
      * @return \Travelport\UniversalRecord\StructType\UniversalRecordHistorySearchModifiers
      */
     public function setModifiedRange(?\Travelport\UniversalRecord\StructType\ModifiedRange $modifiedRange = null): self
     {
-        // validation for constraint: choice(ModifiedDate, ModifiedRange)
-        if ('' !== ($modifiedRangeChoiceErrorMessage = self::validateModifiedRangeForChoiceConstraintFromSetModifiedRange($modifiedRange))) {
-            throw new InvalidArgumentException($modifiedRangeChoiceErrorMessage, __LINE__);
-        }
         if (is_null($modifiedRange) || (is_array($modifiedRange) && empty($modifiedRange))) {
             unset($this->ModifiedRange);
         } else {
@@ -267,18 +192,6 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
      */
     public function setMaxResults(?int $maxResults = 20): self
     {
-        // validation for constraint: int
-        if (!is_null($maxResults) && !(is_int($maxResults) || ctype_digit($maxResults))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maxResults, true), gettype($maxResults)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(200)
-        if (!is_null($maxResults) && $maxResults > 200) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 200', var_export($maxResults, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive(1)
-        if (!is_null($maxResults) && $maxResults < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($maxResults, true)), __LINE__);
-        }
         $this->MaxResults = $maxResults;
         
         return $this;
@@ -298,14 +211,6 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
      */
     public function setStartFromResult(?int $startFromResult = 1): self
     {
-        // validation for constraint: int
-        if (!is_null($startFromResult) && !(is_int($startFromResult) || ctype_digit($startFromResult))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($startFromResult, true), gettype($startFromResult)), __LINE__);
-        }
-        // validation for constraint: minInclusive(1)
-        if (!is_null($startFromResult) && $startFromResult < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($startFromResult, true)), __LINE__);
-        }
         $this->StartFromResult = $startFromResult;
         
         return $this;
@@ -325,10 +230,6 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
      */
     public function setModifiedBy(?string $modifiedBy = null): self
     {
-        // validation for constraint: string
-        if (!is_null($modifiedBy) && !is_string($modifiedBy)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($modifiedBy, true), gettype($modifiedBy)), __LINE__);
-        }
         $this->ModifiedBy = $modifiedBy;
         
         return $this;
@@ -348,10 +249,6 @@ class UniversalRecordHistorySearchModifiers extends AbstractStructBase
      */
     public function setDebugMode(?bool $debugMode = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($debugMode) && !is_bool($debugMode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($debugMode, true), gettype($debugMode)), __LINE__);
-        }
         $this->DebugMode = $debugMode;
         
         return $this;

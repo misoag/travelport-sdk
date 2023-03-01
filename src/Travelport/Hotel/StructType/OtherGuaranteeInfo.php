@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,12 +18,12 @@ class OtherGuaranteeInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * Constructor method for OtherGuaranteeInfo
      * @uses OtherGuaranteeInfo::setType()
@@ -53,10 +52,6 @@ class OtherGuaranteeInfo extends AbstractStructBase
      */
     public function setType(string $type): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -76,10 +71,6 @@ class OtherGuaranteeInfo extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;

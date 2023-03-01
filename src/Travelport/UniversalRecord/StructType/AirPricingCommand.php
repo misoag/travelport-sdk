@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class AirPricingCommand extends AbstractStructBase
      * - ref: AirPricingModifiers
      * @var \Travelport\UniversalRecord\StructType\AirPricingModifiers|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AirPricingModifiers $AirPricingModifiers = null;
+    public ?\Travelport\UniversalRecord\StructType\AirPricingModifiers $AirPricingModifiers = null;
     /**
      * The AirSegmentPricingModifiers
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class AirPricingCommand extends AbstractStructBase
      * - ref: AirSegmentPricingModifiers
      * @var \Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers[]
      */
-    protected ?array $AirSegmentPricingModifiers = null;
+    public ?array $AirSegmentPricingModifiers = null;
     /**
      * The CommandKey
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class AirPricingCommand extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CommandKey = null;
+    public ?string $CommandKey = null;
     /**
      * The CabinClass
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class AirPricingCommand extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CabinClass = null;
+    public ?string $CabinClass = null;
     /**
      * Constructor method for AirPricingCommand
      * @uses AirPricingCommand::setAirPricingModifiers()
@@ -96,48 +95,12 @@ class AirPricingCommand extends AbstractStructBase
         return $this->AirSegmentPricingModifiers;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirSegmentPricingModifiers method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegmentPricingModifiers method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAirSegmentPricingModifiersForArrayConstraintFromSetAirSegmentPricingModifiers(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airPricingCommandAirSegmentPricingModifiersItem) {
-            // validation for constraint: itemType
-            if (!$airPricingCommandAirSegmentPricingModifiersItem instanceof \Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers) {
-                $invalidValues[] = is_object($airPricingCommandAirSegmentPricingModifiersItem) ? get_class($airPricingCommandAirSegmentPricingModifiersItem) : sprintf('%s(%s)', gettype($airPricingCommandAirSegmentPricingModifiersItem), var_export($airPricingCommandAirSegmentPricingModifiersItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AirSegmentPricingModifiers property can only contain items of type \Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AirSegmentPricingModifiers value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers[] $airSegmentPricingModifiers
      * @return \Travelport\UniversalRecord\StructType\AirPricingCommand
      */
     public function setAirSegmentPricingModifiers(?array $airSegmentPricingModifiers = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($airSegmentPricingModifiersArrayErrorMessage = self::validateAirSegmentPricingModifiersForArrayConstraintFromSetAirSegmentPricingModifiers($airSegmentPricingModifiers))) {
-            throw new InvalidArgumentException($airSegmentPricingModifiersArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($airSegmentPricingModifiers) && count($airSegmentPricingModifiers) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($airSegmentPricingModifiers)), __LINE__);
-        }
         $this->AirSegmentPricingModifiers = $airSegmentPricingModifiers;
         
         return $this;
@@ -150,14 +113,6 @@ class AirPricingCommand extends AbstractStructBase
      */
     public function addToAirSegmentPricingModifiers(\Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers) {
-            throw new InvalidArgumentException(sprintf('The AirSegmentPricingModifiers property can only contain items of type \Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->AirSegmentPricingModifiers) && count($this->AirSegmentPricingModifiers) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->AirSegmentPricingModifiers)), __LINE__);
-        }
         $this->AirSegmentPricingModifiers[] = $item;
         
         return $this;
@@ -177,14 +132,6 @@ class AirPricingCommand extends AbstractStructBase
      */
     public function setCommandKey(?string $commandKey = null): self
     {
-        // validation for constraint: string
-        if (!is_null($commandKey) && !is_string($commandKey)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($commandKey, true), gettype($commandKey)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($commandKey) && mb_strlen((string) $commandKey) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $commandKey)), __LINE__);
-        }
         $this->CommandKey = $commandKey;
         
         return $this;
@@ -204,10 +151,6 @@ class AirPricingCommand extends AbstractStructBase
      */
     public function setCabinClass(?string $cabinClass = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cabinClass) && !is_string($cabinClass)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cabinClass, true), gettype($cabinClass)), __LINE__);
-        }
         $this->CabinClass = $cabinClass;
         
         return $this;

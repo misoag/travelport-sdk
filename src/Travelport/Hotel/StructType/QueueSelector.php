@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class QueueSelector extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Queue = null;
+    public ?string $Queue = null;
     /**
      * The Category
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class QueueSelector extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Category = null;
+    public ?string $Category = null;
     /**
      * The DateRange
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class QueueSelector extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DateRange = null;
+    public ?string $DateRange = null;
     /**
      * Constructor method for QueueSelector
      * @uses QueueSelector::setQueue()
@@ -73,10 +72,6 @@ class QueueSelector extends AbstractStructBase
      */
     public function setQueue(?string $queue = null): self
     {
-        // validation for constraint: string
-        if (!is_null($queue) && !is_string($queue)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($queue, true), gettype($queue)), __LINE__);
-        }
         $this->Queue = $queue;
         
         return $this;
@@ -96,10 +91,6 @@ class QueueSelector extends AbstractStructBase
      */
     public function setCategory(?string $category = null): self
     {
-        // validation for constraint: string
-        if (!is_null($category) && !is_string($category)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($category, true), gettype($category)), __LINE__);
-        }
         $this->Category = $category;
         
         return $this;
@@ -119,10 +110,6 @@ class QueueSelector extends AbstractStructBase
      */
     public function setDateRange(?string $dateRange = null): self
     {
-        // validation for constraint: string
-        if (!is_null($dateRange) && !is_string($dateRange)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dateRange, true), gettype($dateRange)), __LINE__);
-        }
         $this->DateRange = $dateRange;
         
         return $this;

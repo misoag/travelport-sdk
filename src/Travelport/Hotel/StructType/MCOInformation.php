@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class MCOInformation extends AbstractStructBase
      * - ref: PassengerInfo
      * @var \Travelport\Hotel\StructType\PassengerInfo[]
      */
-    protected ?array $PassengerInfo = null;
+    public ?array $PassengerInfo = null;
     /**
      * The MCONumber
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class MCOInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $MCONumber = null;
+    public ?string $MCONumber = null;
     /**
      * The Status
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class MCOInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Status = null;
+    public ?string $Status = null;
     /**
      * The MCOType
      * Meta information extracted from the WSDL
@@ -45,7 +44,7 @@ class MCOInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $MCOType = null;
+    public ?string $MCOType = null;
     /**
      * Constructor method for MCOInformation
      * @uses MCOInformation::setPassengerInfo()
@@ -74,48 +73,12 @@ class MCOInformation extends AbstractStructBase
         return $this->PassengerInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPassengerInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPassengerInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePassengerInfoForArrayConstraintFromSetPassengerInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $mCOInformationPassengerInfoItem) {
-            // validation for constraint: itemType
-            if (!$mCOInformationPassengerInfoItem instanceof \Travelport\Hotel\StructType\PassengerInfo) {
-                $invalidValues[] = is_object($mCOInformationPassengerInfoItem) ? get_class($mCOInformationPassengerInfoItem) : sprintf('%s(%s)', gettype($mCOInformationPassengerInfoItem), var_export($mCOInformationPassengerInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The PassengerInfo property can only contain items of type \Travelport\Hotel\StructType\PassengerInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set PassengerInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\PassengerInfo[] $passengerInfo
      * @return \Travelport\Hotel\StructType\MCOInformation
      */
     public function setPassengerInfo(?array $passengerInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($passengerInfoArrayErrorMessage = self::validatePassengerInfoForArrayConstraintFromSetPassengerInfo($passengerInfo))) {
-            throw new InvalidArgumentException($passengerInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($passengerInfo) && count($passengerInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($passengerInfo)), __LINE__);
-        }
         $this->PassengerInfo = $passengerInfo;
         
         return $this;
@@ -128,14 +91,6 @@ class MCOInformation extends AbstractStructBase
      */
     public function addToPassengerInfo(\Travelport\Hotel\StructType\PassengerInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\PassengerInfo) {
-            throw new InvalidArgumentException(sprintf('The PassengerInfo property can only contain items of type \Travelport\Hotel\StructType\PassengerInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->PassengerInfo) && count($this->PassengerInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->PassengerInfo)), __LINE__);
-        }
         $this->PassengerInfo[] = $item;
         
         return $this;
@@ -155,10 +110,6 @@ class MCOInformation extends AbstractStructBase
      */
     public function setMCONumber(?string $mCONumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($mCONumber) && !is_string($mCONumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mCONumber, true), gettype($mCONumber)), __LINE__);
-        }
         $this->MCONumber = $mCONumber;
         
         return $this;
@@ -178,10 +129,6 @@ class MCOInformation extends AbstractStructBase
      */
     public function setStatus(?string $status = null): self
     {
-        // validation for constraint: string
-        if (!is_null($status) && !is_string($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -201,10 +148,6 @@ class MCOInformation extends AbstractStructBase
      */
     public function setMCOType(?string $mCOType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($mCOType) && !is_string($mCOType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mCOType, true), gettype($mCOType)), __LINE__);
-        }
         $this->MCOType = $mCOType;
         
         return $this;

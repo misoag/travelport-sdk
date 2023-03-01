@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class BookingTravelerInformation extends AbstractStructBase
      * - ref: Name
      * @var \Travelport\UniversalRecord\StructType\Name|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Name $Name = null;
+    public ?\Travelport\UniversalRecord\StructType\Name $Name = null;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class BookingTravelerInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingTravelerRef = null;
+    public ?string $BookingTravelerRef = null;
     /**
      * Constructor method for BookingTravelerInformation
      * @uses BookingTravelerInformation::setName()
@@ -78,10 +77,6 @@ class BookingTravelerInformation extends AbstractStructBase
      */
     public function setBookingTravelerRef(?string $bookingTravelerRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;

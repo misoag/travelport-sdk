@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class BaseSearchModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeDateSpec|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeDateSpec $TravelDate = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeDateSpec $TravelDate = null;
     /**
      * The IncludeAllNames
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class BaseSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $IncludeAllNames = null;
+    public ?bool $IncludeAllNames = null;
     /**
      * The IncludeAgentInfo
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class BaseSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $IncludeAgentInfo = null;
+    public ?bool $IncludeAgentInfo = null;
     /**
      * The MaxResults
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class BaseSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MaxResults = null;
+    public ?int $MaxResults = null;
     /**
      * The StartFromResult
      * Meta information extracted from the WSDL
@@ -62,7 +61,7 @@ class BaseSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $StartFromResult = null;
+    public ?int $StartFromResult = null;
     /**
      * The ExcludeAir
      * Meta information extracted from the WSDL
@@ -71,7 +70,7 @@ class BaseSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ExcludeAir = null;
+    public ?bool $ExcludeAir = null;
     /**
      * The ExcludeVehicle
      * Meta information extracted from the WSDL
@@ -80,7 +79,7 @@ class BaseSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ExcludeVehicle = null;
+    public ?bool $ExcludeVehicle = null;
     /**
      * The ExcludeHotel
      * Meta information extracted from the WSDL
@@ -89,7 +88,7 @@ class BaseSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ExcludeHotel = null;
+    public ?bool $ExcludeHotel = null;
     /**
      * Constructor method for BaseSearchModifiers
      * @uses BaseSearchModifiers::setTravelDate()
@@ -155,10 +154,6 @@ class BaseSearchModifiers extends AbstractStructBase
      */
     public function setIncludeAllNames(?bool $includeAllNames = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($includeAllNames) && !is_bool($includeAllNames)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($includeAllNames, true), gettype($includeAllNames)), __LINE__);
-        }
         $this->IncludeAllNames = $includeAllNames;
         
         return $this;
@@ -178,10 +173,6 @@ class BaseSearchModifiers extends AbstractStructBase
      */
     public function setIncludeAgentInfo(?bool $includeAgentInfo = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($includeAgentInfo) && !is_bool($includeAgentInfo)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($includeAgentInfo, true), gettype($includeAgentInfo)), __LINE__);
-        }
         $this->IncludeAgentInfo = $includeAgentInfo;
         
         return $this;
@@ -201,18 +192,6 @@ class BaseSearchModifiers extends AbstractStructBase
      */
     public function setMaxResults(?int $maxResults = 20): self
     {
-        // validation for constraint: int
-        if (!is_null($maxResults) && !(is_int($maxResults) || ctype_digit($maxResults))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maxResults, true), gettype($maxResults)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(200)
-        if (!is_null($maxResults) && $maxResults > 200) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 200', var_export($maxResults, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive(1)
-        if (!is_null($maxResults) && $maxResults < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($maxResults, true)), __LINE__);
-        }
         $this->MaxResults = $maxResults;
         
         return $this;
@@ -232,14 +211,6 @@ class BaseSearchModifiers extends AbstractStructBase
      */
     public function setStartFromResult(?int $startFromResult = null): self
     {
-        // validation for constraint: int
-        if (!is_null($startFromResult) && !(is_int($startFromResult) || ctype_digit($startFromResult))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($startFromResult, true), gettype($startFromResult)), __LINE__);
-        }
-        // validation for constraint: minInclusive(1)
-        if (!is_null($startFromResult) && $startFromResult < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($startFromResult, true)), __LINE__);
-        }
         $this->StartFromResult = $startFromResult;
         
         return $this;
@@ -259,10 +230,6 @@ class BaseSearchModifiers extends AbstractStructBase
      */
     public function setExcludeAir(?bool $excludeAir = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($excludeAir) && !is_bool($excludeAir)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($excludeAir, true), gettype($excludeAir)), __LINE__);
-        }
         $this->ExcludeAir = $excludeAir;
         
         return $this;
@@ -282,10 +249,6 @@ class BaseSearchModifiers extends AbstractStructBase
      */
     public function setExcludeVehicle(?bool $excludeVehicle = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($excludeVehicle) && !is_bool($excludeVehicle)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($excludeVehicle, true), gettype($excludeVehicle)), __LINE__);
-        }
         $this->ExcludeVehicle = $excludeVehicle;
         
         return $this;
@@ -305,10 +268,6 @@ class BaseSearchModifiers extends AbstractStructBase
      */
     public function setExcludeHotel(?bool $excludeHotel = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($excludeHotel) && !is_bool($excludeHotel)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($excludeHotel, true), gettype($excludeHotel)), __LINE__);
-        }
         $this->ExcludeHotel = $excludeHotel;
         
         return $this;

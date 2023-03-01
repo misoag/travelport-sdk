@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class FareSurcharge extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class FareSurcharge extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Amount;
+    public string $Amount;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class FareSurcharge extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The SegmentRef
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class FareSurcharge extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SegmentRef = null;
+    public ?string $SegmentRef = null;
     /**
      * The CouponRef
      * Meta information extracted from the WSDL
@@ -57,17 +56,17 @@ class FareSurcharge extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CouponRef = null;
+    public ?string $CouponRef = null;
     /**
      * The ElStat
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for FareSurcharge
      * @uses FareSurcharge::setType()
@@ -111,10 +110,6 @@ class FareSurcharge extends AbstractStructBase
      */
     public function setType(string $type): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -134,10 +129,6 @@ class FareSurcharge extends AbstractStructBase
      */
     public function setAmount(string $amount): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -157,10 +148,6 @@ class FareSurcharge extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -180,10 +167,6 @@ class FareSurcharge extends AbstractStructBase
      */
     public function setSegmentRef(?string $segmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($segmentRef) && !is_string($segmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($segmentRef, true), gettype($segmentRef)), __LINE__);
-        }
         $this->SegmentRef = $segmentRef;
         
         return $this;
@@ -203,10 +186,6 @@ class FareSurcharge extends AbstractStructBase
      */
     public function setCouponRef(?string $couponRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($couponRef) && !is_string($couponRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($couponRef, true), gettype($couponRef)), __LINE__);
-        }
         $this->CouponRef = $couponRef;
         
         return $this;
@@ -221,18 +200,11 @@ class FareSurcharge extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\FareSurcharge
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -252,10 +224,6 @@ class FareSurcharge extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class HotelReservation extends BaseReservation
      * - use: required
      * @var string
      */
-    protected string $Status;
+    public string $Status;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -31,42 +30,42 @@ class HotelReservation extends BaseReservation
      * - ref: common:BookingTravelerRef
      * @var \Travelport\Hotel\StructType\BookingTravelerRef[]
      */
-    protected ?array $BookingTravelerRef = null;
+    public ?array $BookingTravelerRef = null;
     /**
      * The ReservationName
      * @var \Travelport\Hotel\StructType\ReservationName|null
      */
-    protected ?\Travelport\Hotel\StructType\ReservationName $ReservationName = null;
+    public ?\Travelport\Hotel\StructType\ReservationName $ReservationName = null;
     /**
      * The ThirdPartyInformation
      * @var \Travelport\Hotel\StructType\ThirdPartyInformation|null
      */
-    protected ?\Travelport\Hotel\StructType\ThirdPartyInformation $ThirdPartyInformation = null;
+    public ?\Travelport\Hotel\StructType\ThirdPartyInformation $ThirdPartyInformation = null;
     /**
      * The Email
      * @var \Travelport\Hotel\StructType\Email|null
      */
-    protected ?\Travelport\Hotel\StructType\Email $Email = null;
+    public ?\Travelport\Hotel\StructType\Email $Email = null;
     /**
      * The PhoneNumber
      * @var \Travelport\Hotel\StructType\PhoneNumber|null
      */
-    protected ?\Travelport\Hotel\StructType\PhoneNumber $PhoneNumber = null;
+    public ?\Travelport\Hotel\StructType\PhoneNumber $PhoneNumber = null;
     /**
      * The HotelProperty
      * @var \Travelport\Hotel\StructType\HotelProperty|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelProperty $HotelProperty = null;
+    public ?\Travelport\Hotel\StructType\HotelProperty $HotelProperty = null;
     /**
      * The HotelRateDetail
      * @var \Travelport\Hotel\StructType\HotelRateDetail|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelRateDetail $HotelRateDetail = null;
+    public ?\Travelport\Hotel\StructType\HotelRateDetail $HotelRateDetail = null;
     /**
      * The HotelStay
      * @var \Travelport\Hotel\StructType\HotelStay|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelStay $HotelStay = null;
+    public ?\Travelport\Hotel\StructType\HotelStay $HotelStay = null;
     /**
      * The HotelSpecialRequest
      * Meta information extracted from the WSDL
@@ -75,81 +74,81 @@ class HotelReservation extends BaseReservation
      * - maxLength: 250
      * @var string|null
      */
-    protected ?string $HotelSpecialRequest = null;
+    public ?string $HotelSpecialRequest = null;
     /**
      * The Guarantee
      * @var \Travelport\Hotel\StructType\Guarantee|null
      */
-    protected ?\Travelport\Hotel\StructType\Guarantee $Guarantee = null;
+    public ?\Travelport\Hotel\StructType\Guarantee $Guarantee = null;
     /**
      * The PromotionCode
      * @var \Travelport\Hotel\StructType\PromotionCode|null
      */
-    protected ?\Travelport\Hotel\StructType\PromotionCode $PromotionCode = null;
+    public ?\Travelport\Hotel\StructType\PromotionCode $PromotionCode = null;
     /**
      * The BookingSource
      * @var \Travelport\Hotel\StructType\BookingSource|null
      */
-    protected ?\Travelport\Hotel\StructType\BookingSource $BookingSource = null;
+    public ?\Travelport\Hotel\StructType\BookingSource $BookingSource = null;
     /**
      * The HotelBedding
      * @var \Travelport\Hotel\StructType\HotelBedding|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelBedding $HotelBedding = null;
+    public ?\Travelport\Hotel\StructType\HotelBedding $HotelBedding = null;
     /**
      * The GuestInformation
      * @var \Travelport\Hotel\StructType\GuestInformation|null
      */
-    protected ?\Travelport\Hotel\StructType\GuestInformation $GuestInformation = null;
+    public ?\Travelport\Hotel\StructType\GuestInformation $GuestInformation = null;
     /**
      * The AssociatedRemark
      * @var \Travelport\Hotel\StructType\AssociatedRemark|null
      */
-    protected ?\Travelport\Hotel\StructType\AssociatedRemark $AssociatedRemark = null;
+    public ?\Travelport\Hotel\StructType\AssociatedRemark $AssociatedRemark = null;
     /**
      * The SellMessage
      * @var string|null
      */
-    protected ?string $SellMessage = null;
+    public ?string $SellMessage = null;
     /**
      * The HotelCommission
      * @var string|null
      */
-    protected ?string $HotelCommission = null;
+    public ?string $HotelCommission = null;
     /**
      * The CancelInfo
      * @var \Travelport\Hotel\StructType\CancelInfo|null
      */
-    protected ?\Travelport\Hotel\StructType\CancelInfo $CancelInfo = null;
+    public ?\Travelport\Hotel\StructType\CancelInfo $CancelInfo = null;
     /**
      * The TotalReservationPrice
      * @var \Travelport\Hotel\StructType\TotalReservationPrice|null
      */
-    protected ?\Travelport\Hotel\StructType\TotalReservationPrice $TotalReservationPrice = null;
+    public ?\Travelport\Hotel\StructType\TotalReservationPrice $TotalReservationPrice = null;
     /**
      * The HotelDetailItem
      * @var \Travelport\Hotel\StructType\HotelDetailItem|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelDetailItem $HotelDetailItem = null;
+    public ?\Travelport\Hotel\StructType\HotelDetailItem $HotelDetailItem = null;
     /**
      * The AdaptedRoomGuestAllocation
      * @var \Travelport\Hotel\StructType\AdaptedRoomGuestAllocation|null
      */
-    protected ?\Travelport\Hotel\StructType\AdaptedRoomGuestAllocation $AdaptedRoomGuestAllocation = null;
+    public ?\Travelport\Hotel\StructType\AdaptedRoomGuestAllocation $AdaptedRoomGuestAllocation = null;
     /**
      * The BookingConfirmation
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingConfirmation = null;
+    public ?string $BookingConfirmation = null;
     /**
      * The CancelConfirmation
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $CancelConfirmation = null;
+    public ?string $CancelConfirmation = null;
     /**
      * The ProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -158,7 +157,7 @@ class HotelReservation extends BaseReservation
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderReservationInfoRef = null;
+    public ?string $ProviderReservationInfoRef = null;
     /**
      * The TravelOrder
      * Meta information extracted from the WSDL
@@ -166,7 +165,7 @@ class HotelReservation extends BaseReservation
      * - use: optional
      * @var int|null
      */
-    protected ?int $TravelOrder = null;
+    public ?int $TravelOrder = null;
     /**
      * The ProviderSegmentOrder
      * Meta information extracted from the WSDL
@@ -175,7 +174,7 @@ class HotelReservation extends BaseReservation
      * - use: optional
      * @var int|null
      */
-    protected ?int $ProviderSegmentOrder = null;
+    public ?int $ProviderSegmentOrder = null;
     /**
      * The PassiveProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -184,7 +183,7 @@ class HotelReservation extends BaseReservation
      * - use: optional
      * @var string|null
      */
-    protected ?string $PassiveProviderReservationInfoRef = null;
+    public ?string $PassiveProviderReservationInfoRef = null;
     /**
      * Constructor method for HotelReservation
      * @uses HotelReservation::setStatus()
@@ -291,10 +290,6 @@ class HotelReservation extends BaseReservation
      */
     public function setStatus(string $status): self
     {
-        // validation for constraint: string
-        if (!is_null($status) && !is_string($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -308,48 +303,12 @@ class HotelReservation extends BaseReservation
         return $this->BookingTravelerRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setBookingTravelerRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTravelerRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelReservationBookingTravelerRefItem) {
-            // validation for constraint: itemType
-            if (!$hotelReservationBookingTravelerRefItem instanceof \Travelport\Hotel\StructType\BookingTravelerRef) {
-                $invalidValues[] = is_object($hotelReservationBookingTravelerRefItem) ? get_class($hotelReservationBookingTravelerRefItem) : sprintf('%s(%s)', gettype($hotelReservationBookingTravelerRefItem), var_export($hotelReservationBookingTravelerRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The BookingTravelerRef property can only contain items of type \Travelport\Hotel\StructType\BookingTravelerRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set BookingTravelerRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\BookingTravelerRef[] $bookingTravelerRef
      * @return \Travelport\Hotel\StructType\HotelReservation
      */
     public function setBookingTravelerRef(?array $bookingTravelerRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef($bookingTravelerRef))) {
-            throw new InvalidArgumentException($bookingTravelerRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($bookingTravelerRef) && count($bookingTravelerRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;
@@ -362,14 +321,6 @@ class HotelReservation extends BaseReservation
      */
     public function addToBookingTravelerRef(\Travelport\Hotel\StructType\BookingTravelerRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\BookingTravelerRef) {
-            throw new InvalidArgumentException(sprintf('The BookingTravelerRef property can only contain items of type \Travelport\Hotel\StructType\BookingTravelerRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->BookingTravelerRef) && count($this->BookingTravelerRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->BookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef[] = $item;
         
         return $this;
@@ -522,14 +473,6 @@ class HotelReservation extends BaseReservation
      */
     public function setHotelSpecialRequest(?string $hotelSpecialRequest = null): self
     {
-        // validation for constraint: string
-        if (!is_null($hotelSpecialRequest) && !is_string($hotelSpecialRequest)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotelSpecialRequest, true), gettype($hotelSpecialRequest)), __LINE__);
-        }
-        // validation for constraint: maxLength(250)
-        if (!is_null($hotelSpecialRequest) && mb_strlen((string) $hotelSpecialRequest) > 250) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 250', mb_strlen((string) $hotelSpecialRequest)), __LINE__);
-        }
         $this->HotelSpecialRequest = $hotelSpecialRequest;
         
         return $this;
@@ -663,10 +606,6 @@ class HotelReservation extends BaseReservation
      */
     public function setSellMessage(?string $sellMessage = null): self
     {
-        // validation for constraint: string
-        if (!is_null($sellMessage) && !is_string($sellMessage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sellMessage, true), gettype($sellMessage)), __LINE__);
-        }
         $this->SellMessage = $sellMessage;
         
         return $this;
@@ -686,10 +625,6 @@ class HotelReservation extends BaseReservation
      */
     public function setHotelCommission(?string $hotelCommission = null): self
     {
-        // validation for constraint: string
-        if (!is_null($hotelCommission) && !is_string($hotelCommission)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotelCommission, true), gettype($hotelCommission)), __LINE__);
-        }
         $this->HotelCommission = $hotelCommission;
         
         return $this;
@@ -785,10 +720,6 @@ class HotelReservation extends BaseReservation
      */
     public function setBookingConfirmation(?string $bookingConfirmation = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingConfirmation) && !is_string($bookingConfirmation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingConfirmation, true), gettype($bookingConfirmation)), __LINE__);
-        }
         $this->BookingConfirmation = $bookingConfirmation;
         
         return $this;
@@ -808,10 +739,6 @@ class HotelReservation extends BaseReservation
      */
     public function setCancelConfirmation(?string $cancelConfirmation = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cancelConfirmation) && !is_string($cancelConfirmation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancelConfirmation, true), gettype($cancelConfirmation)), __LINE__);
-        }
         $this->CancelConfirmation = $cancelConfirmation;
         
         return $this;
@@ -831,10 +758,6 @@ class HotelReservation extends BaseReservation
      */
     public function setProviderReservationInfoRef(?string $providerReservationInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerReservationInfoRef) && !is_string($providerReservationInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerReservationInfoRef, true), gettype($providerReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef = $providerReservationInfoRef;
         
         return $this;
@@ -854,10 +777,6 @@ class HotelReservation extends BaseReservation
      */
     public function setTravelOrder(?int $travelOrder = null): self
     {
-        // validation for constraint: int
-        if (!is_null($travelOrder) && !(is_int($travelOrder) || ctype_digit($travelOrder))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($travelOrder, true), gettype($travelOrder)), __LINE__);
-        }
         $this->TravelOrder = $travelOrder;
         
         return $this;
@@ -877,14 +796,6 @@ class HotelReservation extends BaseReservation
      */
     public function setProviderSegmentOrder(?int $providerSegmentOrder = null): self
     {
-        // validation for constraint: int
-        if (!is_null($providerSegmentOrder) && !(is_int($providerSegmentOrder) || ctype_digit($providerSegmentOrder))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($providerSegmentOrder, true), gettype($providerSegmentOrder)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(999)
-        if (!is_null($providerSegmentOrder) && $providerSegmentOrder > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 999', var_export($providerSegmentOrder, true)), __LINE__);
-        }
         $this->ProviderSegmentOrder = $providerSegmentOrder;
         
         return $this;
@@ -904,10 +815,6 @@ class HotelReservation extends BaseReservation
      */
     public function setPassiveProviderReservationInfoRef(?string $passiveProviderReservationInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($passiveProviderReservationInfoRef) && !is_string($passiveProviderReservationInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passiveProviderReservationInfoRef, true), gettype($passiveProviderReservationInfoRef)), __LINE__);
-        }
         $this->PassiveProviderReservationInfoRef = $passiveProviderReservationInfoRef;
         
         return $this;

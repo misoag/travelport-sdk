@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class Amenity extends AbstractStructBase
      * - use: required
      * @var int
      */
-    protected int $Code;
+    public int $Code;
     /**
      * The AmenityType
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class Amenity extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AmenityType = null;
+    public ?string $AmenityType = null;
     /**
      * Constructor method for Amenity
      * @uses Amenity::setCode()
@@ -61,18 +60,6 @@ class Amenity extends AbstractStructBase
      */
     public function setCode(int $code): self
     {
-        // validation for constraint: int
-        if (!is_null($code) && !(is_int($code) || ctype_digit($code))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(999)
-        if (!is_null($code) && $code > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 999', var_export($code, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive(1)
-        if (!is_null($code) && $code < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($code, true)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;
@@ -92,14 +79,6 @@ class Amenity extends AbstractStructBase
      */
     public function setAmenityType(?string $amenityType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amenityType) && !is_string($amenityType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amenityType, true), gettype($amenityType)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($amenityType) && mb_strlen((string) $amenityType) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $amenityType)), __LINE__);
-        }
         $this->AmenityType = $amenityType;
         
         return $this;

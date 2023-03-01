@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class Segment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * The SegmentRemark
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class Segment extends AbstractStructBase
      * - ref: SegmentRemark
      * @var \Travelport\Hotel\StructType\SegmentRemark[]
      */
-    protected ?array $SegmentRemark = null;
+    public ?array $SegmentRemark = null;
     /**
      * The Status
      * Meta information extracted from the WSDL
@@ -40,14 +39,14 @@ class Segment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Status = null;
+    public ?string $Status = null;
     /**
      * The Passive
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Passive = null;
+    public ?bool $Passive = null;
     /**
      * The TravelOrder
      * Meta information extracted from the WSDL
@@ -55,7 +54,7 @@ class Segment extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $TravelOrder = null;
+    public ?int $TravelOrder = null;
     /**
      * The ProviderSegmentOrder
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class Segment extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $ProviderSegmentOrder = null;
+    public ?int $ProviderSegmentOrder = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -73,7 +72,7 @@ class Segment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -81,7 +80,7 @@ class Segment extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for Segment
      * @uses Segment::setKey()
@@ -128,10 +127,6 @@ class Segment extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -145,48 +140,12 @@ class Segment extends AbstractStructBase
         return $this->SegmentRemark;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setSegmentRemark method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setSegmentRemark method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateSegmentRemarkForArrayConstraintFromSetSegmentRemark(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $segmentSegmentRemarkItem) {
-            // validation for constraint: itemType
-            if (!$segmentSegmentRemarkItem instanceof \Travelport\Hotel\StructType\SegmentRemark) {
-                $invalidValues[] = is_object($segmentSegmentRemarkItem) ? get_class($segmentSegmentRemarkItem) : sprintf('%s(%s)', gettype($segmentSegmentRemarkItem), var_export($segmentSegmentRemarkItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The SegmentRemark property can only contain items of type \Travelport\Hotel\StructType\SegmentRemark, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set SegmentRemark value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\SegmentRemark[] $segmentRemark
      * @return \Travelport\Hotel\StructType\Segment
      */
     public function setSegmentRemark(?array $segmentRemark = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($segmentRemarkArrayErrorMessage = self::validateSegmentRemarkForArrayConstraintFromSetSegmentRemark($segmentRemark))) {
-            throw new InvalidArgumentException($segmentRemarkArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($segmentRemark) && count($segmentRemark) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($segmentRemark)), __LINE__);
-        }
         $this->SegmentRemark = $segmentRemark;
         
         return $this;
@@ -199,14 +158,6 @@ class Segment extends AbstractStructBase
      */
     public function addToSegmentRemark(\Travelport\Hotel\StructType\SegmentRemark $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\SegmentRemark) {
-            throw new InvalidArgumentException(sprintf('The SegmentRemark property can only contain items of type \Travelport\Hotel\StructType\SegmentRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->SegmentRemark) && count($this->SegmentRemark) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->SegmentRemark)), __LINE__);
-        }
         $this->SegmentRemark[] = $item;
         
         return $this;
@@ -226,10 +177,6 @@ class Segment extends AbstractStructBase
      */
     public function setStatus(?string $status = null): self
     {
-        // validation for constraint: string
-        if (!is_null($status) && !is_string($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -249,10 +196,6 @@ class Segment extends AbstractStructBase
      */
     public function setPassive(?bool $passive = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($passive) && !is_bool($passive)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($passive, true), gettype($passive)), __LINE__);
-        }
         $this->Passive = $passive;
         
         return $this;
@@ -272,10 +215,6 @@ class Segment extends AbstractStructBase
      */
     public function setTravelOrder(?int $travelOrder = null): self
     {
-        // validation for constraint: int
-        if (!is_null($travelOrder) && !(is_int($travelOrder) || ctype_digit($travelOrder))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($travelOrder, true), gettype($travelOrder)), __LINE__);
-        }
         $this->TravelOrder = $travelOrder;
         
         return $this;
@@ -295,14 +234,6 @@ class Segment extends AbstractStructBase
      */
     public function setProviderSegmentOrder(?int $providerSegmentOrder = null): self
     {
-        // validation for constraint: int
-        if (!is_null($providerSegmentOrder) && !(is_int($providerSegmentOrder) || ctype_digit($providerSegmentOrder))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($providerSegmentOrder, true), gettype($providerSegmentOrder)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(999)
-        if (!is_null($providerSegmentOrder) && $providerSegmentOrder > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 999', var_export($providerSegmentOrder, true)), __LINE__);
-        }
         $this->ProviderSegmentOrder = $providerSegmentOrder;
         
         return $this;
@@ -317,18 +248,11 @@ class Segment extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\Hotel\StructType\Segment
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -348,10 +272,6 @@ class Segment extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

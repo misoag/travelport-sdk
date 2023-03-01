@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      * - ref: common:HostToken
      * @var \Travelport\UniversalRecord\StructType\HostToken[]
      */
-    protected ?array $HostToken = null;
+    public ?array $HostToken = null;
     /**
      * The HostReservation
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      * - ref: air_v52_0:HostReservation
      * @var \Travelport\UniversalRecord\StructType\HostReservation[]
      */
-    protected ?array $HostReservation = null;
+    public ?array $HostReservation = null;
     /**
      * The AgencySellInfo
      * Meta information extracted from the WSDL
@@ -39,14 +38,14 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      * - ref: common:AgencySellInfo
      * @var \Travelport\UniversalRecord\StructType\AgencySellInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AgencySellInfo $AgencySellInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\AgencySellInfo $AgencySellInfo = null;
     /**
      * The AirSolution
      * Meta information extracted from the WSDL
      * - ref: air_v52_0:AirSolution
      * @var \Travelport\UniversalRecord\StructType\AirSolution|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AirSolution $AirSolution = null;
+    public ?\Travelport\UniversalRecord\StructType\AirSolution $AirSolution = null;
     /**
      * The CreditCard
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      * - ref: common:CreditCard
      * @var \Travelport\UniversalRecord\StructType\CreditCard|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CreditCard $CreditCard = null;
+    public ?\Travelport\UniversalRecord\StructType\CreditCard $CreditCard = null;
     /**
      * The AgencyPayment
      * Meta information extracted from the WSDL
@@ -62,7 +61,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      * - ref: common:AgencyPayment
      * @var \Travelport\UniversalRecord\StructType\TypeAgencyPayment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeAgencyPayment $AgencyPayment = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeAgencyPayment $AgencyPayment = null;
     /**
      * The OptionalServices
      * Meta information extracted from the WSDL
@@ -70,7 +69,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      * - ref: air_v52_0:OptionalServices
      * @var \Travelport\UniversalRecord\StructType\OptionalServices|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\OptionalServices $OptionalServices = null;
+    public ?\Travelport\UniversalRecord\StructType\OptionalServices $OptionalServices = null;
     /**
      * The SpecificSeatAssignment
      * Meta information extracted from the WSDL
@@ -79,7 +78,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      * - ref: air_v52_0:SpecificSeatAssignment
      * @var \Travelport\UniversalRecord\StructType\SpecificSeatAssignment[]
      */
-    protected ?array $SpecificSeatAssignment = null;
+    public ?array $SpecificSeatAssignment = null;
     /**
      * The GeneralRemark
      * Meta information extracted from the WSDL
@@ -88,7 +87,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      * - ref: common:GeneralRemark
      * @var \Travelport\UniversalRecord\StructType\GeneralRemark[]
      */
-    protected ?array $GeneralRemark = null;
+    public ?array $GeneralRemark = null;
     /**
      * The ConfirmationEmail
      * Meta information extracted from the WSDL
@@ -96,7 +95,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $ConfirmationEmail = null;
+    public ?string $ConfirmationEmail = null;
     /**
      * The MerchandisingPricingModifiers
      * Meta information extracted from the WSDL
@@ -105,7 +104,7 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      * - ref: air_v52_0:MerchandisingPricingModifiers
      * @var \Travelport\UniversalRecord\StructType\MerchandisingPricingModifiers|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\MerchandisingPricingModifiers $MerchandisingPricingModifiers = null;
+    public ?\Travelport\UniversalRecord\StructType\MerchandisingPricingModifiers $MerchandisingPricingModifiers = null;
     /**
      * Constructor method for AirMerchandisingFulfillmentReq
      * @uses AirMerchandisingFulfillmentReq::setHostToken()
@@ -155,48 +154,12 @@ class AirMerchandisingFulfillmentReq extends BaseReq
         return $this->HostToken;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHostToken method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHostToken method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateHostTokenForArrayConstraintFromSetHostToken(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airMerchandisingFulfillmentReqHostTokenItem) {
-            // validation for constraint: itemType
-            if (!$airMerchandisingFulfillmentReqHostTokenItem instanceof \Travelport\UniversalRecord\StructType\HostToken) {
-                $invalidValues[] = is_object($airMerchandisingFulfillmentReqHostTokenItem) ? get_class($airMerchandisingFulfillmentReqHostTokenItem) : sprintf('%s(%s)', gettype($airMerchandisingFulfillmentReqHostTokenItem), var_export($airMerchandisingFulfillmentReqHostTokenItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The HostToken property can only contain items of type \Travelport\UniversalRecord\StructType\HostToken, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set HostToken value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\HostToken[] $hostToken
      * @return \Travelport\UniversalRecord\StructType\AirMerchandisingFulfillmentReq
      */
     public function setHostToken(?array $hostToken = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($hostTokenArrayErrorMessage = self::validateHostTokenForArrayConstraintFromSetHostToken($hostToken))) {
-            throw new InvalidArgumentException($hostTokenArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($hostToken) && count($hostToken) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($hostToken)), __LINE__);
-        }
         $this->HostToken = $hostToken;
         
         return $this;
@@ -209,14 +172,6 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      */
     public function addToHostToken(\Travelport\UniversalRecord\StructType\HostToken $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\HostToken) {
-            throw new InvalidArgumentException(sprintf('The HostToken property can only contain items of type \Travelport\UniversalRecord\StructType\HostToken, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->HostToken) && count($this->HostToken) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->HostToken)), __LINE__);
-        }
         $this->HostToken[] = $item;
         
         return $this;
@@ -230,48 +185,12 @@ class AirMerchandisingFulfillmentReq extends BaseReq
         return $this->HostReservation;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHostReservation method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHostReservation method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateHostReservationForArrayConstraintFromSetHostReservation(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airMerchandisingFulfillmentReqHostReservationItem) {
-            // validation for constraint: itemType
-            if (!$airMerchandisingFulfillmentReqHostReservationItem instanceof \Travelport\UniversalRecord\StructType\HostReservation) {
-                $invalidValues[] = is_object($airMerchandisingFulfillmentReqHostReservationItem) ? get_class($airMerchandisingFulfillmentReqHostReservationItem) : sprintf('%s(%s)', gettype($airMerchandisingFulfillmentReqHostReservationItem), var_export($airMerchandisingFulfillmentReqHostReservationItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The HostReservation property can only contain items of type \Travelport\UniversalRecord\StructType\HostReservation, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set HostReservation value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\HostReservation[] $hostReservation
      * @return \Travelport\UniversalRecord\StructType\AirMerchandisingFulfillmentReq
      */
     public function setHostReservation(?array $hostReservation = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($hostReservationArrayErrorMessage = self::validateHostReservationForArrayConstraintFromSetHostReservation($hostReservation))) {
-            throw new InvalidArgumentException($hostReservationArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($hostReservation) && count($hostReservation) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($hostReservation)), __LINE__);
-        }
         $this->HostReservation = $hostReservation;
         
         return $this;
@@ -284,14 +203,6 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      */
     public function addToHostReservation(\Travelport\UniversalRecord\StructType\HostReservation $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\HostReservation) {
-            throw new InvalidArgumentException(sprintf('The HostReservation property can only contain items of type \Travelport\UniversalRecord\StructType\HostReservation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->HostReservation) && count($this->HostReservation) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->HostReservation)), __LINE__);
-        }
         $this->HostReservation[] = $item;
         
         return $this;
@@ -400,48 +311,12 @@ class AirMerchandisingFulfillmentReq extends BaseReq
         return $this->SpecificSeatAssignment;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setSpecificSeatAssignment method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setSpecificSeatAssignment method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateSpecificSeatAssignmentForArrayConstraintFromSetSpecificSeatAssignment(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airMerchandisingFulfillmentReqSpecificSeatAssignmentItem) {
-            // validation for constraint: itemType
-            if (!$airMerchandisingFulfillmentReqSpecificSeatAssignmentItem instanceof \Travelport\UniversalRecord\StructType\SpecificSeatAssignment) {
-                $invalidValues[] = is_object($airMerchandisingFulfillmentReqSpecificSeatAssignmentItem) ? get_class($airMerchandisingFulfillmentReqSpecificSeatAssignmentItem) : sprintf('%s(%s)', gettype($airMerchandisingFulfillmentReqSpecificSeatAssignmentItem), var_export($airMerchandisingFulfillmentReqSpecificSeatAssignmentItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The SpecificSeatAssignment property can only contain items of type \Travelport\UniversalRecord\StructType\SpecificSeatAssignment, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set SpecificSeatAssignment value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\SpecificSeatAssignment[] $specificSeatAssignment
      * @return \Travelport\UniversalRecord\StructType\AirMerchandisingFulfillmentReq
      */
     public function setSpecificSeatAssignment(?array $specificSeatAssignment = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($specificSeatAssignmentArrayErrorMessage = self::validateSpecificSeatAssignmentForArrayConstraintFromSetSpecificSeatAssignment($specificSeatAssignment))) {
-            throw new InvalidArgumentException($specificSeatAssignmentArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($specificSeatAssignment) && count($specificSeatAssignment) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($specificSeatAssignment)), __LINE__);
-        }
         $this->SpecificSeatAssignment = $specificSeatAssignment;
         
         return $this;
@@ -454,14 +329,6 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      */
     public function addToSpecificSeatAssignment(\Travelport\UniversalRecord\StructType\SpecificSeatAssignment $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\SpecificSeatAssignment) {
-            throw new InvalidArgumentException(sprintf('The SpecificSeatAssignment property can only contain items of type \Travelport\UniversalRecord\StructType\SpecificSeatAssignment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->SpecificSeatAssignment) && count($this->SpecificSeatAssignment) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->SpecificSeatAssignment)), __LINE__);
-        }
         $this->SpecificSeatAssignment[] = $item;
         
         return $this;
@@ -475,48 +342,12 @@ class AirMerchandisingFulfillmentReq extends BaseReq
         return $this->GeneralRemark;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setGeneralRemark method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setGeneralRemark method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateGeneralRemarkForArrayConstraintFromSetGeneralRemark(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airMerchandisingFulfillmentReqGeneralRemarkItem) {
-            // validation for constraint: itemType
-            if (!$airMerchandisingFulfillmentReqGeneralRemarkItem instanceof \Travelport\UniversalRecord\StructType\GeneralRemark) {
-                $invalidValues[] = is_object($airMerchandisingFulfillmentReqGeneralRemarkItem) ? get_class($airMerchandisingFulfillmentReqGeneralRemarkItem) : sprintf('%s(%s)', gettype($airMerchandisingFulfillmentReqGeneralRemarkItem), var_export($airMerchandisingFulfillmentReqGeneralRemarkItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The GeneralRemark property can only contain items of type \Travelport\UniversalRecord\StructType\GeneralRemark, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set GeneralRemark value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\GeneralRemark[] $generalRemark
      * @return \Travelport\UniversalRecord\StructType\AirMerchandisingFulfillmentReq
      */
     public function setGeneralRemark(?array $generalRemark = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($generalRemarkArrayErrorMessage = self::validateGeneralRemarkForArrayConstraintFromSetGeneralRemark($generalRemark))) {
-            throw new InvalidArgumentException($generalRemarkArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($generalRemark) && count($generalRemark) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($generalRemark)), __LINE__);
-        }
         $this->GeneralRemark = $generalRemark;
         
         return $this;
@@ -529,14 +360,6 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      */
     public function addToGeneralRemark(\Travelport\UniversalRecord\StructType\GeneralRemark $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\GeneralRemark) {
-            throw new InvalidArgumentException(sprintf('The GeneralRemark property can only contain items of type \Travelport\UniversalRecord\StructType\GeneralRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->GeneralRemark) && count($this->GeneralRemark) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->GeneralRemark)), __LINE__);
-        }
         $this->GeneralRemark[] = $item;
         
         return $this;
@@ -556,10 +379,6 @@ class AirMerchandisingFulfillmentReq extends BaseReq
      */
     public function setConfirmationEmail(?string $confirmationEmail = null): self
     {
-        // validation for constraint: string
-        if (!is_null($confirmationEmail) && !is_string($confirmationEmail)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($confirmationEmail, true), gettype($confirmationEmail)), __LINE__);
-        }
         $this->ConfirmationEmail = $confirmationEmail;
         
         return $this;

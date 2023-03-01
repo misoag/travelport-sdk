@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class SavedTripRetrieveRsp extends BaseRsp
      * - ref: SavedTrip
      * @var \Travelport\UniversalRecord\StructType\SavedTrip|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\SavedTrip $SavedTrip = null;
+    public ?\Travelport\UniversalRecord\StructType\SavedTrip $SavedTrip = null;
     /**
      * Constructor method for SavedTripRetrieveRsp
      * @uses SavedTripRetrieveRsp::setSavedTrip()

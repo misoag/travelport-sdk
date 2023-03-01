@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class OptionalServiceApplicationLimitType extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ApplicableLevel;
+    public string $ApplicableLevel;
     /**
      * The MaximumQuantity
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class OptionalServiceApplicationLimitType extends AbstractStructBase
      * - use: required
      * @var int
      */
-    protected int $MaximumQuantity;
+    public int $MaximumQuantity;
     /**
      * The ProviderDefinedApplicableLevels
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class OptionalServiceApplicationLimitType extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderDefinedApplicableLevels = null;
+    public ?string $ProviderDefinedApplicableLevels = null;
     /**
      * The MinimumQuantity
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class OptionalServiceApplicationLimitType extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MinimumQuantity = null;
+    public ?int $MinimumQuantity = null;
     /**
      * Constructor method for OptionalServiceApplicationLimitType
      * @uses OptionalServiceApplicationLimitType::setApplicableLevel()
@@ -80,18 +79,11 @@ class OptionalServiceApplicationLimitType extends AbstractStructBase
     }
     /**
      * Set ApplicableLevel value
-     * @uses \Travelport\UniversalRecord\EnumType\OptionalServiceApplicabilityType::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\OptionalServiceApplicabilityType::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $applicableLevel
      * @return \Travelport\UniversalRecord\StructType\OptionalServiceApplicationLimitType
      */
     public function setApplicableLevel(string $applicableLevel): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\OptionalServiceApplicabilityType::valueIsValid($applicableLevel)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\OptionalServiceApplicabilityType', is_array($applicableLevel) ? implode(', ', $applicableLevel) : var_export($applicableLevel, true), implode(', ', \Travelport\UniversalRecord\EnumType\OptionalServiceApplicabilityType::getValidValues())), __LINE__);
-        }
         $this->ApplicableLevel = $applicableLevel;
         
         return $this;
@@ -111,10 +103,6 @@ class OptionalServiceApplicationLimitType extends AbstractStructBase
      */
     public function setMaximumQuantity(int $maximumQuantity): self
     {
-        // validation for constraint: int
-        if (!is_null($maximumQuantity) && !(is_int($maximumQuantity) || ctype_digit($maximumQuantity))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maximumQuantity, true), gettype($maximumQuantity)), __LINE__);
-        }
         $this->MaximumQuantity = $maximumQuantity;
         
         return $this;
@@ -134,10 +122,6 @@ class OptionalServiceApplicationLimitType extends AbstractStructBase
      */
     public function setProviderDefinedApplicableLevels(?string $providerDefinedApplicableLevels = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerDefinedApplicableLevels) && !is_string($providerDefinedApplicableLevels)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerDefinedApplicableLevels, true), gettype($providerDefinedApplicableLevels)), __LINE__);
-        }
         $this->ProviderDefinedApplicableLevels = $providerDefinedApplicableLevels;
         
         return $this;
@@ -157,10 +141,6 @@ class OptionalServiceApplicationLimitType extends AbstractStructBase
      */
     public function setMinimumQuantity(?int $minimumQuantity = null): self
     {
-        // validation for constraint: int
-        if (!is_null($minimumQuantity) && !(is_int($minimumQuantity) || ctype_digit($minimumQuantity))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($minimumQuantity, true), gettype($minimumQuantity)), __LINE__);
-        }
         $this->MinimumQuantity = $minimumQuantity;
         
         return $this;

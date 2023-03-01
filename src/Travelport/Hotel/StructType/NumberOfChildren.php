@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class NumberOfChildren extends AbstractStructBase
      * - use: required
      * @var int
      */
-    protected int $Count;
+    public int $Count;
     /**
      * The Age
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class NumberOfChildren extends AbstractStructBase
      * - minOccurs: 0
      * @var int[]
      */
-    protected ?array $Age = null;
+    public ?array $Age = null;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class NumberOfChildren extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * Constructor method for NumberOfChildren
      * @uses NumberOfChildren::setCount()
@@ -72,10 +71,6 @@ class NumberOfChildren extends AbstractStructBase
      */
     public function setCount(int $count): self
     {
-        // validation for constraint: int
-        if (!is_null($count) && !(is_int($count) || ctype_digit($count))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($count, true), gettype($count)), __LINE__);
-        }
         $this->Count = $count;
         
         return $this;
@@ -89,48 +84,12 @@ class NumberOfChildren extends AbstractStructBase
         return $this->Age;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAge method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAge method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAgeForArrayConstraintFromSetAge(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $numberOfChildrenAgeItem) {
-            // validation for constraint: itemType
-            if (!(is_int($numberOfChildrenAgeItem) || ctype_digit($numberOfChildrenAgeItem))) {
-                $invalidValues[] = is_object($numberOfChildrenAgeItem) ? get_class($numberOfChildrenAgeItem) : sprintf('%s(%s)', gettype($numberOfChildrenAgeItem), var_export($numberOfChildrenAgeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Age property can only contain items of type int, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Age value
-     * @throws InvalidArgumentException
      * @param int[] $age
      * @return \Travelport\Hotel\StructType\NumberOfChildren
      */
     public function setAge(?array $age = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($ageArrayErrorMessage = self::validateAgeForArrayConstraintFromSetAge($age))) {
-            throw new InvalidArgumentException($ageArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($age) && count($age) > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 99', count($age)), __LINE__);
-        }
         $this->Age = $age;
         
         return $this;
@@ -143,14 +102,6 @@ class NumberOfChildren extends AbstractStructBase
      */
     public function addToAge(int $item): self
     {
-        // validation for constraint: itemType
-        if (!(is_int($item) || ctype_digit($item))) {
-            throw new InvalidArgumentException(sprintf('The Age property can only contain items of type int, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($this->Age) && count($this->Age) >= 99) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 99', count($this->Age)), __LINE__);
-        }
         $this->Age[] = $item;
         
         return $this;
@@ -170,10 +121,6 @@ class NumberOfChildren extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;

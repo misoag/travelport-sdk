@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class PassiveInfo extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected ?array $TicketNumber = null;
+    public ?array $TicketNumber = null;
     /**
      * The ConfirmationNumber
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class PassiveInfo extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected ?array $ConfirmationNumber = null;
+    public ?array $ConfirmationNumber = null;
     /**
      * The Commission
      * Meta information extracted from the WSDL
@@ -38,35 +37,35 @@ class PassiveInfo extends AbstractStructBase
      * - ref: Commission
      * @var \Travelport\Hotel\StructType\Commission|null
      */
-    protected ?\Travelport\Hotel\StructType\Commission $Commission = null;
+    public ?\Travelport\Hotel\StructType\Commission $Commission = null;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The ProviderLocatorCode
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderLocatorCode = null;
+    public ?string $ProviderLocatorCode = null;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $SupplierCode = null;
+    public ?string $SupplierCode = null;
     /**
      * The SupplierLocatorCode
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $SupplierLocatorCode = null;
+    public ?string $SupplierLocatorCode = null;
     /**
      * Constructor method for PassiveInfo
      * @uses PassiveInfo::setTicketNumber()
@@ -104,48 +103,12 @@ class PassiveInfo extends AbstractStructBase
         return $this->TicketNumber;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setTicketNumber method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setTicketNumber method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTicketNumberForArrayConstraintFromSetTicketNumber(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $passiveInfoTicketNumberItem) {
-            // validation for constraint: itemType
-            if (!is_string($passiveInfoTicketNumberItem)) {
-                $invalidValues[] = is_object($passiveInfoTicketNumberItem) ? get_class($passiveInfoTicketNumberItem) : sprintf('%s(%s)', gettype($passiveInfoTicketNumberItem), var_export($passiveInfoTicketNumberItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The TicketNumber property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set TicketNumber value
-     * @throws InvalidArgumentException
      * @param string[] $ticketNumber
      * @return \Travelport\Hotel\StructType\PassiveInfo
      */
     public function setTicketNumber(?array $ticketNumber = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($ticketNumberArrayErrorMessage = self::validateTicketNumberForArrayConstraintFromSetTicketNumber($ticketNumber))) {
-            throw new InvalidArgumentException($ticketNumberArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($ticketNumber) && count($ticketNumber) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($ticketNumber)), __LINE__);
-        }
         $this->TicketNumber = $ticketNumber;
         
         return $this;
@@ -158,14 +121,6 @@ class PassiveInfo extends AbstractStructBase
      */
     public function addToTicketNumber(string $item): self
     {
-        // validation for constraint: itemType
-        if (!is_string($item)) {
-            throw new InvalidArgumentException(sprintf('The TicketNumber property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->TicketNumber) && count($this->TicketNumber) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->TicketNumber)), __LINE__);
-        }
         $this->TicketNumber[] = $item;
         
         return $this;
@@ -179,48 +134,12 @@ class PassiveInfo extends AbstractStructBase
         return $this->ConfirmationNumber;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setConfirmationNumber method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setConfirmationNumber method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateConfirmationNumberForArrayConstraintFromSetConfirmationNumber(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $passiveInfoConfirmationNumberItem) {
-            // validation for constraint: itemType
-            if (!is_string($passiveInfoConfirmationNumberItem)) {
-                $invalidValues[] = is_object($passiveInfoConfirmationNumberItem) ? get_class($passiveInfoConfirmationNumberItem) : sprintf('%s(%s)', gettype($passiveInfoConfirmationNumberItem), var_export($passiveInfoConfirmationNumberItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ConfirmationNumber property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ConfirmationNumber value
-     * @throws InvalidArgumentException
      * @param string[] $confirmationNumber
      * @return \Travelport\Hotel\StructType\PassiveInfo
      */
     public function setConfirmationNumber(?array $confirmationNumber = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($confirmationNumberArrayErrorMessage = self::validateConfirmationNumberForArrayConstraintFromSetConfirmationNumber($confirmationNumber))) {
-            throw new InvalidArgumentException($confirmationNumberArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($confirmationNumber) && count($confirmationNumber) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($confirmationNumber)), __LINE__);
-        }
         $this->ConfirmationNumber = $confirmationNumber;
         
         return $this;
@@ -233,14 +152,6 @@ class PassiveInfo extends AbstractStructBase
      */
     public function addToConfirmationNumber(string $item): self
     {
-        // validation for constraint: itemType
-        if (!is_string($item)) {
-            throw new InvalidArgumentException(sprintf('The ConfirmationNumber property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->ConfirmationNumber) && count($this->ConfirmationNumber) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->ConfirmationNumber)), __LINE__);
-        }
         $this->ConfirmationNumber[] = $item;
         
         return $this;
@@ -279,10 +190,6 @@ class PassiveInfo extends AbstractStructBase
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -302,10 +209,6 @@ class PassiveInfo extends AbstractStructBase
      */
     public function setProviderLocatorCode(?string $providerLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerLocatorCode) && !is_string($providerLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerLocatorCode, true), gettype($providerLocatorCode)), __LINE__);
-        }
         $this->ProviderLocatorCode = $providerLocatorCode;
         
         return $this;
@@ -325,10 +228,6 @@ class PassiveInfo extends AbstractStructBase
      */
     public function setSupplierCode(?string $supplierCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;
@@ -348,10 +247,6 @@ class PassiveInfo extends AbstractStructBase
      */
     public function setSupplierLocatorCode(?string $supplierLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierLocatorCode) && !is_string($supplierLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierLocatorCode, true), gettype($supplierLocatorCode)), __LINE__);
-        }
         $this->SupplierLocatorCode = $supplierLocatorCode;
         
         return $this;

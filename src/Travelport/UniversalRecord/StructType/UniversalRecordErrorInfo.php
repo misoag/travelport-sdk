@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class UniversalRecordErrorInfo extends TypeErrorInfo
      * - minLength: 5
      * @var string|null
      */
-    protected ?string $LocatorCode = null;
+    public ?string $LocatorCode = null;
     /**
      * The Version
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class UniversalRecordErrorInfo extends TypeErrorInfo
      * - base: xs:integer
      * @var int|null
      */
-    protected ?int $Version = null;
+    public ?int $Version = null;
     /**
      * Constructor method for UniversalRecordErrorInfo
      * @uses UniversalRecordErrorInfo::setLocatorCode()
@@ -59,18 +58,6 @@ class UniversalRecordErrorInfo extends TypeErrorInfo
      */
     public function setLocatorCode(?string $locatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($locatorCode) && !is_string($locatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($locatorCode, true), gettype($locatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($locatorCode) && mb_strlen((string) $locatorCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $locatorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($locatorCode) && mb_strlen((string) $locatorCode) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $locatorCode)), __LINE__);
-        }
         $this->LocatorCode = $locatorCode;
         
         return $this;
@@ -90,10 +77,6 @@ class UniversalRecordErrorInfo extends TypeErrorInfo
      */
     public function setVersion(?int $version = null): self
     {
-        // validation for constraint: int
-        if (!is_null($version) && !(is_int($version) || ctype_digit($version))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($version, true), gettype($version)), __LINE__);
-        }
         $this->Version = $version;
         
         return $this;

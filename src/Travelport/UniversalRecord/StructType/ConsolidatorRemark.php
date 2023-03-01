@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class ConsolidatorRemark extends AbstractStructBase
      * - ref: PseudoCityCode
      * @var \Travelport\UniversalRecord\StructType\PseudoCityCode[]
      */
-    protected array $PseudoCityCode;
+    public array $PseudoCityCode;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class ConsolidatorRemark extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The ProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class ConsolidatorRemark extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderReservationInfoRef = null;
+    public ?string $ProviderReservationInfoRef = null;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class ConsolidatorRemark extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -61,7 +60,7 @@ class ConsolidatorRemark extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -69,7 +68,7 @@ class ConsolidatorRemark extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for ConsolidatorRemark
      * @uses ConsolidatorRemark::setPseudoCityCode()
@@ -104,48 +103,12 @@ class ConsolidatorRemark extends AbstractStructBase
         return $this->PseudoCityCode;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPseudoCityCode method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPseudoCityCode method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePseudoCityCodeForArrayConstraintFromSetPseudoCityCode(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $consolidatorRemarkPseudoCityCodeItem) {
-            // validation for constraint: itemType
-            if (!$consolidatorRemarkPseudoCityCodeItem instanceof \Travelport\UniversalRecord\StructType\PseudoCityCode) {
-                $invalidValues[] = is_object($consolidatorRemarkPseudoCityCodeItem) ? get_class($consolidatorRemarkPseudoCityCodeItem) : sprintf('%s(%s)', gettype($consolidatorRemarkPseudoCityCodeItem), var_export($consolidatorRemarkPseudoCityCodeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The PseudoCityCode property can only contain items of type \Travelport\UniversalRecord\StructType\PseudoCityCode, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set PseudoCityCode value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\PseudoCityCode[] $pseudoCityCode
      * @return \Travelport\UniversalRecord\StructType\ConsolidatorRemark
      */
     public function setPseudoCityCode(array $pseudoCityCode): self
     {
-        // validation for constraint: array
-        if ('' !== ($pseudoCityCodeArrayErrorMessage = self::validatePseudoCityCodeForArrayConstraintFromSetPseudoCityCode($pseudoCityCode))) {
-            throw new InvalidArgumentException($pseudoCityCodeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($pseudoCityCode) && count($pseudoCityCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($pseudoCityCode)), __LINE__);
-        }
         $this->PseudoCityCode = $pseudoCityCode;
         
         return $this;
@@ -158,14 +121,6 @@ class ConsolidatorRemark extends AbstractStructBase
      */
     public function addToPseudoCityCode(\Travelport\UniversalRecord\StructType\PseudoCityCode $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\PseudoCityCode) {
-            throw new InvalidArgumentException(sprintf('The PseudoCityCode property can only contain items of type \Travelport\UniversalRecord\StructType\PseudoCityCode, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($this->PseudoCityCode) && count($this->PseudoCityCode) >= 5) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->PseudoCityCode)), __LINE__);
-        }
         $this->PseudoCityCode[] = $item;
         
         return $this;
@@ -185,10 +140,6 @@ class ConsolidatorRemark extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -208,10 +159,6 @@ class ConsolidatorRemark extends AbstractStructBase
      */
     public function setProviderReservationInfoRef(?string $providerReservationInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerReservationInfoRef) && !is_string($providerReservationInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerReservationInfoRef, true), gettype($providerReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef = $providerReservationInfoRef;
         
         return $this;
@@ -231,18 +178,6 @@ class ConsolidatorRemark extends AbstractStructBase
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -257,18 +192,11 @@ class ConsolidatorRemark extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\ConsolidatorRemark
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -288,10 +216,6 @@ class ConsolidatorRemark extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

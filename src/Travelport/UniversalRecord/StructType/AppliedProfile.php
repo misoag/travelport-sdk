@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,35 +22,35 @@ class AppliedProfile extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The TravelerID
      * Meta information extracted from the WSDL
      * - documentation: The ID of the TravelerProfile that was applied
      * @var string|null
      */
-    protected ?string $TravelerID = null;
+    public ?string $TravelerID = null;
     /**
      * The TravelerName
      * Meta information extracted from the WSDL
      * - documentation: The name from the TravelerProfile that was applied
      * @var string|null
      */
-    protected ?string $TravelerName = null;
+    public ?string $TravelerName = null;
     /**
      * The AccountID
      * Meta information extracted from the WSDL
      * - documentation: The ID of the AccountProfile that was applied
      * @var string|null
      */
-    protected ?string $AccountID = null;
+    public ?string $AccountID = null;
     /**
      * The AccountName
      * Meta information extracted from the WSDL
      * - documentation: The name from the AccountProfile that was applied
      * @var string|null
      */
-    protected ?string $AccountName = null;
+    public ?string $AccountName = null;
     /**
      * The ImmediateParentID
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class AppliedProfile extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ImmediateParentID = null;
+    public ?string $ImmediateParentID = null;
     /**
      * The ImmediateParentName
      * Meta information extracted from the WSDL
@@ -67,7 +66,7 @@ class AppliedProfile extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ImmediateParentName = null;
+    public ?string $ImmediateParentName = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -76,7 +75,7 @@ class AppliedProfile extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -84,7 +83,7 @@ class AppliedProfile extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for AppliedProfile
      * @uses AppliedProfile::setKey()
@@ -134,10 +133,6 @@ class AppliedProfile extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -157,10 +152,6 @@ class AppliedProfile extends AbstractStructBase
      */
     public function setTravelerID(?string $travelerID = null): self
     {
-        // validation for constraint: string
-        if (!is_null($travelerID) && !is_string($travelerID)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelerID, true), gettype($travelerID)), __LINE__);
-        }
         $this->TravelerID = $travelerID;
         
         return $this;
@@ -180,10 +171,6 @@ class AppliedProfile extends AbstractStructBase
      */
     public function setTravelerName(?string $travelerName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($travelerName) && !is_string($travelerName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelerName, true), gettype($travelerName)), __LINE__);
-        }
         $this->TravelerName = $travelerName;
         
         return $this;
@@ -203,10 +190,6 @@ class AppliedProfile extends AbstractStructBase
      */
     public function setAccountID(?string $accountID = null): self
     {
-        // validation for constraint: string
-        if (!is_null($accountID) && !is_string($accountID)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountID, true), gettype($accountID)), __LINE__);
-        }
         $this->AccountID = $accountID;
         
         return $this;
@@ -226,10 +209,6 @@ class AppliedProfile extends AbstractStructBase
      */
     public function setAccountName(?string $accountName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($accountName) && !is_string($accountName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountName, true), gettype($accountName)), __LINE__);
-        }
         $this->AccountName = $accountName;
         
         return $this;
@@ -249,10 +228,6 @@ class AppliedProfile extends AbstractStructBase
      */
     public function setImmediateParentID(?string $immediateParentID = null): self
     {
-        // validation for constraint: string
-        if (!is_null($immediateParentID) && !is_string($immediateParentID)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($immediateParentID, true), gettype($immediateParentID)), __LINE__);
-        }
         $this->ImmediateParentID = $immediateParentID;
         
         return $this;
@@ -272,10 +247,6 @@ class AppliedProfile extends AbstractStructBase
      */
     public function setImmediateParentName(?string $immediateParentName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($immediateParentName) && !is_string($immediateParentName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($immediateParentName, true), gettype($immediateParentName)), __LINE__);
-        }
         $this->ImmediateParentName = $immediateParentName;
         
         return $this;
@@ -290,18 +261,11 @@ class AppliedProfile extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\AppliedProfile
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -321,10 +285,6 @@ class AppliedProfile extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

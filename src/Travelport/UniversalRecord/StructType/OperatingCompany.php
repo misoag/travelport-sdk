@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,12 +21,12 @@ class OperatingCompany extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Name;
+    public string $Name;
     /**
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The Code
      * Meta information extracted from the WSDL
@@ -35,7 +34,7 @@ class OperatingCompany extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Code = null;
+    public ?string $Code = null;
     /**
      * Constructor method for OperatingCompany
      * @uses OperatingCompany::setName()
@@ -67,10 +66,6 @@ class OperatingCompany extends AbstractStructBase
      */
     public function setName(string $name): self
     {
-        // validation for constraint: string
-        if (!is_null($name) && !is_string($name)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
-        }
         $this->Name = $name;
         
         return $this;
@@ -90,10 +85,6 @@ class OperatingCompany extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -113,10 +104,6 @@ class OperatingCompany extends AbstractStructBase
      */
     public function setCode(?string $code = null): self
     {
-        // validation for constraint: string
-        if (!is_null($code) && !is_string($code)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;

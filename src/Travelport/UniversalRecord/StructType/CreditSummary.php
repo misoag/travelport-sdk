@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,14 +20,14 @@ class CreditSummary extends AbstractStructBase
      * - use: required
      * @var float
      */
-    protected float $CurrentBalance;
+    public float $CurrentBalance;
     /**
      * The InitialCredit
      * Meta information extracted from the WSDL
      * - use: required
      * @var float
      */
-    protected float $InitialCredit;
+    public float $InitialCredit;
     /**
      * The CurrencyCode
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class CreditSummary extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CurrencyCode = null;
+    public ?string $CurrencyCode = null;
     /**
      * Constructor method for CreditSummary
      * @uses CreditSummary::setCurrentBalance()
@@ -70,10 +69,6 @@ class CreditSummary extends AbstractStructBase
      */
     public function setCurrentBalance(float $currentBalance): self
     {
-        // validation for constraint: float
-        if (!is_null($currentBalance) && !(is_float($currentBalance) || is_numeric($currentBalance))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($currentBalance, true), gettype($currentBalance)), __LINE__);
-        }
         $this->CurrentBalance = $currentBalance;
         
         return $this;
@@ -93,10 +88,6 @@ class CreditSummary extends AbstractStructBase
      */
     public function setInitialCredit(float $initialCredit): self
     {
-        // validation for constraint: float
-        if (!is_null($initialCredit) && !(is_float($initialCredit) || is_numeric($initialCredit))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($initialCredit, true), gettype($initialCredit)), __LINE__);
-        }
         $this->InitialCredit = $initialCredit;
         
         return $this;
@@ -116,14 +107,6 @@ class CreditSummary extends AbstractStructBase
      */
     public function setCurrencyCode(?string $currencyCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($currencyCode) && !is_string($currencyCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currencyCode, true), gettype($currencyCode)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($currencyCode) && mb_strlen((string) $currencyCode) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $currencyCode)), __LINE__);
-        }
         $this->CurrencyCode = $currencyCode;
         
         return $this;

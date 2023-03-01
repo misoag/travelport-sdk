@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class SavedTripSearchModifiers extends BaseSearchModifiers
      * - use: optional
      * @var string|null
      */
-    protected ?string $SavedTripName = null;
+    public ?string $SavedTripName = null;
     /**
      * The ExcludeURAssociated
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class SavedTripSearchModifiers extends BaseSearchModifiers
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ExcludeURAssociated = null;
+    public ?bool $ExcludeURAssociated = null;
     /**
      * Constructor method for SavedTripSearchModifiers
      * @uses SavedTripSearchModifiers::setSavedTripName()
@@ -60,10 +59,6 @@ class SavedTripSearchModifiers extends BaseSearchModifiers
      */
     public function setSavedTripName(?string $savedTripName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($savedTripName) && !is_string($savedTripName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($savedTripName, true), gettype($savedTripName)), __LINE__);
-        }
         $this->SavedTripName = $savedTripName;
         
         return $this;
@@ -83,10 +78,6 @@ class SavedTripSearchModifiers extends BaseSearchModifiers
      */
     public function setExcludeURAssociated(?bool $excludeURAssociated = true): self
     {
-        // validation for constraint: boolean
-        if (!is_null($excludeURAssociated) && !is_bool($excludeURAssociated)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($excludeURAssociated, true), gettype($excludeURAssociated)), __LINE__);
-        }
         $this->ExcludeURAssociated = $excludeURAssociated;
         
         return $this;

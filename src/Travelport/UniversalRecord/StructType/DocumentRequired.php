@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,28 +20,28 @@ class DocumentRequired extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DocType = null;
+    public ?string $DocType = null;
     /**
      * The IncludeExcludeUseInd
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $IncludeExcludeUseInd = null;
+    public ?bool $IncludeExcludeUseInd = null;
     /**
      * The DocId
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $DocId = null;
+    public ?string $DocId = null;
     /**
      * The AllowedIds
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $AllowedIds = null;
+    public ?string $AllowedIds = null;
     /**
      * Constructor method for DocumentRequired
      * @uses DocumentRequired::setDocType()
@@ -77,10 +76,6 @@ class DocumentRequired extends AbstractStructBase
      */
     public function setDocType(?string $docType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($docType) && !is_string($docType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($docType, true), gettype($docType)), __LINE__);
-        }
         $this->DocType = $docType;
         
         return $this;
@@ -100,10 +95,6 @@ class DocumentRequired extends AbstractStructBase
      */
     public function setIncludeExcludeUseInd(?bool $includeExcludeUseInd = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($includeExcludeUseInd) && !is_bool($includeExcludeUseInd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($includeExcludeUseInd, true), gettype($includeExcludeUseInd)), __LINE__);
-        }
         $this->IncludeExcludeUseInd = $includeExcludeUseInd;
         
         return $this;
@@ -123,10 +114,6 @@ class DocumentRequired extends AbstractStructBase
      */
     public function setDocId(?string $docId = null): self
     {
-        // validation for constraint: string
-        if (!is_null($docId) && !is_string($docId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($docId, true), gettype($docId)), __LINE__);
-        }
         $this->DocId = $docId;
         
         return $this;
@@ -146,10 +133,6 @@ class DocumentRequired extends AbstractStructBase
      */
     public function setAllowedIds(?string $allowedIds = null): self
     {
-        // validation for constraint: string
-        if (!is_null($allowedIds) && !is_string($allowedIds)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($allowedIds, true), gettype($allowedIds)), __LINE__);
-        }
         $this->AllowedIds = $allowedIds;
         
         return $this;

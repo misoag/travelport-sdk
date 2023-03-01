@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class MAXType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $HoursMax = null;
+    public ?bool $HoursMax = null;
     /**
      * The DaysMax
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class MAXType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $DaysMax = null;
+    public ?bool $DaysMax = null;
     /**
      * The MonthsMax
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class MAXType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $MonthsMax = null;
+    public ?bool $MonthsMax = null;
     /**
      * The OccurIndMax
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class MAXType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $OccurIndMax = null;
+    public ?bool $OccurIndMax = null;
     /**
      * The SameDayMax
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class MAXType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $SameDayMax = null;
+    public ?bool $SameDayMax = null;
     /**
      * The StartIndMax
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class MAXType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $StartIndMax = null;
+    public ?bool $StartIndMax = null;
     /**
      * The CompletionInd
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class MAXType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $CompletionInd = null;
+    public ?bool $CompletionInd = null;
     /**
      * The TmDOWMax
      * Meta information extracted from the WSDL
@@ -76,7 +75,7 @@ class MAXType extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $TmDOWMax = null;
+    public ?int $TmDOWMax = null;
     /**
      * The NumOccurMax
      * Meta information extracted from the WSDL
@@ -84,7 +83,7 @@ class MAXType extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $NumOccurMax = null;
+    public ?int $NumOccurMax = null;
     /**
      * Constructor method for MAXType
      * @uses MAXType::setHoursMax()
@@ -134,10 +133,6 @@ class MAXType extends AbstractStructBase
      */
     public function setHoursMax(?bool $hoursMax = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($hoursMax) && !is_bool($hoursMax)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($hoursMax, true), gettype($hoursMax)), __LINE__);
-        }
         $this->HoursMax = $hoursMax;
         
         return $this;
@@ -157,10 +152,6 @@ class MAXType extends AbstractStructBase
      */
     public function setDaysMax(?bool $daysMax = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($daysMax) && !is_bool($daysMax)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($daysMax, true), gettype($daysMax)), __LINE__);
-        }
         $this->DaysMax = $daysMax;
         
         return $this;
@@ -180,10 +171,6 @@ class MAXType extends AbstractStructBase
      */
     public function setMonthsMax(?bool $monthsMax = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($monthsMax) && !is_bool($monthsMax)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($monthsMax, true), gettype($monthsMax)), __LINE__);
-        }
         $this->MonthsMax = $monthsMax;
         
         return $this;
@@ -203,10 +190,6 @@ class MAXType extends AbstractStructBase
      */
     public function setOccurIndMax(?bool $occurIndMax = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($occurIndMax) && !is_bool($occurIndMax)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($occurIndMax, true), gettype($occurIndMax)), __LINE__);
-        }
         $this->OccurIndMax = $occurIndMax;
         
         return $this;
@@ -226,10 +209,6 @@ class MAXType extends AbstractStructBase
      */
     public function setSameDayMax(?bool $sameDayMax = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($sameDayMax) && !is_bool($sameDayMax)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($sameDayMax, true), gettype($sameDayMax)), __LINE__);
-        }
         $this->SameDayMax = $sameDayMax;
         
         return $this;
@@ -249,10 +228,6 @@ class MAXType extends AbstractStructBase
      */
     public function setStartIndMax(?bool $startIndMax = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($startIndMax) && !is_bool($startIndMax)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($startIndMax, true), gettype($startIndMax)), __LINE__);
-        }
         $this->StartIndMax = $startIndMax;
         
         return $this;
@@ -272,10 +247,6 @@ class MAXType extends AbstractStructBase
      */
     public function setCompletionInd(?bool $completionInd = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($completionInd) && !is_bool($completionInd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($completionInd, true), gettype($completionInd)), __LINE__);
-        }
         $this->CompletionInd = $completionInd;
         
         return $this;
@@ -295,10 +266,6 @@ class MAXType extends AbstractStructBase
      */
     public function setTmDOWMax(?int $tmDOWMax = null): self
     {
-        // validation for constraint: int
-        if (!is_null($tmDOWMax) && !(is_int($tmDOWMax) || ctype_digit($tmDOWMax))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($tmDOWMax, true), gettype($tmDOWMax)), __LINE__);
-        }
         $this->TmDOWMax = $tmDOWMax;
         
         return $this;
@@ -318,10 +285,6 @@ class MAXType extends AbstractStructBase
      */
     public function setNumOccurMax(?int $numOccurMax = null): self
     {
-        // validation for constraint: int
-        if (!is_null($numOccurMax) && !(is_int($numOccurMax) || ctype_digit($numOccurMax))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($numOccurMax, true), gettype($numOccurMax)), __LINE__);
-        }
         $this->NumOccurMax = $numOccurMax;
         
         return $this;

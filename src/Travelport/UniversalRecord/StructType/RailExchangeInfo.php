@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class RailExchangeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RefundAmount = null;
+    public ?string $RefundAmount = null;
     /**
      * The CancellationFee
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class RailExchangeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CancellationFee = null;
+    public ?string $CancellationFee = null;
     /**
      * The ExchangeAmount
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class RailExchangeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ExchangeAmount = null;
+    public ?string $ExchangeAmount = null;
     /**
      * The ApproximateRefundAmount
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class RailExchangeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ApproximateRefundAmount = null;
+    public ?string $ApproximateRefundAmount = null;
     /**
      * The ApproximateCancellationFee
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class RailExchangeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ApproximateCancellationFee = null;
+    public ?string $ApproximateCancellationFee = null;
     /**
      * The ApproximateExchangeAmount
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class RailExchangeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ApproximateExchangeAmount = null;
+    public ?string $ApproximateExchangeAmount = null;
     /**
      * The RetainAmount
      * Meta information extracted from the WSDL
@@ -77,7 +76,7 @@ class RailExchangeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RetainAmount = null;
+    public ?string $RetainAmount = null;
     /**
      * Constructor method for RailExchangeInfo
      * @uses RailExchangeInfo::setRefundAmount()
@@ -121,10 +120,6 @@ class RailExchangeInfo extends AbstractStructBase
      */
     public function setRefundAmount(?string $refundAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($refundAmount) && !is_string($refundAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($refundAmount, true), gettype($refundAmount)), __LINE__);
-        }
         $this->RefundAmount = $refundAmount;
         
         return $this;
@@ -144,10 +139,6 @@ class RailExchangeInfo extends AbstractStructBase
      */
     public function setCancellationFee(?string $cancellationFee = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cancellationFee) && !is_string($cancellationFee)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancellationFee, true), gettype($cancellationFee)), __LINE__);
-        }
         $this->CancellationFee = $cancellationFee;
         
         return $this;
@@ -167,10 +158,6 @@ class RailExchangeInfo extends AbstractStructBase
      */
     public function setExchangeAmount(?string $exchangeAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($exchangeAmount) && !is_string($exchangeAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($exchangeAmount, true), gettype($exchangeAmount)), __LINE__);
-        }
         $this->ExchangeAmount = $exchangeAmount;
         
         return $this;
@@ -190,10 +177,6 @@ class RailExchangeInfo extends AbstractStructBase
      */
     public function setApproximateRefundAmount(?string $approximateRefundAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateRefundAmount) && !is_string($approximateRefundAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateRefundAmount, true), gettype($approximateRefundAmount)), __LINE__);
-        }
         $this->ApproximateRefundAmount = $approximateRefundAmount;
         
         return $this;
@@ -213,10 +196,6 @@ class RailExchangeInfo extends AbstractStructBase
      */
     public function setApproximateCancellationFee(?string $approximateCancellationFee = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateCancellationFee) && !is_string($approximateCancellationFee)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateCancellationFee, true), gettype($approximateCancellationFee)), __LINE__);
-        }
         $this->ApproximateCancellationFee = $approximateCancellationFee;
         
         return $this;
@@ -236,10 +215,6 @@ class RailExchangeInfo extends AbstractStructBase
      */
     public function setApproximateExchangeAmount(?string $approximateExchangeAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateExchangeAmount) && !is_string($approximateExchangeAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateExchangeAmount, true), gettype($approximateExchangeAmount)), __LINE__);
-        }
         $this->ApproximateExchangeAmount = $approximateExchangeAmount;
         
         return $this;
@@ -259,10 +234,6 @@ class RailExchangeInfo extends AbstractStructBase
      */
     public function setRetainAmount(?string $retainAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($retainAmount) && !is_string($retainAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($retainAmount, true), gettype($retainAmount)), __LINE__);
-        }
         $this->RetainAmount = $retainAmount;
         
         return $this;

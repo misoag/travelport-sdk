@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class VehiclePickupDateLocation extends AbstractStructBase
      * - documentation: Providers: 1g/1v/1p
      * @var string|null
      */
-    protected ?string $PickupDateTime = null;
+    public ?string $PickupDateTime = null;
     /**
      * The PickupLocation
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class VehiclePickupDateLocation extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $PickupLocation = null;
+    public ?string $PickupLocation = null;
     /**
      * The PickupLocationType
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class VehiclePickupDateLocation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PickupLocationType = null;
+    public ?string $PickupLocationType = null;
     /**
      * The PickupLocationNumber
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class VehiclePickupDateLocation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PickupLocationNumber = null;
+    public ?string $PickupLocationNumber = null;
     /**
      * Constructor method for VehiclePickupDateLocation
      * @uses VehiclePickupDateLocation::setPickupDateTime()
@@ -83,10 +82,6 @@ class VehiclePickupDateLocation extends AbstractStructBase
      */
     public function setPickupDateTime(?string $pickupDateTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($pickupDateTime) && !is_string($pickupDateTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pickupDateTime, true), gettype($pickupDateTime)), __LINE__);
-        }
         $this->PickupDateTime = $pickupDateTime;
         
         return $this;
@@ -106,14 +101,6 @@ class VehiclePickupDateLocation extends AbstractStructBase
      */
     public function setPickupLocation(?string $pickupLocation = null): self
     {
-        // validation for constraint: string
-        if (!is_null($pickupLocation) && !is_string($pickupLocation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pickupLocation, true), gettype($pickupLocation)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($pickupLocation) && mb_strlen((string) $pickupLocation) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $pickupLocation)), __LINE__);
-        }
         $this->PickupLocation = $pickupLocation;
         
         return $this;
@@ -128,18 +115,11 @@ class VehiclePickupDateLocation extends AbstractStructBase
     }
     /**
      * Set PickupLocationType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleLocation::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleLocation::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $pickupLocationType
      * @return \Travelport\UniversalRecord\StructType\VehiclePickupDateLocation
      */
     public function setPickupLocationType(?string $pickupLocationType = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeVehicleLocation::valueIsValid($pickupLocationType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeVehicleLocation', is_array($pickupLocationType) ? implode(', ', $pickupLocationType) : var_export($pickupLocationType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeVehicleLocation::getValidValues())), __LINE__);
-        }
         $this->PickupLocationType = $pickupLocationType;
         
         return $this;
@@ -159,10 +139,6 @@ class VehiclePickupDateLocation extends AbstractStructBase
      */
     public function setPickupLocationNumber(?string $pickupLocationNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($pickupLocationNumber) && !is_string($pickupLocationNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pickupLocationNumber, true), gettype($pickupLocationNumber)), __LINE__);
-        }
         $this->PickupLocationNumber = $pickupLocationNumber;
         
         return $this;

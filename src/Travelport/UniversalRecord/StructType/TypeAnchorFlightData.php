@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class TypeAnchorFlightData extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $AirlineCode;
+    public string $AirlineCode;
     /**
      * The FlightNumber
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class TypeAnchorFlightData extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $FlightNumber;
+    public string $FlightNumber;
     /**
      * The ConnectionIndicator
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class TypeAnchorFlightData extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ConnectionIndicator = null;
+    public ?bool $ConnectionIndicator = null;
     /**
      * Constructor method for typeAnchorFlightData
      * @uses TypeAnchorFlightData::setAirlineCode()
@@ -74,14 +73,6 @@ class TypeAnchorFlightData extends AbstractStructBase
      */
     public function setAirlineCode(string $airlineCode): self
     {
-        // validation for constraint: string
-        if (!is_null($airlineCode) && !is_string($airlineCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($airlineCode, true), gettype($airlineCode)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($airlineCode) && mb_strlen((string) $airlineCode) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $airlineCode)), __LINE__);
-        }
         $this->AirlineCode = $airlineCode;
         
         return $this;
@@ -101,14 +92,6 @@ class TypeAnchorFlightData extends AbstractStructBase
      */
     public function setFlightNumber(string $flightNumber): self
     {
-        // validation for constraint: string
-        if (!is_null($flightNumber) && !is_string($flightNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($flightNumber, true), gettype($flightNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($flightNumber) && mb_strlen((string) $flightNumber) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $flightNumber)), __LINE__);
-        }
         $this->FlightNumber = $flightNumber;
         
         return $this;
@@ -128,10 +111,6 @@ class TypeAnchorFlightData extends AbstractStructBase
      */
     public function setConnectionIndicator(?bool $connectionIndicator = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($connectionIndicator) && !is_bool($connectionIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($connectionIndicator, true), gettype($connectionIndicator)), __LINE__);
-        }
         $this->ConnectionIndicator = $connectionIndicator;
         
         return $this;

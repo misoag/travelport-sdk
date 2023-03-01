@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class QueueNextModifiers extends AbstractStructBase
      * - documentation: Set to true to retrieve the next PNR on Queue ,if not set or set to false system would return the current PNR.NextOnQueue cannot be combined with Provider Locator Code and ReturnRecord as true
      * @var bool|null
      */
-    protected ?bool $NextOnQueue = null;
+    public ?bool $NextOnQueue = null;
     /**
      * The ProviderLocatorCode
      * Meta information extracted from the WSDL
@@ -33,14 +32,14 @@ class QueueNextModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderLocatorCode = null;
+    public ?string $ProviderLocatorCode = null;
     /**
      * The ReQueueCurrent
      * Meta information extracted from the WSDL
      * - documentation: Set to true to place the current PNR back on Queue
      * @var bool|null
      */
-    protected ?bool $ReQueueCurrent = null;
+    public ?bool $ReQueueCurrent = null;
     /**
      * The QueueSessionToken
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class QueueNextModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $QueueSessionToken = null;
+    public ?string $QueueSessionToken = null;
     /**
      * Constructor method for QueueNextModifiers
      * @uses QueueNextModifiers::setNextOnQueue()
@@ -83,10 +82,6 @@ class QueueNextModifiers extends AbstractStructBase
      */
     public function setNextOnQueue(?bool $nextOnQueue = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($nextOnQueue) && !is_bool($nextOnQueue)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($nextOnQueue, true), gettype($nextOnQueue)), __LINE__);
-        }
         $this->NextOnQueue = $nextOnQueue;
         
         return $this;
@@ -106,18 +101,6 @@ class QueueNextModifiers extends AbstractStructBase
      */
     public function setProviderLocatorCode(?string $providerLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerLocatorCode) && !is_string($providerLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerLocatorCode, true), gettype($providerLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($providerLocatorCode) && mb_strlen((string) $providerLocatorCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $providerLocatorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($providerLocatorCode) && mb_strlen((string) $providerLocatorCode) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $providerLocatorCode)), __LINE__);
-        }
         $this->ProviderLocatorCode = $providerLocatorCode;
         
         return $this;
@@ -137,10 +120,6 @@ class QueueNextModifiers extends AbstractStructBase
      */
     public function setReQueueCurrent(?bool $reQueueCurrent = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($reQueueCurrent) && !is_bool($reQueueCurrent)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($reQueueCurrent, true), gettype($reQueueCurrent)), __LINE__);
-        }
         $this->ReQueueCurrent = $reQueueCurrent;
         
         return $this;
@@ -160,10 +139,6 @@ class QueueNextModifiers extends AbstractStructBase
      */
     public function setQueueSessionToken(?string $queueSessionToken = null): self
     {
-        // validation for constraint: string
-        if (!is_null($queueSessionToken) && !is_string($queueSessionToken)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($queueSessionToken, true), gettype($queueSessionToken)), __LINE__);
-        }
         $this->QueueSessionToken = $queueSessionToken;
         
         return $this;

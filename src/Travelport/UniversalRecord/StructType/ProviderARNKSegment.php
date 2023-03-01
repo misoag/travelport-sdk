@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class ProviderARNKSegment extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\PreviousSegment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PreviousSegment $PreviousSegment = null;
+    public ?\Travelport\UniversalRecord\StructType\PreviousSegment $PreviousSegment = null;
     /**
      * The NextSegment
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class ProviderARNKSegment extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\NextSegment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\NextSegment $NextSegment = null;
+    public ?\Travelport\UniversalRecord\StructType\NextSegment $NextSegment = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class ProviderARNKSegment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The ProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class ProviderARNKSegment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderReservationInfoRef = null;
+    public ?string $ProviderReservationInfoRef = null;
     /**
      * The ProviderSegmentOrder
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class ProviderARNKSegment extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $ProviderSegmentOrder = null;
+    public ?int $ProviderSegmentOrder = null;
     /**
      * Constructor method for ProviderARNKSegment
      * @uses ProviderARNKSegment::setPreviousSegment()
@@ -133,10 +132,6 @@ class ProviderARNKSegment extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -156,10 +151,6 @@ class ProviderARNKSegment extends AbstractStructBase
      */
     public function setProviderReservationInfoRef(?string $providerReservationInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerReservationInfoRef) && !is_string($providerReservationInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerReservationInfoRef, true), gettype($providerReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef = $providerReservationInfoRef;
         
         return $this;
@@ -179,14 +170,6 @@ class ProviderARNKSegment extends AbstractStructBase
      */
     public function setProviderSegmentOrder(?int $providerSegmentOrder = null): self
     {
-        // validation for constraint: int
-        if (!is_null($providerSegmentOrder) && !(is_int($providerSegmentOrder) || ctype_digit($providerSegmentOrder))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($providerSegmentOrder, true), gettype($providerSegmentOrder)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(999)
-        if (!is_null($providerSegmentOrder) && $providerSegmentOrder > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 999', var_export($providerSegmentOrder, true)), __LINE__);
-        }
         $this->ProviderSegmentOrder = $providerSegmentOrder;
         
         return $this;

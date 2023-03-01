@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class Credentials extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $UserId;
+    public string $UserId;
     /**
      * Constructor method for Credentials
      * @uses Credentials::setUserId()
@@ -49,14 +48,6 @@ class Credentials extends AbstractStructBase
      */
     public function setUserId(string $userId): self
     {
-        // validation for constraint: string
-        if (!is_null($userId) && !is_string($userId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($userId, true), gettype($userId)), __LINE__);
-        }
-        // validation for constraint: maxLength(36)
-        if (!is_null($userId) && mb_strlen((string) $userId) > 36) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 36', mb_strlen((string) $userId)), __LINE__);
-        }
         $this->UserId = $userId;
         
         return $this;

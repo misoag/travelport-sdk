@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class FareRuleShort extends AbstractStructBase
      * - use: required
      * @var int
      */
-    protected int $Category;
+    public int $Category;
     /**
      * The FareRuleNameValue
      * Meta information extracted from the WSDL
@@ -29,14 +28,14 @@ class FareRuleShort extends AbstractStructBase
      * - ref: FareRuleNameValue
      * @var \Travelport\UniversalRecord\StructType\FareRuleNameValue[]
      */
-    protected ?array $FareRuleNameValue = null;
+    public ?array $FareRuleNameValue = null;
     /**
      * The TableNumber
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $TableNumber = null;
+    public ?string $TableNumber = null;
     /**
      * Constructor method for FareRuleShort
      * @uses FareRuleShort::setCategory()
@@ -68,10 +67,6 @@ class FareRuleShort extends AbstractStructBase
      */
     public function setCategory(int $category): self
     {
-        // validation for constraint: int
-        if (!is_null($category) && !(is_int($category) || ctype_digit($category))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($category, true), gettype($category)), __LINE__);
-        }
         $this->Category = $category;
         
         return $this;
@@ -85,48 +80,12 @@ class FareRuleShort extends AbstractStructBase
         return $this->FareRuleNameValue;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFareRuleNameValue method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFareRuleNameValue method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFareRuleNameValueForArrayConstraintFromSetFareRuleNameValue(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $fareRuleShortFareRuleNameValueItem) {
-            // validation for constraint: itemType
-            if (!$fareRuleShortFareRuleNameValueItem instanceof \Travelport\UniversalRecord\StructType\FareRuleNameValue) {
-                $invalidValues[] = is_object($fareRuleShortFareRuleNameValueItem) ? get_class($fareRuleShortFareRuleNameValueItem) : sprintf('%s(%s)', gettype($fareRuleShortFareRuleNameValueItem), var_export($fareRuleShortFareRuleNameValueItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FareRuleNameValue property can only contain items of type \Travelport\UniversalRecord\StructType\FareRuleNameValue, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FareRuleNameValue value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FareRuleNameValue[] $fareRuleNameValue
      * @return \Travelport\UniversalRecord\StructType\FareRuleShort
      */
     public function setFareRuleNameValue(?array $fareRuleNameValue = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($fareRuleNameValueArrayErrorMessage = self::validateFareRuleNameValueForArrayConstraintFromSetFareRuleNameValue($fareRuleNameValue))) {
-            throw new InvalidArgumentException($fareRuleNameValueArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($fareRuleNameValue) && count($fareRuleNameValue) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($fareRuleNameValue)), __LINE__);
-        }
         $this->FareRuleNameValue = $fareRuleNameValue;
         
         return $this;
@@ -139,14 +98,6 @@ class FareRuleShort extends AbstractStructBase
      */
     public function addToFareRuleNameValue(\Travelport\UniversalRecord\StructType\FareRuleNameValue $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\FareRuleNameValue) {
-            throw new InvalidArgumentException(sprintf('The FareRuleNameValue property can only contain items of type \Travelport\UniversalRecord\StructType\FareRuleNameValue, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FareRuleNameValue) && count($this->FareRuleNameValue) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FareRuleNameValue)), __LINE__);
-        }
         $this->FareRuleNameValue[] = $item;
         
         return $this;
@@ -166,10 +117,6 @@ class FareRuleShort extends AbstractStructBase
      */
     public function setTableNumber(?string $tableNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tableNumber) && !is_string($tableNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tableNumber, true), gettype($tableNumber)), __LINE__);
-        }
         $this->TableNumber = $tableNumber;
         
         return $this;

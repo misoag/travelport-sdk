@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -17,7 +16,7 @@ class PenaltyInformation extends AbstractStructBase
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The Carrier
      * Meta information extracted from the WSDL
@@ -27,7 +26,7 @@ class PenaltyInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Carrier = null;
+    public ?string $Carrier = null;
     /**
      * The FareBasis
      * Meta information extracted from the WSDL
@@ -35,7 +34,7 @@ class PenaltyInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FareBasis = null;
+    public ?string $FareBasis = null;
     /**
      * The FareComponent
      * Meta information extracted from the WSDL
@@ -43,7 +42,7 @@ class PenaltyInformation extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $FareComponent = null;
+    public ?int $FareComponent = null;
     /**
      * The PriceableUnit
      * Meta information extracted from the WSDL
@@ -51,7 +50,7 @@ class PenaltyInformation extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $PriceableUnit = null;
+    public ?int $PriceableUnit = null;
     /**
      * The BoardPoint
      * Meta information extracted from the WSDL
@@ -62,7 +61,7 @@ class PenaltyInformation extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $BoardPoint = null;
+    public ?string $BoardPoint = null;
     /**
      * The OffPoint
      * Meta information extracted from the WSDL
@@ -73,7 +72,7 @@ class PenaltyInformation extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $OffPoint = null;
+    public ?string $OffPoint = null;
     /**
      * The MinimumChangeFee
      * Meta information extracted from the WSDL
@@ -82,7 +81,7 @@ class PenaltyInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $MinimumChangeFee = null;
+    public ?string $MinimumChangeFee = null;
     /**
      * The MaximumChangeFee
      * Meta information extracted from the WSDL
@@ -91,7 +90,7 @@ class PenaltyInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $MaximumChangeFee = null;
+    public ?string $MaximumChangeFee = null;
     /**
      * The FiledCurrency
      * Meta information extracted from the WSDL
@@ -101,7 +100,7 @@ class PenaltyInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FiledCurrency = null;
+    public ?string $FiledCurrency = null;
     /**
      * The ConversionRate
      * Meta information extracted from the WSDL
@@ -109,7 +108,7 @@ class PenaltyInformation extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $ConversionRate = null;
+    public ?float $ConversionRate = null;
     /**
      * The Refundable
      * Meta information extracted from the WSDL
@@ -117,7 +116,7 @@ class PenaltyInformation extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Refundable = null;
+    public ?bool $Refundable = null;
     /**
      * The ChangeFeeApplicationCode
      * Meta information extracted from the WSDL
@@ -126,7 +125,7 @@ class PenaltyInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ChangeFeeApplicationCode = null;
+    public ?string $ChangeFeeApplicationCode = null;
     /**
      * Constructor method for PenaltyInformation
      * @uses PenaltyInformation::set_()
@@ -188,10 +187,6 @@ class PenaltyInformation extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -211,14 +206,6 @@ class PenaltyInformation extends AbstractStructBase
      */
     public function setCarrier(?string $carrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($carrier) && !is_string($carrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrier, true), gettype($carrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($carrier) && mb_strlen((string) $carrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $carrier)), __LINE__);
-        }
         $this->Carrier = $carrier;
         
         return $this;
@@ -238,10 +225,6 @@ class PenaltyInformation extends AbstractStructBase
      */
     public function setFareBasis(?string $fareBasis = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fareBasis) && !is_string($fareBasis)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareBasis, true), gettype($fareBasis)), __LINE__);
-        }
         $this->FareBasis = $fareBasis;
         
         return $this;
@@ -261,10 +244,6 @@ class PenaltyInformation extends AbstractStructBase
      */
     public function setFareComponent(?int $fareComponent = null): self
     {
-        // validation for constraint: int
-        if (!is_null($fareComponent) && !(is_int($fareComponent) || ctype_digit($fareComponent))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($fareComponent, true), gettype($fareComponent)), __LINE__);
-        }
         $this->FareComponent = $fareComponent;
         
         return $this;
@@ -284,10 +263,6 @@ class PenaltyInformation extends AbstractStructBase
      */
     public function setPriceableUnit(?int $priceableUnit = null): self
     {
-        // validation for constraint: int
-        if (!is_null($priceableUnit) && !(is_int($priceableUnit) || ctype_digit($priceableUnit))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($priceableUnit, true), gettype($priceableUnit)), __LINE__);
-        }
         $this->PriceableUnit = $priceableUnit;
         
         return $this;
@@ -307,14 +282,6 @@ class PenaltyInformation extends AbstractStructBase
      */
     public function setBoardPoint(?string $boardPoint = null): self
     {
-        // validation for constraint: string
-        if (!is_null($boardPoint) && !is_string($boardPoint)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($boardPoint, true), gettype($boardPoint)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($boardPoint) && mb_strlen((string) $boardPoint) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $boardPoint)), __LINE__);
-        }
         $this->BoardPoint = $boardPoint;
         
         return $this;
@@ -334,14 +301,6 @@ class PenaltyInformation extends AbstractStructBase
      */
     public function setOffPoint(?string $offPoint = null): self
     {
-        // validation for constraint: string
-        if (!is_null($offPoint) && !is_string($offPoint)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($offPoint, true), gettype($offPoint)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($offPoint) && mb_strlen((string) $offPoint) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $offPoint)), __LINE__);
-        }
         $this->OffPoint = $offPoint;
         
         return $this;
@@ -361,10 +320,6 @@ class PenaltyInformation extends AbstractStructBase
      */
     public function setMinimumChangeFee(?string $minimumChangeFee = null): self
     {
-        // validation for constraint: string
-        if (!is_null($minimumChangeFee) && !is_string($minimumChangeFee)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($minimumChangeFee, true), gettype($minimumChangeFee)), __LINE__);
-        }
         $this->MinimumChangeFee = $minimumChangeFee;
         
         return $this;
@@ -384,10 +339,6 @@ class PenaltyInformation extends AbstractStructBase
      */
     public function setMaximumChangeFee(?string $maximumChangeFee = null): self
     {
-        // validation for constraint: string
-        if (!is_null($maximumChangeFee) && !is_string($maximumChangeFee)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($maximumChangeFee, true), gettype($maximumChangeFee)), __LINE__);
-        }
         $this->MaximumChangeFee = $maximumChangeFee;
         
         return $this;
@@ -407,14 +358,6 @@ class PenaltyInformation extends AbstractStructBase
      */
     public function setFiledCurrency(?string $filedCurrency = null): self
     {
-        // validation for constraint: string
-        if (!is_null($filedCurrency) && !is_string($filedCurrency)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($filedCurrency, true), gettype($filedCurrency)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($filedCurrency) && mb_strlen((string) $filedCurrency) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $filedCurrency)), __LINE__);
-        }
         $this->FiledCurrency = $filedCurrency;
         
         return $this;
@@ -434,10 +377,6 @@ class PenaltyInformation extends AbstractStructBase
      */
     public function setConversionRate(?float $conversionRate = null): self
     {
-        // validation for constraint: float
-        if (!is_null($conversionRate) && !(is_float($conversionRate) || is_numeric($conversionRate))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($conversionRate, true), gettype($conversionRate)), __LINE__);
-        }
         $this->ConversionRate = $conversionRate;
         
         return $this;
@@ -457,10 +396,6 @@ class PenaltyInformation extends AbstractStructBase
      */
     public function setRefundable(?bool $refundable = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($refundable) && !is_bool($refundable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($refundable, true), gettype($refundable)), __LINE__);
-        }
         $this->Refundable = $refundable;
         
         return $this;
@@ -480,14 +415,6 @@ class PenaltyInformation extends AbstractStructBase
      */
     public function setChangeFeeApplicationCode(?string $changeFeeApplicationCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($changeFeeApplicationCode) && !is_string($changeFeeApplicationCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($changeFeeApplicationCode, true), gettype($changeFeeApplicationCode)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($changeFeeApplicationCode) && mb_strlen((string) $changeFeeApplicationCode) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $changeFeeApplicationCode)), __LINE__);
-        }
         $this->ChangeFeeApplicationCode = $changeFeeApplicationCode;
         
         return $this;

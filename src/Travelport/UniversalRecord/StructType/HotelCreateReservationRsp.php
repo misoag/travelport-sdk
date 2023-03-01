@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,14 +19,14 @@ class HotelCreateReservationRsp extends BaseRsp
      * - ref: UniversalRecord
      * @var \Travelport\UniversalRecord\StructType\UniversalRecord|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\UniversalRecord $UniversalRecord = null;
+    public ?\Travelport\UniversalRecord\StructType\UniversalRecord $UniversalRecord = null;
     /**
      * The HotelRateChangedInfo
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\HotelRateChangedInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\HotelRateChangedInfo $HotelRateChangedInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\HotelRateChangedInfo $HotelRateChangedInfo = null;
     /**
      * Constructor method for HotelCreateReservationRsp
      * @uses HotelCreateReservationRsp::setUniversalRecord()

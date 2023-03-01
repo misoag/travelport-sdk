@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class IncludedItem extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Code;
+    public string $Code;
     /**
      * The Description
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class IncludedItem extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Description;
+    public string $Description;
     /**
      * Constructor method for IncludedItem
      * @uses IncludedItem::setCode()
@@ -59,10 +58,6 @@ class IncludedItem extends AbstractStructBase
      */
     public function setCode(string $code): self
     {
-        // validation for constraint: string
-        if (!is_null($code) && !is_string($code)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;
@@ -82,10 +77,6 @@ class IncludedItem extends AbstractStructBase
      */
     public function setDescription(string $description): self
     {
-        // validation for constraint: string
-        if (!is_null($description) && !is_string($description)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
-        }
         $this->Description = $description;
         
         return $this;

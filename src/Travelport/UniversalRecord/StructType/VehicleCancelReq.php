@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class VehicleCancelReq extends BaseReq
      * - use: required
      * @var int
      */
-    protected int $Version;
+    public int $Version;
     /**
      * The VehicleDateLocation
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class VehicleCancelReq extends BaseReq
      * - ref: vehicle:VehicleDateLocation
      * @var \Travelport\UniversalRecord\StructType\VehicleDateLocation|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\VehicleDateLocation $VehicleDateLocation = null;
+    public ?\Travelport\UniversalRecord\StructType\VehicleDateLocation $VehicleDateLocation = null;
     /**
      * The Vehicle
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class VehicleCancelReq extends BaseReq
      * - ref: vehicle:Vehicle
      * @var \Travelport\UniversalRecord\StructType\Vehicle|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Vehicle $Vehicle = null;
+    public ?\Travelport\UniversalRecord\StructType\Vehicle $Vehicle = null;
     /**
      * The FileFinishingInfo
      * Meta information extracted from the WSDL
@@ -48,21 +47,21 @@ class VehicleCancelReq extends BaseReq
      * - ref: common:FileFinishingInfo
      * @var \Travelport\UniversalRecord\StructType\FileFinishingInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FileFinishingInfo $FileFinishingInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\FileFinishingInfo $FileFinishingInfo = null;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $SupplierCode = null;
+    public ?string $SupplierCode = null;
     /**
      * The SupplierLocatorCode
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $SupplierLocatorCode = null;
+    public ?string $SupplierLocatorCode = null;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -72,7 +71,7 @@ class VehicleCancelReq extends BaseReq
      * - minLength: 2
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The ProviderLocatorCode
      * Meta information extracted from the WSDL
@@ -81,7 +80,7 @@ class VehicleCancelReq extends BaseReq
      * - maxLength: 15
      * @var string|null
      */
-    protected ?string $ProviderLocatorCode = null;
+    public ?string $ProviderLocatorCode = null;
     /**
      * Constructor method for VehicleCancelReq
      * @uses VehicleCancelReq::setVersion()
@@ -128,10 +127,6 @@ class VehicleCancelReq extends BaseReq
      */
     public function setVersion(int $version): self
     {
-        // validation for constraint: int
-        if (!is_null($version) && !(is_int($version) || ctype_digit($version))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($version, true), gettype($version)), __LINE__);
-        }
         $this->Version = $version;
         
         return $this;
@@ -208,10 +203,6 @@ class VehicleCancelReq extends BaseReq
      */
     public function setSupplierCode(?string $supplierCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;
@@ -231,10 +222,6 @@ class VehicleCancelReq extends BaseReq
      */
     public function setSupplierLocatorCode(?string $supplierLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierLocatorCode) && !is_string($supplierLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierLocatorCode, true), gettype($supplierLocatorCode)), __LINE__);
-        }
         $this->SupplierLocatorCode = $supplierLocatorCode;
         
         return $this;
@@ -254,18 +241,6 @@ class VehicleCancelReq extends BaseReq
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -285,14 +260,6 @@ class VehicleCancelReq extends BaseReq
      */
     public function setProviderLocatorCode(?string $providerLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerLocatorCode) && !is_string($providerLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerLocatorCode, true), gettype($providerLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($providerLocatorCode) && mb_strlen((string) $providerLocatorCode) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $providerLocatorCode)), __LINE__);
-        }
         $this->ProviderLocatorCode = $providerLocatorCode;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class FareInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * The FareBasis
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class FareInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $FareBasis;
+    public string $FareBasis;
     /**
      * The PassengerTypeCode
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class FareInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $PassengerTypeCode;
+    public string $PassengerTypeCode;
     /**
      * The Origin
      * Meta information extracted from the WSDL
@@ -53,7 +52,7 @@ class FareInfo extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string
      */
-    protected string $Origin;
+    public string $Origin;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class FareInfo extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string
      */
-    protected string $Destination;
+    public string $Destination;
     /**
      * The EffectiveDate
      * Meta information extracted from the WSDL
@@ -72,7 +71,7 @@ class FareInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $EffectiveDate;
+    public string $EffectiveDate;
     /**
      * The FareTicketDesignator
      * Meta information extracted from the WSDL
@@ -81,7 +80,7 @@ class FareInfo extends AbstractStructBase
      * - ref: FareTicketDesignator
      * @var \Travelport\UniversalRecord\StructType\FareTicketDesignator[]
      */
-    protected ?array $FareTicketDesignator = null;
+    public ?array $FareTicketDesignator = null;
     /**
      * The TicketingCode
      * Meta information extracted from the WSDL
@@ -90,7 +89,7 @@ class FareInfo extends AbstractStructBase
      * - ref: TicketingCode
      * @var \Travelport\UniversalRecord\StructType\TicketingCode[]
      */
-    protected ?array $TicketingCode = null;
+    public ?array $TicketingCode = null;
     /**
      * The FareSurcharge
      * Meta information extracted from the WSDL
@@ -99,7 +98,7 @@ class FareInfo extends AbstractStructBase
      * - ref: FareSurcharge
      * @var \Travelport\UniversalRecord\StructType\FareSurcharge[]
      */
-    protected ?array $FareSurcharge = null;
+    public ?array $FareSurcharge = null;
     /**
      * The AccountCode
      * Meta information extracted from the WSDL
@@ -108,7 +107,7 @@ class FareInfo extends AbstractStructBase
      * - ref: common:AccountCode
      * @var \Travelport\UniversalRecord\StructType\AccountCode[]
      */
-    protected ?array $AccountCode = null;
+    public ?array $AccountCode = null;
     /**
      * The ContractCode
      * Meta information extracted from the WSDL
@@ -117,7 +116,7 @@ class FareInfo extends AbstractStructBase
      * - ref: ContractCode
      * @var \Travelport\UniversalRecord\StructType\ContractCode[]
      */
-    protected ?array $ContractCode = null;
+    public ?array $ContractCode = null;
     /**
      * The Endorsement
      * Meta information extracted from the WSDL
@@ -126,7 +125,7 @@ class FareInfo extends AbstractStructBase
      * - ref: common:Endorsement
      * @var \Travelport\UniversalRecord\StructType\Endorsement[]
      */
-    protected ?array $Endorsement = null;
+    public ?array $Endorsement = null;
     /**
      * The BaggageAllowance
      * Meta information extracted from the WSDL
@@ -134,7 +133,7 @@ class FareInfo extends AbstractStructBase
      * - ref: BaggageAllowance
      * @var \Travelport\UniversalRecord\StructType\BaggageAllowance|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\BaggageAllowance $BaggageAllowance = null;
+    public ?\Travelport\UniversalRecord\StructType\BaggageAllowance $BaggageAllowance = null;
     /**
      * The FareRuleKey
      * Meta information extracted from the WSDL
@@ -142,7 +141,7 @@ class FareInfo extends AbstractStructBase
      * - ref: FareRuleKey
      * @var \Travelport\UniversalRecord\StructType\FareRuleKey|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FareRuleKey $FareRuleKey = null;
+    public ?\Travelport\UniversalRecord\StructType\FareRuleKey $FareRuleKey = null;
     /**
      * The FareRuleFailureInfo
      * Meta information extracted from the WSDL
@@ -150,7 +149,7 @@ class FareInfo extends AbstractStructBase
      * - ref: FareRuleFailureInfo
      * @var \Travelport\UniversalRecord\StructType\FareRuleFailureInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FareRuleFailureInfo $FareRuleFailureInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\FareRuleFailureInfo $FareRuleFailureInfo = null;
     /**
      * The FareRemarkRef
      * Meta information extracted from the WSDL
@@ -159,7 +158,7 @@ class FareInfo extends AbstractStructBase
      * - ref: FareRemarkRef
      * @var \Travelport\UniversalRecord\StructType\FareRemarkRef[]
      */
-    protected ?array $FareRemarkRef = null;
+    public ?array $FareRemarkRef = null;
     /**
      * The Brand
      * Meta information extracted from the WSDL
@@ -167,7 +166,7 @@ class FareInfo extends AbstractStructBase
      * - ref: Brand
      * @var \Travelport\UniversalRecord\StructType\Brand|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Brand $Brand = null;
+    public ?\Travelport\UniversalRecord\StructType\Brand $Brand = null;
     /**
      * The Commission
      * Meta information extracted from the WSDL
@@ -175,7 +174,7 @@ class FareInfo extends AbstractStructBase
      * - ref: common:Commission
      * @var \Travelport\UniversalRecord\StructType\Commission|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Commission $Commission = null;
+    public ?\Travelport\UniversalRecord\StructType\Commission $Commission = null;
     /**
      * The FareAttributes
      * Meta information extracted from the WSDL
@@ -187,7 +186,7 @@ class FareInfo extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $FareAttributes = null;
+    public ?string $FareAttributes = null;
     /**
      * The ChangePenalty
      * Meta information extracted from the WSDL
@@ -195,7 +194,7 @@ class FareInfo extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeFarePenalty|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeFarePenalty $ChangePenalty = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeFarePenalty $ChangePenalty = null;
     /**
      * The CancelPenalty
      * Meta information extracted from the WSDL
@@ -203,7 +202,7 @@ class FareInfo extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeFarePenalty|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeFarePenalty $CancelPenalty = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeFarePenalty $CancelPenalty = null;
     /**
      * The FareRulesFilter
      * Meta information extracted from the WSDL
@@ -211,7 +210,7 @@ class FareInfo extends AbstractStructBase
      * - ref: FareRulesFilter
      * @var \Travelport\UniversalRecord\StructType\FareRulesFilter|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FareRulesFilter $FareRulesFilter = null;
+    public ?\Travelport\UniversalRecord\StructType\FareRulesFilter $FareRulesFilter = null;
     /**
      * The TravelDate
      * Meta information extracted from the WSDL
@@ -219,7 +218,7 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TravelDate = null;
+    public ?string $TravelDate = null;
     /**
      * The DepartureDate
      * Meta information extracted from the WSDL
@@ -227,7 +226,7 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DepartureDate = null;
+    public ?string $DepartureDate = null;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -236,14 +235,14 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The PrivateFare
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $PrivateFare = null;
+    public ?string $PrivateFare = null;
     /**
      * The NegotiatedFare
      * Meta information extracted from the WSDL
@@ -251,7 +250,7 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $NegotiatedFare = null;
+    public ?bool $NegotiatedFare = null;
     /**
      * The TourCode
      * Meta information extracted from the WSDL
@@ -261,14 +260,14 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TourCode = null;
+    public ?string $TourCode = null;
     /**
      * The WaiverCode
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $WaiverCode = null;
+    public ?string $WaiverCode = null;
     /**
      * The NotValidBefore
      * Meta information extracted from the WSDL
@@ -276,7 +275,7 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $NotValidBefore = null;
+    public ?string $NotValidBefore = null;
     /**
      * The NotValidAfter
      * Meta information extracted from the WSDL
@@ -284,7 +283,7 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $NotValidAfter = null;
+    public ?string $NotValidAfter = null;
     /**
      * The PseudoCityCode
      * Meta information extracted from the WSDL
@@ -295,7 +294,7 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PseudoCityCode = null;
+    public ?string $PseudoCityCode = null;
     /**
      * The FareFamily
      * Meta information extracted from the WSDL
@@ -306,7 +305,7 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FareFamily = null;
+    public ?string $FareFamily = null;
     /**
      * The PromotionalFare
      * Meta information extracted from the WSDL
@@ -314,7 +313,7 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PromotionalFare = null;
+    public ?bool $PromotionalFare = null;
     /**
      * The CarCode
      * Meta information extracted from the WSDL
@@ -324,7 +323,7 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CarCode = null;
+    public ?string $CarCode = null;
     /**
      * The ValueCode
      * Meta information extracted from the WSDL
@@ -334,7 +333,7 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ValueCode = null;
+    public ?string $ValueCode = null;
     /**
      * The BulkTicket
      * Meta information extracted from the WSDL
@@ -342,7 +341,7 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $BulkTicket = null;
+    public ?bool $BulkTicket = null;
     /**
      * The InclusiveTour
      * Meta information extracted from the WSDL
@@ -350,7 +349,7 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $InclusiveTour = null;
+    public ?bool $InclusiveTour = null;
     /**
      * The Value
      * Meta information extracted from the WSDL
@@ -358,7 +357,7 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Value = null;
+    public ?string $Value = null;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
@@ -369,7 +368,7 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SupplierCode = null;
+    public ?string $SupplierCode = null;
     /**
      * The TaxAmount
      * Meta information extracted from the WSDL
@@ -378,17 +377,17 @@ class FareInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TaxAmount = null;
+    public ?string $TaxAmount = null;
     /**
      * The ElStat
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for FareInfo
      * @uses FareInfo::setKey()
@@ -540,10 +539,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -563,10 +558,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setFareBasis(string $fareBasis): self
     {
-        // validation for constraint: string
-        if (!is_null($fareBasis) && !is_string($fareBasis)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareBasis, true), gettype($fareBasis)), __LINE__);
-        }
         $this->FareBasis = $fareBasis;
         
         return $this;
@@ -586,18 +577,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setPassengerTypeCode(string $passengerTypeCode): self
     {
-        // validation for constraint: string
-        if (!is_null($passengerTypeCode) && !is_string($passengerTypeCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passengerTypeCode, true), gettype($passengerTypeCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($passengerTypeCode) && mb_strlen((string) $passengerTypeCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $passengerTypeCode)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($passengerTypeCode) && mb_strlen((string) $passengerTypeCode) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $passengerTypeCode)), __LINE__);
-        }
         $this->PassengerTypeCode = $passengerTypeCode;
         
         return $this;
@@ -617,14 +596,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setOrigin(string $origin): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($origin) && mb_strlen((string) $origin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -644,14 +615,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setDestination(string $destination): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destination) && mb_strlen((string) $destination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -671,10 +634,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setEffectiveDate(string $effectiveDate): self
     {
-        // validation for constraint: string
-        if (!is_null($effectiveDate) && !is_string($effectiveDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($effectiveDate, true), gettype($effectiveDate)), __LINE__);
-        }
         $this->EffectiveDate = $effectiveDate;
         
         return $this;
@@ -688,48 +647,12 @@ class FareInfo extends AbstractStructBase
         return $this->FareTicketDesignator;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFareTicketDesignator method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFareTicketDesignator method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFareTicketDesignatorForArrayConstraintFromSetFareTicketDesignator(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $fareInfoFareTicketDesignatorItem) {
-            // validation for constraint: itemType
-            if (!$fareInfoFareTicketDesignatorItem instanceof \Travelport\UniversalRecord\StructType\FareTicketDesignator) {
-                $invalidValues[] = is_object($fareInfoFareTicketDesignatorItem) ? get_class($fareInfoFareTicketDesignatorItem) : sprintf('%s(%s)', gettype($fareInfoFareTicketDesignatorItem), var_export($fareInfoFareTicketDesignatorItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FareTicketDesignator property can only contain items of type \Travelport\UniversalRecord\StructType\FareTicketDesignator, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FareTicketDesignator value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FareTicketDesignator[] $fareTicketDesignator
      * @return \Travelport\UniversalRecord\StructType\FareInfo
      */
     public function setFareTicketDesignator(?array $fareTicketDesignator = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($fareTicketDesignatorArrayErrorMessage = self::validateFareTicketDesignatorForArrayConstraintFromSetFareTicketDesignator($fareTicketDesignator))) {
-            throw new InvalidArgumentException($fareTicketDesignatorArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($fareTicketDesignator) && count($fareTicketDesignator) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($fareTicketDesignator)), __LINE__);
-        }
         $this->FareTicketDesignator = $fareTicketDesignator;
         
         return $this;
@@ -742,14 +665,6 @@ class FareInfo extends AbstractStructBase
      */
     public function addToFareTicketDesignator(\Travelport\UniversalRecord\StructType\FareTicketDesignator $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\FareTicketDesignator) {
-            throw new InvalidArgumentException(sprintf('The FareTicketDesignator property can only contain items of type \Travelport\UniversalRecord\StructType\FareTicketDesignator, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FareTicketDesignator) && count($this->FareTicketDesignator) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FareTicketDesignator)), __LINE__);
-        }
         $this->FareTicketDesignator[] = $item;
         
         return $this;
@@ -763,48 +678,12 @@ class FareInfo extends AbstractStructBase
         return $this->TicketingCode;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setTicketingCode method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setTicketingCode method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTicketingCodeForArrayConstraintFromSetTicketingCode(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $fareInfoTicketingCodeItem) {
-            // validation for constraint: itemType
-            if (!$fareInfoTicketingCodeItem instanceof \Travelport\UniversalRecord\StructType\TicketingCode) {
-                $invalidValues[] = is_object($fareInfoTicketingCodeItem) ? get_class($fareInfoTicketingCodeItem) : sprintf('%s(%s)', gettype($fareInfoTicketingCodeItem), var_export($fareInfoTicketingCodeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The TicketingCode property can only contain items of type \Travelport\UniversalRecord\StructType\TicketingCode, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set TicketingCode value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TicketingCode[] $ticketingCode
      * @return \Travelport\UniversalRecord\StructType\FareInfo
      */
     public function setTicketingCode(?array $ticketingCode = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($ticketingCodeArrayErrorMessage = self::validateTicketingCodeForArrayConstraintFromSetTicketingCode($ticketingCode))) {
-            throw new InvalidArgumentException($ticketingCodeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($ticketingCode) && count($ticketingCode) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($ticketingCode)), __LINE__);
-        }
         $this->TicketingCode = $ticketingCode;
         
         return $this;
@@ -817,14 +696,6 @@ class FareInfo extends AbstractStructBase
      */
     public function addToTicketingCode(\Travelport\UniversalRecord\StructType\TicketingCode $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TicketingCode) {
-            throw new InvalidArgumentException(sprintf('The TicketingCode property can only contain items of type \Travelport\UniversalRecord\StructType\TicketingCode, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->TicketingCode) && count($this->TicketingCode) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->TicketingCode)), __LINE__);
-        }
         $this->TicketingCode[] = $item;
         
         return $this;
@@ -838,48 +709,12 @@ class FareInfo extends AbstractStructBase
         return $this->FareSurcharge;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFareSurcharge method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFareSurcharge method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFareSurchargeForArrayConstraintFromSetFareSurcharge(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $fareInfoFareSurchargeItem) {
-            // validation for constraint: itemType
-            if (!$fareInfoFareSurchargeItem instanceof \Travelport\UniversalRecord\StructType\FareSurcharge) {
-                $invalidValues[] = is_object($fareInfoFareSurchargeItem) ? get_class($fareInfoFareSurchargeItem) : sprintf('%s(%s)', gettype($fareInfoFareSurchargeItem), var_export($fareInfoFareSurchargeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FareSurcharge property can only contain items of type \Travelport\UniversalRecord\StructType\FareSurcharge, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FareSurcharge value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FareSurcharge[] $fareSurcharge
      * @return \Travelport\UniversalRecord\StructType\FareInfo
      */
     public function setFareSurcharge(?array $fareSurcharge = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($fareSurchargeArrayErrorMessage = self::validateFareSurchargeForArrayConstraintFromSetFareSurcharge($fareSurcharge))) {
-            throw new InvalidArgumentException($fareSurchargeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($fareSurcharge) && count($fareSurcharge) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($fareSurcharge)), __LINE__);
-        }
         $this->FareSurcharge = $fareSurcharge;
         
         return $this;
@@ -892,14 +727,6 @@ class FareInfo extends AbstractStructBase
      */
     public function addToFareSurcharge(\Travelport\UniversalRecord\StructType\FareSurcharge $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\FareSurcharge) {
-            throw new InvalidArgumentException(sprintf('The FareSurcharge property can only contain items of type \Travelport\UniversalRecord\StructType\FareSurcharge, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FareSurcharge) && count($this->FareSurcharge) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FareSurcharge)), __LINE__);
-        }
         $this->FareSurcharge[] = $item;
         
         return $this;
@@ -913,48 +740,12 @@ class FareInfo extends AbstractStructBase
         return $this->AccountCode;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAccountCode method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAccountCode method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAccountCodeForArrayConstraintFromSetAccountCode(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $fareInfoAccountCodeItem) {
-            // validation for constraint: itemType
-            if (!$fareInfoAccountCodeItem instanceof \Travelport\UniversalRecord\StructType\AccountCode) {
-                $invalidValues[] = is_object($fareInfoAccountCodeItem) ? get_class($fareInfoAccountCodeItem) : sprintf('%s(%s)', gettype($fareInfoAccountCodeItem), var_export($fareInfoAccountCodeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AccountCode property can only contain items of type \Travelport\UniversalRecord\StructType\AccountCode, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AccountCode value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AccountCode[] $accountCode
      * @return \Travelport\UniversalRecord\StructType\FareInfo
      */
     public function setAccountCode(?array $accountCode = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($accountCodeArrayErrorMessage = self::validateAccountCodeForArrayConstraintFromSetAccountCode($accountCode))) {
-            throw new InvalidArgumentException($accountCodeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($accountCode) && count($accountCode) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($accountCode)), __LINE__);
-        }
         $this->AccountCode = $accountCode;
         
         return $this;
@@ -967,14 +758,6 @@ class FareInfo extends AbstractStructBase
      */
     public function addToAccountCode(\Travelport\UniversalRecord\StructType\AccountCode $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AccountCode) {
-            throw new InvalidArgumentException(sprintf('The AccountCode property can only contain items of type \Travelport\UniversalRecord\StructType\AccountCode, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->AccountCode) && count($this->AccountCode) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->AccountCode)), __LINE__);
-        }
         $this->AccountCode[] = $item;
         
         return $this;
@@ -988,48 +771,12 @@ class FareInfo extends AbstractStructBase
         return $this->ContractCode;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setContractCode method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setContractCode method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateContractCodeForArrayConstraintFromSetContractCode(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $fareInfoContractCodeItem) {
-            // validation for constraint: itemType
-            if (!$fareInfoContractCodeItem instanceof \Travelport\UniversalRecord\StructType\ContractCode) {
-                $invalidValues[] = is_object($fareInfoContractCodeItem) ? get_class($fareInfoContractCodeItem) : sprintf('%s(%s)', gettype($fareInfoContractCodeItem), var_export($fareInfoContractCodeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ContractCode property can only contain items of type \Travelport\UniversalRecord\StructType\ContractCode, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ContractCode value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\ContractCode[] $contractCode
      * @return \Travelport\UniversalRecord\StructType\FareInfo
      */
     public function setContractCode(?array $contractCode = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($contractCodeArrayErrorMessage = self::validateContractCodeForArrayConstraintFromSetContractCode($contractCode))) {
-            throw new InvalidArgumentException($contractCodeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($contractCode) && count($contractCode) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($contractCode)), __LINE__);
-        }
         $this->ContractCode = $contractCode;
         
         return $this;
@@ -1042,14 +789,6 @@ class FareInfo extends AbstractStructBase
      */
     public function addToContractCode(\Travelport\UniversalRecord\StructType\ContractCode $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\ContractCode) {
-            throw new InvalidArgumentException(sprintf('The ContractCode property can only contain items of type \Travelport\UniversalRecord\StructType\ContractCode, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->ContractCode) && count($this->ContractCode) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->ContractCode)), __LINE__);
-        }
         $this->ContractCode[] = $item;
         
         return $this;
@@ -1063,48 +802,12 @@ class FareInfo extends AbstractStructBase
         return $this->Endorsement;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setEndorsement method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setEndorsement method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateEndorsementForArrayConstraintFromSetEndorsement(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $fareInfoEndorsementItem) {
-            // validation for constraint: itemType
-            if (!$fareInfoEndorsementItem instanceof \Travelport\UniversalRecord\StructType\Endorsement) {
-                $invalidValues[] = is_object($fareInfoEndorsementItem) ? get_class($fareInfoEndorsementItem) : sprintf('%s(%s)', gettype($fareInfoEndorsementItem), var_export($fareInfoEndorsementItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Endorsement property can only contain items of type \Travelport\UniversalRecord\StructType\Endorsement, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Endorsement value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\Endorsement[] $endorsement
      * @return \Travelport\UniversalRecord\StructType\FareInfo
      */
     public function setEndorsement(?array $endorsement = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($endorsementArrayErrorMessage = self::validateEndorsementForArrayConstraintFromSetEndorsement($endorsement))) {
-            throw new InvalidArgumentException($endorsementArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($endorsement) && count($endorsement) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($endorsement)), __LINE__);
-        }
         $this->Endorsement = $endorsement;
         
         return $this;
@@ -1117,14 +820,6 @@ class FareInfo extends AbstractStructBase
      */
     public function addToEndorsement(\Travelport\UniversalRecord\StructType\Endorsement $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\Endorsement) {
-            throw new InvalidArgumentException(sprintf('The Endorsement property can only contain items of type \Travelport\UniversalRecord\StructType\Endorsement, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->Endorsement) && count($this->Endorsement) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->Endorsement)), __LINE__);
-        }
         $this->Endorsement[] = $item;
         
         return $this;
@@ -1195,48 +890,12 @@ class FareInfo extends AbstractStructBase
         return $this->FareRemarkRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFareRemarkRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFareRemarkRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFareRemarkRefForArrayConstraintFromSetFareRemarkRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $fareInfoFareRemarkRefItem) {
-            // validation for constraint: itemType
-            if (!$fareInfoFareRemarkRefItem instanceof \Travelport\UniversalRecord\StructType\FareRemarkRef) {
-                $invalidValues[] = is_object($fareInfoFareRemarkRefItem) ? get_class($fareInfoFareRemarkRefItem) : sprintf('%s(%s)', gettype($fareInfoFareRemarkRefItem), var_export($fareInfoFareRemarkRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FareRemarkRef property can only contain items of type \Travelport\UniversalRecord\StructType\FareRemarkRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FareRemarkRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FareRemarkRef[] $fareRemarkRef
      * @return \Travelport\UniversalRecord\StructType\FareInfo
      */
     public function setFareRemarkRef(?array $fareRemarkRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($fareRemarkRefArrayErrorMessage = self::validateFareRemarkRefForArrayConstraintFromSetFareRemarkRef($fareRemarkRef))) {
-            throw new InvalidArgumentException($fareRemarkRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($fareRemarkRef) && count($fareRemarkRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($fareRemarkRef)), __LINE__);
-        }
         $this->FareRemarkRef = $fareRemarkRef;
         
         return $this;
@@ -1249,14 +908,6 @@ class FareInfo extends AbstractStructBase
      */
     public function addToFareRemarkRef(\Travelport\UniversalRecord\StructType\FareRemarkRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\FareRemarkRef) {
-            throw new InvalidArgumentException(sprintf('The FareRemarkRef property can only contain items of type \Travelport\UniversalRecord\StructType\FareRemarkRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FareRemarkRef) && count($this->FareRemarkRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FareRemarkRef)), __LINE__);
-        }
         $this->FareRemarkRef[] = $item;
         
         return $this;
@@ -1314,10 +965,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setFareAttributes(?string $fareAttributes = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fareAttributes) && !is_string($fareAttributes)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareAttributes, true), gettype($fareAttributes)), __LINE__);
-        }
         $this->FareAttributes = $fareAttributes;
         
         return $this;
@@ -1394,10 +1041,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setTravelDate(?string $travelDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($travelDate) && !is_string($travelDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelDate, true), gettype($travelDate)), __LINE__);
-        }
         $this->TravelDate = $travelDate;
         
         return $this;
@@ -1417,10 +1060,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setDepartureDate(?string $departureDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($departureDate) && !is_string($departureDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($departureDate, true), gettype($departureDate)), __LINE__);
-        }
         $this->DepartureDate = $departureDate;
         
         return $this;
@@ -1440,10 +1079,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -1458,18 +1093,11 @@ class FareInfo extends AbstractStructBase
     }
     /**
      * Set PrivateFare value
-     * @uses \Travelport\UniversalRecord\EnumType\TypePrivateFare::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypePrivateFare::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $privateFare
      * @return \Travelport\UniversalRecord\StructType\FareInfo
      */
     public function setPrivateFare(?string $privateFare = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypePrivateFare::valueIsValid($privateFare)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypePrivateFare', is_array($privateFare) ? implode(', ', $privateFare) : var_export($privateFare, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypePrivateFare::getValidValues())), __LINE__);
-        }
         $this->PrivateFare = $privateFare;
         
         return $this;
@@ -1489,10 +1117,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setNegotiatedFare(?bool $negotiatedFare = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($negotiatedFare) && !is_bool($negotiatedFare)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($negotiatedFare, true), gettype($negotiatedFare)), __LINE__);
-        }
         $this->NegotiatedFare = $negotiatedFare;
         
         return $this;
@@ -1512,14 +1136,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setTourCode(?string $tourCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tourCode) && !is_string($tourCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tourCode, true), gettype($tourCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($tourCode) && mb_strlen((string) $tourCode) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $tourCode)), __LINE__);
-        }
         $this->TourCode = $tourCode;
         
         return $this;
@@ -1539,10 +1155,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setWaiverCode(?string $waiverCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($waiverCode) && !is_string($waiverCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($waiverCode, true), gettype($waiverCode)), __LINE__);
-        }
         $this->WaiverCode = $waiverCode;
         
         return $this;
@@ -1562,10 +1174,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setNotValidBefore(?string $notValidBefore = null): self
     {
-        // validation for constraint: string
-        if (!is_null($notValidBefore) && !is_string($notValidBefore)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($notValidBefore, true), gettype($notValidBefore)), __LINE__);
-        }
         $this->NotValidBefore = $notValidBefore;
         
         return $this;
@@ -1585,10 +1193,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setNotValidAfter(?string $notValidAfter = null): self
     {
-        // validation for constraint: string
-        if (!is_null($notValidAfter) && !is_string($notValidAfter)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($notValidAfter, true), gettype($notValidAfter)), __LINE__);
-        }
         $this->NotValidAfter = $notValidAfter;
         
         return $this;
@@ -1608,18 +1212,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setPseudoCityCode(?string $pseudoCityCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($pseudoCityCode) && !is_string($pseudoCityCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pseudoCityCode, true), gettype($pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
         $this->PseudoCityCode = $pseudoCityCode;
         
         return $this;
@@ -1639,18 +1231,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setFareFamily(?string $fareFamily = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fareFamily) && !is_string($fareFamily)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareFamily, true), gettype($fareFamily)), __LINE__);
-        }
-        // validation for constraint: maxLength(32)
-        if (!is_null($fareFamily) && mb_strlen((string) $fareFamily) > 32) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $fareFamily)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if (!is_null($fareFamily) && mb_strlen((string) $fareFamily) < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $fareFamily)), __LINE__);
-        }
         $this->FareFamily = $fareFamily;
         
         return $this;
@@ -1670,10 +1250,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setPromotionalFare(?bool $promotionalFare = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($promotionalFare) && !is_bool($promotionalFare)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($promotionalFare, true), gettype($promotionalFare)), __LINE__);
-        }
         $this->PromotionalFare = $promotionalFare;
         
         return $this;
@@ -1693,14 +1269,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setCarCode(?string $carCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($carCode) && !is_string($carCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carCode, true), gettype($carCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($carCode) && mb_strlen((string) $carCode) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $carCode)), __LINE__);
-        }
         $this->CarCode = $carCode;
         
         return $this;
@@ -1720,14 +1288,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setValueCode(?string $valueCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($valueCode) && !is_string($valueCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($valueCode, true), gettype($valueCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($valueCode) && mb_strlen((string) $valueCode) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $valueCode)), __LINE__);
-        }
         $this->ValueCode = $valueCode;
         
         return $this;
@@ -1747,10 +1307,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setBulkTicket(?bool $bulkTicket = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($bulkTicket) && !is_bool($bulkTicket)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($bulkTicket, true), gettype($bulkTicket)), __LINE__);
-        }
         $this->BulkTicket = $bulkTicket;
         
         return $this;
@@ -1770,10 +1326,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setInclusiveTour(?bool $inclusiveTour = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($inclusiveTour) && !is_bool($inclusiveTour)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($inclusiveTour, true), gettype($inclusiveTour)), __LINE__);
-        }
         $this->InclusiveTour = $inclusiveTour;
         
         return $this;
@@ -1793,10 +1345,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setValue(?string $value = null): self
     {
-        // validation for constraint: string
-        if (!is_null($value) && !is_string($value)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($value, true), gettype($value)), __LINE__);
-        }
         $this->Value = $value;
         
         return $this;
@@ -1816,18 +1364,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setSupplierCode(?string $supplierCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $supplierCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;
@@ -1847,10 +1383,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setTaxAmount(?string $taxAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($taxAmount) && !is_string($taxAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($taxAmount, true), gettype($taxAmount)), __LINE__);
-        }
         $this->TaxAmount = $taxAmount;
         
         return $this;
@@ -1865,18 +1397,11 @@ class FareInfo extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\FareInfo
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -1896,10 +1421,6 @@ class FareInfo extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class ServiceSubGroup extends AbstractStructBase
      * - documentation: The Service Sub Group Code of the Ancillary Service. Providers: 1G, 1V, 1P, ACH
      * @var string|null
      */
-    protected ?string $Code = null;
+    public ?string $Code = null;
     /**
      * Constructor method for ServiceSubGroup
      * @uses ServiceSubGroup::setCode()
@@ -47,10 +46,6 @@ class ServiceSubGroup extends AbstractStructBase
      */
     public function setCode(?string $code = null): self
     {
-        // validation for constraint: string
-        if (!is_null($code) && !is_string($code)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;

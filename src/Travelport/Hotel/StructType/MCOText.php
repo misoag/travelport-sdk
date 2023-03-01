@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class MCOText extends TypeFreeFormText
      * - documentation: The type of text. Possible values: Command Text, Agent Entry, MCO Modifiers, Text Message
      * @var string|null
      */
-    protected ?string $Type = null;
+    public ?string $Type = null;
     /**
      * Constructor method for MCOText
      * @uses MCOText::setType()
@@ -47,10 +46,6 @@ class MCOText extends TypeFreeFormText
      */
     public function setType(?string $type = null): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,14 +20,14 @@ class TypeDateRange extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $StartDate;
+    public string $StartDate;
     /**
      * The EndDate
      * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
-    protected string $EndDate;
+    public string $EndDate;
     /**
      * Constructor method for typeDateRange
      * @uses TypeDateRange::setStartDate()
@@ -57,10 +56,6 @@ class TypeDateRange extends AbstractStructBase
      */
     public function setStartDate(string $startDate): self
     {
-        // validation for constraint: string
-        if (!is_null($startDate) && !is_string($startDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
-        }
         $this->StartDate = $startDate;
         
         return $this;
@@ -80,10 +75,6 @@ class TypeDateRange extends AbstractStructBase
      */
     public function setEndDate(string $endDate): self
     {
-        // validation for constraint: string
-        if (!is_null($endDate) && !is_string($endDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endDate, true), gettype($endDate)), __LINE__);
-        }
         $this->EndDate = $endDate;
         
         return $this;

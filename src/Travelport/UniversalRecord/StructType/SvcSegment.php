@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class SvcSegment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * The Carrier
      * Meta information extracted from the WSDL
@@ -32,17 +31,17 @@ class SvcSegment extends AbstractStructBase
      * - length: 2
      * @var string|null
      */
-    protected ?string $Carrier = null;
+    public ?string $Carrier = null;
     /**
      * The Status
      * @var string|null
      */
-    protected ?string $Status = null;
+    public ?string $Status = null;
     /**
      * The NumberOfItems
      * @var int|null
      */
-    protected ?int $NumberOfItems = null;
+    public ?int $NumberOfItems = null;
     /**
      * The Origin
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class SvcSegment extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Origin = null;
+    public ?string $Origin = null;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -62,14 +61,14 @@ class SvcSegment extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Destination = null;
+    public ?string $Destination = null;
     /**
      * The StartDate
      * Meta information extracted from the WSDL
      * - documentation: Start date of the segment. Generally it is the next date after the last air segment. 1P only
      * @var string|null
      */
-    protected ?string $StartDate = null;
+    public ?string $StartDate = null;
     /**
      * The TravelOrder
      * Meta information extracted from the WSDL
@@ -77,7 +76,7 @@ class SvcSegment extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $TravelOrder = null;
+    public ?int $TravelOrder = null;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -85,7 +84,7 @@ class SvcSegment extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $BookingTravelerRef = null;
+    public ?string $BookingTravelerRef = null;
     /**
      * The RFIC
      * Meta information extracted from the WSDL
@@ -93,7 +92,7 @@ class SvcSegment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RFIC = null;
+    public ?string $RFIC = null;
     /**
      * The RFISC
      * Meta information extracted from the WSDL
@@ -101,7 +100,7 @@ class SvcSegment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RFISC = null;
+    public ?string $RFISC = null;
     /**
      * The SvcDescription
      * Meta information extracted from the WSDL
@@ -109,7 +108,7 @@ class SvcSegment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SvcDescription = null;
+    public ?string $SvcDescription = null;
     /**
      * The Fee
      * Meta information extracted from the WSDL
@@ -118,7 +117,7 @@ class SvcSegment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Fee = null;
+    public ?string $Fee = null;
     /**
      * The EMDNumber
      * Meta information extracted from the WSDL
@@ -128,7 +127,7 @@ class SvcSegment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $EMDNumber = null;
+    public ?string $EMDNumber = null;
     /**
      * Constructor method for SvcSegment
      * @uses SvcSegment::setKey()
@@ -193,10 +192,6 @@ class SvcSegment extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -216,14 +211,6 @@ class SvcSegment extends AbstractStructBase
      */
     public function setCarrier(?string $carrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($carrier) && !is_string($carrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrier, true), gettype($carrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($carrier) && mb_strlen((string) $carrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $carrier)), __LINE__);
-        }
         $this->Carrier = $carrier;
         
         return $this;
@@ -243,10 +230,6 @@ class SvcSegment extends AbstractStructBase
      */
     public function setStatus(?string $status = null): self
     {
-        // validation for constraint: string
-        if (!is_null($status) && !is_string($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -266,10 +249,6 @@ class SvcSegment extends AbstractStructBase
      */
     public function setNumberOfItems(?int $numberOfItems = null): self
     {
-        // validation for constraint: int
-        if (!is_null($numberOfItems) && !(is_int($numberOfItems) || ctype_digit($numberOfItems))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($numberOfItems, true), gettype($numberOfItems)), __LINE__);
-        }
         $this->NumberOfItems = $numberOfItems;
         
         return $this;
@@ -289,14 +268,6 @@ class SvcSegment extends AbstractStructBase
      */
     public function setOrigin(?string $origin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($origin) && mb_strlen((string) $origin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -316,14 +287,6 @@ class SvcSegment extends AbstractStructBase
      */
     public function setDestination(?string $destination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destination) && mb_strlen((string) $destination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -343,10 +306,6 @@ class SvcSegment extends AbstractStructBase
      */
     public function setStartDate(?string $startDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($startDate) && !is_string($startDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
-        }
         $this->StartDate = $startDate;
         
         return $this;
@@ -366,10 +325,6 @@ class SvcSegment extends AbstractStructBase
      */
     public function setTravelOrder(?int $travelOrder = null): self
     {
-        // validation for constraint: int
-        if (!is_null($travelOrder) && !(is_int($travelOrder) || ctype_digit($travelOrder))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($travelOrder, true), gettype($travelOrder)), __LINE__);
-        }
         $this->TravelOrder = $travelOrder;
         
         return $this;
@@ -389,10 +344,6 @@ class SvcSegment extends AbstractStructBase
      */
     public function setBookingTravelerRef(?string $bookingTravelerRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;
@@ -412,10 +363,6 @@ class SvcSegment extends AbstractStructBase
      */
     public function setRFIC(?string $rFIC = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rFIC) && !is_string($rFIC)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rFIC, true), gettype($rFIC)), __LINE__);
-        }
         $this->RFIC = $rFIC;
         
         return $this;
@@ -435,10 +382,6 @@ class SvcSegment extends AbstractStructBase
      */
     public function setRFISC(?string $rFISC = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rFISC) && !is_string($rFISC)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rFISC, true), gettype($rFISC)), __LINE__);
-        }
         $this->RFISC = $rFISC;
         
         return $this;
@@ -458,10 +401,6 @@ class SvcSegment extends AbstractStructBase
      */
     public function setSvcDescription(?string $svcDescription = null): self
     {
-        // validation for constraint: string
-        if (!is_null($svcDescription) && !is_string($svcDescription)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($svcDescription, true), gettype($svcDescription)), __LINE__);
-        }
         $this->SvcDescription = $svcDescription;
         
         return $this;
@@ -481,10 +420,6 @@ class SvcSegment extends AbstractStructBase
      */
     public function setFee(?string $fee = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fee) && !is_string($fee)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fee, true), gettype($fee)), __LINE__);
-        }
         $this->Fee = $fee;
         
         return $this;
@@ -504,14 +439,6 @@ class SvcSegment extends AbstractStructBase
      */
     public function setEMDNumber(?string $eMDNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($eMDNumber) && !is_string($eMDNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eMDNumber, true), gettype($eMDNumber)), __LINE__);
-        }
-        // validation for constraint: length(13)
-        if (!is_null($eMDNumber) && mb_strlen((string) $eMDNumber) !== 13) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 13', mb_strlen((string) $eMDNumber)), __LINE__);
-        }
         $this->EMDNumber = $eMDNumber;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,19 +20,19 @@ class FareRuleLong extends AbstractStructBase
      * - use: required
      * @var int
      */
-    protected int $Category;
+    public int $Category;
     /**
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The Type
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $Type = null;
+    public ?string $Type = null;
     /**
      * Constructor method for FareRuleLong
      * @uses FareRuleLong::setCategory()
@@ -65,10 +64,6 @@ class FareRuleLong extends AbstractStructBase
      */
     public function setCategory(int $category): self
     {
-        // validation for constraint: int
-        if (!is_null($category) && !(is_int($category) || ctype_digit($category))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($category, true), gettype($category)), __LINE__);
-        }
         $this->Category = $category;
         
         return $this;
@@ -88,10 +83,6 @@ class FareRuleLong extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -111,10 +102,6 @@ class FareRuleLong extends AbstractStructBase
      */
     public function setType(?string $type = null): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class TCR extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $TCRNumber;
+    public string $TCRNumber;
     /**
      * The Status
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class TCR extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Status;
+    public string $Status;
     /**
      * The ModifiedDate
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class TCR extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ModifiedDate;
+    public string $ModifiedDate;
     /**
      * The BasePrice
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class TCR extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $BasePrice;
+    public string $BasePrice;
     /**
      * The Taxes
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class TCR extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Taxes;
+    public string $Taxes;
     /**
      * The Fees
      * Meta information extracted from the WSDL
@@ -66,7 +65,7 @@ class TCR extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Fees;
+    public string $Fees;
     /**
      * The Refundable
      * Meta information extracted from the WSDL
@@ -74,7 +73,7 @@ class TCR extends AbstractStructBase
      * - use: required
      * @var bool
      */
-    protected bool $Refundable;
+    public bool $Refundable;
     /**
      * The Exchangeable
      * Meta information extracted from the WSDL
@@ -82,7 +81,7 @@ class TCR extends AbstractStructBase
      * - use: required
      * @var bool
      */
-    protected bool $Exchangeable;
+    public bool $Exchangeable;
     /**
      * The Voidable
      * Meta information extracted from the WSDL
@@ -90,7 +89,7 @@ class TCR extends AbstractStructBase
      * - use: required
      * @var bool
      */
-    protected bool $Voidable;
+    public bool $Voidable;
     /**
      * The Modifiable
      * Meta information extracted from the WSDL
@@ -98,7 +97,7 @@ class TCR extends AbstractStructBase
      * - use: required
      * @var bool
      */
-    protected bool $Modifiable;
+    public bool $Modifiable;
     /**
      * The FormOfPayment
      * Meta information extracted from the WSDL
@@ -107,7 +106,7 @@ class TCR extends AbstractStructBase
      * - ref: common:FormOfPayment
      * @var \Travelport\UniversalRecord\StructType\FormOfPayment[]
      */
-    protected ?array $FormOfPayment = null;
+    public ?array $FormOfPayment = null;
     /**
      * The Payment
      * Meta information extracted from the WSDL
@@ -116,7 +115,7 @@ class TCR extends AbstractStructBase
      * - ref: common:Payment
      * @var \Travelport\UniversalRecord\StructType\Payment[]
      */
-    protected ?array $Payment = null;
+    public ?array $Payment = null;
     /**
      * The BookingTraveler
      * Meta information extracted from the WSDL
@@ -124,7 +123,7 @@ class TCR extends AbstractStructBase
      * - ref: common:BookingTraveler
      * @var \Travelport\UniversalRecord\StructType\BookingTraveler[]
      */
-    protected ?array $BookingTraveler = null;
+    public ?array $BookingTraveler = null;
     /**
      * The PassengerTicketNumber
      * Meta information extracted from the WSDL
@@ -133,7 +132,7 @@ class TCR extends AbstractStructBase
      * - ref: PassengerTicketNumber
      * @var \Travelport\UniversalRecord\StructType\PassengerTicketNumber[]
      */
-    protected ?array $PassengerTicketNumber = null;
+    public ?array $PassengerTicketNumber = null;
     /**
      * The AirPricingInfo
      * Meta information extracted from the WSDL
@@ -142,7 +141,7 @@ class TCR extends AbstractStructBase
      * - ref: AirPricingInfo
      * @var \Travelport\UniversalRecord\StructType\AirPricingInfo[]
      */
-    protected ?array $AirPricingInfo = null;
+    public ?array $AirPricingInfo = null;
     /**
      * The AgencyInfo
      * Meta information extracted from the WSDL
@@ -150,7 +149,7 @@ class TCR extends AbstractStructBase
      * - ref: common:AgencyInfo
      * @var \Travelport\UniversalRecord\StructType\AgencyInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AgencyInfo $AgencyInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\AgencyInfo $AgencyInfo = null;
     /**
      * The AirReservationLocatorCode
      * Meta information extracted from the WSDL
@@ -158,7 +157,7 @@ class TCR extends AbstractStructBase
      * - ref: AirReservationLocatorCode
      * @var \Travelport\UniversalRecord\StructType\AirReservationLocatorCode|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AirReservationLocatorCode $AirReservationLocatorCode = null;
+    public ?\Travelport\UniversalRecord\StructType\AirReservationLocatorCode $AirReservationLocatorCode = null;
     /**
      * The SupplierLocator
      * Meta information extracted from the WSDL
@@ -167,7 +166,7 @@ class TCR extends AbstractStructBase
      * - ref: common:SupplierLocator
      * @var \Travelport\UniversalRecord\StructType\SupplierLocator[]
      */
-    protected ?array $SupplierLocator = null;
+    public ?array $SupplierLocator = null;
     /**
      * The RefundRemark
      * Meta information extracted from the WSDL
@@ -176,7 +175,7 @@ class TCR extends AbstractStructBase
      * - ref: common:RefundRemark
      * @var \Travelport\UniversalRecord\StructType\RefundRemark[]
      */
-    protected ?array $RefundRemark = null;
+    public ?array $RefundRemark = null;
     /**
      * The ConfirmedDate
      * Meta information extracted from the WSDL
@@ -184,7 +183,7 @@ class TCR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ConfirmedDate = null;
+    public ?string $ConfirmedDate = null;
     /**
      * The RefundAccessCode
      * Meta information extracted from the WSDL
@@ -192,7 +191,7 @@ class TCR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RefundAccessCode = null;
+    public ?string $RefundAccessCode = null;
     /**
      * The RefundAmount
      * Meta information extracted from the WSDL
@@ -201,7 +200,7 @@ class TCR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RefundAmount = null;
+    public ?string $RefundAmount = null;
     /**
      * The RefundFee
      * Meta information extracted from the WSDL
@@ -210,7 +209,7 @@ class TCR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RefundFee = null;
+    public ?string $RefundFee = null;
     /**
      * The ForfeitAmount
      * Meta information extracted from the WSDL
@@ -219,7 +218,7 @@ class TCR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ForfeitAmount = null;
+    public ?string $ForfeitAmount = null;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -229,7 +228,7 @@ class TCR extends AbstractStructBase
      * - minLength: 2
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The ProviderLocatorCode
      * Meta information extracted from the WSDL
@@ -238,7 +237,7 @@ class TCR extends AbstractStructBase
      * - maxLength: 15
      * @var string|null
      */
-    protected ?string $ProviderLocatorCode = null;
+    public ?string $ProviderLocatorCode = null;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
@@ -248,7 +247,7 @@ class TCR extends AbstractStructBase
      * - minLength: 1
      * @var string|null
      */
-    protected ?string $SupplierCode = null;
+    public ?string $SupplierCode = null;
     /**
      * Constructor method for TCR
      * @uses TCR::setTCRNumber()
@@ -352,10 +351,6 @@ class TCR extends AbstractStructBase
      */
     public function setTCRNumber(string $tCRNumber): self
     {
-        // validation for constraint: string
-        if (!is_null($tCRNumber) && !is_string($tCRNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tCRNumber, true), gettype($tCRNumber)), __LINE__);
-        }
         $this->TCRNumber = $tCRNumber;
         
         return $this;
@@ -370,18 +365,11 @@ class TCR extends AbstractStructBase
     }
     /**
      * Set Status value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTCRStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTCRStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $status
      * @return \Travelport\UniversalRecord\StructType\TCR
      */
     public function setStatus(string $status): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeTCRStatus::valueIsValid($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeTCRStatus', is_array($status) ? implode(', ', $status) : var_export($status, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeTCRStatus::getValidValues())), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -401,10 +389,6 @@ class TCR extends AbstractStructBase
      */
     public function setModifiedDate(string $modifiedDate): self
     {
-        // validation for constraint: string
-        if (!is_null($modifiedDate) && !is_string($modifiedDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($modifiedDate, true), gettype($modifiedDate)), __LINE__);
-        }
         $this->ModifiedDate = $modifiedDate;
         
         return $this;
@@ -424,10 +408,6 @@ class TCR extends AbstractStructBase
      */
     public function setBasePrice(string $basePrice): self
     {
-        // validation for constraint: string
-        if (!is_null($basePrice) && !is_string($basePrice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($basePrice, true), gettype($basePrice)), __LINE__);
-        }
         $this->BasePrice = $basePrice;
         
         return $this;
@@ -447,10 +427,6 @@ class TCR extends AbstractStructBase
      */
     public function setTaxes(string $taxes): self
     {
-        // validation for constraint: string
-        if (!is_null($taxes) && !is_string($taxes)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($taxes, true), gettype($taxes)), __LINE__);
-        }
         $this->Taxes = $taxes;
         
         return $this;
@@ -470,10 +446,6 @@ class TCR extends AbstractStructBase
      */
     public function setFees(string $fees): self
     {
-        // validation for constraint: string
-        if (!is_null($fees) && !is_string($fees)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fees, true), gettype($fees)), __LINE__);
-        }
         $this->Fees = $fees;
         
         return $this;
@@ -493,10 +465,6 @@ class TCR extends AbstractStructBase
      */
     public function setRefundable(bool $refundable): self
     {
-        // validation for constraint: boolean
-        if (!is_null($refundable) && !is_bool($refundable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($refundable, true), gettype($refundable)), __LINE__);
-        }
         $this->Refundable = $refundable;
         
         return $this;
@@ -516,10 +484,6 @@ class TCR extends AbstractStructBase
      */
     public function setExchangeable(bool $exchangeable): self
     {
-        // validation for constraint: boolean
-        if (!is_null($exchangeable) && !is_bool($exchangeable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($exchangeable, true), gettype($exchangeable)), __LINE__);
-        }
         $this->Exchangeable = $exchangeable;
         
         return $this;
@@ -539,10 +503,6 @@ class TCR extends AbstractStructBase
      */
     public function setVoidable(bool $voidable): self
     {
-        // validation for constraint: boolean
-        if (!is_null($voidable) && !is_bool($voidable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($voidable, true), gettype($voidable)), __LINE__);
-        }
         $this->Voidable = $voidable;
         
         return $this;
@@ -562,10 +522,6 @@ class TCR extends AbstractStructBase
      */
     public function setModifiable(bool $modifiable): self
     {
-        // validation for constraint: boolean
-        if (!is_null($modifiable) && !is_bool($modifiable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($modifiable, true), gettype($modifiable)), __LINE__);
-        }
         $this->Modifiable = $modifiable;
         
         return $this;
@@ -579,48 +535,12 @@ class TCR extends AbstractStructBase
         return $this->FormOfPayment;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFormOfPayment method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPayment method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFormOfPaymentForArrayConstraintFromSetFormOfPayment(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $tCRFormOfPaymentItem) {
-            // validation for constraint: itemType
-            if (!$tCRFormOfPaymentItem instanceof \Travelport\UniversalRecord\StructType\FormOfPayment) {
-                $invalidValues[] = is_object($tCRFormOfPaymentItem) ? get_class($tCRFormOfPaymentItem) : sprintf('%s(%s)', gettype($tCRFormOfPaymentItem), var_export($tCRFormOfPaymentItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FormOfPayment property can only contain items of type \Travelport\UniversalRecord\StructType\FormOfPayment, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FormOfPayment value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FormOfPayment[] $formOfPayment
      * @return \Travelport\UniversalRecord\StructType\TCR
      */
     public function setFormOfPayment(?array $formOfPayment = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintFromSetFormOfPayment($formOfPayment))) {
-            throw new InvalidArgumentException($formOfPaymentArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($formOfPayment) && count($formOfPayment) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($formOfPayment)), __LINE__);
-        }
         $this->FormOfPayment = $formOfPayment;
         
         return $this;
@@ -633,14 +553,6 @@ class TCR extends AbstractStructBase
      */
     public function addToFormOfPayment(\Travelport\UniversalRecord\StructType\FormOfPayment $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\FormOfPayment) {
-            throw new InvalidArgumentException(sprintf('The FormOfPayment property can only contain items of type \Travelport\UniversalRecord\StructType\FormOfPayment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FormOfPayment) && count($this->FormOfPayment) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FormOfPayment)), __LINE__);
-        }
         $this->FormOfPayment[] = $item;
         
         return $this;
@@ -654,48 +566,12 @@ class TCR extends AbstractStructBase
         return $this->Payment;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPayment method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPayment method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePaymentForArrayConstraintFromSetPayment(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $tCRPaymentItem) {
-            // validation for constraint: itemType
-            if (!$tCRPaymentItem instanceof \Travelport\UniversalRecord\StructType\Payment) {
-                $invalidValues[] = is_object($tCRPaymentItem) ? get_class($tCRPaymentItem) : sprintf('%s(%s)', gettype($tCRPaymentItem), var_export($tCRPaymentItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Payment property can only contain items of type \Travelport\UniversalRecord\StructType\Payment, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Payment value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\Payment[] $payment
      * @return \Travelport\UniversalRecord\StructType\TCR
      */
     public function setPayment(?array $payment = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($paymentArrayErrorMessage = self::validatePaymentForArrayConstraintFromSetPayment($payment))) {
-            throw new InvalidArgumentException($paymentArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($payment) && count($payment) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($payment)), __LINE__);
-        }
         $this->Payment = $payment;
         
         return $this;
@@ -708,14 +584,6 @@ class TCR extends AbstractStructBase
      */
     public function addToPayment(\Travelport\UniversalRecord\StructType\Payment $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\Payment) {
-            throw new InvalidArgumentException(sprintf('The Payment property can only contain items of type \Travelport\UniversalRecord\StructType\Payment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->Payment) && count($this->Payment) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->Payment)), __LINE__);
-        }
         $this->Payment[] = $item;
         
         return $this;
@@ -729,48 +597,12 @@ class TCR extends AbstractStructBase
         return $this->BookingTraveler;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setBookingTraveler method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTraveler method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateBookingTravelerForArrayConstraintFromSetBookingTraveler(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $tCRBookingTravelerItem) {
-            // validation for constraint: itemType
-            if (!$tCRBookingTravelerItem instanceof \Travelport\UniversalRecord\StructType\BookingTraveler) {
-                $invalidValues[] = is_object($tCRBookingTravelerItem) ? get_class($tCRBookingTravelerItem) : sprintf('%s(%s)', gettype($tCRBookingTravelerItem), var_export($tCRBookingTravelerItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The BookingTraveler property can only contain items of type \Travelport\UniversalRecord\StructType\BookingTraveler, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set BookingTraveler value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\BookingTraveler[] $bookingTraveler
      * @return \Travelport\UniversalRecord\StructType\TCR
      */
     public function setBookingTraveler(?array $bookingTraveler = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($bookingTravelerArrayErrorMessage = self::validateBookingTravelerForArrayConstraintFromSetBookingTraveler($bookingTraveler))) {
-            throw new InvalidArgumentException($bookingTravelerArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($bookingTraveler) && count($bookingTraveler) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($bookingTraveler)), __LINE__);
-        }
         $this->BookingTraveler = $bookingTraveler;
         
         return $this;
@@ -783,14 +615,6 @@ class TCR extends AbstractStructBase
      */
     public function addToBookingTraveler(\Travelport\UniversalRecord\StructType\BookingTraveler $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\BookingTraveler) {
-            throw new InvalidArgumentException(sprintf('The BookingTraveler property can only contain items of type \Travelport\UniversalRecord\StructType\BookingTraveler, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->BookingTraveler) && count($this->BookingTraveler) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->BookingTraveler)), __LINE__);
-        }
         $this->BookingTraveler[] = $item;
         
         return $this;
@@ -804,48 +628,12 @@ class TCR extends AbstractStructBase
         return $this->PassengerTicketNumber;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPassengerTicketNumber method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPassengerTicketNumber method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePassengerTicketNumberForArrayConstraintFromSetPassengerTicketNumber(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $tCRPassengerTicketNumberItem) {
-            // validation for constraint: itemType
-            if (!$tCRPassengerTicketNumberItem instanceof \Travelport\UniversalRecord\StructType\PassengerTicketNumber) {
-                $invalidValues[] = is_object($tCRPassengerTicketNumberItem) ? get_class($tCRPassengerTicketNumberItem) : sprintf('%s(%s)', gettype($tCRPassengerTicketNumberItem), var_export($tCRPassengerTicketNumberItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The PassengerTicketNumber property can only contain items of type \Travelport\UniversalRecord\StructType\PassengerTicketNumber, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set PassengerTicketNumber value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\PassengerTicketNumber[] $passengerTicketNumber
      * @return \Travelport\UniversalRecord\StructType\TCR
      */
     public function setPassengerTicketNumber(?array $passengerTicketNumber = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($passengerTicketNumberArrayErrorMessage = self::validatePassengerTicketNumberForArrayConstraintFromSetPassengerTicketNumber($passengerTicketNumber))) {
-            throw new InvalidArgumentException($passengerTicketNumberArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($passengerTicketNumber) && count($passengerTicketNumber) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($passengerTicketNumber)), __LINE__);
-        }
         $this->PassengerTicketNumber = $passengerTicketNumber;
         
         return $this;
@@ -858,14 +646,6 @@ class TCR extends AbstractStructBase
      */
     public function addToPassengerTicketNumber(\Travelport\UniversalRecord\StructType\PassengerTicketNumber $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\PassengerTicketNumber) {
-            throw new InvalidArgumentException(sprintf('The PassengerTicketNumber property can only contain items of type \Travelport\UniversalRecord\StructType\PassengerTicketNumber, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->PassengerTicketNumber) && count($this->PassengerTicketNumber) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->PassengerTicketNumber)), __LINE__);
-        }
         $this->PassengerTicketNumber[] = $item;
         
         return $this;
@@ -879,48 +659,12 @@ class TCR extends AbstractStructBase
         return $this->AirPricingInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirPricingInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAirPricingInfoForArrayConstraintFromSetAirPricingInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $tCRAirPricingInfoItem) {
-            // validation for constraint: itemType
-            if (!$tCRAirPricingInfoItem instanceof \Travelport\UniversalRecord\StructType\AirPricingInfo) {
-                $invalidValues[] = is_object($tCRAirPricingInfoItem) ? get_class($tCRAirPricingInfoItem) : sprintf('%s(%s)', gettype($tCRAirPricingInfoItem), var_export($tCRAirPricingInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AirPricingInfo property can only contain items of type \Travelport\UniversalRecord\StructType\AirPricingInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AirPricingInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AirPricingInfo[] $airPricingInfo
      * @return \Travelport\UniversalRecord\StructType\TCR
      */
     public function setAirPricingInfo(?array $airPricingInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($airPricingInfoArrayErrorMessage = self::validateAirPricingInfoForArrayConstraintFromSetAirPricingInfo($airPricingInfo))) {
-            throw new InvalidArgumentException($airPricingInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($airPricingInfo) && count($airPricingInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($airPricingInfo)), __LINE__);
-        }
         $this->AirPricingInfo = $airPricingInfo;
         
         return $this;
@@ -933,14 +677,6 @@ class TCR extends AbstractStructBase
      */
     public function addToAirPricingInfo(\Travelport\UniversalRecord\StructType\AirPricingInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AirPricingInfo) {
-            throw new InvalidArgumentException(sprintf('The AirPricingInfo property can only contain items of type \Travelport\UniversalRecord\StructType\AirPricingInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->AirPricingInfo) && count($this->AirPricingInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->AirPricingInfo)), __LINE__);
-        }
         $this->AirPricingInfo[] = $item;
         
         return $this;
@@ -992,48 +728,12 @@ class TCR extends AbstractStructBase
         return $this->SupplierLocator;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setSupplierLocator method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setSupplierLocator method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateSupplierLocatorForArrayConstraintFromSetSupplierLocator(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $tCRSupplierLocatorItem) {
-            // validation for constraint: itemType
-            if (!$tCRSupplierLocatorItem instanceof \Travelport\UniversalRecord\StructType\SupplierLocator) {
-                $invalidValues[] = is_object($tCRSupplierLocatorItem) ? get_class($tCRSupplierLocatorItem) : sprintf('%s(%s)', gettype($tCRSupplierLocatorItem), var_export($tCRSupplierLocatorItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The SupplierLocator property can only contain items of type \Travelport\UniversalRecord\StructType\SupplierLocator, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set SupplierLocator value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\SupplierLocator[] $supplierLocator
      * @return \Travelport\UniversalRecord\StructType\TCR
      */
     public function setSupplierLocator(?array $supplierLocator = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintFromSetSupplierLocator($supplierLocator))) {
-            throw new InvalidArgumentException($supplierLocatorArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($supplierLocator) && count($supplierLocator) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($supplierLocator)), __LINE__);
-        }
         $this->SupplierLocator = $supplierLocator;
         
         return $this;
@@ -1046,14 +746,6 @@ class TCR extends AbstractStructBase
      */
     public function addToSupplierLocator(\Travelport\UniversalRecord\StructType\SupplierLocator $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\SupplierLocator) {
-            throw new InvalidArgumentException(sprintf('The SupplierLocator property can only contain items of type \Travelport\UniversalRecord\StructType\SupplierLocator, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->SupplierLocator) && count($this->SupplierLocator) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->SupplierLocator)), __LINE__);
-        }
         $this->SupplierLocator[] = $item;
         
         return $this;
@@ -1067,48 +759,12 @@ class TCR extends AbstractStructBase
         return $this->RefundRemark;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRefundRemark method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRefundRemark method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateRefundRemarkForArrayConstraintFromSetRefundRemark(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $tCRRefundRemarkItem) {
-            // validation for constraint: itemType
-            if (!$tCRRefundRemarkItem instanceof \Travelport\UniversalRecord\StructType\RefundRemark) {
-                $invalidValues[] = is_object($tCRRefundRemarkItem) ? get_class($tCRRefundRemarkItem) : sprintf('%s(%s)', gettype($tCRRefundRemarkItem), var_export($tCRRefundRemarkItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The RefundRemark property can only contain items of type \Travelport\UniversalRecord\StructType\RefundRemark, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set RefundRemark value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\RefundRemark[] $refundRemark
      * @return \Travelport\UniversalRecord\StructType\TCR
      */
     public function setRefundRemark(?array $refundRemark = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($refundRemarkArrayErrorMessage = self::validateRefundRemarkForArrayConstraintFromSetRefundRemark($refundRemark))) {
-            throw new InvalidArgumentException($refundRemarkArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($refundRemark) && count($refundRemark) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($refundRemark)), __LINE__);
-        }
         $this->RefundRemark = $refundRemark;
         
         return $this;
@@ -1121,14 +777,6 @@ class TCR extends AbstractStructBase
      */
     public function addToRefundRemark(\Travelport\UniversalRecord\StructType\RefundRemark $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\RefundRemark) {
-            throw new InvalidArgumentException(sprintf('The RefundRemark property can only contain items of type \Travelport\UniversalRecord\StructType\RefundRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->RefundRemark) && count($this->RefundRemark) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->RefundRemark)), __LINE__);
-        }
         $this->RefundRemark[] = $item;
         
         return $this;
@@ -1148,10 +796,6 @@ class TCR extends AbstractStructBase
      */
     public function setConfirmedDate(?string $confirmedDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($confirmedDate) && !is_string($confirmedDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($confirmedDate, true), gettype($confirmedDate)), __LINE__);
-        }
         $this->ConfirmedDate = $confirmedDate;
         
         return $this;
@@ -1171,10 +815,6 @@ class TCR extends AbstractStructBase
      */
     public function setRefundAccessCode(?string $refundAccessCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($refundAccessCode) && !is_string($refundAccessCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($refundAccessCode, true), gettype($refundAccessCode)), __LINE__);
-        }
         $this->RefundAccessCode = $refundAccessCode;
         
         return $this;
@@ -1194,10 +834,6 @@ class TCR extends AbstractStructBase
      */
     public function setRefundAmount(?string $refundAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($refundAmount) && !is_string($refundAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($refundAmount, true), gettype($refundAmount)), __LINE__);
-        }
         $this->RefundAmount = $refundAmount;
         
         return $this;
@@ -1217,10 +853,6 @@ class TCR extends AbstractStructBase
      */
     public function setRefundFee(?string $refundFee = null): self
     {
-        // validation for constraint: string
-        if (!is_null($refundFee) && !is_string($refundFee)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($refundFee, true), gettype($refundFee)), __LINE__);
-        }
         $this->RefundFee = $refundFee;
         
         return $this;
@@ -1240,10 +872,6 @@ class TCR extends AbstractStructBase
      */
     public function setForfeitAmount(?string $forfeitAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($forfeitAmount) && !is_string($forfeitAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($forfeitAmount, true), gettype($forfeitAmount)), __LINE__);
-        }
         $this->ForfeitAmount = $forfeitAmount;
         
         return $this;
@@ -1263,18 +891,6 @@ class TCR extends AbstractStructBase
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -1294,14 +910,6 @@ class TCR extends AbstractStructBase
      */
     public function setProviderLocatorCode(?string $providerLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerLocatorCode) && !is_string($providerLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerLocatorCode, true), gettype($providerLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($providerLocatorCode) && mb_strlen((string) $providerLocatorCode) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $providerLocatorCode)), __LINE__);
-        }
         $this->ProviderLocatorCode = $providerLocatorCode;
         
         return $this;
@@ -1321,18 +929,6 @@ class TCR extends AbstractStructBase
      */
     public function setSupplierCode(?string $supplierCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $supplierCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;

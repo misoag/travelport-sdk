@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected ?array $TripType = null;
+    public ?array $TripType = null;
     /**
      * The CabinClass
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - ref: common:CabinClass
      * @var \Travelport\UniversalRecord\StructType\CabinClass|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CabinClass $CabinClass = null;
+    public ?\Travelport\UniversalRecord\StructType\CabinClass $CabinClass = null;
     /**
      * The PenaltyFareInformation
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - ref: PenaltyFareInformation
      * @var \Travelport\UniversalRecord\StructType\PenaltyFareInformation|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PenaltyFareInformation $PenaltyFareInformation = null;
+    public ?\Travelport\UniversalRecord\StructType\PenaltyFareInformation $PenaltyFareInformation = null;
     /**
      * The FareSearchOption
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected ?array $FareSearchOption = null;
+    public ?array $FareSearchOption = null;
     /**
      * The MaxResponses
      * Meta information extracted from the WSDL
@@ -54,28 +53,28 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MaxResponses = null;
+    public ?int $MaxResponses = null;
     /**
      * The DepartureDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $DepartureDate = null;
+    public ?string $DepartureDate = null;
     /**
      * The TicketingDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketingDate = null;
+    public ?string $TicketingDate = null;
     /**
      * The ReturnDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $ReturnDate = null;
+    public ?string $ReturnDate = null;
     /**
      * The BaseFareOnly
      * Meta information extracted from the WSDL
@@ -83,7 +82,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $BaseFareOnly = null;
+    public ?bool $BaseFareOnly = null;
     /**
      * The UnrestrictedFaresOnly
      * Meta information extracted from the WSDL
@@ -91,7 +90,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $UnrestrictedFaresOnly = null;
+    public ?bool $UnrestrictedFaresOnly = null;
     /**
      * The FaresIndicator
      * Meta information extracted from the WSDL
@@ -99,7 +98,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FaresIndicator = null;
+    public ?string $FaresIndicator = null;
     /**
      * The CurrencyType
      * Meta information extracted from the WSDL
@@ -109,14 +108,14 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CurrencyType = null;
+    public ?string $CurrencyType = null;
     /**
      * The IncludeTaxes
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $IncludeTaxes = null;
+    public ?bool $IncludeTaxes = null;
     /**
      * The IncludeEstimatedTaxes
      * Meta information extracted from the WSDL
@@ -124,21 +123,21 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $IncludeEstimatedTaxes = null;
+    public ?bool $IncludeEstimatedTaxes = null;
     /**
      * The IncludeSurcharges
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $IncludeSurcharges = null;
+    public ?bool $IncludeSurcharges = null;
     /**
      * The GlobalIndicator
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $GlobalIndicator = null;
+    public ?string $GlobalIndicator = null;
     /**
      * The ProhibitMinStayFares
      * Meta information extracted from the WSDL
@@ -146,7 +145,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ProhibitMinStayFares = null;
+    public ?bool $ProhibitMinStayFares = null;
     /**
      * The ProhibitMaxStayFares
      * Meta information extracted from the WSDL
@@ -154,7 +153,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ProhibitMaxStayFares = null;
+    public ?bool $ProhibitMaxStayFares = null;
     /**
      * The ProhibitAdvancePurchaseFares
      * Meta information extracted from the WSDL
@@ -162,7 +161,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ProhibitAdvancePurchaseFares = null;
+    public ?bool $ProhibitAdvancePurchaseFares = null;
     /**
      * The ProhibitNonRefundableFares
      * Meta information extracted from the WSDL
@@ -171,7 +170,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ProhibitNonRefundableFares = null;
+    public ?bool $ProhibitNonRefundableFares = null;
     /**
      * The ValidatedFaresOnly
      * Meta information extracted from the WSDL
@@ -180,7 +179,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ValidatedFaresOnly = null;
+    public ?bool $ValidatedFaresOnly = null;
     /**
      * The ProhibitTravelRestrictedFares
      * Meta information extracted from the WSDL
@@ -189,7 +188,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ProhibitTravelRestrictedFares = null;
+    public ?bool $ProhibitTravelRestrictedFares = null;
     /**
      * The FiledCurrency
      * Meta information extracted from the WSDL
@@ -199,7 +198,7 @@ class AirFareDisplayModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FiledCurrency = null;
+    public ?string $FiledCurrency = null;
     /**
      * Constructor method for AirFareDisplayModifiers
      * @uses AirFareDisplayModifiers::setTripType()
@@ -285,50 +284,12 @@ class AirFareDisplayModifiers extends AbstractStructBase
         return $this->TripType;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setTripType method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setTripType method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTripTypeForArrayConstraintFromSetTripType(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airFareDisplayModifiersTripTypeItem) {
-            // validation for constraint: enumeration
-            if (!\Travelport\UniversalRecord\EnumType\TypeFareTripType::valueIsValid($airFareDisplayModifiersTripTypeItem)) {
-                $invalidValues[] = is_object($airFareDisplayModifiersTripTypeItem) ? get_class($airFareDisplayModifiersTripTypeItem) : sprintf('%s(%s)', gettype($airFareDisplayModifiersTripTypeItem), var_export($airFareDisplayModifiersTripTypeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeFareTripType', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeFareTripType::getValidValues()));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set TripType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareTripType::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareTripType::getValidValues()
-     * @throws InvalidArgumentException
      * @param string[] $tripType
      * @return \Travelport\UniversalRecord\StructType\AirFareDisplayModifiers
      */
     public function setTripType(?array $tripType = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($tripTypeArrayErrorMessage = self::validateTripTypeForArrayConstraintFromSetTripType($tripType))) {
-            throw new InvalidArgumentException($tripTypeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(3)
-        if (is_array($tripType) && count($tripType) > 3) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 3', count($tripType)), __LINE__);
-        }
         $this->TripType = $tripType;
         
         return $this;
@@ -343,14 +304,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function addToTripType(string $item): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeFareTripType::valueIsValid($item)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeFareTripType', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeFareTripType::getValidValues())), __LINE__);
-        }
-        // validation for constraint: maxOccurs(3)
-        if (is_array($this->TripType) && count($this->TripType) >= 3) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 3', count($this->TripType)), __LINE__);
-        }
         $this->TripType[] = $item;
         
         return $this;
@@ -402,50 +355,12 @@ class AirFareDisplayModifiers extends AbstractStructBase
         return $this->FareSearchOption;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFareSearchOption method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFareSearchOption method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFareSearchOptionForArrayConstraintFromSetFareSearchOption(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airFareDisplayModifiersFareSearchOptionItem) {
-            // validation for constraint: enumeration
-            if (!\Travelport\UniversalRecord\EnumType\TypeFareSearchOption::valueIsValid($airFareDisplayModifiersFareSearchOptionItem)) {
-                $invalidValues[] = is_object($airFareDisplayModifiersFareSearchOptionItem) ? get_class($airFareDisplayModifiersFareSearchOptionItem) : sprintf('%s(%s)', gettype($airFareDisplayModifiersFareSearchOptionItem), var_export($airFareDisplayModifiersFareSearchOptionItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeFareSearchOption', is_array($invalidValues) ? implode(', ', $invalidValues) : var_export($invalidValues, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeFareSearchOption::getValidValues()));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FareSearchOption value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareSearchOption::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareSearchOption::getValidValues()
-     * @throws InvalidArgumentException
      * @param string[] $fareSearchOption
      * @return \Travelport\UniversalRecord\StructType\AirFareDisplayModifiers
      */
     public function setFareSearchOption(?array $fareSearchOption = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($fareSearchOptionArrayErrorMessage = self::validateFareSearchOptionForArrayConstraintFromSetFareSearchOption($fareSearchOption))) {
-            throw new InvalidArgumentException($fareSearchOptionArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($fareSearchOption) && count($fareSearchOption) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($fareSearchOption)), __LINE__);
-        }
         $this->FareSearchOption = $fareSearchOption;
         
         return $this;
@@ -460,14 +375,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function addToFareSearchOption(string $item): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeFareSearchOption::valueIsValid($item)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeFareSearchOption', is_array($item) ? implode(', ', $item) : var_export($item, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeFareSearchOption::getValidValues())), __LINE__);
-        }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($this->FareSearchOption) && count($this->FareSearchOption) >= 5) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->FareSearchOption)), __LINE__);
-        }
         $this->FareSearchOption[] = $item;
         
         return $this;
@@ -487,10 +394,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setMaxResponses(?int $maxResponses = 200): self
     {
-        // validation for constraint: int
-        if (!is_null($maxResponses) && !(is_int($maxResponses) || ctype_digit($maxResponses))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maxResponses, true), gettype($maxResponses)), __LINE__);
-        }
         $this->MaxResponses = $maxResponses;
         
         return $this;
@@ -510,10 +413,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setDepartureDate(?string $departureDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($departureDate) && !is_string($departureDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($departureDate, true), gettype($departureDate)), __LINE__);
-        }
         $this->DepartureDate = $departureDate;
         
         return $this;
@@ -533,10 +432,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setTicketingDate(?string $ticketingDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketingDate) && !is_string($ticketingDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketingDate, true), gettype($ticketingDate)), __LINE__);
-        }
         $this->TicketingDate = $ticketingDate;
         
         return $this;
@@ -556,10 +451,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setReturnDate(?string $returnDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($returnDate) && !is_string($returnDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnDate, true), gettype($returnDate)), __LINE__);
-        }
         $this->ReturnDate = $returnDate;
         
         return $this;
@@ -579,10 +470,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setBaseFareOnly(?bool $baseFareOnly = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($baseFareOnly) && !is_bool($baseFareOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($baseFareOnly, true), gettype($baseFareOnly)), __LINE__);
-        }
         $this->BaseFareOnly = $baseFareOnly;
         
         return $this;
@@ -602,10 +489,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setUnrestrictedFaresOnly(?bool $unrestrictedFaresOnly = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($unrestrictedFaresOnly) && !is_bool($unrestrictedFaresOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($unrestrictedFaresOnly, true), gettype($unrestrictedFaresOnly)), __LINE__);
-        }
         $this->UnrestrictedFaresOnly = $unrestrictedFaresOnly;
         
         return $this;
@@ -620,18 +503,11 @@ class AirFareDisplayModifiers extends AbstractStructBase
     }
     /**
      * Set FaresIndicator value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFaresIndicator::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFaresIndicator::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $faresIndicator
      * @return \Travelport\UniversalRecord\StructType\AirFareDisplayModifiers
      */
     public function setFaresIndicator(?string $faresIndicator = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeFaresIndicator::valueIsValid($faresIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeFaresIndicator', is_array($faresIndicator) ? implode(', ', $faresIndicator) : var_export($faresIndicator, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeFaresIndicator::getValidValues())), __LINE__);
-        }
         $this->FaresIndicator = $faresIndicator;
         
         return $this;
@@ -651,14 +527,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setCurrencyType(?string $currencyType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($currencyType) && !is_string($currencyType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currencyType, true), gettype($currencyType)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($currencyType) && mb_strlen((string) $currencyType) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $currencyType)), __LINE__);
-        }
         $this->CurrencyType = $currencyType;
         
         return $this;
@@ -678,10 +546,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setIncludeTaxes(?bool $includeTaxes = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($includeTaxes) && !is_bool($includeTaxes)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($includeTaxes, true), gettype($includeTaxes)), __LINE__);
-        }
         $this->IncludeTaxes = $includeTaxes;
         
         return $this;
@@ -701,10 +565,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setIncludeEstimatedTaxes(?bool $includeEstimatedTaxes = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($includeEstimatedTaxes) && !is_bool($includeEstimatedTaxes)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($includeEstimatedTaxes, true), gettype($includeEstimatedTaxes)), __LINE__);
-        }
         $this->IncludeEstimatedTaxes = $includeEstimatedTaxes;
         
         return $this;
@@ -724,10 +584,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setIncludeSurcharges(?bool $includeSurcharges = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($includeSurcharges) && !is_bool($includeSurcharges)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($includeSurcharges, true), gettype($includeSurcharges)), __LINE__);
-        }
         $this->IncludeSurcharges = $includeSurcharges;
         
         return $this;
@@ -742,18 +598,11 @@ class AirFareDisplayModifiers extends AbstractStructBase
     }
     /**
      * Set GlobalIndicator value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeATPCOGlobalIndicator::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeATPCOGlobalIndicator::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $globalIndicator
      * @return \Travelport\UniversalRecord\StructType\AirFareDisplayModifiers
      */
     public function setGlobalIndicator(?string $globalIndicator = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeATPCOGlobalIndicator::valueIsValid($globalIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeATPCOGlobalIndicator', is_array($globalIndicator) ? implode(', ', $globalIndicator) : var_export($globalIndicator, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeATPCOGlobalIndicator::getValidValues())), __LINE__);
-        }
         $this->GlobalIndicator = $globalIndicator;
         
         return $this;
@@ -773,10 +622,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setProhibitMinStayFares(?bool $prohibitMinStayFares = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($prohibitMinStayFares) && !is_bool($prohibitMinStayFares)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($prohibitMinStayFares, true), gettype($prohibitMinStayFares)), __LINE__);
-        }
         $this->ProhibitMinStayFares = $prohibitMinStayFares;
         
         return $this;
@@ -796,10 +641,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setProhibitMaxStayFares(?bool $prohibitMaxStayFares = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($prohibitMaxStayFares) && !is_bool($prohibitMaxStayFares)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($prohibitMaxStayFares, true), gettype($prohibitMaxStayFares)), __LINE__);
-        }
         $this->ProhibitMaxStayFares = $prohibitMaxStayFares;
         
         return $this;
@@ -819,10 +660,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setProhibitAdvancePurchaseFares(?bool $prohibitAdvancePurchaseFares = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($prohibitAdvancePurchaseFares) && !is_bool($prohibitAdvancePurchaseFares)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($prohibitAdvancePurchaseFares, true), gettype($prohibitAdvancePurchaseFares)), __LINE__);
-        }
         $this->ProhibitAdvancePurchaseFares = $prohibitAdvancePurchaseFares;
         
         return $this;
@@ -842,10 +679,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setProhibitNonRefundableFares(?bool $prohibitNonRefundableFares = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($prohibitNonRefundableFares) && !is_bool($prohibitNonRefundableFares)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($prohibitNonRefundableFares, true), gettype($prohibitNonRefundableFares)), __LINE__);
-        }
         $this->ProhibitNonRefundableFares = $prohibitNonRefundableFares;
         
         return $this;
@@ -865,10 +698,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setValidatedFaresOnly(?bool $validatedFaresOnly = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($validatedFaresOnly) && !is_bool($validatedFaresOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($validatedFaresOnly, true), gettype($validatedFaresOnly)), __LINE__);
-        }
         $this->ValidatedFaresOnly = $validatedFaresOnly;
         
         return $this;
@@ -888,10 +717,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setProhibitTravelRestrictedFares(?bool $prohibitTravelRestrictedFares = true): self
     {
-        // validation for constraint: boolean
-        if (!is_null($prohibitTravelRestrictedFares) && !is_bool($prohibitTravelRestrictedFares)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($prohibitTravelRestrictedFares, true), gettype($prohibitTravelRestrictedFares)), __LINE__);
-        }
         $this->ProhibitTravelRestrictedFares = $prohibitTravelRestrictedFares;
         
         return $this;
@@ -911,14 +736,6 @@ class AirFareDisplayModifiers extends AbstractStructBase
      */
     public function setFiledCurrency(?string $filedCurrency = null): self
     {
-        // validation for constraint: string
-        if (!is_null($filedCurrency) && !is_string($filedCurrency)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($filedCurrency, true), gettype($filedCurrency)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($filedCurrency) && mb_strlen((string) $filedCurrency) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $filedCurrency)), __LINE__);
-        }
         $this->FiledCurrency = $filedCurrency;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class AirExchangeTicketBundle extends AbstractStructBase
      * - ref: common:TicketNumber
      * @var string|null
      */
-    protected ?string $TicketNumber = null;
+    public ?string $TicketNumber = null;
     /**
      * The FormOfPayment
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class AirExchangeTicketBundle extends AbstractStructBase
      * - ref: common:FormOfPayment
      * @var \Travelport\UniversalRecord\StructType\FormOfPayment[]
      */
-    protected ?array $FormOfPayment = null;
+    public ?array $FormOfPayment = null;
     /**
      * The FormOfPaymentRef
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class AirExchangeTicketBundle extends AbstractStructBase
      * - ref: common:FormOfPaymentRef
      * @var \Travelport\UniversalRecord\StructType\FormOfPaymentRef|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FormOfPaymentRef $FormOfPaymentRef = null;
+    public ?\Travelport\UniversalRecord\StructType\FormOfPaymentRef $FormOfPaymentRef = null;
     /**
      * The WaiverCode
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class AirExchangeTicketBundle extends AbstractStructBase
      * - ref: WaiverCode
      * @var \Travelport\UniversalRecord\StructType\WaiverCode|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\WaiverCode $WaiverCode = null;
+    public ?\Travelport\UniversalRecord\StructType\WaiverCode $WaiverCode = null;
     /**
      * Constructor method for AirExchangeTicketBundle
      * @uses AirExchangeTicketBundle::setTicketNumber()
@@ -83,18 +82,6 @@ class AirExchangeTicketBundle extends AbstractStructBase
      */
     public function setTicketNumber(?string $ticketNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketNumber) && !is_string($ticketNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketNumber, true), gettype($ticketNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(13)
-        if (!is_null($ticketNumber) && mb_strlen((string) $ticketNumber) > 13) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 13', mb_strlen((string) $ticketNumber)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($ticketNumber) && mb_strlen((string) $ticketNumber) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $ticketNumber)), __LINE__);
-        }
         $this->TicketNumber = $ticketNumber;
         
         return $this;
@@ -108,48 +95,12 @@ class AirExchangeTicketBundle extends AbstractStructBase
         return $this->FormOfPayment;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFormOfPayment method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPayment method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFormOfPaymentForArrayConstraintFromSetFormOfPayment(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airExchangeTicketBundleFormOfPaymentItem) {
-            // validation for constraint: itemType
-            if (!$airExchangeTicketBundleFormOfPaymentItem instanceof \Travelport\UniversalRecord\StructType\FormOfPayment) {
-                $invalidValues[] = is_object($airExchangeTicketBundleFormOfPaymentItem) ? get_class($airExchangeTicketBundleFormOfPaymentItem) : sprintf('%s(%s)', gettype($airExchangeTicketBundleFormOfPaymentItem), var_export($airExchangeTicketBundleFormOfPaymentItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FormOfPayment property can only contain items of type \Travelport\UniversalRecord\StructType\FormOfPayment, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FormOfPayment value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FormOfPayment[] $formOfPayment
      * @return \Travelport\UniversalRecord\StructType\AirExchangeTicketBundle
      */
     public function setFormOfPayment(?array $formOfPayment = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintFromSetFormOfPayment($formOfPayment))) {
-            throw new InvalidArgumentException($formOfPaymentArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(2)
-        if (is_array($formOfPayment) && count($formOfPayment) > 2) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 2', count($formOfPayment)), __LINE__);
-        }
         $this->FormOfPayment = $formOfPayment;
         
         return $this;
@@ -162,14 +113,6 @@ class AirExchangeTicketBundle extends AbstractStructBase
      */
     public function addToFormOfPayment(\Travelport\UniversalRecord\StructType\FormOfPayment $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\FormOfPayment) {
-            throw new InvalidArgumentException(sprintf('The FormOfPayment property can only contain items of type \Travelport\UniversalRecord\StructType\FormOfPayment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(2)
-        if (is_array($this->FormOfPayment) && count($this->FormOfPayment) >= 2) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 2', count($this->FormOfPayment)), __LINE__);
-        }
         $this->FormOfPayment[] = $item;
         
         return $this;

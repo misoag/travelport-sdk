@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,33 +18,33 @@ class Air extends TypeTransactionsAllowed
      * - documentation: Allows or prohibits one way shopping functionality for the associated provisioning provider configuration
      * @var bool|null
      */
-    protected ?bool $OneWayShop = null;
+    public ?bool $OneWayShop = null;
     /**
      * The FlexExplore
      * Meta information extracted from the WSDL
      * - documentation: Allows or prohibits flex explore functionality for the associated provisioning provider configuration
      * @var bool|null
      */
-    protected ?bool $FlexExplore = null;
+    public ?bool $FlexExplore = null;
     /**
      * The RapidRepriceEnabled
      * Meta information extracted from the WSDL
      * - documentation: Allows or prohibits rapid reprice functionality for the associated provisioning provider configuration. Providers: 1G/1V
      * @var bool|null
      */
-    protected ?bool $RapidRepriceEnabled = null;
+    public ?bool $RapidRepriceEnabled = null;
     /**
      * The ReturnUpsellFare
      * Meta information extracted from the WSDL
      * - documentation: When set to “true”, Upsell information will be returned in the shop response.  Provider: 1G, 1V, 1P, ACH
      * @var bool|null
      */
-    protected ?bool $ReturnUpsellFare = null;
+    public ?bool $ReturnUpsellFare = null;
     /**
      * The Tier
      * @var int|null
      */
-    protected ?int $Tier = null;
+    public ?int $Tier = null;
     /**
      * The DaysEnabled
      * Meta information extracted from the WSDL
@@ -53,7 +52,7 @@ class Air extends TypeTransactionsAllowed
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $DaysEnabled = null;
+    public ?bool $DaysEnabled = null;
     /**
      * The WeekendsEnabled
      * Meta information extracted from the WSDL
@@ -61,7 +60,7 @@ class Air extends TypeTransactionsAllowed
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $WeekendsEnabled = null;
+    public ?bool $WeekendsEnabled = null;
     /**
      * The AirportsEnabled
      * Meta information extracted from the WSDL
@@ -69,7 +68,7 @@ class Air extends TypeTransactionsAllowed
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $AirportsEnabled = null;
+    public ?bool $AirportsEnabled = null;
     /**
      * The ODEnabled
      * Meta information extracted from the WSDL
@@ -77,7 +76,7 @@ class Air extends TypeTransactionsAllowed
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $ODEnabled = null;
+    public ?bool $ODEnabled = null;
     /**
      * Constructor method for Air
      * @uses Air::setOneWayShop()
@@ -127,10 +126,6 @@ class Air extends TypeTransactionsAllowed
      */
     public function setOneWayShop(?bool $oneWayShop = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($oneWayShop) && !is_bool($oneWayShop)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($oneWayShop, true), gettype($oneWayShop)), __LINE__);
-        }
         $this->OneWayShop = $oneWayShop;
         
         return $this;
@@ -150,10 +145,6 @@ class Air extends TypeTransactionsAllowed
      */
     public function setFlexExplore(?bool $flexExplore = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($flexExplore) && !is_bool($flexExplore)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($flexExplore, true), gettype($flexExplore)), __LINE__);
-        }
         $this->FlexExplore = $flexExplore;
         
         return $this;
@@ -173,10 +164,6 @@ class Air extends TypeTransactionsAllowed
      */
     public function setRapidRepriceEnabled(?bool $rapidRepriceEnabled = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($rapidRepriceEnabled) && !is_bool($rapidRepriceEnabled)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($rapidRepriceEnabled, true), gettype($rapidRepriceEnabled)), __LINE__);
-        }
         $this->RapidRepriceEnabled = $rapidRepriceEnabled;
         
         return $this;
@@ -196,10 +183,6 @@ class Air extends TypeTransactionsAllowed
      */
     public function setReturnUpsellFare(?bool $returnUpsellFare = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($returnUpsellFare) && !is_bool($returnUpsellFare)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($returnUpsellFare, true), gettype($returnUpsellFare)), __LINE__);
-        }
         $this->ReturnUpsellFare = $returnUpsellFare;
         
         return $this;
@@ -219,10 +202,6 @@ class Air extends TypeTransactionsAllowed
      */
     public function setTier(?int $tier = null): self
     {
-        // validation for constraint: int
-        if (!is_null($tier) && !(is_int($tier) || ctype_digit($tier))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($tier, true), gettype($tier)), __LINE__);
-        }
         $this->Tier = $tier;
         
         return $this;
@@ -242,10 +221,6 @@ class Air extends TypeTransactionsAllowed
      */
     public function setDaysEnabled(?bool $daysEnabled = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($daysEnabled) && !is_bool($daysEnabled)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($daysEnabled, true), gettype($daysEnabled)), __LINE__);
-        }
         $this->DaysEnabled = $daysEnabled;
         
         return $this;
@@ -265,10 +240,6 @@ class Air extends TypeTransactionsAllowed
      */
     public function setWeekendsEnabled(?bool $weekendsEnabled = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($weekendsEnabled) && !is_bool($weekendsEnabled)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($weekendsEnabled, true), gettype($weekendsEnabled)), __LINE__);
-        }
         $this->WeekendsEnabled = $weekendsEnabled;
         
         return $this;
@@ -288,10 +259,6 @@ class Air extends TypeTransactionsAllowed
      */
     public function setAirportsEnabled(?bool $airportsEnabled = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($airportsEnabled) && !is_bool($airportsEnabled)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($airportsEnabled, true), gettype($airportsEnabled)), __LINE__);
-        }
         $this->AirportsEnabled = $airportsEnabled;
         
         return $this;
@@ -311,10 +278,6 @@ class Air extends TypeTransactionsAllowed
      */
     public function setODEnabled(?bool $oDEnabled = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($oDEnabled) && !is_bool($oDEnabled)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($oDEnabled, true), gettype($oDEnabled)), __LINE__);
-        }
         $this->ODEnabled = $oDEnabled;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class ExtraCharges extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $ExtraAdultAmount = null;
+    public ?string $ExtraAdultAmount = null;
     /**
      * The ExtraChildAmount
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class ExtraCharges extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $ExtraChildAmount = null;
+    public ?string $ExtraChildAmount = null;
     /**
      * The CribAmount
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class ExtraCharges extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $CribAmount = null;
+    public ?string $CribAmount = null;
     /**
      * The AdultRollawayCharge
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class ExtraCharges extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $AdultRollawayCharge = null;
+    public ?string $AdultRollawayCharge = null;
     /**
      * The ChildRollawayCharge
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class ExtraCharges extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $ChildRollawayCharge = null;
+    public ?string $ChildRollawayCharge = null;
     /**
      * Constructor method for ExtraCharges
      * @uses ExtraCharges::setExtraAdultAmount()
@@ -92,10 +91,6 @@ class ExtraCharges extends AbstractStructBase
      */
     public function setExtraAdultAmount(?string $extraAdultAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($extraAdultAmount) && !is_string($extraAdultAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($extraAdultAmount, true), gettype($extraAdultAmount)), __LINE__);
-        }
         $this->ExtraAdultAmount = $extraAdultAmount;
         
         return $this;
@@ -115,10 +110,6 @@ class ExtraCharges extends AbstractStructBase
      */
     public function setExtraChildAmount(?string $extraChildAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($extraChildAmount) && !is_string($extraChildAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($extraChildAmount, true), gettype($extraChildAmount)), __LINE__);
-        }
         $this->ExtraChildAmount = $extraChildAmount;
         
         return $this;
@@ -138,10 +129,6 @@ class ExtraCharges extends AbstractStructBase
      */
     public function setCribAmount(?string $cribAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cribAmount) && !is_string($cribAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cribAmount, true), gettype($cribAmount)), __LINE__);
-        }
         $this->CribAmount = $cribAmount;
         
         return $this;
@@ -161,10 +148,6 @@ class ExtraCharges extends AbstractStructBase
      */
     public function setAdultRollawayCharge(?string $adultRollawayCharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($adultRollawayCharge) && !is_string($adultRollawayCharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($adultRollawayCharge, true), gettype($adultRollawayCharge)), __LINE__);
-        }
         $this->AdultRollawayCharge = $adultRollawayCharge;
         
         return $this;
@@ -184,10 +167,6 @@ class ExtraCharges extends AbstractStructBase
      */
     public function setChildRollawayCharge(?string $childRollawayCharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($childRollawayCharge) && !is_string($childRollawayCharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($childRollawayCharge, true), gettype($childRollawayCharge)), __LINE__);
-        }
         $this->ChildRollawayCharge = $childRollawayCharge;
         
         return $this;

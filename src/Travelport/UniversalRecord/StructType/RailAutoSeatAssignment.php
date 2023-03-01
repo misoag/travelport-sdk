@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class RailAutoSeatAssignment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $SeatType;
+    public string $SeatType;
     /**
      * The SeatValue
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class RailAutoSeatAssignment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $SeatValue;
+    public string $SeatValue;
     /**
      * The RailSegmentRef
      * Meta information extracted from the WSDL
@@ -43,7 +42,7 @@ class RailAutoSeatAssignment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RailSegmentRef = null;
+    public ?string $RailSegmentRef = null;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class RailAutoSeatAssignment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingTravelerRef = null;
+    public ?string $BookingTravelerRef = null;
     /**
      * Constructor method for RailAutoSeatAssignment
      * @uses RailAutoSeatAssignment::setSeatType()
@@ -87,18 +86,6 @@ class RailAutoSeatAssignment extends AbstractStructBase
      */
     public function setSeatType(string $seatType): self
     {
-        // validation for constraint: string
-        if (!is_null($seatType) && !is_string($seatType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seatType, true), gettype($seatType)), __LINE__);
-        }
-        // validation for constraint: maxLength(255)
-        if (!is_null($seatType) && mb_strlen((string) $seatType) > 255) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 255', mb_strlen((string) $seatType)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if (!is_null($seatType) && mb_strlen((string) $seatType) < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $seatType)), __LINE__);
-        }
         $this->SeatType = $seatType;
         
         return $this;
@@ -118,18 +105,6 @@ class RailAutoSeatAssignment extends AbstractStructBase
      */
     public function setSeatValue(string $seatValue): self
     {
-        // validation for constraint: string
-        if (!is_null($seatValue) && !is_string($seatValue)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seatValue, true), gettype($seatValue)), __LINE__);
-        }
-        // validation for constraint: maxLength(255)
-        if (!is_null($seatValue) && mb_strlen((string) $seatValue) > 255) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 255', mb_strlen((string) $seatValue)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if (!is_null($seatValue) && mb_strlen((string) $seatValue) < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $seatValue)), __LINE__);
-        }
         $this->SeatValue = $seatValue;
         
         return $this;
@@ -149,10 +124,6 @@ class RailAutoSeatAssignment extends AbstractStructBase
      */
     public function setRailSegmentRef(?string $railSegmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($railSegmentRef) && !is_string($railSegmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($railSegmentRef, true), gettype($railSegmentRef)), __LINE__);
-        }
         $this->RailSegmentRef = $railSegmentRef;
         
         return $this;
@@ -172,10 +143,6 @@ class RailAutoSeatAssignment extends AbstractStructBase
      */
     public function setBookingTravelerRef(?string $bookingTravelerRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;

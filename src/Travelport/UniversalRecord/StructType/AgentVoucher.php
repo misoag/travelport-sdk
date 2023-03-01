@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class AgentVoucher extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Number;
+    public string $Number;
     /**
      * Constructor method for AgentVoucher
      * @uses AgentVoucher::setNumber()
@@ -47,10 +46,6 @@ class AgentVoucher extends AbstractStructBase
      */
     public function setNumber(string $number): self
     {
-        // validation for constraint: string
-        if (!is_null($number) && !is_string($number)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
-        }
         $this->Number = $number;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class FlightOption extends AbstractStructBase
      * - ref: Option
      * @var \Travelport\UniversalRecord\StructType\Option[]
      */
-    protected array $Option;
+    public array $Option;
     /**
      * The Origin
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class FlightOption extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string
      */
-    protected string $Origin;
+    public string $Origin;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -45,7 +44,7 @@ class FlightOption extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string
      */
-    protected string $Destination;
+    public string $Destination;
     /**
      * The LegRef
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class FlightOption extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $LegRef = null;
+    public ?string $LegRef = null;
     /**
      * Constructor method for FlightOption
      * @uses FlightOption::setOption()
@@ -83,48 +82,12 @@ class FlightOption extends AbstractStructBase
         return $this->Option;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setOption method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setOption method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateOptionForArrayConstraintFromSetOption(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $flightOptionOptionItem) {
-            // validation for constraint: itemType
-            if (!$flightOptionOptionItem instanceof \Travelport\UniversalRecord\StructType\Option) {
-                $invalidValues[] = is_object($flightOptionOptionItem) ? get_class($flightOptionOptionItem) : sprintf('%s(%s)', gettype($flightOptionOptionItem), var_export($flightOptionOptionItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Option property can only contain items of type \Travelport\UniversalRecord\StructType\Option, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Option value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\Option[] $option
      * @return \Travelport\UniversalRecord\StructType\FlightOption
      */
     public function setOption(array $option): self
     {
-        // validation for constraint: array
-        if ('' !== ($optionArrayErrorMessage = self::validateOptionForArrayConstraintFromSetOption($option))) {
-            throw new InvalidArgumentException($optionArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($option) && count($option) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($option)), __LINE__);
-        }
         $this->Option = $option;
         
         return $this;
@@ -137,14 +100,6 @@ class FlightOption extends AbstractStructBase
      */
     public function addToOption(\Travelport\UniversalRecord\StructType\Option $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\Option) {
-            throw new InvalidArgumentException(sprintf('The Option property can only contain items of type \Travelport\UniversalRecord\StructType\Option, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->Option) && count($this->Option) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->Option)), __LINE__);
-        }
         $this->Option[] = $item;
         
         return $this;
@@ -164,14 +119,6 @@ class FlightOption extends AbstractStructBase
      */
     public function setOrigin(string $origin): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($origin) && mb_strlen((string) $origin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -191,14 +138,6 @@ class FlightOption extends AbstractStructBase
      */
     public function setDestination(string $destination): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destination) && mb_strlen((string) $destination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -218,10 +157,6 @@ class FlightOption extends AbstractStructBase
      */
     public function setLegRef(?string $legRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($legRef) && !is_string($legRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($legRef, true), gettype($legRef)), __LINE__);
-        }
         $this->LegRef = $legRef;
         
         return $this;

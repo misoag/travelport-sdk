@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,28 +20,28 @@ class TransactionType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\Air|null
      */
-    protected ?\Travelport\Hotel\StructType\Air $Air = null;
+    public ?\Travelport\Hotel\StructType\Air $Air = null;
     /**
      * The Hotel
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\TypeTransactionsAllowed|null
      */
-    protected ?\Travelport\Hotel\StructType\TypeTransactionsAllowed $Hotel = null;
+    public ?\Travelport\Hotel\StructType\TypeTransactionsAllowed $Hotel = null;
     /**
      * The Rail
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\TypeTransactionsAllowed|null
      */
-    protected ?\Travelport\Hotel\StructType\TypeTransactionsAllowed $Rail = null;
+    public ?\Travelport\Hotel\StructType\TypeTransactionsAllowed $Rail = null;
     /**
      * The Vehicle
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\TypeTransactionsAllowed|null
      */
-    protected ?\Travelport\Hotel\StructType\TypeTransactionsAllowed $Vehicle = null;
+    public ?\Travelport\Hotel\StructType\TypeTransactionsAllowed $Vehicle = null;
     /**
      * The Passive
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class TransactionType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\TypeBookingTransactionsAllowed|null
      */
-    protected ?\Travelport\Hotel\StructType\TypeBookingTransactionsAllowed $Passive = null;
+    public ?\Travelport\Hotel\StructType\TypeBookingTransactionsAllowed $Passive = null;
     /**
      * The BackgroundPassive
      * Meta information extracted from the WSDL
@@ -58,7 +57,7 @@ class TransactionType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\TypeBookingTransactionsAllowed|null
      */
-    protected ?\Travelport\Hotel\StructType\TypeBookingTransactionsAllowed $BackgroundPassive = null;
+    public ?\Travelport\Hotel\StructType\TypeBookingTransactionsAllowed $BackgroundPassive = null;
     /**
      * Constructor method for TransactionType
      * @uses TransactionType::setAir()

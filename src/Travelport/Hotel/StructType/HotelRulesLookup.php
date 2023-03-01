@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class HotelRulesLookup extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $RatePlanType;
+    public string $RatePlanType;
     /**
      * The Base
      * Meta information extracted from the WSDL
@@ -31,21 +30,21 @@ class HotelRulesLookup extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Base;
+    public string $Base;
     /**
      * The HotelProperty
      * Meta information extracted from the WSDL
      * - ref: HotelProperty
      * @var \Travelport\Hotel\StructType\HotelProperty|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelProperty $HotelProperty = null;
+    public ?\Travelport\Hotel\StructType\HotelProperty $HotelProperty = null;
     /**
      * The HotelStay
      * Meta information extracted from the WSDL
      * - ref: HotelStay
      * @var \Travelport\Hotel\StructType\HotelStay|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelStay $HotelStay = null;
+    public ?\Travelport\Hotel\StructType\HotelStay $HotelStay = null;
     /**
      * The HotelRulesModifiers
      * Meta information extracted from the WSDL
@@ -53,14 +52,14 @@ class HotelRulesLookup extends AbstractStructBase
      * - ref: HotelRulesModifiers
      * @var \Travelport\Hotel\StructType\HotelRulesModifiers|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelRulesModifiers $HotelRulesModifiers = null;
+    public ?\Travelport\Hotel\StructType\HotelRulesModifiers $HotelRulesModifiers = null;
     /**
      * The RulesDetailReqd
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $RulesDetailReqd = null;
+    public ?string $RulesDetailReqd = null;
     /**
      * Constructor method for HotelRulesLookup
      * @uses HotelRulesLookup::setRatePlanType()
@@ -101,10 +100,6 @@ class HotelRulesLookup extends AbstractStructBase
      */
     public function setRatePlanType(string $ratePlanType): self
     {
-        // validation for constraint: string
-        if (!is_null($ratePlanType) && !is_string($ratePlanType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ratePlanType, true), gettype($ratePlanType)), __LINE__);
-        }
         $this->RatePlanType = $ratePlanType;
         
         return $this;
@@ -124,10 +119,6 @@ class HotelRulesLookup extends AbstractStructBase
      */
     public function setBase(string $base): self
     {
-        // validation for constraint: string
-        if (!is_null($base) && !is_string($base)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($base, true), gettype($base)), __LINE__);
-        }
         $this->Base = $base;
         
         return $this;
@@ -204,10 +195,6 @@ class HotelRulesLookup extends AbstractStructBase
      */
     public function setRulesDetailReqd(?string $rulesDetailReqd = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rulesDetailReqd) && !is_string($rulesDetailReqd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rulesDetailReqd, true), gettype($rulesDetailReqd)), __LINE__);
-        }
         $this->RulesDetailReqd = $rulesDetailReqd;
         
         return $this;

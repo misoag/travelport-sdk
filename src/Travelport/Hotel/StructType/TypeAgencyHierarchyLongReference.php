@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class TypeAgencyHierarchyLongReference extends TypeAgencyHierarchyReference
      * - use: required
      * @var int
      */
-    protected int $ProfileVersion;
+    public int $ProfileVersion;
     /**
      * The ProfileName
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class TypeAgencyHierarchyLongReference extends TypeAgencyHierarchyReference
      * - use: required
      * @var string
      */
-    protected string $ProfileName;
+    public string $ProfileName;
     /**
      * Constructor method for typeAgencyHierarchyLongReference
      * @uses TypeAgencyHierarchyLongReference::setProfileVersion()
@@ -57,10 +56,6 @@ class TypeAgencyHierarchyLongReference extends TypeAgencyHierarchyReference
      */
     public function setProfileVersion(int $profileVersion): self
     {
-        // validation for constraint: int
-        if (!is_null($profileVersion) && !(is_int($profileVersion) || ctype_digit($profileVersion))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($profileVersion, true), gettype($profileVersion)), __LINE__);
-        }
         $this->ProfileVersion = $profileVersion;
         
         return $this;
@@ -80,14 +75,6 @@ class TypeAgencyHierarchyLongReference extends TypeAgencyHierarchyReference
      */
     public function setProfileName(string $profileName): self
     {
-        // validation for constraint: string
-        if (!is_null($profileName) && !is_string($profileName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileName, true), gettype($profileName)), __LINE__);
-        }
-        // validation for constraint: maxLength(102)
-        if (!is_null($profileName) && mb_strlen((string) $profileName) > 102) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 102', mb_strlen((string) $profileName)), __LINE__);
-        }
         $this->ProfileName = $profileName;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class AirSearchAsynchModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\InitialAsynchResult|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\InitialAsynchResult $InitialAsynchResult = null;
+    public ?\Travelport\UniversalRecord\StructType\InitialAsynchResult $InitialAsynchResult = null;
     /**
      * Constructor method for AirSearchAsynchModifiers
      * @uses AirSearchAsynchModifiers::setInitialAsynchResult()

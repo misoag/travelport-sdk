@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,14 +21,14 @@ class VehicleReservationCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeDateSpec|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeDateSpec $PickUpDate = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeDateSpec $PickUpDate = null;
     /**
      * The VehicleConfirmation
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $VehicleConfirmation = null;
+    public ?string $VehicleConfirmation = null;
     /**
      * The Location
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class VehicleReservationCriteria extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Location = null;
+    public ?string $Location = null;
     /**
      * The VendorCode
      * Meta information extracted from the WSDL
@@ -49,12 +48,12 @@ class VehicleReservationCriteria extends AbstractStructBase
      * - minLength: 1
      * @var string|null
      */
-    protected ?string $VendorCode = null;
+    public ?string $VendorCode = null;
     /**
      * The LocationNumber
      * @var string|null
      */
-    protected ?string $LocationNumber = null;
+    public ?string $LocationNumber = null;
     /**
      * The PassiveOnly
      * Meta information extracted from the WSDL
@@ -63,7 +62,7 @@ class VehicleReservationCriteria extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PassiveOnly = null;
+    public ?bool $PassiveOnly = null;
     /**
      * Constructor method for VehicleReservationCriteria
      * @uses VehicleReservationCriteria::setPickUpDate()
@@ -123,10 +122,6 @@ class VehicleReservationCriteria extends AbstractStructBase
      */
     public function setVehicleConfirmation(?string $vehicleConfirmation = null): self
     {
-        // validation for constraint: string
-        if (!is_null($vehicleConfirmation) && !is_string($vehicleConfirmation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vehicleConfirmation, true), gettype($vehicleConfirmation)), __LINE__);
-        }
         $this->VehicleConfirmation = $vehicleConfirmation;
         
         return $this;
@@ -146,14 +141,6 @@ class VehicleReservationCriteria extends AbstractStructBase
      */
     public function setLocation(?string $location = null): self
     {
-        // validation for constraint: string
-        if (!is_null($location) && !is_string($location)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($location, true), gettype($location)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($location) && mb_strlen((string) $location) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $location)), __LINE__);
-        }
         $this->Location = $location;
         
         return $this;
@@ -173,18 +160,6 @@ class VehicleReservationCriteria extends AbstractStructBase
      */
     public function setVendorCode(?string $vendorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($vendorCode) && !is_string($vendorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vendorCode, true), gettype($vendorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($vendorCode) && mb_strlen((string) $vendorCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $vendorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($vendorCode) && mb_strlen((string) $vendorCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $vendorCode)), __LINE__);
-        }
         $this->VendorCode = $vendorCode;
         
         return $this;
@@ -204,10 +179,6 @@ class VehicleReservationCriteria extends AbstractStructBase
      */
     public function setLocationNumber(?string $locationNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($locationNumber) && !is_string($locationNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($locationNumber, true), gettype($locationNumber)), __LINE__);
-        }
         $this->LocationNumber = $locationNumber;
         
         return $this;
@@ -227,10 +198,6 @@ class VehicleReservationCriteria extends AbstractStructBase
      */
     public function setPassiveOnly(?bool $passiveOnly = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($passiveOnly) && !is_bool($passiveOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($passiveOnly, true), gettype($passiveOnly)), __LINE__);
-        }
         $this->PassiveOnly = $passiveOnly;
         
         return $this;

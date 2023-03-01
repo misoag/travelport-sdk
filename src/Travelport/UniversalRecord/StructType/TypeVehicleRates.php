@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class TypeVehicleRates extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $EstimatedTotalAmount = null;
+    public ?string $EstimatedTotalAmount = null;
     /**
      * The BaseRate
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class TypeVehicleRates extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $BaseRate = null;
+    public ?string $BaseRate = null;
     /**
      * The RateForPeriod
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class TypeVehicleRates extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $RateForPeriod = null;
+    public ?string $RateForPeriod = null;
     /**
      * The DropOffCharge
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class TypeVehicleRates extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $DropOffCharge = null;
+    public ?string $DropOffCharge = null;
     /**
      * The YoungDriverCharge
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class TypeVehicleRates extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $YoungDriverCharge = null;
+    public ?string $YoungDriverCharge = null;
     /**
      * The SeniorDriverCharge
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class TypeVehicleRates extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $SeniorDriverCharge = null;
+    public ?string $SeniorDriverCharge = null;
     /**
      * The FuelSurcharge
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class TypeVehicleRates extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $FuelSurcharge = null;
+    public ?string $FuelSurcharge = null;
     /**
      * The ExtraMileageCharge
      * Meta information extracted from the WSDL
@@ -76,7 +75,7 @@ class TypeVehicleRates extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $ExtraMileageCharge = null;
+    public ?string $ExtraMileageCharge = null;
     /**
      * The PayNow
      * Meta information extracted from the WSDL
@@ -84,7 +83,7 @@ class TypeVehicleRates extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $PayNow = null;
+    public ?string $PayNow = null;
     /**
      * The PayLater
      * Meta information extracted from the WSDL
@@ -92,7 +91,7 @@ class TypeVehicleRates extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $PayLater = null;
+    public ?string $PayLater = null;
     /**
      * Constructor method for typeVehicleRates
      * @uses TypeVehicleRates::setEstimatedTotalAmount()
@@ -145,10 +144,6 @@ class TypeVehicleRates extends AbstractStructBase
      */
     public function setEstimatedTotalAmount(?string $estimatedTotalAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($estimatedTotalAmount) && !is_string($estimatedTotalAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($estimatedTotalAmount, true), gettype($estimatedTotalAmount)), __LINE__);
-        }
         $this->EstimatedTotalAmount = $estimatedTotalAmount;
         
         return $this;
@@ -168,10 +163,6 @@ class TypeVehicleRates extends AbstractStructBase
      */
     public function setBaseRate(?string $baseRate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($baseRate) && !is_string($baseRate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($baseRate, true), gettype($baseRate)), __LINE__);
-        }
         $this->BaseRate = $baseRate;
         
         return $this;
@@ -191,10 +182,6 @@ class TypeVehicleRates extends AbstractStructBase
      */
     public function setRateForPeriod(?string $rateForPeriod = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rateForPeriod) && !is_string($rateForPeriod)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rateForPeriod, true), gettype($rateForPeriod)), __LINE__);
-        }
         $this->RateForPeriod = $rateForPeriod;
         
         return $this;
@@ -214,10 +201,6 @@ class TypeVehicleRates extends AbstractStructBase
      */
     public function setDropOffCharge(?string $dropOffCharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($dropOffCharge) && !is_string($dropOffCharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dropOffCharge, true), gettype($dropOffCharge)), __LINE__);
-        }
         $this->DropOffCharge = $dropOffCharge;
         
         return $this;
@@ -237,10 +220,6 @@ class TypeVehicleRates extends AbstractStructBase
      */
     public function setYoungDriverCharge(?string $youngDriverCharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($youngDriverCharge) && !is_string($youngDriverCharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($youngDriverCharge, true), gettype($youngDriverCharge)), __LINE__);
-        }
         $this->YoungDriverCharge = $youngDriverCharge;
         
         return $this;
@@ -260,10 +239,6 @@ class TypeVehicleRates extends AbstractStructBase
      */
     public function setSeniorDriverCharge(?string $seniorDriverCharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($seniorDriverCharge) && !is_string($seniorDriverCharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seniorDriverCharge, true), gettype($seniorDriverCharge)), __LINE__);
-        }
         $this->SeniorDriverCharge = $seniorDriverCharge;
         
         return $this;
@@ -283,10 +258,6 @@ class TypeVehicleRates extends AbstractStructBase
      */
     public function setFuelSurcharge(?string $fuelSurcharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fuelSurcharge) && !is_string($fuelSurcharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fuelSurcharge, true), gettype($fuelSurcharge)), __LINE__);
-        }
         $this->FuelSurcharge = $fuelSurcharge;
         
         return $this;
@@ -306,10 +277,6 @@ class TypeVehicleRates extends AbstractStructBase
      */
     public function setExtraMileageCharge(?string $extraMileageCharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($extraMileageCharge) && !is_string($extraMileageCharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($extraMileageCharge, true), gettype($extraMileageCharge)), __LINE__);
-        }
         $this->ExtraMileageCharge = $extraMileageCharge;
         
         return $this;
@@ -329,10 +296,6 @@ class TypeVehicleRates extends AbstractStructBase
      */
     public function setPayNow(?string $payNow = null): self
     {
-        // validation for constraint: string
-        if (!is_null($payNow) && !is_string($payNow)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payNow, true), gettype($payNow)), __LINE__);
-        }
         $this->PayNow = $payNow;
         
         return $this;
@@ -352,10 +315,6 @@ class TypeVehicleRates extends AbstractStructBase
      */
     public function setPayLater(?string $payLater = null): self
     {
-        // validation for constraint: string
-        if (!is_null($payLater) && !is_string($payLater)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($payLater, true), gettype($payLater)), __LINE__);
-        }
         $this->PayLater = $payLater;
         
         return $this;

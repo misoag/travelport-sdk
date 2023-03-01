@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -27,7 +26,7 @@ class OptionalService extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class OptionalService extends AbstractStructBase
      * - ref: common:BookingTravelerRef
      * @var \Travelport\UniversalRecord\StructType\BookingTravelerRef[]
      */
-    protected array $BookingTravelerRef;
+    public array $BookingTravelerRef;
     /**
      * The FeatureType
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class OptionalService extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $FeatureType;
+    public string $FeatureType;
     /**
      * The ServiceData
      * Meta information extracted from the WSDL
@@ -55,7 +54,7 @@ class OptionalService extends AbstractStructBase
      * - ref: common:ServiceData
      * @var \Travelport\UniversalRecord\StructType\ServiceData[]
      */
-    protected ?array $ServiceData = null;
+    public ?array $ServiceData = null;
     /**
      * The ServiceInfo
      * Meta information extracted from the WSDL
@@ -63,7 +62,7 @@ class OptionalService extends AbstractStructBase
      * - ref: common:ServiceInfo
      * @var \Travelport\UniversalRecord\StructType\ServiceInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ServiceInfo $ServiceInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\ServiceInfo $ServiceInfo = null;
     /**
      * The Remark
      * Meta information extracted from the WSDL
@@ -72,7 +71,7 @@ class OptionalService extends AbstractStructBase
      * - ref: common:Remark
      * @var \Travelport\UniversalRecord\StructType\Remark[]
      */
-    protected ?array $Remark = null;
+    public ?array $Remark = null;
     /**
      * The TaxInfo
      * Meta information extracted from the WSDL
@@ -81,7 +80,7 @@ class OptionalService extends AbstractStructBase
      * - ref: TaxInfo
      * @var \Travelport\UniversalRecord\StructType\TypeTaxInfo[]
      */
-    protected ?array $TaxInfo = null;
+    public ?array $TaxInfo = null;
     /**
      * The FeeInfo
      * Meta information extracted from the WSDL
@@ -90,7 +89,7 @@ class OptionalService extends AbstractStructBase
      * - ref: FeeInfo
      * @var \Travelport\UniversalRecord\StructType\TypeFeeInfo[]
      */
-    protected ?array $FeeInfo = null;
+    public ?array $FeeInfo = null;
     /**
      * The EMD
      * Meta information extracted from the WSDL
@@ -99,7 +98,7 @@ class OptionalService extends AbstractStructBase
      * - ref: EMD
      * @var \Travelport\UniversalRecord\StructType\EMD|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\EMD $EMD = null;
+    public ?\Travelport\UniversalRecord\StructType\EMD $EMD = null;
     /**
      * The BundledServices
      * Meta information extracted from the WSDL
@@ -108,7 +107,7 @@ class OptionalService extends AbstractStructBase
      * - ref: BundledServices
      * @var \Travelport\UniversalRecord\StructType\BundledServices|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\BundledServices $BundledServices = null;
+    public ?\Travelport\UniversalRecord\StructType\BundledServices $BundledServices = null;
     /**
      * The AdditionalInfo
      * Meta information extracted from the WSDL
@@ -117,7 +116,7 @@ class OptionalService extends AbstractStructBase
      * - ref: AdditionalInfo
      * @var \Travelport\UniversalRecord\StructType\AdditionalInfo[]
      */
-    protected ?array $AdditionalInfo = null;
+    public ?array $AdditionalInfo = null;
     /**
      * The FeeApplication
      * Meta information extracted from the WSDL
@@ -126,7 +125,7 @@ class OptionalService extends AbstractStructBase
      * - ref: FeeApplication
      * @var \Travelport\UniversalRecord\StructType\FeeApplication|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FeeApplication $FeeApplication = null;
+    public ?\Travelport\UniversalRecord\StructType\FeeApplication $FeeApplication = null;
     /**
      * The Text
      * Meta information extracted from the WSDL
@@ -135,7 +134,7 @@ class OptionalService extends AbstractStructBase
      * - ref: Text
      * @var \Travelport\UniversalRecord\StructType\TypeTextElement[]
      */
-    protected ?array $Text = null;
+    public ?array $Text = null;
     /**
      * The PriceRange
      * Meta information extracted from the WSDL
@@ -144,7 +143,7 @@ class OptionalService extends AbstractStructBase
      * - ref: PriceRange
      * @var \Travelport\UniversalRecord\StructType\PriceRange[]
      */
-    protected ?array $PriceRange = null;
+    public ?array $PriceRange = null;
     /**
      * The TourCode
      * Meta information extracted from the WSDL
@@ -152,7 +151,7 @@ class OptionalService extends AbstractStructBase
      * - ref: TourCode
      * @var \Travelport\UniversalRecord\StructType\TourCode|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TourCode $TourCode = null;
+    public ?\Travelport\UniversalRecord\StructType\TourCode $TourCode = null;
     /**
      * The BrandingInfo
      * Meta information extracted from the WSDL
@@ -160,7 +159,7 @@ class OptionalService extends AbstractStructBase
      * - ref: BrandingInfo
      * @var \Travelport\UniversalRecord\StructType\BrandingInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\BrandingInfo $BrandingInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\BrandingInfo $BrandingInfo = null;
     /**
      * The Title
      * Meta information extracted from the WSDL
@@ -169,7 +168,7 @@ class OptionalService extends AbstractStructBase
      * - ref: Title
      * @var \Travelport\UniversalRecord\StructType\TypeTextElement[]
      */
-    protected ?array $Title = null;
+    public ?array $Title = null;
     /**
      * The OptionalServicesRuleRef
      * Meta information extracted from the WSDL
@@ -178,7 +177,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OptionalServicesRuleRef = null;
+    public ?string $OptionalServicesRuleRef = null;
     /**
      * The Confirmation
      * Meta information extracted from the WSDL
@@ -186,7 +185,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Confirmation = null;
+    public ?string $Confirmation = null;
     /**
      * The SecondaryType
      * Meta information extracted from the WSDL
@@ -194,7 +193,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SecondaryType = null;
+    public ?string $SecondaryType = null;
     /**
      * The PurchaseWindow
      * Meta information extracted from the WSDL
@@ -202,7 +201,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PurchaseWindow = null;
+    public ?string $PurchaseWindow = null;
     /**
      * The Priority
      * Meta information extracted from the WSDL
@@ -210,7 +209,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Priority = null;
+    public ?int $Priority = null;
     /**
      * The Available
      * Meta information extracted from the WSDL
@@ -218,7 +217,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Available = null;
+    public ?bool $Available = null;
     /**
      * The Entitled
      * Meta information extracted from the WSDL
@@ -226,7 +225,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Entitled = null;
+    public ?bool $Entitled = null;
     /**
      * The PerTraveler
      * Meta information extracted from the WSDL
@@ -235,7 +234,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PerTraveler = null;
+    public ?bool $PerTraveler = null;
     /**
      * The CreateDate
      * Meta information extracted from the WSDL
@@ -243,7 +242,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CreateDate = null;
+    public ?string $CreateDate = null;
     /**
      * The PaymentRef
      * Meta information extracted from the WSDL
@@ -252,7 +251,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PaymentRef = null;
+    public ?string $PaymentRef = null;
     /**
      * The ServiceStatus
      * Meta information extracted from the WSDL
@@ -260,7 +259,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ServiceStatus = null;
+    public ?string $ServiceStatus = null;
     /**
      * The Quantity
      * Meta information extracted from the WSDL
@@ -268,7 +267,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Quantity = null;
+    public ?int $Quantity = null;
     /**
      * The SequenceNumber
      * Meta information extracted from the WSDL
@@ -276,7 +275,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $SequenceNumber = null;
+    public ?int $SequenceNumber = null;
     /**
      * The ServiceSubCode
      * Meta information extracted from the WSDL
@@ -285,7 +284,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ServiceSubCode = null;
+    public ?string $ServiceSubCode = null;
     /**
      * The SSRCode
      * Meta information extracted from the WSDL
@@ -296,7 +295,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SSRCode = null;
+    public ?string $SSRCode = null;
     /**
      * The IssuanceReason
      * Meta information extracted from the WSDL
@@ -306,7 +305,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $IssuanceReason = null;
+    public ?string $IssuanceReason = null;
     /**
      * The ProviderDefinedType
      * Meta information extracted from the WSDL
@@ -317,7 +316,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderDefinedType = null;
+    public ?string $ProviderDefinedType = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -326,7 +325,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The AssessIndicator
      * Meta information extracted from the WSDL
@@ -334,7 +333,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AssessIndicator = null;
+    public ?string $AssessIndicator = null;
     /**
      * The Mileage
      * Meta information extracted from the WSDL
@@ -342,7 +341,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Mileage = null;
+    public ?int $Mileage = null;
     /**
      * The ApplicableFFLevel
      * Meta information extracted from the WSDL
@@ -352,7 +351,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $ApplicableFFLevel = null;
+    public ?int $ApplicableFFLevel = null;
     /**
      * The Private
      * Meta information extracted from the WSDL
@@ -360,7 +359,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Private = null;
+    public ?bool $Private = null;
     /**
      * The SSRFreeText
      * Meta information extracted from the WSDL
@@ -369,7 +368,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SSRFreeText = null;
+    public ?string $SSRFreeText = null;
     /**
      * The IsPricingApproximate
      * Meta information extracted from the WSDL
@@ -377,7 +376,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $IsPricingApproximate = null;
+    public ?bool $IsPricingApproximate = null;
     /**
      * The Chargeable
      * Meta information extracted from the WSDL
@@ -385,7 +384,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Chargeable = null;
+    public ?string $Chargeable = null;
     /**
      * The InclusiveOfTax
      * Meta information extracted from the WSDL
@@ -393,7 +392,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $InclusiveOfTax = null;
+    public ?bool $InclusiveOfTax = null;
     /**
      * The InterlineSettlementAllowed
      * Meta information extracted from the WSDL
@@ -401,7 +400,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $InterlineSettlementAllowed = null;
+    public ?bool $InterlineSettlementAllowed = null;
     /**
      * The GeographySpecification
      * Meta information extracted from the WSDL
@@ -409,7 +408,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $GeographySpecification = null;
+    public ?string $GeographySpecification = null;
     /**
      * The ExcessWeightRate
      * Meta information extracted from the WSDL
@@ -417,7 +416,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ExcessWeightRate = null;
+    public ?string $ExcessWeightRate = null;
     /**
      * The Source
      * Meta information extracted from the WSDL
@@ -425,7 +424,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Source = null;
+    public ?string $Source = null;
     /**
      * The ViewableOnly
      * Meta information extracted from the WSDL
@@ -433,7 +432,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ViewableOnly = null;
+    public ?bool $ViewableOnly = null;
     /**
      * The DisplayText
      * Meta information extracted from the WSDL
@@ -441,7 +440,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DisplayText = null;
+    public ?string $DisplayText = null;
     /**
      * The WeightInExcess
      * Meta information extracted from the WSDL
@@ -449,7 +448,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $WeightInExcess = null;
+    public ?string $WeightInExcess = null;
     /**
      * The TotalWeight
      * Meta information extracted from the WSDL
@@ -457,7 +456,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TotalWeight = null;
+    public ?string $TotalWeight = null;
     /**
      * The BaggageUnitPrice
      * Meta information extracted from the WSDL
@@ -466,7 +465,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BaggageUnitPrice = null;
+    public ?string $BaggageUnitPrice = null;
     /**
      * The FirstPiece
      * Meta information extracted from the WSDL
@@ -474,7 +473,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $FirstPiece = null;
+    public ?int $FirstPiece = null;
     /**
      * The LastPiece
      * Meta information extracted from the WSDL
@@ -482,7 +481,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $LastPiece = null;
+    public ?int $LastPiece = null;
     /**
      * The Restricted
      * Meta information extracted from the WSDL
@@ -491,7 +490,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Restricted = null;
+    public ?bool $Restricted = null;
     /**
      * The IsRepriceRequired
      * Meta information extracted from the WSDL
@@ -499,7 +498,7 @@ class OptionalService extends AbstractStructBase
      * - default: false
      * @var bool|null
      */
-    protected ?bool $IsRepriceRequired = null;
+    public ?bool $IsRepriceRequired = null;
     /**
      * The BookedQuantity
      * Meta information extracted from the WSDL
@@ -507,7 +506,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookedQuantity = null;
+    public ?string $BookedQuantity = null;
     /**
      * The Group
      * Meta information extracted from the WSDL
@@ -515,7 +514,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Group = null;
+    public ?string $Group = null;
     /**
      * The PseudoCityCode
      * Meta information extracted from the WSDL
@@ -526,7 +525,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PseudoCityCode = null;
+    public ?string $PseudoCityCode = null;
     /**
      * The Tag
      * Meta information extracted from the WSDL
@@ -536,7 +535,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Tag = null;
+    public ?string $Tag = null;
     /**
      * The DisplayOrder
      * Meta information extracted from the WSDL
@@ -546,7 +545,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $DisplayOrder = null;
+    public ?int $DisplayOrder = null;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -556,7 +555,7 @@ class OptionalService extends AbstractStructBase
      * - minLength: 2
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
@@ -566,7 +565,7 @@ class OptionalService extends AbstractStructBase
      * - minLength: 1
      * @var string|null
      */
-    protected ?string $SupplierCode = null;
+    public ?string $SupplierCode = null;
     /**
      * The TotalPrice
      * Meta information extracted from the WSDL
@@ -575,7 +574,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TotalPrice = null;
+    public ?string $TotalPrice = null;
     /**
      * The BasePrice
      * Meta information extracted from the WSDL
@@ -583,7 +582,7 @@ class OptionalService extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $BasePrice = null;
+    public ?string $BasePrice = null;
     /**
      * The ApproximateTotalPrice
      * Meta information extracted from the WSDL
@@ -591,7 +590,7 @@ class OptionalService extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $ApproximateTotalPrice = null;
+    public ?string $ApproximateTotalPrice = null;
     /**
      * The ApproximateBasePrice
      * Meta information extracted from the WSDL
@@ -599,7 +598,7 @@ class OptionalService extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $ApproximateBasePrice = null;
+    public ?string $ApproximateBasePrice = null;
     /**
      * The EquivalentBasePrice
      * Meta information extracted from the WSDL
@@ -607,7 +606,7 @@ class OptionalService extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $EquivalentBasePrice = null;
+    public ?string $EquivalentBasePrice = null;
     /**
      * The Taxes
      * Meta information extracted from the WSDL
@@ -615,7 +614,7 @@ class OptionalService extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $Taxes = null;
+    public ?string $Taxes = null;
     /**
      * The Fees
      * Meta information extracted from the WSDL
@@ -623,7 +622,7 @@ class OptionalService extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $Fees = null;
+    public ?string $Fees = null;
     /**
      * The Services
      * Meta information extracted from the WSDL
@@ -631,7 +630,7 @@ class OptionalService extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $Services = null;
+    public ?string $Services = null;
     /**
      * The ApproximateTaxes
      * Meta information extracted from the WSDL
@@ -639,7 +638,7 @@ class OptionalService extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $ApproximateTaxes = null;
+    public ?string $ApproximateTaxes = null;
     /**
      * The ApproximateFees
      * Meta information extracted from the WSDL
@@ -647,17 +646,17 @@ class OptionalService extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $ApproximateFees = null;
+    public ?string $ApproximateFees = null;
     /**
      * The ElStat
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * The OptionJourneyDetails
      * Meta information extracted from the WSDL
@@ -665,7 +664,7 @@ class OptionalService extends AbstractStructBase
      * - ref: OptionJourneyDetails
      * @var \Travelport\UniversalRecord\StructType\OptionJourneyDetails|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\OptionJourneyDetails $OptionJourneyDetails = null;
+    public ?\Travelport\UniversalRecord\StructType\OptionJourneyDetails $OptionJourneyDetails = null;
     /**
      * The Status
      * Meta information extracted from the WSDL
@@ -676,7 +675,7 @@ class OptionalService extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Status = null;
+    public ?string $Status = null;
     /**
      * The Description
      * Meta information extracted from the WSDL
@@ -687,7 +686,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Description = null;
+    public ?string $Description = null;
     /**
      * The StartDate
      * Meta information extracted from the WSDL
@@ -695,7 +694,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $StartDate = null;
+    public ?string $StartDate = null;
     /**
      * The EndDate
      * Meta information extracted from the WSDL
@@ -703,7 +702,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $EndDate = null;
+    public ?string $EndDate = null;
     /**
      * The BookingDate
      * Meta information extracted from the WSDL
@@ -711,7 +710,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingDate = null;
+    public ?string $BookingDate = null;
     /**
      * The SetIdentifier
      * Meta information extracted from the WSDL
@@ -722,7 +721,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SetIdentifier = null;
+    public ?string $SetIdentifier = null;
     /**
      * The SetName
      * Meta information extracted from the WSDL
@@ -733,7 +732,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SetName = null;
+    public ?string $SetName = null;
     /**
      * The TransportIndicator
      * Meta information extracted from the WSDL
@@ -741,7 +740,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $TransportIndicator = null;
+    public ?bool $TransportIndicator = null;
     /**
      * The AirCityIndicator
      * Meta information extracted from the WSDL
@@ -749,7 +748,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AirCityIndicator = null;
+    public ?bool $AirCityIndicator = null;
     /**
      * The PurchaseIndicator
      * Meta information extracted from the WSDL
@@ -757,7 +756,7 @@ class OptionalService extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PurchaseIndicator = null;
+    public ?bool $PurchaseIndicator = null;
     /**
      * Constructor method for OptionalService
      * @uses OptionalService::setType()
@@ -1038,18 +1037,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setType(string $type): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($type) && mb_strlen((string) $type) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $type)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($type) && mb_strlen((string) $type) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -1063,48 +1050,12 @@ class OptionalService extends AbstractStructBase
         return $this->BookingTravelerRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setBookingTravelerRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTravelerRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $optionalServiceBookingTravelerRefItem) {
-            // validation for constraint: itemType
-            if (!$optionalServiceBookingTravelerRefItem instanceof \Travelport\UniversalRecord\StructType\BookingTravelerRef) {
-                $invalidValues[] = is_object($optionalServiceBookingTravelerRefItem) ? get_class($optionalServiceBookingTravelerRefItem) : sprintf('%s(%s)', gettype($optionalServiceBookingTravelerRefItem), var_export($optionalServiceBookingTravelerRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The BookingTravelerRef property can only contain items of type \Travelport\UniversalRecord\StructType\BookingTravelerRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set BookingTravelerRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\BookingTravelerRef[] $bookingTravelerRef
      * @return \Travelport\UniversalRecord\StructType\OptionalService
      */
     public function setBookingTravelerRef(array $bookingTravelerRef): self
     {
-        // validation for constraint: array
-        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef($bookingTravelerRef))) {
-            throw new InvalidArgumentException($bookingTravelerRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($bookingTravelerRef) && count($bookingTravelerRef) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;
@@ -1117,14 +1068,6 @@ class OptionalService extends AbstractStructBase
      */
     public function addToBookingTravelerRef(\Travelport\UniversalRecord\StructType\BookingTravelerRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\BookingTravelerRef) {
-            throw new InvalidArgumentException(sprintf('The BookingTravelerRef property can only contain items of type \Travelport\UniversalRecord\StructType\BookingTravelerRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($this->BookingTravelerRef) && count($this->BookingTravelerRef) >= 5) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->BookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef[] = $item;
         
         return $this;
@@ -1144,14 +1087,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setFeatureType(string $featureType): self
     {
-        // validation for constraint: string
-        if (!is_null($featureType) && !is_string($featureType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($featureType, true), gettype($featureType)), __LINE__);
-        }
-        // validation for constraint: length(1)
-        if (!is_null($featureType) && mb_strlen((string) $featureType) !== 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 1', mb_strlen((string) $featureType)), __LINE__);
-        }
         $this->FeatureType = $featureType;
         
         return $this;
@@ -1165,48 +1100,12 @@ class OptionalService extends AbstractStructBase
         return $this->ServiceData;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setServiceData method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setServiceData method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateServiceDataForArrayConstraintFromSetServiceData(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $optionalServiceServiceDataItem) {
-            // validation for constraint: itemType
-            if (!$optionalServiceServiceDataItem instanceof \Travelport\UniversalRecord\StructType\ServiceData) {
-                $invalidValues[] = is_object($optionalServiceServiceDataItem) ? get_class($optionalServiceServiceDataItem) : sprintf('%s(%s)', gettype($optionalServiceServiceDataItem), var_export($optionalServiceServiceDataItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ServiceData property can only contain items of type \Travelport\UniversalRecord\StructType\ServiceData, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ServiceData value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\ServiceData[] $serviceData
      * @return \Travelport\UniversalRecord\StructType\OptionalService
      */
     public function setServiceData(?array $serviceData = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($serviceDataArrayErrorMessage = self::validateServiceDataForArrayConstraintFromSetServiceData($serviceData))) {
-            throw new InvalidArgumentException($serviceDataArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($serviceData) && count($serviceData) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($serviceData)), __LINE__);
-        }
         $this->ServiceData = $serviceData;
         
         return $this;
@@ -1219,14 +1118,6 @@ class OptionalService extends AbstractStructBase
      */
     public function addToServiceData(\Travelport\UniversalRecord\StructType\ServiceData $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\ServiceData) {
-            throw new InvalidArgumentException(sprintf('The ServiceData property can only contain items of type \Travelport\UniversalRecord\StructType\ServiceData, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->ServiceData) && count($this->ServiceData) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->ServiceData)), __LINE__);
-        }
         $this->ServiceData[] = $item;
         
         return $this;
@@ -1259,48 +1150,12 @@ class OptionalService extends AbstractStructBase
         return $this->Remark;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRemark method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRemark method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateRemarkForArrayConstraintFromSetRemark(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $optionalServiceRemarkItem) {
-            // validation for constraint: itemType
-            if (!$optionalServiceRemarkItem instanceof \Travelport\UniversalRecord\StructType\Remark) {
-                $invalidValues[] = is_object($optionalServiceRemarkItem) ? get_class($optionalServiceRemarkItem) : sprintf('%s(%s)', gettype($optionalServiceRemarkItem), var_export($optionalServiceRemarkItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Remark property can only contain items of type \Travelport\UniversalRecord\StructType\Remark, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Remark value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\Remark[] $remark
      * @return \Travelport\UniversalRecord\StructType\OptionalService
      */
     public function setRemark(?array $remark = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($remarkArrayErrorMessage = self::validateRemarkForArrayConstraintFromSetRemark($remark))) {
-            throw new InvalidArgumentException($remarkArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($remark) && count($remark) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($remark)), __LINE__);
-        }
         $this->Remark = $remark;
         
         return $this;
@@ -1313,14 +1168,6 @@ class OptionalService extends AbstractStructBase
      */
     public function addToRemark(\Travelport\UniversalRecord\StructType\Remark $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\Remark) {
-            throw new InvalidArgumentException(sprintf('The Remark property can only contain items of type \Travelport\UniversalRecord\StructType\Remark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->Remark) && count($this->Remark) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->Remark)), __LINE__);
-        }
         $this->Remark[] = $item;
         
         return $this;
@@ -1334,48 +1181,12 @@ class OptionalService extends AbstractStructBase
         return $this->TaxInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setTaxInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setTaxInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTaxInfoForArrayConstraintFromSetTaxInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $optionalServiceTaxInfoItem) {
-            // validation for constraint: itemType
-            if (!$optionalServiceTaxInfoItem instanceof \Travelport\UniversalRecord\StructType\TypeTaxInfo) {
-                $invalidValues[] = is_object($optionalServiceTaxInfoItem) ? get_class($optionalServiceTaxInfoItem) : sprintf('%s(%s)', gettype($optionalServiceTaxInfoItem), var_export($optionalServiceTaxInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The TaxInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TypeTaxInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set TaxInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeTaxInfo[] $taxInfo
      * @return \Travelport\UniversalRecord\StructType\OptionalService
      */
     public function setTaxInfo(?array $taxInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($taxInfoArrayErrorMessage = self::validateTaxInfoForArrayConstraintFromSetTaxInfo($taxInfo))) {
-            throw new InvalidArgumentException($taxInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($taxInfo) && count($taxInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($taxInfo)), __LINE__);
-        }
         $this->TaxInfo = $taxInfo;
         
         return $this;
@@ -1388,14 +1199,6 @@ class OptionalService extends AbstractStructBase
      */
     public function addToTaxInfo(\Travelport\UniversalRecord\StructType\TypeTaxInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeTaxInfo) {
-            throw new InvalidArgumentException(sprintf('The TaxInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TypeTaxInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->TaxInfo) && count($this->TaxInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->TaxInfo)), __LINE__);
-        }
         $this->TaxInfo[] = $item;
         
         return $this;
@@ -1409,48 +1212,12 @@ class OptionalService extends AbstractStructBase
         return $this->FeeInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFeeInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFeeInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFeeInfoForArrayConstraintFromSetFeeInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $optionalServiceFeeInfoItem) {
-            // validation for constraint: itemType
-            if (!$optionalServiceFeeInfoItem instanceof \Travelport\UniversalRecord\StructType\TypeFeeInfo) {
-                $invalidValues[] = is_object($optionalServiceFeeInfoItem) ? get_class($optionalServiceFeeInfoItem) : sprintf('%s(%s)', gettype($optionalServiceFeeInfoItem), var_export($optionalServiceFeeInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FeeInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TypeFeeInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FeeInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeFeeInfo[] $feeInfo
      * @return \Travelport\UniversalRecord\StructType\OptionalService
      */
     public function setFeeInfo(?array $feeInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($feeInfoArrayErrorMessage = self::validateFeeInfoForArrayConstraintFromSetFeeInfo($feeInfo))) {
-            throw new InvalidArgumentException($feeInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($feeInfo) && count($feeInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($feeInfo)), __LINE__);
-        }
         $this->FeeInfo = $feeInfo;
         
         return $this;
@@ -1463,14 +1230,6 @@ class OptionalService extends AbstractStructBase
      */
     public function addToFeeInfo(\Travelport\UniversalRecord\StructType\TypeFeeInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeFeeInfo) {
-            throw new InvalidArgumentException(sprintf('The FeeInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TypeFeeInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FeeInfo) && count($this->FeeInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FeeInfo)), __LINE__);
-        }
         $this->FeeInfo[] = $item;
         
         return $this;
@@ -1522,48 +1281,12 @@ class OptionalService extends AbstractStructBase
         return $this->AdditionalInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAdditionalInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAdditionalInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAdditionalInfoForArrayConstraintFromSetAdditionalInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $optionalServiceAdditionalInfoItem) {
-            // validation for constraint: itemType
-            if (!$optionalServiceAdditionalInfoItem instanceof \Travelport\UniversalRecord\StructType\AdditionalInfo) {
-                $invalidValues[] = is_object($optionalServiceAdditionalInfoItem) ? get_class($optionalServiceAdditionalInfoItem) : sprintf('%s(%s)', gettype($optionalServiceAdditionalInfoItem), var_export($optionalServiceAdditionalInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AdditionalInfo property can only contain items of type \Travelport\UniversalRecord\StructType\AdditionalInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AdditionalInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AdditionalInfo[] $additionalInfo
      * @return \Travelport\UniversalRecord\StructType\OptionalService
      */
     public function setAdditionalInfo(?array $additionalInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($additionalInfoArrayErrorMessage = self::validateAdditionalInfoForArrayConstraintFromSetAdditionalInfo($additionalInfo))) {
-            throw new InvalidArgumentException($additionalInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(16)
-        if (is_array($additionalInfo) && count($additionalInfo) > 16) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 16', count($additionalInfo)), __LINE__);
-        }
         $this->AdditionalInfo = $additionalInfo;
         
         return $this;
@@ -1576,14 +1299,6 @@ class OptionalService extends AbstractStructBase
      */
     public function addToAdditionalInfo(\Travelport\UniversalRecord\StructType\AdditionalInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AdditionalInfo) {
-            throw new InvalidArgumentException(sprintf('The AdditionalInfo property can only contain items of type \Travelport\UniversalRecord\StructType\AdditionalInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(16)
-        if (is_array($this->AdditionalInfo) && count($this->AdditionalInfo) >= 16) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 16', count($this->AdditionalInfo)), __LINE__);
-        }
         $this->AdditionalInfo[] = $item;
         
         return $this;
@@ -1616,48 +1331,12 @@ class OptionalService extends AbstractStructBase
         return $this->Text;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setText method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setText method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTextForArrayConstraintFromSetText(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $optionalServiceTextItem) {
-            // validation for constraint: itemType
-            if (!$optionalServiceTextItem instanceof \Travelport\UniversalRecord\StructType\TypeTextElement) {
-                $invalidValues[] = is_object($optionalServiceTextItem) ? get_class($optionalServiceTextItem) : sprintf('%s(%s)', gettype($optionalServiceTextItem), var_export($optionalServiceTextItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Text property can only contain items of type \Travelport\UniversalRecord\StructType\TypeTextElement, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Text value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeTextElement[] $text
      * @return \Travelport\UniversalRecord\StructType\OptionalService
      */
     public function setText(?array $text = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($textArrayErrorMessage = self::validateTextForArrayConstraintFromSetText($text))) {
-            throw new InvalidArgumentException($textArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(4)
-        if (is_array($text) && count($text) > 4) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 4', count($text)), __LINE__);
-        }
         $this->Text = $text;
         
         return $this;
@@ -1670,14 +1349,6 @@ class OptionalService extends AbstractStructBase
      */
     public function addToText(\Travelport\UniversalRecord\StructType\TypeTextElement $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeTextElement) {
-            throw new InvalidArgumentException(sprintf('The Text property can only contain items of type \Travelport\UniversalRecord\StructType\TypeTextElement, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(4)
-        if (is_array($this->Text) && count($this->Text) >= 4) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 4', count($this->Text)), __LINE__);
-        }
         $this->Text[] = $item;
         
         return $this;
@@ -1691,48 +1362,12 @@ class OptionalService extends AbstractStructBase
         return $this->PriceRange;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPriceRange method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPriceRange method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePriceRangeForArrayConstraintFromSetPriceRange(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $optionalServicePriceRangeItem) {
-            // validation for constraint: itemType
-            if (!$optionalServicePriceRangeItem instanceof \Travelport\UniversalRecord\StructType\PriceRange) {
-                $invalidValues[] = is_object($optionalServicePriceRangeItem) ? get_class($optionalServicePriceRangeItem) : sprintf('%s(%s)', gettype($optionalServicePriceRangeItem), var_export($optionalServicePriceRangeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The PriceRange property can only contain items of type \Travelport\UniversalRecord\StructType\PriceRange, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set PriceRange value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\PriceRange[] $priceRange
      * @return \Travelport\UniversalRecord\StructType\OptionalService
      */
     public function setPriceRange(?array $priceRange = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($priceRangeArrayErrorMessage = self::validatePriceRangeForArrayConstraintFromSetPriceRange($priceRange))) {
-            throw new InvalidArgumentException($priceRangeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($priceRange) && count($priceRange) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($priceRange)), __LINE__);
-        }
         $this->PriceRange = $priceRange;
         
         return $this;
@@ -1745,14 +1380,6 @@ class OptionalService extends AbstractStructBase
      */
     public function addToPriceRange(\Travelport\UniversalRecord\StructType\PriceRange $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\PriceRange) {
-            throw new InvalidArgumentException(sprintf('The PriceRange property can only contain items of type \Travelport\UniversalRecord\StructType\PriceRange, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($this->PriceRange) && count($this->PriceRange) >= 5) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->PriceRange)), __LINE__);
-        }
         $this->PriceRange[] = $item;
         
         return $this;
@@ -1804,48 +1431,12 @@ class OptionalService extends AbstractStructBase
         return $this->Title;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setTitle method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setTitle method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTitleForArrayConstraintFromSetTitle(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $optionalServiceTitleItem) {
-            // validation for constraint: itemType
-            if (!$optionalServiceTitleItem instanceof \Travelport\UniversalRecord\StructType\TypeTextElement) {
-                $invalidValues[] = is_object($optionalServiceTitleItem) ? get_class($optionalServiceTitleItem) : sprintf('%s(%s)', gettype($optionalServiceTitleItem), var_export($optionalServiceTitleItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Title property can only contain items of type \Travelport\UniversalRecord\StructType\TypeTextElement, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Title value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeTextElement[] $title
      * @return \Travelport\UniversalRecord\StructType\OptionalService
      */
     public function setTitle(?array $title = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($titleArrayErrorMessage = self::validateTitleForArrayConstraintFromSetTitle($title))) {
-            throw new InvalidArgumentException($titleArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(2)
-        if (is_array($title) && count($title) > 2) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 2', count($title)), __LINE__);
-        }
         $this->Title = $title;
         
         return $this;
@@ -1858,14 +1449,6 @@ class OptionalService extends AbstractStructBase
      */
     public function addToTitle(\Travelport\UniversalRecord\StructType\TypeTextElement $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeTextElement) {
-            throw new InvalidArgumentException(sprintf('The Title property can only contain items of type \Travelport\UniversalRecord\StructType\TypeTextElement, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(2)
-        if (is_array($this->Title) && count($this->Title) >= 2) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 2', count($this->Title)), __LINE__);
-        }
         $this->Title[] = $item;
         
         return $this;
@@ -1885,10 +1468,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setOptionalServicesRuleRef(?string $optionalServicesRuleRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($optionalServicesRuleRef) && !is_string($optionalServicesRuleRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionalServicesRuleRef, true), gettype($optionalServicesRuleRef)), __LINE__);
-        }
         $this->OptionalServicesRuleRef = $optionalServicesRuleRef;
         
         return $this;
@@ -1908,10 +1487,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setConfirmation(?string $confirmation = null): self
     {
-        // validation for constraint: string
-        if (!is_null($confirmation) && !is_string($confirmation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($confirmation, true), gettype($confirmation)), __LINE__);
-        }
         $this->Confirmation = $confirmation;
         
         return $this;
@@ -1931,10 +1506,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setSecondaryType(?string $secondaryType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($secondaryType) && !is_string($secondaryType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($secondaryType, true), gettype($secondaryType)), __LINE__);
-        }
         $this->SecondaryType = $secondaryType;
         
         return $this;
@@ -1949,18 +1520,11 @@ class OptionalService extends AbstractStructBase
     }
     /**
      * Set PurchaseWindow value
-     * @uses \Travelport\UniversalRecord\EnumType\TypePurchaseWindow::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypePurchaseWindow::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $purchaseWindow
      * @return \Travelport\UniversalRecord\StructType\OptionalService
      */
     public function setPurchaseWindow(?string $purchaseWindow = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypePurchaseWindow::valueIsValid($purchaseWindow)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypePurchaseWindow', is_array($purchaseWindow) ? implode(', ', $purchaseWindow) : var_export($purchaseWindow, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypePurchaseWindow::getValidValues())), __LINE__);
-        }
         $this->PurchaseWindow = $purchaseWindow;
         
         return $this;
@@ -1980,10 +1544,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setPriority(?int $priority = null): self
     {
-        // validation for constraint: int
-        if (!is_null($priority) && !(is_int($priority) || ctype_digit($priority))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($priority, true), gettype($priority)), __LINE__);
-        }
         $this->Priority = $priority;
         
         return $this;
@@ -2003,10 +1563,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setAvailable(?bool $available = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($available) && !is_bool($available)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($available, true), gettype($available)), __LINE__);
-        }
         $this->Available = $available;
         
         return $this;
@@ -2026,10 +1582,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setEntitled(?bool $entitled = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($entitled) && !is_bool($entitled)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($entitled, true), gettype($entitled)), __LINE__);
-        }
         $this->Entitled = $entitled;
         
         return $this;
@@ -2049,10 +1601,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setPerTraveler(?bool $perTraveler = true): self
     {
-        // validation for constraint: boolean
-        if (!is_null($perTraveler) && !is_bool($perTraveler)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($perTraveler, true), gettype($perTraveler)), __LINE__);
-        }
         $this->PerTraveler = $perTraveler;
         
         return $this;
@@ -2072,10 +1620,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setCreateDate(?string $createDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($createDate) && !is_string($createDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($createDate, true), gettype($createDate)), __LINE__);
-        }
         $this->CreateDate = $createDate;
         
         return $this;
@@ -2095,10 +1639,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setPaymentRef(?string $paymentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($paymentRef) && !is_string($paymentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentRef, true), gettype($paymentRef)), __LINE__);
-        }
         $this->PaymentRef = $paymentRef;
         
         return $this;
@@ -2118,10 +1658,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setServiceStatus(?string $serviceStatus = null): self
     {
-        // validation for constraint: string
-        if (!is_null($serviceStatus) && !is_string($serviceStatus)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($serviceStatus, true), gettype($serviceStatus)), __LINE__);
-        }
         $this->ServiceStatus = $serviceStatus;
         
         return $this;
@@ -2141,10 +1677,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setQuantity(?int $quantity = null): self
     {
-        // validation for constraint: int
-        if (!is_null($quantity) && !(is_int($quantity) || ctype_digit($quantity))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($quantity, true), gettype($quantity)), __LINE__);
-        }
         $this->Quantity = $quantity;
         
         return $this;
@@ -2164,10 +1696,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setSequenceNumber(?int $sequenceNumber = null): self
     {
-        // validation for constraint: int
-        if (!is_null($sequenceNumber) && !(is_int($sequenceNumber) || ctype_digit($sequenceNumber))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($sequenceNumber, true), gettype($sequenceNumber)), __LINE__);
-        }
         $this->SequenceNumber = $sequenceNumber;
         
         return $this;
@@ -2187,14 +1715,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setServiceSubCode(?string $serviceSubCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($serviceSubCode) && !is_string($serviceSubCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($serviceSubCode, true), gettype($serviceSubCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(3)
-        if (!is_null($serviceSubCode) && mb_strlen((string) $serviceSubCode) > 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 3', mb_strlen((string) $serviceSubCode)), __LINE__);
-        }
         $this->ServiceSubCode = $serviceSubCode;
         
         return $this;
@@ -2214,18 +1734,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setSSRCode(?string $sSRCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($sSRCode) && !is_string($sSRCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sSRCode, true), gettype($sSRCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(4)
-        if (!is_null($sSRCode) && mb_strlen((string) $sSRCode) > 4) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 4', mb_strlen((string) $sSRCode)), __LINE__);
-        }
-        // validation for constraint: minLength(4)
-        if (!is_null($sSRCode) && mb_strlen((string) $sSRCode) < 4) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 4', mb_strlen((string) $sSRCode)), __LINE__);
-        }
         $this->SSRCode = $sSRCode;
         
         return $this;
@@ -2245,18 +1753,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setIssuanceReason(?string $issuanceReason = null): self
     {
-        // validation for constraint: string
-        if (!is_null($issuanceReason) && !is_string($issuanceReason)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($issuanceReason, true), gettype($issuanceReason)), __LINE__);
-        }
-        // validation for constraint: maxLength(1)
-        if (!is_null($issuanceReason) && mb_strlen((string) $issuanceReason) > 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 1', mb_strlen((string) $issuanceReason)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($issuanceReason) && mb_strlen((string) $issuanceReason) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $issuanceReason)), __LINE__);
-        }
         $this->IssuanceReason = $issuanceReason;
         
         return $this;
@@ -2276,18 +1772,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setProviderDefinedType(?string $providerDefinedType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerDefinedType) && !is_string($providerDefinedType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerDefinedType, true), gettype($providerDefinedType)), __LINE__);
-        }
-        // validation for constraint: maxLength(16)
-        if (!is_null($providerDefinedType) && mb_strlen((string) $providerDefinedType) > 16) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 16', mb_strlen((string) $providerDefinedType)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($providerDefinedType) && mb_strlen((string) $providerDefinedType) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $providerDefinedType)), __LINE__);
-        }
         $this->ProviderDefinedType = $providerDefinedType;
         
         return $this;
@@ -2307,10 +1791,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -2325,18 +1805,11 @@ class OptionalService extends AbstractStructBase
     }
     /**
      * Set AssessIndicator value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeAssessIndicator::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeAssessIndicator::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $assessIndicator
      * @return \Travelport\UniversalRecord\StructType\OptionalService
      */
     public function setAssessIndicator(?string $assessIndicator = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeAssessIndicator::valueIsValid($assessIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeAssessIndicator', is_array($assessIndicator) ? implode(', ', $assessIndicator) : var_export($assessIndicator, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeAssessIndicator::getValidValues())), __LINE__);
-        }
         $this->AssessIndicator = $assessIndicator;
         
         return $this;
@@ -2356,10 +1829,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setMileage(?int $mileage = null): self
     {
-        // validation for constraint: int
-        if (!is_null($mileage) && !(is_int($mileage) || ctype_digit($mileage))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($mileage, true), gettype($mileage)), __LINE__);
-        }
         $this->Mileage = $mileage;
         
         return $this;
@@ -2379,18 +1848,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setApplicableFFLevel(?int $applicableFFLevel = null): self
     {
-        // validation for constraint: int
-        if (!is_null($applicableFFLevel) && !(is_int($applicableFFLevel) || ctype_digit($applicableFFLevel))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($applicableFFLevel, true), gettype($applicableFFLevel)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(9)
-        if (!is_null($applicableFFLevel) && $applicableFFLevel > 9) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 9', var_export($applicableFFLevel, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive
-        if (!is_null($applicableFFLevel) && $applicableFFLevel < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($applicableFFLevel, true)), __LINE__);
-        }
         $this->ApplicableFFLevel = $applicableFFLevel;
         
         return $this;
@@ -2410,10 +1867,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setPrivate(?bool $private = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($private) && !is_bool($private)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($private, true), gettype($private)), __LINE__);
-        }
         $this->Private = $private;
         
         return $this;
@@ -2433,10 +1886,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setSSRFreeText(?string $sSRFreeText = null): self
     {
-        // validation for constraint: string
-        if (!is_null($sSRFreeText) && !is_string($sSRFreeText)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sSRFreeText, true), gettype($sSRFreeText)), __LINE__);
-        }
         $this->SSRFreeText = $sSRFreeText;
         
         return $this;
@@ -2456,10 +1905,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setIsPricingApproximate(?bool $isPricingApproximate = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($isPricingApproximate) && !is_bool($isPricingApproximate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($isPricingApproximate, true), gettype($isPricingApproximate)), __LINE__);
-        }
         $this->IsPricingApproximate = $isPricingApproximate;
         
         return $this;
@@ -2479,10 +1924,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setChargeable(?string $chargeable = null): self
     {
-        // validation for constraint: string
-        if (!is_null($chargeable) && !is_string($chargeable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($chargeable, true), gettype($chargeable)), __LINE__);
-        }
         $this->Chargeable = $chargeable;
         
         return $this;
@@ -2502,10 +1943,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setInclusiveOfTax(?bool $inclusiveOfTax = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($inclusiveOfTax) && !is_bool($inclusiveOfTax)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($inclusiveOfTax, true), gettype($inclusiveOfTax)), __LINE__);
-        }
         $this->InclusiveOfTax = $inclusiveOfTax;
         
         return $this;
@@ -2525,10 +1962,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setInterlineSettlementAllowed(?bool $interlineSettlementAllowed = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($interlineSettlementAllowed) && !is_bool($interlineSettlementAllowed)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($interlineSettlementAllowed, true), gettype($interlineSettlementAllowed)), __LINE__);
-        }
         $this->InterlineSettlementAllowed = $interlineSettlementAllowed;
         
         return $this;
@@ -2548,10 +1981,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setGeographySpecification(?string $geographySpecification = null): self
     {
-        // validation for constraint: string
-        if (!is_null($geographySpecification) && !is_string($geographySpecification)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($geographySpecification, true), gettype($geographySpecification)), __LINE__);
-        }
         $this->GeographySpecification = $geographySpecification;
         
         return $this;
@@ -2571,10 +2000,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setExcessWeightRate(?string $excessWeightRate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($excessWeightRate) && !is_string($excessWeightRate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($excessWeightRate, true), gettype($excessWeightRate)), __LINE__);
-        }
         $this->ExcessWeightRate = $excessWeightRate;
         
         return $this;
@@ -2594,10 +2019,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setSource(?string $source = null): self
     {
-        // validation for constraint: string
-        if (!is_null($source) && !is_string($source)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($source, true), gettype($source)), __LINE__);
-        }
         $this->Source = $source;
         
         return $this;
@@ -2617,10 +2038,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setViewableOnly(?bool $viewableOnly = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($viewableOnly) && !is_bool($viewableOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($viewableOnly, true), gettype($viewableOnly)), __LINE__);
-        }
         $this->ViewableOnly = $viewableOnly;
         
         return $this;
@@ -2640,10 +2057,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setDisplayText(?string $displayText = null): self
     {
-        // validation for constraint: string
-        if (!is_null($displayText) && !is_string($displayText)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($displayText, true), gettype($displayText)), __LINE__);
-        }
         $this->DisplayText = $displayText;
         
         return $this;
@@ -2663,10 +2076,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setWeightInExcess(?string $weightInExcess = null): self
     {
-        // validation for constraint: string
-        if (!is_null($weightInExcess) && !is_string($weightInExcess)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($weightInExcess, true), gettype($weightInExcess)), __LINE__);
-        }
         $this->WeightInExcess = $weightInExcess;
         
         return $this;
@@ -2686,10 +2095,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setTotalWeight(?string $totalWeight = null): self
     {
-        // validation for constraint: string
-        if (!is_null($totalWeight) && !is_string($totalWeight)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($totalWeight, true), gettype($totalWeight)), __LINE__);
-        }
         $this->TotalWeight = $totalWeight;
         
         return $this;
@@ -2709,10 +2114,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setBaggageUnitPrice(?string $baggageUnitPrice = null): self
     {
-        // validation for constraint: string
-        if (!is_null($baggageUnitPrice) && !is_string($baggageUnitPrice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($baggageUnitPrice, true), gettype($baggageUnitPrice)), __LINE__);
-        }
         $this->BaggageUnitPrice = $baggageUnitPrice;
         
         return $this;
@@ -2732,10 +2133,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setFirstPiece(?int $firstPiece = null): self
     {
-        // validation for constraint: int
-        if (!is_null($firstPiece) && !(is_int($firstPiece) || ctype_digit($firstPiece))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($firstPiece, true), gettype($firstPiece)), __LINE__);
-        }
         $this->FirstPiece = $firstPiece;
         
         return $this;
@@ -2755,10 +2152,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setLastPiece(?int $lastPiece = null): self
     {
-        // validation for constraint: int
-        if (!is_null($lastPiece) && !(is_int($lastPiece) || ctype_digit($lastPiece))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($lastPiece, true), gettype($lastPiece)), __LINE__);
-        }
         $this->LastPiece = $lastPiece;
         
         return $this;
@@ -2778,10 +2171,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setRestricted(?bool $restricted = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($restricted) && !is_bool($restricted)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($restricted, true), gettype($restricted)), __LINE__);
-        }
         $this->Restricted = $restricted;
         
         return $this;
@@ -2801,10 +2190,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setIsRepriceRequired(?bool $isRepriceRequired = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($isRepriceRequired) && !is_bool($isRepriceRequired)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($isRepriceRequired, true), gettype($isRepriceRequired)), __LINE__);
-        }
         $this->IsRepriceRequired = $isRepriceRequired;
         
         return $this;
@@ -2824,10 +2209,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setBookedQuantity(?string $bookedQuantity = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookedQuantity) && !is_string($bookedQuantity)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookedQuantity, true), gettype($bookedQuantity)), __LINE__);
-        }
         $this->BookedQuantity = $bookedQuantity;
         
         return $this;
@@ -2847,10 +2228,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setGroup(?string $group = null): self
     {
-        // validation for constraint: string
-        if (!is_null($group) && !is_string($group)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($group, true), gettype($group)), __LINE__);
-        }
         $this->Group = $group;
         
         return $this;
@@ -2870,18 +2247,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setPseudoCityCode(?string $pseudoCityCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($pseudoCityCode) && !is_string($pseudoCityCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pseudoCityCode, true), gettype($pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
         $this->PseudoCityCode = $pseudoCityCode;
         
         return $this;
@@ -2901,18 +2266,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setTag(?string $tag = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tag) && !is_string($tag)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tag, true), gettype($tag)), __LINE__);
-        }
-        // validation for constraint: maxLength(256)
-        if (!is_null($tag) && mb_strlen((string) $tag) > 256) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 256', mb_strlen((string) $tag)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($tag) && mb_strlen((string) $tag) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $tag)), __LINE__);
-        }
         $this->Tag = $tag;
         
         return $this;
@@ -2932,18 +2285,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setDisplayOrder(?int $displayOrder = null): self
     {
-        // validation for constraint: int
-        if (!is_null($displayOrder) && !(is_int($displayOrder) || ctype_digit($displayOrder))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($displayOrder, true), gettype($displayOrder)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(999)
-        if (!is_null($displayOrder) && $displayOrder > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 999', var_export($displayOrder, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive
-        if (!is_null($displayOrder) && $displayOrder < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($displayOrder, true)), __LINE__);
-        }
         $this->DisplayOrder = $displayOrder;
         
         return $this;
@@ -2963,18 +2304,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -2994,18 +2323,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setSupplierCode(?string $supplierCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $supplierCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;
@@ -3025,10 +2342,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setTotalPrice(?string $totalPrice = null): self
     {
-        // validation for constraint: string
-        if (!is_null($totalPrice) && !is_string($totalPrice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($totalPrice, true), gettype($totalPrice)), __LINE__);
-        }
         $this->TotalPrice = $totalPrice;
         
         return $this;
@@ -3048,10 +2361,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setBasePrice(?string $basePrice = null): self
     {
-        // validation for constraint: string
-        if (!is_null($basePrice) && !is_string($basePrice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($basePrice, true), gettype($basePrice)), __LINE__);
-        }
         $this->BasePrice = $basePrice;
         
         return $this;
@@ -3071,10 +2380,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setApproximateTotalPrice(?string $approximateTotalPrice = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateTotalPrice) && !is_string($approximateTotalPrice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateTotalPrice, true), gettype($approximateTotalPrice)), __LINE__);
-        }
         $this->ApproximateTotalPrice = $approximateTotalPrice;
         
         return $this;
@@ -3094,10 +2399,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setApproximateBasePrice(?string $approximateBasePrice = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateBasePrice) && !is_string($approximateBasePrice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateBasePrice, true), gettype($approximateBasePrice)), __LINE__);
-        }
         $this->ApproximateBasePrice = $approximateBasePrice;
         
         return $this;
@@ -3117,10 +2418,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setEquivalentBasePrice(?string $equivalentBasePrice = null): self
     {
-        // validation for constraint: string
-        if (!is_null($equivalentBasePrice) && !is_string($equivalentBasePrice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($equivalentBasePrice, true), gettype($equivalentBasePrice)), __LINE__);
-        }
         $this->EquivalentBasePrice = $equivalentBasePrice;
         
         return $this;
@@ -3140,10 +2437,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setTaxes(?string $taxes = null): self
     {
-        // validation for constraint: string
-        if (!is_null($taxes) && !is_string($taxes)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($taxes, true), gettype($taxes)), __LINE__);
-        }
         $this->Taxes = $taxes;
         
         return $this;
@@ -3163,10 +2456,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setFees(?string $fees = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fees) && !is_string($fees)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fees, true), gettype($fees)), __LINE__);
-        }
         $this->Fees = $fees;
         
         return $this;
@@ -3186,10 +2475,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setServices(?string $services = null): self
     {
-        // validation for constraint: string
-        if (!is_null($services) && !is_string($services)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($services, true), gettype($services)), __LINE__);
-        }
         $this->Services = $services;
         
         return $this;
@@ -3209,10 +2494,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setApproximateTaxes(?string $approximateTaxes = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateTaxes) && !is_string($approximateTaxes)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateTaxes, true), gettype($approximateTaxes)), __LINE__);
-        }
         $this->ApproximateTaxes = $approximateTaxes;
         
         return $this;
@@ -3232,10 +2513,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setApproximateFees(?string $approximateFees = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateFees) && !is_string($approximateFees)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateFees, true), gettype($approximateFees)), __LINE__);
-        }
         $this->ApproximateFees = $approximateFees;
         
         return $this;
@@ -3250,18 +2527,11 @@ class OptionalService extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\OptionalService
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -3281,10 +2551,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;
@@ -3323,14 +2589,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setStatus(?string $status = null): self
     {
-        // validation for constraint: string
-        if (!is_null($status) && !is_string($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($status) && mb_strlen((string) $status) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $status)), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -3350,18 +2608,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setDescription(?string $description = null): self
     {
-        // validation for constraint: string
-        if (!is_null($description) && !is_string($description)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
-        }
-        // validation for constraint: maxLength(25)
-        if (!is_null($description) && mb_strlen((string) $description) > 25) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 25', mb_strlen((string) $description)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($description) && mb_strlen((string) $description) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $description)), __LINE__);
-        }
         $this->Description = $description;
         
         return $this;
@@ -3381,10 +2627,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setStartDate(?string $startDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($startDate) && !is_string($startDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
-        }
         $this->StartDate = $startDate;
         
         return $this;
@@ -3404,10 +2646,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setEndDate(?string $endDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($endDate) && !is_string($endDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endDate, true), gettype($endDate)), __LINE__);
-        }
         $this->EndDate = $endDate;
         
         return $this;
@@ -3427,10 +2665,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setBookingDate(?string $bookingDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingDate) && !is_string($bookingDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingDate, true), gettype($bookingDate)), __LINE__);
-        }
         $this->BookingDate = $bookingDate;
         
         return $this;
@@ -3450,18 +2684,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setSetIdentifier(?string $setIdentifier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($setIdentifier) && !is_string($setIdentifier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($setIdentifier, true), gettype($setIdentifier)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($setIdentifier) && mb_strlen((string) $setIdentifier) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $setIdentifier)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($setIdentifier) && mb_strlen((string) $setIdentifier) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $setIdentifier)), __LINE__);
-        }
         $this->SetIdentifier = $setIdentifier;
         
         return $this;
@@ -3481,18 +2703,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setSetName(?string $setName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($setName) && !is_string($setName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($setName, true), gettype($setName)), __LINE__);
-        }
-        // validation for constraint: maxLength(20)
-        if (!is_null($setName) && mb_strlen((string) $setName) > 20) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 20', mb_strlen((string) $setName)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($setName) && mb_strlen((string) $setName) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $setName)), __LINE__);
-        }
         $this->SetName = $setName;
         
         return $this;
@@ -3512,10 +2722,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setTransportIndicator(?bool $transportIndicator = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($transportIndicator) && !is_bool($transportIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($transportIndicator, true), gettype($transportIndicator)), __LINE__);
-        }
         $this->TransportIndicator = $transportIndicator;
         
         return $this;
@@ -3535,10 +2741,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setAirCityIndicator(?bool $airCityIndicator = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($airCityIndicator) && !is_bool($airCityIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($airCityIndicator, true), gettype($airCityIndicator)), __LINE__);
-        }
         $this->AirCityIndicator = $airCityIndicator;
         
         return $this;
@@ -3558,10 +2760,6 @@ class OptionalService extends AbstractStructBase
      */
     public function setPurchaseIndicator(?bool $purchaseIndicator = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($purchaseIndicator) && !is_bool($purchaseIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($purchaseIndicator, true), gettype($purchaseIndicator)), __LINE__);
-        }
         $this->PurchaseIndicator = $purchaseIndicator;
         
         return $this;

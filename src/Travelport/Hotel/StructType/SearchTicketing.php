@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class SearchTicketing extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketStatus = null;
+    public ?string $TicketStatus = null;
     /**
      * The ReservationStatus
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class SearchTicketing extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ReservationStatus = null;
+    public ?string $ReservationStatus = null;
     /**
      * The TicketDate
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class SearchTicketing extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketDate = null;
+    public ?string $TicketDate = null;
     /**
      * Constructor method for SearchTicketing
      * @uses SearchTicketing::setTicketStatus()
@@ -70,10 +69,6 @@ class SearchTicketing extends AbstractStructBase
      */
     public function setTicketStatus(?string $ticketStatus = 'Both'): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketStatus) && !is_string($ticketStatus)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketStatus, true), gettype($ticketStatus)), __LINE__);
-        }
         $this->TicketStatus = $ticketStatus;
         
         return $this;
@@ -93,10 +88,6 @@ class SearchTicketing extends AbstractStructBase
      */
     public function setReservationStatus(?string $reservationStatus = 'Both'): self
     {
-        // validation for constraint: string
-        if (!is_null($reservationStatus) && !is_string($reservationStatus)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reservationStatus, true), gettype($reservationStatus)), __LINE__);
-        }
         $this->ReservationStatus = $reservationStatus;
         
         return $this;
@@ -116,10 +107,6 @@ class SearchTicketing extends AbstractStructBase
      */
     public function setTicketDate(?string $ticketDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketDate) && !is_string($ticketDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketDate, true), gettype($ticketDate)), __LINE__);
-        }
         $this->TicketDate = $ticketDate;
         
         return $this;

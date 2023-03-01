@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,14 +22,14 @@ class PassiveDelete extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ReservationLocatorCode;
+    public string $ReservationLocatorCode;
     /**
      * The Element
      * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
-    protected string $Element;
+    public string $Element;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class PassiveDelete extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * Constructor method for PassiveDelete
      * @uses PassiveDelete::setReservationLocatorCode()
@@ -71,18 +70,6 @@ class PassiveDelete extends AbstractStructBase
      */
     public function setReservationLocatorCode(string $reservationLocatorCode): self
     {
-        // validation for constraint: string
-        if (!is_null($reservationLocatorCode) && !is_string($reservationLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reservationLocatorCode, true), gettype($reservationLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($reservationLocatorCode) && mb_strlen((string) $reservationLocatorCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $reservationLocatorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($reservationLocatorCode) && mb_strlen((string) $reservationLocatorCode) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $reservationLocatorCode)), __LINE__);
-        }
         $this->ReservationLocatorCode = $reservationLocatorCode;
         
         return $this;
@@ -97,18 +84,11 @@ class PassiveDelete extends AbstractStructBase
     }
     /**
      * Set Element value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElement::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElement::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $element
      * @return \Travelport\UniversalRecord\StructType\PassiveDelete
      */
     public function setElement(string $element): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElement::valueIsValid($element)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElement', is_array($element) ? implode(', ', $element) : var_export($element, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElement::getValidValues())), __LINE__);
-        }
         $this->Element = $element;
         
         return $this;
@@ -128,10 +108,6 @@ class PassiveDelete extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;

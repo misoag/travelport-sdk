@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class RailAvailInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ClassCode = null;
+    public ?string $ClassCode = null;
     /**
      * The Quantity
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class RailAvailInfo extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Quantity = null;
+    public ?int $Quantity = null;
     /**
      * The CabinClass
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class RailAvailInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CabinClass = null;
+    public ?string $CabinClass = null;
     /**
      * Constructor method for RailAvailInfo
      * @uses RailAvailInfo::setClassCode()
@@ -74,18 +73,6 @@ class RailAvailInfo extends AbstractStructBase
      */
     public function setClassCode(?string $classCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($classCode) && !is_string($classCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($classCode, true), gettype($classCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($classCode) && mb_strlen((string) $classCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $classCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($classCode) && mb_strlen((string) $classCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $classCode)), __LINE__);
-        }
         $this->ClassCode = $classCode;
         
         return $this;
@@ -105,10 +92,6 @@ class RailAvailInfo extends AbstractStructBase
      */
     public function setQuantity(?int $quantity = null): self
     {
-        // validation for constraint: int
-        if (!is_null($quantity) && !(is_int($quantity) || ctype_digit($quantity))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($quantity, true), gettype($quantity)), __LINE__);
-        }
         $this->Quantity = $quantity;
         
         return $this;
@@ -128,18 +111,6 @@ class RailAvailInfo extends AbstractStructBase
      */
     public function setCabinClass(?string $cabinClass = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cabinClass) && !is_string($cabinClass)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cabinClass, true), gettype($cabinClass)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($cabinClass) && mb_strlen((string) $cabinClass) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $cabinClass)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($cabinClass) && mb_strlen((string) $cabinClass) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $cabinClass)), __LINE__);
-        }
         $this->CabinClass = $cabinClass;
         
         return $this;

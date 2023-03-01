@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class CarrierCode extends AbstractStructBase
      * - length: 2
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * Constructor method for CarrierCode
      * @uses CarrierCode::set_()
@@ -51,14 +50,6 @@ class CarrierCode extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($_) && mb_strlen((string) $_) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;

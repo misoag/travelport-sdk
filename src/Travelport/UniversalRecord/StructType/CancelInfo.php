@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class CancelInfo extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $CancellationPolicy = null;
+    public ?string $CancellationPolicy = null;
     /**
      * The Text
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class CancelInfo extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected ?array $Text = null;
+    public ?array $Text = null;
     /**
      * The NonRefundableStayIndicator
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class CancelInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $NonRefundableStayIndicator = null;
+    public ?string $NonRefundableStayIndicator = null;
     /**
      * The CancelDeadline
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class CancelInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CancelDeadline = null;
+    public ?string $CancelDeadline = null;
     /**
      * The TaxInclusive
      * Meta information extracted from the WSDL
@@ -55,7 +54,7 @@ class CancelInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $TaxInclusive = null;
+    public ?bool $TaxInclusive = null;
     /**
      * The FeeInclusive
      * Meta information extracted from the WSDL
@@ -63,7 +62,7 @@ class CancelInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $FeeInclusive = null;
+    public ?bool $FeeInclusive = null;
     /**
      * The CancelPenaltyAmount
      * Meta information extracted from the WSDL
@@ -72,7 +71,7 @@ class CancelInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CancelPenaltyAmount = null;
+    public ?string $CancelPenaltyAmount = null;
     /**
      * The NumberOfNights
      * Meta information extracted from the WSDL
@@ -80,7 +79,7 @@ class CancelInfo extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $NumberOfNights = null;
+    public ?int $NumberOfNights = null;
     /**
      * The CancelPenaltyPercent
      * Meta information extracted from the WSDL
@@ -88,7 +87,7 @@ class CancelInfo extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $CancelPenaltyPercent = null;
+    public ?float $CancelPenaltyPercent = null;
     /**
      * The CancelPenaltyPercentAppliesTo
      * Meta information extracted from the WSDL
@@ -96,7 +95,7 @@ class CancelInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CancelPenaltyPercentAppliesTo = null;
+    public ?string $CancelPenaltyPercentAppliesTo = null;
     /**
      * The Method
      * Meta information extracted from the WSDL
@@ -104,7 +103,7 @@ class CancelInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Method = null;
+    public ?string $Method = null;
     /**
      * The Supported
      * Meta information extracted from the WSDL
@@ -112,7 +111,7 @@ class CancelInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Supported = null;
+    public ?bool $Supported = null;
     /**
      * The URL
      * Meta information extracted from the WSDL
@@ -120,7 +119,7 @@ class CancelInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $URL = null;
+    public ?string $URL = null;
     /**
      * The OffsetTimeUnit
      * Meta information extracted from the WSDL
@@ -132,7 +131,7 @@ class CancelInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OffsetTimeUnit = null;
+    public ?string $OffsetTimeUnit = null;
     /**
      * The OffsetUnitMultiplier
      * Meta information extracted from the WSDL
@@ -144,7 +143,7 @@ class CancelInfo extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $OffsetUnitMultiplier = null;
+    public ?int $OffsetUnitMultiplier = null;
     /**
      * The OffsetDropTime
      * Meta information extracted from the WSDL
@@ -156,7 +155,7 @@ class CancelInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OffsetDropTime = null;
+    public ?string $OffsetDropTime = null;
     /**
      * Constructor method for CancelInfo
      * @uses CancelInfo::setCancellationPolicy()
@@ -227,10 +226,6 @@ class CancelInfo extends AbstractStructBase
      */
     public function setCancellationPolicy(?string $cancellationPolicy = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cancellationPolicy) && !is_string($cancellationPolicy)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancellationPolicy, true), gettype($cancellationPolicy)), __LINE__);
-        }
         $this->CancellationPolicy = $cancellationPolicy;
         
         return $this;
@@ -244,48 +239,12 @@ class CancelInfo extends AbstractStructBase
         return $this->Text;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setText method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setText method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTextForArrayConstraintFromSetText(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $cancelInfoTextItem) {
-            // validation for constraint: itemType
-            if (!is_string($cancelInfoTextItem)) {
-                $invalidValues[] = is_object($cancelInfoTextItem) ? get_class($cancelInfoTextItem) : sprintf('%s(%s)', gettype($cancelInfoTextItem), var_export($cancelInfoTextItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Text property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Text value
-     * @throws InvalidArgumentException
      * @param string[] $text
      * @return \Travelport\UniversalRecord\StructType\CancelInfo
      */
     public function setText(?array $text = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($textArrayErrorMessage = self::validateTextForArrayConstraintFromSetText($text))) {
-            throw new InvalidArgumentException($textArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($text) && count($text) > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 99', count($text)), __LINE__);
-        }
         $this->Text = $text;
         
         return $this;
@@ -298,14 +257,6 @@ class CancelInfo extends AbstractStructBase
      */
     public function addToText(string $item): self
     {
-        // validation for constraint: itemType
-        if (!is_string($item)) {
-            throw new InvalidArgumentException(sprintf('The Text property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($this->Text) && count($this->Text) >= 99) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 99', count($this->Text)), __LINE__);
-        }
         $this->Text[] = $item;
         
         return $this;
@@ -320,18 +271,11 @@ class CancelInfo extends AbstractStructBase
     }
     /**
      * Set NonRefundableStayIndicator value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $nonRefundableStayIndicator
      * @return \Travelport\UniversalRecord\StructType\CancelInfo
      */
     public function setNonRefundableStayIndicator(?string $nonRefundableStayIndicator = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid($nonRefundableStayIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeTrinary', is_array($nonRefundableStayIndicator) ? implode(', ', $nonRefundableStayIndicator) : var_export($nonRefundableStayIndicator, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues())), __LINE__);
-        }
         $this->NonRefundableStayIndicator = $nonRefundableStayIndicator;
         
         return $this;
@@ -351,10 +295,6 @@ class CancelInfo extends AbstractStructBase
      */
     public function setCancelDeadline(?string $cancelDeadline = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cancelDeadline) && !is_string($cancelDeadline)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancelDeadline, true), gettype($cancelDeadline)), __LINE__);
-        }
         $this->CancelDeadline = $cancelDeadline;
         
         return $this;
@@ -374,10 +314,6 @@ class CancelInfo extends AbstractStructBase
      */
     public function setTaxInclusive(?bool $taxInclusive = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($taxInclusive) && !is_bool($taxInclusive)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($taxInclusive, true), gettype($taxInclusive)), __LINE__);
-        }
         $this->TaxInclusive = $taxInclusive;
         
         return $this;
@@ -397,10 +333,6 @@ class CancelInfo extends AbstractStructBase
      */
     public function setFeeInclusive(?bool $feeInclusive = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($feeInclusive) && !is_bool($feeInclusive)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($feeInclusive, true), gettype($feeInclusive)), __LINE__);
-        }
         $this->FeeInclusive = $feeInclusive;
         
         return $this;
@@ -420,10 +352,6 @@ class CancelInfo extends AbstractStructBase
      */
     public function setCancelPenaltyAmount(?string $cancelPenaltyAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cancelPenaltyAmount) && !is_string($cancelPenaltyAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancelPenaltyAmount, true), gettype($cancelPenaltyAmount)), __LINE__);
-        }
         $this->CancelPenaltyAmount = $cancelPenaltyAmount;
         
         return $this;
@@ -443,10 +371,6 @@ class CancelInfo extends AbstractStructBase
      */
     public function setNumberOfNights(?int $numberOfNights = null): self
     {
-        // validation for constraint: int
-        if (!is_null($numberOfNights) && !(is_int($numberOfNights) || ctype_digit($numberOfNights))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($numberOfNights, true), gettype($numberOfNights)), __LINE__);
-        }
         $this->NumberOfNights = $numberOfNights;
         
         return $this;
@@ -466,10 +390,6 @@ class CancelInfo extends AbstractStructBase
      */
     public function setCancelPenaltyPercent(?float $cancelPenaltyPercent = null): self
     {
-        // validation for constraint: float
-        if (!is_null($cancelPenaltyPercent) && !(is_float($cancelPenaltyPercent) || is_numeric($cancelPenaltyPercent))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($cancelPenaltyPercent, true), gettype($cancelPenaltyPercent)), __LINE__);
-        }
         $this->CancelPenaltyPercent = $cancelPenaltyPercent;
         
         return $this;
@@ -489,10 +409,6 @@ class CancelInfo extends AbstractStructBase
      */
     public function setCancelPenaltyPercentAppliesTo(?string $cancelPenaltyPercentAppliesTo = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cancelPenaltyPercentAppliesTo) && !is_string($cancelPenaltyPercentAppliesTo)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancelPenaltyPercentAppliesTo, true), gettype($cancelPenaltyPercentAppliesTo)), __LINE__);
-        }
         $this->CancelPenaltyPercentAppliesTo = $cancelPenaltyPercentAppliesTo;
         
         return $this;
@@ -512,10 +428,6 @@ class CancelInfo extends AbstractStructBase
      */
     public function setMethod(?string $method = null): self
     {
-        // validation for constraint: string
-        if (!is_null($method) && !is_string($method)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($method, true), gettype($method)), __LINE__);
-        }
         $this->Method = $method;
         
         return $this;
@@ -535,10 +447,6 @@ class CancelInfo extends AbstractStructBase
      */
     public function setSupported(?bool $supported = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($supported) && !is_bool($supported)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($supported, true), gettype($supported)), __LINE__);
-        }
         $this->Supported = $supported;
         
         return $this;
@@ -558,10 +466,6 @@ class CancelInfo extends AbstractStructBase
      */
     public function setURL(?string $uRL = null): self
     {
-        // validation for constraint: string
-        if (!is_null($uRL) && !is_string($uRL)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uRL, true), gettype($uRL)), __LINE__);
-        }
         $this->URL = $uRL;
         
         return $this;
@@ -581,18 +485,6 @@ class CancelInfo extends AbstractStructBase
      */
     public function setOffsetTimeUnit(?string $offsetTimeUnit = null): self
     {
-        // validation for constraint: string
-        if (!is_null($offsetTimeUnit) && !is_string($offsetTimeUnit)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($offsetTimeUnit, true), gettype($offsetTimeUnit)), __LINE__);
-        }
-        // validation for constraint: maxLength(16)
-        if (!is_null($offsetTimeUnit) && mb_strlen((string) $offsetTimeUnit) > 16) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 16', mb_strlen((string) $offsetTimeUnit)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($offsetTimeUnit) && mb_strlen((string) $offsetTimeUnit) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $offsetTimeUnit)), __LINE__);
-        }
         $this->OffsetTimeUnit = $offsetTimeUnit;
         
         return $this;
@@ -612,18 +504,6 @@ class CancelInfo extends AbstractStructBase
      */
     public function setOffsetUnitMultiplier(?int $offsetUnitMultiplier = null): self
     {
-        // validation for constraint: int
-        if (!is_null($offsetUnitMultiplier) && !(is_int($offsetUnitMultiplier) || ctype_digit($offsetUnitMultiplier))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($offsetUnitMultiplier, true), gettype($offsetUnitMultiplier)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(999)
-        if (!is_null($offsetUnitMultiplier) && $offsetUnitMultiplier > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 999', var_export($offsetUnitMultiplier, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive
-        if (!is_null($offsetUnitMultiplier) && $offsetUnitMultiplier < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($offsetUnitMultiplier, true)), __LINE__);
-        }
         $this->OffsetUnitMultiplier = $offsetUnitMultiplier;
         
         return $this;
@@ -643,18 +523,6 @@ class CancelInfo extends AbstractStructBase
      */
     public function setOffsetDropTime(?string $offsetDropTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($offsetDropTime) && !is_string($offsetDropTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($offsetDropTime, true), gettype($offsetDropTime)), __LINE__);
-        }
-        // validation for constraint: maxLength(20)
-        if (!is_null($offsetDropTime) && mb_strlen((string) $offsetDropTime) > 20) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 20', mb_strlen((string) $offsetDropTime)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($offsetDropTime) && mb_strlen((string) $offsetDropTime) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $offsetDropTime)), __LINE__);
-        }
         $this->OffsetDropTime = $offsetDropTime;
         
         return $this;

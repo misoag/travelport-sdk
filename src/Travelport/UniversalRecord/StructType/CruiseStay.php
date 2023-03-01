@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class CruiseStay extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\Package|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Package $Package = null;
+    public ?\Travelport\UniversalRecord\StructType\Package $Package = null;
     /**
      * The CabinInfo
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class CruiseStay extends AbstractStructBase
      * - ref: CabinInfo
      * @var \Travelport\UniversalRecord\StructType\CabinInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CabinInfo $CabinInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\CabinInfo $CabinInfo = null;
     /**
      * The DiningInfo
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class CruiseStay extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\DiningInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\DiningInfo $DiningInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\DiningInfo $DiningInfo = null;
     /**
      * The ShipName
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class CruiseStay extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ShipName = null;
+    public ?string $ShipName = null;
     /**
      * The DurationOfStay
      * Meta information extracted from the WSDL
@@ -58,7 +57,7 @@ class CruiseStay extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $DurationOfStay = null;
+    public ?int $DurationOfStay = null;
     /**
      * The UnitOfStay
      * Meta information extracted from the WSDL
@@ -66,7 +65,7 @@ class CruiseStay extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $UnitOfStay = null;
+    public ?string $UnitOfStay = null;
     /**
      * The BookingDate
      * Meta information extracted from the WSDL
@@ -74,7 +73,7 @@ class CruiseStay extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingDate = null;
+    public ?string $BookingDate = null;
     /**
      * The BookingAgent
      * Meta information extracted from the WSDL
@@ -85,7 +84,7 @@ class CruiseStay extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingAgent = null;
+    public ?string $BookingAgent = null;
     /**
      * The BookingCredit
      * Meta information extracted from the WSDL
@@ -96,7 +95,7 @@ class CruiseStay extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingCredit = null;
+    public ?string $BookingCredit = null;
     /**
      * The OtherPartyConfNbr
      * Meta information extracted from the WSDL
@@ -104,7 +103,7 @@ class CruiseStay extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $OtherPartyConfNbr = null;
+    public ?int $OtherPartyConfNbr = null;
     /**
      * The PassengerOrigin
      * Meta information extracted from the WSDL
@@ -115,7 +114,7 @@ class CruiseStay extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PassengerOrigin = null;
+    public ?string $PassengerOrigin = null;
     /**
      * The ConfirmationNumber
      * Meta information extracted from the WSDL
@@ -126,7 +125,7 @@ class CruiseStay extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ConfirmationNumber = null;
+    public ?string $ConfirmationNumber = null;
     /**
      * The LinkedConfNumber
      * Meta information extracted from the WSDL
@@ -137,7 +136,7 @@ class CruiseStay extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $LinkedConfNumber = null;
+    public ?string $LinkedConfNumber = null;
     /**
      * The CancellationNumber
      * Meta information extracted from the WSDL
@@ -148,7 +147,7 @@ class CruiseStay extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CancellationNumber = null;
+    public ?string $CancellationNumber = null;
     /**
      * The CancellationDate
      * Meta information extracted from the WSDL
@@ -156,7 +155,7 @@ class CruiseStay extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CancellationDate = null;
+    public ?string $CancellationDate = null;
     /**
      * The CancellationTime
      * Meta information extracted from the WSDL
@@ -164,7 +163,7 @@ class CruiseStay extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CancellationTime = null;
+    public ?string $CancellationTime = null;
     /**
      * Constructor method for CruiseStay
      * @uses CruiseStay::setPackage()
@@ -292,18 +291,6 @@ class CruiseStay extends AbstractStructBase
      */
     public function setShipName(?string $shipName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($shipName) && !is_string($shipName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($shipName, true), gettype($shipName)), __LINE__);
-        }
-        // validation for constraint: maxLength(25)
-        if (!is_null($shipName) && mb_strlen((string) $shipName) > 25) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 25', mb_strlen((string) $shipName)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($shipName) && mb_strlen((string) $shipName) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $shipName)), __LINE__);
-        }
         $this->ShipName = $shipName;
         
         return $this;
@@ -323,10 +310,6 @@ class CruiseStay extends AbstractStructBase
      */
     public function setDurationOfStay(?int $durationOfStay = null): self
     {
-        // validation for constraint: int
-        if (!is_null($durationOfStay) && !(is_int($durationOfStay) || ctype_digit($durationOfStay))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($durationOfStay, true), gettype($durationOfStay)), __LINE__);
-        }
         $this->DurationOfStay = $durationOfStay;
         
         return $this;
@@ -346,10 +329,6 @@ class CruiseStay extends AbstractStructBase
      */
     public function setUnitOfStay(?string $unitOfStay = null): self
     {
-        // validation for constraint: string
-        if (!is_null($unitOfStay) && !is_string($unitOfStay)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($unitOfStay, true), gettype($unitOfStay)), __LINE__);
-        }
         $this->UnitOfStay = $unitOfStay;
         
         return $this;
@@ -369,10 +348,6 @@ class CruiseStay extends AbstractStructBase
      */
     public function setBookingDate(?string $bookingDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingDate) && !is_string($bookingDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingDate, true), gettype($bookingDate)), __LINE__);
-        }
         $this->BookingDate = $bookingDate;
         
         return $this;
@@ -392,18 +367,6 @@ class CruiseStay extends AbstractStructBase
      */
     public function setBookingAgent(?string $bookingAgent = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingAgent) && !is_string($bookingAgent)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingAgent, true), gettype($bookingAgent)), __LINE__);
-        }
-        // validation for constraint: maxLength(12)
-        if (!is_null($bookingAgent) && mb_strlen((string) $bookingAgent) > 12) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 12', mb_strlen((string) $bookingAgent)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($bookingAgent) && mb_strlen((string) $bookingAgent) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $bookingAgent)), __LINE__);
-        }
         $this->BookingAgent = $bookingAgent;
         
         return $this;
@@ -423,18 +386,6 @@ class CruiseStay extends AbstractStructBase
      */
     public function setBookingCredit(?string $bookingCredit = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingCredit) && !is_string($bookingCredit)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingCredit, true), gettype($bookingCredit)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($bookingCredit) && mb_strlen((string) $bookingCredit) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $bookingCredit)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($bookingCredit) && mb_strlen((string) $bookingCredit) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $bookingCredit)), __LINE__);
-        }
         $this->BookingCredit = $bookingCredit;
         
         return $this;
@@ -454,10 +405,6 @@ class CruiseStay extends AbstractStructBase
      */
     public function setOtherPartyConfNbr(?int $otherPartyConfNbr = null): self
     {
-        // validation for constraint: int
-        if (!is_null($otherPartyConfNbr) && !(is_int($otherPartyConfNbr) || ctype_digit($otherPartyConfNbr))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($otherPartyConfNbr, true), gettype($otherPartyConfNbr)), __LINE__);
-        }
         $this->OtherPartyConfNbr = $otherPartyConfNbr;
         
         return $this;
@@ -477,18 +424,6 @@ class CruiseStay extends AbstractStructBase
      */
     public function setPassengerOrigin(?string $passengerOrigin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($passengerOrigin) && !is_string($passengerOrigin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passengerOrigin, true), gettype($passengerOrigin)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($passengerOrigin) && mb_strlen((string) $passengerOrigin) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $passengerOrigin)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($passengerOrigin) && mb_strlen((string) $passengerOrigin) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $passengerOrigin)), __LINE__);
-        }
         $this->PassengerOrigin = $passengerOrigin;
         
         return $this;
@@ -508,18 +443,6 @@ class CruiseStay extends AbstractStructBase
      */
     public function setConfirmationNumber(?string $confirmationNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($confirmationNumber) && !is_string($confirmationNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($confirmationNumber, true), gettype($confirmationNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(16)
-        if (!is_null($confirmationNumber) && mb_strlen((string) $confirmationNumber) > 16) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 16', mb_strlen((string) $confirmationNumber)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($confirmationNumber) && mb_strlen((string) $confirmationNumber) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $confirmationNumber)), __LINE__);
-        }
         $this->ConfirmationNumber = $confirmationNumber;
         
         return $this;
@@ -539,18 +462,6 @@ class CruiseStay extends AbstractStructBase
      */
     public function setLinkedConfNumber(?string $linkedConfNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($linkedConfNumber) && !is_string($linkedConfNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($linkedConfNumber, true), gettype($linkedConfNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(16)
-        if (!is_null($linkedConfNumber) && mb_strlen((string) $linkedConfNumber) > 16) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 16', mb_strlen((string) $linkedConfNumber)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($linkedConfNumber) && mb_strlen((string) $linkedConfNumber) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $linkedConfNumber)), __LINE__);
-        }
         $this->LinkedConfNumber = $linkedConfNumber;
         
         return $this;
@@ -570,18 +481,6 @@ class CruiseStay extends AbstractStructBase
      */
     public function setCancellationNumber(?string $cancellationNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cancellationNumber) && !is_string($cancellationNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancellationNumber, true), gettype($cancellationNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(16)
-        if (!is_null($cancellationNumber) && mb_strlen((string) $cancellationNumber) > 16) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 16', mb_strlen((string) $cancellationNumber)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($cancellationNumber) && mb_strlen((string) $cancellationNumber) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $cancellationNumber)), __LINE__);
-        }
         $this->CancellationNumber = $cancellationNumber;
         
         return $this;
@@ -601,10 +500,6 @@ class CruiseStay extends AbstractStructBase
      */
     public function setCancellationDate(?string $cancellationDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cancellationDate) && !is_string($cancellationDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancellationDate, true), gettype($cancellationDate)), __LINE__);
-        }
         $this->CancellationDate = $cancellationDate;
         
         return $this;
@@ -624,10 +519,6 @@ class CruiseStay extends AbstractStructBase
      */
     public function setCancellationTime(?string $cancellationTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cancellationTime) && !is_string($cancellationTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancellationTime, true), gettype($cancellationTime)), __LINE__);
-        }
         $this->CancellationTime = $cancellationTime;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class BrandModifiers extends AbstractStructBase
      * - minOccurs: 1
      * @var \Travelport\UniversalRecord\StructType\FareFamilyDisplay
      */
-    protected \Travelport\UniversalRecord\StructType\FareFamilyDisplay $FareFamilyDisplay;
+    public \Travelport\UniversalRecord\StructType\FareFamilyDisplay $FareFamilyDisplay;
     /**
      * The BasicDetailsOnly
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class BrandModifiers extends AbstractStructBase
      * - minOccurs: 1
      * @var \Travelport\UniversalRecord\StructType\BasicDetailsOnly
      */
-    protected \Travelport\UniversalRecord\StructType\BasicDetailsOnly $BasicDetailsOnly;
+    public \Travelport\UniversalRecord\StructType\BasicDetailsOnly $BasicDetailsOnly;
     /**
      * Constructor method for BrandModifiers
      * @uses BrandModifiers::setFareFamilyDisplay()

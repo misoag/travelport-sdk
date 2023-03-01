@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class TypeRestrictionData extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The Percentage
      * Meta information extracted from the WSDL
@@ -33,21 +32,21 @@ class TypeRestrictionData extends AbstractStructBase
      * - pattern: ([0-9]{1,2}|100)\.[0-9]{1,2}
      * @var string|null
      */
-    protected ?string $Percentage = null;
+    public ?string $Percentage = null;
     /**
      * The Name
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $Name = null;
+    public ?string $Name = null;
     /**
      * The Value
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $Value = null;
+    public ?string $Value = null;
     /**
      * Constructor method for typeRestrictionData
      * @uses TypeRestrictionData::setAmount()
@@ -82,10 +81,6 @@ class TypeRestrictionData extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -105,14 +100,6 @@ class TypeRestrictionData extends AbstractStructBase
      */
     public function setPercentage(?string $percentage = null): self
     {
-        // validation for constraint: string
-        if (!is_null($percentage) && !is_string($percentage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($percentage, true), gettype($percentage)), __LINE__);
-        }
-        // validation for constraint: pattern(([0-9]{1,2}|100)\.[0-9]{1,2})
-        if (!is_null($percentage) && !preg_match('/([0-9]{1,2}|100)\\.[0-9]{1,2}/', $percentage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /([0-9]{1,2}|100)\\.[0-9]{1,2}/', var_export($percentage, true)), __LINE__);
-        }
         $this->Percentage = $percentage;
         
         return $this;
@@ -132,10 +119,6 @@ class TypeRestrictionData extends AbstractStructBase
      */
     public function setName(?string $name = null): self
     {
-        // validation for constraint: string
-        if (!is_null($name) && !is_string($name)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
-        }
         $this->Name = $name;
         
         return $this;
@@ -155,10 +138,6 @@ class TypeRestrictionData extends AbstractStructBase
      */
     public function setValue(?string $value = null): self
     {
-        // validation for constraint: string
-        if (!is_null($value) && !is_string($value)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($value, true), gettype($value)), __LINE__);
-        }
         $this->Value = $value;
         
         return $this;

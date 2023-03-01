@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat0 = null;
+    public ?bool $Cat0 = null;
     /**
      * The Cat1
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat1 = null;
+    public ?bool $Cat1 = null;
     /**
      * The Cat2
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat2 = null;
+    public ?bool $Cat2 = null;
     /**
      * The Cat3
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat3 = null;
+    public ?bool $Cat3 = null;
     /**
      * The Cat4
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat4 = null;
+    public ?bool $Cat4 = null;
     /**
      * The Cat5
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat5 = null;
+    public ?bool $Cat5 = null;
     /**
      * The Cat6
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat6 = null;
+    public ?bool $Cat6 = null;
     /**
      * The Cat7
      * Meta information extracted from the WSDL
@@ -76,7 +75,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat7 = null;
+    public ?bool $Cat7 = null;
     /**
      * The Cat8
      * Meta information extracted from the WSDL
@@ -84,7 +83,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat8 = null;
+    public ?bool $Cat8 = null;
     /**
      * The Cat9
      * Meta information extracted from the WSDL
@@ -92,7 +91,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat9 = null;
+    public ?bool $Cat9 = null;
     /**
      * The Cat10
      * Meta information extracted from the WSDL
@@ -100,7 +99,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat10 = null;
+    public ?bool $Cat10 = null;
     /**
      * The Cat11
      * Meta information extracted from the WSDL
@@ -108,7 +107,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat11 = null;
+    public ?bool $Cat11 = null;
     /**
      * The Cat12
      * Meta information extracted from the WSDL
@@ -116,7 +115,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat12 = null;
+    public ?bool $Cat12 = null;
     /**
      * The Cat13
      * Meta information extracted from the WSDL
@@ -124,7 +123,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat13 = null;
+    public ?bool $Cat13 = null;
     /**
      * The Cat14
      * Meta information extracted from the WSDL
@@ -132,7 +131,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat14 = null;
+    public ?bool $Cat14 = null;
     /**
      * The Cat15
      * Meta information extracted from the WSDL
@@ -140,7 +139,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat15 = null;
+    public ?bool $Cat15 = null;
     /**
      * The Cat16
      * Meta information extracted from the WSDL
@@ -148,7 +147,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat16 = null;
+    public ?bool $Cat16 = null;
     /**
      * The Cat17
      * Meta information extracted from the WSDL
@@ -156,7 +155,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat17 = null;
+    public ?bool $Cat17 = null;
     /**
      * The Cat18
      * Meta information extracted from the WSDL
@@ -164,7 +163,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat18 = null;
+    public ?bool $Cat18 = null;
     /**
      * The Cat19
      * Meta information extracted from the WSDL
@@ -172,7 +171,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat19 = null;
+    public ?bool $Cat19 = null;
     /**
      * The Cat20
      * Meta information extracted from the WSDL
@@ -180,7 +179,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat20 = null;
+    public ?bool $Cat20 = null;
     /**
      * The Cat21
      * Meta information extracted from the WSDL
@@ -188,7 +187,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat21 = null;
+    public ?bool $Cat21 = null;
     /**
      * The Cat22
      * Meta information extracted from the WSDL
@@ -196,7 +195,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat22 = null;
+    public ?bool $Cat22 = null;
     /**
      * The Cat23
      * Meta information extracted from the WSDL
@@ -204,7 +203,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat23 = null;
+    public ?bool $Cat23 = null;
     /**
      * The Cat24
      * Meta information extracted from the WSDL
@@ -212,7 +211,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat24 = null;
+    public ?bool $Cat24 = null;
     /**
      * The Cat25
      * Meta information extracted from the WSDL
@@ -220,7 +219,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat25 = null;
+    public ?bool $Cat25 = null;
     /**
      * The Cat26
      * Meta information extracted from the WSDL
@@ -228,7 +227,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat26 = null;
+    public ?bool $Cat26 = null;
     /**
      * The Cat27
      * Meta information extracted from the WSDL
@@ -236,7 +235,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat27 = null;
+    public ?bool $Cat27 = null;
     /**
      * The Cat28
      * Meta information extracted from the WSDL
@@ -244,7 +243,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat28 = null;
+    public ?bool $Cat28 = null;
     /**
      * The Cat29
      * Meta information extracted from the WSDL
@@ -252,7 +251,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat29 = null;
+    public ?bool $Cat29 = null;
     /**
      * The Cat30
      * Meta information extracted from the WSDL
@@ -260,7 +259,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat30 = null;
+    public ?bool $Cat30 = null;
     /**
      * The Cat31
      * Meta information extracted from the WSDL
@@ -268,7 +267,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cat31 = null;
+    public ?bool $Cat31 = null;
     /**
      * The RestrictiveDt
      * Meta information extracted from the WSDL
@@ -276,7 +275,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RestrictiveDt = null;
+    public ?string $RestrictiveDt = null;
     /**
      * The SurchargeAmt
      * Meta information extracted from the WSDL
@@ -284,7 +283,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $SurchargeAmt = null;
+    public ?float $SurchargeAmt = null;
     /**
      * The NotUSACity
      * Meta information extracted from the WSDL
@@ -292,7 +291,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $NotUSACity = null;
+    public ?bool $NotUSACity = null;
     /**
      * The MissingRules
      * Meta information extracted from the WSDL
@@ -300,7 +299,7 @@ class OTHType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $MissingRules = null;
+    public ?bool $MissingRules = null;
     /**
      * Constructor method for OTHType
      * @uses OTHType::setCat0()
@@ -431,10 +430,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat0(?bool $cat0 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat0) && !is_bool($cat0)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat0, true), gettype($cat0)), __LINE__);
-        }
         $this->Cat0 = $cat0;
         
         return $this;
@@ -454,10 +449,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat1(?bool $cat1 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat1) && !is_bool($cat1)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat1, true), gettype($cat1)), __LINE__);
-        }
         $this->Cat1 = $cat1;
         
         return $this;
@@ -477,10 +468,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat2(?bool $cat2 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat2) && !is_bool($cat2)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat2, true), gettype($cat2)), __LINE__);
-        }
         $this->Cat2 = $cat2;
         
         return $this;
@@ -500,10 +487,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat3(?bool $cat3 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat3) && !is_bool($cat3)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat3, true), gettype($cat3)), __LINE__);
-        }
         $this->Cat3 = $cat3;
         
         return $this;
@@ -523,10 +506,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat4(?bool $cat4 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat4) && !is_bool($cat4)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat4, true), gettype($cat4)), __LINE__);
-        }
         $this->Cat4 = $cat4;
         
         return $this;
@@ -546,10 +525,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat5(?bool $cat5 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat5) && !is_bool($cat5)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat5, true), gettype($cat5)), __LINE__);
-        }
         $this->Cat5 = $cat5;
         
         return $this;
@@ -569,10 +544,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat6(?bool $cat6 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat6) && !is_bool($cat6)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat6, true), gettype($cat6)), __LINE__);
-        }
         $this->Cat6 = $cat6;
         
         return $this;
@@ -592,10 +563,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat7(?bool $cat7 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat7) && !is_bool($cat7)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat7, true), gettype($cat7)), __LINE__);
-        }
         $this->Cat7 = $cat7;
         
         return $this;
@@ -615,10 +582,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat8(?bool $cat8 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat8) && !is_bool($cat8)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat8, true), gettype($cat8)), __LINE__);
-        }
         $this->Cat8 = $cat8;
         
         return $this;
@@ -638,10 +601,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat9(?bool $cat9 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat9) && !is_bool($cat9)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat9, true), gettype($cat9)), __LINE__);
-        }
         $this->Cat9 = $cat9;
         
         return $this;
@@ -661,10 +620,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat10(?bool $cat10 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat10) && !is_bool($cat10)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat10, true), gettype($cat10)), __LINE__);
-        }
         $this->Cat10 = $cat10;
         
         return $this;
@@ -684,10 +639,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat11(?bool $cat11 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat11) && !is_bool($cat11)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat11, true), gettype($cat11)), __LINE__);
-        }
         $this->Cat11 = $cat11;
         
         return $this;
@@ -707,10 +658,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat12(?bool $cat12 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat12) && !is_bool($cat12)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat12, true), gettype($cat12)), __LINE__);
-        }
         $this->Cat12 = $cat12;
         
         return $this;
@@ -730,10 +677,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat13(?bool $cat13 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat13) && !is_bool($cat13)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat13, true), gettype($cat13)), __LINE__);
-        }
         $this->Cat13 = $cat13;
         
         return $this;
@@ -753,10 +696,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat14(?bool $cat14 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat14) && !is_bool($cat14)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat14, true), gettype($cat14)), __LINE__);
-        }
         $this->Cat14 = $cat14;
         
         return $this;
@@ -776,10 +715,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat15(?bool $cat15 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat15) && !is_bool($cat15)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat15, true), gettype($cat15)), __LINE__);
-        }
         $this->Cat15 = $cat15;
         
         return $this;
@@ -799,10 +734,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat16(?bool $cat16 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat16) && !is_bool($cat16)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat16, true), gettype($cat16)), __LINE__);
-        }
         $this->Cat16 = $cat16;
         
         return $this;
@@ -822,10 +753,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat17(?bool $cat17 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat17) && !is_bool($cat17)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat17, true), gettype($cat17)), __LINE__);
-        }
         $this->Cat17 = $cat17;
         
         return $this;
@@ -845,10 +772,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat18(?bool $cat18 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat18) && !is_bool($cat18)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat18, true), gettype($cat18)), __LINE__);
-        }
         $this->Cat18 = $cat18;
         
         return $this;
@@ -868,10 +791,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat19(?bool $cat19 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat19) && !is_bool($cat19)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat19, true), gettype($cat19)), __LINE__);
-        }
         $this->Cat19 = $cat19;
         
         return $this;
@@ -891,10 +810,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat20(?bool $cat20 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat20) && !is_bool($cat20)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat20, true), gettype($cat20)), __LINE__);
-        }
         $this->Cat20 = $cat20;
         
         return $this;
@@ -914,10 +829,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat21(?bool $cat21 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat21) && !is_bool($cat21)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat21, true), gettype($cat21)), __LINE__);
-        }
         $this->Cat21 = $cat21;
         
         return $this;
@@ -937,10 +848,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat22(?bool $cat22 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat22) && !is_bool($cat22)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat22, true), gettype($cat22)), __LINE__);
-        }
         $this->Cat22 = $cat22;
         
         return $this;
@@ -960,10 +867,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat23(?bool $cat23 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat23) && !is_bool($cat23)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat23, true), gettype($cat23)), __LINE__);
-        }
         $this->Cat23 = $cat23;
         
         return $this;
@@ -983,10 +886,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat24(?bool $cat24 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat24) && !is_bool($cat24)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat24, true), gettype($cat24)), __LINE__);
-        }
         $this->Cat24 = $cat24;
         
         return $this;
@@ -1006,10 +905,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat25(?bool $cat25 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat25) && !is_bool($cat25)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat25, true), gettype($cat25)), __LINE__);
-        }
         $this->Cat25 = $cat25;
         
         return $this;
@@ -1029,10 +924,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat26(?bool $cat26 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat26) && !is_bool($cat26)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat26, true), gettype($cat26)), __LINE__);
-        }
         $this->Cat26 = $cat26;
         
         return $this;
@@ -1052,10 +943,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat27(?bool $cat27 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat27) && !is_bool($cat27)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat27, true), gettype($cat27)), __LINE__);
-        }
         $this->Cat27 = $cat27;
         
         return $this;
@@ -1075,10 +962,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat28(?bool $cat28 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat28) && !is_bool($cat28)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat28, true), gettype($cat28)), __LINE__);
-        }
         $this->Cat28 = $cat28;
         
         return $this;
@@ -1098,10 +981,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat29(?bool $cat29 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat29) && !is_bool($cat29)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat29, true), gettype($cat29)), __LINE__);
-        }
         $this->Cat29 = $cat29;
         
         return $this;
@@ -1121,10 +1000,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat30(?bool $cat30 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat30) && !is_bool($cat30)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat30, true), gettype($cat30)), __LINE__);
-        }
         $this->Cat30 = $cat30;
         
         return $this;
@@ -1144,10 +1019,6 @@ class OTHType extends AbstractStructBase
      */
     public function setCat31(?bool $cat31 = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cat31) && !is_bool($cat31)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cat31, true), gettype($cat31)), __LINE__);
-        }
         $this->Cat31 = $cat31;
         
         return $this;
@@ -1167,10 +1038,6 @@ class OTHType extends AbstractStructBase
      */
     public function setRestrictiveDt(?string $restrictiveDt = null): self
     {
-        // validation for constraint: string
-        if (!is_null($restrictiveDt) && !is_string($restrictiveDt)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($restrictiveDt, true), gettype($restrictiveDt)), __LINE__);
-        }
         $this->RestrictiveDt = $restrictiveDt;
         
         return $this;
@@ -1190,10 +1057,6 @@ class OTHType extends AbstractStructBase
      */
     public function setSurchargeAmt(?float $surchargeAmt = null): self
     {
-        // validation for constraint: float
-        if (!is_null($surchargeAmt) && !(is_float($surchargeAmt) || is_numeric($surchargeAmt))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($surchargeAmt, true), gettype($surchargeAmt)), __LINE__);
-        }
         $this->SurchargeAmt = $surchargeAmt;
         
         return $this;
@@ -1213,10 +1076,6 @@ class OTHType extends AbstractStructBase
      */
     public function setNotUSACity(?bool $notUSACity = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($notUSACity) && !is_bool($notUSACity)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($notUSACity, true), gettype($notUSACity)), __LINE__);
-        }
         $this->NotUSACity = $notUSACity;
         
         return $this;
@@ -1236,10 +1095,6 @@ class OTHType extends AbstractStructBase
      */
     public function setMissingRules(?bool $missingRules = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($missingRules) && !is_bool($missingRules)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($missingRules, true), gettype($missingRules)), __LINE__);
-        }
         $this->MissingRules = $missingRules;
         
         return $this;

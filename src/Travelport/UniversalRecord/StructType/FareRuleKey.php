@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -26,7 +25,7 @@ class FareRuleKey extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $FareInfoRef;
+    public string $FareInfoRef;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class FareRuleKey extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ProviderCode;
+    public string $ProviderCode;
     /**
      * The _
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class FareRuleKey extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * Constructor method for FareRuleKey
      * @uses FareRuleKey::setFareInfoRef()
@@ -79,10 +78,6 @@ class FareRuleKey extends AbstractStructBase
      */
     public function setFareInfoRef(string $fareInfoRef): self
     {
-        // validation for constraint: string
-        if (!is_null($fareInfoRef) && !is_string($fareInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareInfoRef, true), gettype($fareInfoRef)), __LINE__);
-        }
         $this->FareInfoRef = $fareInfoRef;
         
         return $this;
@@ -102,18 +97,6 @@ class FareRuleKey extends AbstractStructBase
      */
     public function setProviderCode(string $providerCode): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -133,14 +116,6 @@ class FareRuleKey extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($_) && mb_strlen((string) $_) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class IndustryStandardSSR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Code = null;
+    public ?string $Code = null;
     /**
      * Constructor method for IndustryStandardSSR
      * @uses IndustryStandardSSR::setCode()
@@ -48,10 +47,6 @@ class IndustryStandardSSR extends AbstractStructBase
      */
     public function setCode(?string $code = null): self
     {
-        // validation for constraint: string
-        if (!is_null($code) && !is_string($code)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;

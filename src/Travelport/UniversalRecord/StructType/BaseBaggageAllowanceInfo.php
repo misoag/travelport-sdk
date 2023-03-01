@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
      * - ref: URLInfo
      * @var \Travelport\UniversalRecord\StructType\URLInfo[]
      */
-    protected ?array $URLInfo = null;
+    public ?array $URLInfo = null;
     /**
      * The TextInfo
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
      * - ref: TextInfo
      * @var \Travelport\UniversalRecord\StructType\TextInfo[]
      */
-    protected ?array $TextInfo = null;
+    public ?array $TextInfo = null;
     /**
      * The Origin
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Origin = null;
+    public ?string $Origin = null;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -55,7 +54,7 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Destination = null;
+    public ?string $Destination = null;
     /**
      * The Carrier
      * Meta information extracted from the WSDL
@@ -65,7 +64,7 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Carrier = null;
+    public ?string $Carrier = null;
     /**
      * Constructor method for BaseBaggageAllowanceInfo
      * @uses BaseBaggageAllowanceInfo::setURLInfo()
@@ -97,48 +96,12 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
         return $this->URLInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setURLInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setURLInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateURLInfoForArrayConstraintFromSetURLInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $baseBaggageAllowanceInfoURLInfoItem) {
-            // validation for constraint: itemType
-            if (!$baseBaggageAllowanceInfoURLInfoItem instanceof \Travelport\UniversalRecord\StructType\URLInfo) {
-                $invalidValues[] = is_object($baseBaggageAllowanceInfoURLInfoItem) ? get_class($baseBaggageAllowanceInfoURLInfoItem) : sprintf('%s(%s)', gettype($baseBaggageAllowanceInfoURLInfoItem), var_export($baseBaggageAllowanceInfoURLInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The URLInfo property can only contain items of type \Travelport\UniversalRecord\StructType\URLInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set URLInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\URLInfo[] $uRLInfo
      * @return \Travelport\UniversalRecord\StructType\BaseBaggageAllowanceInfo
      */
     public function setURLInfo(?array $uRLInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($uRLInfoArrayErrorMessage = self::validateURLInfoForArrayConstraintFromSetURLInfo($uRLInfo))) {
-            throw new InvalidArgumentException($uRLInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($uRLInfo) && count($uRLInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($uRLInfo)), __LINE__);
-        }
         $this->URLInfo = $uRLInfo;
         
         return $this;
@@ -151,14 +114,6 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
      */
     public function addToURLInfo(\Travelport\UniversalRecord\StructType\URLInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\URLInfo) {
-            throw new InvalidArgumentException(sprintf('The URLInfo property can only contain items of type \Travelport\UniversalRecord\StructType\URLInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->URLInfo) && count($this->URLInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->URLInfo)), __LINE__);
-        }
         $this->URLInfo[] = $item;
         
         return $this;
@@ -172,48 +127,12 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
         return $this->TextInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setTextInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setTextInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTextInfoForArrayConstraintFromSetTextInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $baseBaggageAllowanceInfoTextInfoItem) {
-            // validation for constraint: itemType
-            if (!$baseBaggageAllowanceInfoTextInfoItem instanceof \Travelport\UniversalRecord\StructType\TextInfo) {
-                $invalidValues[] = is_object($baseBaggageAllowanceInfoTextInfoItem) ? get_class($baseBaggageAllowanceInfoTextInfoItem) : sprintf('%s(%s)', gettype($baseBaggageAllowanceInfoTextInfoItem), var_export($baseBaggageAllowanceInfoTextInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The TextInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TextInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set TextInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TextInfo[] $textInfo
      * @return \Travelport\UniversalRecord\StructType\BaseBaggageAllowanceInfo
      */
     public function setTextInfo(?array $textInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($textInfoArrayErrorMessage = self::validateTextInfoForArrayConstraintFromSetTextInfo($textInfo))) {
-            throw new InvalidArgumentException($textInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($textInfo) && count($textInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($textInfo)), __LINE__);
-        }
         $this->TextInfo = $textInfo;
         
         return $this;
@@ -226,14 +145,6 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
      */
     public function addToTextInfo(\Travelport\UniversalRecord\StructType\TextInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TextInfo) {
-            throw new InvalidArgumentException(sprintf('The TextInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TextInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->TextInfo) && count($this->TextInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->TextInfo)), __LINE__);
-        }
         $this->TextInfo[] = $item;
         
         return $this;
@@ -253,14 +164,6 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
      */
     public function setOrigin(?string $origin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($origin) && mb_strlen((string) $origin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -280,14 +183,6 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
      */
     public function setDestination(?string $destination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destination) && mb_strlen((string) $destination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -307,14 +202,6 @@ class BaseBaggageAllowanceInfo extends AbstractStructBase
      */
     public function setCarrier(?string $carrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($carrier) && !is_string($carrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrier, true), gettype($carrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($carrier) && mb_strlen((string) $carrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $carrier)), __LINE__);
-        }
         $this->Carrier = $carrier;
         
         return $this;

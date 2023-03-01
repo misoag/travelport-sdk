@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class BrandingInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $CommercialName;
+    public string $CommercialName;
     /**
      * The PriceRange
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class BrandingInfo extends AbstractStructBase
      * - ref: PriceRange
      * @var \Travelport\UniversalRecord\StructType\PriceRange[]
      */
-    protected ?array $PriceRange = null;
+    public ?array $PriceRange = null;
     /**
      * The Text
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class BrandingInfo extends AbstractStructBase
      * - ref: Text
      * @var \Travelport\UniversalRecord\StructType\TypeTextElement[]
      */
-    protected ?array $Text = null;
+    public ?array $Text = null;
     /**
      * The Title
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class BrandingInfo extends AbstractStructBase
      * - ref: Title
      * @var \Travelport\UniversalRecord\StructType\TypeTextElement[]
      */
-    protected ?array $Title = null;
+    public ?array $Title = null;
     /**
      * The ImageLocation
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class BrandingInfo extends AbstractStructBase
      * - ref: ImageLocation
      * @var \Travelport\UniversalRecord\StructType\ImageLocation[]
      */
-    protected ?array $ImageLocation = null;
+    public ?array $ImageLocation = null;
     /**
      * The ServiceGroup
      * Meta information extracted from the WSDL
@@ -67,7 +66,7 @@ class BrandingInfo extends AbstractStructBase
      * - ref: ServiceGroup
      * @var \Travelport\UniversalRecord\StructType\ServiceGroup|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ServiceGroup $ServiceGroup = null;
+    public ?\Travelport\UniversalRecord\StructType\ServiceGroup $ServiceGroup = null;
     /**
      * The AirSegmentRef
      * Meta information extracted from the WSDL
@@ -75,7 +74,7 @@ class BrandingInfo extends AbstractStructBase
      * - maxOccurs: 99
      * @var \Travelport\UniversalRecord\StructType\TypeSegmentRef[]
      */
-    protected ?array $AirSegmentRef = null;
+    public ?array $AirSegmentRef = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -84,7 +83,7 @@ class BrandingInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The ServiceSubCode
      * Meta information extracted from the WSDL
@@ -92,7 +91,7 @@ class BrandingInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ServiceSubCode = null;
+    public ?string $ServiceSubCode = null;
     /**
      * The ExternalServiceName
      * Meta information extracted from the WSDL
@@ -100,7 +99,7 @@ class BrandingInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ExternalServiceName = null;
+    public ?string $ExternalServiceName = null;
     /**
      * The ServiceType
      * Meta information extracted from the WSDL
@@ -108,7 +107,7 @@ class BrandingInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ServiceType = null;
+    public ?string $ServiceType = null;
     /**
      * The Chargeable
      * Meta information extracted from the WSDL
@@ -116,7 +115,7 @@ class BrandingInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Chargeable = null;
+    public ?string $Chargeable = null;
     /**
      * Constructor method for BrandingInfo
      * @uses BrandingInfo::setCommercialName()
@@ -175,10 +174,6 @@ class BrandingInfo extends AbstractStructBase
      */
     public function setCommercialName(string $commercialName): self
     {
-        // validation for constraint: string
-        if (!is_null($commercialName) && !is_string($commercialName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($commercialName, true), gettype($commercialName)), __LINE__);
-        }
         $this->CommercialName = $commercialName;
         
         return $this;
@@ -192,48 +187,12 @@ class BrandingInfo extends AbstractStructBase
         return $this->PriceRange;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPriceRange method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPriceRange method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePriceRangeForArrayConstraintFromSetPriceRange(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $brandingInfoPriceRangeItem) {
-            // validation for constraint: itemType
-            if (!$brandingInfoPriceRangeItem instanceof \Travelport\UniversalRecord\StructType\PriceRange) {
-                $invalidValues[] = is_object($brandingInfoPriceRangeItem) ? get_class($brandingInfoPriceRangeItem) : sprintf('%s(%s)', gettype($brandingInfoPriceRangeItem), var_export($brandingInfoPriceRangeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The PriceRange property can only contain items of type \Travelport\UniversalRecord\StructType\PriceRange, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set PriceRange value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\PriceRange[] $priceRange
      * @return \Travelport\UniversalRecord\StructType\BrandingInfo
      */
     public function setPriceRange(?array $priceRange = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($priceRangeArrayErrorMessage = self::validatePriceRangeForArrayConstraintFromSetPriceRange($priceRange))) {
-            throw new InvalidArgumentException($priceRangeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($priceRange) && count($priceRange) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($priceRange)), __LINE__);
-        }
         $this->PriceRange = $priceRange;
         
         return $this;
@@ -246,14 +205,6 @@ class BrandingInfo extends AbstractStructBase
      */
     public function addToPriceRange(\Travelport\UniversalRecord\StructType\PriceRange $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\PriceRange) {
-            throw new InvalidArgumentException(sprintf('The PriceRange property can only contain items of type \Travelport\UniversalRecord\StructType\PriceRange, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($this->PriceRange) && count($this->PriceRange) >= 5) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->PriceRange)), __LINE__);
-        }
         $this->PriceRange[] = $item;
         
         return $this;
@@ -267,48 +218,12 @@ class BrandingInfo extends AbstractStructBase
         return $this->Text;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setText method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setText method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTextForArrayConstraintFromSetText(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $brandingInfoTextItem) {
-            // validation for constraint: itemType
-            if (!$brandingInfoTextItem instanceof \Travelport\UniversalRecord\StructType\TypeTextElement) {
-                $invalidValues[] = is_object($brandingInfoTextItem) ? get_class($brandingInfoTextItem) : sprintf('%s(%s)', gettype($brandingInfoTextItem), var_export($brandingInfoTextItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Text property can only contain items of type \Travelport\UniversalRecord\StructType\TypeTextElement, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Text value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeTextElement[] $text
      * @return \Travelport\UniversalRecord\StructType\BrandingInfo
      */
     public function setText(?array $text = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($textArrayErrorMessage = self::validateTextForArrayConstraintFromSetText($text))) {
-            throw new InvalidArgumentException($textArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($text) && count($text) > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 99', count($text)), __LINE__);
-        }
         $this->Text = $text;
         
         return $this;
@@ -321,14 +236,6 @@ class BrandingInfo extends AbstractStructBase
      */
     public function addToText(\Travelport\UniversalRecord\StructType\TypeTextElement $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeTextElement) {
-            throw new InvalidArgumentException(sprintf('The Text property can only contain items of type \Travelport\UniversalRecord\StructType\TypeTextElement, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($this->Text) && count($this->Text) >= 99) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 99', count($this->Text)), __LINE__);
-        }
         $this->Text[] = $item;
         
         return $this;
@@ -342,48 +249,12 @@ class BrandingInfo extends AbstractStructBase
         return $this->Title;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setTitle method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setTitle method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTitleForArrayConstraintFromSetTitle(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $brandingInfoTitleItem) {
-            // validation for constraint: itemType
-            if (!$brandingInfoTitleItem instanceof \Travelport\UniversalRecord\StructType\TypeTextElement) {
-                $invalidValues[] = is_object($brandingInfoTitleItem) ? get_class($brandingInfoTitleItem) : sprintf('%s(%s)', gettype($brandingInfoTitleItem), var_export($brandingInfoTitleItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Title property can only contain items of type \Travelport\UniversalRecord\StructType\TypeTextElement, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Title value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeTextElement[] $title
      * @return \Travelport\UniversalRecord\StructType\BrandingInfo
      */
     public function setTitle(?array $title = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($titleArrayErrorMessage = self::validateTitleForArrayConstraintFromSetTitle($title))) {
-            throw new InvalidArgumentException($titleArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(2)
-        if (is_array($title) && count($title) > 2) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 2', count($title)), __LINE__);
-        }
         $this->Title = $title;
         
         return $this;
@@ -396,14 +267,6 @@ class BrandingInfo extends AbstractStructBase
      */
     public function addToTitle(\Travelport\UniversalRecord\StructType\TypeTextElement $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeTextElement) {
-            throw new InvalidArgumentException(sprintf('The Title property can only contain items of type \Travelport\UniversalRecord\StructType\TypeTextElement, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(2)
-        if (is_array($this->Title) && count($this->Title) >= 2) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 2', count($this->Title)), __LINE__);
-        }
         $this->Title[] = $item;
         
         return $this;
@@ -417,48 +280,12 @@ class BrandingInfo extends AbstractStructBase
         return $this->ImageLocation;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setImageLocation method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setImageLocation method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateImageLocationForArrayConstraintFromSetImageLocation(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $brandingInfoImageLocationItem) {
-            // validation for constraint: itemType
-            if (!$brandingInfoImageLocationItem instanceof \Travelport\UniversalRecord\StructType\ImageLocation) {
-                $invalidValues[] = is_object($brandingInfoImageLocationItem) ? get_class($brandingInfoImageLocationItem) : sprintf('%s(%s)', gettype($brandingInfoImageLocationItem), var_export($brandingInfoImageLocationItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ImageLocation property can only contain items of type \Travelport\UniversalRecord\StructType\ImageLocation, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ImageLocation value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\ImageLocation[] $imageLocation
      * @return \Travelport\UniversalRecord\StructType\BrandingInfo
      */
     public function setImageLocation(?array $imageLocation = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($imageLocationArrayErrorMessage = self::validateImageLocationForArrayConstraintFromSetImageLocation($imageLocation))) {
-            throw new InvalidArgumentException($imageLocationArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(3)
-        if (is_array($imageLocation) && count($imageLocation) > 3) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 3', count($imageLocation)), __LINE__);
-        }
         $this->ImageLocation = $imageLocation;
         
         return $this;
@@ -471,14 +298,6 @@ class BrandingInfo extends AbstractStructBase
      */
     public function addToImageLocation(\Travelport\UniversalRecord\StructType\ImageLocation $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\ImageLocation) {
-            throw new InvalidArgumentException(sprintf('The ImageLocation property can only contain items of type \Travelport\UniversalRecord\StructType\ImageLocation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(3)
-        if (is_array($this->ImageLocation) && count($this->ImageLocation) >= 3) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 3', count($this->ImageLocation)), __LINE__);
-        }
         $this->ImageLocation[] = $item;
         
         return $this;
@@ -511,48 +330,12 @@ class BrandingInfo extends AbstractStructBase
         return $this->AirSegmentRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirSegmentRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegmentRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAirSegmentRefForArrayConstraintFromSetAirSegmentRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $brandingInfoAirSegmentRefItem) {
-            // validation for constraint: itemType
-            if (!$brandingInfoAirSegmentRefItem instanceof \Travelport\UniversalRecord\StructType\TypeSegmentRef) {
-                $invalidValues[] = is_object($brandingInfoAirSegmentRefItem) ? get_class($brandingInfoAirSegmentRefItem) : sprintf('%s(%s)', gettype($brandingInfoAirSegmentRefItem), var_export($brandingInfoAirSegmentRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AirSegmentRef property can only contain items of type \Travelport\UniversalRecord\StructType\TypeSegmentRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AirSegmentRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeSegmentRef[] $airSegmentRef
      * @return \Travelport\UniversalRecord\StructType\BrandingInfo
      */
     public function setAirSegmentRef(?array $airSegmentRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($airSegmentRefArrayErrorMessage = self::validateAirSegmentRefForArrayConstraintFromSetAirSegmentRef($airSegmentRef))) {
-            throw new InvalidArgumentException($airSegmentRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($airSegmentRef) && count($airSegmentRef) > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 99', count($airSegmentRef)), __LINE__);
-        }
         $this->AirSegmentRef = $airSegmentRef;
         
         return $this;
@@ -565,14 +348,6 @@ class BrandingInfo extends AbstractStructBase
      */
     public function addToAirSegmentRef(\Travelport\UniversalRecord\StructType\TypeSegmentRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeSegmentRef) {
-            throw new InvalidArgumentException(sprintf('The AirSegmentRef property can only contain items of type \Travelport\UniversalRecord\StructType\TypeSegmentRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($this->AirSegmentRef) && count($this->AirSegmentRef) >= 99) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 99', count($this->AirSegmentRef)), __LINE__);
-        }
         $this->AirSegmentRef[] = $item;
         
         return $this;
@@ -592,10 +367,6 @@ class BrandingInfo extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -615,10 +386,6 @@ class BrandingInfo extends AbstractStructBase
      */
     public function setServiceSubCode(?string $serviceSubCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($serviceSubCode) && !is_string($serviceSubCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($serviceSubCode, true), gettype($serviceSubCode)), __LINE__);
-        }
         $this->ServiceSubCode = $serviceSubCode;
         
         return $this;
@@ -638,10 +405,6 @@ class BrandingInfo extends AbstractStructBase
      */
     public function setExternalServiceName(?string $externalServiceName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($externalServiceName) && !is_string($externalServiceName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($externalServiceName, true), gettype($externalServiceName)), __LINE__);
-        }
         $this->ExternalServiceName = $externalServiceName;
         
         return $this;
@@ -661,10 +424,6 @@ class BrandingInfo extends AbstractStructBase
      */
     public function setServiceType(?string $serviceType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($serviceType) && !is_string($serviceType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($serviceType, true), gettype($serviceType)), __LINE__);
-        }
         $this->ServiceType = $serviceType;
         
         return $this;
@@ -684,10 +443,6 @@ class BrandingInfo extends AbstractStructBase
      */
     public function setChargeable(?string $chargeable = null): self
     {
-        // validation for constraint: string
-        if (!is_null($chargeable) && !is_string($chargeable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($chargeable, true), gettype($chargeable)), __LINE__);
-        }
         $this->Chargeable = $chargeable;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class CO2Emissions extends AbstractStructBase
      * - ref: CO2Emission
      * @var \Travelport\UniversalRecord\StructType\CO2Emission[]
      */
-    protected ?array $CO2Emission = null;
+    public ?array $CO2Emission = null;
     /**
      * The TotalValue
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class CO2Emissions extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $TotalValue = null;
+    public ?float $TotalValue = null;
     /**
      * The Unit
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class CO2Emissions extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Unit = null;
+    public ?string $Unit = null;
     /**
      * The Category
      * Meta information extracted from the WSDL
@@ -53,7 +52,7 @@ class CO2Emissions extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Category = null;
+    public ?string $Category = null;
     /**
      * The Source
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class CO2Emissions extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Source = null;
+    public ?string $Source = null;
     /**
      * Constructor method for CO2Emissions
      * @uses CO2Emissions::setCO2Emission()
@@ -96,48 +95,12 @@ class CO2Emissions extends AbstractStructBase
         return $this->CO2Emission;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setCO2Emission method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setCO2Emission method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateCO2EmissionForArrayConstraintFromSetCO2Emission(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $cO2EmissionsCO2EmissionItem) {
-            // validation for constraint: itemType
-            if (!$cO2EmissionsCO2EmissionItem instanceof \Travelport\UniversalRecord\StructType\CO2Emission) {
-                $invalidValues[] = is_object($cO2EmissionsCO2EmissionItem) ? get_class($cO2EmissionsCO2EmissionItem) : sprintf('%s(%s)', gettype($cO2EmissionsCO2EmissionItem), var_export($cO2EmissionsCO2EmissionItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The CO2Emission property can only contain items of type \Travelport\UniversalRecord\StructType\CO2Emission, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set CO2Emission value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\CO2Emission[] $cO2Emission
      * @return \Travelport\UniversalRecord\StructType\CO2Emissions
      */
     public function setCO2Emission(?array $cO2Emission = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($cO2EmissionArrayErrorMessage = self::validateCO2EmissionForArrayConstraintFromSetCO2Emission($cO2Emission))) {
-            throw new InvalidArgumentException($cO2EmissionArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($cO2Emission) && count($cO2Emission) > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 99', count($cO2Emission)), __LINE__);
-        }
         $this->CO2Emission = $cO2Emission;
         
         return $this;
@@ -150,14 +113,6 @@ class CO2Emissions extends AbstractStructBase
      */
     public function addToCO2Emission(\Travelport\UniversalRecord\StructType\CO2Emission $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\CO2Emission) {
-            throw new InvalidArgumentException(sprintf('The CO2Emission property can only contain items of type \Travelport\UniversalRecord\StructType\CO2Emission, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($this->CO2Emission) && count($this->CO2Emission) >= 99) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 99', count($this->CO2Emission)), __LINE__);
-        }
         $this->CO2Emission[] = $item;
         
         return $this;
@@ -177,10 +132,6 @@ class CO2Emissions extends AbstractStructBase
      */
     public function setTotalValue(?float $totalValue = null): self
     {
-        // validation for constraint: float
-        if (!is_null($totalValue) && !(is_float($totalValue) || is_numeric($totalValue))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($totalValue, true), gettype($totalValue)), __LINE__);
-        }
         $this->TotalValue = $totalValue;
         
         return $this;
@@ -200,18 +151,6 @@ class CO2Emissions extends AbstractStructBase
      */
     public function setUnit(?string $unit = null): self
     {
-        // validation for constraint: string
-        if (!is_null($unit) && !is_string($unit)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($unit, true), gettype($unit)), __LINE__);
-        }
-        // validation for constraint: maxLength(64)
-        if (!is_null($unit) && mb_strlen((string) $unit) > 64) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 64', mb_strlen((string) $unit)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($unit) && mb_strlen((string) $unit) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $unit)), __LINE__);
-        }
         $this->Unit = $unit;
         
         return $this;
@@ -231,18 +170,6 @@ class CO2Emissions extends AbstractStructBase
      */
     public function setCategory(?string $category = null): self
     {
-        // validation for constraint: string
-        if (!is_null($category) && !is_string($category)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($category, true), gettype($category)), __LINE__);
-        }
-        // validation for constraint: maxLength(64)
-        if (!is_null($category) && mb_strlen((string) $category) > 64) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 64', mb_strlen((string) $category)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($category) && mb_strlen((string) $category) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $category)), __LINE__);
-        }
         $this->Category = $category;
         
         return $this;
@@ -262,18 +189,6 @@ class CO2Emissions extends AbstractStructBase
      */
     public function setSource(?string $source = null): self
     {
-        // validation for constraint: string
-        if (!is_null($source) && !is_string($source)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($source, true), gettype($source)), __LINE__);
-        }
-        // validation for constraint: maxLength(64)
-        if (!is_null($source) && mb_strlen((string) $source) > 64) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 64', mb_strlen((string) $source)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($source) && mb_strlen((string) $source) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $source)), __LINE__);
-        }
         $this->Source = $source;
         
         return $this;

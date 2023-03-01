@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class TypeHotelReferencePoint extends AbstractStructBase
      * - maxLength: 30
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The Country
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class TypeHotelReferencePoint extends AbstractStructBase
      * - length: 2
      * @var string|null
      */
-    protected ?string $Country = null;
+    public ?string $Country = null;
     /**
      * The State
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class TypeHotelReferencePoint extends AbstractStructBase
      * - maxLength: 6
      * @var string|null
      */
-    protected ?string $State = null;
+    public ?string $State = null;
     /**
      * Constructor method for typeHotelReferencePoint
      * @uses TypeHotelReferencePoint::set_()
@@ -73,14 +72,6 @@ class TypeHotelReferencePoint extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
-        // validation for constraint: maxLength(30)
-        if (!is_null($_) && mb_strlen((string) $_) > 30) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 30', mb_strlen((string) $_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -100,14 +91,6 @@ class TypeHotelReferencePoint extends AbstractStructBase
      */
     public function setCountry(?string $country = null): self
     {
-        // validation for constraint: string
-        if (!is_null($country) && !is_string($country)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($country, true), gettype($country)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($country) && mb_strlen((string) $country) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $country)), __LINE__);
-        }
         $this->Country = $country;
         
         return $this;
@@ -127,14 +110,6 @@ class TypeHotelReferencePoint extends AbstractStructBase
      */
     public function setState(?string $state = null): self
     {
-        // validation for constraint: string
-        if (!is_null($state) && !is_string($state)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($state, true), gettype($state)), __LINE__);
-        }
-        // validation for constraint: maxLength(6)
-        if (!is_null($state) && mb_strlen((string) $state) > 6) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 6', mb_strlen((string) $state)), __LINE__);
-        }
         $this->State = $state;
         
         return $this;

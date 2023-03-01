@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class GuestInformation extends AbstractStructBase
      * - ref: NumberOfAdults
      * @var \Travelport\Hotel\StructType\NumberOfAdults|null
      */
-    protected ?\Travelport\Hotel\StructType\NumberOfAdults $NumberOfAdults = null;
+    public ?\Travelport\Hotel\StructType\NumberOfAdults $NumberOfAdults = null;
     /**
      * The NumberOfChildren
      * Meta information extracted from the WSDL
@@ -30,21 +29,21 @@ class GuestInformation extends AbstractStructBase
      * - ref: NumberOfChildren
      * @var \Travelport\Hotel\StructType\NumberOfChildren|null
      */
-    protected ?\Travelport\Hotel\StructType\NumberOfChildren $NumberOfChildren = null;
+    public ?\Travelport\Hotel\StructType\NumberOfChildren $NumberOfChildren = null;
     /**
      * The ExtraChild
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\ExtraChild|null
      */
-    protected ?\Travelport\Hotel\StructType\ExtraChild $ExtraChild = null;
+    public ?\Travelport\Hotel\StructType\ExtraChild $ExtraChild = null;
     /**
      * The NumberOfRooms
      * Meta information extracted from the WSDL
      * - use: optional
      * @var int|null
      */
-    protected ?int $NumberOfRooms = null;
+    public ?int $NumberOfRooms = null;
     /**
      * Constructor method for GuestInformation
      * @uses GuestInformation::setNumberOfAdults()
@@ -136,10 +135,6 @@ class GuestInformation extends AbstractStructBase
      */
     public function setNumberOfRooms(?int $numberOfRooms = null): self
     {
-        // validation for constraint: int
-        if (!is_null($numberOfRooms) && !(is_int($numberOfRooms) || ctype_digit($numberOfRooms))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($numberOfRooms, true), gettype($numberOfRooms)), __LINE__);
-        }
         $this->NumberOfRooms = $numberOfRooms;
         
         return $this;

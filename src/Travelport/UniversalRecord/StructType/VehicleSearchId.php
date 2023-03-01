@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class VehicleSearchId extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $MediaLinksSearchId;
+    public string $MediaLinksSearchId;
     /**
      * Constructor method for VehicleSearchId
      * @uses VehicleSearchId::setMediaLinksSearchId()
@@ -48,10 +47,6 @@ class VehicleSearchId extends AbstractStructBase
      */
     public function setMediaLinksSearchId(string $mediaLinksSearchId): self
     {
-        // validation for constraint: string
-        if (!is_null($mediaLinksSearchId) && !is_string($mediaLinksSearchId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mediaLinksSearchId, true), gettype($mediaLinksSearchId)), __LINE__);
-        }
         $this->MediaLinksSearchId = $mediaLinksSearchId;
         
         return $this;

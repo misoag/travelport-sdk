@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,21 +20,21 @@ class TypeRestrictionLengthOfStay extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Length = null;
+    public ?int $Length = null;
     /**
      * The StayUnit
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $StayUnit = null;
+    public ?string $StayUnit = null;
     /**
      * The StayDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $StayDate = null;
+    public ?string $StayDate = null;
     /**
      * The MoreRulesPresent
      * Meta information extracted from the WSDL
@@ -43,7 +42,7 @@ class TypeRestrictionLengthOfStay extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $MoreRulesPresent = null;
+    public ?bool $MoreRulesPresent = null;
     /**
      * Constructor method for typeRestrictionLengthOfStay
      * @uses TypeRestrictionLengthOfStay::setLength()
@@ -78,10 +77,6 @@ class TypeRestrictionLengthOfStay extends AbstractStructBase
      */
     public function setLength(?int $length = null): self
     {
-        // validation for constraint: int
-        if (!is_null($length) && !(is_int($length) || ctype_digit($length))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($length, true), gettype($length)), __LINE__);
-        }
         $this->Length = $length;
         
         return $this;
@@ -96,18 +91,11 @@ class TypeRestrictionLengthOfStay extends AbstractStructBase
     }
     /**
      * Set StayUnit value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeStayUnit::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeStayUnit::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $stayUnit
      * @return \Travelport\UniversalRecord\StructType\TypeRestrictionLengthOfStay
      */
     public function setStayUnit(?string $stayUnit = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeStayUnit::valueIsValid($stayUnit)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeStayUnit', is_array($stayUnit) ? implode(', ', $stayUnit) : var_export($stayUnit, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeStayUnit::getValidValues())), __LINE__);
-        }
         $this->StayUnit = $stayUnit;
         
         return $this;
@@ -127,10 +115,6 @@ class TypeRestrictionLengthOfStay extends AbstractStructBase
      */
     public function setStayDate(?string $stayDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($stayDate) && !is_string($stayDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($stayDate, true), gettype($stayDate)), __LINE__);
-        }
         $this->StayDate = $stayDate;
         
         return $this;
@@ -150,10 +134,6 @@ class TypeRestrictionLengthOfStay extends AbstractStructBase
      */
     public function setMoreRulesPresent(?bool $moreRulesPresent = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($moreRulesPresent) && !is_bool($moreRulesPresent)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($moreRulesPresent, true), gettype($moreRulesPresent)), __LINE__);
-        }
         $this->MoreRulesPresent = $moreRulesPresent;
         
         return $this;

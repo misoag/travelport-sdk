@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class InvoluntaryChange extends AbstractStructBase
      * - ref: TicketEndorsement
      * @var \Travelport\UniversalRecord\StructType\TicketEndorsement
      */
-    protected \Travelport\UniversalRecord\StructType\TicketEndorsement $TicketEndorsement;
+    public \Travelport\UniversalRecord\StructType\TicketEndorsement $TicketEndorsement;
     /**
      * Constructor method for InvoluntaryChange
      * @uses InvoluntaryChange::setTicketEndorsement()

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,42 +21,42 @@ class SavedTripSearchReq extends BaseReq
      * - ref: SavedTripSearchModifiers
      * @var \Travelport\UniversalRecord\StructType\SavedTripSearchModifiers|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\SavedTripSearchModifiers $SavedTripSearchModifiers = null;
+    public ?\Travelport\UniversalRecord\StructType\SavedTripSearchModifiers $SavedTripSearchModifiers = null;
     /**
      * The TravelerCriteria
      * @var \Travelport\UniversalRecord\StructType\TravelerCriteria|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TravelerCriteria $TravelerCriteria = null;
+    public ?\Travelport\UniversalRecord\StructType\TravelerCriteria $TravelerCriteria = null;
     /**
      * The SearchAgent
      * @var \Travelport\UniversalRecord\StructType\SearchAgent|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\SearchAgent $SearchAgent = null;
+    public ?\Travelport\UniversalRecord\StructType\SearchAgent $SearchAgent = null;
     /**
      * The AirReservationCriteria
      * @var \Travelport\UniversalRecord\StructType\AirReservationCriteria|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AirReservationCriteria $AirReservationCriteria = null;
+    public ?\Travelport\UniversalRecord\StructType\AirReservationCriteria $AirReservationCriteria = null;
     /**
      * The HotelReservationCriteria
      * @var \Travelport\UniversalRecord\StructType\HotelReservationCriteria|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\HotelReservationCriteria $HotelReservationCriteria = null;
+    public ?\Travelport\UniversalRecord\StructType\HotelReservationCriteria $HotelReservationCriteria = null;
     /**
      * The VehicleReservationCriteria
      * @var \Travelport\UniversalRecord\StructType\VehicleReservationCriteria|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\VehicleReservationCriteria $VehicleReservationCriteria = null;
+    public ?\Travelport\UniversalRecord\StructType\VehicleReservationCriteria $VehicleReservationCriteria = null;
     /**
      * The RailReservationCriteria
      * @var \Travelport\UniversalRecord\StructType\RailReservationCriteria|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\RailReservationCriteria $RailReservationCriteria = null;
+    public ?\Travelport\UniversalRecord\StructType\RailReservationCriteria $RailReservationCriteria = null;
     /**
      * The RecordStatus
      * @var string|null
      */
-    protected ?string $RecordStatus = null;
+    public ?string $RecordStatus = null;
     /**
      * Constructor method for SavedTripSearchReq
      * @uses SavedTripSearchReq::setSavedTripSearchModifiers()
@@ -232,18 +231,11 @@ class SavedTripSearchReq extends BaseReq
     }
     /**
      * Set RecordStatus value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeSavedTripRecordStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeSavedTripRecordStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $recordStatus
      * @return \Travelport\UniversalRecord\StructType\SavedTripSearchReq
      */
     public function setRecordStatus(?string $recordStatus = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeSavedTripRecordStatus::valueIsValid($recordStatus)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeSavedTripRecordStatus', is_array($recordStatus) ? implode(', ', $recordStatus) : var_export($recordStatus, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeSavedTripRecordStatus::getValidValues())), __LINE__);
-        }
         $this->RecordStatus = $recordStatus;
         
         return $this;

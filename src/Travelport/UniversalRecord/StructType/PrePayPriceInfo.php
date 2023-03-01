@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class PrePayPriceInfo extends AbstractStructBase
      * - ref: TaxInfo
      * @var \Travelport\UniversalRecord\StructType\TypeTaxInfo[]
      */
-    protected ?array $TaxInfo = null;
+    public ?array $TaxInfo = null;
     /**
      * The BaseFare
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class PrePayPriceInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BaseFare = null;
+    public ?string $BaseFare = null;
     /**
      * The TotalFare
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class PrePayPriceInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TotalFare = null;
+    public ?string $TotalFare = null;
     /**
      * The TotalTax
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class PrePayPriceInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TotalTax = null;
+    public ?string $TotalTax = null;
     /**
      * Constructor method for PrePayPriceInfo
      * @uses PrePayPriceInfo::setTaxInfo()
@@ -79,48 +78,12 @@ class PrePayPriceInfo extends AbstractStructBase
         return $this->TaxInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setTaxInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setTaxInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTaxInfoForArrayConstraintFromSetTaxInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $prePayPriceInfoTaxInfoItem) {
-            // validation for constraint: itemType
-            if (!$prePayPriceInfoTaxInfoItem instanceof \Travelport\UniversalRecord\StructType\TypeTaxInfo) {
-                $invalidValues[] = is_object($prePayPriceInfoTaxInfoItem) ? get_class($prePayPriceInfoTaxInfoItem) : sprintf('%s(%s)', gettype($prePayPriceInfoTaxInfoItem), var_export($prePayPriceInfoTaxInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The TaxInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TypeTaxInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set TaxInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeTaxInfo[] $taxInfo
      * @return \Travelport\UniversalRecord\StructType\PrePayPriceInfo
      */
     public function setTaxInfo(?array $taxInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($taxInfoArrayErrorMessage = self::validateTaxInfoForArrayConstraintFromSetTaxInfo($taxInfo))) {
-            throw new InvalidArgumentException($taxInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($taxInfo) && count($taxInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($taxInfo)), __LINE__);
-        }
         $this->TaxInfo = $taxInfo;
         
         return $this;
@@ -133,14 +96,6 @@ class PrePayPriceInfo extends AbstractStructBase
      */
     public function addToTaxInfo(\Travelport\UniversalRecord\StructType\TypeTaxInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeTaxInfo) {
-            throw new InvalidArgumentException(sprintf('The TaxInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TypeTaxInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->TaxInfo) && count($this->TaxInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->TaxInfo)), __LINE__);
-        }
         $this->TaxInfo[] = $item;
         
         return $this;
@@ -160,10 +115,6 @@ class PrePayPriceInfo extends AbstractStructBase
      */
     public function setBaseFare(?string $baseFare = null): self
     {
-        // validation for constraint: string
-        if (!is_null($baseFare) && !is_string($baseFare)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($baseFare, true), gettype($baseFare)), __LINE__);
-        }
         $this->BaseFare = $baseFare;
         
         return $this;
@@ -183,10 +134,6 @@ class PrePayPriceInfo extends AbstractStructBase
      */
     public function setTotalFare(?string $totalFare = null): self
     {
-        // validation for constraint: string
-        if (!is_null($totalFare) && !is_string($totalFare)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($totalFare, true), gettype($totalFare)), __LINE__);
-        }
         $this->TotalFare = $totalFare;
         
         return $this;
@@ -206,10 +153,6 @@ class PrePayPriceInfo extends AbstractStructBase
      */
     public function setTotalTax(?string $totalTax = null): self
     {
-        // validation for constraint: string
-        if (!is_null($totalTax) && !is_string($totalTax)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($totalTax, true), gettype($totalTax)), __LINE__);
-        }
         $this->TotalTax = $totalTax;
         
         return $this;

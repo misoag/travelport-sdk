@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class SpecificSeatAssignment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $BookingTravelerRef;
+    public string $BookingTravelerRef;
     /**
      * The SegmentRef
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class SpecificSeatAssignment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $SegmentRef;
+    public string $SegmentRef;
     /**
      * The SeatId
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class SpecificSeatAssignment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $SeatId;
+    public string $SeatId;
     /**
      * The FlightDetailRef
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class SpecificSeatAssignment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FlightDetailRef = null;
+    public ?string $FlightDetailRef = null;
     /**
      * The RailCoachNumber
      * Meta information extracted from the WSDL
@@ -58,7 +57,7 @@ class SpecificSeatAssignment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RailCoachNumber = null;
+    public ?string $RailCoachNumber = null;
     /**
      * Constructor method for SpecificSeatAssignment
      * @uses SpecificSeatAssignment::setBookingTravelerRef()
@@ -96,10 +95,6 @@ class SpecificSeatAssignment extends AbstractStructBase
      */
     public function setBookingTravelerRef(string $bookingTravelerRef): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;
@@ -119,10 +114,6 @@ class SpecificSeatAssignment extends AbstractStructBase
      */
     public function setSegmentRef(string $segmentRef): self
     {
-        // validation for constraint: string
-        if (!is_null($segmentRef) && !is_string($segmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($segmentRef, true), gettype($segmentRef)), __LINE__);
-        }
         $this->SegmentRef = $segmentRef;
         
         return $this;
@@ -142,10 +133,6 @@ class SpecificSeatAssignment extends AbstractStructBase
      */
     public function setSeatId(string $seatId): self
     {
-        // validation for constraint: string
-        if (!is_null($seatId) && !is_string($seatId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seatId, true), gettype($seatId)), __LINE__);
-        }
         $this->SeatId = $seatId;
         
         return $this;
@@ -165,10 +152,6 @@ class SpecificSeatAssignment extends AbstractStructBase
      */
     public function setFlightDetailRef(?string $flightDetailRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($flightDetailRef) && !is_string($flightDetailRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($flightDetailRef, true), gettype($flightDetailRef)), __LINE__);
-        }
         $this->FlightDetailRef = $flightDetailRef;
         
         return $this;
@@ -188,14 +171,6 @@ class SpecificSeatAssignment extends AbstractStructBase
      */
     public function setRailCoachNumber(?string $railCoachNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($railCoachNumber) && !is_string($railCoachNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($railCoachNumber, true), gettype($railCoachNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(4)
-        if (!is_null($railCoachNumber) && mb_strlen((string) $railCoachNumber) > 4) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 4', mb_strlen((string) $railCoachNumber)), __LINE__);
-        }
         $this->RailCoachNumber = $railCoachNumber;
         
         return $this;

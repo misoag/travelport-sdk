@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class ReasonCode extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $OutOfPolicy = null;
+    public ?string $OutOfPolicy = null;
     /**
      * The PurposeOfTrip
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class ReasonCode extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $PurposeOfTrip = null;
+    public ?string $PurposeOfTrip = null;
     /**
      * The Remark
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class ReasonCode extends AbstractStructBase
      * - ref: Remark
      * @var \Travelport\Hotel\StructType\Remark|null
      */
-    protected ?\Travelport\Hotel\StructType\Remark $Remark = null;
+    public ?\Travelport\Hotel\StructType\Remark $Remark = null;
     /**
      * Constructor method for ReasonCode
      * @uses ReasonCode::setOutOfPolicy()
@@ -70,10 +69,6 @@ class ReasonCode extends AbstractStructBase
      */
     public function setOutOfPolicy(?string $outOfPolicy = null): self
     {
-        // validation for constraint: string
-        if (!is_null($outOfPolicy) && !is_string($outOfPolicy)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($outOfPolicy, true), gettype($outOfPolicy)), __LINE__);
-        }
         $this->OutOfPolicy = $outOfPolicy;
         
         return $this;
@@ -93,10 +88,6 @@ class ReasonCode extends AbstractStructBase
      */
     public function setPurposeOfTrip(?string $purposeOfTrip = null): self
     {
-        // validation for constraint: string
-        if (!is_null($purposeOfTrip) && !is_string($purposeOfTrip)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($purposeOfTrip, true), gettype($purposeOfTrip)), __LINE__);
-        }
         $this->PurposeOfTrip = $purposeOfTrip;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,14 +20,14 @@ class AirRefundModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RefundDate = null;
+    public ?string $RefundDate = null;
     /**
      * The AccountCode
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $AccountCode = null;
+    public ?string $AccountCode = null;
     /**
      * The TicketDesignator
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class AirRefundModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketDesignator = null;
+    public ?string $TicketDesignator = null;
     /**
      * Constructor method for AirRefundModifiers
      * @uses AirRefundModifiers::setRefundDate()
@@ -71,10 +70,6 @@ class AirRefundModifiers extends AbstractStructBase
      */
     public function setRefundDate(?string $refundDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($refundDate) && !is_string($refundDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($refundDate, true), gettype($refundDate)), __LINE__);
-        }
         $this->RefundDate = $refundDate;
         
         return $this;
@@ -94,10 +89,6 @@ class AirRefundModifiers extends AbstractStructBase
      */
     public function setAccountCode(?string $accountCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($accountCode) && !is_string($accountCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountCode, true), gettype($accountCode)), __LINE__);
-        }
         $this->AccountCode = $accountCode;
         
         return $this;
@@ -117,18 +108,6 @@ class AirRefundModifiers extends AbstractStructBase
      */
     public function setTicketDesignator(?string $ticketDesignator = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketDesignator) && !is_string($ticketDesignator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketDesignator, true), gettype($ticketDesignator)), __LINE__);
-        }
-        // validation for constraint: maxLength(20)
-        if (!is_null($ticketDesignator) && mb_strlen((string) $ticketDesignator) > 20) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 20', mb_strlen((string) $ticketDesignator)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if (!is_null($ticketDesignator) && mb_strlen((string) $ticketDesignator) < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $ticketDesignator)), __LINE__);
-        }
         $this->TicketDesignator = $ticketDesignator;
         
         return $this;

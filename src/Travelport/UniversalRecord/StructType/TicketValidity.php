@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class TicketValidity extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $NotValidBefore = null;
+    public ?string $NotValidBefore = null;
     /**
      * The NotValidAfter
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class TicketValidity extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $NotValidAfter = null;
+    public ?string $NotValidAfter = null;
     /**
      * Constructor method for TicketValidity
      * @uses TicketValidity::setNotValidBefore()
@@ -59,10 +58,6 @@ class TicketValidity extends AbstractStructBase
      */
     public function setNotValidBefore(?string $notValidBefore = null): self
     {
-        // validation for constraint: string
-        if (!is_null($notValidBefore) && !is_string($notValidBefore)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($notValidBefore, true), gettype($notValidBefore)), __LINE__);
-        }
         $this->NotValidBefore = $notValidBefore;
         
         return $this;
@@ -82,10 +77,6 @@ class TicketValidity extends AbstractStructBase
      */
     public function setNotValidAfter(?string $notValidAfter = null): self
     {
-        // validation for constraint: string
-        if (!is_null($notValidAfter) && !is_string($notValidAfter)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($notValidAfter, true), gettype($notValidAfter)), __LINE__);
-        }
         $this->NotValidAfter = $notValidAfter;
         
         return $this;

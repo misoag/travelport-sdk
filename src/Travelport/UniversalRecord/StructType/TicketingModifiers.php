@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class TicketingModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected ?array $BookingTravelerRef = null;
+    public ?array $BookingTravelerRef = null;
     /**
      * The NetRemit
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class TicketingModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeTicketModifierAmountType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeTicketModifierAmountType $NetRemit = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeTicketModifierAmountType $NetRemit = null;
     /**
      * The NetFare
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class TicketingModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeTicketModifierAmountType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeTicketModifierAmountType $NetFare = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeTicketModifierAmountType $NetFare = null;
     /**
      * The ActualSellingFare
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class TicketingModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeTicketModifierAmountType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeTicketModifierAmountType $ActualSellingFare = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeTicketModifierAmountType $ActualSellingFare = null;
     /**
      * The InvoiceFare
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class TicketingModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeTicketModifierAccountingType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeTicketModifierAccountingType $InvoiceFare = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeTicketModifierAccountingType $InvoiceFare = null;
     /**
      * The CorporateDiscount
      * Meta information extracted from the WSDL
@@ -65,7 +64,7 @@ class TicketingModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeTicketModifierAccountingType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeTicketModifierAccountingType $CorporateDiscount = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeTicketModifierAccountingType $CorporateDiscount = null;
     /**
      * The AccountingInfo
      * Meta information extracted from the WSDL
@@ -73,14 +72,14 @@ class TicketingModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeTicketModifierAccountingType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeTicketModifierAccountingType $AccountingInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeTicketModifierAccountingType $AccountingInfo = null;
     /**
      * The BulkTicket
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\BulkTicket|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\BulkTicket $BulkTicket = null;
+    public ?\Travelport\UniversalRecord\StructType\BulkTicket $BulkTicket = null;
     /**
      * The GroupTour
      * Meta information extracted from the WSDL
@@ -88,7 +87,7 @@ class TicketingModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeBulkTicketModifierType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeBulkTicketModifierType $GroupTour = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeBulkTicketModifierType $GroupTour = null;
     /**
      * The Commission
      * Meta information extracted from the WSDL
@@ -96,7 +95,7 @@ class TicketingModifiers extends AbstractStructBase
      * - ref: common:Commission
      * @var \Travelport\UniversalRecord\StructType\Commission|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Commission $Commission = null;
+    public ?\Travelport\UniversalRecord\StructType\Commission $Commission = null;
     /**
      * The TourCode
      * Meta information extracted from the WSDL
@@ -104,7 +103,7 @@ class TicketingModifiers extends AbstractStructBase
      * - ref: TourCode
      * @var \Travelport\UniversalRecord\StructType\TourCode|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TourCode $TourCode = null;
+    public ?\Travelport\UniversalRecord\StructType\TourCode $TourCode = null;
     /**
      * The TicketEndorsement
      * Meta information extracted from the WSDL
@@ -113,7 +112,7 @@ class TicketingModifiers extends AbstractStructBase
      * - ref: TicketEndorsement
      * @var \Travelport\UniversalRecord\StructType\TicketEndorsement[]
      */
-    protected ?array $TicketEndorsement = null;
+    public ?array $TicketEndorsement = null;
     /**
      * The ValueModifier
      * Meta information extracted from the WSDL
@@ -121,7 +120,7 @@ class TicketingModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeTicketModifierValueType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeTicketModifierValueType $ValueModifier = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeTicketModifierValueType $ValueModifier = null;
     /**
      * The DocumentSelect
      * Meta information extracted from the WSDL
@@ -129,7 +128,7 @@ class TicketingModifiers extends AbstractStructBase
      * - ref: DocumentSelect
      * @var \Travelport\UniversalRecord\StructType\DocumentSelect|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\DocumentSelect $DocumentSelect = null;
+    public ?\Travelport\UniversalRecord\StructType\DocumentSelect $DocumentSelect = null;
     /**
      * The DocumentOptions
      * Meta information extracted from the WSDL
@@ -137,7 +136,7 @@ class TicketingModifiers extends AbstractStructBase
      * - ref: DocumentOptions
      * @var \Travelport\UniversalRecord\StructType\DocumentOptions|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\DocumentOptions $DocumentOptions = null;
+    public ?\Travelport\UniversalRecord\StructType\DocumentOptions $DocumentOptions = null;
     /**
      * The SegmentSelect
      * Meta information extracted from the WSDL
@@ -145,7 +144,7 @@ class TicketingModifiers extends AbstractStructBase
      * - ref: SegmentSelect
      * @var \Travelport\UniversalRecord\StructType\SegmentSelect|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\SegmentSelect $SegmentSelect = null;
+    public ?\Travelport\UniversalRecord\StructType\SegmentSelect $SegmentSelect = null;
     /**
      * The SegmentModifiers
      * Meta information extracted from the WSDL
@@ -154,7 +153,7 @@ class TicketingModifiers extends AbstractStructBase
      * - ref: SegmentModifiers
      * @var \Travelport\UniversalRecord\StructType\SegmentModifiers[]
      */
-    protected ?array $SegmentModifiers = null;
+    public ?array $SegmentModifiers = null;
     /**
      * The SupplierLocator
      * Meta information extracted from the WSDL
@@ -162,7 +161,7 @@ class TicketingModifiers extends AbstractStructBase
      * - ref: common:SupplierLocator
      * @var \Travelport\UniversalRecord\StructType\SupplierLocator|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\SupplierLocator $SupplierLocator = null;
+    public ?\Travelport\UniversalRecord\StructType\SupplierLocator $SupplierLocator = null;
     /**
      * The DestinationPurposeCode
      * Meta information extracted from the WSDL
@@ -170,7 +169,7 @@ class TicketingModifiers extends AbstractStructBase
      * - ref: DestinationPurposeCode
      * @var \Travelport\UniversalRecord\StructType\DestinationPurposeCode|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\DestinationPurposeCode $DestinationPurposeCode = null;
+    public ?\Travelport\UniversalRecord\StructType\DestinationPurposeCode $DestinationPurposeCode = null;
     /**
      * The LanguageOption
      * Meta information extracted from the WSDL
@@ -179,7 +178,7 @@ class TicketingModifiers extends AbstractStructBase
      * - ref: LanguageOption
      * @var \Travelport\UniversalRecord\StructType\LanguageOption[]
      */
-    protected ?array $LanguageOption = null;
+    public ?array $LanguageOption = null;
     /**
      * The LandCharges
      * Meta information extracted from the WSDL
@@ -187,7 +186,7 @@ class TicketingModifiers extends AbstractStructBase
      * - ref: LandCharges
      * @var \Travelport\UniversalRecord\StructType\LandCharges|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\LandCharges $LandCharges = null;
+    public ?\Travelport\UniversalRecord\StructType\LandCharges $LandCharges = null;
     /**
      * The PrintBlankFormItinerary
      * Meta information extracted from the WSDL
@@ -195,7 +194,7 @@ class TicketingModifiers extends AbstractStructBase
      * - ref: PrintBlankFormItinerary
      * @var \Travelport\UniversalRecord\StructType\PrintBlankFormItinerary|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PrintBlankFormItinerary $PrintBlankFormItinerary = null;
+    public ?\Travelport\UniversalRecord\StructType\PrintBlankFormItinerary $PrintBlankFormItinerary = null;
     /**
      * The ExemptOBFee
      * Meta information extracted from the WSDL
@@ -204,7 +203,7 @@ class TicketingModifiers extends AbstractStructBase
      * - ref: ExemptOBFee
      * @var \Travelport\UniversalRecord\StructType\ExemptOBFee|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ExemptOBFee $ExemptOBFee = null;
+    public ?\Travelport\UniversalRecord\StructType\ExemptOBFee $ExemptOBFee = null;
     /**
      * The IsPrimaryDI
      * Meta information extracted from the WSDL
@@ -213,7 +212,7 @@ class TicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $IsPrimaryDI = null;
+    public ?bool $IsPrimaryDI = null;
     /**
      * The DocumentInstructionNumber
      * Meta information extracted from the WSDL
@@ -221,7 +220,7 @@ class TicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DocumentInstructionNumber = null;
+    public ?string $DocumentInstructionNumber = null;
     /**
      * The Reference
      * Meta information extracted from the WSDL
@@ -232,7 +231,7 @@ class TicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Reference = null;
+    public ?string $Reference = null;
     /**
      * The Status
      * Meta information extracted from the WSDL
@@ -241,7 +240,7 @@ class TicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Status = null;
+    public ?string $Status = null;
     /**
      * The FreeText
      * Meta information extracted from the WSDL
@@ -250,7 +249,7 @@ class TicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FreeText = null;
+    public ?string $FreeText = null;
     /**
      * The NameNumber
      * Meta information extracted from the WSDL
@@ -258,7 +257,7 @@ class TicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $NameNumber = null;
+    public ?string $NameNumber = null;
     /**
      * The TicketRecord
      * Meta information extracted from the WSDL
@@ -266,7 +265,7 @@ class TicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketRecord = null;
+    public ?string $TicketRecord = null;
     /**
      * The PlatingCarrier
      * Meta information extracted from the WSDL
@@ -276,7 +275,7 @@ class TicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PlatingCarrier = null;
+    public ?string $PlatingCarrier = null;
     /**
      * The ExemptVAT
      * Meta information extracted from the WSDL
@@ -284,7 +283,7 @@ class TicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ExemptVAT = null;
+    public ?bool $ExemptVAT = null;
     /**
      * The NetRemitApplied
      * Meta information extracted from the WSDL
@@ -292,7 +291,7 @@ class TicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $NetRemitApplied = null;
+    public ?bool $NetRemitApplied = null;
     /**
      * The FreeTicket
      * Meta information extracted from the WSDL
@@ -300,7 +299,7 @@ class TicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $FreeTicket = null;
+    public ?bool $FreeTicket = null;
     /**
      * The CurrencyOverrideCode
      * Meta information extracted from the WSDL
@@ -309,7 +308,7 @@ class TicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CurrencyOverrideCode = null;
+    public ?string $CurrencyOverrideCode = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -318,17 +317,17 @@ class TicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The ElStat
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for TicketingModifiers
      * @uses TicketingModifiers::setBookingTravelerRef()
@@ -459,48 +458,12 @@ class TicketingModifiers extends AbstractStructBase
         return $this->BookingTravelerRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setBookingTravelerRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setBookingTravelerRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $ticketingModifiersBookingTravelerRefItem) {
-            // validation for constraint: itemType
-            if (!is_string($ticketingModifiersBookingTravelerRefItem)) {
-                $invalidValues[] = is_object($ticketingModifiersBookingTravelerRefItem) ? get_class($ticketingModifiersBookingTravelerRefItem) : sprintf('%s(%s)', gettype($ticketingModifiersBookingTravelerRefItem), var_export($ticketingModifiersBookingTravelerRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The BookingTravelerRef property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set BookingTravelerRef value
-     * @throws InvalidArgumentException
      * @param string[] $bookingTravelerRef
      * @return \Travelport\UniversalRecord\StructType\TicketingModifiers
      */
     public function setBookingTravelerRef(?array $bookingTravelerRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($bookingTravelerRefArrayErrorMessage = self::validateBookingTravelerRefForArrayConstraintFromSetBookingTravelerRef($bookingTravelerRef))) {
-            throw new InvalidArgumentException($bookingTravelerRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($bookingTravelerRef) && count($bookingTravelerRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;
@@ -513,14 +476,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function addToBookingTravelerRef(string $item): self
     {
-        // validation for constraint: itemType
-        if (!is_string($item)) {
-            throw new InvalidArgumentException(sprintf('The BookingTravelerRef property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->BookingTravelerRef) && count($this->BookingTravelerRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->BookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef[] = $item;
         
         return $this;
@@ -724,48 +679,12 @@ class TicketingModifiers extends AbstractStructBase
         return $this->TicketEndorsement;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setTicketEndorsement method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setTicketEndorsement method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTicketEndorsementForArrayConstraintFromSetTicketEndorsement(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $ticketingModifiersTicketEndorsementItem) {
-            // validation for constraint: itemType
-            if (!$ticketingModifiersTicketEndorsementItem instanceof \Travelport\UniversalRecord\StructType\TicketEndorsement) {
-                $invalidValues[] = is_object($ticketingModifiersTicketEndorsementItem) ? get_class($ticketingModifiersTicketEndorsementItem) : sprintf('%s(%s)', gettype($ticketingModifiersTicketEndorsementItem), var_export($ticketingModifiersTicketEndorsementItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The TicketEndorsement property can only contain items of type \Travelport\UniversalRecord\StructType\TicketEndorsement, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set TicketEndorsement value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TicketEndorsement[] $ticketEndorsement
      * @return \Travelport\UniversalRecord\StructType\TicketingModifiers
      */
     public function setTicketEndorsement(?array $ticketEndorsement = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($ticketEndorsementArrayErrorMessage = self::validateTicketEndorsementForArrayConstraintFromSetTicketEndorsement($ticketEndorsement))) {
-            throw new InvalidArgumentException($ticketEndorsementArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(3)
-        if (is_array($ticketEndorsement) && count($ticketEndorsement) > 3) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 3', count($ticketEndorsement)), __LINE__);
-        }
         $this->TicketEndorsement = $ticketEndorsement;
         
         return $this;
@@ -778,14 +697,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function addToTicketEndorsement(\Travelport\UniversalRecord\StructType\TicketEndorsement $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TicketEndorsement) {
-            throw new InvalidArgumentException(sprintf('The TicketEndorsement property can only contain items of type \Travelport\UniversalRecord\StructType\TicketEndorsement, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(3)
-        if (is_array($this->TicketEndorsement) && count($this->TicketEndorsement) >= 3) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 3', count($this->TicketEndorsement)), __LINE__);
-        }
         $this->TicketEndorsement[] = $item;
         
         return $this;
@@ -875,48 +786,12 @@ class TicketingModifiers extends AbstractStructBase
         return $this->SegmentModifiers;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setSegmentModifiers method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setSegmentModifiers method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateSegmentModifiersForArrayConstraintFromSetSegmentModifiers(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $ticketingModifiersSegmentModifiersItem) {
-            // validation for constraint: itemType
-            if (!$ticketingModifiersSegmentModifiersItem instanceof \Travelport\UniversalRecord\StructType\SegmentModifiers) {
-                $invalidValues[] = is_object($ticketingModifiersSegmentModifiersItem) ? get_class($ticketingModifiersSegmentModifiersItem) : sprintf('%s(%s)', gettype($ticketingModifiersSegmentModifiersItem), var_export($ticketingModifiersSegmentModifiersItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The SegmentModifiers property can only contain items of type \Travelport\UniversalRecord\StructType\SegmentModifiers, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set SegmentModifiers value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\SegmentModifiers[] $segmentModifiers
      * @return \Travelport\UniversalRecord\StructType\TicketingModifiers
      */
     public function setSegmentModifiers(?array $segmentModifiers = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($segmentModifiersArrayErrorMessage = self::validateSegmentModifiersForArrayConstraintFromSetSegmentModifiers($segmentModifiers))) {
-            throw new InvalidArgumentException($segmentModifiersArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($segmentModifiers) && count($segmentModifiers) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($segmentModifiers)), __LINE__);
-        }
         $this->SegmentModifiers = $segmentModifiers;
         
         return $this;
@@ -929,14 +804,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function addToSegmentModifiers(\Travelport\UniversalRecord\StructType\SegmentModifiers $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\SegmentModifiers) {
-            throw new InvalidArgumentException(sprintf('The SegmentModifiers property can only contain items of type \Travelport\UniversalRecord\StructType\SegmentModifiers, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->SegmentModifiers) && count($this->SegmentModifiers) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->SegmentModifiers)), __LINE__);
-        }
         $this->SegmentModifiers[] = $item;
         
         return $this;
@@ -988,48 +855,12 @@ class TicketingModifiers extends AbstractStructBase
         return $this->LanguageOption;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setLanguageOption method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setLanguageOption method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateLanguageOptionForArrayConstraintFromSetLanguageOption(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $ticketingModifiersLanguageOptionItem) {
-            // validation for constraint: itemType
-            if (!$ticketingModifiersLanguageOptionItem instanceof \Travelport\UniversalRecord\StructType\LanguageOption) {
-                $invalidValues[] = is_object($ticketingModifiersLanguageOptionItem) ? get_class($ticketingModifiersLanguageOptionItem) : sprintf('%s(%s)', gettype($ticketingModifiersLanguageOptionItem), var_export($ticketingModifiersLanguageOptionItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The LanguageOption property can only contain items of type \Travelport\UniversalRecord\StructType\LanguageOption, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set LanguageOption value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\LanguageOption[] $languageOption
      * @return \Travelport\UniversalRecord\StructType\TicketingModifiers
      */
     public function setLanguageOption(?array $languageOption = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($languageOptionArrayErrorMessage = self::validateLanguageOptionForArrayConstraintFromSetLanguageOption($languageOption))) {
-            throw new InvalidArgumentException($languageOptionArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(2)
-        if (is_array($languageOption) && count($languageOption) > 2) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 2', count($languageOption)), __LINE__);
-        }
         $this->LanguageOption = $languageOption;
         
         return $this;
@@ -1042,14 +873,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function addToLanguageOption(\Travelport\UniversalRecord\StructType\LanguageOption $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\LanguageOption) {
-            throw new InvalidArgumentException(sprintf('The LanguageOption property can only contain items of type \Travelport\UniversalRecord\StructType\LanguageOption, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(2)
-        if (is_array($this->LanguageOption) && count($this->LanguageOption) >= 2) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 2', count($this->LanguageOption)), __LINE__);
-        }
         $this->LanguageOption[] = $item;
         
         return $this;
@@ -1126,10 +949,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function setIsPrimaryDI(?bool $isPrimaryDI = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($isPrimaryDI) && !is_bool($isPrimaryDI)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($isPrimaryDI, true), gettype($isPrimaryDI)), __LINE__);
-        }
         $this->IsPrimaryDI = $isPrimaryDI;
         
         return $this;
@@ -1149,10 +968,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function setDocumentInstructionNumber(?string $documentInstructionNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($documentInstructionNumber) && !is_string($documentInstructionNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($documentInstructionNumber, true), gettype($documentInstructionNumber)), __LINE__);
-        }
         $this->DocumentInstructionNumber = $documentInstructionNumber;
         
         return $this;
@@ -1172,18 +987,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function setReference(?string $reference = null): self
     {
-        // validation for constraint: string
-        if (!is_null($reference) && !is_string($reference)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reference, true), gettype($reference)), __LINE__);
-        }
-        // validation for constraint: maxLength(30)
-        if (!is_null($reference) && mb_strlen((string) $reference) > 30) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 30', mb_strlen((string) $reference)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($reference) && mb_strlen((string) $reference) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $reference)), __LINE__);
-        }
         $this->Reference = $reference;
         
         return $this;
@@ -1203,14 +1006,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function setStatus(?string $status = null): self
     {
-        // validation for constraint: string
-        if (!is_null($status) && !is_string($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
-        }
-        // validation for constraint: maxLength(30)
-        if (!is_null($status) && mb_strlen((string) $status) > 30) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 30', mb_strlen((string) $status)), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -1230,14 +1025,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function setFreeText(?string $freeText = null): self
     {
-        // validation for constraint: string
-        if (!is_null($freeText) && !is_string($freeText)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($freeText, true), gettype($freeText)), __LINE__);
-        }
-        // validation for constraint: maxLength(756)
-        if (!is_null($freeText) && mb_strlen((string) $freeText) > 756) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 756', mb_strlen((string) $freeText)), __LINE__);
-        }
         $this->FreeText = $freeText;
         
         return $this;
@@ -1257,10 +1044,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function setNameNumber(?string $nameNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($nameNumber) && !is_string($nameNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nameNumber, true), gettype($nameNumber)), __LINE__);
-        }
         $this->NameNumber = $nameNumber;
         
         return $this;
@@ -1280,10 +1063,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function setTicketRecord(?string $ticketRecord = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketRecord) && !is_string($ticketRecord)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketRecord, true), gettype($ticketRecord)), __LINE__);
-        }
         $this->TicketRecord = $ticketRecord;
         
         return $this;
@@ -1303,14 +1082,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function setPlatingCarrier(?string $platingCarrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($platingCarrier) && !is_string($platingCarrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($platingCarrier, true), gettype($platingCarrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($platingCarrier) && mb_strlen((string) $platingCarrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $platingCarrier)), __LINE__);
-        }
         $this->PlatingCarrier = $platingCarrier;
         
         return $this;
@@ -1330,10 +1101,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function setExemptVAT(?bool $exemptVAT = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($exemptVAT) && !is_bool($exemptVAT)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($exemptVAT, true), gettype($exemptVAT)), __LINE__);
-        }
         $this->ExemptVAT = $exemptVAT;
         
         return $this;
@@ -1353,10 +1120,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function setNetRemitApplied(?bool $netRemitApplied = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($netRemitApplied) && !is_bool($netRemitApplied)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($netRemitApplied, true), gettype($netRemitApplied)), __LINE__);
-        }
         $this->NetRemitApplied = $netRemitApplied;
         
         return $this;
@@ -1376,10 +1139,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function setFreeTicket(?bool $freeTicket = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($freeTicket) && !is_bool($freeTicket)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($freeTicket, true), gettype($freeTicket)), __LINE__);
-        }
         $this->FreeTicket = $freeTicket;
         
         return $this;
@@ -1399,14 +1158,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function setCurrencyOverrideCode(?string $currencyOverrideCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($currencyOverrideCode) && !is_string($currencyOverrideCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currencyOverrideCode, true), gettype($currencyOverrideCode)), __LINE__);
-        }
-        // validation for constraint: length(1)
-        if (!is_null($currencyOverrideCode) && mb_strlen((string) $currencyOverrideCode) !== 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 1', mb_strlen((string) $currencyOverrideCode)), __LINE__);
-        }
         $this->CurrencyOverrideCode = $currencyOverrideCode;
         
         return $this;
@@ -1426,10 +1177,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -1444,18 +1191,11 @@ class TicketingModifiers extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\TicketingModifiers
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -1475,10 +1215,6 @@ class TicketingModifiers extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

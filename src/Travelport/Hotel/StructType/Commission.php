@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class Commission extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Level;
+    public string $Level;
     /**
      * The Type
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class Commission extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class Commission extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The Modifier
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class Commission extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Modifier = null;
+    public ?string $Modifier = null;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class Commission extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The Value
      * Meta information extracted from the WSDL
@@ -67,7 +66,7 @@ class Commission extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Value = null;
+    public ?string $Value = null;
     /**
      * The Percentage
      * Meta information extracted from the WSDL
@@ -78,7 +77,7 @@ class Commission extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Percentage = null;
+    public ?string $Percentage = null;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -87,7 +86,7 @@ class Commission extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingTravelerRef = null;
+    public ?string $BookingTravelerRef = null;
     /**
      * The CommissionOverride
      * Meta information extracted from the WSDL
@@ -96,21 +95,21 @@ class Commission extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $CommissionOverride = null;
+    public ?bool $CommissionOverride = null;
     /**
      * The Indicator
      * Meta information extracted from the WSDL
      * - documentation: Indicates if the Rate Plan is commissionable.True: Rate is commissionable.False: Rate is not commissionable.Unknown: Commission indicator is not returned by the hotel supplier (chain or property).
      * @var string|null
      */
-    protected ?string $Indicator = null;
+    public ?string $Indicator = null;
     /**
      * The Percent
      * Meta information extracted from the WSDL
      * - documentation: The percentage applied to the commissionable amount to determine the payable commission amount.
      * @var string|null
      */
-    protected ?string $Percent = null;
+    public ?string $Percent = null;
     /**
      * The CommissionAmount
      * Meta information extracted from the WSDL
@@ -118,7 +117,7 @@ class Commission extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $CommissionAmount = null;
+    public ?string $CommissionAmount = null;
     /**
      * The ApproxCommissionAmount
      * Meta information extracted from the WSDL
@@ -126,7 +125,7 @@ class Commission extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $ApproxCommissionAmount = null;
+    public ?string $ApproxCommissionAmount = null;
     /**
      * The CommissionOnSurcharges
      * Meta information extracted from the WSDL
@@ -134,7 +133,7 @@ class Commission extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $CommissionOnSurcharges = null;
+    public ?string $CommissionOnSurcharges = null;
     /**
      * The ApproxCommissionOnSurcharges
      * Meta information extracted from the WSDL
@@ -142,7 +141,7 @@ class Commission extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $ApproxCommissionOnSurcharges = null;
+    public ?string $ApproxCommissionOnSurcharges = null;
     /**
      * Constructor method for Commission
      * @uses Commission::setLevel()
@@ -205,18 +204,11 @@ class Commission extends AbstractStructBase
     }
     /**
      * Set Level value
-     * @uses \Travelport\Hotel\EnumType\TypeCommissionLevel::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeCommissionLevel::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $level
      * @return \Travelport\Hotel\StructType\Commission
      */
     public function setLevel(string $level): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeCommissionLevel::valueIsValid($level)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeCommissionLevel', is_array($level) ? implode(', ', $level) : var_export($level, true), implode(', ', \Travelport\Hotel\EnumType\TypeCommissionLevel::getValidValues())), __LINE__);
-        }
         $this->Level = $level;
         
         return $this;
@@ -231,18 +223,11 @@ class Commission extends AbstractStructBase
     }
     /**
      * Set Type value
-     * @uses \Travelport\Hotel\EnumType\TypeCommissionType::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeCommissionType::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $type
      * @return \Travelport\Hotel\StructType\Commission
      */
     public function setType(string $type): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeCommissionType::valueIsValid($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeCommissionType', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \Travelport\Hotel\EnumType\TypeCommissionType::getValidValues())), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -262,10 +247,6 @@ class Commission extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -280,18 +261,11 @@ class Commission extends AbstractStructBase
     }
     /**
      * Set Modifier value
-     * @uses \Travelport\Hotel\EnumType\TypeCommissionModifier::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeCommissionModifier::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $modifier
      * @return \Travelport\Hotel\StructType\Commission
      */
     public function setModifier(?string $modifier = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeCommissionModifier::valueIsValid($modifier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeCommissionModifier', is_array($modifier) ? implode(', ', $modifier) : var_export($modifier, true), implode(', ', \Travelport\Hotel\EnumType\TypeCommissionModifier::getValidValues())), __LINE__);
-        }
         $this->Modifier = $modifier;
         
         return $this;
@@ -311,10 +285,6 @@ class Commission extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -334,18 +304,6 @@ class Commission extends AbstractStructBase
      */
     public function setValue(?string $value = null): self
     {
-        // validation for constraint: string
-        if (!is_null($value) && !is_string($value)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($value, true), gettype($value)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($value) && mb_strlen((string) $value) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $value)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if (!is_null($value) && mb_strlen((string) $value) < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $value)), __LINE__);
-        }
         $this->Value = $value;
         
         return $this;
@@ -365,14 +323,6 @@ class Commission extends AbstractStructBase
      */
     public function setPercentage(?string $percentage = null): self
     {
-        // validation for constraint: string
-        if (!is_null($percentage) && !is_string($percentage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($percentage, true), gettype($percentage)), __LINE__);
-        }
-        // validation for constraint: pattern(([0-9]{1,2}|100)\.[0-9]{1,2})
-        if (!is_null($percentage) && !preg_match('/([0-9]{1,2}|100)\\.[0-9]{1,2}/', $percentage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /([0-9]{1,2}|100)\\.[0-9]{1,2}/', var_export($percentage, true)), __LINE__);
-        }
         $this->Percentage = $percentage;
         
         return $this;
@@ -392,10 +342,6 @@ class Commission extends AbstractStructBase
      */
     public function setBookingTravelerRef(?string $bookingTravelerRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;
@@ -415,10 +361,6 @@ class Commission extends AbstractStructBase
      */
     public function setCommissionOverride(?bool $commissionOverride = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($commissionOverride) && !is_bool($commissionOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($commissionOverride, true), gettype($commissionOverride)), __LINE__);
-        }
         $this->CommissionOverride = $commissionOverride;
         
         return $this;
@@ -433,18 +375,11 @@ class Commission extends AbstractStructBase
     }
     /**
      * Set Indicator value
-     * @uses \Travelport\Hotel\EnumType\TypeTrinary::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeTrinary::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $indicator
      * @return \Travelport\Hotel\StructType\Commission
      */
     public function setIndicator(?string $indicator = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeTrinary::valueIsValid($indicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeTrinary', is_array($indicator) ? implode(', ', $indicator) : var_export($indicator, true), implode(', ', \Travelport\Hotel\EnumType\TypeTrinary::getValidValues())), __LINE__);
-        }
         $this->Indicator = $indicator;
         
         return $this;
@@ -464,10 +399,6 @@ class Commission extends AbstractStructBase
      */
     public function setPercent(?string $percent = null): self
     {
-        // validation for constraint: string
-        if (!is_null($percent) && !is_string($percent)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($percent, true), gettype($percent)), __LINE__);
-        }
         $this->Percent = $percent;
         
         return $this;
@@ -487,10 +418,6 @@ class Commission extends AbstractStructBase
      */
     public function setCommissionAmount(?string $commissionAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($commissionAmount) && !is_string($commissionAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($commissionAmount, true), gettype($commissionAmount)), __LINE__);
-        }
         $this->CommissionAmount = $commissionAmount;
         
         return $this;
@@ -510,10 +437,6 @@ class Commission extends AbstractStructBase
      */
     public function setApproxCommissionAmount(?string $approxCommissionAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approxCommissionAmount) && !is_string($approxCommissionAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approxCommissionAmount, true), gettype($approxCommissionAmount)), __LINE__);
-        }
         $this->ApproxCommissionAmount = $approxCommissionAmount;
         
         return $this;
@@ -533,10 +456,6 @@ class Commission extends AbstractStructBase
      */
     public function setCommissionOnSurcharges(?string $commissionOnSurcharges = null): self
     {
-        // validation for constraint: string
-        if (!is_null($commissionOnSurcharges) && !is_string($commissionOnSurcharges)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($commissionOnSurcharges, true), gettype($commissionOnSurcharges)), __LINE__);
-        }
         $this->CommissionOnSurcharges = $commissionOnSurcharges;
         
         return $this;
@@ -556,10 +475,6 @@ class Commission extends AbstractStructBase
      */
     public function setApproxCommissionOnSurcharges(?string $approxCommissionOnSurcharges = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approxCommissionOnSurcharges) && !is_string($approxCommissionOnSurcharges)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approxCommissionOnSurcharges, true), gettype($approxCommissionOnSurcharges)), __LINE__);
-        }
         $this->ApproxCommissionOnSurcharges = $approxCommissionOnSurcharges;
         
         return $this;

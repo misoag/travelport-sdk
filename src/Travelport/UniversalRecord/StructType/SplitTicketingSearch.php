@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class SplitTicketingSearch extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $RoundTrip = null;
+    public ?int $RoundTrip = null;
     /**
      * Constructor method for SplitTicketingSearch
      * @uses SplitTicketingSearch::setRoundTrip()
@@ -49,10 +48,6 @@ class SplitTicketingSearch extends AbstractStructBase
      */
     public function setRoundTrip(?int $roundTrip = null): self
     {
-        // validation for constraint: int
-        if (!is_null($roundTrip) && !(is_int($roundTrip) || ctype_digit($roundTrip))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($roundTrip, true), gettype($roundTrip)), __LINE__);
-        }
         $this->RoundTrip = $roundTrip;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,14 +23,14 @@ class TicketFailureInfo extends AbstractStructBase
      * - ref: AirPricingInfoRef
      * @var \Travelport\UniversalRecord\StructType\AirPricingInfoRef[]
      */
-    protected array $AirPricingInfoRef;
+    public array $AirPricingInfoRef;
     /**
      * The Code
      * Meta information extracted from the WSDL
      * - use: required
      * @var int
      */
-    protected int $Code;
+    public int $Code;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -40,21 +39,21 @@ class TicketFailureInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $BookingTravelerRef;
+    public string $BookingTravelerRef;
     /**
      * The Name
      * Meta information extracted from the WSDL
      * - ref: common:Name
      * @var \Travelport\UniversalRecord\StructType\Name|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Name $Name = null;
+    public ?\Travelport\UniversalRecord\StructType\Name $Name = null;
     /**
      * The Message
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $Message = null;
+    public ?string $Message = null;
     /**
      * Constructor method for TicketFailureInfo
      * @uses TicketFailureInfo::setAirPricingInfoRef()
@@ -86,48 +85,12 @@ class TicketFailureInfo extends AbstractStructBase
         return $this->AirPricingInfoRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirPricingInfoRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingInfoRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAirPricingInfoRefForArrayConstraintFromSetAirPricingInfoRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $ticketFailureInfoAirPricingInfoRefItem) {
-            // validation for constraint: itemType
-            if (!$ticketFailureInfoAirPricingInfoRefItem instanceof \Travelport\UniversalRecord\StructType\AirPricingInfoRef) {
-                $invalidValues[] = is_object($ticketFailureInfoAirPricingInfoRefItem) ? get_class($ticketFailureInfoAirPricingInfoRefItem) : sprintf('%s(%s)', gettype($ticketFailureInfoAirPricingInfoRefItem), var_export($ticketFailureInfoAirPricingInfoRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AirPricingInfoRef property can only contain items of type \Travelport\UniversalRecord\StructType\AirPricingInfoRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AirPricingInfoRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AirPricingInfoRef[] $airPricingInfoRef
      * @return \Travelport\UniversalRecord\StructType\TicketFailureInfo
      */
     public function setAirPricingInfoRef(array $airPricingInfoRef): self
     {
-        // validation for constraint: array
-        if ('' !== ($airPricingInfoRefArrayErrorMessage = self::validateAirPricingInfoRefForArrayConstraintFromSetAirPricingInfoRef($airPricingInfoRef))) {
-            throw new InvalidArgumentException($airPricingInfoRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($airPricingInfoRef) && count($airPricingInfoRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($airPricingInfoRef)), __LINE__);
-        }
         $this->AirPricingInfoRef = $airPricingInfoRef;
         
         return $this;
@@ -140,14 +103,6 @@ class TicketFailureInfo extends AbstractStructBase
      */
     public function addToAirPricingInfoRef(\Travelport\UniversalRecord\StructType\AirPricingInfoRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AirPricingInfoRef) {
-            throw new InvalidArgumentException(sprintf('The AirPricingInfoRef property can only contain items of type \Travelport\UniversalRecord\StructType\AirPricingInfoRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->AirPricingInfoRef) && count($this->AirPricingInfoRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->AirPricingInfoRef)), __LINE__);
-        }
         $this->AirPricingInfoRef[] = $item;
         
         return $this;
@@ -167,10 +122,6 @@ class TicketFailureInfo extends AbstractStructBase
      */
     public function setCode(int $code): self
     {
-        // validation for constraint: int
-        if (!is_null($code) && !(is_int($code) || ctype_digit($code))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;
@@ -190,10 +141,6 @@ class TicketFailureInfo extends AbstractStructBase
      */
     public function setBookingTravelerRef(string $bookingTravelerRef): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;
@@ -232,10 +179,6 @@ class TicketFailureInfo extends AbstractStructBase
      */
     public function setMessage(?string $message = null): self
     {
-        // validation for constraint: string
-        if (!is_null($message) && !is_string($message)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($message, true), gettype($message)), __LINE__);
-        }
         $this->Message = $message;
         
         return $this;

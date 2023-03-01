@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class PassengerTypeLevel extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $TravelerType;
+    public string $TravelerType;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -35,7 +34,7 @@ class PassengerTypeLevel extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The Percentage
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class PassengerTypeLevel extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Percentage = null;
+    public ?string $Percentage = null;
     /**
      * The CommissionCap
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class PassengerTypeLevel extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CommissionCap = null;
+    public ?string $CommissionCap = null;
     /**
      * Constructor method for PassengerTypeLevel
      * @uses PassengerTypeLevel::setTravelerType()
@@ -91,18 +90,6 @@ class PassengerTypeLevel extends AbstractStructBase
      */
     public function setTravelerType(string $travelerType): self
     {
-        // validation for constraint: string
-        if (!is_null($travelerType) && !is_string($travelerType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelerType, true), gettype($travelerType)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($travelerType) && mb_strlen((string) $travelerType) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $travelerType)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($travelerType) && mb_strlen((string) $travelerType) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $travelerType)), __LINE__);
-        }
         $this->TravelerType = $travelerType;
         
         return $this;
@@ -122,10 +109,6 @@ class PassengerTypeLevel extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -145,14 +128,6 @@ class PassengerTypeLevel extends AbstractStructBase
      */
     public function setPercentage(?string $percentage = null): self
     {
-        // validation for constraint: string
-        if (!is_null($percentage) && !is_string($percentage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($percentage, true), gettype($percentage)), __LINE__);
-        }
-        // validation for constraint: pattern(([0-9]{1,2}|100)\.[0-9]{1,2})
-        if (!is_null($percentage) && !preg_match('/([0-9]{1,2}|100)\\.[0-9]{1,2}/', $percentage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /([0-9]{1,2}|100)\\.[0-9]{1,2}/', var_export($percentage, true)), __LINE__);
-        }
         $this->Percentage = $percentage;
         
         return $this;
@@ -172,10 +147,6 @@ class PassengerTypeLevel extends AbstractStructBase
      */
     public function setCommissionCap(?string $commissionCap = null): self
     {
-        // validation for constraint: string
-        if (!is_null($commissionCap) && !is_string($commissionCap)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($commissionCap, true), gettype($commissionCap)), __LINE__);
-        }
         $this->CommissionCap = $commissionCap;
         
         return $this;

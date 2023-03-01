@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class PaymentAdvice extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The DocumentNumber
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class PaymentAdvice extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $DocumentNumber;
+    public string $DocumentNumber;
     /**
      * The IssueDate
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class PaymentAdvice extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $IssueDate;
+    public string $IssueDate;
     /**
      * The IssueCity
      * Meta information extracted from the WSDL
@@ -51,7 +50,7 @@ class PaymentAdvice extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string
      */
-    protected string $IssueCity;
+    public string $IssueCity;
     /**
      * The OriginalFOP
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class PaymentAdvice extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OriginalFOP = null;
+    public ?string $OriginalFOP = null;
     /**
      * Constructor method for PaymentAdvice
      * @uses PaymentAdvice::setType()
@@ -98,14 +97,6 @@ class PaymentAdvice extends AbstractStructBase
      */
     public function setType(string $type): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
-        // validation for constraint: maxLength(3)
-        if (!is_null($type) && mb_strlen((string) $type) > 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 3', mb_strlen((string) $type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -125,14 +116,6 @@ class PaymentAdvice extends AbstractStructBase
      */
     public function setDocumentNumber(string $documentNumber): self
     {
-        // validation for constraint: string
-        if (!is_null($documentNumber) && !is_string($documentNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($documentNumber, true), gettype($documentNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(22)
-        if (!is_null($documentNumber) && mb_strlen((string) $documentNumber) > 22) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 22', mb_strlen((string) $documentNumber)), __LINE__);
-        }
         $this->DocumentNumber = $documentNumber;
         
         return $this;
@@ -152,10 +135,6 @@ class PaymentAdvice extends AbstractStructBase
      */
     public function setIssueDate(string $issueDate): self
     {
-        // validation for constraint: string
-        if (!is_null($issueDate) && !is_string($issueDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($issueDate, true), gettype($issueDate)), __LINE__);
-        }
         $this->IssueDate = $issueDate;
         
         return $this;
@@ -175,14 +154,6 @@ class PaymentAdvice extends AbstractStructBase
      */
     public function setIssueCity(string $issueCity): self
     {
-        // validation for constraint: string
-        if (!is_null($issueCity) && !is_string($issueCity)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($issueCity, true), gettype($issueCity)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($issueCity) && mb_strlen((string) $issueCity) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $issueCity)), __LINE__);
-        }
         $this->IssueCity = $issueCity;
         
         return $this;
@@ -202,14 +173,6 @@ class PaymentAdvice extends AbstractStructBase
      */
     public function setOriginalFOP(?string $originalFOP = null): self
     {
-        // validation for constraint: string
-        if (!is_null($originalFOP) && !is_string($originalFOP)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($originalFOP, true), gettype($originalFOP)), __LINE__);
-        }
-        // validation for constraint: maxLength(19)
-        if (!is_null($originalFOP) && mb_strlen((string) $originalFOP) > 19) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 19', mb_strlen((string) $originalFOP)), __LINE__);
-        }
         $this->OriginalFOP = $originalFOP;
         
         return $this;

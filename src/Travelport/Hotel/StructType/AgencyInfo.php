@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class AgencyInfo extends AbstractStructBase
      * - ref: AgentAction
      * @var \Travelport\Hotel\StructType\AgentAction[]
      */
-    protected ?array $AgentAction = null;
+    public ?array $AgentAction = null;
     /**
      * Constructor method for AgencyInfo
      * @uses AgencyInfo::setAgentAction()
@@ -42,48 +41,12 @@ class AgencyInfo extends AbstractStructBase
         return $this->AgentAction;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAgentAction method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAgentAction method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAgentActionForArrayConstraintFromSetAgentAction(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $agencyInfoAgentActionItem) {
-            // validation for constraint: itemType
-            if (!$agencyInfoAgentActionItem instanceof \Travelport\Hotel\StructType\AgentAction) {
-                $invalidValues[] = is_object($agencyInfoAgentActionItem) ? get_class($agencyInfoAgentActionItem) : sprintf('%s(%s)', gettype($agencyInfoAgentActionItem), var_export($agencyInfoAgentActionItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AgentAction property can only contain items of type \Travelport\Hotel\StructType\AgentAction, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AgentAction value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\AgentAction[] $agentAction
      * @return \Travelport\Hotel\StructType\AgencyInfo
      */
     public function setAgentAction(?array $agentAction = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($agentActionArrayErrorMessage = self::validateAgentActionForArrayConstraintFromSetAgentAction($agentAction))) {
-            throw new InvalidArgumentException($agentActionArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($agentAction) && count($agentAction) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($agentAction)), __LINE__);
-        }
         $this->AgentAction = $agentAction;
         
         return $this;
@@ -96,14 +59,6 @@ class AgencyInfo extends AbstractStructBase
      */
     public function addToAgentAction(\Travelport\Hotel\StructType\AgentAction $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\AgentAction) {
-            throw new InvalidArgumentException(sprintf('The AgentAction property can only contain items of type \Travelport\Hotel\StructType\AgentAction, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->AgentAction) && count($this->AgentAction) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->AgentAction)), __LINE__);
-        }
         $this->AgentAction[] = $item;
         
         return $this;

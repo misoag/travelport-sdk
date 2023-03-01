@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class UniversalRecordModifyRsp extends BaseRsp
      * - ref: UniversalRecord
      * @var \Travelport\UniversalRecord\StructType\UniversalRecord|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\UniversalRecord $UniversalRecord = null;
+    public ?\Travelport\UniversalRecord\StructType\UniversalRecord $UniversalRecord = null;
     /**
      * The AirSolutionChangedInfo
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class UniversalRecordModifyRsp extends BaseRsp
      * - ref: air_v52_0:AirSolutionChangedInfo
      * @var \Travelport\UniversalRecord\StructType\AirSolutionChangedInfo[]
      */
-    protected ?array $AirSolutionChangedInfo = null;
+    public ?array $AirSolutionChangedInfo = null;
     /**
      * The UniversalModifyFailureInfo
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class UniversalRecordModifyRsp extends BaseRsp
      * - ref: UniversalModifyFailureInfo
      * @var \Travelport\UniversalRecord\StructType\UniversalModifyFailureInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\UniversalModifyFailureInfo $UniversalModifyFailureInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\UniversalModifyFailureInfo $UniversalModifyFailureInfo = null;
     /**
      * The QueueSessionToken
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class UniversalRecordModifyRsp extends BaseRsp
      * - use: optional
      * @var string|null
      */
-    protected ?string $QueueSessionToken = null;
+    public ?string $QueueSessionToken = null;
     /**
      * Constructor method for UniversalRecordModifyRsp
      * @uses UniversalRecordModifyRsp::setUniversalRecord()
@@ -95,48 +94,12 @@ class UniversalRecordModifyRsp extends BaseRsp
         return $this->AirSolutionChangedInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirSolutionChangedInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirSolutionChangedInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAirSolutionChangedInfoForArrayConstraintFromSetAirSolutionChangedInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $universalRecordModifyRspAirSolutionChangedInfoItem) {
-            // validation for constraint: itemType
-            if (!$universalRecordModifyRspAirSolutionChangedInfoItem instanceof \Travelport\UniversalRecord\StructType\AirSolutionChangedInfo) {
-                $invalidValues[] = is_object($universalRecordModifyRspAirSolutionChangedInfoItem) ? get_class($universalRecordModifyRspAirSolutionChangedInfoItem) : sprintf('%s(%s)', gettype($universalRecordModifyRspAirSolutionChangedInfoItem), var_export($universalRecordModifyRspAirSolutionChangedInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AirSolutionChangedInfo property can only contain items of type \Travelport\UniversalRecord\StructType\AirSolutionChangedInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AirSolutionChangedInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AirSolutionChangedInfo[] $airSolutionChangedInfo
      * @return \Travelport\UniversalRecord\StructType\UniversalRecordModifyRsp
      */
     public function setAirSolutionChangedInfo(?array $airSolutionChangedInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($airSolutionChangedInfoArrayErrorMessage = self::validateAirSolutionChangedInfoForArrayConstraintFromSetAirSolutionChangedInfo($airSolutionChangedInfo))) {
-            throw new InvalidArgumentException($airSolutionChangedInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($airSolutionChangedInfo) && count($airSolutionChangedInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($airSolutionChangedInfo)), __LINE__);
-        }
         $this->AirSolutionChangedInfo = $airSolutionChangedInfo;
         
         return $this;
@@ -149,14 +112,6 @@ class UniversalRecordModifyRsp extends BaseRsp
      */
     public function addToAirSolutionChangedInfo(\Travelport\UniversalRecord\StructType\AirSolutionChangedInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AirSolutionChangedInfo) {
-            throw new InvalidArgumentException(sprintf('The AirSolutionChangedInfo property can only contain items of type \Travelport\UniversalRecord\StructType\AirSolutionChangedInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->AirSolutionChangedInfo) && count($this->AirSolutionChangedInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->AirSolutionChangedInfo)), __LINE__);
-        }
         $this->AirSolutionChangedInfo[] = $item;
         
         return $this;
@@ -195,10 +150,6 @@ class UniversalRecordModifyRsp extends BaseRsp
      */
     public function setQueueSessionToken(?string $queueSessionToken = null): self
     {
-        // validation for constraint: string
-        if (!is_null($queueSessionToken) && !is_string($queueSessionToken)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($queueSessionToken, true), gettype($queueSessionToken)), __LINE__);
-        }
         $this->QueueSessionToken = $queueSessionToken;
         
         return $this;

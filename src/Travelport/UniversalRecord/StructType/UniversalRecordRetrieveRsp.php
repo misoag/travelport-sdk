@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class UniversalRecordRetrieveRsp extends BaseRsp
      * - ref: UniversalRecord
      * @var \Travelport\UniversalRecord\StructType\UniversalRecord|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\UniversalRecord $UniversalRecord = null;
+    public ?\Travelport\UniversalRecord\StructType\UniversalRecord $UniversalRecord = null;
     /**
      * The Updated
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class UniversalRecordRetrieveRsp extends BaseRsp
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Updated = null;
+    public ?bool $Updated = null;
     /**
      * Constructor method for UniversalRecordRetrieveRsp
      * @uses UniversalRecordRetrieveRsp::setUniversalRecord()
@@ -78,10 +77,6 @@ class UniversalRecordRetrieveRsp extends BaseRsp
      */
     public function setUpdated(?bool $updated = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($updated) && !is_bool($updated)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($updated, true), gettype($updated)), __LINE__);
-        }
         $this->Updated = $updated;
         
         return $this;

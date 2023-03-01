@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class HotelReservationCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeDateSpec|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeDateSpec $CheckInDate = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeDateSpec $CheckInDate = null;
     /**
      * The HotelChainCode
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class HotelReservationCriteria extends AbstractStructBase
      * - length: 2
      * @var string|null
      */
-    protected ?string $HotelChainCode = null;
+    public ?string $HotelChainCode = null;
     /**
      * The HotelCode
      * Meta information extracted from the WSDL
@@ -40,14 +39,14 @@ class HotelReservationCriteria extends AbstractStructBase
      * - maxLength: 32
      * @var string|null
      */
-    protected ?string $HotelCode = null;
+    public ?string $HotelCode = null;
     /**
      * The HotelConfirmation
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $HotelConfirmation = null;
+    public ?string $HotelConfirmation = null;
     /**
      * The Location
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class HotelReservationCriteria extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Location = null;
+    public ?string $Location = null;
     /**
      * The PassiveOnly
      * Meta information extracted from the WSDL
@@ -66,7 +65,7 @@ class HotelReservationCriteria extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PassiveOnly = null;
+    public ?bool $PassiveOnly = null;
     /**
      * Constructor method for HotelReservationCriteria
      * @uses HotelReservationCriteria::setCheckInDate()
@@ -126,14 +125,6 @@ class HotelReservationCriteria extends AbstractStructBase
      */
     public function setHotelChainCode(?string $hotelChainCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($hotelChainCode) && !is_string($hotelChainCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotelChainCode, true), gettype($hotelChainCode)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($hotelChainCode) && mb_strlen((string) $hotelChainCode) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $hotelChainCode)), __LINE__);
-        }
         $this->HotelChainCode = $hotelChainCode;
         
         return $this;
@@ -153,14 +144,6 @@ class HotelReservationCriteria extends AbstractStructBase
      */
     public function setHotelCode(?string $hotelCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($hotelCode) && !is_string($hotelCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotelCode, true), gettype($hotelCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(32)
-        if (!is_null($hotelCode) && mb_strlen((string) $hotelCode) > 32) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $hotelCode)), __LINE__);
-        }
         $this->HotelCode = $hotelCode;
         
         return $this;
@@ -180,10 +163,6 @@ class HotelReservationCriteria extends AbstractStructBase
      */
     public function setHotelConfirmation(?string $hotelConfirmation = null): self
     {
-        // validation for constraint: string
-        if (!is_null($hotelConfirmation) && !is_string($hotelConfirmation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotelConfirmation, true), gettype($hotelConfirmation)), __LINE__);
-        }
         $this->HotelConfirmation = $hotelConfirmation;
         
         return $this;
@@ -203,14 +182,6 @@ class HotelReservationCriteria extends AbstractStructBase
      */
     public function setLocation(?string $location = null): self
     {
-        // validation for constraint: string
-        if (!is_null($location) && !is_string($location)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($location, true), gettype($location)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($location) && mb_strlen((string) $location) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $location)), __LINE__);
-        }
         $this->Location = $location;
         
         return $this;
@@ -230,10 +201,6 @@ class HotelReservationCriteria extends AbstractStructBase
      */
     public function setPassiveOnly(?bool $passiveOnly = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($passiveOnly) && !is_bool($passiveOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($passiveOnly, true), gettype($passiveOnly)), __LINE__);
-        }
         $this->PassiveOnly = $passiveOnly;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class PolicyInformation extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -31,26 +30,26 @@ class PolicyInformation extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $BookingTravelerRef;
+    public string $BookingTravelerRef;
     /**
      * The ReasonCode
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\ReasonCode|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ReasonCode $ReasonCode = null;
+    public ?\Travelport\UniversalRecord\StructType\ReasonCode $ReasonCode = null;
     /**
      * The Name
      * @var string|null
      */
-    protected ?string $Name = null;
+    public ?string $Name = null;
     /**
      * The OutOfPolicy
      * Meta information extracted from the WSDL
      * - documentation: In Policy / Out of Policy Indicator
      * @var bool|null
      */
-    protected ?bool $OutOfPolicy = null;
+    public ?bool $OutOfPolicy = null;
     /**
      * The SegmentRef
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class PolicyInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SegmentRef = null;
+    public ?string $SegmentRef = null;
     /**
      * The AirPolicy
      * Meta information extracted from the WSDL
@@ -67,7 +66,7 @@ class PolicyInformation extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeSegmentPolicy[]
      */
-    protected ?array $AirPolicy = null;
+    public ?array $AirPolicy = null;
     /**
      * The RailPolicy
      * Meta information extracted from the WSDL
@@ -75,7 +74,7 @@ class PolicyInformation extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeSegmentPolicy[]
      */
-    protected ?array $RailPolicy = null;
+    public ?array $RailPolicy = null;
     /**
      * The HotelPolicy
      * Meta information extracted from the WSDL
@@ -83,7 +82,7 @@ class PolicyInformation extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeSegmentPolicy[]
      */
-    protected ?array $HotelPolicy = null;
+    public ?array $HotelPolicy = null;
     /**
      * The VehiclePolicy
      * Meta information extracted from the WSDL
@@ -91,7 +90,7 @@ class PolicyInformation extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeSegmentPolicy[]
      */
-    protected ?array $VehiclePolicy = null;
+    public ?array $VehiclePolicy = null;
     /**
      * Constructor method for PolicyInformation
      * @uses PolicyInformation::setType()
@@ -139,18 +138,11 @@ class PolicyInformation extends AbstractStructBase
     }
     /**
      * Set Type value
-     * @uses \Travelport\UniversalRecord\EnumType\TypePolicy::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypePolicy::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $type
      * @return \Travelport\UniversalRecord\StructType\PolicyInformation
      */
     public function setType(string $type): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypePolicy::valueIsValid($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypePolicy', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypePolicy::getValidValues())), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -170,10 +162,6 @@ class PolicyInformation extends AbstractStructBase
      */
     public function setBookingTravelerRef(string $bookingTravelerRef): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;
@@ -212,10 +200,6 @@ class PolicyInformation extends AbstractStructBase
      */
     public function setName(?string $name = null): self
     {
-        // validation for constraint: string
-        if (!is_null($name) && !is_string($name)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
-        }
         $this->Name = $name;
         
         return $this;
@@ -235,10 +219,6 @@ class PolicyInformation extends AbstractStructBase
      */
     public function setOutOfPolicy(?bool $outOfPolicy = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($outOfPolicy) && !is_bool($outOfPolicy)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($outOfPolicy, true), gettype($outOfPolicy)), __LINE__);
-        }
         $this->OutOfPolicy = $outOfPolicy;
         
         return $this;
@@ -258,10 +238,6 @@ class PolicyInformation extends AbstractStructBase
      */
     public function setSegmentRef(?string $segmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($segmentRef) && !is_string($segmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($segmentRef, true), gettype($segmentRef)), __LINE__);
-        }
         $this->SegmentRef = $segmentRef;
         
         return $this;
@@ -275,48 +251,12 @@ class PolicyInformation extends AbstractStructBase
         return $this->AirPolicy;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirPolicy method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirPolicy method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAirPolicyForArrayConstraintFromSetAirPolicy(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $policyInformationAirPolicyItem) {
-            // validation for constraint: itemType
-            if (!$policyInformationAirPolicyItem instanceof \Travelport\UniversalRecord\StructType\TypeSegmentPolicy) {
-                $invalidValues[] = is_object($policyInformationAirPolicyItem) ? get_class($policyInformationAirPolicyItem) : sprintf('%s(%s)', gettype($policyInformationAirPolicyItem), var_export($policyInformationAirPolicyItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AirPolicy property can only contain items of type \Travelport\UniversalRecord\StructType\TypeSegmentPolicy, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AirPolicy value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeSegmentPolicy[] $airPolicy
      * @return \Travelport\UniversalRecord\StructType\PolicyInformation
      */
     public function setAirPolicy(?array $airPolicy = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($airPolicyArrayErrorMessage = self::validateAirPolicyForArrayConstraintFromSetAirPolicy($airPolicy))) {
-            throw new InvalidArgumentException($airPolicyArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($airPolicy) && count($airPolicy) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($airPolicy)), __LINE__);
-        }
         $this->AirPolicy = $airPolicy;
         
         return $this;
@@ -329,14 +269,6 @@ class PolicyInformation extends AbstractStructBase
      */
     public function addToAirPolicy(\Travelport\UniversalRecord\StructType\TypeSegmentPolicy $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeSegmentPolicy) {
-            throw new InvalidArgumentException(sprintf('The AirPolicy property can only contain items of type \Travelport\UniversalRecord\StructType\TypeSegmentPolicy, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->AirPolicy) && count($this->AirPolicy) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->AirPolicy)), __LINE__);
-        }
         $this->AirPolicy[] = $item;
         
         return $this;
@@ -350,48 +282,12 @@ class PolicyInformation extends AbstractStructBase
         return $this->RailPolicy;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRailPolicy method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRailPolicy method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateRailPolicyForArrayConstraintFromSetRailPolicy(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $policyInformationRailPolicyItem) {
-            // validation for constraint: itemType
-            if (!$policyInformationRailPolicyItem instanceof \Travelport\UniversalRecord\StructType\TypeSegmentPolicy) {
-                $invalidValues[] = is_object($policyInformationRailPolicyItem) ? get_class($policyInformationRailPolicyItem) : sprintf('%s(%s)', gettype($policyInformationRailPolicyItem), var_export($policyInformationRailPolicyItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The RailPolicy property can only contain items of type \Travelport\UniversalRecord\StructType\TypeSegmentPolicy, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set RailPolicy value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeSegmentPolicy[] $railPolicy
      * @return \Travelport\UniversalRecord\StructType\PolicyInformation
      */
     public function setRailPolicy(?array $railPolicy = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($railPolicyArrayErrorMessage = self::validateRailPolicyForArrayConstraintFromSetRailPolicy($railPolicy))) {
-            throw new InvalidArgumentException($railPolicyArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($railPolicy) && count($railPolicy) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($railPolicy)), __LINE__);
-        }
         $this->RailPolicy = $railPolicy;
         
         return $this;
@@ -404,14 +300,6 @@ class PolicyInformation extends AbstractStructBase
      */
     public function addToRailPolicy(\Travelport\UniversalRecord\StructType\TypeSegmentPolicy $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeSegmentPolicy) {
-            throw new InvalidArgumentException(sprintf('The RailPolicy property can only contain items of type \Travelport\UniversalRecord\StructType\TypeSegmentPolicy, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->RailPolicy) && count($this->RailPolicy) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->RailPolicy)), __LINE__);
-        }
         $this->RailPolicy[] = $item;
         
         return $this;
@@ -425,48 +313,12 @@ class PolicyInformation extends AbstractStructBase
         return $this->HotelPolicy;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHotelPolicy method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHotelPolicy method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateHotelPolicyForArrayConstraintFromSetHotelPolicy(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $policyInformationHotelPolicyItem) {
-            // validation for constraint: itemType
-            if (!$policyInformationHotelPolicyItem instanceof \Travelport\UniversalRecord\StructType\TypeSegmentPolicy) {
-                $invalidValues[] = is_object($policyInformationHotelPolicyItem) ? get_class($policyInformationHotelPolicyItem) : sprintf('%s(%s)', gettype($policyInformationHotelPolicyItem), var_export($policyInformationHotelPolicyItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The HotelPolicy property can only contain items of type \Travelport\UniversalRecord\StructType\TypeSegmentPolicy, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set HotelPolicy value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeSegmentPolicy[] $hotelPolicy
      * @return \Travelport\UniversalRecord\StructType\PolicyInformation
      */
     public function setHotelPolicy(?array $hotelPolicy = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($hotelPolicyArrayErrorMessage = self::validateHotelPolicyForArrayConstraintFromSetHotelPolicy($hotelPolicy))) {
-            throw new InvalidArgumentException($hotelPolicyArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($hotelPolicy) && count($hotelPolicy) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($hotelPolicy)), __LINE__);
-        }
         $this->HotelPolicy = $hotelPolicy;
         
         return $this;
@@ -479,14 +331,6 @@ class PolicyInformation extends AbstractStructBase
      */
     public function addToHotelPolicy(\Travelport\UniversalRecord\StructType\TypeSegmentPolicy $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeSegmentPolicy) {
-            throw new InvalidArgumentException(sprintf('The HotelPolicy property can only contain items of type \Travelport\UniversalRecord\StructType\TypeSegmentPolicy, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->HotelPolicy) && count($this->HotelPolicy) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->HotelPolicy)), __LINE__);
-        }
         $this->HotelPolicy[] = $item;
         
         return $this;
@@ -500,48 +344,12 @@ class PolicyInformation extends AbstractStructBase
         return $this->VehiclePolicy;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setVehiclePolicy method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setVehiclePolicy method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateVehiclePolicyForArrayConstraintFromSetVehiclePolicy(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $policyInformationVehiclePolicyItem) {
-            // validation for constraint: itemType
-            if (!$policyInformationVehiclePolicyItem instanceof \Travelport\UniversalRecord\StructType\TypeSegmentPolicy) {
-                $invalidValues[] = is_object($policyInformationVehiclePolicyItem) ? get_class($policyInformationVehiclePolicyItem) : sprintf('%s(%s)', gettype($policyInformationVehiclePolicyItem), var_export($policyInformationVehiclePolicyItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The VehiclePolicy property can only contain items of type \Travelport\UniversalRecord\StructType\TypeSegmentPolicy, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set VehiclePolicy value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeSegmentPolicy[] $vehiclePolicy
      * @return \Travelport\UniversalRecord\StructType\PolicyInformation
      */
     public function setVehiclePolicy(?array $vehiclePolicy = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($vehiclePolicyArrayErrorMessage = self::validateVehiclePolicyForArrayConstraintFromSetVehiclePolicy($vehiclePolicy))) {
-            throw new InvalidArgumentException($vehiclePolicyArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($vehiclePolicy) && count($vehiclePolicy) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($vehiclePolicy)), __LINE__);
-        }
         $this->VehiclePolicy = $vehiclePolicy;
         
         return $this;
@@ -554,14 +362,6 @@ class PolicyInformation extends AbstractStructBase
      */
     public function addToVehiclePolicy(\Travelport\UniversalRecord\StructType\TypeSegmentPolicy $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeSegmentPolicy) {
-            throw new InvalidArgumentException(sprintf('The VehiclePolicy property can only contain items of type \Travelport\UniversalRecord\StructType\TypeSegmentPolicy, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->VehiclePolicy) && count($this->VehiclePolicy) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->VehiclePolicy)), __LINE__);
-        }
         $this->VehiclePolicy[] = $item;
         
         return $this;

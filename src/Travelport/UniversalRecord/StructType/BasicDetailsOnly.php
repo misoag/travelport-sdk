@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class BasicDetailsOnly extends AbstractStructBase
      * - use: required
      * @var bool
      */
-    protected bool $ReturnBasicDetails;
+    public bool $ReturnBasicDetails;
     /**
      * Constructor method for BasicDetailsOnly
      * @uses BasicDetailsOnly::setReturnBasicDetails()
@@ -47,10 +46,6 @@ class BasicDetailsOnly extends AbstractStructBase
      */
     public function setReturnBasicDetails(bool $returnBasicDetails): self
     {
-        // validation for constraint: boolean
-        if (!is_null($returnBasicDetails) && !is_bool($returnBasicDetails)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($returnBasicDetails, true), gettype($returnBasicDetails)), __LINE__);
-        }
         $this->ReturnBasicDetails = $returnBasicDetails;
         
         return $this;

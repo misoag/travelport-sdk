@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class GuaranteeInfo extends AbstractStructBase
      * - ref: DepositAmount
      * @var \Travelport\UniversalRecord\StructType\DepositAmount|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\DepositAmount $DepositAmount = null;
+    public ?\Travelport\UniversalRecord\StructType\DepositAmount $DepositAmount = null;
     /**
      * The DepositNights
      * Meta information extracted from the WSDL
@@ -35,7 +34,7 @@ class GuaranteeInfo extends AbstractStructBase
      * - choiceMinOccurs: 0
      * @var int|null
      */
-    protected ?int $DepositNights = null;
+    public ?int $DepositNights = null;
     /**
      * The DepositPercent
      * Meta information extracted from the WSDL
@@ -45,7 +44,7 @@ class GuaranteeInfo extends AbstractStructBase
      * - choiceMinOccurs: 0
      * @var int|null
      */
-    protected ?int $DepositPercent = null;
+    public ?int $DepositPercent = null;
     /**
      * The GuaranteePaymentType
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class GuaranteeInfo extends AbstractStructBase
      * - ref: GuaranteePaymentType
      * @var \Travelport\UniversalRecord\StructType\GuaranteePaymentType[]
      */
-    protected ?array $GuaranteePaymentType = null;
+    public ?array $GuaranteePaymentType = null;
     /**
      * The AbsoluteDeadline
      * Meta information extracted from the WSDL
@@ -62,7 +61,7 @@ class GuaranteeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AbsoluteDeadline = null;
+    public ?string $AbsoluteDeadline = null;
     /**
      * The CredentialsRequired
      * Meta information extracted from the WSDL
@@ -70,7 +69,7 @@ class GuaranteeInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $CredentialsRequired = null;
+    public ?bool $CredentialsRequired = null;
     /**
      * The HoldTime
      * Meta information extracted from the WSDL
@@ -78,14 +77,14 @@ class GuaranteeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $HoldTime = null;
+    public ?string $HoldTime = null;
     /**
      * The GuaranteeType
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $GuaranteeType = null;
+    public ?string $GuaranteeType = null;
     /**
      * The OffsetTimeUnit
      * Meta information extracted from the WSDL
@@ -97,7 +96,7 @@ class GuaranteeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OffsetTimeUnit = null;
+    public ?string $OffsetTimeUnit = null;
     /**
      * The OffsetUnitMultiplier
      * Meta information extracted from the WSDL
@@ -109,7 +108,7 @@ class GuaranteeInfo extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $OffsetUnitMultiplier = null;
+    public ?int $OffsetUnitMultiplier = null;
     /**
      * The OffsetDropTime
      * Meta information extracted from the WSDL
@@ -121,7 +120,7 @@ class GuaranteeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OffsetDropTime = null;
+    public ?string $OffsetDropTime = null;
     /**
      * Constructor method for GuaranteeInfo
      * @uses GuaranteeInfo::setDepositAmount()
@@ -171,49 +170,15 @@ class GuaranteeInfo extends AbstractStructBase
         return $this->DepositAmount ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setDepositAmount method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setDepositAmount method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateDepositAmountForChoiceConstraintFromSetDepositAmount($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'DepositNights',
-            'DepositPercent',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property DepositAmount can\'t be set as the property %s is already set. Only one property must be set among these properties: DepositAmount, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set DepositAmount value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\DepositAmount $depositAmount
      * @return \Travelport\UniversalRecord\StructType\GuaranteeInfo
      */
     public function setDepositAmount(?\Travelport\UniversalRecord\StructType\DepositAmount $depositAmount = null): self
     {
-        // validation for constraint: choice(DepositAmount, DepositNights, DepositPercent)
-        if ('' !== ($depositAmountChoiceErrorMessage = self::validateDepositAmountForChoiceConstraintFromSetDepositAmount($depositAmount))) {
-            throw new InvalidArgumentException($depositAmountChoiceErrorMessage, __LINE__);
-        }
         if (is_null($depositAmount) || (is_array($depositAmount) && empty($depositAmount))) {
             unset($this->DepositAmount);
         } else {
@@ -231,53 +196,15 @@ class GuaranteeInfo extends AbstractStructBase
         return $this->DepositNights ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setDepositNights method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setDepositNights method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateDepositNightsForChoiceConstraintFromSetDepositNights($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'DepositAmount',
-            'DepositPercent',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property DepositNights can\'t be set as the property %s is already set. Only one property must be set among these properties: DepositNights, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set DepositNights value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param int $depositNights
      * @return \Travelport\UniversalRecord\StructType\GuaranteeInfo
      */
     public function setDepositNights(?int $depositNights = null): self
     {
-        // validation for constraint: int
-        if (!is_null($depositNights) && !(is_int($depositNights) || ctype_digit($depositNights))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($depositNights, true), gettype($depositNights)), __LINE__);
-        }
-        // validation for constraint: choice(DepositAmount, DepositNights, DepositPercent)
-        if ('' !== ($depositNightsChoiceErrorMessage = self::validateDepositNightsForChoiceConstraintFromSetDepositNights($depositNights))) {
-            throw new InvalidArgumentException($depositNightsChoiceErrorMessage, __LINE__);
-        }
         if (is_null($depositNights) || (is_array($depositNights) && empty($depositNights))) {
             unset($this->DepositNights);
         } else {
@@ -295,53 +222,15 @@ class GuaranteeInfo extends AbstractStructBase
         return $this->DepositPercent ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setDepositPercent method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setDepositPercent method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateDepositPercentForChoiceConstraintFromSetDepositPercent($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'DepositAmount',
-            'DepositNights',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property DepositPercent can\'t be set as the property %s is already set. Only one property must be set among these properties: DepositPercent, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set DepositPercent value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param int $depositPercent
      * @return \Travelport\UniversalRecord\StructType\GuaranteeInfo
      */
     public function setDepositPercent(?int $depositPercent = null): self
     {
-        // validation for constraint: int
-        if (!is_null($depositPercent) && !(is_int($depositPercent) || ctype_digit($depositPercent))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($depositPercent, true), gettype($depositPercent)), __LINE__);
-        }
-        // validation for constraint: choice(DepositAmount, DepositNights, DepositPercent)
-        if ('' !== ($depositPercentChoiceErrorMessage = self::validateDepositPercentForChoiceConstraintFromSetDepositPercent($depositPercent))) {
-            throw new InvalidArgumentException($depositPercentChoiceErrorMessage, __LINE__);
-        }
         if (is_null($depositPercent) || (is_array($depositPercent) && empty($depositPercent))) {
             unset($this->DepositPercent);
         } else {
@@ -359,48 +248,12 @@ class GuaranteeInfo extends AbstractStructBase
         return $this->GuaranteePaymentType;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setGuaranteePaymentType method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setGuaranteePaymentType method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateGuaranteePaymentTypeForArrayConstraintFromSetGuaranteePaymentType(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $guaranteeInfoGuaranteePaymentTypeItem) {
-            // validation for constraint: itemType
-            if (!$guaranteeInfoGuaranteePaymentTypeItem instanceof \Travelport\UniversalRecord\StructType\GuaranteePaymentType) {
-                $invalidValues[] = is_object($guaranteeInfoGuaranteePaymentTypeItem) ? get_class($guaranteeInfoGuaranteePaymentTypeItem) : sprintf('%s(%s)', gettype($guaranteeInfoGuaranteePaymentTypeItem), var_export($guaranteeInfoGuaranteePaymentTypeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The GuaranteePaymentType property can only contain items of type \Travelport\UniversalRecord\StructType\GuaranteePaymentType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set GuaranteePaymentType value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\GuaranteePaymentType[] $guaranteePaymentType
      * @return \Travelport\UniversalRecord\StructType\GuaranteeInfo
      */
     public function setGuaranteePaymentType(?array $guaranteePaymentType = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($guaranteePaymentTypeArrayErrorMessage = self::validateGuaranteePaymentTypeForArrayConstraintFromSetGuaranteePaymentType($guaranteePaymentType))) {
-            throw new InvalidArgumentException($guaranteePaymentTypeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($guaranteePaymentType) && count($guaranteePaymentType) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($guaranteePaymentType)), __LINE__);
-        }
         $this->GuaranteePaymentType = $guaranteePaymentType;
         
         return $this;
@@ -413,14 +266,6 @@ class GuaranteeInfo extends AbstractStructBase
      */
     public function addToGuaranteePaymentType(\Travelport\UniversalRecord\StructType\GuaranteePaymentType $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\GuaranteePaymentType) {
-            throw new InvalidArgumentException(sprintf('The GuaranteePaymentType property can only contain items of type \Travelport\UniversalRecord\StructType\GuaranteePaymentType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->GuaranteePaymentType) && count($this->GuaranteePaymentType) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->GuaranteePaymentType)), __LINE__);
-        }
         $this->GuaranteePaymentType[] = $item;
         
         return $this;
@@ -440,10 +285,6 @@ class GuaranteeInfo extends AbstractStructBase
      */
     public function setAbsoluteDeadline(?string $absoluteDeadline = null): self
     {
-        // validation for constraint: string
-        if (!is_null($absoluteDeadline) && !is_string($absoluteDeadline)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($absoluteDeadline, true), gettype($absoluteDeadline)), __LINE__);
-        }
         $this->AbsoluteDeadline = $absoluteDeadline;
         
         return $this;
@@ -463,10 +304,6 @@ class GuaranteeInfo extends AbstractStructBase
      */
     public function setCredentialsRequired(?bool $credentialsRequired = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($credentialsRequired) && !is_bool($credentialsRequired)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($credentialsRequired, true), gettype($credentialsRequired)), __LINE__);
-        }
         $this->CredentialsRequired = $credentialsRequired;
         
         return $this;
@@ -486,10 +323,6 @@ class GuaranteeInfo extends AbstractStructBase
      */
     public function setHoldTime(?string $holdTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($holdTime) && !is_string($holdTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($holdTime, true), gettype($holdTime)), __LINE__);
-        }
         $this->HoldTime = $holdTime;
         
         return $this;
@@ -509,10 +342,6 @@ class GuaranteeInfo extends AbstractStructBase
      */
     public function setGuaranteeType(?string $guaranteeType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($guaranteeType) && !is_string($guaranteeType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($guaranteeType, true), gettype($guaranteeType)), __LINE__);
-        }
         $this->GuaranteeType = $guaranteeType;
         
         return $this;
@@ -532,18 +361,6 @@ class GuaranteeInfo extends AbstractStructBase
      */
     public function setOffsetTimeUnit(?string $offsetTimeUnit = null): self
     {
-        // validation for constraint: string
-        if (!is_null($offsetTimeUnit) && !is_string($offsetTimeUnit)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($offsetTimeUnit, true), gettype($offsetTimeUnit)), __LINE__);
-        }
-        // validation for constraint: maxLength(16)
-        if (!is_null($offsetTimeUnit) && mb_strlen((string) $offsetTimeUnit) > 16) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 16', mb_strlen((string) $offsetTimeUnit)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($offsetTimeUnit) && mb_strlen((string) $offsetTimeUnit) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $offsetTimeUnit)), __LINE__);
-        }
         $this->OffsetTimeUnit = $offsetTimeUnit;
         
         return $this;
@@ -563,18 +380,6 @@ class GuaranteeInfo extends AbstractStructBase
      */
     public function setOffsetUnitMultiplier(?int $offsetUnitMultiplier = null): self
     {
-        // validation for constraint: int
-        if (!is_null($offsetUnitMultiplier) && !(is_int($offsetUnitMultiplier) || ctype_digit($offsetUnitMultiplier))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($offsetUnitMultiplier, true), gettype($offsetUnitMultiplier)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(999)
-        if (!is_null($offsetUnitMultiplier) && $offsetUnitMultiplier > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 999', var_export($offsetUnitMultiplier, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive
-        if (!is_null($offsetUnitMultiplier) && $offsetUnitMultiplier < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($offsetUnitMultiplier, true)), __LINE__);
-        }
         $this->OffsetUnitMultiplier = $offsetUnitMultiplier;
         
         return $this;
@@ -594,18 +399,6 @@ class GuaranteeInfo extends AbstractStructBase
      */
     public function setOffsetDropTime(?string $offsetDropTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($offsetDropTime) && !is_string($offsetDropTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($offsetDropTime, true), gettype($offsetDropTime)), __LINE__);
-        }
-        // validation for constraint: maxLength(20)
-        if (!is_null($offsetDropTime) && mb_strlen((string) $offsetDropTime) > 20) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 20', mb_strlen((string) $offsetDropTime)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($offsetDropTime) && mb_strlen((string) $offsetDropTime) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $offsetDropTime)), __LINE__);
-        }
         $this->OffsetDropTime = $offsetDropTime;
         
         return $this;

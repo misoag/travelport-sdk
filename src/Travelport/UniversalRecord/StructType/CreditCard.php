@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class CreditCard extends TypeCreditCardType
      * - type: xs:string
      * @var string|null
      */
-    protected ?string $ProfileID = null;
+    public ?string $ProfileID = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class CreditCard extends TypeCreditCardType
      * - type: typeRef
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * Constructor method for CreditCard
      * @uses CreditCard::setProfileID()
@@ -60,10 +59,6 @@ class CreditCard extends TypeCreditCardType
      */
     public function setProfileID(?string $profileID = null): self
     {
-        // validation for constraint: string
-        if (!is_null($profileID) && !is_string($profileID)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileID, true), gettype($profileID)), __LINE__);
-        }
         $this->ProfileID = $profileID;
         
         return $this;
@@ -83,10 +78,6 @@ class CreditCard extends TypeCreditCardType
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;

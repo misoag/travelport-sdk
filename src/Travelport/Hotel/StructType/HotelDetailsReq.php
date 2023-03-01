@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class HotelDetailsReq extends BaseHotelDetailsReq
      * - ref: common:HostToken
      * @var \Travelport\Hotel\StructType\HostToken|null
      */
-    protected ?\Travelport\Hotel\StructType\HostToken $HostToken = null;
+    public ?\Travelport\Hotel\StructType\HostToken $HostToken = null;
     /**
      * The NextResultReference
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class HotelDetailsReq extends BaseHotelDetailsReq
      * - ref: common:NextResultReference
      * @var \Travelport\Hotel\StructType\NextResultReference|null
      */
-    protected ?\Travelport\Hotel\StructType\NextResultReference $NextResultReference = null;
+    public ?\Travelport\Hotel\StructType\NextResultReference $NextResultReference = null;
     /**
      * The ReturnMediaLinks
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class HotelDetailsReq extends BaseHotelDetailsReq
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ReturnMediaLinks = null;
+    public ?bool $ReturnMediaLinks = null;
     /**
      * The ReturnGuestReviews
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class HotelDetailsReq extends BaseHotelDetailsReq
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ReturnGuestReviews = null;
+    public ?bool $ReturnGuestReviews = null;
     /**
      * The PolicyReference
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class HotelDetailsReq extends BaseHotelDetailsReq
      * - use: optional
      * @var string|null
      */
-    protected ?string $PolicyReference = null;
+    public ?string $PolicyReference = null;
     /**
      * Constructor method for HotelDetailsReq
      * @uses HotelDetailsReq::setHostToken()
@@ -135,10 +134,6 @@ class HotelDetailsReq extends BaseHotelDetailsReq
      */
     public function setReturnMediaLinks(?bool $returnMediaLinks = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($returnMediaLinks) && !is_bool($returnMediaLinks)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($returnMediaLinks, true), gettype($returnMediaLinks)), __LINE__);
-        }
         $this->ReturnMediaLinks = $returnMediaLinks;
         
         return $this;
@@ -158,10 +153,6 @@ class HotelDetailsReq extends BaseHotelDetailsReq
      */
     public function setReturnGuestReviews(?bool $returnGuestReviews = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($returnGuestReviews) && !is_bool($returnGuestReviews)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($returnGuestReviews, true), gettype($returnGuestReviews)), __LINE__);
-        }
         $this->ReturnGuestReviews = $returnGuestReviews;
         
         return $this;
@@ -181,18 +172,6 @@ class HotelDetailsReq extends BaseHotelDetailsReq
      */
     public function setPolicyReference(?string $policyReference = null): self
     {
-        // validation for constraint: string
-        if (!is_null($policyReference) && !is_string($policyReference)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($policyReference, true), gettype($policyReference)), __LINE__);
-        }
-        // validation for constraint: maxLength(20)
-        if (!is_null($policyReference) && mb_strlen((string) $policyReference) > 20) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 20', mb_strlen((string) $policyReference)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($policyReference) && mb_strlen((string) $policyReference) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $policyReference)), __LINE__);
-        }
         $this->PolicyReference = $policyReference;
         
         return $this;

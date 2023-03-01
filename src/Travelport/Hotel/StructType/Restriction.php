@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class Restriction extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Operation;
+    public string $Operation;
     /**
      * The Reason
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class Restriction extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Reason = null;
+    public ?string $Reason = null;
     /**
      * Constructor method for Restriction
      * @uses Restriction::setOperation()
@@ -59,10 +58,6 @@ class Restriction extends AbstractStructBase
      */
     public function setOperation(string $operation): self
     {
-        // validation for constraint: string
-        if (!is_null($operation) && !is_string($operation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($operation, true), gettype($operation)), __LINE__);
-        }
         $this->Operation = $operation;
         
         return $this;
@@ -82,10 +77,6 @@ class Restriction extends AbstractStructBase
      */
     public function setReason(?string $reason = null): self
     {
-        // validation for constraint: string
-        if (!is_null($reason) && !is_string($reason)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reason, true), gettype($reason)), __LINE__);
-        }
         $this->Reason = $reason;
         
         return $this;

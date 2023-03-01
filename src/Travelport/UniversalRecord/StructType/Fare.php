@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class Fare extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $FareSpecific = null;
+    public ?bool $FareSpecific = null;
     /**
      * The MultipleFareIndicator
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class Fare extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $MultipleFareIndicator = null;
+    public ?bool $MultipleFareIndicator = null;
     /**
      * The RateCode
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class Fare extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RateCode = null;
+    public ?string $RateCode = null;
     /**
      * Constructor method for Fare
      * @uses Fare::setFareSpecific()
@@ -73,10 +72,6 @@ class Fare extends AbstractStructBase
      */
     public function setFareSpecific(?bool $fareSpecific = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($fareSpecific) && !is_bool($fareSpecific)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($fareSpecific, true), gettype($fareSpecific)), __LINE__);
-        }
         $this->FareSpecific = $fareSpecific;
         
         return $this;
@@ -96,10 +91,6 @@ class Fare extends AbstractStructBase
      */
     public function setMultipleFareIndicator(?bool $multipleFareIndicator = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($multipleFareIndicator) && !is_bool($multipleFareIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($multipleFareIndicator, true), gettype($multipleFareIndicator)), __LINE__);
-        }
         $this->MultipleFareIndicator = $multipleFareIndicator;
         
         return $this;
@@ -119,18 +110,6 @@ class Fare extends AbstractStructBase
      */
     public function setRateCode(?string $rateCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rateCode) && !is_string($rateCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rateCode, true), gettype($rateCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($rateCode) && mb_strlen((string) $rateCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $rateCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($rateCode) && mb_strlen((string) $rateCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $rateCode)), __LINE__);
-        }
         $this->RateCode = $rateCode;
         
         return $this;

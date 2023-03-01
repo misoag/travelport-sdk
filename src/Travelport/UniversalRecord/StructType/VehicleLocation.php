@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class VehicleLocation extends AbstractStructBase
      * - ref: common:VendorLocation
      * @var \Travelport\UniversalRecord\StructType\VendorLocation|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\VendorLocation $VendorLocation = null;
+    public ?\Travelport\UniversalRecord\StructType\VendorLocation $VendorLocation = null;
     /**
      * The Distance
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class VehicleLocation extends AbstractStructBase
      * - ref: common:Distance
      * @var \Travelport\UniversalRecord\StructType\Distance|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Distance $Distance = null;
+    public ?\Travelport\UniversalRecord\StructType\Distance $Distance = null;
     /**
      * The CoordinateLocation
      * Meta information extracted from the WSDL
@@ -37,14 +36,14 @@ class VehicleLocation extends AbstractStructBase
      * - ref: common:CoordinateLocation
      * @var \Travelport\UniversalRecord\StructType\CoordinateLocation|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CoordinateLocation $CoordinateLocation = null;
+    public ?\Travelport\UniversalRecord\StructType\CoordinateLocation $CoordinateLocation = null;
     /**
      * The LocationInformation
      * Meta information extracted from the WSDL
      * - ref: LocationInformation
      * @var \Travelport\UniversalRecord\StructType\LocationInformation|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\LocationInformation $LocationInformation = null;
+    public ?\Travelport\UniversalRecord\StructType\LocationInformation $LocationInformation = null;
     /**
      * Constructor method for VehicleLocation
      * @uses VehicleLocation::setVendorLocation()

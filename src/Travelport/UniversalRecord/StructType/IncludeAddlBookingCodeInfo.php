@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class IncludeAddlBookingCodeInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The SecondaryCarrier
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class IncludeAddlBookingCodeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SecondaryCarrier = null;
+    public ?string $SecondaryCarrier = null;
     /**
      * Constructor method for IncludeAddlBookingCodeInfo
      * @uses IncludeAddlBookingCodeInfo::setType()
@@ -56,18 +55,11 @@ class IncludeAddlBookingCodeInfo extends AbstractStructBase
     }
     /**
      * Set Type value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeCarrierCode::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeCarrierCode::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $type
      * @return \Travelport\UniversalRecord\StructType\IncludeAddlBookingCodeInfo
      */
     public function setType(string $type): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeCarrierCode::valueIsValid($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeCarrierCode', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeCarrierCode::getValidValues())), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -87,14 +79,6 @@ class IncludeAddlBookingCodeInfo extends AbstractStructBase
      */
     public function setSecondaryCarrier(?string $secondaryCarrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($secondaryCarrier) && !is_string($secondaryCarrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($secondaryCarrier, true), gettype($secondaryCarrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($secondaryCarrier) && mb_strlen((string) $secondaryCarrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $secondaryCarrier)), __LINE__);
-        }
         $this->SecondaryCarrier = $secondaryCarrier;
         
         return $this;

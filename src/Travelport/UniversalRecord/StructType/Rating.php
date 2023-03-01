@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,12 +21,12 @@ class Rating extends AbstractStructBase
      * - use: required
      * @var int
      */
-    protected int $Number;
+    public int $Number;
     /**
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * Constructor method for Rating
      * @uses Rating::setNumber()
@@ -56,10 +55,6 @@ class Rating extends AbstractStructBase
      */
     public function setNumber(int $number): self
     {
-        // validation for constraint: int
-        if (!is_null($number) && !(is_int($number) || ctype_digit($number))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($number, true), gettype($number)), __LINE__);
-        }
         $this->Number = $number;
         
         return $this;
@@ -79,10 +74,6 @@ class Rating extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;

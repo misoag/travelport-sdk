@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class HotelSearchLocation extends AbstractStructBase
      * - ref: HotelLocation
      * @var \Travelport\Hotel\StructType\HotelLocation|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelLocation $HotelLocation = null;
+    public ?\Travelport\Hotel\StructType\HotelLocation $HotelLocation = null;
     /**
      * The VendorLocation
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class HotelSearchLocation extends AbstractStructBase
      * - ref: common:VendorLocation
      * @var \Travelport\Hotel\StructType\VendorLocation[]
      */
-    protected ?array $VendorLocation = null;
+    public ?array $VendorLocation = null;
     /**
      * The HotelAddress
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class HotelSearchLocation extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\TypeStructuredAddress|null
      */
-    protected ?\Travelport\Hotel\StructType\TypeStructuredAddress $HotelAddress = null;
+    public ?\Travelport\Hotel\StructType\TypeStructuredAddress $HotelAddress = null;
     /**
      * The ReferencePoint
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class HotelSearchLocation extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\TypeHotelReferencePoint|null
      */
-    protected ?\Travelport\Hotel\StructType\TypeHotelReferencePoint $ReferencePoint = null;
+    public ?\Travelport\Hotel\StructType\TypeHotelReferencePoint $ReferencePoint = null;
     /**
      * The CoordinateLocation
      * Meta information extracted from the WSDL
@@ -55,7 +54,7 @@ class HotelSearchLocation extends AbstractStructBase
      * - ref: common:CoordinateLocation
      * @var \Travelport\Hotel\StructType\CoordinateLocation|null
      */
-    protected ?\Travelport\Hotel\StructType\CoordinateLocation $CoordinateLocation = null;
+    public ?\Travelport\Hotel\StructType\CoordinateLocation $CoordinateLocation = null;
     /**
      * The Distance
      * Meta information extracted from the WSDL
@@ -63,7 +62,7 @@ class HotelSearchLocation extends AbstractStructBase
      * - ref: common:Distance
      * @var \Travelport\Hotel\StructType\Distance|null
      */
-    protected ?\Travelport\Hotel\StructType\Distance $Distance = null;
+    public ?\Travelport\Hotel\StructType\Distance $Distance = null;
     /**
      * Constructor method for HotelSearchLocation
      * @uses HotelSearchLocation::setHotelLocation()
@@ -117,48 +116,12 @@ class HotelSearchLocation extends AbstractStructBase
         return $this->VendorLocation;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setVendorLocation method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setVendorLocation method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateVendorLocationForArrayConstraintFromSetVendorLocation(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelSearchLocationVendorLocationItem) {
-            // validation for constraint: itemType
-            if (!$hotelSearchLocationVendorLocationItem instanceof \Travelport\Hotel\StructType\VendorLocation) {
-                $invalidValues[] = is_object($hotelSearchLocationVendorLocationItem) ? get_class($hotelSearchLocationVendorLocationItem) : sprintf('%s(%s)', gettype($hotelSearchLocationVendorLocationItem), var_export($hotelSearchLocationVendorLocationItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The VendorLocation property can only contain items of type \Travelport\Hotel\StructType\VendorLocation, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set VendorLocation value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\VendorLocation[] $vendorLocation
      * @return \Travelport\Hotel\StructType\HotelSearchLocation
      */
     public function setVendorLocation(?array $vendorLocation = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($vendorLocationArrayErrorMessage = self::validateVendorLocationForArrayConstraintFromSetVendorLocation($vendorLocation))) {
-            throw new InvalidArgumentException($vendorLocationArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($vendorLocation) && count($vendorLocation) > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 99', count($vendorLocation)), __LINE__);
-        }
         $this->VendorLocation = $vendorLocation;
         
         return $this;
@@ -171,14 +134,6 @@ class HotelSearchLocation extends AbstractStructBase
      */
     public function addToVendorLocation(\Travelport\Hotel\StructType\VendorLocation $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\VendorLocation) {
-            throw new InvalidArgumentException(sprintf('The VendorLocation property can only contain items of type \Travelport\Hotel\StructType\VendorLocation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($this->VendorLocation) && count($this->VendorLocation) >= 99) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 99', count($this->VendorLocation)), __LINE__);
-        }
         $this->VendorLocation[] = $item;
         
         return $this;

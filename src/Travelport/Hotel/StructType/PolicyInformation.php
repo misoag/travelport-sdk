@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,26 +21,26 @@ class PolicyInformation extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The ReasonCode
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\ReasonCode|null
      */
-    protected ?\Travelport\Hotel\StructType\ReasonCode $ReasonCode = null;
+    public ?\Travelport\Hotel\StructType\ReasonCode $ReasonCode = null;
     /**
      * The Name
      * @var string|null
      */
-    protected ?string $Name = null;
+    public ?string $Name = null;
     /**
      * The OutOfPolicy
      * Meta information extracted from the WSDL
      * - documentation: In Policy / Out of Policy Indicator
      * @var bool|null
      */
-    protected ?bool $OutOfPolicy = null;
+    public ?bool $OutOfPolicy = null;
     /**
      * The SegmentRef
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class PolicyInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SegmentRef = null;
+    public ?string $SegmentRef = null;
     /**
      * Constructor method for PolicyInformation
      * @uses PolicyInformation::setType()
@@ -83,18 +82,11 @@ class PolicyInformation extends AbstractStructBase
     }
     /**
      * Set Type value
-     * @uses \Travelport\Hotel\EnumType\TypePolicy::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypePolicy::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $type
      * @return \Travelport\Hotel\StructType\PolicyInformation
      */
     public function setType(string $type): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypePolicy::valueIsValid($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypePolicy', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \Travelport\Hotel\EnumType\TypePolicy::getValidValues())), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -133,10 +125,6 @@ class PolicyInformation extends AbstractStructBase
      */
     public function setName(?string $name = null): self
     {
-        // validation for constraint: string
-        if (!is_null($name) && !is_string($name)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
-        }
         $this->Name = $name;
         
         return $this;
@@ -156,10 +144,6 @@ class PolicyInformation extends AbstractStructBase
      */
     public function setOutOfPolicy(?bool $outOfPolicy = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($outOfPolicy) && !is_bool($outOfPolicy)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($outOfPolicy, true), gettype($outOfPolicy)), __LINE__);
-        }
         $this->OutOfPolicy = $outOfPolicy;
         
         return $this;
@@ -179,10 +163,6 @@ class PolicyInformation extends AbstractStructBase
      */
     public function setSegmentRef(?string $segmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($segmentRef) && !is_string($segmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($segmentRef, true), gettype($segmentRef)), __LINE__);
-        }
         $this->SegmentRef = $segmentRef;
         
         return $this;

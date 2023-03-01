@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class HotelStay extends AbstractStructBase
      * - pattern: [^:Z].*
      * @var string|null
      */
-    protected ?string $CheckinDate = null;
+    public ?string $CheckinDate = null;
     /**
      * The CheckoutDate
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class HotelStay extends AbstractStructBase
      * - pattern: [^:Z].*
      * @var string|null
      */
-    protected ?string $CheckoutDate = null;
+    public ?string $CheckoutDate = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class HotelStay extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * Constructor method for HotelStay
      * @uses HotelStay::setCheckinDate()
@@ -73,14 +72,6 @@ class HotelStay extends AbstractStructBase
      */
     public function setCheckinDate(?string $checkinDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($checkinDate) && !is_string($checkinDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($checkinDate, true), gettype($checkinDate)), __LINE__);
-        }
-        // validation for constraint: pattern([^:Z].*)
-        if (!is_null($checkinDate) && !preg_match('/[^:Z].*/', $checkinDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[^:Z].*/', var_export($checkinDate, true)), __LINE__);
-        }
         $this->CheckinDate = $checkinDate;
         
         return $this;
@@ -100,14 +91,6 @@ class HotelStay extends AbstractStructBase
      */
     public function setCheckoutDate(?string $checkoutDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($checkoutDate) && !is_string($checkoutDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($checkoutDate, true), gettype($checkoutDate)), __LINE__);
-        }
-        // validation for constraint: pattern([^:Z].*)
-        if (!is_null($checkoutDate) && !preg_match('/[^:Z].*/', $checkoutDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[^:Z].*/', var_export($checkoutDate, true)), __LINE__);
-        }
         $this->CheckoutDate = $checkoutDate;
         
         return $this;
@@ -127,10 +110,6 @@ class HotelStay extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;

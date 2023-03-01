@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class FareNoteList extends AbstractStructBase
      * - ref: FareNote
      * @var \Travelport\UniversalRecord\StructType\FareNote[]
      */
-    protected ?array $FareNote = null;
+    public ?array $FareNote = null;
     /**
      * Constructor method for FareNoteList
      * @uses FareNoteList::setFareNote()
@@ -43,48 +42,12 @@ class FareNoteList extends AbstractStructBase
         return $this->FareNote;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFareNote method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFareNote method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFareNoteForArrayConstraintFromSetFareNote(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $fareNoteListFareNoteItem) {
-            // validation for constraint: itemType
-            if (!$fareNoteListFareNoteItem instanceof \Travelport\UniversalRecord\StructType\FareNote) {
-                $invalidValues[] = is_object($fareNoteListFareNoteItem) ? get_class($fareNoteListFareNoteItem) : sprintf('%s(%s)', gettype($fareNoteListFareNoteItem), var_export($fareNoteListFareNoteItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FareNote property can only contain items of type \Travelport\UniversalRecord\StructType\FareNote, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FareNote value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FareNote[] $fareNote
      * @return \Travelport\UniversalRecord\StructType\FareNoteList
      */
     public function setFareNote(?array $fareNote = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($fareNoteArrayErrorMessage = self::validateFareNoteForArrayConstraintFromSetFareNote($fareNote))) {
-            throw new InvalidArgumentException($fareNoteArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($fareNote) && count($fareNote) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($fareNote)), __LINE__);
-        }
         $this->FareNote = $fareNote;
         
         return $this;
@@ -97,14 +60,6 @@ class FareNoteList extends AbstractStructBase
      */
     public function addToFareNote(\Travelport\UniversalRecord\StructType\FareNote $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\FareNote) {
-            throw new InvalidArgumentException(sprintf('The FareNote property can only contain items of type \Travelport\UniversalRecord\StructType\FareNote, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FareNote) && count($this->FareNote) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FareNote)), __LINE__);
-        }
         $this->FareNote[] = $item;
         
         return $this;

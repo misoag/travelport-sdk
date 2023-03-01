@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class TaxDetail extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Amount;
+    public string $Amount;
     /**
      * The OriginAirport
      * Meta information extracted from the WSDL
@@ -35,7 +34,7 @@ class TaxDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OriginAirport = null;
+    public ?string $OriginAirport = null;
     /**
      * The DestinationAirport
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class TaxDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DestinationAirport = null;
+    public ?string $DestinationAirport = null;
     /**
      * The CountryCode
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class TaxDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CountryCode = null;
+    public ?string $CountryCode = null;
     /**
      * The FareInfoRef
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class TaxDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FareInfoRef = null;
+    public ?string $FareInfoRef = null;
     /**
      * Constructor method for TaxDetail
      * @uses TaxDetail::setAmount()
@@ -102,10 +101,6 @@ class TaxDetail extends AbstractStructBase
      */
     public function setAmount(string $amount): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -125,14 +120,6 @@ class TaxDetail extends AbstractStructBase
      */
     public function setOriginAirport(?string $originAirport = null): self
     {
-        // validation for constraint: string
-        if (!is_null($originAirport) && !is_string($originAirport)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($originAirport, true), gettype($originAirport)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($originAirport) && mb_strlen((string) $originAirport) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $originAirport)), __LINE__);
-        }
         $this->OriginAirport = $originAirport;
         
         return $this;
@@ -152,14 +139,6 @@ class TaxDetail extends AbstractStructBase
      */
     public function setDestinationAirport(?string $destinationAirport = null): self
     {
-        // validation for constraint: string
-        if (!is_null($destinationAirport) && !is_string($destinationAirport)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destinationAirport, true), gettype($destinationAirport)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destinationAirport) && mb_strlen((string) $destinationAirport) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destinationAirport)), __LINE__);
-        }
         $this->DestinationAirport = $destinationAirport;
         
         return $this;
@@ -179,10 +158,6 @@ class TaxDetail extends AbstractStructBase
      */
     public function setCountryCode(?string $countryCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($countryCode) && !is_string($countryCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($countryCode, true), gettype($countryCode)), __LINE__);
-        }
         $this->CountryCode = $countryCode;
         
         return $this;
@@ -202,10 +177,6 @@ class TaxDetail extends AbstractStructBase
      */
     public function setFareInfoRef(?string $fareInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fareInfoRef) && !is_string($fareInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareInfoRef, true), gettype($fareInfoRef)), __LINE__);
-        }
         $this->FareInfoRef = $fareInfoRef;
         
         return $this;

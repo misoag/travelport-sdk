@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,14 +20,14 @@ class RuleCharges extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PenaltyType = null;
+    public ?string $PenaltyType = null;
     /**
      * The DepartureStatus
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $DepartureStatus = null;
+    public ?string $DepartureStatus = null;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -37,14 +36,14 @@ class RuleCharges extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The Percent
      * Meta information extracted from the WSDL
      * - use: optional
      * @var float|null
      */
-    protected ?float $Percent = null;
+    public ?float $Percent = null;
     /**
      * The MoreRulesPresent
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class RuleCharges extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $MoreRulesPresent = null;
+    public ?bool $MoreRulesPresent = null;
     /**
      * Constructor method for RuleCharges
      * @uses RuleCharges::setPenaltyType()
@@ -90,10 +89,6 @@ class RuleCharges extends AbstractStructBase
      */
     public function setPenaltyType(?string $penaltyType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($penaltyType) && !is_string($penaltyType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($penaltyType, true), gettype($penaltyType)), __LINE__);
-        }
         $this->PenaltyType = $penaltyType;
         
         return $this;
@@ -113,10 +108,6 @@ class RuleCharges extends AbstractStructBase
      */
     public function setDepartureStatus(?string $departureStatus = null): self
     {
-        // validation for constraint: string
-        if (!is_null($departureStatus) && !is_string($departureStatus)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($departureStatus, true), gettype($departureStatus)), __LINE__);
-        }
         $this->DepartureStatus = $departureStatus;
         
         return $this;
@@ -136,10 +127,6 @@ class RuleCharges extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -159,10 +146,6 @@ class RuleCharges extends AbstractStructBase
      */
     public function setPercent(?float $percent = null): self
     {
-        // validation for constraint: float
-        if (!is_null($percent) && !(is_float($percent) || is_numeric($percent))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($percent, true), gettype($percent)), __LINE__);
-        }
         $this->Percent = $percent;
         
         return $this;
@@ -182,10 +165,6 @@ class RuleCharges extends AbstractStructBase
      */
     public function setMoreRulesPresent(?bool $moreRulesPresent = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($moreRulesPresent) && !is_bool($moreRulesPresent)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($moreRulesPresent, true), gettype($moreRulesPresent)), __LINE__);
-        }
         $this->MoreRulesPresent = $moreRulesPresent;
         
         return $this;

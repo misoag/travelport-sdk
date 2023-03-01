@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class TypeAssociatedRemarkWithSegmentRef extends TypeAssociatedRemark
      * - use: optional
      * @var string|null
      */
-    protected ?string $SegmentRef = null;
+    public ?string $SegmentRef = null;
     /**
      * Constructor method for typeAssociatedRemarkWithSegmentRef
      * @uses TypeAssociatedRemarkWithSegmentRef::setSegmentRef()
@@ -49,10 +48,6 @@ class TypeAssociatedRemarkWithSegmentRef extends TypeAssociatedRemark
      */
     public function setSegmentRef(?string $segmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($segmentRef) && !is_string($segmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($segmentRef, true), gettype($segmentRef)), __LINE__);
-        }
         $this->SegmentRef = $segmentRef;
         
         return $this;

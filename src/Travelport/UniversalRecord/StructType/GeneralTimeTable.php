@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,24 +18,24 @@ class GeneralTimeTable extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $StartDate;
+    public string $StartDate;
     /**
      * The DaysOfOperation
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeDaysOfOperation|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeDaysOfOperation $DaysOfOperation = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeDaysOfOperation $DaysOfOperation = null;
     /**
      * The FlightOrigin
      * @var \Travelport\UniversalRecord\StructType\TypeLocation|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeLocation $FlightOrigin = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeLocation $FlightOrigin = null;
     /**
      * The FlightDestination
      * @var \Travelport\UniversalRecord\StructType\TypeLocation|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeLocation $FlightDestination = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeLocation $FlightDestination = null;
     /**
      * The CarrierList
      * Meta information extracted from the WSDL
@@ -44,14 +43,14 @@ class GeneralTimeTable extends AbstractStructBase
      * - ref: CarrierList
      * @var \Travelport\UniversalRecord\StructType\CarrierList|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CarrierList $CarrierList = null;
+    public ?\Travelport\UniversalRecord\StructType\CarrierList $CarrierList = null;
     /**
      * The EndDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $EndDate = null;
+    public ?string $EndDate = null;
     /**
      * The StartTime
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class GeneralTimeTable extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $StartTime = null;
+    public ?string $StartTime = null;
     /**
      * The EndTime
      * Meta information extracted from the WSDL
@@ -67,7 +66,7 @@ class GeneralTimeTable extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $EndTime = null;
+    public ?string $EndTime = null;
     /**
      * The IncludeConnection
      * Meta information extracted from the WSDL
@@ -75,7 +74,7 @@ class GeneralTimeTable extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $IncludeConnection = null;
+    public ?bool $IncludeConnection = null;
     /**
      * Constructor method for GeneralTimeTable
      * @uses GeneralTimeTable::setStartDate()
@@ -125,10 +124,6 @@ class GeneralTimeTable extends AbstractStructBase
      */
     public function setStartDate(string $startDate): self
     {
-        // validation for constraint: string
-        if (!is_null($startDate) && !is_string($startDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
-        }
         $this->StartDate = $startDate;
         
         return $this;
@@ -224,10 +219,6 @@ class GeneralTimeTable extends AbstractStructBase
      */
     public function setEndDate(?string $endDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($endDate) && !is_string($endDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endDate, true), gettype($endDate)), __LINE__);
-        }
         $this->EndDate = $endDate;
         
         return $this;
@@ -247,10 +238,6 @@ class GeneralTimeTable extends AbstractStructBase
      */
     public function setStartTime(?string $startTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($startTime) && !is_string($startTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startTime, true), gettype($startTime)), __LINE__);
-        }
         $this->StartTime = $startTime;
         
         return $this;
@@ -270,10 +257,6 @@ class GeneralTimeTable extends AbstractStructBase
      */
     public function setEndTime(?string $endTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($endTime) && !is_string($endTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endTime, true), gettype($endTime)), __LINE__);
-        }
         $this->EndTime = $endTime;
         
         return $this;
@@ -293,10 +276,6 @@ class GeneralTimeTable extends AbstractStructBase
      */
     public function setIncludeConnection(?bool $includeConnection = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($includeConnection) && !is_bool($includeConnection)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($includeConnection, true), gettype($includeConnection)), __LINE__);
-        }
         $this->IncludeConnection = $includeConnection;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class TypeTicketModifierPercentType extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Percent;
+    public string $Percent;
     /**
      * Constructor method for typeTicketModifierPercentType
      * @uses TypeTicketModifierPercentType::setPercent()
@@ -50,14 +49,6 @@ class TypeTicketModifierPercentType extends AbstractStructBase
      */
     public function setPercent(string $percent): self
     {
-        // validation for constraint: string
-        if (!is_null($percent) && !is_string($percent)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($percent, true), gettype($percent)), __LINE__);
-        }
-        // validation for constraint: pattern(([0-9]{1,2}|100)\.[0-9]{1,2})
-        if (!is_null($percent) && !preg_match('/([0-9]{1,2}|100)\\.[0-9]{1,2}/', $percent)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /([0-9]{1,2}|100)\\.[0-9]{1,2}/', var_export($percent, true)), __LINE__);
-        }
         $this->Percent = $percent;
         
         return $this;

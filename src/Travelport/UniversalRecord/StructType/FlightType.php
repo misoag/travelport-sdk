@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class FlightType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $RequireSingleCarrier = null;
+    public ?bool $RequireSingleCarrier = null;
     /**
      * The MaxConnections
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class FlightType extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MaxConnections = null;
+    public ?int $MaxConnections = null;
     /**
      * The MaxStops
      * Meta information extracted from the WSDL
@@ -44,63 +43,63 @@ class FlightType extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MaxStops = null;
+    public ?int $MaxStops = null;
     /**
      * The NonStopDirects
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $NonStopDirects = null;
+    public ?bool $NonStopDirects = null;
     /**
      * The StopDirects
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $StopDirects = null;
+    public ?bool $StopDirects = null;
     /**
      * The SingleOnlineCon
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $SingleOnlineCon = null;
+    public ?bool $SingleOnlineCon = null;
     /**
      * The DoubleOnlineCon
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $DoubleOnlineCon = null;
+    public ?bool $DoubleOnlineCon = null;
     /**
      * The TripleOnlineCon
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $TripleOnlineCon = null;
+    public ?bool $TripleOnlineCon = null;
     /**
      * The SingleInterlineCon
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $SingleInterlineCon = null;
+    public ?bool $SingleInterlineCon = null;
     /**
      * The DoubleInterlineCon
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $DoubleInterlineCon = null;
+    public ?bool $DoubleInterlineCon = null;
     /**
      * The TripleInterlineCon
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $TripleInterlineCon = null;
+    public ?bool $TripleInterlineCon = null;
     /**
      * Constructor method for FlightType
      * @uses FlightType::setRequireSingleCarrier()
@@ -156,10 +155,6 @@ class FlightType extends AbstractStructBase
      */
     public function setRequireSingleCarrier(?bool $requireSingleCarrier = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($requireSingleCarrier) && !is_bool($requireSingleCarrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($requireSingleCarrier, true), gettype($requireSingleCarrier)), __LINE__);
-        }
         $this->RequireSingleCarrier = $requireSingleCarrier;
         
         return $this;
@@ -179,18 +174,6 @@ class FlightType extends AbstractStructBase
      */
     public function setMaxConnections(?int $maxConnections = -1): self
     {
-        // validation for constraint: int
-        if (!is_null($maxConnections) && !(is_int($maxConnections) || ctype_digit($maxConnections))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maxConnections, true), gettype($maxConnections)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(3)
-        if (!is_null($maxConnections) && $maxConnections > 3) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 3', var_export($maxConnections, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive(-1)
-        if (!is_null($maxConnections) && $maxConnections < -1) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to -1', var_export($maxConnections, true)), __LINE__);
-        }
         $this->MaxConnections = $maxConnections;
         
         return $this;
@@ -210,18 +193,6 @@ class FlightType extends AbstractStructBase
      */
     public function setMaxStops(?int $maxStops = -1): self
     {
-        // validation for constraint: int
-        if (!is_null($maxStops) && !(is_int($maxStops) || ctype_digit($maxStops))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maxStops, true), gettype($maxStops)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(3)
-        if (!is_null($maxStops) && $maxStops > 3) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 3', var_export($maxStops, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive(-1)
-        if (!is_null($maxStops) && $maxStops < -1) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to -1', var_export($maxStops, true)), __LINE__);
-        }
         $this->MaxStops = $maxStops;
         
         return $this;
@@ -241,10 +212,6 @@ class FlightType extends AbstractStructBase
      */
     public function setNonStopDirects(?bool $nonStopDirects = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($nonStopDirects) && !is_bool($nonStopDirects)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($nonStopDirects, true), gettype($nonStopDirects)), __LINE__);
-        }
         $this->NonStopDirects = $nonStopDirects;
         
         return $this;
@@ -264,10 +231,6 @@ class FlightType extends AbstractStructBase
      */
     public function setStopDirects(?bool $stopDirects = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($stopDirects) && !is_bool($stopDirects)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($stopDirects, true), gettype($stopDirects)), __LINE__);
-        }
         $this->StopDirects = $stopDirects;
         
         return $this;
@@ -287,10 +250,6 @@ class FlightType extends AbstractStructBase
      */
     public function setSingleOnlineCon(?bool $singleOnlineCon = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($singleOnlineCon) && !is_bool($singleOnlineCon)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($singleOnlineCon, true), gettype($singleOnlineCon)), __LINE__);
-        }
         $this->SingleOnlineCon = $singleOnlineCon;
         
         return $this;
@@ -310,10 +269,6 @@ class FlightType extends AbstractStructBase
      */
     public function setDoubleOnlineCon(?bool $doubleOnlineCon = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($doubleOnlineCon) && !is_bool($doubleOnlineCon)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($doubleOnlineCon, true), gettype($doubleOnlineCon)), __LINE__);
-        }
         $this->DoubleOnlineCon = $doubleOnlineCon;
         
         return $this;
@@ -333,10 +288,6 @@ class FlightType extends AbstractStructBase
      */
     public function setTripleOnlineCon(?bool $tripleOnlineCon = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($tripleOnlineCon) && !is_bool($tripleOnlineCon)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($tripleOnlineCon, true), gettype($tripleOnlineCon)), __LINE__);
-        }
         $this->TripleOnlineCon = $tripleOnlineCon;
         
         return $this;
@@ -356,10 +307,6 @@ class FlightType extends AbstractStructBase
      */
     public function setSingleInterlineCon(?bool $singleInterlineCon = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($singleInterlineCon) && !is_bool($singleInterlineCon)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($singleInterlineCon, true), gettype($singleInterlineCon)), __LINE__);
-        }
         $this->SingleInterlineCon = $singleInterlineCon;
         
         return $this;
@@ -379,10 +326,6 @@ class FlightType extends AbstractStructBase
      */
     public function setDoubleInterlineCon(?bool $doubleInterlineCon = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($doubleInterlineCon) && !is_bool($doubleInterlineCon)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($doubleInterlineCon, true), gettype($doubleInterlineCon)), __LINE__);
-        }
         $this->DoubleInterlineCon = $doubleInterlineCon;
         
         return $this;
@@ -402,10 +345,6 @@ class FlightType extends AbstractStructBase
      */
     public function setTripleInterlineCon(?bool $tripleInterlineCon = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($tripleInterlineCon) && !is_bool($tripleInterlineCon)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($tripleInterlineCon, true), gettype($tripleInterlineCon)), __LINE__);
-        }
         $this->TripleInterlineCon = $tripleInterlineCon;
         
         return $this;

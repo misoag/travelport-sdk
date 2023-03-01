@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class Check extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $MICRNumber = null;
+    public ?string $MICRNumber = null;
     /**
      * The RoutingNumber
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class Check extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RoutingNumber = null;
+    public ?string $RoutingNumber = null;
     /**
      * The AccountNumber
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class Check extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AccountNumber = null;
+    public ?string $AccountNumber = null;
     /**
      * The CheckNumber
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class Check extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CheckNumber = null;
+    public ?string $CheckNumber = null;
     /**
      * Constructor method for Check
      * @uses Check::setMICRNumber()
@@ -82,14 +81,6 @@ class Check extends AbstractStructBase
      */
     public function setMICRNumber(?string $mICRNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($mICRNumber) && !is_string($mICRNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mICRNumber, true), gettype($mICRNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(29)
-        if (!is_null($mICRNumber) && mb_strlen((string) $mICRNumber) > 29) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 29', mb_strlen((string) $mICRNumber)), __LINE__);
-        }
         $this->MICRNumber = $mICRNumber;
         
         return $this;
@@ -109,10 +100,6 @@ class Check extends AbstractStructBase
      */
     public function setRoutingNumber(?string $routingNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($routingNumber) && !is_string($routingNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($routingNumber, true), gettype($routingNumber)), __LINE__);
-        }
         $this->RoutingNumber = $routingNumber;
         
         return $this;
@@ -132,10 +119,6 @@ class Check extends AbstractStructBase
      */
     public function setAccountNumber(?string $accountNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($accountNumber) && !is_string($accountNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountNumber, true), gettype($accountNumber)), __LINE__);
-        }
         $this->AccountNumber = $accountNumber;
         
         return $this;
@@ -155,10 +138,6 @@ class Check extends AbstractStructBase
      */
     public function setCheckNumber(?string $checkNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($checkNumber) && !is_string($checkNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($checkNumber, true), gettype($checkNumber)), __LINE__);
-        }
         $this->CheckNumber = $checkNumber;
         
         return $this;

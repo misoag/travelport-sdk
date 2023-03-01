@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class HotelRulesRsp extends BaseRsp
      * - ref: HotelRateDetail
      * @var \Travelport\Hotel\StructType\HotelRateDetail[]
      */
-    protected ?array $HotelRateDetail = null;
+    public ?array $HotelRateDetail = null;
     /**
      * The HotelRuleItem
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class HotelRulesRsp extends BaseRsp
      * - ref: HotelRuleItem
      * @var \Travelport\Hotel\StructType\HotelRuleItem[]
      */
-    protected ?array $HotelRuleItem = null;
+    public ?array $HotelRuleItem = null;
     /**
      * The HotelType
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class HotelRulesRsp extends BaseRsp
      * - ref: HotelType
      * @var \Travelport\Hotel\StructType\HotelType|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelType $HotelType = null;
+    public ?\Travelport\Hotel\StructType\HotelType $HotelType = null;
     /**
      * Constructor method for HotelRulesRsp
      * @uses HotelRulesRsp::setHotelRateDetail()
@@ -66,48 +65,12 @@ class HotelRulesRsp extends BaseRsp
         return $this->HotelRateDetail;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHotelRateDetail method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHotelRateDetail method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateHotelRateDetailForArrayConstraintFromSetHotelRateDetail(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelRulesRspHotelRateDetailItem) {
-            // validation for constraint: itemType
-            if (!$hotelRulesRspHotelRateDetailItem instanceof \Travelport\Hotel\StructType\HotelRateDetail) {
-                $invalidValues[] = is_object($hotelRulesRspHotelRateDetailItem) ? get_class($hotelRulesRspHotelRateDetailItem) : sprintf('%s(%s)', gettype($hotelRulesRspHotelRateDetailItem), var_export($hotelRulesRspHotelRateDetailItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The HotelRateDetail property can only contain items of type \Travelport\Hotel\StructType\HotelRateDetail, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set HotelRateDetail value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\HotelRateDetail[] $hotelRateDetail
      * @return \Travelport\Hotel\StructType\HotelRulesRsp
      */
     public function setHotelRateDetail(?array $hotelRateDetail = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($hotelRateDetailArrayErrorMessage = self::validateHotelRateDetailForArrayConstraintFromSetHotelRateDetail($hotelRateDetail))) {
-            throw new InvalidArgumentException($hotelRateDetailArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($hotelRateDetail) && count($hotelRateDetail) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($hotelRateDetail)), __LINE__);
-        }
         $this->HotelRateDetail = $hotelRateDetail;
         
         return $this;
@@ -120,14 +83,6 @@ class HotelRulesRsp extends BaseRsp
      */
     public function addToHotelRateDetail(\Travelport\Hotel\StructType\HotelRateDetail $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\HotelRateDetail) {
-            throw new InvalidArgumentException(sprintf('The HotelRateDetail property can only contain items of type \Travelport\Hotel\StructType\HotelRateDetail, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->HotelRateDetail) && count($this->HotelRateDetail) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->HotelRateDetail)), __LINE__);
-        }
         $this->HotelRateDetail[] = $item;
         
         return $this;
@@ -141,48 +96,12 @@ class HotelRulesRsp extends BaseRsp
         return $this->HotelRuleItem;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHotelRuleItem method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHotelRuleItem method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateHotelRuleItemForArrayConstraintFromSetHotelRuleItem(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelRulesRspHotelRuleItemItem) {
-            // validation for constraint: itemType
-            if (!$hotelRulesRspHotelRuleItemItem instanceof \Travelport\Hotel\StructType\HotelRuleItem) {
-                $invalidValues[] = is_object($hotelRulesRspHotelRuleItemItem) ? get_class($hotelRulesRspHotelRuleItemItem) : sprintf('%s(%s)', gettype($hotelRulesRspHotelRuleItemItem), var_export($hotelRulesRspHotelRuleItemItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The HotelRuleItem property can only contain items of type \Travelport\Hotel\StructType\HotelRuleItem, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set HotelRuleItem value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\HotelRuleItem[] $hotelRuleItem
      * @return \Travelport\Hotel\StructType\HotelRulesRsp
      */
     public function setHotelRuleItem(?array $hotelRuleItem = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($hotelRuleItemArrayErrorMessage = self::validateHotelRuleItemForArrayConstraintFromSetHotelRuleItem($hotelRuleItem))) {
-            throw new InvalidArgumentException($hotelRuleItemArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($hotelRuleItem) && count($hotelRuleItem) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($hotelRuleItem)), __LINE__);
-        }
         $this->HotelRuleItem = $hotelRuleItem;
         
         return $this;
@@ -195,14 +114,6 @@ class HotelRulesRsp extends BaseRsp
      */
     public function addToHotelRuleItem(\Travelport\Hotel\StructType\HotelRuleItem $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\HotelRuleItem) {
-            throw new InvalidArgumentException(sprintf('The HotelRuleItem property can only contain items of type \Travelport\Hotel\StructType\HotelRuleItem, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->HotelRuleItem) && count($this->HotelRuleItem) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->HotelRuleItem)), __LINE__);
-        }
         $this->HotelRuleItem[] = $item;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class RailRefundInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RefundAmount = null;
+    public ?string $RefundAmount = null;
     /**
      * The CancellationFee
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class RailRefundInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CancellationFee = null;
+    public ?string $CancellationFee = null;
     /**
      * The Refund
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class RailRefundInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Refund = null;
+    public ?bool $Refund = null;
     /**
      * The Retain
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class RailRefundInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Retain = null;
+    public ?bool $Retain = null;
     /**
      * The RetainAmount
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class RailRefundInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RetainAmount = null;
+    public ?string $RetainAmount = null;
     /**
      * The NetAmount
      * Meta information extracted from the WSDL
@@ -66,7 +65,7 @@ class RailRefundInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $NetAmount = null;
+    public ?string $NetAmount = null;
     /**
      * Constructor method for RailRefundInfo
      * @uses RailRefundInfo::setRefundAmount()
@@ -107,10 +106,6 @@ class RailRefundInfo extends AbstractStructBase
      */
     public function setRefundAmount(?string $refundAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($refundAmount) && !is_string($refundAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($refundAmount, true), gettype($refundAmount)), __LINE__);
-        }
         $this->RefundAmount = $refundAmount;
         
         return $this;
@@ -130,10 +125,6 @@ class RailRefundInfo extends AbstractStructBase
      */
     public function setCancellationFee(?string $cancellationFee = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cancellationFee) && !is_string($cancellationFee)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cancellationFee, true), gettype($cancellationFee)), __LINE__);
-        }
         $this->CancellationFee = $cancellationFee;
         
         return $this;
@@ -153,10 +144,6 @@ class RailRefundInfo extends AbstractStructBase
      */
     public function setRefund(?bool $refund = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($refund) && !is_bool($refund)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($refund, true), gettype($refund)), __LINE__);
-        }
         $this->Refund = $refund;
         
         return $this;
@@ -176,10 +163,6 @@ class RailRefundInfo extends AbstractStructBase
      */
     public function setRetain(?bool $retain = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($retain) && !is_bool($retain)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($retain, true), gettype($retain)), __LINE__);
-        }
         $this->Retain = $retain;
         
         return $this;
@@ -199,10 +182,6 @@ class RailRefundInfo extends AbstractStructBase
      */
     public function setRetainAmount(?string $retainAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($retainAmount) && !is_string($retainAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($retainAmount, true), gettype($retainAmount)), __LINE__);
-        }
         $this->RetainAmount = $retainAmount;
         
         return $this;
@@ -222,10 +201,6 @@ class RailRefundInfo extends AbstractStructBase
      */
     public function setNetAmount(?string $netAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($netAmount) && !is_string($netAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($netAmount, true), gettype($netAmount)), __LINE__);
-        }
         $this->NetAmount = $netAmount;
         
         return $this;

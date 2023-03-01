@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -17,7 +16,7 @@ class Comments extends AbstractStructBase
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The CommentId
      * Meta information extracted from the WSDL
@@ -26,7 +25,7 @@ class Comments extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CommentId = null;
+    public ?string $CommentId = null;
     /**
      * The Date
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class Comments extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Date = null;
+    public ?string $Date = null;
     /**
      * The CommenterLanguage
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class Comments extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CommenterLanguage = null;
+    public ?string $CommenterLanguage = null;
     /**
      * The Source
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class Comments extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Source = null;
+    public ?string $Source = null;
     /**
      * The CommentSourceName
      * Meta information extracted from the WSDL
@@ -62,7 +61,7 @@ class Comments extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CommentSourceName = null;
+    public ?string $CommentSourceName = null;
     /**
      * The Commenter
      * Meta information extracted from the WSDL
@@ -70,7 +69,7 @@ class Comments extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Commenter = null;
+    public ?string $Commenter = null;
     /**
      * Constructor method for Comments
      * @uses Comments::set_()
@@ -114,10 +113,6 @@ class Comments extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -137,10 +132,6 @@ class Comments extends AbstractStructBase
      */
     public function setCommentId(?string $commentId = null): self
     {
-        // validation for constraint: string
-        if (!is_null($commentId) && !is_string($commentId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($commentId, true), gettype($commentId)), __LINE__);
-        }
         $this->CommentId = $commentId;
         
         return $this;
@@ -160,14 +151,6 @@ class Comments extends AbstractStructBase
      */
     public function setDate(?string $date = null): self
     {
-        // validation for constraint: string
-        if (!is_null($date) && !is_string($date)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
-        }
-        // validation for constraint: pattern([^:Z].*)
-        if (!is_null($date) && !preg_match('/[^:Z].*/', $date)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[^:Z].*/', var_export($date, true)), __LINE__);
-        }
         $this->Date = $date;
         
         return $this;
@@ -187,14 +170,6 @@ class Comments extends AbstractStructBase
      */
     public function setCommenterLanguage(?string $commenterLanguage = null): self
     {
-        // validation for constraint: string
-        if (!is_null($commenterLanguage) && !is_string($commenterLanguage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($commenterLanguage, true), gettype($commenterLanguage)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($commenterLanguage) && mb_strlen((string) $commenterLanguage) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $commenterLanguage)), __LINE__);
-        }
         $this->CommenterLanguage = $commenterLanguage;
         
         return $this;
@@ -214,10 +189,6 @@ class Comments extends AbstractStructBase
      */
     public function setSource(?string $source = null): self
     {
-        // validation for constraint: string
-        if (!is_null($source) && !is_string($source)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($source, true), gettype($source)), __LINE__);
-        }
         $this->Source = $source;
         
         return $this;
@@ -237,10 +208,6 @@ class Comments extends AbstractStructBase
      */
     public function setCommentSourceName(?string $commentSourceName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($commentSourceName) && !is_string($commentSourceName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($commentSourceName, true), gettype($commentSourceName)), __LINE__);
-        }
         $this->CommentSourceName = $commentSourceName;
         
         return $this;
@@ -260,10 +227,6 @@ class Comments extends AbstractStructBase
      */
     public function setCommenter(?string $commenter = null): self
     {
-        // validation for constraint: string
-        if (!is_null($commenter) && !is_string($commenter)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($commenter, true), gettype($commenter)), __LINE__);
-        }
         $this->Commenter = $commenter;
         
         return $this;

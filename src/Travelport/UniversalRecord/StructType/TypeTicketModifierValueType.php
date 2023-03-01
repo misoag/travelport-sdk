@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class TypeTicketModifierValueType extends AbstractStructBase
      * The Value
      * @var string|null
      */
-    protected ?string $Value = null;
+    public ?string $Value = null;
     /**
      * The NetFareValue
      * Meta information extracted from the WSDL
@@ -27,7 +26,7 @@ class TypeTicketModifierValueType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $NetFareValue = null;
+    public ?bool $NetFareValue = null;
     /**
      * Constructor method for typeTicketModifierValueType
      * @uses TypeTicketModifierValueType::setValue()
@@ -56,10 +55,6 @@ class TypeTicketModifierValueType extends AbstractStructBase
      */
     public function setValue(?string $value = null): self
     {
-        // validation for constraint: string
-        if (!is_null($value) && !is_string($value)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($value, true), gettype($value)), __LINE__);
-        }
         $this->Value = $value;
         
         return $this;
@@ -79,10 +74,6 @@ class TypeTicketModifierValueType extends AbstractStructBase
      */
     public function setNetFareValue(?bool $netFareValue = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($netFareValue) && !is_bool($netFareValue)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($netFareValue, true), gettype($netFareValue)), __LINE__);
-        }
         $this->NetFareValue = $netFareValue;
         
         return $this;

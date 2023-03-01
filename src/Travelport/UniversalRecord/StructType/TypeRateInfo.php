@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,14 +22,14 @@ class TypeRateInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RateForPeriod = null;
+    public ?string $RateForPeriod = null;
     /**
      * The NumberOfPeriods
      * Meta information extracted from the WSDL
      * - documentation: Define how many periods (e.g. number of days or weeks)
      * @var int|null
      */
-    protected ?int $NumberOfPeriods = null;
+    public ?int $NumberOfPeriods = null;
     /**
      * The UnlimitedMileage
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class TypeRateInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $UnlimitedMileage = null;
+    public ?bool $UnlimitedMileage = null;
     /**
      * The MileageAllowance
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class TypeRateInfo extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MileageAllowance = null;
+    public ?int $MileageAllowance = null;
     /**
      * The Units
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class TypeRateInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Units = null;
+    public ?string $Units = null;
     /**
      * The ExtraMileageCharge
      * Meta information extracted from the WSDL
@@ -63,7 +62,7 @@ class TypeRateInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ExtraMileageCharge = null;
+    public ?string $ExtraMileageCharge = null;
     /**
      * Constructor method for typeRateInfo
      * @uses TypeRateInfo::setRateForPeriod()
@@ -104,10 +103,6 @@ class TypeRateInfo extends AbstractStructBase
      */
     public function setRateForPeriod(?string $rateForPeriod = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rateForPeriod) && !is_string($rateForPeriod)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rateForPeriod, true), gettype($rateForPeriod)), __LINE__);
-        }
         $this->RateForPeriod = $rateForPeriod;
         
         return $this;
@@ -127,10 +122,6 @@ class TypeRateInfo extends AbstractStructBase
      */
     public function setNumberOfPeriods(?int $numberOfPeriods = null): self
     {
-        // validation for constraint: int
-        if (!is_null($numberOfPeriods) && !(is_int($numberOfPeriods) || ctype_digit($numberOfPeriods))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($numberOfPeriods, true), gettype($numberOfPeriods)), __LINE__);
-        }
         $this->NumberOfPeriods = $numberOfPeriods;
         
         return $this;
@@ -150,10 +141,6 @@ class TypeRateInfo extends AbstractStructBase
      */
     public function setUnlimitedMileage(?bool $unlimitedMileage = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($unlimitedMileage) && !is_bool($unlimitedMileage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($unlimitedMileage, true), gettype($unlimitedMileage)), __LINE__);
-        }
         $this->UnlimitedMileage = $unlimitedMileage;
         
         return $this;
@@ -173,10 +160,6 @@ class TypeRateInfo extends AbstractStructBase
      */
     public function setMileageAllowance(?int $mileageAllowance = null): self
     {
-        // validation for constraint: int
-        if (!is_null($mileageAllowance) && !(is_int($mileageAllowance) || ctype_digit($mileageAllowance))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($mileageAllowance, true), gettype($mileageAllowance)), __LINE__);
-        }
         $this->MileageAllowance = $mileageAllowance;
         
         return $this;
@@ -191,18 +174,11 @@ class TypeRateInfo extends AbstractStructBase
     }
     /**
      * Set Units value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeDistance::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeDistance::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $units
      * @return \Travelport\UniversalRecord\StructType\TypeRateInfo
      */
     public function setUnits(?string $units = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeDistance::valueIsValid($units)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeDistance', is_array($units) ? implode(', ', $units) : var_export($units, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeDistance::getValidValues())), __LINE__);
-        }
         $this->Units = $units;
         
         return $this;
@@ -222,10 +198,6 @@ class TypeRateInfo extends AbstractStructBase
      */
     public function setExtraMileageCharge(?string $extraMileageCharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($extraMileageCharge) && !is_string($extraMileageCharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($extraMileageCharge, true), gettype($extraMileageCharge)), __LINE__);
-        }
         $this->ExtraMileageCharge = $extraMileageCharge;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class TicketingCode extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Value = null;
+    public ?string $Value = null;
     /**
      * Constructor method for TicketingCode
      * @uses TicketingCode::setValue()
@@ -51,18 +50,6 @@ class TicketingCode extends AbstractStructBase
      */
     public function setValue(?string $value = null): self
     {
-        // validation for constraint: string
-        if (!is_null($value) && !is_string($value)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($value, true), gettype($value)), __LINE__);
-        }
-        // validation for constraint: maxLength(20)
-        if (!is_null($value) && mb_strlen((string) $value) > 20) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 20', mb_strlen((string) $value)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if (!is_null($value) && mb_strlen((string) $value) < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $value)), __LINE__);
-        }
         $this->Value = $value;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class Guarantee extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The CreditCard
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class Guarantee extends AbstractStructBase
      * - ref: CreditCard
      * @var \Travelport\Hotel\StructType\CreditCard|null
      */
-    protected ?\Travelport\Hotel\StructType\CreditCard $CreditCard = null;
+    public ?\Travelport\Hotel\StructType\CreditCard $CreditCard = null;
     /**
      * The OtherGuaranteeInfo
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class Guarantee extends AbstractStructBase
      * - ref: OtherGuaranteeInfo
      * @var \Travelport\Hotel\StructType\OtherGuaranteeInfo|null
      */
-    protected ?\Travelport\Hotel\StructType\OtherGuaranteeInfo $OtherGuaranteeInfo = null;
+    public ?\Travelport\Hotel\StructType\OtherGuaranteeInfo $OtherGuaranteeInfo = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -53,7 +52,7 @@ class Guarantee extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The ReuseFOP
      * Meta information extracted from the WSDL
@@ -62,7 +61,7 @@ class Guarantee extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ReuseFOP = null;
+    public ?string $ReuseFOP = null;
     /**
      * The ExternalReference
      * Meta information extracted from the WSDL
@@ -72,7 +71,7 @@ class Guarantee extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ExternalReference = null;
+    public ?string $ExternalReference = null;
     /**
      * The Reusable
      * Meta information extracted from the WSDL
@@ -81,7 +80,7 @@ class Guarantee extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Reusable = null;
+    public ?bool $Reusable = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -90,7 +89,7 @@ class Guarantee extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -98,7 +97,7 @@ class Guarantee extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for Guarantee
      * @uses Guarantee::setType()
@@ -148,10 +147,6 @@ class Guarantee extends AbstractStructBase
      */
     public function setType(string $type): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -165,48 +160,15 @@ class Guarantee extends AbstractStructBase
         return $this->CreditCard ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setCreditCard method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setCreditCard method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateCreditCardForChoiceConstraintFromSetCreditCard($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'OtherGuaranteeInfo',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property CreditCard can\'t be set as the property %s is already set. Only one property must be set among these properties: CreditCard, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set CreditCard value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\CreditCard $creditCard
      * @return \Travelport\Hotel\StructType\Guarantee
      */
     public function setCreditCard(?\Travelport\Hotel\StructType\CreditCard $creditCard = null): self
     {
-        // validation for constraint: choice(CreditCard, OtherGuaranteeInfo)
-        if ('' !== ($creditCardChoiceErrorMessage = self::validateCreditCardForChoiceConstraintFromSetCreditCard($creditCard))) {
-            throw new InvalidArgumentException($creditCardChoiceErrorMessage, __LINE__);
-        }
         if (is_null($creditCard) || (is_array($creditCard) && empty($creditCard))) {
             unset($this->CreditCard);
         } else {
@@ -224,48 +186,15 @@ class Guarantee extends AbstractStructBase
         return $this->OtherGuaranteeInfo ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setOtherGuaranteeInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setOtherGuaranteeInfo method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateOtherGuaranteeInfoForChoiceConstraintFromSetOtherGuaranteeInfo($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'CreditCard',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property OtherGuaranteeInfo can\'t be set as the property %s is already set. Only one property must be set among these properties: OtherGuaranteeInfo, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set OtherGuaranteeInfo value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\OtherGuaranteeInfo $otherGuaranteeInfo
      * @return \Travelport\Hotel\StructType\Guarantee
      */
     public function setOtherGuaranteeInfo(?\Travelport\Hotel\StructType\OtherGuaranteeInfo $otherGuaranteeInfo = null): self
     {
-        // validation for constraint: choice(CreditCard, OtherGuaranteeInfo)
-        if ('' !== ($otherGuaranteeInfoChoiceErrorMessage = self::validateOtherGuaranteeInfoForChoiceConstraintFromSetOtherGuaranteeInfo($otherGuaranteeInfo))) {
-            throw new InvalidArgumentException($otherGuaranteeInfoChoiceErrorMessage, __LINE__);
-        }
         if (is_null($otherGuaranteeInfo) || (is_array($otherGuaranteeInfo) && empty($otherGuaranteeInfo))) {
             unset($this->OtherGuaranteeInfo);
         } else {
@@ -289,10 +218,6 @@ class Guarantee extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -312,10 +237,6 @@ class Guarantee extends AbstractStructBase
      */
     public function setReuseFOP(?string $reuseFOP = null): self
     {
-        // validation for constraint: string
-        if (!is_null($reuseFOP) && !is_string($reuseFOP)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reuseFOP, true), gettype($reuseFOP)), __LINE__);
-        }
         $this->ReuseFOP = $reuseFOP;
         
         return $this;
@@ -335,14 +256,6 @@ class Guarantee extends AbstractStructBase
      */
     public function setExternalReference(?string $externalReference = null): self
     {
-        // validation for constraint: string
-        if (!is_null($externalReference) && !is_string($externalReference)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($externalReference, true), gettype($externalReference)), __LINE__);
-        }
-        // validation for constraint: maxLength(32)
-        if (!is_null($externalReference) && mb_strlen((string) $externalReference) > 32) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $externalReference)), __LINE__);
-        }
         $this->ExternalReference = $externalReference;
         
         return $this;
@@ -362,10 +275,6 @@ class Guarantee extends AbstractStructBase
      */
     public function setReusable(?bool $reusable = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($reusable) && !is_bool($reusable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($reusable, true), gettype($reusable)), __LINE__);
-        }
         $this->Reusable = $reusable;
         
         return $this;
@@ -380,18 +289,11 @@ class Guarantee extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\Hotel\StructType\Guarantee
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -411,10 +313,6 @@ class Guarantee extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,28 +20,28 @@ class TransactionType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\Air|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Air $Air = null;
+    public ?\Travelport\UniversalRecord\StructType\Air $Air = null;
     /**
      * The Hotel
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeTransactionsAllowed|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeTransactionsAllowed $Hotel = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeTransactionsAllowed $Hotel = null;
     /**
      * The Rail
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeTransactionsAllowed|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeTransactionsAllowed $Rail = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeTransactionsAllowed $Rail = null;
     /**
      * The Vehicle
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeTransactionsAllowed|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeTransactionsAllowed $Vehicle = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeTransactionsAllowed $Vehicle = null;
     /**
      * The Passive
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class TransactionType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeBookingTransactionsAllowed|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeBookingTransactionsAllowed $Passive = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeBookingTransactionsAllowed $Passive = null;
     /**
      * The BackgroundPassive
      * Meta information extracted from the WSDL
@@ -58,7 +57,7 @@ class TransactionType extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeBookingTransactionsAllowed|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeBookingTransactionsAllowed $BackgroundPassive = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeBookingTransactionsAllowed $BackgroundPassive = null;
     /**
      * Constructor method for TransactionType
      * @uses TransactionType::setAir()

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class CruiseSegment extends Segment
      * - ref: CruiseStay
      * @var \Travelport\UniversalRecord\StructType\CruiseStay
      */
-    protected \Travelport\UniversalRecord\StructType\CruiseStay $CruiseStay;
+    public \Travelport\UniversalRecord\StructType\CruiseStay $CruiseStay;
     /**
      * The Origin
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class CruiseSegment extends Segment
      * - use: required
      * @var string
      */
-    protected string $Origin;
+    public string $Origin;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -45,7 +44,7 @@ class CruiseSegment extends Segment
      * - use: required
      * @var string
      */
-    protected string $Destination;
+    public string $Destination;
     /**
      * The Vendor
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class CruiseSegment extends Segment
      * - use: optional
      * @var string|null
      */
-    protected ?string $Vendor = null;
+    public ?string $Vendor = null;
     /**
      * The VendorName
      * Meta information extracted from the WSDL
@@ -67,7 +66,7 @@ class CruiseSegment extends Segment
      * - use: optional
      * @var string|null
      */
-    protected ?string $VendorName = null;
+    public ?string $VendorName = null;
     /**
      * The DepartureTime
      * Meta information extracted from the WSDL
@@ -75,7 +74,7 @@ class CruiseSegment extends Segment
      * - use: optional
      * @var string|null
      */
-    protected ?string $DepartureTime = null;
+    public ?string $DepartureTime = null;
     /**
      * The ArrivalTime
      * Meta information extracted from the WSDL
@@ -83,7 +82,7 @@ class CruiseSegment extends Segment
      * - use: optional
      * @var string|null
      */
-    protected ?string $ArrivalTime = null;
+    public ?string $ArrivalTime = null;
     /**
      * Constructor method for CruiseSegment
      * @uses CruiseSegment::setCruiseStay()
@@ -146,18 +145,6 @@ class CruiseSegment extends Segment
      */
     public function setOrigin(string $origin): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($origin) && mb_strlen((string) $origin) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $origin)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($origin) && mb_strlen((string) $origin) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -177,18 +164,6 @@ class CruiseSegment extends Segment
      */
     public function setDestination(string $destination): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($destination) && mb_strlen((string) $destination) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $destination)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($destination) && mb_strlen((string) $destination) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -208,18 +183,6 @@ class CruiseSegment extends Segment
      */
     public function setVendor(?string $vendor = null): self
     {
-        // validation for constraint: string
-        if (!is_null($vendor) && !is_string($vendor)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vendor, true), gettype($vendor)), __LINE__);
-        }
-        // validation for constraint: maxLength(3)
-        if (!is_null($vendor) && mb_strlen((string) $vendor) > 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 3', mb_strlen((string) $vendor)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($vendor) && mb_strlen((string) $vendor) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $vendor)), __LINE__);
-        }
         $this->Vendor = $vendor;
         
         return $this;
@@ -239,18 +202,6 @@ class CruiseSegment extends Segment
      */
     public function setVendorName(?string $vendorName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($vendorName) && !is_string($vendorName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vendorName, true), gettype($vendorName)), __LINE__);
-        }
-        // validation for constraint: maxLength(30)
-        if (!is_null($vendorName) && mb_strlen((string) $vendorName) > 30) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 30', mb_strlen((string) $vendorName)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($vendorName) && mb_strlen((string) $vendorName) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $vendorName)), __LINE__);
-        }
         $this->VendorName = $vendorName;
         
         return $this;
@@ -270,10 +221,6 @@ class CruiseSegment extends Segment
      */
     public function setDepartureTime(?string $departureTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($departureTime) && !is_string($departureTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($departureTime, true), gettype($departureTime)), __LINE__);
-        }
         $this->DepartureTime = $departureTime;
         
         return $this;
@@ -293,10 +240,6 @@ class CruiseSegment extends Segment
      */
     public function setArrivalTime(?string $arrivalTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($arrivalTime) && !is_string($arrivalTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($arrivalTime, true), gettype($arrivalTime)), __LINE__);
-        }
         $this->ArrivalTime = $arrivalTime;
         
         return $this;

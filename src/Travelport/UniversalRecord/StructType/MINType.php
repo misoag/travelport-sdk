@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class MINType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $HoursMin = null;
+    public ?bool $HoursMin = null;
     /**
      * The DaysMin
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class MINType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $DaysMin = null;
+    public ?bool $DaysMin = null;
     /**
      * The MonthsMin
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class MINType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $MonthsMin = null;
+    public ?bool $MonthsMin = null;
     /**
      * The OccurIndMin
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class MINType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $OccurIndMin = null;
+    public ?bool $OccurIndMin = null;
     /**
      * The SameDayMin
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class MINType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $SameDayMin = null;
+    public ?bool $SameDayMin = null;
     /**
      * The TmDOWMin
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class MINType extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $TmDOWMin = null;
+    public ?int $TmDOWMin = null;
     /**
      * The FareComponent
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class MINType extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $FareComponent = null;
+    public ?int $FareComponent = null;
     /**
      * The NumOccurMin
      * Meta information extracted from the WSDL
@@ -76,7 +75,7 @@ class MINType extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $NumOccurMin = null;
+    public ?int $NumOccurMin = null;
     /**
      * Constructor method for MINType
      * @uses MINType::setHoursMin()
@@ -123,10 +122,6 @@ class MINType extends AbstractStructBase
      */
     public function setHoursMin(?bool $hoursMin = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($hoursMin) && !is_bool($hoursMin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($hoursMin, true), gettype($hoursMin)), __LINE__);
-        }
         $this->HoursMin = $hoursMin;
         
         return $this;
@@ -146,10 +141,6 @@ class MINType extends AbstractStructBase
      */
     public function setDaysMin(?bool $daysMin = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($daysMin) && !is_bool($daysMin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($daysMin, true), gettype($daysMin)), __LINE__);
-        }
         $this->DaysMin = $daysMin;
         
         return $this;
@@ -169,10 +160,6 @@ class MINType extends AbstractStructBase
      */
     public function setMonthsMin(?bool $monthsMin = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($monthsMin) && !is_bool($monthsMin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($monthsMin, true), gettype($monthsMin)), __LINE__);
-        }
         $this->MonthsMin = $monthsMin;
         
         return $this;
@@ -192,10 +179,6 @@ class MINType extends AbstractStructBase
      */
     public function setOccurIndMin(?bool $occurIndMin = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($occurIndMin) && !is_bool($occurIndMin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($occurIndMin, true), gettype($occurIndMin)), __LINE__);
-        }
         $this->OccurIndMin = $occurIndMin;
         
         return $this;
@@ -215,10 +198,6 @@ class MINType extends AbstractStructBase
      */
     public function setSameDayMin(?bool $sameDayMin = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($sameDayMin) && !is_bool($sameDayMin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($sameDayMin, true), gettype($sameDayMin)), __LINE__);
-        }
         $this->SameDayMin = $sameDayMin;
         
         return $this;
@@ -238,10 +217,6 @@ class MINType extends AbstractStructBase
      */
     public function setTmDOWMin(?int $tmDOWMin = null): self
     {
-        // validation for constraint: int
-        if (!is_null($tmDOWMin) && !(is_int($tmDOWMin) || ctype_digit($tmDOWMin))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($tmDOWMin, true), gettype($tmDOWMin)), __LINE__);
-        }
         $this->TmDOWMin = $tmDOWMin;
         
         return $this;
@@ -261,10 +236,6 @@ class MINType extends AbstractStructBase
      */
     public function setFareComponent(?int $fareComponent = null): self
     {
-        // validation for constraint: int
-        if (!is_null($fareComponent) && !(is_int($fareComponent) || ctype_digit($fareComponent))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($fareComponent, true), gettype($fareComponent)), __LINE__);
-        }
         $this->FareComponent = $fareComponent;
         
         return $this;
@@ -284,10 +255,6 @@ class MINType extends AbstractStructBase
      */
     public function setNumOccurMin(?int $numOccurMin = null): self
     {
-        // validation for constraint: int
-        if (!is_null($numOccurMin) && !(is_int($numOccurMin) || ctype_digit($numOccurMin))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($numOccurMin, true), gettype($numOccurMin)), __LINE__);
-        }
         $this->NumOccurMin = $numOccurMin;
         
         return $this;

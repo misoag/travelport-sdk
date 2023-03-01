@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class CustomizedNameData extends AbstractStructBase
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class CustomizedNameData extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The ProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class CustomizedNameData extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderReservationInfoRef = null;
+    public ?string $ProviderReservationInfoRef = null;
     /**
      * Constructor method for CustomizedNameData
      * @uses CustomizedNameData::set_()
@@ -69,10 +68,6 @@ class CustomizedNameData extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -92,10 +87,6 @@ class CustomizedNameData extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -115,10 +106,6 @@ class CustomizedNameData extends AbstractStructBase
      */
     public function setProviderReservationInfoRef(?string $providerReservationInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerReservationInfoRef) && !is_string($providerReservationInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerReservationInfoRef, true), gettype($providerReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef = $providerReservationInfoRef;
         
         return $this;

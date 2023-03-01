@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class RoleInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Id;
+    public string $Id;
     /**
      * The Name
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class RoleInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Name;
+    public string $Name;
     /**
      * The Source
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class RoleInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Source = null;
+    public ?string $Source = null;
     /**
      * The Description
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class RoleInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Description = null;
+    public ?string $Description = null;
     /**
      * Constructor method for RoleInfo
      * @uses RoleInfo::setId()
@@ -84,14 +83,6 @@ class RoleInfo extends AbstractStructBase
      */
     public function setId(string $id): self
     {
-        // validation for constraint: string
-        if (!is_null($id) && !is_string($id)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
-        }
-        // validation for constraint: maxLength(19)
-        if (!is_null($id) && mb_strlen((string) $id) > 19) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 19', mb_strlen((string) $id)), __LINE__);
-        }
         $this->Id = $id;
         
         return $this;
@@ -111,14 +102,6 @@ class RoleInfo extends AbstractStructBase
      */
     public function setName(string $name): self
     {
-        // validation for constraint: string
-        if (!is_null($name) && !is_string($name)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($name) && mb_strlen((string) $name) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $name)), __LINE__);
-        }
         $this->Name = $name;
         
         return $this;
@@ -138,10 +121,6 @@ class RoleInfo extends AbstractStructBase
      */
     public function setSource(?string $source = null): self
     {
-        // validation for constraint: string
-        if (!is_null($source) && !is_string($source)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($source, true), gettype($source)), __LINE__);
-        }
         $this->Source = $source;
         
         return $this;
@@ -161,14 +140,6 @@ class RoleInfo extends AbstractStructBase
      */
     public function setDescription(?string $description = null): self
     {
-        // validation for constraint: string
-        if (!is_null($description) && !is_string($description)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
-        }
-        // validation for constraint: maxLength(1024)
-        if (!is_null($description) && mb_strlen((string) $description) > 1024) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 1024', mb_strlen((string) $description)), __LINE__);
-        }
         $this->Description = $description;
         
         return $this;

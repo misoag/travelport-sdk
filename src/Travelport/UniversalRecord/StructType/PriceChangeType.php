@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,12 +21,12 @@ class PriceChangeType extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Amount;
+    public string $Amount;
     /**
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The Carrier
      * Meta information extracted from the WSDL
@@ -35,7 +34,7 @@ class PriceChangeType extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Carrier = null;
+    public ?string $Carrier = null;
     /**
      * The SegmentRef
      * Meta information extracted from the WSDL
@@ -43,7 +42,7 @@ class PriceChangeType extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SegmentRef = null;
+    public ?string $SegmentRef = null;
     /**
      * Constructor method for PriceChangeType
      * @uses PriceChangeType::setAmount()
@@ -78,10 +77,6 @@ class PriceChangeType extends AbstractStructBase
      */
     public function setAmount(string $amount): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -101,10 +96,6 @@ class PriceChangeType extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -124,10 +115,6 @@ class PriceChangeType extends AbstractStructBase
      */
     public function setCarrier(?string $carrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($carrier) && !is_string($carrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrier, true), gettype($carrier)), __LINE__);
-        }
         $this->Carrier = $carrier;
         
         return $this;
@@ -147,10 +134,6 @@ class PriceChangeType extends AbstractStructBase
      */
     public function setSegmentRef(?string $segmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($segmentRef) && !is_string($segmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($segmentRef, true), gettype($segmentRef)), __LINE__);
-        }
         $this->SegmentRef = $segmentRef;
         
         return $this;

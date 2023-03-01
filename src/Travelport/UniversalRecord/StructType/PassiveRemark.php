@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,17 +20,17 @@ class PassiveRemark extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $PassiveSegmentRef;
+    public string $PassiveSegmentRef;
     /**
      * The Text
      * @var string|null
      */
-    protected ?string $Text = null;
+    public ?string $Text = null;
     /**
      * The Type
      * @var string|null
      */
-    protected ?string $Type = null;
+    public ?string $Type = null;
     /**
      * Constructor method for PassiveRemark
      * @uses PassiveRemark::setPassiveSegmentRef()
@@ -63,10 +62,6 @@ class PassiveRemark extends AbstractStructBase
      */
     public function setPassiveSegmentRef(string $passiveSegmentRef): self
     {
-        // validation for constraint: string
-        if (!is_null($passiveSegmentRef) && !is_string($passiveSegmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passiveSegmentRef, true), gettype($passiveSegmentRef)), __LINE__);
-        }
         $this->PassiveSegmentRef = $passiveSegmentRef;
         
         return $this;
@@ -86,10 +81,6 @@ class PassiveRemark extends AbstractStructBase
      */
     public function setText(?string $text = null): self
     {
-        // validation for constraint: string
-        if (!is_null($text) && !is_string($text)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($text, true), gettype($text)), __LINE__);
-        }
         $this->Text = $text;
         
         return $this;
@@ -109,10 +100,6 @@ class PassiveRemark extends AbstractStructBase
      */
     public function setType(?string $type = null): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;

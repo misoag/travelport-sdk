@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class RuleInfo extends AbstractStructBase
      * - ref: ChargesRules
      * @var \Travelport\UniversalRecord\StructType\ChargesRules|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ChargesRules $ChargesRules = null;
+    public ?\Travelport\UniversalRecord\StructType\ChargesRules $ChargesRules = null;
     /**
      * Constructor method for RuleInfo
      * @uses RuleInfo::setChargesRules()

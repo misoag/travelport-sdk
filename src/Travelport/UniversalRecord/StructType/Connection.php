@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class Connection extends AbstractStructBase
      * - ref: FareNote
      * @var \Travelport\UniversalRecord\StructType\FareNote|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FareNote $FareNote = null;
+    public ?\Travelport\UniversalRecord\StructType\FareNote $FareNote = null;
     /**
      * The ChangeOfPlane
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class Connection extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ChangeOfPlane = null;
+    public ?bool $ChangeOfPlane = null;
     /**
      * The ChangeOfTerminal
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class Connection extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ChangeOfTerminal = null;
+    public ?bool $ChangeOfTerminal = null;
     /**
      * The ChangeOfAirport
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class Connection extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ChangeOfAirport = null;
+    public ?bool $ChangeOfAirport = null;
     /**
      * The StopOver
      * Meta information extracted from the WSDL
@@ -58,7 +57,7 @@ class Connection extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $StopOver = null;
+    public ?bool $StopOver = null;
     /**
      * The MinConnectionTime
      * Meta information extracted from the WSDL
@@ -66,7 +65,7 @@ class Connection extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MinConnectionTime = null;
+    public ?int $MinConnectionTime = null;
     /**
      * The Duration
      * Meta information extracted from the WSDL
@@ -74,7 +73,7 @@ class Connection extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Duration = null;
+    public ?int $Duration = null;
     /**
      * The SegmentIndex
      * Meta information extracted from the WSDL
@@ -82,7 +81,7 @@ class Connection extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $SegmentIndex = null;
+    public ?int $SegmentIndex = null;
     /**
      * The FlightDetailsIndex
      * Meta information extracted from the WSDL
@@ -90,7 +89,7 @@ class Connection extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $FlightDetailsIndex = null;
+    public ?int $FlightDetailsIndex = null;
     /**
      * The IncludeStopOverToFareQuote
      * Meta information extracted from the WSDL
@@ -98,7 +97,7 @@ class Connection extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $IncludeStopOverToFareQuote = null;
+    public ?string $IncludeStopOverToFareQuote = null;
     /**
      * Constructor method for Connection
      * @uses Connection::setFareNote()
@@ -170,10 +169,6 @@ class Connection extends AbstractStructBase
      */
     public function setChangeOfPlane(?bool $changeOfPlane = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($changeOfPlane) && !is_bool($changeOfPlane)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($changeOfPlane, true), gettype($changeOfPlane)), __LINE__);
-        }
         $this->ChangeOfPlane = $changeOfPlane;
         
         return $this;
@@ -193,10 +188,6 @@ class Connection extends AbstractStructBase
      */
     public function setChangeOfTerminal(?bool $changeOfTerminal = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($changeOfTerminal) && !is_bool($changeOfTerminal)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($changeOfTerminal, true), gettype($changeOfTerminal)), __LINE__);
-        }
         $this->ChangeOfTerminal = $changeOfTerminal;
         
         return $this;
@@ -216,10 +207,6 @@ class Connection extends AbstractStructBase
      */
     public function setChangeOfAirport(?bool $changeOfAirport = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($changeOfAirport) && !is_bool($changeOfAirport)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($changeOfAirport, true), gettype($changeOfAirport)), __LINE__);
-        }
         $this->ChangeOfAirport = $changeOfAirport;
         
         return $this;
@@ -239,10 +226,6 @@ class Connection extends AbstractStructBase
      */
     public function setStopOver(?bool $stopOver = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($stopOver) && !is_bool($stopOver)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($stopOver, true), gettype($stopOver)), __LINE__);
-        }
         $this->StopOver = $stopOver;
         
         return $this;
@@ -262,10 +245,6 @@ class Connection extends AbstractStructBase
      */
     public function setMinConnectionTime(?int $minConnectionTime = null): self
     {
-        // validation for constraint: int
-        if (!is_null($minConnectionTime) && !(is_int($minConnectionTime) || ctype_digit($minConnectionTime))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($minConnectionTime, true), gettype($minConnectionTime)), __LINE__);
-        }
         $this->MinConnectionTime = $minConnectionTime;
         
         return $this;
@@ -285,10 +264,6 @@ class Connection extends AbstractStructBase
      */
     public function setDuration(?int $duration = null): self
     {
-        // validation for constraint: int
-        if (!is_null($duration) && !(is_int($duration) || ctype_digit($duration))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($duration, true), gettype($duration)), __LINE__);
-        }
         $this->Duration = $duration;
         
         return $this;
@@ -308,10 +283,6 @@ class Connection extends AbstractStructBase
      */
     public function setSegmentIndex(?int $segmentIndex = null): self
     {
-        // validation for constraint: int
-        if (!is_null($segmentIndex) && !(is_int($segmentIndex) || ctype_digit($segmentIndex))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($segmentIndex, true), gettype($segmentIndex)), __LINE__);
-        }
         $this->SegmentIndex = $segmentIndex;
         
         return $this;
@@ -331,10 +302,6 @@ class Connection extends AbstractStructBase
      */
     public function setFlightDetailsIndex(?int $flightDetailsIndex = null): self
     {
-        // validation for constraint: int
-        if (!is_null($flightDetailsIndex) && !(is_int($flightDetailsIndex) || ctype_digit($flightDetailsIndex))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($flightDetailsIndex, true), gettype($flightDetailsIndex)), __LINE__);
-        }
         $this->FlightDetailsIndex = $flightDetailsIndex;
         
         return $this;
@@ -349,18 +316,11 @@ class Connection extends AbstractStructBase
     }
     /**
      * Set IncludeStopOverToFareQuote value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeIgnoreStopOver::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeIgnoreStopOver::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $includeStopOverToFareQuote
      * @return \Travelport\UniversalRecord\StructType\Connection
      */
     public function setIncludeStopOverToFareQuote(?string $includeStopOverToFareQuote = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeIgnoreStopOver::valueIsValid($includeStopOverToFareQuote)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeIgnoreStopOver', is_array($includeStopOverToFareQuote) ? implode(', ', $includeStopOverToFareQuote) : var_export($includeStopOverToFareQuote, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeIgnoreStopOver::getValidValues())), __LINE__);
-        }
         $this->IncludeStopOverToFareQuote = $includeStopOverToFareQuote;
         
         return $this;

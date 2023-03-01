@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,63 +20,63 @@ class FareRestrictionDaysOfWeek extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Direction = null;
+    public ?string $Direction = null;
     /**
      * The TripType
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $TripType = null;
+    public ?string $TripType = null;
     /**
      * The Monday
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Monday = null;
+    public ?bool $Monday = null;
     /**
      * The Tuesday
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Tuesday = null;
+    public ?bool $Tuesday = null;
     /**
      * The Wednesday
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Wednesday = null;
+    public ?bool $Wednesday = null;
     /**
      * The Thursday
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Thursday = null;
+    public ?bool $Thursday = null;
     /**
      * The Friday
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Friday = null;
+    public ?bool $Friday = null;
     /**
      * The Saturday
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Saturday = null;
+    public ?bool $Saturday = null;
     /**
      * The Sunday
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Sunday = null;
+    public ?bool $Sunday = null;
     /**
      * Constructor method for FareRestrictionDaysOfWeek
      * @uses FareRestrictionDaysOfWeek::setDirection()
@@ -122,18 +121,11 @@ class FareRestrictionDaysOfWeek extends AbstractStructBase
     }
     /**
      * Set Direction value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareDirectionality::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareDirectionality::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $direction
      * @return \Travelport\UniversalRecord\StructType\FareRestrictionDaysOfWeek
      */
     public function setDirection(?string $direction = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeFareDirectionality::valueIsValid($direction)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeFareDirectionality', is_array($direction) ? implode(', ', $direction) : var_export($direction, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeFareDirectionality::getValidValues())), __LINE__);
-        }
         $this->Direction = $direction;
         
         return $this;
@@ -148,18 +140,11 @@ class FareRestrictionDaysOfWeek extends AbstractStructBase
     }
     /**
      * Set TripType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareTripType::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareTripType::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $tripType
      * @return \Travelport\UniversalRecord\StructType\FareRestrictionDaysOfWeek
      */
     public function setTripType(?string $tripType = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeFareTripType::valueIsValid($tripType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeFareTripType', is_array($tripType) ? implode(', ', $tripType) : var_export($tripType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeFareTripType::getValidValues())), __LINE__);
-        }
         $this->TripType = $tripType;
         
         return $this;
@@ -179,10 +164,6 @@ class FareRestrictionDaysOfWeek extends AbstractStructBase
      */
     public function setMonday(?bool $monday = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($monday) && !is_bool($monday)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($monday, true), gettype($monday)), __LINE__);
-        }
         $this->Monday = $monday;
         
         return $this;
@@ -202,10 +183,6 @@ class FareRestrictionDaysOfWeek extends AbstractStructBase
      */
     public function setTuesday(?bool $tuesday = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($tuesday) && !is_bool($tuesday)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($tuesday, true), gettype($tuesday)), __LINE__);
-        }
         $this->Tuesday = $tuesday;
         
         return $this;
@@ -225,10 +202,6 @@ class FareRestrictionDaysOfWeek extends AbstractStructBase
      */
     public function setWednesday(?bool $wednesday = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($wednesday) && !is_bool($wednesday)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($wednesday, true), gettype($wednesday)), __LINE__);
-        }
         $this->Wednesday = $wednesday;
         
         return $this;
@@ -248,10 +221,6 @@ class FareRestrictionDaysOfWeek extends AbstractStructBase
      */
     public function setThursday(?bool $thursday = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($thursday) && !is_bool($thursday)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($thursday, true), gettype($thursday)), __LINE__);
-        }
         $this->Thursday = $thursday;
         
         return $this;
@@ -271,10 +240,6 @@ class FareRestrictionDaysOfWeek extends AbstractStructBase
      */
     public function setFriday(?bool $friday = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($friday) && !is_bool($friday)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($friday, true), gettype($friday)), __LINE__);
-        }
         $this->Friday = $friday;
         
         return $this;
@@ -294,10 +259,6 @@ class FareRestrictionDaysOfWeek extends AbstractStructBase
      */
     public function setSaturday(?bool $saturday = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($saturday) && !is_bool($saturday)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($saturday, true), gettype($saturday)), __LINE__);
-        }
         $this->Saturday = $saturday;
         
         return $this;
@@ -317,10 +278,6 @@ class FareRestrictionDaysOfWeek extends AbstractStructBase
      */
     public function setSunday(?bool $sunday = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($sunday) && !is_bool($sunday)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($sunday, true), gettype($sunday)), __LINE__);
-        }
         $this->Sunday = $sunday;
         
         return $this;

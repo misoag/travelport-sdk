@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class OSI extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Carrier;
+    public string $Carrier;
     /**
      * The Text
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class OSI extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Text;
+    public string $Text;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class OSI extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The Code
      * Meta information extracted from the WSDL
@@ -51,7 +50,7 @@ class OSI extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Code = null;
+    public ?string $Code = null;
     /**
      * The ProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class OSI extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderReservationInfoRef = null;
+    public ?string $ProviderReservationInfoRef = null;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -71,7 +70,7 @@ class OSI extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -80,7 +79,7 @@ class OSI extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -88,7 +87,7 @@ class OSI extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for OSI
      * @uses OSI::setCarrier()
@@ -135,14 +134,6 @@ class OSI extends AbstractStructBase
      */
     public function setCarrier(string $carrier): self
     {
-        // validation for constraint: string
-        if (!is_null($carrier) && !is_string($carrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrier, true), gettype($carrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($carrier) && mb_strlen((string) $carrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $carrier)), __LINE__);
-        }
         $this->Carrier = $carrier;
         
         return $this;
@@ -162,14 +153,6 @@ class OSI extends AbstractStructBase
      */
     public function setText(string $text): self
     {
-        // validation for constraint: string
-        if (!is_null($text) && !is_string($text)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($text, true), gettype($text)), __LINE__);
-        }
-        // validation for constraint: maxLength(256)
-        if (!is_null($text) && mb_strlen((string) $text) > 256) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 256', mb_strlen((string) $text)), __LINE__);
-        }
         $this->Text = $text;
         
         return $this;
@@ -189,10 +172,6 @@ class OSI extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -212,14 +191,6 @@ class OSI extends AbstractStructBase
      */
     public function setCode(?string $code = null): self
     {
-        // validation for constraint: string
-        if (!is_null($code) && !is_string($code)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
-        // validation for constraint: maxLength(4)
-        if (!is_null($code) && mb_strlen((string) $code) > 4) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 4', mb_strlen((string) $code)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;
@@ -239,10 +210,6 @@ class OSI extends AbstractStructBase
      */
     public function setProviderReservationInfoRef(?string $providerReservationInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerReservationInfoRef) && !is_string($providerReservationInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerReservationInfoRef, true), gettype($providerReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef = $providerReservationInfoRef;
         
         return $this;
@@ -262,18 +229,6 @@ class OSI extends AbstractStructBase
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -288,18 +243,11 @@ class OSI extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\Hotel\StructType\OSI
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -319,10 +267,6 @@ class OSI extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

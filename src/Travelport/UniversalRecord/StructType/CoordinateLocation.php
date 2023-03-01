@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,14 +20,14 @@ class CoordinateLocation extends Location
      * - use: required
      * @var float
      */
-    protected float $latitude;
+    public float $latitude;
     /**
      * The longitude
      * Meta information extracted from the WSDL
      * - use: required
      * @var float
      */
-    protected float $longitude;
+    public float $longitude;
     /**
      * Constructor method for CoordinateLocation
      * @uses CoordinateLocation::setLatitude()
@@ -57,10 +56,6 @@ class CoordinateLocation extends Location
      */
     public function setLatitude(float $latitude): self
     {
-        // validation for constraint: float
-        if (!is_null($latitude) && !(is_float($latitude) || is_numeric($latitude))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($latitude, true), gettype($latitude)), __LINE__);
-        }
         $this->latitude = $latitude;
         
         return $this;
@@ -80,10 +75,6 @@ class CoordinateLocation extends Location
      */
     public function setLongitude(float $longitude): self
     {
-        // validation for constraint: float
-        if (!is_null($longitude) && !(is_float($longitude) || is_numeric($longitude))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($longitude, true), gettype($longitude)), __LINE__);
-        }
         $this->longitude = $longitude;
         
         return $this;

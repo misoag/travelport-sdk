@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class TypeRentalPeriod extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $RentalUnit;
+    public string $RentalUnit;
     /**
      * The Length
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class TypeRentalPeriod extends AbstractStructBase
      * - use: required
      * @var int
      */
-    protected int $Length;
+    public int $Length;
     /**
      * The RequirementPassed
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class TypeRentalPeriod extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $RequirementPassed = null;
+    public ?bool $RequirementPassed = null;
     /**
      * Constructor method for typeRentalPeriod
      * @uses TypeRentalPeriod::setRentalUnit()
@@ -69,10 +68,6 @@ class TypeRentalPeriod extends AbstractStructBase
      */
     public function setRentalUnit(string $rentalUnit): self
     {
-        // validation for constraint: string
-        if (!is_null($rentalUnit) && !is_string($rentalUnit)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rentalUnit, true), gettype($rentalUnit)), __LINE__);
-        }
         $this->RentalUnit = $rentalUnit;
         
         return $this;
@@ -92,10 +87,6 @@ class TypeRentalPeriod extends AbstractStructBase
      */
     public function setLength(int $length): self
     {
-        // validation for constraint: int
-        if (!is_null($length) && !(is_int($length) || ctype_digit($length))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($length, true), gettype($length)), __LINE__);
-        }
         $this->Length = $length;
         
         return $this;
@@ -115,10 +106,6 @@ class TypeRentalPeriod extends AbstractStructBase
      */
     public function setRequirementPassed(?bool $requirementPassed = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($requirementPassed) && !is_bool($requirementPassed)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($requirementPassed, true), gettype($requirementPassed)), __LINE__);
-        }
         $this->RequirementPassed = $requirementPassed;
         
         return $this;

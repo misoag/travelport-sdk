@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class AirSegmentDetails extends AbstractStructBase
      * - ref: PassengerDetailsRef
      * @var \Travelport\UniversalRecord\StructType\PassengerDetailsRef[]
      */
-    protected array $PassengerDetailsRef;
+    public array $PassengerDetailsRef;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class AirSegmentDetails extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -43,7 +42,7 @@ class AirSegmentDetails extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ProviderCode;
+    public string $ProviderCode;
     /**
      * The Carrier
      * Meta information extracted from the WSDL
@@ -53,7 +52,7 @@ class AirSegmentDetails extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Carrier;
+    public string $Carrier;
     /**
      * The Origin
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class AirSegmentDetails extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string
      */
-    protected string $Origin;
+    public string $Origin;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -75,7 +74,7 @@ class AirSegmentDetails extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string
      */
-    protected string $Destination;
+    public string $Destination;
     /**
      * The DepartureTime
      * Meta information extracted from the WSDL
@@ -83,7 +82,7 @@ class AirSegmentDetails extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $DepartureTime;
+    public string $DepartureTime;
     /**
      * The ArrivalTime
      * Meta information extracted from the WSDL
@@ -91,7 +90,7 @@ class AirSegmentDetails extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ArrivalTime;
+    public string $ArrivalTime;
     /**
      * The FlightNumber
      * Meta information extracted from the WSDL
@@ -101,7 +100,7 @@ class AirSegmentDetails extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $FlightNumber;
+    public string $FlightNumber;
     /**
      * The BrandID
      * Meta information extracted from the WSDL
@@ -110,7 +109,7 @@ class AirSegmentDetails extends AbstractStructBase
      * - ref: BrandID
      * @var \Travelport\UniversalRecord\StructType\BrandID[]
      */
-    protected ?array $BrandID = null;
+    public ?array $BrandID = null;
     /**
      * The BookingCodeList
      * Meta information extracted from the WSDL
@@ -118,7 +117,7 @@ class AirSegmentDetails extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $BookingCodeList = null;
+    public ?string $BookingCodeList = null;
     /**
      * The Equipment
      * Meta information extracted from the WSDL
@@ -128,7 +127,7 @@ class AirSegmentDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Equipment = null;
+    public ?string $Equipment = null;
     /**
      * The ClassOfService
      * Meta information extracted from the WSDL
@@ -138,14 +137,14 @@ class AirSegmentDetails extends AbstractStructBase
      * - minLength: 1
      * @var string|null
      */
-    protected ?string $ClassOfService = null;
+    public ?string $ClassOfService = null;
     /**
      * The CabinClass
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $CabinClass = null;
+    public ?string $CabinClass = null;
     /**
      * The OperatingCarrier
      * Meta information extracted from the WSDL
@@ -155,7 +154,7 @@ class AirSegmentDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OperatingCarrier = null;
+    public ?string $OperatingCarrier = null;
     /**
      * Constructor method for AirSegmentDetails
      * @uses AirSegmentDetails::setPassengerDetailsRef()
@@ -217,48 +216,12 @@ class AirSegmentDetails extends AbstractStructBase
         return $this->PassengerDetailsRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPassengerDetailsRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPassengerDetailsRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePassengerDetailsRefForArrayConstraintFromSetPassengerDetailsRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airSegmentDetailsPassengerDetailsRefItem) {
-            // validation for constraint: itemType
-            if (!$airSegmentDetailsPassengerDetailsRefItem instanceof \Travelport\UniversalRecord\StructType\PassengerDetailsRef) {
-                $invalidValues[] = is_object($airSegmentDetailsPassengerDetailsRefItem) ? get_class($airSegmentDetailsPassengerDetailsRefItem) : sprintf('%s(%s)', gettype($airSegmentDetailsPassengerDetailsRefItem), var_export($airSegmentDetailsPassengerDetailsRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The PassengerDetailsRef property can only contain items of type \Travelport\UniversalRecord\StructType\PassengerDetailsRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set PassengerDetailsRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\PassengerDetailsRef[] $passengerDetailsRef
      * @return \Travelport\UniversalRecord\StructType\AirSegmentDetails
      */
     public function setPassengerDetailsRef(array $passengerDetailsRef): self
     {
-        // validation for constraint: array
-        if ('' !== ($passengerDetailsRefArrayErrorMessage = self::validatePassengerDetailsRefForArrayConstraintFromSetPassengerDetailsRef($passengerDetailsRef))) {
-            throw new InvalidArgumentException($passengerDetailsRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($passengerDetailsRef) && count($passengerDetailsRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($passengerDetailsRef)), __LINE__);
-        }
         $this->PassengerDetailsRef = $passengerDetailsRef;
         
         return $this;
@@ -271,14 +234,6 @@ class AirSegmentDetails extends AbstractStructBase
      */
     public function addToPassengerDetailsRef(\Travelport\UniversalRecord\StructType\PassengerDetailsRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\PassengerDetailsRef) {
-            throw new InvalidArgumentException(sprintf('The PassengerDetailsRef property can only contain items of type \Travelport\UniversalRecord\StructType\PassengerDetailsRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->PassengerDetailsRef) && count($this->PassengerDetailsRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->PassengerDetailsRef)), __LINE__);
-        }
         $this->PassengerDetailsRef[] = $item;
         
         return $this;
@@ -298,10 +253,6 @@ class AirSegmentDetails extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -321,18 +272,6 @@ class AirSegmentDetails extends AbstractStructBase
      */
     public function setProviderCode(string $providerCode): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -352,14 +291,6 @@ class AirSegmentDetails extends AbstractStructBase
      */
     public function setCarrier(string $carrier): self
     {
-        // validation for constraint: string
-        if (!is_null($carrier) && !is_string($carrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrier, true), gettype($carrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($carrier) && mb_strlen((string) $carrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $carrier)), __LINE__);
-        }
         $this->Carrier = $carrier;
         
         return $this;
@@ -379,14 +310,6 @@ class AirSegmentDetails extends AbstractStructBase
      */
     public function setOrigin(string $origin): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($origin) && mb_strlen((string) $origin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -406,14 +329,6 @@ class AirSegmentDetails extends AbstractStructBase
      */
     public function setDestination(string $destination): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destination) && mb_strlen((string) $destination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -433,10 +348,6 @@ class AirSegmentDetails extends AbstractStructBase
      */
     public function setDepartureTime(string $departureTime): self
     {
-        // validation for constraint: string
-        if (!is_null($departureTime) && !is_string($departureTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($departureTime, true), gettype($departureTime)), __LINE__);
-        }
         $this->DepartureTime = $departureTime;
         
         return $this;
@@ -456,10 +367,6 @@ class AirSegmentDetails extends AbstractStructBase
      */
     public function setArrivalTime(string $arrivalTime): self
     {
-        // validation for constraint: string
-        if (!is_null($arrivalTime) && !is_string($arrivalTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($arrivalTime, true), gettype($arrivalTime)), __LINE__);
-        }
         $this->ArrivalTime = $arrivalTime;
         
         return $this;
@@ -479,14 +386,6 @@ class AirSegmentDetails extends AbstractStructBase
      */
     public function setFlightNumber(string $flightNumber): self
     {
-        // validation for constraint: string
-        if (!is_null($flightNumber) && !is_string($flightNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($flightNumber, true), gettype($flightNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($flightNumber) && mb_strlen((string) $flightNumber) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $flightNumber)), __LINE__);
-        }
         $this->FlightNumber = $flightNumber;
         
         return $this;
@@ -500,48 +399,12 @@ class AirSegmentDetails extends AbstractStructBase
         return $this->BrandID;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setBrandID method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setBrandID method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateBrandIDForArrayConstraintFromSetBrandID(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airSegmentDetailsBrandIDItem) {
-            // validation for constraint: itemType
-            if (!$airSegmentDetailsBrandIDItem instanceof \Travelport\UniversalRecord\StructType\BrandID) {
-                $invalidValues[] = is_object($airSegmentDetailsBrandIDItem) ? get_class($airSegmentDetailsBrandIDItem) : sprintf('%s(%s)', gettype($airSegmentDetailsBrandIDItem), var_export($airSegmentDetailsBrandIDItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The BrandID property can only contain items of type \Travelport\UniversalRecord\StructType\BrandID, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set BrandID value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\BrandID[] $brandID
      * @return \Travelport\UniversalRecord\StructType\AirSegmentDetails
      */
     public function setBrandID(?array $brandID = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($brandIDArrayErrorMessage = self::validateBrandIDForArrayConstraintFromSetBrandID($brandID))) {
-            throw new InvalidArgumentException($brandIDArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($brandID) && count($brandID) > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 99', count($brandID)), __LINE__);
-        }
         $this->BrandID = $brandID;
         
         return $this;
@@ -554,14 +417,6 @@ class AirSegmentDetails extends AbstractStructBase
      */
     public function addToBrandID(\Travelport\UniversalRecord\StructType\BrandID $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\BrandID) {
-            throw new InvalidArgumentException(sprintf('The BrandID property can only contain items of type \Travelport\UniversalRecord\StructType\BrandID, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($this->BrandID) && count($this->BrandID) >= 99) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 99', count($this->BrandID)), __LINE__);
-        }
         $this->BrandID[] = $item;
         
         return $this;
@@ -581,10 +436,6 @@ class AirSegmentDetails extends AbstractStructBase
      */
     public function setBookingCodeList(?string $bookingCodeList = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingCodeList) && !is_string($bookingCodeList)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingCodeList, true), gettype($bookingCodeList)), __LINE__);
-        }
         $this->BookingCodeList = $bookingCodeList;
         
         return $this;
@@ -604,14 +455,6 @@ class AirSegmentDetails extends AbstractStructBase
      */
     public function setEquipment(?string $equipment = null): self
     {
-        // validation for constraint: string
-        if (!is_null($equipment) && !is_string($equipment)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($equipment, true), gettype($equipment)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($equipment) && mb_strlen((string) $equipment) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $equipment)), __LINE__);
-        }
         $this->Equipment = $equipment;
         
         return $this;
@@ -631,18 +474,6 @@ class AirSegmentDetails extends AbstractStructBase
      */
     public function setClassOfService(?string $classOfService = null): self
     {
-        // validation for constraint: string
-        if (!is_null($classOfService) && !is_string($classOfService)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($classOfService, true), gettype($classOfService)), __LINE__);
-        }
-        // validation for constraint: maxLength(2)
-        if (!is_null($classOfService) && mb_strlen((string) $classOfService) > 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 2', mb_strlen((string) $classOfService)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($classOfService) && mb_strlen((string) $classOfService) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $classOfService)), __LINE__);
-        }
         $this->ClassOfService = $classOfService;
         
         return $this;
@@ -662,10 +493,6 @@ class AirSegmentDetails extends AbstractStructBase
      */
     public function setCabinClass(?string $cabinClass = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cabinClass) && !is_string($cabinClass)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cabinClass, true), gettype($cabinClass)), __LINE__);
-        }
         $this->CabinClass = $cabinClass;
         
         return $this;
@@ -685,14 +512,6 @@ class AirSegmentDetails extends AbstractStructBase
      */
     public function setOperatingCarrier(?string $operatingCarrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($operatingCarrier) && !is_string($operatingCarrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($operatingCarrier, true), gettype($operatingCarrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($operatingCarrier) && mb_strlen((string) $operatingCarrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $operatingCarrier)), __LINE__);
-        }
         $this->OperatingCarrier = $operatingCarrier;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:Email
      * @var \Travelport\UniversalRecord\StructType\Email[]
      */
-    protected ?array $Email = null;
+    public ?array $Email = null;
     /**
      * The PhoneNumber
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:PhoneNumber
      * @var \Travelport\UniversalRecord\StructType\PhoneNumber[]
      */
-    protected ?array $PhoneNumber = null;
+    public ?array $PhoneNumber = null;
     /**
      * The HotelRateDetail
      * Meta information extracted from the WSDL
@@ -40,14 +39,14 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: hotel:HotelRateDetail
      * @var \Travelport\UniversalRecord\StructType\HotelRateDetail[]
      */
-    protected ?array $HotelRateDetail = null;
+    public ?array $HotelRateDetail = null;
     /**
      * The HotelProperty
      * Meta information extracted from the WSDL
      * - ref: hotel:HotelProperty
      * @var \Travelport\UniversalRecord\StructType\HotelProperty|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\HotelProperty $HotelProperty = null;
+    public ?\Travelport\UniversalRecord\StructType\HotelProperty $HotelProperty = null;
     /**
      * The ThirdPartyInformation
      * Meta information extracted from the WSDL
@@ -55,14 +54,14 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:ThirdPartyInformation
      * @var \Travelport\UniversalRecord\StructType\ThirdPartyInformation|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ThirdPartyInformation $ThirdPartyInformation = null;
+    public ?\Travelport\UniversalRecord\StructType\ThirdPartyInformation $ThirdPartyInformation = null;
     /**
      * The HotelStay
      * Meta information extracted from the WSDL
      * - ref: hotel:HotelStay
      * @var \Travelport\UniversalRecord\StructType\HotelStay|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\HotelStay $HotelStay = null;
+    public ?\Travelport\UniversalRecord\StructType\HotelStay $HotelStay = null;
     /**
      * The Guarantee
      * Meta information extracted from the WSDL
@@ -70,7 +69,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:Guarantee
      * @var \Travelport\UniversalRecord\StructType\Guarantee|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Guarantee $Guarantee = null;
+    public ?\Travelport\UniversalRecord\StructType\Guarantee $Guarantee = null;
     /**
      * The HotelSpecialRequest
      * Meta information extracted from the WSDL
@@ -81,7 +80,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: hotel:HotelSpecialRequest
      * @var string|null
      */
-    protected ?string $HotelSpecialRequest = null;
+    public ?string $HotelSpecialRequest = null;
     /**
      * The PointOfSale
      * Meta information extracted from the WSDL
@@ -89,7 +88,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:PointOfSale
      * @var \Travelport\UniversalRecord\StructType\PointOfSale|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PointOfSale $PointOfSale = null;
+    public ?\Travelport\UniversalRecord\StructType\PointOfSale $PointOfSale = null;
     /**
      * The PromotionCode
      * Meta information extracted from the WSDL
@@ -97,7 +96,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: hotel:PromotionCode
      * @var \Travelport\UniversalRecord\StructType\PromotionCode|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PromotionCode $PromotionCode = null;
+    public ?\Travelport\UniversalRecord\StructType\PromotionCode $PromotionCode = null;
     /**
      * The BookingSource
      * Meta information extracted from the WSDL
@@ -105,7 +104,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:BookingSource
      * @var \Travelport\UniversalRecord\StructType\BookingSource|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\BookingSource $BookingSource = null;
+    public ?\Travelport\UniversalRecord\StructType\BookingSource $BookingSource = null;
     /**
      * The HotelBedding
      * Meta information extracted from the WSDL
@@ -114,7 +113,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: hotel:HotelBedding
      * @var \Travelport\UniversalRecord\StructType\HotelBedding[]
      */
-    protected ?array $HotelBedding = null;
+    public ?array $HotelBedding = null;
     /**
      * The GuestInformation
      * Meta information extracted from the WSDL
@@ -122,7 +121,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: hotel:GuestInformation
      * @var \Travelport\UniversalRecord\StructType\GuestInformation|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\GuestInformation $GuestInformation = null;
+    public ?\Travelport\UniversalRecord\StructType\GuestInformation $GuestInformation = null;
     /**
      * The AssociatedRemark
      * Meta information extracted from the WSDL
@@ -131,7 +130,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: hotel:AssociatedRemark
      * @var \Travelport\UniversalRecord\StructType\AssociatedRemark[]
      */
-    protected ?array $AssociatedRemark = null;
+    public ?array $AssociatedRemark = null;
     /**
      * The ReservationName
      * Meta information extracted from the WSDL
@@ -139,7 +138,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:ReservationName
      * @var \Travelport\UniversalRecord\StructType\ReservationName|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ReservationName $ReservationName = null;
+    public ?\Travelport\UniversalRecord\StructType\ReservationName $ReservationName = null;
     /**
      * The ActionStatus
      * Meta information extracted from the WSDL
@@ -147,7 +146,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:ActionStatus
      * @var \Travelport\UniversalRecord\StructType\ActionStatus|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ActionStatus $ActionStatus = null;
+    public ?\Travelport\UniversalRecord\StructType\ActionStatus $ActionStatus = null;
     /**
      * The HostToken
      * Meta information extracted from the WSDL
@@ -155,7 +154,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:HostToken
      * @var \Travelport\UniversalRecord\StructType\HostToken|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\HostToken $HostToken = null;
+    public ?\Travelport\UniversalRecord\StructType\HostToken $HostToken = null;
     /**
      * The ReviewBooking
      * Meta information extracted from the WSDL
@@ -164,7 +163,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:ReviewBooking
      * @var \Travelport\UniversalRecord\StructType\ReviewBooking[]
      */
-    protected ?array $ReviewBooking = null;
+    public ?array $ReviewBooking = null;
     /**
      * The HotelCommission
      * Meta information extracted from the WSDL
@@ -172,7 +171,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: hotel:HotelCommission
      * @var string|null
      */
-    protected ?string $HotelCommission = null;
+    public ?string $HotelCommission = null;
     /**
      * The UserAcceptance
      * Meta information extracted from the WSDL
@@ -181,7 +180,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $UserAcceptance = null;
+    public ?bool $UserAcceptance = null;
     /**
      * The MandatoryRateMatch
      * Meta information extracted from the WSDL
@@ -190,7 +189,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $MandatoryRateMatch = null;
+    public ?bool $MandatoryRateMatch = null;
     /**
      * The StatusCode
      * Meta information extracted from the WSDL
@@ -201,7 +200,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $StatusCode = null;
+    public ?string $StatusCode = null;
     /**
      * The BookingConfirmation
      * Meta information extracted from the WSDL
@@ -211,7 +210,7 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingConfirmation = null;
+    public ?string $BookingConfirmation = null;
     /**
      * Constructor method for HotelCreateReservationReq
      * @uses HotelCreateReservationReq::setEmail()
@@ -297,48 +296,12 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->Email;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setEmail method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setEmail method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateEmailForArrayConstraintFromSetEmail(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelCreateReservationReqEmailItem) {
-            // validation for constraint: itemType
-            if (!$hotelCreateReservationReqEmailItem instanceof \Travelport\UniversalRecord\StructType\Email) {
-                $invalidValues[] = is_object($hotelCreateReservationReqEmailItem) ? get_class($hotelCreateReservationReqEmailItem) : sprintf('%s(%s)', gettype($hotelCreateReservationReqEmailItem), var_export($hotelCreateReservationReqEmailItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Email property can only contain items of type \Travelport\UniversalRecord\StructType\Email, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Email value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\Email[] $email
      * @return \Travelport\UniversalRecord\StructType\HotelCreateReservationReq
      */
     public function setEmail(?array $email = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($emailArrayErrorMessage = self::validateEmailForArrayConstraintFromSetEmail($email))) {
-            throw new InvalidArgumentException($emailArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($email) && count($email) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($email)), __LINE__);
-        }
         $this->Email = $email;
         
         return $this;
@@ -351,14 +314,6 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      */
     public function addToEmail(\Travelport\UniversalRecord\StructType\Email $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\Email) {
-            throw new InvalidArgumentException(sprintf('The Email property can only contain items of type \Travelport\UniversalRecord\StructType\Email, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->Email) && count($this->Email) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->Email)), __LINE__);
-        }
         $this->Email[] = $item;
         
         return $this;
@@ -372,48 +327,12 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->PhoneNumber;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPhoneNumber method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPhoneNumber method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePhoneNumberForArrayConstraintFromSetPhoneNumber(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelCreateReservationReqPhoneNumberItem) {
-            // validation for constraint: itemType
-            if (!$hotelCreateReservationReqPhoneNumberItem instanceof \Travelport\UniversalRecord\StructType\PhoneNumber) {
-                $invalidValues[] = is_object($hotelCreateReservationReqPhoneNumberItem) ? get_class($hotelCreateReservationReqPhoneNumberItem) : sprintf('%s(%s)', gettype($hotelCreateReservationReqPhoneNumberItem), var_export($hotelCreateReservationReqPhoneNumberItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The PhoneNumber property can only contain items of type \Travelport\UniversalRecord\StructType\PhoneNumber, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set PhoneNumber value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\PhoneNumber[] $phoneNumber
      * @return \Travelport\UniversalRecord\StructType\HotelCreateReservationReq
      */
     public function setPhoneNumber(?array $phoneNumber = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($phoneNumberArrayErrorMessage = self::validatePhoneNumberForArrayConstraintFromSetPhoneNumber($phoneNumber))) {
-            throw new InvalidArgumentException($phoneNumberArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($phoneNumber) && count($phoneNumber) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($phoneNumber)), __LINE__);
-        }
         $this->PhoneNumber = $phoneNumber;
         
         return $this;
@@ -426,14 +345,6 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      */
     public function addToPhoneNumber(\Travelport\UniversalRecord\StructType\PhoneNumber $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\PhoneNumber) {
-            throw new InvalidArgumentException(sprintf('The PhoneNumber property can only contain items of type \Travelport\UniversalRecord\StructType\PhoneNumber, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->PhoneNumber) && count($this->PhoneNumber) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->PhoneNumber)), __LINE__);
-        }
         $this->PhoneNumber[] = $item;
         
         return $this;
@@ -447,48 +358,12 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->HotelRateDetail;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHotelRateDetail method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHotelRateDetail method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateHotelRateDetailForArrayConstraintFromSetHotelRateDetail(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelCreateReservationReqHotelRateDetailItem) {
-            // validation for constraint: itemType
-            if (!$hotelCreateReservationReqHotelRateDetailItem instanceof \Travelport\UniversalRecord\StructType\HotelRateDetail) {
-                $invalidValues[] = is_object($hotelCreateReservationReqHotelRateDetailItem) ? get_class($hotelCreateReservationReqHotelRateDetailItem) : sprintf('%s(%s)', gettype($hotelCreateReservationReqHotelRateDetailItem), var_export($hotelCreateReservationReqHotelRateDetailItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The HotelRateDetail property can only contain items of type \Travelport\UniversalRecord\StructType\HotelRateDetail, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set HotelRateDetail value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\HotelRateDetail[] $hotelRateDetail
      * @return \Travelport\UniversalRecord\StructType\HotelCreateReservationReq
      */
     public function setHotelRateDetail(?array $hotelRateDetail = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($hotelRateDetailArrayErrorMessage = self::validateHotelRateDetailForArrayConstraintFromSetHotelRateDetail($hotelRateDetail))) {
-            throw new InvalidArgumentException($hotelRateDetailArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($hotelRateDetail) && count($hotelRateDetail) > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 99', count($hotelRateDetail)), __LINE__);
-        }
         $this->HotelRateDetail = $hotelRateDetail;
         
         return $this;
@@ -501,14 +376,6 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      */
     public function addToHotelRateDetail(\Travelport\UniversalRecord\StructType\HotelRateDetail $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\HotelRateDetail) {
-            throw new InvalidArgumentException(sprintf('The HotelRateDetail property can only contain items of type \Travelport\UniversalRecord\StructType\HotelRateDetail, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($this->HotelRateDetail) && count($this->HotelRateDetail) >= 99) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 99', count($this->HotelRateDetail)), __LINE__);
-        }
         $this->HotelRateDetail[] = $item;
         
         return $this;
@@ -604,14 +471,6 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      */
     public function setHotelSpecialRequest(?string $hotelSpecialRequest = null): self
     {
-        // validation for constraint: string
-        if (!is_null($hotelSpecialRequest) && !is_string($hotelSpecialRequest)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotelSpecialRequest, true), gettype($hotelSpecialRequest)), __LINE__);
-        }
-        // validation for constraint: maxLength(250)
-        if (!is_null($hotelSpecialRequest) && mb_strlen((string) $hotelSpecialRequest) > 250) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 250', mb_strlen((string) $hotelSpecialRequest)), __LINE__);
-        }
         $this->HotelSpecialRequest = $hotelSpecialRequest;
         
         return $this;
@@ -682,48 +541,12 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->HotelBedding;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHotelBedding method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHotelBedding method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateHotelBeddingForArrayConstraintFromSetHotelBedding(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelCreateReservationReqHotelBeddingItem) {
-            // validation for constraint: itemType
-            if (!$hotelCreateReservationReqHotelBeddingItem instanceof \Travelport\UniversalRecord\StructType\HotelBedding) {
-                $invalidValues[] = is_object($hotelCreateReservationReqHotelBeddingItem) ? get_class($hotelCreateReservationReqHotelBeddingItem) : sprintf('%s(%s)', gettype($hotelCreateReservationReqHotelBeddingItem), var_export($hotelCreateReservationReqHotelBeddingItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The HotelBedding property can only contain items of type \Travelport\UniversalRecord\StructType\HotelBedding, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set HotelBedding value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\HotelBedding[] $hotelBedding
      * @return \Travelport\UniversalRecord\StructType\HotelCreateReservationReq
      */
     public function setHotelBedding(?array $hotelBedding = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($hotelBeddingArrayErrorMessage = self::validateHotelBeddingForArrayConstraintFromSetHotelBedding($hotelBedding))) {
-            throw new InvalidArgumentException($hotelBeddingArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(4)
-        if (is_array($hotelBedding) && count($hotelBedding) > 4) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 4', count($hotelBedding)), __LINE__);
-        }
         $this->HotelBedding = $hotelBedding;
         
         return $this;
@@ -736,14 +559,6 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      */
     public function addToHotelBedding(\Travelport\UniversalRecord\StructType\HotelBedding $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\HotelBedding) {
-            throw new InvalidArgumentException(sprintf('The HotelBedding property can only contain items of type \Travelport\UniversalRecord\StructType\HotelBedding, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(4)
-        if (is_array($this->HotelBedding) && count($this->HotelBedding) >= 4) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 4', count($this->HotelBedding)), __LINE__);
-        }
         $this->HotelBedding[] = $item;
         
         return $this;
@@ -776,48 +591,12 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->AssociatedRemark;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAssociatedRemark method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAssociatedRemark method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelCreateReservationReqAssociatedRemarkItem) {
-            // validation for constraint: itemType
-            if (!$hotelCreateReservationReqAssociatedRemarkItem instanceof \Travelport\UniversalRecord\StructType\AssociatedRemark) {
-                $invalidValues[] = is_object($hotelCreateReservationReqAssociatedRemarkItem) ? get_class($hotelCreateReservationReqAssociatedRemarkItem) : sprintf('%s(%s)', gettype($hotelCreateReservationReqAssociatedRemarkItem), var_export($hotelCreateReservationReqAssociatedRemarkItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AssociatedRemark property can only contain items of type \Travelport\UniversalRecord\StructType\AssociatedRemark, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AssociatedRemark value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AssociatedRemark[] $associatedRemark
      * @return \Travelport\UniversalRecord\StructType\HotelCreateReservationReq
      */
     public function setAssociatedRemark(?array $associatedRemark = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark($associatedRemark))) {
-            throw new InvalidArgumentException($associatedRemarkArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(9999)
-        if (is_array($associatedRemark) && count($associatedRemark) > 9999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 9999', count($associatedRemark)), __LINE__);
-        }
         $this->AssociatedRemark = $associatedRemark;
         
         return $this;
@@ -830,14 +609,6 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      */
     public function addToAssociatedRemark(\Travelport\UniversalRecord\StructType\AssociatedRemark $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AssociatedRemark) {
-            throw new InvalidArgumentException(sprintf('The AssociatedRemark property can only contain items of type \Travelport\UniversalRecord\StructType\AssociatedRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(9999)
-        if (is_array($this->AssociatedRemark) && count($this->AssociatedRemark) >= 9999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 9999', count($this->AssociatedRemark)), __LINE__);
-        }
         $this->AssociatedRemark[] = $item;
         
         return $this;
@@ -908,48 +679,12 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->ReviewBooking;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setReviewBooking method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setReviewBooking method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateReviewBookingForArrayConstraintFromSetReviewBooking(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelCreateReservationReqReviewBookingItem) {
-            // validation for constraint: itemType
-            if (!$hotelCreateReservationReqReviewBookingItem instanceof \Travelport\UniversalRecord\StructType\ReviewBooking) {
-                $invalidValues[] = is_object($hotelCreateReservationReqReviewBookingItem) ? get_class($hotelCreateReservationReqReviewBookingItem) : sprintf('%s(%s)', gettype($hotelCreateReservationReqReviewBookingItem), var_export($hotelCreateReservationReqReviewBookingItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ReviewBooking property can only contain items of type \Travelport\UniversalRecord\StructType\ReviewBooking, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ReviewBooking value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\ReviewBooking[] $reviewBooking
      * @return \Travelport\UniversalRecord\StructType\HotelCreateReservationReq
      */
     public function setReviewBooking(?array $reviewBooking = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($reviewBookingArrayErrorMessage = self::validateReviewBookingForArrayConstraintFromSetReviewBooking($reviewBooking))) {
-            throw new InvalidArgumentException($reviewBookingArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(9999)
-        if (is_array($reviewBooking) && count($reviewBooking) > 9999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 9999', count($reviewBooking)), __LINE__);
-        }
         $this->ReviewBooking = $reviewBooking;
         
         return $this;
@@ -962,14 +697,6 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      */
     public function addToReviewBooking(\Travelport\UniversalRecord\StructType\ReviewBooking $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\ReviewBooking) {
-            throw new InvalidArgumentException(sprintf('The ReviewBooking property can only contain items of type \Travelport\UniversalRecord\StructType\ReviewBooking, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(9999)
-        if (is_array($this->ReviewBooking) && count($this->ReviewBooking) >= 9999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 9999', count($this->ReviewBooking)), __LINE__);
-        }
         $this->ReviewBooking[] = $item;
         
         return $this;
@@ -989,10 +716,6 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      */
     public function setHotelCommission(?string $hotelCommission = null): self
     {
-        // validation for constraint: string
-        if (!is_null($hotelCommission) && !is_string($hotelCommission)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotelCommission, true), gettype($hotelCommission)), __LINE__);
-        }
         $this->HotelCommission = $hotelCommission;
         
         return $this;
@@ -1012,10 +735,6 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      */
     public function setUserAcceptance(?bool $userAcceptance = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($userAcceptance) && !is_bool($userAcceptance)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($userAcceptance, true), gettype($userAcceptance)), __LINE__);
-        }
         $this->UserAcceptance = $userAcceptance;
         
         return $this;
@@ -1035,10 +754,6 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      */
     public function setMandatoryRateMatch(?bool $mandatoryRateMatch = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($mandatoryRateMatch) && !is_bool($mandatoryRateMatch)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($mandatoryRateMatch, true), gettype($mandatoryRateMatch)), __LINE__);
-        }
         $this->MandatoryRateMatch = $mandatoryRateMatch;
         
         return $this;
@@ -1058,14 +773,6 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      */
     public function setStatusCode(?string $statusCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($statusCode) && !is_string($statusCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusCode, true), gettype($statusCode)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($statusCode) && mb_strlen((string) $statusCode) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $statusCode)), __LINE__);
-        }
         $this->StatusCode = $statusCode;
         
         return $this;
@@ -1085,14 +792,6 @@ class HotelCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      */
     public function setBookingConfirmation(?string $bookingConfirmation = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingConfirmation) && !is_string($bookingConfirmation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingConfirmation, true), gettype($bookingConfirmation)), __LINE__);
-        }
-        // validation for constraint: maxLength(32)
-        if (!is_null($bookingConfirmation) && mb_strlen((string) $bookingConfirmation) > 32) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $bookingConfirmation)), __LINE__);
-        }
         $this->BookingConfirmation = $bookingConfirmation;
         
         return $this;

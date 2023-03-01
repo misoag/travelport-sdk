@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class FareRuleCategory extends AbstractStructBase
      * - use: required
      * @var int
      */
-    protected int $Category;
+    public int $Category;
     /**
      * Constructor method for FareRuleCategory
      * @uses FareRuleCategory::setCategory()
@@ -50,18 +49,6 @@ class FareRuleCategory extends AbstractStructBase
      */
     public function setCategory(int $category): self
     {
-        // validation for constraint: int
-        if (!is_null($category) && !(is_int($category) || ctype_digit($category))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($category, true), gettype($category)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(50)
-        if (!is_null($category) && $category > 50) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 50', var_export($category, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive(1)
-        if (!is_null($category) && $category < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($category, true)), __LINE__);
-        }
         $this->Category = $category;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class UniversalRecordHistorySearchReq extends BaseReq
      * - use: required
      * @var string
      */
-    protected string $UniversalRecordLocatorCode;
+    public string $UniversalRecordLocatorCode;
     /**
      * The UniversalRecordHistorySearchModifiers
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class UniversalRecordHistorySearchReq extends BaseReq
      * - ref: UniversalRecordHistorySearchModifiers
      * @var \Travelport\UniversalRecord\StructType\UniversalRecordHistorySearchModifiers|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\UniversalRecordHistorySearchModifiers $UniversalRecordHistorySearchModifiers = null;
+    public ?\Travelport\UniversalRecord\StructType\UniversalRecordHistorySearchModifiers $UniversalRecordHistorySearchModifiers = null;
     /**
      * Constructor method for UniversalRecordHistorySearchReq
      * @uses UniversalRecordHistorySearchReq::setUniversalRecordLocatorCode()
@@ -62,18 +61,6 @@ class UniversalRecordHistorySearchReq extends BaseReq
      */
     public function setUniversalRecordLocatorCode(string $universalRecordLocatorCode): self
     {
-        // validation for constraint: string
-        if (!is_null($universalRecordLocatorCode) && !is_string($universalRecordLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($universalRecordLocatorCode, true), gettype($universalRecordLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($universalRecordLocatorCode) && mb_strlen((string) $universalRecordLocatorCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $universalRecordLocatorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($universalRecordLocatorCode) && mb_strlen((string) $universalRecordLocatorCode) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $universalRecordLocatorCode)), __LINE__);
-        }
         $this->UniversalRecordLocatorCode = $universalRecordLocatorCode;
         
         return $this;

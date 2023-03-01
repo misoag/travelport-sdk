@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -33,7 +32,7 @@ class FareRuleFailureInfo extends AbstractStructBase
      * - maxOccurs: 999
      * @var string[]
      */
-    protected ?array $Reason = null;
+    public ?array $Reason = null;
     /**
      * Constructor method for FareRuleFailureInfo
      * @uses FareRuleFailureInfo::setReason()
@@ -53,48 +52,12 @@ class FareRuleFailureInfo extends AbstractStructBase
         return $this->Reason;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setReason method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setReason method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateReasonForArrayConstraintFromSetReason(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $fareRuleFailureInfoReasonItem) {
-            // validation for constraint: itemType
-            if (!is_string($fareRuleFailureInfoReasonItem)) {
-                $invalidValues[] = is_object($fareRuleFailureInfoReasonItem) ? get_class($fareRuleFailureInfoReasonItem) : sprintf('%s(%s)', gettype($fareRuleFailureInfoReasonItem), var_export($fareRuleFailureInfoReasonItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Reason property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Reason value
-     * @throws InvalidArgumentException
      * @param string[] $reason
      * @return \Travelport\UniversalRecord\StructType\FareRuleFailureInfo
      */
     public function setReason(?array $reason = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($reasonArrayErrorMessage = self::validateReasonForArrayConstraintFromSetReason($reason))) {
-            throw new InvalidArgumentException($reasonArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($reason) && count($reason) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($reason)), __LINE__);
-        }
         $this->Reason = $reason;
         
         return $this;
@@ -107,14 +70,6 @@ class FareRuleFailureInfo extends AbstractStructBase
      */
     public function addToReason(string $item): self
     {
-        // validation for constraint: itemType
-        if (!is_string($item)) {
-            throw new InvalidArgumentException(sprintf('The Reason property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->Reason) && count($this->Reason) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->Reason)), __LINE__);
-        }
         $this->Reason[] = $item;
         
         return $this;

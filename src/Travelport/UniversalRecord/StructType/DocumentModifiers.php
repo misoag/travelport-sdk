@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class DocumentModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $GenerateItineraryInvoice = null;
+    public ?bool $GenerateItineraryInvoice = null;
     /**
      * The GenerateAccountingInterface
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class DocumentModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $GenerateAccountingInterface = null;
+    public ?bool $GenerateAccountingInterface = null;
     /**
      * Constructor method for DocumentModifiers
      * @uses DocumentModifiers::setGenerateItineraryInvoice()
@@ -59,10 +58,6 @@ class DocumentModifiers extends AbstractStructBase
      */
     public function setGenerateItineraryInvoice(?bool $generateItineraryInvoice = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($generateItineraryInvoice) && !is_bool($generateItineraryInvoice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($generateItineraryInvoice, true), gettype($generateItineraryInvoice)), __LINE__);
-        }
         $this->GenerateItineraryInvoice = $generateItineraryInvoice;
         
         return $this;
@@ -82,10 +77,6 @@ class DocumentModifiers extends AbstractStructBase
      */
     public function setGenerateAccountingInterface(?bool $generateAccountingInterface = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($generateAccountingInterface) && !is_bool($generateAccountingInterface)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($generateAccountingInterface, true), gettype($generateAccountingInterface)), __LINE__);
-        }
         $this->GenerateAccountingInterface = $generateAccountingInterface;
         
         return $this;

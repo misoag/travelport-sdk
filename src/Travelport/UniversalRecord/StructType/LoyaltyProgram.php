@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,14 +22,14 @@ class LoyaltyProgram extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $SupplierCode;
+    public string $SupplierCode;
     /**
      * The Level
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $Level = null;
+    public ?string $Level = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class LoyaltyProgram extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The AllianceLevel
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class LoyaltyProgram extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AllianceLevel = null;
+    public ?string $AllianceLevel = null;
     /**
      * The MembershipProgram
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class LoyaltyProgram extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $MembershipProgram = null;
+    public ?string $MembershipProgram = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -69,7 +68,7 @@ class LoyaltyProgram extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -77,7 +76,7 @@ class LoyaltyProgram extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for LoyaltyProgram
      * @uses LoyaltyProgram::setSupplierCode()
@@ -121,14 +120,6 @@ class LoyaltyProgram extends AbstractStructBase
      */
     public function setSupplierCode(string $supplierCode): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;
@@ -148,10 +139,6 @@ class LoyaltyProgram extends AbstractStructBase
      */
     public function setLevel(?string $level = null): self
     {
-        // validation for constraint: string
-        if (!is_null($level) && !is_string($level)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($level, true), gettype($level)), __LINE__);
-        }
         $this->Level = $level;
         
         return $this;
@@ -171,10 +158,6 @@ class LoyaltyProgram extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -194,10 +177,6 @@ class LoyaltyProgram extends AbstractStructBase
      */
     public function setAllianceLevel(?string $allianceLevel = null): self
     {
-        // validation for constraint: string
-        if (!is_null($allianceLevel) && !is_string($allianceLevel)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($allianceLevel, true), gettype($allianceLevel)), __LINE__);
-        }
         $this->AllianceLevel = $allianceLevel;
         
         return $this;
@@ -217,18 +196,6 @@ class LoyaltyProgram extends AbstractStructBase
      */
     public function setMembershipProgram(?string $membershipProgram = null): self
     {
-        // validation for constraint: string
-        if (!is_null($membershipProgram) && !is_string($membershipProgram)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($membershipProgram, true), gettype($membershipProgram)), __LINE__);
-        }
-        // validation for constraint: maxLength(32)
-        if (!is_null($membershipProgram) && mb_strlen((string) $membershipProgram) > 32) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $membershipProgram)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($membershipProgram) && mb_strlen((string) $membershipProgram) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $membershipProgram)), __LINE__);
-        }
         $this->MembershipProgram = $membershipProgram;
         
         return $this;
@@ -243,18 +210,11 @@ class LoyaltyProgram extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\LoyaltyProgram
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -274,10 +234,6 @@ class LoyaltyProgram extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

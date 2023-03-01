@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class UniversalRecordModifyReq extends BaseReq
      * - use: required
      * @var int
      */
-    protected int $Version;
+    public int $Version;
     /**
      * The ContinuityCheckOverride
      * Meta information extracted from the WSDL
@@ -32,14 +31,14 @@ class UniversalRecordModifyReq extends BaseReq
      * - ref: common:ContinuityCheckOverride
      * @var \Travelport\UniversalRecord\StructType\ContinuityCheckOverride|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ContinuityCheckOverride $ContinuityCheckOverride = null;
+    public ?\Travelport\UniversalRecord\StructType\ContinuityCheckOverride $ContinuityCheckOverride = null;
     /**
      * The RecordIdentifier
      * Meta information extracted from the WSDL
      * - ref: RecordIdentifier
      * @var \Travelport\UniversalRecord\StructType\RecordIdentifier|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\RecordIdentifier $RecordIdentifier = null;
+    public ?\Travelport\UniversalRecord\StructType\RecordIdentifier $RecordIdentifier = null;
     /**
      * The UniversalModifyCmd
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class UniversalRecordModifyReq extends BaseReq
      * - ref: UniversalModifyCmd
      * @var \Travelport\UniversalRecord\StructType\UniversalModifyCmd[]
      */
-    protected ?array $UniversalModifyCmd = null;
+    public ?array $UniversalModifyCmd = null;
     /**
      * The FileFinishingInfo
      * Meta information extracted from the WSDL
@@ -55,7 +54,7 @@ class UniversalRecordModifyReq extends BaseReq
      * - ref: common:FileFinishingInfo
      * @var \Travelport\UniversalRecord\StructType\FileFinishingInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FileFinishingInfo $FileFinishingInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\FileFinishingInfo $FileFinishingInfo = null;
     /**
      * The QueueNextModifiers
      * Meta information extracted from the WSDL
@@ -63,7 +62,7 @@ class UniversalRecordModifyReq extends BaseReq
      * - ref: QueueNextModifiers
      * @var \Travelport\UniversalRecord\StructType\QueueNextModifiers|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\QueueNextModifiers $QueueNextModifiers = null;
+    public ?\Travelport\UniversalRecord\StructType\QueueNextModifiers $QueueNextModifiers = null;
     /**
      * The ReturnRecord
      * Meta information extracted from the WSDL
@@ -72,7 +71,7 @@ class UniversalRecordModifyReq extends BaseReq
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ReturnRecord = null;
+    public ?bool $ReturnRecord = null;
     /**
      * The OverrideMCT
      * Meta information extracted from the WSDL
@@ -80,7 +79,7 @@ class UniversalRecordModifyReq extends BaseReq
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $OverrideMCT = null;
+    public ?bool $OverrideMCT = null;
     /**
      * Constructor method for UniversalRecordModifyReq
      * @uses UniversalRecordModifyReq::setVersion()
@@ -127,10 +126,6 @@ class UniversalRecordModifyReq extends BaseReq
      */
     public function setVersion(int $version): self
     {
-        // validation for constraint: int
-        if (!is_null($version) && !(is_int($version) || ctype_digit($version))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($version, true), gettype($version)), __LINE__);
-        }
         $this->Version = $version;
         
         return $this;
@@ -182,48 +177,12 @@ class UniversalRecordModifyReq extends BaseReq
         return $this->UniversalModifyCmd;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setUniversalModifyCmd method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setUniversalModifyCmd method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateUniversalModifyCmdForArrayConstraintFromSetUniversalModifyCmd(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $universalRecordModifyReqUniversalModifyCmdItem) {
-            // validation for constraint: itemType
-            if (!$universalRecordModifyReqUniversalModifyCmdItem instanceof \Travelport\UniversalRecord\StructType\UniversalModifyCmd) {
-                $invalidValues[] = is_object($universalRecordModifyReqUniversalModifyCmdItem) ? get_class($universalRecordModifyReqUniversalModifyCmdItem) : sprintf('%s(%s)', gettype($universalRecordModifyReqUniversalModifyCmdItem), var_export($universalRecordModifyReqUniversalModifyCmdItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The UniversalModifyCmd property can only contain items of type \Travelport\UniversalRecord\StructType\UniversalModifyCmd, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set UniversalModifyCmd value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\UniversalModifyCmd[] $universalModifyCmd
      * @return \Travelport\UniversalRecord\StructType\UniversalRecordModifyReq
      */
     public function setUniversalModifyCmd(?array $universalModifyCmd = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($universalModifyCmdArrayErrorMessage = self::validateUniversalModifyCmdForArrayConstraintFromSetUniversalModifyCmd($universalModifyCmd))) {
-            throw new InvalidArgumentException($universalModifyCmdArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($universalModifyCmd) && count($universalModifyCmd) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($universalModifyCmd)), __LINE__);
-        }
         $this->UniversalModifyCmd = $universalModifyCmd;
         
         return $this;
@@ -236,14 +195,6 @@ class UniversalRecordModifyReq extends BaseReq
      */
     public function addToUniversalModifyCmd(\Travelport\UniversalRecord\StructType\UniversalModifyCmd $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\UniversalModifyCmd) {
-            throw new InvalidArgumentException(sprintf('The UniversalModifyCmd property can only contain items of type \Travelport\UniversalRecord\StructType\UniversalModifyCmd, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->UniversalModifyCmd) && count($this->UniversalModifyCmd) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->UniversalModifyCmd)), __LINE__);
-        }
         $this->UniversalModifyCmd[] = $item;
         
         return $this;
@@ -301,10 +252,6 @@ class UniversalRecordModifyReq extends BaseReq
      */
     public function setReturnRecord(?bool $returnRecord = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($returnRecord) && !is_bool($returnRecord)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($returnRecord, true), gettype($returnRecord)), __LINE__);
-        }
         $this->ReturnRecord = $returnRecord;
         
         return $this;
@@ -324,10 +271,6 @@ class UniversalRecordModifyReq extends BaseReq
      */
     public function setOverrideMCT(?bool $overrideMCT = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($overrideMCT) && !is_bool($overrideMCT)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($overrideMCT, true), gettype($overrideMCT)), __LINE__);
-        }
         $this->OverrideMCT = $overrideMCT;
         
         return $this;

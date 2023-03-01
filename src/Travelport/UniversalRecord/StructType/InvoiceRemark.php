@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class InvoiceRemark extends TypeAssociatedRemark
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeSegmentRef|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeSegmentRef $AirSegmentRef = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeSegmentRef $AirSegmentRef = null;
     /**
      * The HotelReservationRef
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class InvoiceRemark extends TypeAssociatedRemark
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeNonAirReservationRef|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeNonAirReservationRef $HotelReservationRef = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeNonAirReservationRef $HotelReservationRef = null;
     /**
      * The VehicleReservationRef
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class InvoiceRemark extends TypeAssociatedRemark
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeNonAirReservationRef|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeNonAirReservationRef $VehicleReservationRef = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeNonAirReservationRef $VehicleReservationRef = null;
     /**
      * The PassiveSegmentRef
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class InvoiceRemark extends TypeAssociatedRemark
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeSegmentRef|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeSegmentRef $PassiveSegmentRef = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeSegmentRef $PassiveSegmentRef = null;
     /**
      * Constructor method for InvoiceRemark
      * @uses InvoiceRemark::setAirSegmentRef()
@@ -89,50 +88,15 @@ class InvoiceRemark extends TypeAssociatedRemark
         return $this->AirSegmentRef ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirSegmentRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegmentRef method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateAirSegmentRefForChoiceConstraintFromSetAirSegmentRef($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'HotelReservationRef',
-            'VehicleReservationRef',
-            'PassiveSegmentRef',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property AirSegmentRef can\'t be set as the property %s is already set. Only one property must be set among these properties: AirSegmentRef, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set AirSegmentRef value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeSegmentRef $airSegmentRef
      * @return \Travelport\UniversalRecord\StructType\InvoiceRemark
      */
     public function setAirSegmentRef(?\Travelport\UniversalRecord\StructType\TypeSegmentRef $airSegmentRef = null): self
     {
-        // validation for constraint: choice(AirSegmentRef, HotelReservationRef, VehicleReservationRef, PassiveSegmentRef)
-        if ('' !== ($airSegmentRefChoiceErrorMessage = self::validateAirSegmentRefForChoiceConstraintFromSetAirSegmentRef($airSegmentRef))) {
-            throw new InvalidArgumentException($airSegmentRefChoiceErrorMessage, __LINE__);
-        }
         if (is_null($airSegmentRef) || (is_array($airSegmentRef) && empty($airSegmentRef))) {
             unset($this->AirSegmentRef);
         } else {
@@ -150,50 +114,15 @@ class InvoiceRemark extends TypeAssociatedRemark
         return $this->HotelReservationRef ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHotelReservationRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHotelReservationRef method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateHotelReservationRefForChoiceConstraintFromSetHotelReservationRef($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'AirSegmentRef',
-            'VehicleReservationRef',
-            'PassiveSegmentRef',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property HotelReservationRef can\'t be set as the property %s is already set. Only one property must be set among these properties: HotelReservationRef, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set HotelReservationRef value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeNonAirReservationRef $hotelReservationRef
      * @return \Travelport\UniversalRecord\StructType\InvoiceRemark
      */
     public function setHotelReservationRef(?\Travelport\UniversalRecord\StructType\TypeNonAirReservationRef $hotelReservationRef = null): self
     {
-        // validation for constraint: choice(AirSegmentRef, HotelReservationRef, VehicleReservationRef, PassiveSegmentRef)
-        if ('' !== ($hotelReservationRefChoiceErrorMessage = self::validateHotelReservationRefForChoiceConstraintFromSetHotelReservationRef($hotelReservationRef))) {
-            throw new InvalidArgumentException($hotelReservationRefChoiceErrorMessage, __LINE__);
-        }
         if (is_null($hotelReservationRef) || (is_array($hotelReservationRef) && empty($hotelReservationRef))) {
             unset($this->HotelReservationRef);
         } else {
@@ -211,50 +140,15 @@ class InvoiceRemark extends TypeAssociatedRemark
         return $this->VehicleReservationRef ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setVehicleReservationRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleReservationRef method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateVehicleReservationRefForChoiceConstraintFromSetVehicleReservationRef($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'AirSegmentRef',
-            'HotelReservationRef',
-            'PassiveSegmentRef',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property VehicleReservationRef can\'t be set as the property %s is already set. Only one property must be set among these properties: VehicleReservationRef, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set VehicleReservationRef value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeNonAirReservationRef $vehicleReservationRef
      * @return \Travelport\UniversalRecord\StructType\InvoiceRemark
      */
     public function setVehicleReservationRef(?\Travelport\UniversalRecord\StructType\TypeNonAirReservationRef $vehicleReservationRef = null): self
     {
-        // validation for constraint: choice(AirSegmentRef, HotelReservationRef, VehicleReservationRef, PassiveSegmentRef)
-        if ('' !== ($vehicleReservationRefChoiceErrorMessage = self::validateVehicleReservationRefForChoiceConstraintFromSetVehicleReservationRef($vehicleReservationRef))) {
-            throw new InvalidArgumentException($vehicleReservationRefChoiceErrorMessage, __LINE__);
-        }
         if (is_null($vehicleReservationRef) || (is_array($vehicleReservationRef) && empty($vehicleReservationRef))) {
             unset($this->VehicleReservationRef);
         } else {
@@ -272,50 +166,15 @@ class InvoiceRemark extends TypeAssociatedRemark
         return $this->PassiveSegmentRef ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPassiveSegmentRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPassiveSegmentRef method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validatePassiveSegmentRefForChoiceConstraintFromSetPassiveSegmentRef($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'AirSegmentRef',
-            'HotelReservationRef',
-            'VehicleReservationRef',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property PassiveSegmentRef can\'t be set as the property %s is already set. Only one property must be set among these properties: PassiveSegmentRef, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set PassiveSegmentRef value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeSegmentRef $passiveSegmentRef
      * @return \Travelport\UniversalRecord\StructType\InvoiceRemark
      */
     public function setPassiveSegmentRef(?\Travelport\UniversalRecord\StructType\TypeSegmentRef $passiveSegmentRef = null): self
     {
-        // validation for constraint: choice(AirSegmentRef, HotelReservationRef, VehicleReservationRef, PassiveSegmentRef)
-        if ('' !== ($passiveSegmentRefChoiceErrorMessage = self::validatePassiveSegmentRefForChoiceConstraintFromSetPassiveSegmentRef($passiveSegmentRef))) {
-            throw new InvalidArgumentException($passiveSegmentRefChoiceErrorMessage, __LINE__);
-        }
         if (is_null($passiveSegmentRef) || (is_array($passiveSegmentRef) && empty($passiveSegmentRef))) {
             unset($this->PassiveSegmentRef);
         } else {

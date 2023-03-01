@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class PermittedProviders extends AbstractStructBase
      * - ref: Provider
      * @var \Travelport\UniversalRecord\StructType\Provider|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Provider $Provider = null;
+    public ?\Travelport\UniversalRecord\StructType\Provider $Provider = null;
     /**
      * Constructor method for PermittedProviders
      * @uses PermittedProviders::setProvider()

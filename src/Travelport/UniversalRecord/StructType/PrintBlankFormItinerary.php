@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class PrintBlankFormItinerary extends AbstractStructBase
      * - use: required
      * @var bool
      */
-    protected bool $IncludeDescription;
+    public bool $IncludeDescription;
     /**
      * The IncludeHeader
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class PrintBlankFormItinerary extends AbstractStructBase
      * - use: required
      * @var bool
      */
-    protected bool $IncludeHeader;
+    public bool $IncludeHeader;
     /**
      * Constructor method for PrintBlankFormItinerary
      * @uses PrintBlankFormItinerary::setIncludeDescription()
@@ -59,10 +58,6 @@ class PrintBlankFormItinerary extends AbstractStructBase
      */
     public function setIncludeDescription(bool $includeDescription): self
     {
-        // validation for constraint: boolean
-        if (!is_null($includeDescription) && !is_bool($includeDescription)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($includeDescription, true), gettype($includeDescription)), __LINE__);
-        }
         $this->IncludeDescription = $includeDescription;
         
         return $this;
@@ -82,10 +77,6 @@ class PrintBlankFormItinerary extends AbstractStructBase
      */
     public function setIncludeHeader(bool $includeHeader): self
     {
-        // validation for constraint: boolean
-        if (!is_null($includeHeader) && !is_bool($includeHeader)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($includeHeader, true), gettype($includeHeader)), __LINE__);
-        }
         $this->IncludeHeader = $includeHeader;
         
         return $this;

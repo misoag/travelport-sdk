@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class RecordIdentifier extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $UniversalLocatorCode;
+    public string $UniversalLocatorCode;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class RecordIdentifier extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The ProviderLocatorCode
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class RecordIdentifier extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderLocatorCode = null;
+    public ?string $ProviderLocatorCode = null;
     /**
      * Constructor method for RecordIdentifier
      * @uses RecordIdentifier::setUniversalLocatorCode()
@@ -78,18 +77,6 @@ class RecordIdentifier extends AbstractStructBase
      */
     public function setUniversalLocatorCode(string $universalLocatorCode): self
     {
-        // validation for constraint: string
-        if (!is_null($universalLocatorCode) && !is_string($universalLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($universalLocatorCode, true), gettype($universalLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($universalLocatorCode) && mb_strlen((string) $universalLocatorCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $universalLocatorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($universalLocatorCode) && mb_strlen((string) $universalLocatorCode) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $universalLocatorCode)), __LINE__);
-        }
         $this->UniversalLocatorCode = $universalLocatorCode;
         
         return $this;
@@ -109,18 +96,6 @@ class RecordIdentifier extends AbstractStructBase
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -140,14 +115,6 @@ class RecordIdentifier extends AbstractStructBase
      */
     public function setProviderLocatorCode(?string $providerLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerLocatorCode) && !is_string($providerLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerLocatorCode, true), gettype($providerLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($providerLocatorCode) && mb_strlen((string) $providerLocatorCode) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $providerLocatorCode)), __LINE__);
-        }
         $this->ProviderLocatorCode = $providerLocatorCode;
         
         return $this;

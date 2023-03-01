@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class LoyaltyCard extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $CardNumber;
+    public string $CardNumber;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class LoyaltyCard extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $SupplierCode;
+    public string $SupplierCode;
     /**
      * The ProviderReservationSpecificInfo
      * Meta information extracted from the WSDL
@@ -44,35 +43,35 @@ class LoyaltyCard extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeProviderReservationSpecificInfo[]
      */
-    protected ?array $ProviderReservationSpecificInfo = null;
+    public ?array $ProviderReservationSpecificInfo = null;
     /**
      * The Status
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $Status = null;
+    public ?string $Status = null;
     /**
      * The MembershipStatus
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $MembershipStatus = null;
+    public ?string $MembershipStatus = null;
     /**
      * The FreeText
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $FreeText = null;
+    public ?string $FreeText = null;
     /**
      * The SupplierType
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $SupplierType = null;
+    public ?string $SupplierType = null;
     /**
      * The Level
      * Meta information extracted from the WSDL
@@ -81,7 +80,7 @@ class LoyaltyCard extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Level = null;
+    public ?string $Level = null;
     /**
      * The PriorityCode
      * Meta information extracted from the WSDL
@@ -90,14 +89,14 @@ class LoyaltyCard extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PriorityCode = null;
+    public ?string $PriorityCode = null;
     /**
      * The VendorLocationRef
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $VendorLocationRef = null;
+    public ?string $VendorLocationRef = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -107,7 +106,7 @@ class LoyaltyCard extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The AllianceLevel
      * Meta information extracted from the WSDL
@@ -115,7 +114,7 @@ class LoyaltyCard extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AllianceLevel = null;
+    public ?string $AllianceLevel = null;
     /**
      * The MembershipProgram
      * Meta information extracted from the WSDL
@@ -127,7 +126,7 @@ class LoyaltyCard extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $MembershipProgram = null;
+    public ?string $MembershipProgram = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -136,7 +135,7 @@ class LoyaltyCard extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -144,7 +143,7 @@ class LoyaltyCard extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for LoyaltyCard
      * @uses LoyaltyCard::setCardNumber()
@@ -212,18 +211,6 @@ class LoyaltyCard extends AbstractStructBase
      */
     public function setCardNumber(string $cardNumber): self
     {
-        // validation for constraint: string
-        if (!is_null($cardNumber) && !is_string($cardNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardNumber, true), gettype($cardNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(36)
-        if (!is_null($cardNumber) && mb_strlen((string) $cardNumber) > 36) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 36', mb_strlen((string) $cardNumber)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($cardNumber) && mb_strlen((string) $cardNumber) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $cardNumber)), __LINE__);
-        }
         $this->CardNumber = $cardNumber;
         
         return $this;
@@ -243,14 +230,6 @@ class LoyaltyCard extends AbstractStructBase
      */
     public function setSupplierCode(string $supplierCode): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;
@@ -264,48 +243,12 @@ class LoyaltyCard extends AbstractStructBase
         return $this->ProviderReservationSpecificInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setProviderReservationSpecificInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationSpecificInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateProviderReservationSpecificInfoForArrayConstraintFromSetProviderReservationSpecificInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $loyaltyCardProviderReservationSpecificInfoItem) {
-            // validation for constraint: itemType
-            if (!$loyaltyCardProviderReservationSpecificInfoItem instanceof \Travelport\UniversalRecord\StructType\TypeProviderReservationSpecificInfo) {
-                $invalidValues[] = is_object($loyaltyCardProviderReservationSpecificInfoItem) ? get_class($loyaltyCardProviderReservationSpecificInfoItem) : sprintf('%s(%s)', gettype($loyaltyCardProviderReservationSpecificInfoItem), var_export($loyaltyCardProviderReservationSpecificInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ProviderReservationSpecificInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TypeProviderReservationSpecificInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ProviderReservationSpecificInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeProviderReservationSpecificInfo[] $providerReservationSpecificInfo
      * @return \Travelport\UniversalRecord\StructType\LoyaltyCard
      */
     public function setProviderReservationSpecificInfo(?array $providerReservationSpecificInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($providerReservationSpecificInfoArrayErrorMessage = self::validateProviderReservationSpecificInfoForArrayConstraintFromSetProviderReservationSpecificInfo($providerReservationSpecificInfo))) {
-            throw new InvalidArgumentException($providerReservationSpecificInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($providerReservationSpecificInfo) && count($providerReservationSpecificInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($providerReservationSpecificInfo)), __LINE__);
-        }
         $this->ProviderReservationSpecificInfo = $providerReservationSpecificInfo;
         
         return $this;
@@ -318,14 +261,6 @@ class LoyaltyCard extends AbstractStructBase
      */
     public function addToProviderReservationSpecificInfo(\Travelport\UniversalRecord\StructType\TypeProviderReservationSpecificInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeProviderReservationSpecificInfo) {
-            throw new InvalidArgumentException(sprintf('The ProviderReservationSpecificInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TypeProviderReservationSpecificInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->ProviderReservationSpecificInfo) && count($this->ProviderReservationSpecificInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->ProviderReservationSpecificInfo)), __LINE__);
-        }
         $this->ProviderReservationSpecificInfo[] = $item;
         
         return $this;
@@ -345,10 +280,6 @@ class LoyaltyCard extends AbstractStructBase
      */
     public function setStatus(?string $status = null): self
     {
-        // validation for constraint: string
-        if (!is_null($status) && !is_string($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -368,10 +299,6 @@ class LoyaltyCard extends AbstractStructBase
      */
     public function setMembershipStatus(?string $membershipStatus = null): self
     {
-        // validation for constraint: string
-        if (!is_null($membershipStatus) && !is_string($membershipStatus)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($membershipStatus, true), gettype($membershipStatus)), __LINE__);
-        }
         $this->MembershipStatus = $membershipStatus;
         
         return $this;
@@ -391,10 +318,6 @@ class LoyaltyCard extends AbstractStructBase
      */
     public function setFreeText(?string $freeText = null): self
     {
-        // validation for constraint: string
-        if (!is_null($freeText) && !is_string($freeText)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($freeText, true), gettype($freeText)), __LINE__);
-        }
         $this->FreeText = $freeText;
         
         return $this;
@@ -409,18 +332,11 @@ class LoyaltyCard extends AbstractStructBase
     }
     /**
      * Set SupplierType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeProduct::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeProduct::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $supplierType
      * @return \Travelport\UniversalRecord\StructType\LoyaltyCard
      */
     public function setSupplierType(?string $supplierType = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeProduct::valueIsValid($supplierType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeProduct', is_array($supplierType) ? implode(', ', $supplierType) : var_export($supplierType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeProduct::getValidValues())), __LINE__);
-        }
         $this->SupplierType = $supplierType;
         
         return $this;
@@ -440,14 +356,6 @@ class LoyaltyCard extends AbstractStructBase
      */
     public function setLevel(?string $level = null): self
     {
-        // validation for constraint: string
-        if (!is_null($level) && !is_string($level)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($level, true), gettype($level)), __LINE__);
-        }
-        // validation for constraint: pattern([a-zA-Z0-9]{1,1})
-        if (!is_null($level) && !preg_match('/[a-zA-Z0-9]{1,1}/', $level)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[a-zA-Z0-9]{1,1}/', var_export($level, true)), __LINE__);
-        }
         $this->Level = $level;
         
         return $this;
@@ -467,14 +375,6 @@ class LoyaltyCard extends AbstractStructBase
      */
     public function setPriorityCode(?string $priorityCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($priorityCode) && !is_string($priorityCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($priorityCode, true), gettype($priorityCode)), __LINE__);
-        }
-        // validation for constraint: pattern([a-zA-Z0-9]{1,1})
-        if (!is_null($priorityCode) && !preg_match('/[a-zA-Z0-9]{1,1}/', $priorityCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[a-zA-Z0-9]{1,1}/', var_export($priorityCode, true)), __LINE__);
-        }
         $this->PriorityCode = $priorityCode;
         
         return $this;
@@ -494,10 +394,6 @@ class LoyaltyCard extends AbstractStructBase
      */
     public function setVendorLocationRef(?string $vendorLocationRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($vendorLocationRef) && !is_string($vendorLocationRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vendorLocationRef, true), gettype($vendorLocationRef)), __LINE__);
-        }
         $this->VendorLocationRef = $vendorLocationRef;
         
         return $this;
@@ -517,10 +413,6 @@ class LoyaltyCard extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -540,10 +432,6 @@ class LoyaltyCard extends AbstractStructBase
      */
     public function setAllianceLevel(?string $allianceLevel = null): self
     {
-        // validation for constraint: string
-        if (!is_null($allianceLevel) && !is_string($allianceLevel)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($allianceLevel, true), gettype($allianceLevel)), __LINE__);
-        }
         $this->AllianceLevel = $allianceLevel;
         
         return $this;
@@ -563,18 +451,6 @@ class LoyaltyCard extends AbstractStructBase
      */
     public function setMembershipProgram(?string $membershipProgram = null): self
     {
-        // validation for constraint: string
-        if (!is_null($membershipProgram) && !is_string($membershipProgram)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($membershipProgram, true), gettype($membershipProgram)), __LINE__);
-        }
-        // validation for constraint: maxLength(32)
-        if (!is_null($membershipProgram) && mb_strlen((string) $membershipProgram) > 32) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $membershipProgram)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($membershipProgram) && mb_strlen((string) $membershipProgram) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $membershipProgram)), __LINE__);
-        }
         $this->MembershipProgram = $membershipProgram;
         
         return $this;
@@ -589,18 +465,11 @@ class LoyaltyCard extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\LoyaltyCard
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -620,10 +489,6 @@ class LoyaltyCard extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

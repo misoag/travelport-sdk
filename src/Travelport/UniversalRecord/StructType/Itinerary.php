@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class Itinerary extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Type = null;
+    public ?string $Type = null;
     /**
      * The Option
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class Itinerary extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Option = null;
+    public ?string $Option = null;
     /**
      * The SeparateIndicator
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class Itinerary extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $SeparateIndicator = null;
+    public ?bool $SeparateIndicator = null;
     /**
      * Constructor method for Itinerary
      * @uses Itinerary::setType()
@@ -65,18 +64,11 @@ class Itinerary extends AbstractStructBase
     }
     /**
      * Set Type value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeItinerary::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeItinerary::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $type
      * @return \Travelport\UniversalRecord\StructType\Itinerary
      */
     public function setType(?string $type = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeItinerary::valueIsValid($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeItinerary', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeItinerary::getValidValues())), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -91,18 +83,11 @@ class Itinerary extends AbstractStructBase
     }
     /**
      * Set Option value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeItineraryOption::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeItineraryOption::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $option
      * @return \Travelport\UniversalRecord\StructType\Itinerary
      */
     public function setOption(?string $option = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeItineraryOption::valueIsValid($option)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeItineraryOption', is_array($option) ? implode(', ', $option) : var_export($option, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeItineraryOption::getValidValues())), __LINE__);
-        }
         $this->Option = $option;
         
         return $this;
@@ -122,10 +107,6 @@ class Itinerary extends AbstractStructBase
      */
     public function setSeparateIndicator(?bool $separateIndicator = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($separateIndicator) && !is_bool($separateIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($separateIndicator, true), gettype($separateIndicator)), __LINE__);
-        }
         $this->SeparateIndicator = $separateIndicator;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class SearchExtraDays extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $DaysBefore = null;
+    public ?int $DaysBefore = null;
     /**
      * The DaysAfter
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class SearchExtraDays extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $DaysAfter = null;
+    public ?int $DaysAfter = null;
     /**
      * Constructor method for SearchExtraDays
      * @uses SearchExtraDays::setDaysBefore()
@@ -59,10 +58,6 @@ class SearchExtraDays extends AbstractStructBase
      */
     public function setDaysBefore(?int $daysBefore = null): self
     {
-        // validation for constraint: int
-        if (!is_null($daysBefore) && !(is_int($daysBefore) || ctype_digit($daysBefore))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($daysBefore, true), gettype($daysBefore)), __LINE__);
-        }
         $this->DaysBefore = $daysBefore;
         
         return $this;
@@ -82,10 +77,6 @@ class SearchExtraDays extends AbstractStructBase
      */
     public function setDaysAfter(?int $daysAfter = null): self
     {
-        // validation for constraint: int
-        if (!is_null($daysAfter) && !(is_int($daysAfter) || ctype_digit($daysAfter))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($daysAfter, true), gettype($daysAfter)), __LINE__);
-        }
         $this->DaysAfter = $daysAfter;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,14 +24,14 @@ class RailSeatAssignment extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string
      */
-    protected string $Status;
+    public string $Status;
     /**
      * The Seat
      * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
-    protected string $Seat;
+    public string $Seat;
     /**
      * The Characteristic
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class RailSeatAssignment extends AbstractStructBase
      * - ref: Characteristic
      * @var \Travelport\Hotel\StructType\Characteristic[]
      */
-    protected ?array $Characteristic = null;
+    public ?array $Characteristic = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class RailSeatAssignment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The RailSegmentRef
      * Meta information extracted from the WSDL
@@ -59,14 +58,14 @@ class RailSeatAssignment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RailSegmentRef = null;
+    public ?string $RailSegmentRef = null;
     /**
      * The CoachNumber
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $CoachNumber = null;
+    public ?string $CoachNumber = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -75,7 +74,7 @@ class RailSeatAssignment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -83,7 +82,7 @@ class RailSeatAssignment extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for RailSeatAssignment
      * @uses RailSeatAssignment::setStatus()
@@ -130,14 +129,6 @@ class RailSeatAssignment extends AbstractStructBase
      */
     public function setStatus(string $status): self
     {
-        // validation for constraint: string
-        if (!is_null($status) && !is_string($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($status) && mb_strlen((string) $status) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $status)), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -157,10 +148,6 @@ class RailSeatAssignment extends AbstractStructBase
      */
     public function setSeat(string $seat): self
     {
-        // validation for constraint: string
-        if (!is_null($seat) && !is_string($seat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seat, true), gettype($seat)), __LINE__);
-        }
         $this->Seat = $seat;
         
         return $this;
@@ -174,48 +161,12 @@ class RailSeatAssignment extends AbstractStructBase
         return $this->Characteristic;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setCharacteristic method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setCharacteristic method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateCharacteristicForArrayConstraintFromSetCharacteristic(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $railSeatAssignmentCharacteristicItem) {
-            // validation for constraint: itemType
-            if (!$railSeatAssignmentCharacteristicItem instanceof \Travelport\Hotel\StructType\Characteristic) {
-                $invalidValues[] = is_object($railSeatAssignmentCharacteristicItem) ? get_class($railSeatAssignmentCharacteristicItem) : sprintf('%s(%s)', gettype($railSeatAssignmentCharacteristicItem), var_export($railSeatAssignmentCharacteristicItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Characteristic property can only contain items of type \Travelport\Hotel\StructType\Characteristic, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Characteristic value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\Characteristic[] $characteristic
      * @return \Travelport\Hotel\StructType\RailSeatAssignment
      */
     public function setCharacteristic(?array $characteristic = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($characteristicArrayErrorMessage = self::validateCharacteristicForArrayConstraintFromSetCharacteristic($characteristic))) {
-            throw new InvalidArgumentException($characteristicArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($characteristic) && count($characteristic) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($characteristic)), __LINE__);
-        }
         $this->Characteristic = $characteristic;
         
         return $this;
@@ -228,14 +179,6 @@ class RailSeatAssignment extends AbstractStructBase
      */
     public function addToCharacteristic(\Travelport\Hotel\StructType\Characteristic $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\Characteristic) {
-            throw new InvalidArgumentException(sprintf('The Characteristic property can only contain items of type \Travelport\Hotel\StructType\Characteristic, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->Characteristic) && count($this->Characteristic) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->Characteristic)), __LINE__);
-        }
         $this->Characteristic[] = $item;
         
         return $this;
@@ -255,10 +198,6 @@ class RailSeatAssignment extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -278,10 +217,6 @@ class RailSeatAssignment extends AbstractStructBase
      */
     public function setRailSegmentRef(?string $railSegmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($railSegmentRef) && !is_string($railSegmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($railSegmentRef, true), gettype($railSegmentRef)), __LINE__);
-        }
         $this->RailSegmentRef = $railSegmentRef;
         
         return $this;
@@ -301,10 +236,6 @@ class RailSeatAssignment extends AbstractStructBase
      */
     public function setCoachNumber(?string $coachNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($coachNumber) && !is_string($coachNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($coachNumber, true), gettype($coachNumber)), __LINE__);
-        }
         $this->CoachNumber = $coachNumber;
         
         return $this;
@@ -319,18 +250,11 @@ class RailSeatAssignment extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\Hotel\StructType\RailSeatAssignment
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -350,10 +274,6 @@ class RailSeatAssignment extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

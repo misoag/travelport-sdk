@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class FormattedTextTextType extends AbstractStructBase
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The Formatted
      * Meta information extracted from the WSDL
@@ -27,14 +26,14 @@ class FormattedTextTextType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Formatted = null;
+    public ?bool $Formatted = null;
     /**
      * The TextFormat
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $TextFormat = null;
+    public ?string $TextFormat = null;
     /**
      * The Language
      * Meta information extracted from the WSDL
@@ -43,7 +42,7 @@ class FormattedTextTextType extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Language = null;
+    public ?string $Language = null;
     /**
      * Constructor method for FormattedTextTextType
      * @uses FormattedTextTextType::set_()
@@ -78,10 +77,6 @@ class FormattedTextTextType extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -101,10 +96,6 @@ class FormattedTextTextType extends AbstractStructBase
      */
     public function setFormatted(?bool $formatted = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($formatted) && !is_bool($formatted)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($formatted, true), gettype($formatted)), __LINE__);
-        }
         $this->Formatted = $formatted;
         
         return $this;
@@ -124,10 +115,6 @@ class FormattedTextTextType extends AbstractStructBase
      */
     public function setTextFormat(?string $textFormat = null): self
     {
-        // validation for constraint: string
-        if (!is_null($textFormat) && !is_string($textFormat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($textFormat, true), gettype($textFormat)), __LINE__);
-        }
         $this->TextFormat = $textFormat;
         
         return $this;
@@ -147,10 +134,6 @@ class FormattedTextTextType extends AbstractStructBase
      */
     public function setLanguage(?string $language = null): self
     {
-        // validation for constraint: string
-        if (!is_null($language) && !is_string($language)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($language, true), gettype($language)), __LINE__);
-        }
         $this->Language = $language;
         
         return $this;

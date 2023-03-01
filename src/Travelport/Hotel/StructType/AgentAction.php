@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class AgentAction extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ActionType;
+    public string $ActionType;
     /**
      * The AgentCode
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class AgentAction extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $AgentCode;
+    public string $AgentCode;
     /**
      * The BranchCode
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class AgentAction extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $BranchCode;
+    public string $BranchCode;
     /**
      * The AgencyCode
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class AgentAction extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $AgencyCode;
+    public string $AgencyCode;
     /**
      * The EventTime
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class AgentAction extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $EventTime;
+    public string $EventTime;
     /**
      * The AgentSine
      * Meta information extracted from the WSDL
@@ -64,12 +63,12 @@ class AgentAction extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AgentSine = null;
+    public ?string $AgentSine = null;
     /**
      * The AgentOverride
      * @var string|null
      */
-    protected ?string $AgentOverride = null;
+    public ?string $AgentOverride = null;
     /**
      * Constructor method for AgentAction
      * @uses AgentAction::setActionType()
@@ -113,10 +112,6 @@ class AgentAction extends AbstractStructBase
      */
     public function setActionType(string $actionType): self
     {
-        // validation for constraint: string
-        if (!is_null($actionType) && !is_string($actionType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($actionType, true), gettype($actionType)), __LINE__);
-        }
         $this->ActionType = $actionType;
         
         return $this;
@@ -136,10 +131,6 @@ class AgentAction extends AbstractStructBase
      */
     public function setAgentCode(string $agentCode): self
     {
-        // validation for constraint: string
-        if (!is_null($agentCode) && !is_string($agentCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($agentCode, true), gettype($agentCode)), __LINE__);
-        }
         $this->AgentCode = $agentCode;
         
         return $this;
@@ -159,18 +150,6 @@ class AgentAction extends AbstractStructBase
      */
     public function setBranchCode(string $branchCode): self
     {
-        // validation for constraint: string
-        if (!is_null($branchCode) && !is_string($branchCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($branchCode, true), gettype($branchCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(25)
-        if (!is_null($branchCode) && mb_strlen((string) $branchCode) > 25) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 25', mb_strlen((string) $branchCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($branchCode) && mb_strlen((string) $branchCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $branchCode)), __LINE__);
-        }
         $this->BranchCode = $branchCode;
         
         return $this;
@@ -190,10 +169,6 @@ class AgentAction extends AbstractStructBase
      */
     public function setAgencyCode(string $agencyCode): self
     {
-        // validation for constraint: string
-        if (!is_null($agencyCode) && !is_string($agencyCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($agencyCode, true), gettype($agencyCode)), __LINE__);
-        }
         $this->AgencyCode = $agencyCode;
         
         return $this;
@@ -213,10 +188,6 @@ class AgentAction extends AbstractStructBase
      */
     public function setEventTime(string $eventTime): self
     {
-        // validation for constraint: string
-        if (!is_null($eventTime) && !is_string($eventTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventTime, true), gettype($eventTime)), __LINE__);
-        }
         $this->EventTime = $eventTime;
         
         return $this;
@@ -236,10 +207,6 @@ class AgentAction extends AbstractStructBase
      */
     public function setAgentSine(?string $agentSine = null): self
     {
-        // validation for constraint: string
-        if (!is_null($agentSine) && !is_string($agentSine)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($agentSine, true), gettype($agentSine)), __LINE__);
-        }
         $this->AgentSine = $agentSine;
         
         return $this;
@@ -259,10 +226,6 @@ class AgentAction extends AbstractStructBase
      */
     public function setAgentOverride(?string $agentOverride = null): self
     {
-        // validation for constraint: string
-        if (!is_null($agentOverride) && !is_string($agentOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($agentOverride, true), gettype($agentOverride)), __LINE__);
-        }
         $this->AgentOverride = $agentOverride;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class FormOfPayment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The CreditCard
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class FormOfPayment extends AbstractStructBase
      * - ref: CreditCard
      * @var \Travelport\Hotel\StructType\CreditCard|null
      */
-    protected ?\Travelport\Hotel\StructType\CreditCard $CreditCard = null;
+    public ?\Travelport\Hotel\StructType\CreditCard $CreditCard = null;
     /**
      * The DebitCard
      * Meta information extracted from the WSDL
@@ -45,7 +44,7 @@ class FormOfPayment extends AbstractStructBase
      * - ref: DebitCard
      * @var \Travelport\Hotel\StructType\DebitCard|null
      */
-    protected ?\Travelport\Hotel\StructType\DebitCard $DebitCard = null;
+    public ?\Travelport\Hotel\StructType\DebitCard $DebitCard = null;
     /**
      * The EnettVan
      * Meta information extracted from the WSDL
@@ -56,12 +55,12 @@ class FormOfPayment extends AbstractStructBase
      * - ref: EnettVan
      * @var \Travelport\Hotel\StructType\EnettVan|null
      */
-    protected ?\Travelport\Hotel\StructType\EnettVan $EnettVan = null;
+    public ?\Travelport\Hotel\StructType\EnettVan $EnettVan = null;
     /**
      * The Certificate
      * @var \Travelport\Hotel\StructType\Certificate|null
      */
-    protected ?\Travelport\Hotel\StructType\Certificate $Certificate = null;
+    public ?\Travelport\Hotel\StructType\Certificate $Certificate = null;
     /**
      * The TicketNumber
      * Meta information extracted from the WSDL
@@ -71,47 +70,47 @@ class FormOfPayment extends AbstractStructBase
      * - minLength: 1
      * @var string|null
      */
-    protected ?string $TicketNumber = null;
+    public ?string $TicketNumber = null;
     /**
      * The Check
      * @var \Travelport\Hotel\StructType\Check|null
      */
-    protected ?\Travelport\Hotel\StructType\Check $Check = null;
+    public ?\Travelport\Hotel\StructType\Check $Check = null;
     /**
      * The Requisition
      * @var \Travelport\Hotel\StructType\Requisition|null
      */
-    protected ?\Travelport\Hotel\StructType\Requisition $Requisition = null;
+    public ?\Travelport\Hotel\StructType\Requisition $Requisition = null;
     /**
      * The MiscFormOfPayment
      * @var \Travelport\Hotel\StructType\MiscFormOfPayment|null
      */
-    protected ?\Travelport\Hotel\StructType\MiscFormOfPayment $MiscFormOfPayment = null;
+    public ?\Travelport\Hotel\StructType\MiscFormOfPayment $MiscFormOfPayment = null;
     /**
      * The AgencyPayment
      * @var \Travelport\Hotel\StructType\TypeAgencyPayment|null
      */
-    protected ?\Travelport\Hotel\StructType\TypeAgencyPayment $AgencyPayment = null;
+    public ?\Travelport\Hotel\StructType\TypeAgencyPayment $AgencyPayment = null;
     /**
      * The UnitedNations
      * @var \Travelport\Hotel\StructType\UnitedNations|null
      */
-    protected ?\Travelport\Hotel\StructType\UnitedNations $UnitedNations = null;
+    public ?\Travelport\Hotel\StructType\UnitedNations $UnitedNations = null;
     /**
      * The DirectPayment
      * @var \Travelport\Hotel\StructType\DirectPayment|null
      */
-    protected ?\Travelport\Hotel\StructType\DirectPayment $DirectPayment = null;
+    public ?\Travelport\Hotel\StructType\DirectPayment $DirectPayment = null;
     /**
      * The AgentVoucher
      * @var \Travelport\Hotel\StructType\AgentVoucher|null
      */
-    protected ?\Travelport\Hotel\StructType\AgentVoucher $AgentVoucher = null;
+    public ?\Travelport\Hotel\StructType\AgentVoucher $AgentVoucher = null;
     /**
      * The PaymentAdvice
      * @var \Travelport\Hotel\StructType\PaymentAdvice|null
      */
-    protected ?\Travelport\Hotel\StructType\PaymentAdvice $PaymentAdvice = null;
+    public ?\Travelport\Hotel\StructType\PaymentAdvice $PaymentAdvice = null;
     /**
      * The ProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -119,7 +118,7 @@ class FormOfPayment extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\TypeFormOfPaymentPNRReference[]
      */
-    protected ?array $ProviderReservationInfoRef = null;
+    public ?array $ProviderReservationInfoRef = null;
     /**
      * The SegmentRef
      * Meta information extracted from the WSDL
@@ -127,7 +126,7 @@ class FormOfPayment extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\TypeGeneralReference[]
      */
-    protected ?array $SegmentRef = null;
+    public ?array $SegmentRef = null;
     /**
      * The BSPPayment
      * Meta information extracted from the WSDL
@@ -135,7 +134,7 @@ class FormOfPayment extends AbstractStructBase
      * - ref: BSPPayment
      * @var \Travelport\Hotel\StructType\BSPPayment|null
      */
-    protected ?\Travelport\Hotel\StructType\BSPPayment $BSPPayment = null;
+    public ?\Travelport\Hotel\StructType\BSPPayment $BSPPayment = null;
     /**
      * The ARCPayment
      * Meta information extracted from the WSDL
@@ -143,7 +142,7 @@ class FormOfPayment extends AbstractStructBase
      * - ref: ARCPayment
      * @var \Travelport\Hotel\StructType\ARCPayment|null
      */
-    protected ?\Travelport\Hotel\StructType\ARCPayment $ARCPayment = null;
+    public ?\Travelport\Hotel\StructType\ARCPayment $ARCPayment = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -152,7 +151,7 @@ class FormOfPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The FulfillmentType
      * Meta information extracted from the WSDL
@@ -161,7 +160,7 @@ class FormOfPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FulfillmentType = null;
+    public ?string $FulfillmentType = null;
     /**
      * The FulfillmentLocation
      * Meta information extracted from the WSDL
@@ -169,7 +168,7 @@ class FormOfPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FulfillmentLocation = null;
+    public ?string $FulfillmentLocation = null;
     /**
      * The FulfillmentIDType
      * Meta information extracted from the WSDL
@@ -177,7 +176,7 @@ class FormOfPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FulfillmentIDType = null;
+    public ?string $FulfillmentIDType = null;
     /**
      * The FulfillmentIDNumber
      * Meta information extracted from the WSDL
@@ -185,7 +184,7 @@ class FormOfPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FulfillmentIDNumber = null;
+    public ?string $FulfillmentIDNumber = null;
     /**
      * The IsAgentType
      * Meta information extracted from the WSDL
@@ -194,7 +193,7 @@ class FormOfPayment extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $IsAgentType = null;
+    public ?bool $IsAgentType = null;
     /**
      * The AgentText
      * Meta information extracted from the WSDL
@@ -202,7 +201,7 @@ class FormOfPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AgentText = null;
+    public ?string $AgentText = null;
     /**
      * The ReuseFOP
      * Meta information extracted from the WSDL
@@ -211,7 +210,7 @@ class FormOfPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ReuseFOP = null;
+    public ?string $ReuseFOP = null;
     /**
      * The ExternalReference
      * Meta information extracted from the WSDL
@@ -221,7 +220,7 @@ class FormOfPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ExternalReference = null;
+    public ?string $ExternalReference = null;
     /**
      * The Reusable
      * Meta information extracted from the WSDL
@@ -230,14 +229,14 @@ class FormOfPayment extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Reusable = null;
+    public ?bool $Reusable = null;
     /**
      * The ProfileID
      * Meta information extracted from the WSDL
      * - documentation: The unique ID of the profile that contains the payment details to use.
      * @var string|null
      */
-    protected ?string $ProfileID = null;
+    public ?string $ProfileID = null;
     /**
      * The ProfileKey
      * Meta information extracted from the WSDL
@@ -245,7 +244,7 @@ class FormOfPayment extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $ProfileKey = null;
+    public ?string $ProfileKey = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -254,7 +253,7 @@ class FormOfPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -262,7 +261,7 @@ class FormOfPayment extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for FormOfPayment
      * @uses FormOfPayment::setType()
@@ -381,14 +380,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function setType(string $type): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
-        // validation for constraint: maxLength(25)
-        if (!is_null($type) && mb_strlen((string) $type) > 25) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 25', mb_strlen((string) $type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -402,49 +393,15 @@ class FormOfPayment extends AbstractStructBase
         return $this->CreditCard ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setCreditCard method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setCreditCard method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateCreditCardForChoiceConstraintFromSetCreditCard($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'DebitCard',
-            'EnettVan',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property CreditCard can\'t be set as the property %s is already set. Only one property must be set among these properties: CreditCard, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set CreditCard value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\CreditCard $creditCard
      * @return \Travelport\Hotel\StructType\FormOfPayment
      */
     public function setCreditCard(?\Travelport\Hotel\StructType\CreditCard $creditCard = null): self
     {
-        // validation for constraint: choice(CreditCard, DebitCard, EnettVan, FormOfPaymentSequenceGroup)
-        if ('' !== ($creditCardChoiceErrorMessage = self::validateCreditCardForChoiceConstraintFromSetCreditCard($creditCard))) {
-            throw new InvalidArgumentException($creditCardChoiceErrorMessage, __LINE__);
-        }
         if (is_null($creditCard) || (is_array($creditCard) && empty($creditCard))) {
             unset($this->CreditCard);
         } else {
@@ -462,49 +419,15 @@ class FormOfPayment extends AbstractStructBase
         return $this->DebitCard ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setDebitCard method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setDebitCard method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateDebitCardForChoiceConstraintFromSetDebitCard($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'CreditCard',
-            'EnettVan',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property DebitCard can\'t be set as the property %s is already set. Only one property must be set among these properties: DebitCard, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set DebitCard value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\DebitCard $debitCard
      * @return \Travelport\Hotel\StructType\FormOfPayment
      */
     public function setDebitCard(?\Travelport\Hotel\StructType\DebitCard $debitCard = null): self
     {
-        // validation for constraint: choice(CreditCard, DebitCard, EnettVan, FormOfPaymentSequenceGroup)
-        if ('' !== ($debitCardChoiceErrorMessage = self::validateDebitCardForChoiceConstraintFromSetDebitCard($debitCard))) {
-            throw new InvalidArgumentException($debitCardChoiceErrorMessage, __LINE__);
-        }
         if (is_null($debitCard) || (is_array($debitCard) && empty($debitCard))) {
             unset($this->DebitCard);
         } else {
@@ -522,49 +445,15 @@ class FormOfPayment extends AbstractStructBase
         return $this->EnettVan ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setEnettVan method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setEnettVan method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateEnettVanForChoiceConstraintFromSetEnettVan($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'CreditCard',
-            'DebitCard',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property EnettVan can\'t be set as the property %s is already set. Only one property must be set among these properties: EnettVan, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set EnettVan value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\EnettVan $enettVan
      * @return \Travelport\Hotel\StructType\FormOfPayment
      */
     public function setEnettVan(?\Travelport\Hotel\StructType\EnettVan $enettVan = null): self
     {
-        // validation for constraint: choice(CreditCard, DebitCard, EnettVan, FormOfPaymentSequenceGroup)
-        if ('' !== ($enettVanChoiceErrorMessage = self::validateEnettVanForChoiceConstraintFromSetEnettVan($enettVan))) {
-            throw new InvalidArgumentException($enettVanChoiceErrorMessage, __LINE__);
-        }
         if (is_null($enettVan) || (is_array($enettVan) && empty($enettVan))) {
             unset($this->EnettVan);
         } else {
@@ -607,18 +496,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function setTicketNumber(?string $ticketNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketNumber) && !is_string($ticketNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketNumber, true), gettype($ticketNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(13)
-        if (!is_null($ticketNumber) && mb_strlen((string) $ticketNumber) > 13) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 13', mb_strlen((string) $ticketNumber)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($ticketNumber) && mb_strlen((string) $ticketNumber) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $ticketNumber)), __LINE__);
-        }
         $this->TicketNumber = $ticketNumber;
         
         return $this;
@@ -784,48 +661,12 @@ class FormOfPayment extends AbstractStructBase
         return $this->ProviderReservationInfoRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setProviderReservationInfoRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationInfoRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateProviderReservationInfoRefForArrayConstraintFromSetProviderReservationInfoRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $formOfPaymentProviderReservationInfoRefItem) {
-            // validation for constraint: itemType
-            if (!$formOfPaymentProviderReservationInfoRefItem instanceof \Travelport\Hotel\StructType\TypeFormOfPaymentPNRReference) {
-                $invalidValues[] = is_object($formOfPaymentProviderReservationInfoRefItem) ? get_class($formOfPaymentProviderReservationInfoRefItem) : sprintf('%s(%s)', gettype($formOfPaymentProviderReservationInfoRefItem), var_export($formOfPaymentProviderReservationInfoRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ProviderReservationInfoRef property can only contain items of type \Travelport\Hotel\StructType\TypeFormOfPaymentPNRReference, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ProviderReservationInfoRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\TypeFormOfPaymentPNRReference[] $providerReservationInfoRef
      * @return \Travelport\Hotel\StructType\FormOfPayment
      */
     public function setProviderReservationInfoRef(?array $providerReservationInfoRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($providerReservationInfoRefArrayErrorMessage = self::validateProviderReservationInfoRefForArrayConstraintFromSetProviderReservationInfoRef($providerReservationInfoRef))) {
-            throw new InvalidArgumentException($providerReservationInfoRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($providerReservationInfoRef) && count($providerReservationInfoRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($providerReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef = $providerReservationInfoRef;
         
         return $this;
@@ -838,14 +679,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function addToProviderReservationInfoRef(\Travelport\Hotel\StructType\TypeFormOfPaymentPNRReference $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\TypeFormOfPaymentPNRReference) {
-            throw new InvalidArgumentException(sprintf('The ProviderReservationInfoRef property can only contain items of type \Travelport\Hotel\StructType\TypeFormOfPaymentPNRReference, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->ProviderReservationInfoRef) && count($this->ProviderReservationInfoRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->ProviderReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef[] = $item;
         
         return $this;
@@ -859,48 +692,12 @@ class FormOfPayment extends AbstractStructBase
         return $this->SegmentRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setSegmentRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setSegmentRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateSegmentRefForArrayConstraintFromSetSegmentRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $formOfPaymentSegmentRefItem) {
-            // validation for constraint: itemType
-            if (!$formOfPaymentSegmentRefItem instanceof \Travelport\Hotel\StructType\TypeGeneralReference) {
-                $invalidValues[] = is_object($formOfPaymentSegmentRefItem) ? get_class($formOfPaymentSegmentRefItem) : sprintf('%s(%s)', gettype($formOfPaymentSegmentRefItem), var_export($formOfPaymentSegmentRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The SegmentRef property can only contain items of type \Travelport\Hotel\StructType\TypeGeneralReference, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set SegmentRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\TypeGeneralReference[] $segmentRef
      * @return \Travelport\Hotel\StructType\FormOfPayment
      */
     public function setSegmentRef(?array $segmentRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($segmentRefArrayErrorMessage = self::validateSegmentRefForArrayConstraintFromSetSegmentRef($segmentRef))) {
-            throw new InvalidArgumentException($segmentRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($segmentRef) && count($segmentRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($segmentRef)), __LINE__);
-        }
         $this->SegmentRef = $segmentRef;
         
         return $this;
@@ -913,14 +710,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function addToSegmentRef(\Travelport\Hotel\StructType\TypeGeneralReference $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\TypeGeneralReference) {
-            throw new InvalidArgumentException(sprintf('The SegmentRef property can only contain items of type \Travelport\Hotel\StructType\TypeGeneralReference, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->SegmentRef) && count($this->SegmentRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->SegmentRef)), __LINE__);
-        }
         $this->SegmentRef[] = $item;
         
         return $this;
@@ -978,10 +767,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -1001,10 +786,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function setFulfillmentType(?string $fulfillmentType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fulfillmentType) && !is_string($fulfillmentType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fulfillmentType, true), gettype($fulfillmentType)), __LINE__);
-        }
         $this->FulfillmentType = $fulfillmentType;
         
         return $this;
@@ -1024,10 +805,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function setFulfillmentLocation(?string $fulfillmentLocation = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fulfillmentLocation) && !is_string($fulfillmentLocation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fulfillmentLocation, true), gettype($fulfillmentLocation)), __LINE__);
-        }
         $this->FulfillmentLocation = $fulfillmentLocation;
         
         return $this;
@@ -1042,18 +819,11 @@ class FormOfPayment extends AbstractStructBase
     }
     /**
      * Set FulfillmentIDType value
-     * @uses \Travelport\Hotel\EnumType\TypeFulfillmentIDType::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeFulfillmentIDType::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $fulfillmentIDType
      * @return \Travelport\Hotel\StructType\FormOfPayment
      */
     public function setFulfillmentIDType(?string $fulfillmentIDType = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeFulfillmentIDType::valueIsValid($fulfillmentIDType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeFulfillmentIDType', is_array($fulfillmentIDType) ? implode(', ', $fulfillmentIDType) : var_export($fulfillmentIDType, true), implode(', ', \Travelport\Hotel\EnumType\TypeFulfillmentIDType::getValidValues())), __LINE__);
-        }
         $this->FulfillmentIDType = $fulfillmentIDType;
         
         return $this;
@@ -1073,10 +843,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function setFulfillmentIDNumber(?string $fulfillmentIDNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fulfillmentIDNumber) && !is_string($fulfillmentIDNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fulfillmentIDNumber, true), gettype($fulfillmentIDNumber)), __LINE__);
-        }
         $this->FulfillmentIDNumber = $fulfillmentIDNumber;
         
         return $this;
@@ -1096,10 +862,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function setIsAgentType(?bool $isAgentType = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($isAgentType) && !is_bool($isAgentType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($isAgentType, true), gettype($isAgentType)), __LINE__);
-        }
         $this->IsAgentType = $isAgentType;
         
         return $this;
@@ -1119,10 +881,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function setAgentText(?string $agentText = null): self
     {
-        // validation for constraint: string
-        if (!is_null($agentText) && !is_string($agentText)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($agentText, true), gettype($agentText)), __LINE__);
-        }
         $this->AgentText = $agentText;
         
         return $this;
@@ -1142,10 +900,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function setReuseFOP(?string $reuseFOP = null): self
     {
-        // validation for constraint: string
-        if (!is_null($reuseFOP) && !is_string($reuseFOP)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reuseFOP, true), gettype($reuseFOP)), __LINE__);
-        }
         $this->ReuseFOP = $reuseFOP;
         
         return $this;
@@ -1165,14 +919,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function setExternalReference(?string $externalReference = null): self
     {
-        // validation for constraint: string
-        if (!is_null($externalReference) && !is_string($externalReference)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($externalReference, true), gettype($externalReference)), __LINE__);
-        }
-        // validation for constraint: maxLength(32)
-        if (!is_null($externalReference) && mb_strlen((string) $externalReference) > 32) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $externalReference)), __LINE__);
-        }
         $this->ExternalReference = $externalReference;
         
         return $this;
@@ -1192,10 +938,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function setReusable(?bool $reusable = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($reusable) && !is_bool($reusable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($reusable, true), gettype($reusable)), __LINE__);
-        }
         $this->Reusable = $reusable;
         
         return $this;
@@ -1215,10 +957,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function setProfileID(?string $profileID = null): self
     {
-        // validation for constraint: string
-        if (!is_null($profileID) && !is_string($profileID)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileID, true), gettype($profileID)), __LINE__);
-        }
         $this->ProfileID = $profileID;
         
         return $this;
@@ -1238,10 +976,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function setProfileKey(?string $profileKey = null): self
     {
-        // validation for constraint: string
-        if (!is_null($profileKey) && !is_string($profileKey)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileKey, true), gettype($profileKey)), __LINE__);
-        }
         $this->ProfileKey = $profileKey;
         
         return $this;
@@ -1256,18 +990,11 @@ class FormOfPayment extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\Hotel\StructType\FormOfPayment
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -1287,10 +1014,6 @@ class FormOfPayment extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

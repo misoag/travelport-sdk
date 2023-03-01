@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,14 +18,14 @@ class JourneyRemark extends AbstractStructBase
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The Category
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $Category = null;
+    public ?string $Category = null;
     /**
      * Constructor method for JourneyRemark
      * @uses JourneyRemark::set_()
@@ -55,10 +54,6 @@ class JourneyRemark extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -78,10 +73,6 @@ class JourneyRemark extends AbstractStructBase
      */
     public function setCategory(?string $category = null): self
     {
-        // validation for constraint: string
-        if (!is_null($category) && !is_string($category)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($category, true), gettype($category)), __LINE__);
-        }
         $this->Category = $category;
         
         return $this;

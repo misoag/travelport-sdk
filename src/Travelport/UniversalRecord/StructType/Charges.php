@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class Charges extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AirCharge = null;
+    public ?string $AirCharge = null;
     /**
      * The OptionalCharge
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class Charges extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OptionalCharge = null;
+    public ?string $OptionalCharge = null;
     /**
      * The WaiverCharge
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class Charges extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $WaiverCharge = null;
+    public ?string $WaiverCharge = null;
     /**
      * The WaiverChargeType
      * Meta information extracted from the WSDL
@@ -51,7 +50,7 @@ class Charges extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $WaiverChargeType = null;
+    public ?string $WaiverChargeType = null;
     /**
      * The PortCharge
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class Charges extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PortCharge = null;
+    public ?string $PortCharge = null;
     /**
      * The PortChargeDescription
      * Meta information extracted from the WSDL
@@ -71,7 +70,7 @@ class Charges extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PortChargeDescription = null;
+    public ?string $PortChargeDescription = null;
     /**
      * The PenaltyCharge
      * Meta information extracted from the WSDL
@@ -80,7 +79,7 @@ class Charges extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PenaltyCharge = null;
+    public ?string $PenaltyCharge = null;
     /**
      * Constructor method for Charges
      * @uses Charges::setAirCharge()
@@ -124,10 +123,6 @@ class Charges extends AbstractStructBase
      */
     public function setAirCharge(?string $airCharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($airCharge) && !is_string($airCharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($airCharge, true), gettype($airCharge)), __LINE__);
-        }
         $this->AirCharge = $airCharge;
         
         return $this;
@@ -147,10 +142,6 @@ class Charges extends AbstractStructBase
      */
     public function setOptionalCharge(?string $optionalCharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($optionalCharge) && !is_string($optionalCharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionalCharge, true), gettype($optionalCharge)), __LINE__);
-        }
         $this->OptionalCharge = $optionalCharge;
         
         return $this;
@@ -170,10 +161,6 @@ class Charges extends AbstractStructBase
      */
     public function setWaiverCharge(?string $waiverCharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($waiverCharge) && !is_string($waiverCharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($waiverCharge, true), gettype($waiverCharge)), __LINE__);
-        }
         $this->WaiverCharge = $waiverCharge;
         
         return $this;
@@ -193,14 +180,6 @@ class Charges extends AbstractStructBase
      */
     public function setWaiverChargeType(?string $waiverChargeType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($waiverChargeType) && !is_string($waiverChargeType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($waiverChargeType, true), gettype($waiverChargeType)), __LINE__);
-        }
-        // validation for constraint: length(1)
-        if (!is_null($waiverChargeType) && mb_strlen((string) $waiverChargeType) !== 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 1', mb_strlen((string) $waiverChargeType)), __LINE__);
-        }
         $this->WaiverChargeType = $waiverChargeType;
         
         return $this;
@@ -220,10 +199,6 @@ class Charges extends AbstractStructBase
      */
     public function setPortCharge(?string $portCharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($portCharge) && !is_string($portCharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($portCharge, true), gettype($portCharge)), __LINE__);
-        }
         $this->PortCharge = $portCharge;
         
         return $this;
@@ -243,18 +218,6 @@ class Charges extends AbstractStructBase
      */
     public function setPortChargeDescription(?string $portChargeDescription = null): self
     {
-        // validation for constraint: string
-        if (!is_null($portChargeDescription) && !is_string($portChargeDescription)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($portChargeDescription, true), gettype($portChargeDescription)), __LINE__);
-        }
-        // validation for constraint: maxLength(13)
-        if (!is_null($portChargeDescription) && mb_strlen((string) $portChargeDescription) > 13) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 13', mb_strlen((string) $portChargeDescription)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($portChargeDescription) && mb_strlen((string) $portChargeDescription) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $portChargeDescription)), __LINE__);
-        }
         $this->PortChargeDescription = $portChargeDescription;
         
         return $this;
@@ -274,10 +237,6 @@ class Charges extends AbstractStructBase
      */
     public function setPenaltyCharge(?string $penaltyCharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($penaltyCharge) && !is_string($penaltyCharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($penaltyCharge, true), gettype($penaltyCharge)), __LINE__);
-        }
         $this->PenaltyCharge = $penaltyCharge;
         
         return $this;

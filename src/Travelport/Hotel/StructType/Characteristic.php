@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class Characteristic extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SeatType = null;
+    public ?string $SeatType = null;
     /**
      * The SeatDescription
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class Characteristic extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SeatDescription = null;
+    public ?string $SeatDescription = null;
     /**
      * The SeatValue
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class Characteristic extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SeatValue = null;
+    public ?string $SeatValue = null;
     /**
      * The SeatValueDescription
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class Characteristic extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SeatValueDescription = null;
+    public ?string $SeatValueDescription = null;
     /**
      * Constructor method for Characteristic
      * @uses Characteristic::setSeatType()
@@ -89,18 +88,6 @@ class Characteristic extends AbstractStructBase
      */
     public function setSeatType(?string $seatType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($seatType) && !is_string($seatType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seatType, true), gettype($seatType)), __LINE__);
-        }
-        // validation for constraint: maxLength(255)
-        if (!is_null($seatType) && mb_strlen((string) $seatType) > 255) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 255', mb_strlen((string) $seatType)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if (!is_null($seatType) && mb_strlen((string) $seatType) < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $seatType)), __LINE__);
-        }
         $this->SeatType = $seatType;
         
         return $this;
@@ -120,18 +107,6 @@ class Characteristic extends AbstractStructBase
      */
     public function setSeatDescription(?string $seatDescription = null): self
     {
-        // validation for constraint: string
-        if (!is_null($seatDescription) && !is_string($seatDescription)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seatDescription, true), gettype($seatDescription)), __LINE__);
-        }
-        // validation for constraint: maxLength(255)
-        if (!is_null($seatDescription) && mb_strlen((string) $seatDescription) > 255) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 255', mb_strlen((string) $seatDescription)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if (!is_null($seatDescription) && mb_strlen((string) $seatDescription) < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $seatDescription)), __LINE__);
-        }
         $this->SeatDescription = $seatDescription;
         
         return $this;
@@ -151,18 +126,6 @@ class Characteristic extends AbstractStructBase
      */
     public function setSeatValue(?string $seatValue = null): self
     {
-        // validation for constraint: string
-        if (!is_null($seatValue) && !is_string($seatValue)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seatValue, true), gettype($seatValue)), __LINE__);
-        }
-        // validation for constraint: maxLength(255)
-        if (!is_null($seatValue) && mb_strlen((string) $seatValue) > 255) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 255', mb_strlen((string) $seatValue)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if (!is_null($seatValue) && mb_strlen((string) $seatValue) < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $seatValue)), __LINE__);
-        }
         $this->SeatValue = $seatValue;
         
         return $this;
@@ -182,18 +145,6 @@ class Characteristic extends AbstractStructBase
      */
     public function setSeatValueDescription(?string $seatValueDescription = null): self
     {
-        // validation for constraint: string
-        if (!is_null($seatValueDescription) && !is_string($seatValueDescription)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seatValueDescription, true), gettype($seatValueDescription)), __LINE__);
-        }
-        // validation for constraint: maxLength(255)
-        if (!is_null($seatValueDescription) && mb_strlen((string) $seatValueDescription) > 255) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 255', mb_strlen((string) $seatValueDescription)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if (!is_null($seatValueDescription) && mb_strlen((string) $seatValueDescription) < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $seatValueDescription)), __LINE__);
-        }
         $this->SeatValueDescription = $seatValueDescription;
         
         return $this;

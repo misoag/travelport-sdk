@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class AddSvc extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RFIC = null;
+    public ?string $RFIC = null;
     /**
      * The RFISC
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class AddSvc extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RFISC = null;
+    public ?string $RFISC = null;
     /**
      * The SvcDescription
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class AddSvc extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SvcDescription = null;
+    public ?string $SvcDescription = null;
     /**
      * The Origin
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class AddSvc extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Origin = null;
+    public ?string $Origin = null;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class AddSvc extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Destination = null;
+    public ?string $Destination = null;
     /**
      * The StartDate
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class AddSvc extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $StartDate = null;
+    public ?string $StartDate = null;
     /**
      * Constructor method for AddSvc
      * @uses AddSvc::setRFIC()
@@ -109,10 +108,6 @@ class AddSvc extends AbstractStructBase
      */
     public function setRFIC(?string $rFIC = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rFIC) && !is_string($rFIC)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rFIC, true), gettype($rFIC)), __LINE__);
-        }
         $this->RFIC = $rFIC;
         
         return $this;
@@ -132,10 +127,6 @@ class AddSvc extends AbstractStructBase
      */
     public function setRFISC(?string $rFISC = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rFISC) && !is_string($rFISC)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rFISC, true), gettype($rFISC)), __LINE__);
-        }
         $this->RFISC = $rFISC;
         
         return $this;
@@ -155,10 +146,6 @@ class AddSvc extends AbstractStructBase
      */
     public function setSvcDescription(?string $svcDescription = null): self
     {
-        // validation for constraint: string
-        if (!is_null($svcDescription) && !is_string($svcDescription)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($svcDescription, true), gettype($svcDescription)), __LINE__);
-        }
         $this->SvcDescription = $svcDescription;
         
         return $this;
@@ -178,14 +165,6 @@ class AddSvc extends AbstractStructBase
      */
     public function setOrigin(?string $origin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($origin) && mb_strlen((string) $origin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -205,14 +184,6 @@ class AddSvc extends AbstractStructBase
      */
     public function setDestination(?string $destination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destination) && mb_strlen((string) $destination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -232,10 +203,6 @@ class AddSvc extends AbstractStructBase
      */
     public function setStartDate(?string $startDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($startDate) && !is_string($startDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
-        }
         $this->StartDate = $startDate;
         
         return $this;

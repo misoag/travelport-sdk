@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class EMDCoupon extends AbstractStructBase
      * - use: required
      * @var int
      */
-    protected int $Number;
+    public int $Number;
     /**
      * The Status
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class EMDCoupon extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Status;
+    public string $Status;
     /**
      * The RFIC
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class EMDCoupon extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $RFIC;
+    public string $RFIC;
     /**
      * The SvcDescription
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class EMDCoupon extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SvcDescription = null;
+    public ?string $SvcDescription = null;
     /**
      * The ConsumedAtIssuanceInd
      * Meta information extracted from the WSDL
@@ -55,7 +54,7 @@ class EMDCoupon extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ConsumedAtIssuanceInd = null;
+    public ?bool $ConsumedAtIssuanceInd = null;
     /**
      * The RFISC
      * Meta information extracted from the WSDL
@@ -63,7 +62,7 @@ class EMDCoupon extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RFISC = null;
+    public ?string $RFISC = null;
     /**
      * The RFIDescription
      * Meta information extracted from the WSDL
@@ -73,7 +72,7 @@ class EMDCoupon extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RFIDescription = null;
+    public ?string $RFIDescription = null;
     /**
      * The Origin
      * Meta information extracted from the WSDL
@@ -84,7 +83,7 @@ class EMDCoupon extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Origin = null;
+    public ?string $Origin = null;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -95,7 +94,7 @@ class EMDCoupon extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Destination = null;
+    public ?string $Destination = null;
     /**
      * The FlightNumber
      * Meta information extracted from the WSDL
@@ -105,7 +104,7 @@ class EMDCoupon extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FlightNumber = null;
+    public ?string $FlightNumber = null;
     /**
      * The PresentTo
      * Meta information extracted from the WSDL
@@ -115,7 +114,7 @@ class EMDCoupon extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PresentTo = null;
+    public ?string $PresentTo = null;
     /**
      * The PresentAt
      * Meta information extracted from the WSDL
@@ -125,7 +124,7 @@ class EMDCoupon extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PresentAt = null;
+    public ?string $PresentAt = null;
     /**
      * The NonRefundableInd
      * Meta information extracted from the WSDL
@@ -133,7 +132,7 @@ class EMDCoupon extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $NonRefundableInd = null;
+    public ?bool $NonRefundableInd = null;
     /**
      * The MarketingCarrier
      * Meta information extracted from the WSDL
@@ -142,7 +141,7 @@ class EMDCoupon extends AbstractStructBase
      * - length: 2
      * @var string|null
      */
-    protected ?string $MarketingCarrier = null;
+    public ?string $MarketingCarrier = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -151,17 +150,17 @@ class EMDCoupon extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The ElStat
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for EMDCoupon
      * @uses EMDCoupon::setNumber()
@@ -235,10 +234,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setNumber(int $number): self
     {
-        // validation for constraint: int
-        if (!is_null($number) && !(is_int($number) || ctype_digit($number))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($number, true), gettype($number)), __LINE__);
-        }
         $this->Number = $number;
         
         return $this;
@@ -258,10 +253,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setStatus(string $status): self
     {
-        // validation for constraint: string
-        if (!is_null($status) && !is_string($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -281,14 +272,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setRFIC(string $rFIC): self
     {
-        // validation for constraint: string
-        if (!is_null($rFIC) && !is_string($rFIC)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rFIC, true), gettype($rFIC)), __LINE__);
-        }
-        // validation for constraint: length(1)
-        if (!is_null($rFIC) && mb_strlen((string) $rFIC) !== 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 1', mb_strlen((string) $rFIC)), __LINE__);
-        }
         $this->RFIC = $rFIC;
         
         return $this;
@@ -308,10 +291,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setSvcDescription(?string $svcDescription = null): self
     {
-        // validation for constraint: string
-        if (!is_null($svcDescription) && !is_string($svcDescription)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($svcDescription, true), gettype($svcDescription)), __LINE__);
-        }
         $this->SvcDescription = $svcDescription;
         
         return $this;
@@ -331,10 +310,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setConsumedAtIssuanceInd(?bool $consumedAtIssuanceInd = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($consumedAtIssuanceInd) && !is_bool($consumedAtIssuanceInd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($consumedAtIssuanceInd, true), gettype($consumedAtIssuanceInd)), __LINE__);
-        }
         $this->ConsumedAtIssuanceInd = $consumedAtIssuanceInd;
         
         return $this;
@@ -354,10 +329,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setRFISC(?string $rFISC = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rFISC) && !is_string($rFISC)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rFISC, true), gettype($rFISC)), __LINE__);
-        }
         $this->RFISC = $rFISC;
         
         return $this;
@@ -377,18 +348,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setRFIDescription(?string $rFIDescription = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rFIDescription) && !is_string($rFIDescription)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rFIDescription, true), gettype($rFIDescription)), __LINE__);
-        }
-        // validation for constraint: maxLength(86)
-        if (!is_null($rFIDescription) && mb_strlen((string) $rFIDescription) > 86) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 86', mb_strlen((string) $rFIDescription)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($rFIDescription) && mb_strlen((string) $rFIDescription) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $rFIDescription)), __LINE__);
-        }
         $this->RFIDescription = $rFIDescription;
         
         return $this;
@@ -408,14 +367,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setOrigin(?string $origin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($origin) && mb_strlen((string) $origin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -435,14 +386,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setDestination(?string $destination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destination) && mb_strlen((string) $destination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -462,14 +405,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setFlightNumber(?string $flightNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($flightNumber) && !is_string($flightNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($flightNumber, true), gettype($flightNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($flightNumber) && mb_strlen((string) $flightNumber) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $flightNumber)), __LINE__);
-        }
         $this->FlightNumber = $flightNumber;
         
         return $this;
@@ -489,18 +424,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setPresentTo(?string $presentTo = null): self
     {
-        // validation for constraint: string
-        if (!is_null($presentTo) && !is_string($presentTo)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($presentTo, true), gettype($presentTo)), __LINE__);
-        }
-        // validation for constraint: maxLength(71)
-        if (!is_null($presentTo) && mb_strlen((string) $presentTo) > 71) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 71', mb_strlen((string) $presentTo)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($presentTo) && mb_strlen((string) $presentTo) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $presentTo)), __LINE__);
-        }
         $this->PresentTo = $presentTo;
         
         return $this;
@@ -520,18 +443,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setPresentAt(?string $presentAt = null): self
     {
-        // validation for constraint: string
-        if (!is_null($presentAt) && !is_string($presentAt)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($presentAt, true), gettype($presentAt)), __LINE__);
-        }
-        // validation for constraint: maxLength(71)
-        if (!is_null($presentAt) && mb_strlen((string) $presentAt) > 71) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 71', mb_strlen((string) $presentAt)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($presentAt) && mb_strlen((string) $presentAt) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $presentAt)), __LINE__);
-        }
         $this->PresentAt = $presentAt;
         
         return $this;
@@ -551,10 +462,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setNonRefundableInd(?bool $nonRefundableInd = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($nonRefundableInd) && !is_bool($nonRefundableInd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($nonRefundableInd, true), gettype($nonRefundableInd)), __LINE__);
-        }
         $this->NonRefundableInd = $nonRefundableInd;
         
         return $this;
@@ -574,14 +481,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setMarketingCarrier(?string $marketingCarrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($marketingCarrier) && !is_string($marketingCarrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($marketingCarrier, true), gettype($marketingCarrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($marketingCarrier) && mb_strlen((string) $marketingCarrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $marketingCarrier)), __LINE__);
-        }
         $this->MarketingCarrier = $marketingCarrier;
         
         return $this;
@@ -601,10 +500,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -619,18 +514,11 @@ class EMDCoupon extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\EMDCoupon
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -650,10 +538,6 @@ class EMDCoupon extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

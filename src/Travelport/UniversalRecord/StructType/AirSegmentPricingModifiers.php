@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\PermittedBookingCodes|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PermittedBookingCodes $PermittedBookingCodes = null;
+    public ?\Travelport\UniversalRecord\StructType\PermittedBookingCodes $PermittedBookingCodes = null;
     /**
      * The AirSegmentRef
      * Meta information extracted from the WSDL
@@ -30,21 +29,21 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AirSegmentRef = null;
+    public ?string $AirSegmentRef = null;
     /**
      * The CabinClass
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $CabinClass = null;
+    public ?string $CabinClass = null;
     /**
      * The AccountCode
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $AccountCode = null;
+    public ?string $AccountCode = null;
     /**
      * The ProhibitAdvancePurchaseFares
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ProhibitAdvancePurchaseFares = null;
+    public ?bool $ProhibitAdvancePurchaseFares = null;
     /**
      * The ProhibitNonRefundableFares
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ProhibitNonRefundableFares = null;
+    public ?bool $ProhibitNonRefundableFares = null;
     /**
      * The ProhibitPenaltyFares
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ProhibitPenaltyFares = null;
+    public ?bool $ProhibitPenaltyFares = null;
     /**
      * The FareBasisCode
      * Meta information extracted from the WSDL
@@ -76,7 +75,7 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FareBasisCode = null;
+    public ?string $FareBasisCode = null;
     /**
      * The FareBreak
      * Meta information extracted from the WSDL
@@ -84,7 +83,7 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FareBreak = null;
+    public ?string $FareBreak = null;
     /**
      * The ConnectionIndicator
      * Meta information extracted from the WSDL
@@ -92,7 +91,7 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ConnectionIndicator = null;
+    public ?string $ConnectionIndicator = null;
     /**
      * The BrandTier
      * Meta information extracted from the WSDL
@@ -103,7 +102,7 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BrandTier = null;
+    public ?string $BrandTier = null;
     /**
      * Constructor method for AirSegmentPricingModifiers
      * @uses AirSegmentPricingModifiers::setPermittedBookingCodes()
@@ -178,10 +177,6 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      */
     public function setAirSegmentRef(?string $airSegmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($airSegmentRef) && !is_string($airSegmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($airSegmentRef, true), gettype($airSegmentRef)), __LINE__);
-        }
         $this->AirSegmentRef = $airSegmentRef;
         
         return $this;
@@ -201,10 +196,6 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      */
     public function setCabinClass(?string $cabinClass = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cabinClass) && !is_string($cabinClass)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cabinClass, true), gettype($cabinClass)), __LINE__);
-        }
         $this->CabinClass = $cabinClass;
         
         return $this;
@@ -224,10 +215,6 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      */
     public function setAccountCode(?string $accountCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($accountCode) && !is_string($accountCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountCode, true), gettype($accountCode)), __LINE__);
-        }
         $this->AccountCode = $accountCode;
         
         return $this;
@@ -247,10 +234,6 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      */
     public function setProhibitAdvancePurchaseFares(?bool $prohibitAdvancePurchaseFares = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($prohibitAdvancePurchaseFares) && !is_bool($prohibitAdvancePurchaseFares)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($prohibitAdvancePurchaseFares, true), gettype($prohibitAdvancePurchaseFares)), __LINE__);
-        }
         $this->ProhibitAdvancePurchaseFares = $prohibitAdvancePurchaseFares;
         
         return $this;
@@ -270,10 +253,6 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      */
     public function setProhibitNonRefundableFares(?bool $prohibitNonRefundableFares = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($prohibitNonRefundableFares) && !is_bool($prohibitNonRefundableFares)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($prohibitNonRefundableFares, true), gettype($prohibitNonRefundableFares)), __LINE__);
-        }
         $this->ProhibitNonRefundableFares = $prohibitNonRefundableFares;
         
         return $this;
@@ -293,10 +272,6 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      */
     public function setProhibitPenaltyFares(?bool $prohibitPenaltyFares = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($prohibitPenaltyFares) && !is_bool($prohibitPenaltyFares)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($prohibitPenaltyFares, true), gettype($prohibitPenaltyFares)), __LINE__);
-        }
         $this->ProhibitPenaltyFares = $prohibitPenaltyFares;
         
         return $this;
@@ -316,10 +291,6 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      */
     public function setFareBasisCode(?string $fareBasisCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fareBasisCode) && !is_string($fareBasisCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareBasisCode, true), gettype($fareBasisCode)), __LINE__);
-        }
         $this->FareBasisCode = $fareBasisCode;
         
         return $this;
@@ -334,18 +305,11 @@ class AirSegmentPricingModifiers extends AbstractStructBase
     }
     /**
      * Set FareBreak value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareBreak::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareBreak::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $fareBreak
      * @return \Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers
      */
     public function setFareBreak(?string $fareBreak = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeFareBreak::valueIsValid($fareBreak)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeFareBreak', is_array($fareBreak) ? implode(', ', $fareBreak) : var_export($fareBreak, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeFareBreak::getValidValues())), __LINE__);
-        }
         $this->FareBreak = $fareBreak;
         
         return $this;
@@ -360,18 +324,11 @@ class AirSegmentPricingModifiers extends AbstractStructBase
     }
     /**
      * Set ConnectionIndicator value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeConnectionIndicator::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeConnectionIndicator::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $connectionIndicator
      * @return \Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers
      */
     public function setConnectionIndicator(?string $connectionIndicator = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeConnectionIndicator::valueIsValid($connectionIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeConnectionIndicator', is_array($connectionIndicator) ? implode(', ', $connectionIndicator) : var_export($connectionIndicator, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeConnectionIndicator::getValidValues())), __LINE__);
-        }
         $this->ConnectionIndicator = $connectionIndicator;
         
         return $this;
@@ -391,18 +348,6 @@ class AirSegmentPricingModifiers extends AbstractStructBase
      */
     public function setBrandTier(?string $brandTier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($brandTier) && !is_string($brandTier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($brandTier, true), gettype($brandTier)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($brandTier) && mb_strlen((string) $brandTier) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $brandTier)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($brandTier) && mb_strlen((string) $brandTier) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $brandTier)), __LINE__);
-        }
         $this->BrandTier = $brandTier;
         
         return $this;

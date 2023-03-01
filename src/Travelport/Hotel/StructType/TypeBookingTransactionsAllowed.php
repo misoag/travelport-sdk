@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class TypeBookingTransactionsAllowed extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $BookingEnabled = null;
+    public ?bool $BookingEnabled = null;
     /**
      * Constructor method for typeBookingTransactionsAllowed
      * @uses TypeBookingTransactionsAllowed::setBookingEnabled()
@@ -46,10 +45,6 @@ class TypeBookingTransactionsAllowed extends AbstractStructBase
      */
     public function setBookingEnabled(?bool $bookingEnabled = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($bookingEnabled) && !is_bool($bookingEnabled)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($bookingEnabled, true), gettype($bookingEnabled)), __LINE__);
-        }
         $this->BookingEnabled = $bookingEnabled;
         
         return $this;

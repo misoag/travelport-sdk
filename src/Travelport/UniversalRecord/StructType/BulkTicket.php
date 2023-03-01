@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class BulkTicket extends TypeBulkTicketModifierType
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $NonRefundable = null;
+    public ?bool $NonRefundable = null;
     /**
      * Constructor method for BulkTicket
      * @uses BulkTicket::setNonRefundable()
@@ -48,10 +47,6 @@ class BulkTicket extends TypeBulkTicketModifierType
      */
     public function setNonRefundable(?bool $nonRefundable = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($nonRefundable) && !is_bool($nonRefundable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($nonRefundable, true), gettype($nonRefundable)), __LINE__);
-        }
         $this->NonRefundable = $nonRefundable;
         
         return $this;

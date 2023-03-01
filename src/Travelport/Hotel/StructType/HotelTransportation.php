@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class HotelTransportation extends AbstractStructBase
      * - use: required
      * @var int
      */
-    protected int $Type;
+    public int $Type;
     /**
      * Constructor method for HotelTransportation
      * @uses HotelTransportation::setType()
@@ -49,10 +48,6 @@ class HotelTransportation extends AbstractStructBase
      */
     public function setType(int $type): self
     {
-        // validation for constraint: int
-        if (!is_null($type) && !(is_int($type) || ctype_digit($type))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;

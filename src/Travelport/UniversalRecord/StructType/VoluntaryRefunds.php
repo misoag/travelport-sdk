@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,14 +19,14 @@ class VoluntaryRefunds extends AbstractStructBase
      * - ref: Penalty
      * @var \Travelport\UniversalRecord\StructType\Penalty|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Penalty $Penalty = null;
+    public ?\Travelport\UniversalRecord\StructType\Penalty $Penalty = null;
     /**
      * The VolChangeInd
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $VolChangeInd = null;
+    public ?bool $VolChangeInd = null;
     /**
      * Constructor method for VoluntaryRefunds
      * @uses VoluntaryRefunds::setPenalty()
@@ -75,10 +74,6 @@ class VoluntaryRefunds extends AbstractStructBase
      */
     public function setVolChangeInd(?bool $volChangeInd = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($volChangeInd) && !is_bool($volChangeInd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($volChangeInd, true), gettype($volChangeInd)), __LINE__);
-        }
         $this->VolChangeInd = $volChangeInd;
         
         return $this;

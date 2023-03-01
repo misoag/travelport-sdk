@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class FareRulesFilter extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\Refundability|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Refundability $Refundability = null;
+    public ?\Travelport\UniversalRecord\StructType\Refundability $Refundability = null;
     /**
      * The LatestTicketingTime
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class FareRulesFilter extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $LatestTicketingTime = null;
+    public ?string $LatestTicketingTime = null;
     /**
      * The CHG
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class FareRulesFilter extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\CHGType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CHGType $CHG = null;
+    public ?\Travelport\UniversalRecord\StructType\CHGType $CHG = null;
     /**
      * The MIN
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class FareRulesFilter extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\MINType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\MINType $MIN = null;
+    public ?\Travelport\UniversalRecord\StructType\MINType $MIN = null;
     /**
      * The MAX
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class FareRulesFilter extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\MAXType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\MAXType $MAX = null;
+    public ?\Travelport\UniversalRecord\StructType\MAXType $MAX = null;
     /**
      * The ADV
      * Meta information extracted from the WSDL
@@ -65,7 +64,7 @@ class FareRulesFilter extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\ADVType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ADVType $ADV = null;
+    public ?\Travelport\UniversalRecord\StructType\ADVType $ADV = null;
     /**
      * The OTH
      * Meta information extracted from the WSDL
@@ -74,7 +73,7 @@ class FareRulesFilter extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\OTHType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\OTHType $OTH = null;
+    public ?\Travelport\UniversalRecord\StructType\OTHType $OTH = null;
     /**
      * Constructor method for FareRulesFilter
      * @uses FareRulesFilter::setRefundability()
@@ -137,10 +136,6 @@ class FareRulesFilter extends AbstractStructBase
      */
     public function setLatestTicketingTime(?string $latestTicketingTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($latestTicketingTime) && !is_string($latestTicketingTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($latestTicketingTime, true), gettype($latestTicketingTime)), __LINE__);
-        }
         $this->LatestTicketingTime = $latestTicketingTime;
         
         return $this;

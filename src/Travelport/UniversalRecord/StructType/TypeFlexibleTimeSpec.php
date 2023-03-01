@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class TypeFlexibleTimeSpec extends TypeTimeSpec
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\SearchExtraDays|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\SearchExtraDays $SearchExtraDays = null;
+    public ?\Travelport\UniversalRecord\StructType\SearchExtraDays $SearchExtraDays = null;
     /**
      * Constructor method for typeFlexibleTimeSpec
      * @uses TypeFlexibleTimeSpec::setSearchExtraDays()

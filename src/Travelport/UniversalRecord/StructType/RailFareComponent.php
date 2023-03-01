@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class RailFareComponent extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * The Discount
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class RailFareComponent extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\Discount[]
      */
-    protected ?array $Discount = null;
+    public ?array $Discount = null;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -39,14 +38,14 @@ class RailFareComponent extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The Age
      * Meta information extracted from the WSDL
      * - use: optional
      * @var int|null
      */
-    protected ?int $Age = null;
+    public ?int $Age = null;
     /**
      * The PassengerTypeCode
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class RailFareComponent extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PassengerTypeCode = null;
+    public ?string $PassengerTypeCode = null;
     /**
      * The SupplierPassengerType
      * Meta information extracted from the WSDL
@@ -65,14 +64,14 @@ class RailFareComponent extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SupplierPassengerType = null;
+    public ?string $SupplierPassengerType = null;
     /**
      * The Quantity
      * Meta information extracted from the WSDL
      * - use: optional
      * @var int|null
      */
-    protected ?int $Quantity = null;
+    public ?int $Quantity = null;
     /**
      * Constructor method for RailFareComponent
      * @uses RailFareComponent::setKey()
@@ -116,10 +115,6 @@ class RailFareComponent extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -133,48 +128,12 @@ class RailFareComponent extends AbstractStructBase
         return $this->Discount;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setDiscount method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setDiscount method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateDiscountForArrayConstraintFromSetDiscount(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $railFareComponentDiscountItem) {
-            // validation for constraint: itemType
-            if (!$railFareComponentDiscountItem instanceof \Travelport\UniversalRecord\StructType\Discount) {
-                $invalidValues[] = is_object($railFareComponentDiscountItem) ? get_class($railFareComponentDiscountItem) : sprintf('%s(%s)', gettype($railFareComponentDiscountItem), var_export($railFareComponentDiscountItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Discount property can only contain items of type \Travelport\UniversalRecord\StructType\Discount, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Discount value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\Discount[] $discount
      * @return \Travelport\UniversalRecord\StructType\RailFareComponent
      */
     public function setDiscount(?array $discount = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($discountArrayErrorMessage = self::validateDiscountForArrayConstraintFromSetDiscount($discount))) {
-            throw new InvalidArgumentException($discountArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($discount) && count($discount) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($discount)), __LINE__);
-        }
         $this->Discount = $discount;
         
         return $this;
@@ -187,14 +146,6 @@ class RailFareComponent extends AbstractStructBase
      */
     public function addToDiscount(\Travelport\UniversalRecord\StructType\Discount $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\Discount) {
-            throw new InvalidArgumentException(sprintf('The Discount property can only contain items of type \Travelport\UniversalRecord\StructType\Discount, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($this->Discount) && count($this->Discount) >= 5) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->Discount)), __LINE__);
-        }
         $this->Discount[] = $item;
         
         return $this;
@@ -214,10 +165,6 @@ class RailFareComponent extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -237,10 +184,6 @@ class RailFareComponent extends AbstractStructBase
      */
     public function setAge(?int $age = null): self
     {
-        // validation for constraint: int
-        if (!is_null($age) && !(is_int($age) || ctype_digit($age))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($age, true), gettype($age)), __LINE__);
-        }
         $this->Age = $age;
         
         return $this;
@@ -260,18 +203,6 @@ class RailFareComponent extends AbstractStructBase
      */
     public function setPassengerTypeCode(?string $passengerTypeCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($passengerTypeCode) && !is_string($passengerTypeCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passengerTypeCode, true), gettype($passengerTypeCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($passengerTypeCode) && mb_strlen((string) $passengerTypeCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $passengerTypeCode)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($passengerTypeCode) && mb_strlen((string) $passengerTypeCode) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $passengerTypeCode)), __LINE__);
-        }
         $this->PassengerTypeCode = $passengerTypeCode;
         
         return $this;
@@ -291,10 +222,6 @@ class RailFareComponent extends AbstractStructBase
      */
     public function setSupplierPassengerType(?string $supplierPassengerType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierPassengerType) && !is_string($supplierPassengerType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierPassengerType, true), gettype($supplierPassengerType)), __LINE__);
-        }
         $this->SupplierPassengerType = $supplierPassengerType;
         
         return $this;
@@ -314,10 +241,6 @@ class RailFareComponent extends AbstractStructBase
      */
     public function setQuantity(?int $quantity = null): self
     {
-        // validation for constraint: int
-        if (!is_null($quantity) && !(is_int($quantity) || ctype_digit($quantity))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($quantity, true), gettype($quantity)), __LINE__);
-        }
         $this->Quantity = $quantity;
         
         return $this;

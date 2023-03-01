@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class ActionStatus extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The Remark
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class ActionStatus extends AbstractStructBase
      * - ref: Remark
      * @var \Travelport\UniversalRecord\StructType\Remark|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Remark $Remark = null;
+    public ?\Travelport\UniversalRecord\StructType\Remark $Remark = null;
     /**
      * The TicketDate
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class ActionStatus extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketDate = null;
+    public ?string $TicketDate = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class ActionStatus extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The ProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class ActionStatus extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderReservationInfoRef = null;
+    public ?string $ProviderReservationInfoRef = null;
     /**
      * The QueueCategory
      * Meta information extracted from the WSDL
@@ -67,7 +66,7 @@ class ActionStatus extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $QueueCategory = null;
+    public ?string $QueueCategory = null;
     /**
      * The AirportCode
      * Meta information extracted from the WSDL
@@ -77,7 +76,7 @@ class ActionStatus extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AirportCode = null;
+    public ?string $AirportCode = null;
     /**
      * The PseudoCityCode
      * Meta information extracted from the WSDL
@@ -88,7 +87,7 @@ class ActionStatus extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PseudoCityCode = null;
+    public ?string $PseudoCityCode = null;
     /**
      * The AccountCode
      * Meta information extracted from the WSDL
@@ -96,7 +95,7 @@ class ActionStatus extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AccountCode = null;
+    public ?string $AccountCode = null;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -108,7 +107,7 @@ class ActionStatus extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
@@ -120,7 +119,7 @@ class ActionStatus extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SupplierCode = null;
+    public ?string $SupplierCode = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -129,7 +128,7 @@ class ActionStatus extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -137,7 +136,7 @@ class ActionStatus extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for ActionStatus
      * @uses ActionStatus::setType()
@@ -199,10 +198,6 @@ class ActionStatus extends AbstractStructBase
      */
     public function setType(string $type): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -241,10 +236,6 @@ class ActionStatus extends AbstractStructBase
      */
     public function setTicketDate(?string $ticketDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketDate) && !is_string($ticketDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketDate, true), gettype($ticketDate)), __LINE__);
-        }
         $this->TicketDate = $ticketDate;
         
         return $this;
@@ -264,10 +255,6 @@ class ActionStatus extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -287,10 +274,6 @@ class ActionStatus extends AbstractStructBase
      */
     public function setProviderReservationInfoRef(?string $providerReservationInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerReservationInfoRef) && !is_string($providerReservationInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerReservationInfoRef, true), gettype($providerReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef = $providerReservationInfoRef;
         
         return $this;
@@ -310,14 +293,6 @@ class ActionStatus extends AbstractStructBase
      */
     public function setQueueCategory(?string $queueCategory = null): self
     {
-        // validation for constraint: string
-        if (!is_null($queueCategory) && !is_string($queueCategory)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($queueCategory, true), gettype($queueCategory)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($queueCategory) && mb_strlen((string) $queueCategory) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $queueCategory)), __LINE__);
-        }
         $this->QueueCategory = $queueCategory;
         
         return $this;
@@ -337,14 +312,6 @@ class ActionStatus extends AbstractStructBase
      */
     public function setAirportCode(?string $airportCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($airportCode) && !is_string($airportCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($airportCode, true), gettype($airportCode)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($airportCode) && mb_strlen((string) $airportCode) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $airportCode)), __LINE__);
-        }
         $this->AirportCode = $airportCode;
         
         return $this;
@@ -364,18 +331,6 @@ class ActionStatus extends AbstractStructBase
      */
     public function setPseudoCityCode(?string $pseudoCityCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($pseudoCityCode) && !is_string($pseudoCityCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pseudoCityCode, true), gettype($pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
         $this->PseudoCityCode = $pseudoCityCode;
         
         return $this;
@@ -395,10 +350,6 @@ class ActionStatus extends AbstractStructBase
      */
     public function setAccountCode(?string $accountCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($accountCode) && !is_string($accountCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountCode, true), gettype($accountCode)), __LINE__);
-        }
         $this->AccountCode = $accountCode;
         
         return $this;
@@ -418,18 +369,6 @@ class ActionStatus extends AbstractStructBase
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -449,18 +388,6 @@ class ActionStatus extends AbstractStructBase
      */
     public function setSupplierCode(?string $supplierCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $supplierCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;
@@ -475,18 +402,11 @@ class ActionStatus extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\ActionStatus
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -506,10 +426,6 @@ class ActionStatus extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

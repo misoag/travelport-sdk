@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -17,7 +16,7 @@ class PriceMatchError extends AbstractStructBase
      * The ErrorMessage
      * @var string|null
      */
-    protected ?string $ErrorMessage = null;
+    public ?string $ErrorMessage = null;
     /**
      * The VendorCode
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class PriceMatchError extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $VendorCode = null;
+    public ?string $VendorCode = null;
     /**
      * The HotelChain
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class PriceMatchError extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $HotelChain = null;
+    public ?string $HotelChain = null;
     /**
      * The HotelCode
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class PriceMatchError extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $HotelCode = null;
+    public ?string $HotelCode = null;
     /**
      * The ReqBase
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class PriceMatchError extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $ReqBase = null;
+    public ?float $ReqBase = null;
     /**
      * The RspBase
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class PriceMatchError extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $RspBase = null;
+    public ?float $RspBase = null;
     /**
      * The BaseDiff
      * Meta information extracted from the WSDL
@@ -72,7 +71,7 @@ class PriceMatchError extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $BaseDiff = null;
+    public ?float $BaseDiff = null;
     /**
      * The ReqTotal
      * Meta information extracted from the WSDL
@@ -80,7 +79,7 @@ class PriceMatchError extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $ReqTotal = null;
+    public ?float $ReqTotal = null;
     /**
      * The RspTotal
      * Meta information extracted from the WSDL
@@ -88,7 +87,7 @@ class PriceMatchError extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $RspTotal = null;
+    public ?float $RspTotal = null;
     /**
      * The TotalDiff
      * Meta information extracted from the WSDL
@@ -96,7 +95,7 @@ class PriceMatchError extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $TotalDiff = null;
+    public ?float $TotalDiff = null;
     /**
      * Constructor method for PriceMatchError
      * @uses PriceMatchError::setErrorMessage()
@@ -149,10 +148,6 @@ class PriceMatchError extends AbstractStructBase
      */
     public function setErrorMessage(?string $errorMessage = null): self
     {
-        // validation for constraint: string
-        if (!is_null($errorMessage) && !is_string($errorMessage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($errorMessage, true), gettype($errorMessage)), __LINE__);
-        }
         $this->ErrorMessage = $errorMessage;
         
         return $this;
@@ -172,18 +167,6 @@ class PriceMatchError extends AbstractStructBase
      */
     public function setVendorCode(?string $vendorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($vendorCode) && !is_string($vendorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vendorCode, true), gettype($vendorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($vendorCode) && mb_strlen((string) $vendorCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $vendorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($vendorCode) && mb_strlen((string) $vendorCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $vendorCode)), __LINE__);
-        }
         $this->VendorCode = $vendorCode;
         
         return $this;
@@ -203,14 +186,6 @@ class PriceMatchError extends AbstractStructBase
      */
     public function setHotelChain(?string $hotelChain = null): self
     {
-        // validation for constraint: string
-        if (!is_null($hotelChain) && !is_string($hotelChain)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotelChain, true), gettype($hotelChain)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($hotelChain) && mb_strlen((string) $hotelChain) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $hotelChain)), __LINE__);
-        }
         $this->HotelChain = $hotelChain;
         
         return $this;
@@ -230,14 +205,6 @@ class PriceMatchError extends AbstractStructBase
      */
     public function setHotelCode(?string $hotelCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($hotelCode) && !is_string($hotelCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotelCode, true), gettype($hotelCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(32)
-        if (!is_null($hotelCode) && mb_strlen((string) $hotelCode) > 32) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $hotelCode)), __LINE__);
-        }
         $this->HotelCode = $hotelCode;
         
         return $this;
@@ -257,10 +224,6 @@ class PriceMatchError extends AbstractStructBase
      */
     public function setReqBase(?float $reqBase = null): self
     {
-        // validation for constraint: float
-        if (!is_null($reqBase) && !(is_float($reqBase) || is_numeric($reqBase))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($reqBase, true), gettype($reqBase)), __LINE__);
-        }
         $this->ReqBase = $reqBase;
         
         return $this;
@@ -280,10 +243,6 @@ class PriceMatchError extends AbstractStructBase
      */
     public function setRspBase(?float $rspBase = null): self
     {
-        // validation for constraint: float
-        if (!is_null($rspBase) && !(is_float($rspBase) || is_numeric($rspBase))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($rspBase, true), gettype($rspBase)), __LINE__);
-        }
         $this->RspBase = $rspBase;
         
         return $this;
@@ -303,10 +262,6 @@ class PriceMatchError extends AbstractStructBase
      */
     public function setBaseDiff(?float $baseDiff = null): self
     {
-        // validation for constraint: float
-        if (!is_null($baseDiff) && !(is_float($baseDiff) || is_numeric($baseDiff))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($baseDiff, true), gettype($baseDiff)), __LINE__);
-        }
         $this->BaseDiff = $baseDiff;
         
         return $this;
@@ -326,10 +281,6 @@ class PriceMatchError extends AbstractStructBase
      */
     public function setReqTotal(?float $reqTotal = null): self
     {
-        // validation for constraint: float
-        if (!is_null($reqTotal) && !(is_float($reqTotal) || is_numeric($reqTotal))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($reqTotal, true), gettype($reqTotal)), __LINE__);
-        }
         $this->ReqTotal = $reqTotal;
         
         return $this;
@@ -349,10 +300,6 @@ class PriceMatchError extends AbstractStructBase
      */
     public function setRspTotal(?float $rspTotal = null): self
     {
-        // validation for constraint: float
-        if (!is_null($rspTotal) && !(is_float($rspTotal) || is_numeric($rspTotal))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($rspTotal, true), gettype($rspTotal)), __LINE__);
-        }
         $this->RspTotal = $rspTotal;
         
         return $this;
@@ -372,10 +319,6 @@ class PriceMatchError extends AbstractStructBase
      */
     public function setTotalDiff(?float $totalDiff = null): self
     {
-        // validation for constraint: float
-        if (!is_null($totalDiff) && !(is_float($totalDiff) || is_numeric($totalDiff))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($totalDiff, true), gettype($totalDiff)), __LINE__);
-        }
         $this->TotalDiff = $totalDiff;
         
         return $this;

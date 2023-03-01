@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class RailFare extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * The CabinClass
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class RailFare extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $CabinClass;
+    public string $CabinClass;
     /**
      * The EffectiveDate
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class RailFare extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $EffectiveDate;
+    public string $EffectiveDate;
     /**
      * The RailFareNoteRef
      * Meta information extracted from the WSDL
@@ -51,7 +50,7 @@ class RailFare extends AbstractStructBase
      * - ref: RailFareNoteRef
      * @var \Travelport\UniversalRecord\StructType\RailFareNoteRef[]
      */
-    protected ?array $RailFareNoteRef = null;
+    public ?array $RailFareNoteRef = null;
     /**
      * The RailFareID
      * Meta information extracted from the WSDL
@@ -63,7 +62,7 @@ class RailFare extends AbstractStructBase
      * - ref: RailFareID
      * @var \Travelport\UniversalRecord\StructType\RailFareID[]
      */
-    protected ?array $RailFareID = null;
+    public ?array $RailFareID = null;
     /**
      * The RailFareIDRef
      * Meta information extracted from the WSDL
@@ -75,7 +74,7 @@ class RailFare extends AbstractStructBase
      * - ref: RailFareIDRef
      * @var \Travelport\UniversalRecord\StructType\RailFareIDRef[]
      */
-    protected ?array $RailFareIDRef = null;
+    public ?array $RailFareIDRef = null;
     /**
      * The FareValidity
      * Meta information extracted from the WSDL
@@ -84,7 +83,7 @@ class RailFare extends AbstractStructBase
      * - ref: FareValidity
      * @var \Travelport\UniversalRecord\StructType\FareValidity[]
      */
-    protected ?array $FareValidity = null;
+    public ?array $FareValidity = null;
     /**
      * The HostToken
      * Meta information extracted from the WSDL
@@ -92,7 +91,7 @@ class RailFare extends AbstractStructBase
      * - ref: common:HostToken
      * @var \Travelport\UniversalRecord\StructType\HostToken|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\HostToken $HostToken = null;
+    public ?\Travelport\UniversalRecord\StructType\HostToken $HostToken = null;
     /**
      * The FulFillmentType
      * Meta information extracted from the WSDL
@@ -105,7 +104,7 @@ class RailFare extends AbstractStructBase
      * - ref: FulFillmentType
      * @var string[]
      */
-    protected ?array $FulFillmentType = null;
+    public ?array $FulFillmentType = null;
     /**
      * The RailFareComponent
      * Meta information extracted from the WSDL
@@ -114,7 +113,7 @@ class RailFare extends AbstractStructBase
      * - ref: RailFareComponent
      * @var \Travelport\UniversalRecord\StructType\RailFareComponent[]
      */
-    protected ?array $RailFareComponent = null;
+    public ?array $RailFareComponent = null;
     /**
      * The FareBasis
      * Meta information extracted from the WSDL
@@ -122,7 +121,7 @@ class RailFare extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FareBasis = null;
+    public ?string $FareBasis = null;
     /**
      * The PassengerTypeCode
      * Meta information extracted from the WSDL
@@ -133,7 +132,7 @@ class RailFare extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PassengerTypeCode = null;
+    public ?string $PassengerTypeCode = null;
     /**
      * The Origin
      * Meta information extracted from the WSDL
@@ -144,7 +143,7 @@ class RailFare extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Origin = null;
+    public ?string $Origin = null;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -155,7 +154,7 @@ class RailFare extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Destination = null;
+    public ?string $Destination = null;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -164,7 +163,7 @@ class RailFare extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The RouteDescription
      * Meta information extracted from the WSDL
@@ -172,7 +171,7 @@ class RailFare extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RouteDescription = null;
+    public ?string $RouteDescription = null;
     /**
      * The TicketTypeCode
      * Meta information extracted from the WSDL
@@ -180,7 +179,7 @@ class RailFare extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketTypeCode = null;
+    public ?string $TicketTypeCode = null;
     /**
      * The FareReference
      * Meta information extracted from the WSDL
@@ -190,7 +189,7 @@ class RailFare extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FareReference = null;
+    public ?string $FareReference = null;
     /**
      * The CrossCityFare
      * Meta information extracted from the WSDL
@@ -199,7 +198,7 @@ class RailFare extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $CrossCityFare = null;
+    public ?bool $CrossCityFare = null;
     /**
      * The OriginStationName
      * Meta information extracted from the WSDL
@@ -207,7 +206,7 @@ class RailFare extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OriginStationName = null;
+    public ?string $OriginStationName = null;
     /**
      * The DestinationStationName
      * Meta information extracted from the WSDL
@@ -215,7 +214,7 @@ class RailFare extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DestinationStationName = null;
+    public ?string $DestinationStationName = null;
     /**
      * The ReservationRequired
      * Meta information extracted from the WSDL
@@ -223,7 +222,7 @@ class RailFare extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ReservationRequired = null;
+    public ?bool $ReservationRequired = null;
     /**
      * The JourneyDirection
      * Meta information extracted from the WSDL
@@ -231,7 +230,7 @@ class RailFare extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $JourneyDirection = null;
+    public ?string $JourneyDirection = null;
     /**
      * The RailLocOrigin
      * Meta information extracted from the WSDL
@@ -243,7 +242,7 @@ class RailFare extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $RailLocOrigin = null;
+    public ?string $RailLocOrigin = null;
     /**
      * The RailLocDestination
      * Meta information extracted from the WSDL
@@ -255,17 +254,17 @@ class RailFare extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $RailLocDestination = null;
+    public ?string $RailLocDestination = null;
     /**
      * The ElStat
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for RailFare
      * @uses RailFare::setKey()
@@ -369,10 +368,6 @@ class RailFare extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -392,18 +387,6 @@ class RailFare extends AbstractStructBase
      */
     public function setCabinClass(string $cabinClass): self
     {
-        // validation for constraint: string
-        if (!is_null($cabinClass) && !is_string($cabinClass)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cabinClass, true), gettype($cabinClass)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($cabinClass) && mb_strlen((string) $cabinClass) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $cabinClass)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($cabinClass) && mb_strlen((string) $cabinClass) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $cabinClass)), __LINE__);
-        }
         $this->CabinClass = $cabinClass;
         
         return $this;
@@ -423,10 +406,6 @@ class RailFare extends AbstractStructBase
      */
     public function setEffectiveDate(string $effectiveDate): self
     {
-        // validation for constraint: string
-        if (!is_null($effectiveDate) && !is_string($effectiveDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($effectiveDate, true), gettype($effectiveDate)), __LINE__);
-        }
         $this->EffectiveDate = $effectiveDate;
         
         return $this;
@@ -440,48 +419,12 @@ class RailFare extends AbstractStructBase
         return $this->RailFareNoteRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRailFareNoteRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRailFareNoteRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateRailFareNoteRefForArrayConstraintFromSetRailFareNoteRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $railFareRailFareNoteRefItem) {
-            // validation for constraint: itemType
-            if (!$railFareRailFareNoteRefItem instanceof \Travelport\UniversalRecord\StructType\RailFareNoteRef) {
-                $invalidValues[] = is_object($railFareRailFareNoteRefItem) ? get_class($railFareRailFareNoteRefItem) : sprintf('%s(%s)', gettype($railFareRailFareNoteRefItem), var_export($railFareRailFareNoteRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The RailFareNoteRef property can only contain items of type \Travelport\UniversalRecord\StructType\RailFareNoteRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set RailFareNoteRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\RailFareNoteRef[] $railFareNoteRef
      * @return \Travelport\UniversalRecord\StructType\RailFare
      */
     public function setRailFareNoteRef(?array $railFareNoteRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($railFareNoteRefArrayErrorMessage = self::validateRailFareNoteRefForArrayConstraintFromSetRailFareNoteRef($railFareNoteRef))) {
-            throw new InvalidArgumentException($railFareNoteRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($railFareNoteRef) && count($railFareNoteRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($railFareNoteRef)), __LINE__);
-        }
         $this->RailFareNoteRef = $railFareNoteRef;
         
         return $this;
@@ -494,14 +437,6 @@ class RailFare extends AbstractStructBase
      */
     public function addToRailFareNoteRef(\Travelport\UniversalRecord\StructType\RailFareNoteRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\RailFareNoteRef) {
-            throw new InvalidArgumentException(sprintf('The RailFareNoteRef property can only contain items of type \Travelport\UniversalRecord\StructType\RailFareNoteRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->RailFareNoteRef) && count($this->RailFareNoteRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->RailFareNoteRef)), __LINE__);
-        }
         $this->RailFareNoteRef[] = $item;
         
         return $this;
@@ -515,88 +450,15 @@ class RailFare extends AbstractStructBase
         return $this->RailFareID ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRailFareID method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRailFareID method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateRailFareIDForArrayConstraintFromSetRailFareID(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $railFareRailFareIDItem) {
-            // validation for constraint: itemType
-            if (!$railFareRailFareIDItem instanceof \Travelport\UniversalRecord\StructType\RailFareID) {
-                $invalidValues[] = is_object($railFareRailFareIDItem) ? get_class($railFareRailFareIDItem) : sprintf('%s(%s)', gettype($railFareRailFareIDItem), var_export($railFareRailFareIDItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The RailFareID property can only contain items of type \Travelport\UniversalRecord\StructType\RailFareID, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
-     * This method is responsible for validating the value(s) passed to the setRailFareID method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRailFareID method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateRailFareIDForChoiceConstraintFromSetRailFareID($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'RailFareIDRef',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property RailFareID can\'t be set as the property %s is already set. Only one property must be set among these properties: RailFareID, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set RailFareID value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\RailFareID[] $railFareID
      * @return \Travelport\UniversalRecord\StructType\RailFare
      */
     public function setRailFareID(?array $railFareID = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($railFareIDArrayErrorMessage = self::validateRailFareIDForArrayConstraintFromSetRailFareID($railFareID))) {
-            throw new InvalidArgumentException($railFareIDArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: choice(RailFareID, RailFareIDRef)
-        if ('' !== ($railFareIDChoiceErrorMessage = self::validateRailFareIDForChoiceConstraintFromSetRailFareID($railFareID))) {
-            throw new InvalidArgumentException($railFareIDChoiceErrorMessage, __LINE__);
-        }
-        // validation for constraint: choiceMaxOccurs(1)
-        if (is_array($railFareID) && count($railFareID) > 1) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 1', count($railFareID)), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($railFareID) && count($railFareID) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($railFareID)), __LINE__);
-        }
         if (is_null($railFareID) || (is_array($railFareID) && empty($railFareID))) {
             unset($this->RailFareID);
         } else {
@@ -606,34 +468,6 @@ class RailFare extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the addToRailFareID method
-     * This method is willingly generated in order to preserve the one-line inline validation within the addToRailFareID method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateItemForChoiceConstraintFromAddToRailFareID($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'RailFareIDRef',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property RailFareID can\'t be set as the property %s is already set. Only one property must be set among these properties: RailFareID, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Add item to RailFareID value
      * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\RailFareID $item
@@ -641,22 +475,6 @@ class RailFare extends AbstractStructBase
      */
     public function addToRailFareID(\Travelport\UniversalRecord\StructType\RailFareID $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\RailFareID) {
-            throw new InvalidArgumentException(sprintf('The RailFareID property can only contain items of type \Travelport\UniversalRecord\StructType\RailFareID, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: choice(RailFareID, RailFareIDRef)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToRailFareID($item))) {
-            throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
-        }
-        // validation for constraint: choiceMaxOccurs(1)
-        if (is_array($this->RailFareID) && count($this->RailFareID) >= 1) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 1', count($this->RailFareID)), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->RailFareID) && count($this->RailFareID) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->RailFareID)), __LINE__);
-        }
         $this->RailFareID[] = $item;
         
         return $this;
@@ -670,88 +488,15 @@ class RailFare extends AbstractStructBase
         return $this->RailFareIDRef ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRailFareIDRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRailFareIDRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateRailFareIDRefForArrayConstraintFromSetRailFareIDRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $railFareRailFareIDRefItem) {
-            // validation for constraint: itemType
-            if (!$railFareRailFareIDRefItem instanceof \Travelport\UniversalRecord\StructType\RailFareIDRef) {
-                $invalidValues[] = is_object($railFareRailFareIDRefItem) ? get_class($railFareRailFareIDRefItem) : sprintf('%s(%s)', gettype($railFareRailFareIDRefItem), var_export($railFareRailFareIDRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The RailFareIDRef property can only contain items of type \Travelport\UniversalRecord\StructType\RailFareIDRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
-     * This method is responsible for validating the value(s) passed to the setRailFareIDRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRailFareIDRef method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateRailFareIDRefForChoiceConstraintFromSetRailFareIDRef($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'RailFareID',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property RailFareIDRef can\'t be set as the property %s is already set. Only one property must be set among these properties: RailFareIDRef, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set RailFareIDRef value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\RailFareIDRef[] $railFareIDRef
      * @return \Travelport\UniversalRecord\StructType\RailFare
      */
     public function setRailFareIDRef(?array $railFareIDRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($railFareIDRefArrayErrorMessage = self::validateRailFareIDRefForArrayConstraintFromSetRailFareIDRef($railFareIDRef))) {
-            throw new InvalidArgumentException($railFareIDRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: choice(RailFareID, RailFareIDRef)
-        if ('' !== ($railFareIDRefChoiceErrorMessage = self::validateRailFareIDRefForChoiceConstraintFromSetRailFareIDRef($railFareIDRef))) {
-            throw new InvalidArgumentException($railFareIDRefChoiceErrorMessage, __LINE__);
-        }
-        // validation for constraint: choiceMaxOccurs(1)
-        if (is_array($railFareIDRef) && count($railFareIDRef) > 1) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 1', count($railFareIDRef)), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($railFareIDRef) && count($railFareIDRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($railFareIDRef)), __LINE__);
-        }
         if (is_null($railFareIDRef) || (is_array($railFareIDRef) && empty($railFareIDRef))) {
             unset($this->RailFareIDRef);
         } else {
@@ -761,34 +506,6 @@ class RailFare extends AbstractStructBase
         return $this;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the addToRailFareIDRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the addToRailFareIDRef method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateItemForChoiceConstraintFromAddToRailFareIDRef($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'RailFareID',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property RailFareIDRef can\'t be set as the property %s is already set. Only one property must be set among these properties: RailFareIDRef, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Add item to RailFareIDRef value
      * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\RailFareIDRef $item
@@ -796,22 +513,6 @@ class RailFare extends AbstractStructBase
      */
     public function addToRailFareIDRef(\Travelport\UniversalRecord\StructType\RailFareIDRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\RailFareIDRef) {
-            throw new InvalidArgumentException(sprintf('The RailFareIDRef property can only contain items of type \Travelport\UniversalRecord\StructType\RailFareIDRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: choice(RailFareID, RailFareIDRef)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToRailFareIDRef($item))) {
-            throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
-        }
-        // validation for constraint: choiceMaxOccurs(1)
-        if (is_array($this->RailFareIDRef) && count($this->RailFareIDRef) >= 1) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 1', count($this->RailFareIDRef)), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->RailFareIDRef) && count($this->RailFareIDRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->RailFareIDRef)), __LINE__);
-        }
         $this->RailFareIDRef[] = $item;
         
         return $this;
@@ -825,48 +526,12 @@ class RailFare extends AbstractStructBase
         return $this->FareValidity;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFareValidity method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFareValidity method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFareValidityForArrayConstraintFromSetFareValidity(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $railFareFareValidityItem) {
-            // validation for constraint: itemType
-            if (!$railFareFareValidityItem instanceof \Travelport\UniversalRecord\StructType\FareValidity) {
-                $invalidValues[] = is_object($railFareFareValidityItem) ? get_class($railFareFareValidityItem) : sprintf('%s(%s)', gettype($railFareFareValidityItem), var_export($railFareFareValidityItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FareValidity property can only contain items of type \Travelport\UniversalRecord\StructType\FareValidity, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FareValidity value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FareValidity[] $fareValidity
      * @return \Travelport\UniversalRecord\StructType\RailFare
      */
     public function setFareValidity(?array $fareValidity = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($fareValidityArrayErrorMessage = self::validateFareValidityForArrayConstraintFromSetFareValidity($fareValidity))) {
-            throw new InvalidArgumentException($fareValidityArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($fareValidity) && count($fareValidity) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($fareValidity)), __LINE__);
-        }
         $this->FareValidity = $fareValidity;
         
         return $this;
@@ -879,14 +544,6 @@ class RailFare extends AbstractStructBase
      */
     public function addToFareValidity(\Travelport\UniversalRecord\StructType\FareValidity $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\FareValidity) {
-            throw new InvalidArgumentException(sprintf('The FareValidity property can only contain items of type \Travelport\UniversalRecord\StructType\FareValidity, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FareValidity) && count($this->FareValidity) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FareValidity)), __LINE__);
-        }
         $this->FareValidity[] = $item;
         
         return $this;
@@ -919,104 +576,12 @@ class RailFare extends AbstractStructBase
         return $this->FulFillmentType;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFulFillmentType method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFulFillmentType method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFulFillmentTypeForArrayConstraintFromSetFulFillmentType(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $railFareFulFillmentTypeItem) {
-            // validation for constraint: itemType
-            if (!is_string($railFareFulFillmentTypeItem)) {
-                $invalidValues[] = is_object($railFareFulFillmentTypeItem) ? get_class($railFareFulFillmentTypeItem) : sprintf('%s(%s)', gettype($railFareFulFillmentTypeItem), var_export($railFareFulFillmentTypeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FulFillmentType property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
-     * This method is responsible for validating the value(s) passed to the setFulFillmentType method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFulFillmentType method
-     * This has to validate that the items contained by the array match the length constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFulFillmentTypeForMaxLengthConstraintFromSetFulFillmentType(?array $values = null): string
-    {
-        $message = '';
-        $invalidValues = [];
-        foreach (($values ?? []) as $railFareFulFillmentTypeItem) {
-            // validation for constraint: maxLength(255)
-            if (mb_strlen((string) $railFareFulFillmentTypeItem) > 255) {
-                $invalidValues[] = var_export($railFareFulFillmentTypeItem, true);
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be less than or equal to 255', implode(', ', $invalidValues));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
-     * This method is responsible for validating the value(s) passed to the setFulFillmentType method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFulFillmentType method
-     * This has to validate that the items contained by the array match the length constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFulFillmentTypeForMinLengthConstraintFromSetFulFillmentType(?array $values = null): string
-    {
-        $message = '';
-        $invalidValues = [];
-        foreach (($values ?? []) as $railFareFulFillmentTypeItem) {
-            // validation for constraint: minLength
-            if (mb_strlen((string) $railFareFulFillmentTypeItem) < 0) {
-                $invalidValues[] = var_export($railFareFulFillmentTypeItem, true);
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be greater than or equal to 0', implode(', ', $invalidValues));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FulFillmentType value
-     * @throws InvalidArgumentException
      * @param string[] $fulFillmentType
      * @return \Travelport\UniversalRecord\StructType\RailFare
      */
     public function setFulFillmentType(?array $fulFillmentType = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($fulFillmentTypeArrayErrorMessage = self::validateFulFillmentTypeForArrayConstraintFromSetFulFillmentType($fulFillmentType))) {
-            throw new InvalidArgumentException($fulFillmentTypeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxLength(255)
-        if ('' !== ($fulFillmentTypeMaxLengthErrorMessage = self::validateFulFillmentTypeForMaxLengthConstraintFromSetFulFillmentType($fulFillmentType))) {
-            throw new InvalidArgumentException($fulFillmentTypeMaxLengthErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($fulFillmentType) && count($fulFillmentType) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($fulFillmentType)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if ('' !== ($fulFillmentTypeMinLengthErrorMessage = self::validateFulFillmentTypeForMinLengthConstraintFromSetFulFillmentType($fulFillmentType))) {
-            throw new InvalidArgumentException($fulFillmentTypeMinLengthErrorMessage, __LINE__);
-        }
         $this->FulFillmentType = $fulFillmentType;
         
         return $this;
@@ -1029,22 +594,6 @@ class RailFare extends AbstractStructBase
      */
     public function addToFulFillmentType(string $item): self
     {
-        // validation for constraint: itemType
-        if (!is_string($item)) {
-            throw new InvalidArgumentException(sprintf('The FulFillmentType property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxLength(255)
-        if (mb_strlen((string) $item) > 255) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 255', mb_strlen((string) $item)), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FulFillmentType) && count($this->FulFillmentType) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FulFillmentType)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if (mb_strlen((string) $item) < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $item)), __LINE__);
-        }
         $this->FulFillmentType[] = $item;
         
         return $this;
@@ -1058,48 +607,12 @@ class RailFare extends AbstractStructBase
         return $this->RailFareComponent;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRailFareComponent method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRailFareComponent method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateRailFareComponentForArrayConstraintFromSetRailFareComponent(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $railFareRailFareComponentItem) {
-            // validation for constraint: itemType
-            if (!$railFareRailFareComponentItem instanceof \Travelport\UniversalRecord\StructType\RailFareComponent) {
-                $invalidValues[] = is_object($railFareRailFareComponentItem) ? get_class($railFareRailFareComponentItem) : sprintf('%s(%s)', gettype($railFareRailFareComponentItem), var_export($railFareRailFareComponentItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The RailFareComponent property can only contain items of type \Travelport\UniversalRecord\StructType\RailFareComponent, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set RailFareComponent value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\RailFareComponent[] $railFareComponent
      * @return \Travelport\UniversalRecord\StructType\RailFare
      */
     public function setRailFareComponent(?array $railFareComponent = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($railFareComponentArrayErrorMessage = self::validateRailFareComponentForArrayConstraintFromSetRailFareComponent($railFareComponent))) {
-            throw new InvalidArgumentException($railFareComponentArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($railFareComponent) && count($railFareComponent) > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 99', count($railFareComponent)), __LINE__);
-        }
         $this->RailFareComponent = $railFareComponent;
         
         return $this;
@@ -1112,14 +625,6 @@ class RailFare extends AbstractStructBase
      */
     public function addToRailFareComponent(\Travelport\UniversalRecord\StructType\RailFareComponent $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\RailFareComponent) {
-            throw new InvalidArgumentException(sprintf('The RailFareComponent property can only contain items of type \Travelport\UniversalRecord\StructType\RailFareComponent, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($this->RailFareComponent) && count($this->RailFareComponent) >= 99) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 99', count($this->RailFareComponent)), __LINE__);
-        }
         $this->RailFareComponent[] = $item;
         
         return $this;
@@ -1139,10 +644,6 @@ class RailFare extends AbstractStructBase
      */
     public function setFareBasis(?string $fareBasis = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fareBasis) && !is_string($fareBasis)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareBasis, true), gettype($fareBasis)), __LINE__);
-        }
         $this->FareBasis = $fareBasis;
         
         return $this;
@@ -1162,18 +663,6 @@ class RailFare extends AbstractStructBase
      */
     public function setPassengerTypeCode(?string $passengerTypeCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($passengerTypeCode) && !is_string($passengerTypeCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passengerTypeCode, true), gettype($passengerTypeCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($passengerTypeCode) && mb_strlen((string) $passengerTypeCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $passengerTypeCode)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($passengerTypeCode) && mb_strlen((string) $passengerTypeCode) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $passengerTypeCode)), __LINE__);
-        }
         $this->PassengerTypeCode = $passengerTypeCode;
         
         return $this;
@@ -1193,14 +682,6 @@ class RailFare extends AbstractStructBase
      */
     public function setOrigin(?string $origin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($origin) && mb_strlen((string) $origin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -1220,14 +701,6 @@ class RailFare extends AbstractStructBase
      */
     public function setDestination(?string $destination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destination) && mb_strlen((string) $destination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -1247,10 +720,6 @@ class RailFare extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -1270,10 +739,6 @@ class RailFare extends AbstractStructBase
      */
     public function setRouteDescription(?string $routeDescription = null): self
     {
-        // validation for constraint: string
-        if (!is_null($routeDescription) && !is_string($routeDescription)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($routeDescription, true), gettype($routeDescription)), __LINE__);
-        }
         $this->RouteDescription = $routeDescription;
         
         return $this;
@@ -1293,10 +758,6 @@ class RailFare extends AbstractStructBase
      */
     public function setTicketTypeCode(?string $ticketTypeCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketTypeCode) && !is_string($ticketTypeCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketTypeCode, true), gettype($ticketTypeCode)), __LINE__);
-        }
         $this->TicketTypeCode = $ticketTypeCode;
         
         return $this;
@@ -1316,18 +777,6 @@ class RailFare extends AbstractStructBase
      */
     public function setFareReference(?string $fareReference = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fareReference) && !is_string($fareReference)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareReference, true), gettype($fareReference)), __LINE__);
-        }
-        // validation for constraint: maxLength(32)
-        if (!is_null($fareReference) && mb_strlen((string) $fareReference) > 32) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $fareReference)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($fareReference) && mb_strlen((string) $fareReference) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $fareReference)), __LINE__);
-        }
         $this->FareReference = $fareReference;
         
         return $this;
@@ -1347,10 +796,6 @@ class RailFare extends AbstractStructBase
      */
     public function setCrossCityFare(?bool $crossCityFare = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($crossCityFare) && !is_bool($crossCityFare)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($crossCityFare, true), gettype($crossCityFare)), __LINE__);
-        }
         $this->CrossCityFare = $crossCityFare;
         
         return $this;
@@ -1370,10 +815,6 @@ class RailFare extends AbstractStructBase
      */
     public function setOriginStationName(?string $originStationName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($originStationName) && !is_string($originStationName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($originStationName, true), gettype($originStationName)), __LINE__);
-        }
         $this->OriginStationName = $originStationName;
         
         return $this;
@@ -1393,10 +834,6 @@ class RailFare extends AbstractStructBase
      */
     public function setDestinationStationName(?string $destinationStationName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($destinationStationName) && !is_string($destinationStationName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destinationStationName, true), gettype($destinationStationName)), __LINE__);
-        }
         $this->DestinationStationName = $destinationStationName;
         
         return $this;
@@ -1416,10 +853,6 @@ class RailFare extends AbstractStructBase
      */
     public function setReservationRequired(?bool $reservationRequired = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($reservationRequired) && !is_bool($reservationRequired)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($reservationRequired, true), gettype($reservationRequired)), __LINE__);
-        }
         $this->ReservationRequired = $reservationRequired;
         
         return $this;
@@ -1434,18 +867,11 @@ class RailFare extends AbstractStructBase
     }
     /**
      * Set JourneyDirection value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeJourneyDirection::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeJourneyDirection::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $journeyDirection
      * @return \Travelport\UniversalRecord\StructType\RailFare
      */
     public function setJourneyDirection(?string $journeyDirection = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeJourneyDirection::valueIsValid($journeyDirection)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeJourneyDirection', is_array($journeyDirection) ? implode(', ', $journeyDirection) : var_export($journeyDirection, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeJourneyDirection::getValidValues())), __LINE__);
-        }
         $this->JourneyDirection = $journeyDirection;
         
         return $this;
@@ -1465,18 +891,6 @@ class RailFare extends AbstractStructBase
      */
     public function setRailLocOrigin(?string $railLocOrigin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($railLocOrigin) && !is_string($railLocOrigin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($railLocOrigin, true), gettype($railLocOrigin)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($railLocOrigin) && mb_strlen((string) $railLocOrigin) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $railLocOrigin)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($railLocOrigin) && mb_strlen((string) $railLocOrigin) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $railLocOrigin)), __LINE__);
-        }
         $this->RailLocOrigin = $railLocOrigin;
         
         return $this;
@@ -1496,18 +910,6 @@ class RailFare extends AbstractStructBase
      */
     public function setRailLocDestination(?string $railLocDestination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($railLocDestination) && !is_string($railLocDestination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($railLocDestination, true), gettype($railLocDestination)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($railLocDestination) && mb_strlen((string) $railLocDestination) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $railLocDestination)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($railLocDestination) && mb_strlen((string) $railLocDestination) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $railLocDestination)), __LINE__);
-        }
         $this->RailLocDestination = $railLocDestination;
         
         return $this;
@@ -1522,18 +924,11 @@ class RailFare extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\RailFare
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -1553,10 +948,6 @@ class RailFare extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

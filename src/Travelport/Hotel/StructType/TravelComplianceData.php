@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class TravelComplianceData extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\PolicyCompliance[]
      */
-    protected ?array $PolicyCompliance = null;
+    public ?array $PolicyCompliance = null;
     /**
      * The ContractCompliance
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class TravelComplianceData extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\ContractCompliance[]
      */
-    protected ?array $ContractCompliance = null;
+    public ?array $ContractCompliance = null;
     /**
      * The PreferredSupplier
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class TravelComplianceData extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\PreferredSupplier[]
      */
-    protected ?array $PreferredSupplier = null;
+    public ?array $PreferredSupplier = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class TravelComplianceData extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The AirSegmentRef
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class TravelComplianceData extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AirSegmentRef = null;
+    public ?string $AirSegmentRef = null;
     /**
      * The PassiveSegmentRef
      * Meta information extracted from the WSDL
@@ -65,7 +64,7 @@ class TravelComplianceData extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PassiveSegmentRef = null;
+    public ?string $PassiveSegmentRef = null;
     /**
      * The RailSegmentRef
      * Meta information extracted from the WSDL
@@ -74,7 +73,7 @@ class TravelComplianceData extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RailSegmentRef = null;
+    public ?string $RailSegmentRef = null;
     /**
      * The ReservationLocatorRef
      * Meta information extracted from the WSDL
@@ -86,7 +85,7 @@ class TravelComplianceData extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ReservationLocatorRef = null;
+    public ?string $ReservationLocatorRef = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -95,7 +94,7 @@ class TravelComplianceData extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -103,7 +102,7 @@ class TravelComplianceData extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for TravelComplianceData
      * @uses TravelComplianceData::setPolicyCompliance()
@@ -150,48 +149,12 @@ class TravelComplianceData extends AbstractStructBase
         return $this->PolicyCompliance;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPolicyCompliance method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPolicyCompliance method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePolicyComplianceForArrayConstraintFromSetPolicyCompliance(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $travelComplianceDataPolicyComplianceItem) {
-            // validation for constraint: itemType
-            if (!$travelComplianceDataPolicyComplianceItem instanceof \Travelport\Hotel\StructType\PolicyCompliance) {
-                $invalidValues[] = is_object($travelComplianceDataPolicyComplianceItem) ? get_class($travelComplianceDataPolicyComplianceItem) : sprintf('%s(%s)', gettype($travelComplianceDataPolicyComplianceItem), var_export($travelComplianceDataPolicyComplianceItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The PolicyCompliance property can only contain items of type \Travelport\Hotel\StructType\PolicyCompliance, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set PolicyCompliance value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\PolicyCompliance[] $policyCompliance
      * @return \Travelport\Hotel\StructType\TravelComplianceData
      */
     public function setPolicyCompliance(?array $policyCompliance = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($policyComplianceArrayErrorMessage = self::validatePolicyComplianceForArrayConstraintFromSetPolicyCompliance($policyCompliance))) {
-            throw new InvalidArgumentException($policyComplianceArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(2)
-        if (is_array($policyCompliance) && count($policyCompliance) > 2) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 2', count($policyCompliance)), __LINE__);
-        }
         $this->PolicyCompliance = $policyCompliance;
         
         return $this;
@@ -204,14 +167,6 @@ class TravelComplianceData extends AbstractStructBase
      */
     public function addToPolicyCompliance(\Travelport\Hotel\StructType\PolicyCompliance $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\PolicyCompliance) {
-            throw new InvalidArgumentException(sprintf('The PolicyCompliance property can only contain items of type \Travelport\Hotel\StructType\PolicyCompliance, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(2)
-        if (is_array($this->PolicyCompliance) && count($this->PolicyCompliance) >= 2) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 2', count($this->PolicyCompliance)), __LINE__);
-        }
         $this->PolicyCompliance[] = $item;
         
         return $this;
@@ -225,48 +180,12 @@ class TravelComplianceData extends AbstractStructBase
         return $this->ContractCompliance;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setContractCompliance method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setContractCompliance method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateContractComplianceForArrayConstraintFromSetContractCompliance(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $travelComplianceDataContractComplianceItem) {
-            // validation for constraint: itemType
-            if (!$travelComplianceDataContractComplianceItem instanceof \Travelport\Hotel\StructType\ContractCompliance) {
-                $invalidValues[] = is_object($travelComplianceDataContractComplianceItem) ? get_class($travelComplianceDataContractComplianceItem) : sprintf('%s(%s)', gettype($travelComplianceDataContractComplianceItem), var_export($travelComplianceDataContractComplianceItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ContractCompliance property can only contain items of type \Travelport\Hotel\StructType\ContractCompliance, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ContractCompliance value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\ContractCompliance[] $contractCompliance
      * @return \Travelport\Hotel\StructType\TravelComplianceData
      */
     public function setContractCompliance(?array $contractCompliance = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($contractComplianceArrayErrorMessage = self::validateContractComplianceForArrayConstraintFromSetContractCompliance($contractCompliance))) {
-            throw new InvalidArgumentException($contractComplianceArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(2)
-        if (is_array($contractCompliance) && count($contractCompliance) > 2) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 2', count($contractCompliance)), __LINE__);
-        }
         $this->ContractCompliance = $contractCompliance;
         
         return $this;
@@ -279,14 +198,6 @@ class TravelComplianceData extends AbstractStructBase
      */
     public function addToContractCompliance(\Travelport\Hotel\StructType\ContractCompliance $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\ContractCompliance) {
-            throw new InvalidArgumentException(sprintf('The ContractCompliance property can only contain items of type \Travelport\Hotel\StructType\ContractCompliance, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(2)
-        if (is_array($this->ContractCompliance) && count($this->ContractCompliance) >= 2) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 2', count($this->ContractCompliance)), __LINE__);
-        }
         $this->ContractCompliance[] = $item;
         
         return $this;
@@ -300,48 +211,12 @@ class TravelComplianceData extends AbstractStructBase
         return $this->PreferredSupplier;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPreferredSupplier method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPreferredSupplier method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePreferredSupplierForArrayConstraintFromSetPreferredSupplier(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $travelComplianceDataPreferredSupplierItem) {
-            // validation for constraint: itemType
-            if (!$travelComplianceDataPreferredSupplierItem instanceof \Travelport\Hotel\StructType\PreferredSupplier) {
-                $invalidValues[] = is_object($travelComplianceDataPreferredSupplierItem) ? get_class($travelComplianceDataPreferredSupplierItem) : sprintf('%s(%s)', gettype($travelComplianceDataPreferredSupplierItem), var_export($travelComplianceDataPreferredSupplierItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The PreferredSupplier property can only contain items of type \Travelport\Hotel\StructType\PreferredSupplier, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set PreferredSupplier value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\PreferredSupplier[] $preferredSupplier
      * @return \Travelport\Hotel\StructType\TravelComplianceData
      */
     public function setPreferredSupplier(?array $preferredSupplier = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($preferredSupplierArrayErrorMessage = self::validatePreferredSupplierForArrayConstraintFromSetPreferredSupplier($preferredSupplier))) {
-            throw new InvalidArgumentException($preferredSupplierArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($preferredSupplier) && count($preferredSupplier) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($preferredSupplier)), __LINE__);
-        }
         $this->PreferredSupplier = $preferredSupplier;
         
         return $this;
@@ -354,14 +229,6 @@ class TravelComplianceData extends AbstractStructBase
      */
     public function addToPreferredSupplier(\Travelport\Hotel\StructType\PreferredSupplier $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\PreferredSupplier) {
-            throw new InvalidArgumentException(sprintf('The PreferredSupplier property can only contain items of type \Travelport\Hotel\StructType\PreferredSupplier, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->PreferredSupplier) && count($this->PreferredSupplier) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->PreferredSupplier)), __LINE__);
-        }
         $this->PreferredSupplier[] = $item;
         
         return $this;
@@ -381,10 +248,6 @@ class TravelComplianceData extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -404,10 +267,6 @@ class TravelComplianceData extends AbstractStructBase
      */
     public function setAirSegmentRef(?string $airSegmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($airSegmentRef) && !is_string($airSegmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($airSegmentRef, true), gettype($airSegmentRef)), __LINE__);
-        }
         $this->AirSegmentRef = $airSegmentRef;
         
         return $this;
@@ -427,10 +286,6 @@ class TravelComplianceData extends AbstractStructBase
      */
     public function setPassiveSegmentRef(?string $passiveSegmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($passiveSegmentRef) && !is_string($passiveSegmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passiveSegmentRef, true), gettype($passiveSegmentRef)), __LINE__);
-        }
         $this->PassiveSegmentRef = $passiveSegmentRef;
         
         return $this;
@@ -450,10 +305,6 @@ class TravelComplianceData extends AbstractStructBase
      */
     public function setRailSegmentRef(?string $railSegmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($railSegmentRef) && !is_string($railSegmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($railSegmentRef, true), gettype($railSegmentRef)), __LINE__);
-        }
         $this->RailSegmentRef = $railSegmentRef;
         
         return $this;
@@ -473,18 +324,6 @@ class TravelComplianceData extends AbstractStructBase
      */
     public function setReservationLocatorRef(?string $reservationLocatorRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($reservationLocatorRef) && !is_string($reservationLocatorRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reservationLocatorRef, true), gettype($reservationLocatorRef)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($reservationLocatorRef) && mb_strlen((string) $reservationLocatorRef) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $reservationLocatorRef)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($reservationLocatorRef) && mb_strlen((string) $reservationLocatorRef) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $reservationLocatorRef)), __LINE__);
-        }
         $this->ReservationLocatorRef = $reservationLocatorRef;
         
         return $this;
@@ -499,18 +338,11 @@ class TravelComplianceData extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\Hotel\StructType\TravelComplianceData
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -530,10 +362,6 @@ class TravelComplianceData extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class Adjustment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $AdjustedTotalPrice;
+    public string $AdjustedTotalPrice;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class Adjustment extends AbstractStructBase
      * - choiceMinOccurs: 1
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The Percent
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class Adjustment extends AbstractStructBase
      * - choiceMinOccurs: 1
      * @var float|null
      */
-    protected ?float $Percent = null;
+    public ?float $Percent = null;
     /**
      * The ApproximateAdjustedTotalPrice
      * Meta information extracted from the WSDL
@@ -53,7 +52,7 @@ class Adjustment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ApproximateAdjustedTotalPrice = null;
+    public ?string $ApproximateAdjustedTotalPrice = null;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -62,7 +61,7 @@ class Adjustment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingTravelerRef = null;
+    public ?string $BookingTravelerRef = null;
     /**
      * Constructor method for Adjustment
      * @uses Adjustment::setAdjustedTotalPrice()
@@ -100,10 +99,6 @@ class Adjustment extends AbstractStructBase
      */
     public function setAdjustedTotalPrice(string $adjustedTotalPrice): self
     {
-        // validation for constraint: string
-        if (!is_null($adjustedTotalPrice) && !is_string($adjustedTotalPrice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($adjustedTotalPrice, true), gettype($adjustedTotalPrice)), __LINE__);
-        }
         $this->AdjustedTotalPrice = $adjustedTotalPrice;
         
         return $this;
@@ -117,52 +112,15 @@ class Adjustment extends AbstractStructBase
         return $this->Amount ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAmount method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAmount method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateAmountForChoiceConstraintFromSetAmount($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'Percent',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property Amount can\'t be set as the property %s is already set. Only one property must be set among these properties: Amount, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set Amount value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param string $amount
      * @return \Travelport\UniversalRecord\StructType\Adjustment
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
-        // validation for constraint: choice(Amount, Percent)
-        if ('' !== ($amountChoiceErrorMessage = self::validateAmountForChoiceConstraintFromSetAmount($amount))) {
-            throw new InvalidArgumentException($amountChoiceErrorMessage, __LINE__);
-        }
         if (is_null($amount) || (is_array($amount) && empty($amount))) {
             unset($this->Amount);
         } else {
@@ -180,52 +138,15 @@ class Adjustment extends AbstractStructBase
         return $this->Percent ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPercent method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPercent method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validatePercentForChoiceConstraintFromSetPercent($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'Amount',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property Percent can\'t be set as the property %s is already set. Only one property must be set among these properties: Percent, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set Percent value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param float $percent
      * @return \Travelport\UniversalRecord\StructType\Adjustment
      */
     public function setPercent(?float $percent = null): self
     {
-        // validation for constraint: float
-        if (!is_null($percent) && !(is_float($percent) || is_numeric($percent))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($percent, true), gettype($percent)), __LINE__);
-        }
-        // validation for constraint: choice(Amount, Percent)
-        if ('' !== ($percentChoiceErrorMessage = self::validatePercentForChoiceConstraintFromSetPercent($percent))) {
-            throw new InvalidArgumentException($percentChoiceErrorMessage, __LINE__);
-        }
         if (is_null($percent) || (is_array($percent) && empty($percent))) {
             unset($this->Percent);
         } else {
@@ -249,10 +170,6 @@ class Adjustment extends AbstractStructBase
      */
     public function setApproximateAdjustedTotalPrice(?string $approximateAdjustedTotalPrice = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateAdjustedTotalPrice) && !is_string($approximateAdjustedTotalPrice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateAdjustedTotalPrice, true), gettype($approximateAdjustedTotalPrice)), __LINE__);
-        }
         $this->ApproximateAdjustedTotalPrice = $approximateAdjustedTotalPrice;
         
         return $this;
@@ -272,10 +189,6 @@ class Adjustment extends AbstractStructBase
      */
     public function setBookingTravelerRef(?string $bookingTravelerRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;

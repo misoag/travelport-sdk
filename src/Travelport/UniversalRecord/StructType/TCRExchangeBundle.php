@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,14 +22,14 @@ class TCRExchangeBundle extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $TCRNumber;
+    public string $TCRNumber;
     /**
      * The AirExchangeInfo
      * Meta information extracted from the WSDL
      * - ref: common:AirExchangeInfo
      * @var \Travelport\UniversalRecord\StructType\AirExchangeInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AirExchangeInfo $AirExchangeInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\AirExchangeInfo $AirExchangeInfo = null;
     /**
      * The AirPricingInfoRef
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class TCRExchangeBundle extends AbstractStructBase
      * - ref: AirPricingInfoRef
      * @var \Travelport\UniversalRecord\StructType\AirPricingInfoRef[]
      */
-    protected ?array $AirPricingInfoRef = null;
+    public ?array $AirPricingInfoRef = null;
     /**
      * The FeeInfo
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class TCRExchangeBundle extends AbstractStructBase
      * - ref: FeeInfo
      * @var \Travelport\UniversalRecord\StructType\TypeFeeInfo[]
      */
-    protected ?array $FeeInfo = null;
+    public ?array $FeeInfo = null;
     /**
      * The TaxInfo
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class TCRExchangeBundle extends AbstractStructBase
      * - ref: TaxInfo
      * @var \Travelport\UniversalRecord\StructType\TypeTaxInfo[]
      */
-    protected ?array $TaxInfo = null;
+    public ?array $TaxInfo = null;
     /**
      * The Penalty
      * Meta information extracted from the WSDL
@@ -65,7 +64,7 @@ class TCRExchangeBundle extends AbstractStructBase
      * - ref: common:Penalty
      * @var \Travelport\UniversalRecord\StructType\Penalty[]
      */
-    protected ?array $Penalty = null;
+    public ?array $Penalty = null;
     /**
      * Constructor method for TCRExchangeBundle
      * @uses TCRExchangeBundle::setTCRNumber()
@@ -106,10 +105,6 @@ class TCRExchangeBundle extends AbstractStructBase
      */
     public function setTCRNumber(string $tCRNumber): self
     {
-        // validation for constraint: string
-        if (!is_null($tCRNumber) && !is_string($tCRNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tCRNumber, true), gettype($tCRNumber)), __LINE__);
-        }
         $this->TCRNumber = $tCRNumber;
         
         return $this;
@@ -142,48 +137,12 @@ class TCRExchangeBundle extends AbstractStructBase
         return $this->AirPricingInfoRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirPricingInfoRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingInfoRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAirPricingInfoRefForArrayConstraintFromSetAirPricingInfoRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $tCRExchangeBundleAirPricingInfoRefItem) {
-            // validation for constraint: itemType
-            if (!$tCRExchangeBundleAirPricingInfoRefItem instanceof \Travelport\UniversalRecord\StructType\AirPricingInfoRef) {
-                $invalidValues[] = is_object($tCRExchangeBundleAirPricingInfoRefItem) ? get_class($tCRExchangeBundleAirPricingInfoRefItem) : sprintf('%s(%s)', gettype($tCRExchangeBundleAirPricingInfoRefItem), var_export($tCRExchangeBundleAirPricingInfoRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AirPricingInfoRef property can only contain items of type \Travelport\UniversalRecord\StructType\AirPricingInfoRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AirPricingInfoRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AirPricingInfoRef[] $airPricingInfoRef
      * @return \Travelport\UniversalRecord\StructType\TCRExchangeBundle
      */
     public function setAirPricingInfoRef(?array $airPricingInfoRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($airPricingInfoRefArrayErrorMessage = self::validateAirPricingInfoRefForArrayConstraintFromSetAirPricingInfoRef($airPricingInfoRef))) {
-            throw new InvalidArgumentException($airPricingInfoRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($airPricingInfoRef) && count($airPricingInfoRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($airPricingInfoRef)), __LINE__);
-        }
         $this->AirPricingInfoRef = $airPricingInfoRef;
         
         return $this;
@@ -196,14 +155,6 @@ class TCRExchangeBundle extends AbstractStructBase
      */
     public function addToAirPricingInfoRef(\Travelport\UniversalRecord\StructType\AirPricingInfoRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AirPricingInfoRef) {
-            throw new InvalidArgumentException(sprintf('The AirPricingInfoRef property can only contain items of type \Travelport\UniversalRecord\StructType\AirPricingInfoRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->AirPricingInfoRef) && count($this->AirPricingInfoRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->AirPricingInfoRef)), __LINE__);
-        }
         $this->AirPricingInfoRef[] = $item;
         
         return $this;
@@ -217,48 +168,12 @@ class TCRExchangeBundle extends AbstractStructBase
         return $this->FeeInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFeeInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFeeInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFeeInfoForArrayConstraintFromSetFeeInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $tCRExchangeBundleFeeInfoItem) {
-            // validation for constraint: itemType
-            if (!$tCRExchangeBundleFeeInfoItem instanceof \Travelport\UniversalRecord\StructType\TypeFeeInfo) {
-                $invalidValues[] = is_object($tCRExchangeBundleFeeInfoItem) ? get_class($tCRExchangeBundleFeeInfoItem) : sprintf('%s(%s)', gettype($tCRExchangeBundleFeeInfoItem), var_export($tCRExchangeBundleFeeInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FeeInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TypeFeeInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FeeInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeFeeInfo[] $feeInfo
      * @return \Travelport\UniversalRecord\StructType\TCRExchangeBundle
      */
     public function setFeeInfo(?array $feeInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($feeInfoArrayErrorMessage = self::validateFeeInfoForArrayConstraintFromSetFeeInfo($feeInfo))) {
-            throw new InvalidArgumentException($feeInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($feeInfo) && count($feeInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($feeInfo)), __LINE__);
-        }
         $this->FeeInfo = $feeInfo;
         
         return $this;
@@ -271,14 +186,6 @@ class TCRExchangeBundle extends AbstractStructBase
      */
     public function addToFeeInfo(\Travelport\UniversalRecord\StructType\TypeFeeInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeFeeInfo) {
-            throw new InvalidArgumentException(sprintf('The FeeInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TypeFeeInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FeeInfo) && count($this->FeeInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FeeInfo)), __LINE__);
-        }
         $this->FeeInfo[] = $item;
         
         return $this;
@@ -292,48 +199,12 @@ class TCRExchangeBundle extends AbstractStructBase
         return $this->TaxInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setTaxInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setTaxInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTaxInfoForArrayConstraintFromSetTaxInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $tCRExchangeBundleTaxInfoItem) {
-            // validation for constraint: itemType
-            if (!$tCRExchangeBundleTaxInfoItem instanceof \Travelport\UniversalRecord\StructType\TypeTaxInfo) {
-                $invalidValues[] = is_object($tCRExchangeBundleTaxInfoItem) ? get_class($tCRExchangeBundleTaxInfoItem) : sprintf('%s(%s)', gettype($tCRExchangeBundleTaxInfoItem), var_export($tCRExchangeBundleTaxInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The TaxInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TypeTaxInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set TaxInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeTaxInfo[] $taxInfo
      * @return \Travelport\UniversalRecord\StructType\TCRExchangeBundle
      */
     public function setTaxInfo(?array $taxInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($taxInfoArrayErrorMessage = self::validateTaxInfoForArrayConstraintFromSetTaxInfo($taxInfo))) {
-            throw new InvalidArgumentException($taxInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($taxInfo) && count($taxInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($taxInfo)), __LINE__);
-        }
         $this->TaxInfo = $taxInfo;
         
         return $this;
@@ -346,14 +217,6 @@ class TCRExchangeBundle extends AbstractStructBase
      */
     public function addToTaxInfo(\Travelport\UniversalRecord\StructType\TypeTaxInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeTaxInfo) {
-            throw new InvalidArgumentException(sprintf('The TaxInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TypeTaxInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->TaxInfo) && count($this->TaxInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->TaxInfo)), __LINE__);
-        }
         $this->TaxInfo[] = $item;
         
         return $this;
@@ -367,48 +230,12 @@ class TCRExchangeBundle extends AbstractStructBase
         return $this->Penalty;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPenalty method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPenalty method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePenaltyForArrayConstraintFromSetPenalty(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $tCRExchangeBundlePenaltyItem) {
-            // validation for constraint: itemType
-            if (!$tCRExchangeBundlePenaltyItem instanceof \Travelport\UniversalRecord\StructType\Penalty) {
-                $invalidValues[] = is_object($tCRExchangeBundlePenaltyItem) ? get_class($tCRExchangeBundlePenaltyItem) : sprintf('%s(%s)', gettype($tCRExchangeBundlePenaltyItem), var_export($tCRExchangeBundlePenaltyItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Penalty property can only contain items of type \Travelport\UniversalRecord\StructType\Penalty, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Penalty value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\Penalty[] $penalty
      * @return \Travelport\UniversalRecord\StructType\TCRExchangeBundle
      */
     public function setPenalty(?array $penalty = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($penaltyArrayErrorMessage = self::validatePenaltyForArrayConstraintFromSetPenalty($penalty))) {
-            throw new InvalidArgumentException($penaltyArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($penalty) && count($penalty) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($penalty)), __LINE__);
-        }
         $this->Penalty = $penalty;
         
         return $this;
@@ -421,14 +248,6 @@ class TCRExchangeBundle extends AbstractStructBase
      */
     public function addToPenalty(\Travelport\UniversalRecord\StructType\Penalty $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\Penalty) {
-            throw new InvalidArgumentException(sprintf('The Penalty property can only contain items of type \Travelport\UniversalRecord\StructType\Penalty, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->Penalty) && count($this->Penalty) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->Penalty)), __LINE__);
-        }
         $this->Penalty[] = $item;
         
         return $this;

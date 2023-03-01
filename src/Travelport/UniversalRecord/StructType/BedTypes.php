@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,14 +21,14 @@ class BedTypes extends AbstractStructBase
      * - base: xs:positiveInteger
      * @var int|null
      */
-    protected ?int $Code = null;
+    public ?int $Code = null;
     /**
      * The Quantity
      * Meta information extracted from the WSDL
      * - documentation: Bed Quantity.
      * @var int|null
      */
-    protected ?int $Quantity = null;
+    public ?int $Quantity = null;
     /**
      * Constructor method for BedTypes
      * @uses BedTypes::setCode()
@@ -58,10 +57,6 @@ class BedTypes extends AbstractStructBase
      */
     public function setCode(?int $code = null): self
     {
-        // validation for constraint: int
-        if (!is_null($code) && !(is_int($code) || ctype_digit($code))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;
@@ -81,10 +76,6 @@ class BedTypes extends AbstractStructBase
      */
     public function setQuantity(?int $quantity = null): self
     {
-        // validation for constraint: int
-        if (!is_null($quantity) && !(is_int($quantity) || ctype_digit($quantity))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($quantity, true), gettype($quantity)), __LINE__);
-        }
         $this->Quantity = $quantity;
         
         return $this;

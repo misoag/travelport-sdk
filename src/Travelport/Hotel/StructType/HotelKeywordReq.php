@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class HotelKeywordReq extends BaseReq
      * - use: required
      * @var string
      */
-    protected string $HotelChain;
+    public string $HotelChain;
     /**
      * The Keyword
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class HotelKeywordReq extends BaseReq
      * - ref: common:Keyword
      * @var \Travelport\Hotel\StructType\Keyword[]
      */
-    protected ?array $Keyword = null;
+    public ?array $Keyword = null;
     /**
      * The PermittedProviders
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class HotelKeywordReq extends BaseReq
      * - ref: common:PermittedProviders
      * @var \Travelport\Hotel\StructType\PermittedProviders|null
      */
-    protected ?\Travelport\Hotel\StructType\PermittedProviders $PermittedProviders = null;
+    public ?\Travelport\Hotel\StructType\PermittedProviders $PermittedProviders = null;
     /**
      * The HotelCode
      * Meta information extracted from the WSDL
@@ -51,7 +50,7 @@ class HotelKeywordReq extends BaseReq
      * - use: optional
      * @var string|null
      */
-    protected ?string $HotelCode = null;
+    public ?string $HotelCode = null;
     /**
      * The CheckinDate
      * Meta information extracted from the WSDL
@@ -61,14 +60,14 @@ class HotelKeywordReq extends BaseReq
      * - use: optional
      * @var string|null
      */
-    protected ?string $CheckinDate = null;
+    public ?string $CheckinDate = null;
     /**
      * The ReturnKeywordList
      * Meta information extracted from the WSDL
      * - documentation: When true, a list of keyword names should be returned. If false then list of keyword details should be returned
      * @var bool|null
      */
-    protected ?bool $ReturnKeywordList = null;
+    public ?bool $ReturnKeywordList = null;
     /**
      * Constructor method for HotelKeywordReq
      * @uses HotelKeywordReq::setHotelChain()
@@ -109,14 +108,6 @@ class HotelKeywordReq extends BaseReq
      */
     public function setHotelChain(string $hotelChain): self
     {
-        // validation for constraint: string
-        if (!is_null($hotelChain) && !is_string($hotelChain)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotelChain, true), gettype($hotelChain)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($hotelChain) && mb_strlen((string) $hotelChain) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $hotelChain)), __LINE__);
-        }
         $this->HotelChain = $hotelChain;
         
         return $this;
@@ -130,48 +121,12 @@ class HotelKeywordReq extends BaseReq
         return $this->Keyword;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setKeyword method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setKeyword method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateKeywordForArrayConstraintFromSetKeyword(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelKeywordReqKeywordItem) {
-            // validation for constraint: itemType
-            if (!$hotelKeywordReqKeywordItem instanceof \Travelport\Hotel\StructType\Keyword) {
-                $invalidValues[] = is_object($hotelKeywordReqKeywordItem) ? get_class($hotelKeywordReqKeywordItem) : sprintf('%s(%s)', gettype($hotelKeywordReqKeywordItem), var_export($hotelKeywordReqKeywordItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Keyword property can only contain items of type \Travelport\Hotel\StructType\Keyword, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Keyword value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\Keyword[] $keyword
      * @return \Travelport\Hotel\StructType\HotelKeywordReq
      */
     public function setKeyword(?array $keyword = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($keywordArrayErrorMessage = self::validateKeywordForArrayConstraintFromSetKeyword($keyword))) {
-            throw new InvalidArgumentException($keywordArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(15)
-        if (is_array($keyword) && count($keyword) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 15', count($keyword)), __LINE__);
-        }
         $this->Keyword = $keyword;
         
         return $this;
@@ -184,14 +139,6 @@ class HotelKeywordReq extends BaseReq
      */
     public function addToKeyword(\Travelport\Hotel\StructType\Keyword $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\Keyword) {
-            throw new InvalidArgumentException(sprintf('The Keyword property can only contain items of type \Travelport\Hotel\StructType\Keyword, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(15)
-        if (is_array($this->Keyword) && count($this->Keyword) >= 15) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 15', count($this->Keyword)), __LINE__);
-        }
         $this->Keyword[] = $item;
         
         return $this;
@@ -230,14 +177,6 @@ class HotelKeywordReq extends BaseReq
      */
     public function setHotelCode(?string $hotelCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($hotelCode) && !is_string($hotelCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotelCode, true), gettype($hotelCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(32)
-        if (!is_null($hotelCode) && mb_strlen((string) $hotelCode) > 32) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 32', mb_strlen((string) $hotelCode)), __LINE__);
-        }
         $this->HotelCode = $hotelCode;
         
         return $this;
@@ -257,14 +196,6 @@ class HotelKeywordReq extends BaseReq
      */
     public function setCheckinDate(?string $checkinDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($checkinDate) && !is_string($checkinDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($checkinDate, true), gettype($checkinDate)), __LINE__);
-        }
-        // validation for constraint: pattern([^:Z].*)
-        if (!is_null($checkinDate) && !preg_match('/[^:Z].*/', $checkinDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[^:Z].*/', var_export($checkinDate, true)), __LINE__);
-        }
         $this->CheckinDate = $checkinDate;
         
         return $this;
@@ -284,10 +215,6 @@ class HotelKeywordReq extends BaseReq
      */
     public function setReturnKeywordList(?bool $returnKeywordList = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($returnKeywordList) && !is_bool($returnKeywordList)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($returnKeywordList, true), gettype($returnKeywordList)), __LINE__);
-        }
         $this->ReturnKeywordList = $returnKeywordList;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class BaseHotelSearchReq extends BaseSearchReq
      * - ref: HotelSearchLocation
      * @var \Travelport\Hotel\StructType\HotelSearchLocation|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelSearchLocation $HotelSearchLocation = null;
+    public ?\Travelport\Hotel\StructType\HotelSearchLocation $HotelSearchLocation = null;
     /**
      * The HotelSearchModifiers
      * Meta information extracted from the WSDL
@@ -30,14 +29,14 @@ class BaseHotelSearchReq extends BaseSearchReq
      * - ref: HotelSearchModifiers
      * @var \Travelport\Hotel\StructType\HotelSearchModifiers|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelSearchModifiers $HotelSearchModifiers = null;
+    public ?\Travelport\Hotel\StructType\HotelSearchModifiers $HotelSearchModifiers = null;
     /**
      * The HotelStay
      * Meta information extracted from the WSDL
      * - ref: HotelStay
      * @var \Travelport\Hotel\StructType\HotelStay|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelStay $HotelStay = null;
+    public ?\Travelport\Hotel\StructType\HotelStay $HotelStay = null;
     /**
      * The PointOfSale
      * Meta information extracted from the WSDL
@@ -45,7 +44,7 @@ class BaseHotelSearchReq extends BaseSearchReq
      * - ref: common:PointOfSale
      * @var \Travelport\Hotel\StructType\PointOfSale|null
      */
-    protected ?\Travelport\Hotel\StructType\PointOfSale $PointOfSale = null;
+    public ?\Travelport\Hotel\StructType\PointOfSale $PointOfSale = null;
     /**
      * The PolicyReference
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class BaseHotelSearchReq extends BaseSearchReq
      * - use: optional
      * @var string|null
      */
-    protected ?string $PolicyReference = null;
+    public ?string $PolicyReference = null;
     /**
      * Constructor method for BaseHotelSearchReq
      * @uses BaseHotelSearchReq::setHotelSearchLocation()
@@ -170,18 +169,6 @@ class BaseHotelSearchReq extends BaseSearchReq
      */
     public function setPolicyReference(?string $policyReference = null): self
     {
-        // validation for constraint: string
-        if (!is_null($policyReference) && !is_string($policyReference)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($policyReference, true), gettype($policyReference)), __LINE__);
-        }
-        // validation for constraint: maxLength(20)
-        if (!is_null($policyReference) && mb_strlen((string) $policyReference) > 20) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 20', mb_strlen((string) $policyReference)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($policyReference) && mb_strlen((string) $policyReference) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $policyReference)), __LINE__);
-        }
         $this->PolicyReference = $policyReference;
         
         return $this;

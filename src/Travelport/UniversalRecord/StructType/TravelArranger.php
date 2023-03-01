@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class TravelArranger extends AbstractStructBase
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The CompanyShortName
      * Meta information extracted from the WSDL
@@ -27,7 +26,7 @@ class TravelArranger extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CompanyShortName = null;
+    public ?string $CompanyShortName = null;
     /**
      * The Code
      * Meta information extracted from the WSDL
@@ -35,7 +34,7 @@ class TravelArranger extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Code = null;
+    public ?string $Code = null;
     /**
      * Constructor method for TravelArranger
      * @uses TravelArranger::set_()
@@ -67,10 +66,6 @@ class TravelArranger extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -90,10 +85,6 @@ class TravelArranger extends AbstractStructBase
      */
     public function setCompanyShortName(?string $companyShortName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($companyShortName) && !is_string($companyShortName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($companyShortName, true), gettype($companyShortName)), __LINE__);
-        }
         $this->CompanyShortName = $companyShortName;
         
         return $this;
@@ -113,10 +104,6 @@ class TravelArranger extends AbstractStructBase
      */
     public function setCode(?string $code = null): self
     {
-        // validation for constraint: string
-        if (!is_null($code) && !is_string($code)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;

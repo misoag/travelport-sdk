@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,49 +20,49 @@ class SupportedVersions extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $urVersion = null;
+    public ?string $urVersion = null;
     /**
      * The airVersion
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $airVersion = null;
+    public ?string $airVersion = null;
     /**
      * The hotelVersion
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $hotelVersion = null;
+    public ?string $hotelVersion = null;
     /**
      * The vehicleVersion
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $vehicleVersion = null;
+    public ?string $vehicleVersion = null;
     /**
      * The passiveVersion
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $passiveVersion = null;
+    public ?string $passiveVersion = null;
     /**
      * The railVersion
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $railVersion = null;
+    public ?string $railVersion = null;
     /**
      * The cruiseVersion
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $cruiseVersion = null;
+    public ?string $cruiseVersion = null;
     /**
      * Constructor method for SupportedVersions
      * @uses SupportedVersions::setUrVersion()
@@ -107,10 +106,6 @@ class SupportedVersions extends AbstractStructBase
      */
     public function setUrVersion(?string $urVersion = null): self
     {
-        // validation for constraint: string
-        if (!is_null($urVersion) && !is_string($urVersion)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($urVersion, true), gettype($urVersion)), __LINE__);
-        }
         $this->urVersion = $urVersion;
         
         return $this;
@@ -130,10 +125,6 @@ class SupportedVersions extends AbstractStructBase
      */
     public function setAirVersion(?string $airVersion = null): self
     {
-        // validation for constraint: string
-        if (!is_null($airVersion) && !is_string($airVersion)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($airVersion, true), gettype($airVersion)), __LINE__);
-        }
         $this->airVersion = $airVersion;
         
         return $this;
@@ -153,10 +144,6 @@ class SupportedVersions extends AbstractStructBase
      */
     public function setHotelVersion(?string $hotelVersion = null): self
     {
-        // validation for constraint: string
-        if (!is_null($hotelVersion) && !is_string($hotelVersion)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hotelVersion, true), gettype($hotelVersion)), __LINE__);
-        }
         $this->hotelVersion = $hotelVersion;
         
         return $this;
@@ -176,10 +163,6 @@ class SupportedVersions extends AbstractStructBase
      */
     public function setVehicleVersion(?string $vehicleVersion = null): self
     {
-        // validation for constraint: string
-        if (!is_null($vehicleVersion) && !is_string($vehicleVersion)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vehicleVersion, true), gettype($vehicleVersion)), __LINE__);
-        }
         $this->vehicleVersion = $vehicleVersion;
         
         return $this;
@@ -199,10 +182,6 @@ class SupportedVersions extends AbstractStructBase
      */
     public function setPassiveVersion(?string $passiveVersion = null): self
     {
-        // validation for constraint: string
-        if (!is_null($passiveVersion) && !is_string($passiveVersion)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passiveVersion, true), gettype($passiveVersion)), __LINE__);
-        }
         $this->passiveVersion = $passiveVersion;
         
         return $this;
@@ -222,10 +201,6 @@ class SupportedVersions extends AbstractStructBase
      */
     public function setRailVersion(?string $railVersion = null): self
     {
-        // validation for constraint: string
-        if (!is_null($railVersion) && !is_string($railVersion)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($railVersion, true), gettype($railVersion)), __LINE__);
-        }
         $this->railVersion = $railVersion;
         
         return $this;
@@ -245,10 +220,6 @@ class SupportedVersions extends AbstractStructBase
      */
     public function setCruiseVersion(?string $cruiseVersion = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cruiseVersion) && !is_string($cruiseVersion)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cruiseVersion, true), gettype($cruiseVersion)), __LINE__);
-        }
         $this->cruiseVersion = $cruiseVersion;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class OverridePCC extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ProviderCode;
+    public string $ProviderCode;
     /**
      * The PseudoCityCode
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class OverridePCC extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $PseudoCityCode;
+    public string $PseudoCityCode;
     /**
      * Constructor method for OverridePCC
      * @uses OverridePCC::setProviderCode()
@@ -65,18 +64,6 @@ class OverridePCC extends AbstractStructBase
      */
     public function setProviderCode(string $providerCode): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -96,18 +83,6 @@ class OverridePCC extends AbstractStructBase
      */
     public function setPseudoCityCode(string $pseudoCityCode): self
     {
-        // validation for constraint: string
-        if (!is_null($pseudoCityCode) && !is_string($pseudoCityCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pseudoCityCode, true), gettype($pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
         $this->PseudoCityCode = $pseudoCityCode;
         
         return $this;

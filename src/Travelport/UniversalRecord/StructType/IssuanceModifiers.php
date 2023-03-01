@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -26,7 +25,7 @@ class IssuanceModifiers extends AbstractStructBase
      * - ref: common:FormOfPaymentRef
      * @var \Travelport\UniversalRecord\StructType\FormOfPaymentRef|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FormOfPaymentRef $FormOfPaymentRef = null;
+    public ?\Travelport\UniversalRecord\StructType\FormOfPaymentRef $FormOfPaymentRef = null;
     /**
      * The FormOfPayment
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class IssuanceModifiers extends AbstractStructBase
      * - ref: common:FormOfPayment
      * @var \Travelport\UniversalRecord\StructType\FormOfPayment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FormOfPayment $FormOfPayment = null;
+    public ?\Travelport\UniversalRecord\StructType\FormOfPayment $FormOfPayment = null;
     /**
      * The CustomerReceiptInfo
      * Meta information extracted from the WSDL
@@ -45,7 +44,7 @@ class IssuanceModifiers extends AbstractStructBase
      * - ref: CustomerReceiptInfo
      * @var \Travelport\UniversalRecord\StructType\CustomerReceiptInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CustomerReceiptInfo $CustomerReceiptInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\CustomerReceiptInfo $CustomerReceiptInfo = null;
     /**
      * The EMDEndorsement
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class IssuanceModifiers extends AbstractStructBase
      * - ref: EMDEndorsement
      * @var string|null
      */
-    protected ?string $EMDEndorsement = null;
+    public ?string $EMDEndorsement = null;
     /**
      * The EMDCommission
      * Meta information extracted from the WSDL
@@ -65,7 +64,7 @@ class IssuanceModifiers extends AbstractStructBase
      * - ref: EMDCommission
      * @var \Travelport\UniversalRecord\StructType\EMDCommission|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\EMDCommission $EMDCommission = null;
+    public ?\Travelport\UniversalRecord\StructType\EMDCommission $EMDCommission = null;
     /**
      * The PlatingCarrier
      * Meta information extracted from the WSDL
@@ -75,7 +74,7 @@ class IssuanceModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PlatingCarrier = null;
+    public ?string $PlatingCarrier = null;
     /**
      * Constructor method for IssuanceModifiers
      * @uses IssuanceModifiers::setFormOfPaymentRef()
@@ -110,48 +109,15 @@ class IssuanceModifiers extends AbstractStructBase
         return $this->FormOfPaymentRef ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFormOfPaymentRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPaymentRef method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateFormOfPaymentRefForChoiceConstraintFromSetFormOfPaymentRef($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'FormOfPayment',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property FormOfPaymentRef can\'t be set as the property %s is already set. Only one property must be set among these properties: FormOfPaymentRef, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set FormOfPaymentRef value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FormOfPaymentRef $formOfPaymentRef
      * @return \Travelport\UniversalRecord\StructType\IssuanceModifiers
      */
     public function setFormOfPaymentRef(?\Travelport\UniversalRecord\StructType\FormOfPaymentRef $formOfPaymentRef = null): self
     {
-        // validation for constraint: choice(FormOfPaymentRef, FormOfPayment)
-        if ('' !== ($formOfPaymentRefChoiceErrorMessage = self::validateFormOfPaymentRefForChoiceConstraintFromSetFormOfPaymentRef($formOfPaymentRef))) {
-            throw new InvalidArgumentException($formOfPaymentRefChoiceErrorMessage, __LINE__);
-        }
         if (is_null($formOfPaymentRef) || (is_array($formOfPaymentRef) && empty($formOfPaymentRef))) {
             unset($this->FormOfPaymentRef);
         } else {
@@ -169,48 +135,15 @@ class IssuanceModifiers extends AbstractStructBase
         return $this->FormOfPayment ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFormOfPayment method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPayment method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateFormOfPaymentForChoiceConstraintFromSetFormOfPayment($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'FormOfPaymentRef',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property FormOfPayment can\'t be set as the property %s is already set. Only one property must be set among these properties: FormOfPayment, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set FormOfPayment value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FormOfPayment $formOfPayment
      * @return \Travelport\UniversalRecord\StructType\IssuanceModifiers
      */
     public function setFormOfPayment(?\Travelport\UniversalRecord\StructType\FormOfPayment $formOfPayment = null): self
     {
-        // validation for constraint: choice(FormOfPaymentRef, FormOfPayment)
-        if ('' !== ($formOfPaymentChoiceErrorMessage = self::validateFormOfPaymentForChoiceConstraintFromSetFormOfPayment($formOfPayment))) {
-            throw new InvalidArgumentException($formOfPaymentChoiceErrorMessage, __LINE__);
-        }
         if (is_null($formOfPayment) || (is_array($formOfPayment) && empty($formOfPayment))) {
             unset($this->FormOfPayment);
         } else {
@@ -253,18 +186,6 @@ class IssuanceModifiers extends AbstractStructBase
      */
     public function setEMDEndorsement(?string $eMDEndorsement = null): self
     {
-        // validation for constraint: string
-        if (!is_null($eMDEndorsement) && !is_string($eMDEndorsement)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eMDEndorsement, true), gettype($eMDEndorsement)), __LINE__);
-        }
-        // validation for constraint: maxLength(255)
-        if (!is_null($eMDEndorsement) && mb_strlen((string) $eMDEndorsement) > 255) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 255', mb_strlen((string) $eMDEndorsement)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($eMDEndorsement) && mb_strlen((string) $eMDEndorsement) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $eMDEndorsement)), __LINE__);
-        }
         $this->EMDEndorsement = $eMDEndorsement;
         
         return $this;
@@ -303,14 +224,6 @@ class IssuanceModifiers extends AbstractStructBase
      */
     public function setPlatingCarrier(?string $platingCarrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($platingCarrier) && !is_string($platingCarrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($platingCarrier, true), gettype($platingCarrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($platingCarrier) && mb_strlen((string) $platingCarrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $platingCarrier)), __LINE__);
-        }
         $this->PlatingCarrier = $platingCarrier;
         
         return $this;

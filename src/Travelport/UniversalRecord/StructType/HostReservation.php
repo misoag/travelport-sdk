@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class HostReservation extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Carrier;
+    public string $Carrier;
     /**
      * The CarrierLocatorCode
      * Meta information extracted from the WSDL
@@ -35,7 +34,7 @@ class HostReservation extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $CarrierLocatorCode;
+    public string $CarrierLocatorCode;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class HostReservation extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ProviderCode;
+    public string $ProviderCode;
     /**
      * The ProviderLocatorCode
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class HostReservation extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ProviderLocatorCode;
+    public string $ProviderLocatorCode;
     /**
      * The UniversalLocatorCode
      * Meta information extracted from the WSDL
@@ -67,7 +66,7 @@ class HostReservation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $UniversalLocatorCode = null;
+    public ?string $UniversalLocatorCode = null;
     /**
      * The ETicket
      * Meta information extracted from the WSDL
@@ -76,7 +75,7 @@ class HostReservation extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ETicket = null;
+    public ?bool $ETicket = null;
     /**
      * Constructor method for HostReservation
      * @uses HostReservation::setCarrier()
@@ -117,14 +116,6 @@ class HostReservation extends AbstractStructBase
      */
     public function setCarrier(string $carrier): self
     {
-        // validation for constraint: string
-        if (!is_null($carrier) && !is_string($carrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrier, true), gettype($carrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($carrier) && mb_strlen((string) $carrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $carrier)), __LINE__);
-        }
         $this->Carrier = $carrier;
         
         return $this;
@@ -144,18 +135,6 @@ class HostReservation extends AbstractStructBase
      */
     public function setCarrierLocatorCode(string $carrierLocatorCode): self
     {
-        // validation for constraint: string
-        if (!is_null($carrierLocatorCode) && !is_string($carrierLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrierLocatorCode, true), gettype($carrierLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($carrierLocatorCode) && mb_strlen((string) $carrierLocatorCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $carrierLocatorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($carrierLocatorCode) && mb_strlen((string) $carrierLocatorCode) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $carrierLocatorCode)), __LINE__);
-        }
         $this->CarrierLocatorCode = $carrierLocatorCode;
         
         return $this;
@@ -175,18 +154,6 @@ class HostReservation extends AbstractStructBase
      */
     public function setProviderCode(string $providerCode): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -206,14 +173,6 @@ class HostReservation extends AbstractStructBase
      */
     public function setProviderLocatorCode(string $providerLocatorCode): self
     {
-        // validation for constraint: string
-        if (!is_null($providerLocatorCode) && !is_string($providerLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerLocatorCode, true), gettype($providerLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($providerLocatorCode) && mb_strlen((string) $providerLocatorCode) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $providerLocatorCode)), __LINE__);
-        }
         $this->ProviderLocatorCode = $providerLocatorCode;
         
         return $this;
@@ -233,18 +192,6 @@ class HostReservation extends AbstractStructBase
      */
     public function setUniversalLocatorCode(?string $universalLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($universalLocatorCode) && !is_string($universalLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($universalLocatorCode, true), gettype($universalLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($universalLocatorCode) && mb_strlen((string) $universalLocatorCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $universalLocatorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($universalLocatorCode) && mb_strlen((string) $universalLocatorCode) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $universalLocatorCode)), __LINE__);
-        }
         $this->UniversalLocatorCode = $universalLocatorCode;
         
         return $this;
@@ -264,10 +211,6 @@ class HostReservation extends AbstractStructBase
      */
     public function setETicket(?bool $eTicket = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($eTicket) && !is_bool($eTicket)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($eTicket, true), gettype($eTicket)), __LINE__);
-        }
         $this->ETicket = $eTicket;
         
         return $this;

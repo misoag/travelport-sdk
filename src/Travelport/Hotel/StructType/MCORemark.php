@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class MCORemark extends AbstractStructBase
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The AdditionalRmk
      * Meta information extracted from the WSDL
@@ -27,7 +26,7 @@ class MCORemark extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdditionalRmk = null;
+    public ?bool $AdditionalRmk = null;
     /**
      * Constructor method for MCORemark
      * @uses MCORemark::set_()
@@ -56,10 +55,6 @@ class MCORemark extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -79,10 +74,6 @@ class MCORemark extends AbstractStructBase
      */
     public function setAdditionalRmk(?bool $additionalRmk = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($additionalRmk) && !is_bool($additionalRmk)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($additionalRmk, true), gettype($additionalRmk)), __LINE__);
-        }
         $this->AdditionalRmk = $additionalRmk;
         
         return $this;

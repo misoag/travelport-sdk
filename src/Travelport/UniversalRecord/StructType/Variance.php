@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class Variance extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The Time
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class Variance extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Time = null;
+    public ?string $Time = null;
     /**
      * The Indicator
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class Variance extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Indicator = null;
+    public ?string $Indicator = null;
     /**
      * The Reason
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class Variance extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Reason = null;
+    public ?string $Reason = null;
     /**
      * Constructor method for Variance
      * @uses Variance::setType()
@@ -76,18 +75,11 @@ class Variance extends AbstractStructBase
     }
     /**
      * Set Type value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVarianceType::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVarianceType::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $type
      * @return \Travelport\UniversalRecord\StructType\Variance
      */
     public function setType(string $type): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeVarianceType::valueIsValid($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeVarianceType', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeVarianceType::getValidValues())), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -107,10 +99,6 @@ class Variance extends AbstractStructBase
      */
     public function setTime(?string $time = null): self
     {
-        // validation for constraint: string
-        if (!is_null($time) && !is_string($time)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($time, true), gettype($time)), __LINE__);
-        }
         $this->Time = $time;
         
         return $this;
@@ -125,18 +113,11 @@ class Variance extends AbstractStructBase
     }
     /**
      * Set Indicator value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVarianceIndicator::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVarianceIndicator::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $indicator
      * @return \Travelport\UniversalRecord\StructType\Variance
      */
     public function setIndicator(?string $indicator = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeVarianceIndicator::valueIsValid($indicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeVarianceIndicator', is_array($indicator) ? implode(', ', $indicator) : var_export($indicator, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeVarianceIndicator::getValidValues())), __LINE__);
-        }
         $this->Indicator = $indicator;
         
         return $this;
@@ -156,10 +137,6 @@ class Variance extends AbstractStructBase
      */
     public function setReason(?string $reason = null): self
     {
-        // validation for constraint: string
-        if (!is_null($reason) && !is_string($reason)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reason, true), gettype($reason)), __LINE__);
-        }
         $this->Reason = $reason;
         
         return $this;

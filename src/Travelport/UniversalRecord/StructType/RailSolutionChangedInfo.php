@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,14 +21,14 @@ class RailSolutionChangedInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ReasonCode;
+    public string $ReasonCode;
     /**
      * The RailPricingSolution
      * Meta information extracted from the WSDL
      * - ref: RailPricingSolution
      * @var \Travelport\UniversalRecord\StructType\RailPricingSolution|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\RailPricingSolution $RailPricingSolution = null;
+    public ?\Travelport\UniversalRecord\StructType\RailPricingSolution $RailPricingSolution = null;
     /**
      * Constructor method for RailSolutionChangedInfo
      * @uses RailSolutionChangedInfo::setReasonCode()
@@ -58,10 +57,6 @@ class RailSolutionChangedInfo extends AbstractStructBase
      */
     public function setReasonCode(string $reasonCode): self
     {
-        // validation for constraint: string
-        if (!is_null($reasonCode) && !is_string($reasonCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reasonCode, true), gettype($reasonCode)), __LINE__);
-        }
         $this->ReasonCode = $reasonCode;
         
         return $this;

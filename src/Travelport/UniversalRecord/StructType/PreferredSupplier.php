@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class PreferredSupplier extends AbstractStructBase
      * - use: required
      * @var bool
      */
-    protected bool $Preferred;
+    public bool $Preferred;
     /**
      * The ProfileType
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class PreferredSupplier extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ProfileType;
+    public string $ProfileType;
     /**
      * Constructor method for PreferredSupplier
      * @uses PreferredSupplier::setPreferred()
@@ -57,10 +56,6 @@ class PreferredSupplier extends AbstractStructBase
      */
     public function setPreferred(bool $preferred): self
     {
-        // validation for constraint: boolean
-        if (!is_null($preferred) && !is_bool($preferred)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($preferred, true), gettype($preferred)), __LINE__);
-        }
         $this->Preferred = $preferred;
         
         return $this;
@@ -75,18 +70,11 @@ class PreferredSupplier extends AbstractStructBase
     }
     /**
      * Set ProfileType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeProfileType::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeProfileType::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $profileType
      * @return \Travelport\UniversalRecord\StructType\PreferredSupplier
      */
     public function setProfileType(string $profileType): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeProfileType::valueIsValid($profileType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeProfileType', is_array($profileType) ? implode(', ', $profileType) : var_export($profileType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeProfileType::getValidValues())), __LINE__);
-        }
         $this->ProfileType = $profileType;
         
         return $this;

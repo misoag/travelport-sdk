@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -29,7 +28,7 @@ class UniversalRecordRetrieveReq extends BaseReq
      * - minOccurs: 1
      * @var string
      */
-    protected string $UniversalRecordLocatorCode;
+    public string $UniversalRecordLocatorCode;
     /**
      * The ProviderReservationInfo
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class UniversalRecordRetrieveReq extends BaseReq
      * - choiceMinOccurs: 1
      * @var \Travelport\UniversalRecord\StructType\ProviderReservationInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ProviderReservationInfo $ProviderReservationInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\ProviderReservationInfo $ProviderReservationInfo = null;
     /**
      * The ViewOnlyInd
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class UniversalRecordRetrieveReq extends BaseReq
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ViewOnlyInd = null;
+    public ?bool $ViewOnlyInd = null;
     /**
      * The TravelerLastName
      * Meta information extracted from the WSDL
@@ -58,7 +57,7 @@ class UniversalRecordRetrieveReq extends BaseReq
      * - use: optional
      * @var string|null
      */
-    protected ?string $TravelerLastName = null;
+    public ?string $TravelerLastName = null;
     /**
      * The TravelerFirstName
      * Meta information extracted from the WSDL
@@ -69,7 +68,7 @@ class UniversalRecordRetrieveReq extends BaseReq
      * - use: optional
      * @var string|null
      */
-    protected ?string $TravelerFirstName = null;
+    public ?string $TravelerFirstName = null;
     /**
      * The ReturnUnmaskedData
      * Meta information extracted from the WSDL
@@ -77,7 +76,7 @@ class UniversalRecordRetrieveReq extends BaseReq
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ReturnUnmaskedData = null;
+    public ?bool $ReturnUnmaskedData = null;
     /**
      * Constructor method for UniversalRecordRetrieveReq
      * @uses UniversalRecordRetrieveReq::setUniversalRecordLocatorCode()
@@ -112,60 +111,15 @@ class UniversalRecordRetrieveReq extends BaseReq
         return $this->UniversalRecordLocatorCode ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setUniversalRecordLocatorCode method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setUniversalRecordLocatorCode method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateUniversalRecordLocatorCodeForChoiceConstraintFromSetUniversalRecordLocatorCode($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'ProviderReservationInfo',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property UniversalRecordLocatorCode can\'t be set as the property %s is already set. Only one property must be set among these properties: UniversalRecordLocatorCode, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set UniversalRecordLocatorCode value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param string $universalRecordLocatorCode
      * @return \Travelport\UniversalRecord\StructType\UniversalRecordRetrieveReq
      */
     public function setUniversalRecordLocatorCode(string $universalRecordLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($universalRecordLocatorCode) && !is_string($universalRecordLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($universalRecordLocatorCode, true), gettype($universalRecordLocatorCode)), __LINE__);
-        }
-        // validation for constraint: choice(UniversalRecordLocatorCode, ProviderReservationInfo)
-        if ('' !== ($universalRecordLocatorCodeChoiceErrorMessage = self::validateUniversalRecordLocatorCodeForChoiceConstraintFromSetUniversalRecordLocatorCode($universalRecordLocatorCode))) {
-            throw new InvalidArgumentException($universalRecordLocatorCodeChoiceErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($universalRecordLocatorCode) && mb_strlen((string) $universalRecordLocatorCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $universalRecordLocatorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($universalRecordLocatorCode) && mb_strlen((string) $universalRecordLocatorCode) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $universalRecordLocatorCode)), __LINE__);
-        }
         if (is_null($universalRecordLocatorCode) || (is_array($universalRecordLocatorCode) && empty($universalRecordLocatorCode))) {
             unset($this->UniversalRecordLocatorCode);
         } else {
@@ -183,48 +137,15 @@ class UniversalRecordRetrieveReq extends BaseReq
         return $this->ProviderReservationInfo ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setProviderReservationInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationInfo method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateProviderReservationInfoForChoiceConstraintFromSetProviderReservationInfo($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'UniversalRecordLocatorCode',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property ProviderReservationInfo can\'t be set as the property %s is already set. Only one property must be set among these properties: ProviderReservationInfo, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set ProviderReservationInfo value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\ProviderReservationInfo $providerReservationInfo
      * @return \Travelport\UniversalRecord\StructType\UniversalRecordRetrieveReq
      */
     public function setProviderReservationInfo(?\Travelport\UniversalRecord\StructType\ProviderReservationInfo $providerReservationInfo = null): self
     {
-        // validation for constraint: choice(UniversalRecordLocatorCode, ProviderReservationInfo)
-        if ('' !== ($providerReservationInfoChoiceErrorMessage = self::validateProviderReservationInfoForChoiceConstraintFromSetProviderReservationInfo($providerReservationInfo))) {
-            throw new InvalidArgumentException($providerReservationInfoChoiceErrorMessage, __LINE__);
-        }
         if (is_null($providerReservationInfo) || (is_array($providerReservationInfo) && empty($providerReservationInfo))) {
             unset($this->ProviderReservationInfo);
         } else {
@@ -248,10 +169,6 @@ class UniversalRecordRetrieveReq extends BaseReq
      */
     public function setViewOnlyInd(?bool $viewOnlyInd = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($viewOnlyInd) && !is_bool($viewOnlyInd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($viewOnlyInd, true), gettype($viewOnlyInd)), __LINE__);
-        }
         $this->ViewOnlyInd = $viewOnlyInd;
         
         return $this;
@@ -271,18 +188,6 @@ class UniversalRecordRetrieveReq extends BaseReq
      */
     public function setTravelerLastName(?string $travelerLastName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($travelerLastName) && !is_string($travelerLastName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelerLastName, true), gettype($travelerLastName)), __LINE__);
-        }
-        // validation for constraint: maxLength(256)
-        if (!is_null($travelerLastName) && mb_strlen((string) $travelerLastName) > 256) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 256', mb_strlen((string) $travelerLastName)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($travelerLastName) && mb_strlen((string) $travelerLastName) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $travelerLastName)), __LINE__);
-        }
         $this->TravelerLastName = $travelerLastName;
         
         return $this;
@@ -302,18 +207,6 @@ class UniversalRecordRetrieveReq extends BaseReq
      */
     public function setTravelerFirstName(?string $travelerFirstName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($travelerFirstName) && !is_string($travelerFirstName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelerFirstName, true), gettype($travelerFirstName)), __LINE__);
-        }
-        // validation for constraint: maxLength(256)
-        if (!is_null($travelerFirstName) && mb_strlen((string) $travelerFirstName) > 256) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 256', mb_strlen((string) $travelerFirstName)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($travelerFirstName) && mb_strlen((string) $travelerFirstName) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $travelerFirstName)), __LINE__);
-        }
         $this->TravelerFirstName = $travelerFirstName;
         
         return $this;
@@ -333,10 +226,6 @@ class UniversalRecordRetrieveReq extends BaseReq
      */
     public function setReturnUnmaskedData(?bool $returnUnmaskedData = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($returnUnmaskedData) && !is_bool($returnUnmaskedData)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($returnUnmaskedData, true), gettype($returnUnmaskedData)), __LINE__);
-        }
         $this->ReturnUnmaskedData = $returnUnmaskedData;
         
         return $this;

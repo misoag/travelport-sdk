@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class PassengerType extends TypePassengerType
      * - ref: FareGuaranteeInfo
      * @var \Travelport\UniversalRecord\StructType\FareGuaranteeInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FareGuaranteeInfo $FareGuaranteeInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\FareGuaranteeInfo $FareGuaranteeInfo = null;
     /**
      * Constructor method for PassengerType
      * @uses PassengerType::setFareGuaranteeInfo()

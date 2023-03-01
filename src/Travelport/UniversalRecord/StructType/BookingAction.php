@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class BookingAction extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The FormOfPayment
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class BookingAction extends AbstractStructBase
      * - ref: common:FormOfPayment
      * @var \Travelport\UniversalRecord\StructType\FormOfPayment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FormOfPayment $FormOfPayment = null;
+    public ?\Travelport\UniversalRecord\StructType\FormOfPayment $FormOfPayment = null;
     /**
      * The Payment
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class BookingAction extends AbstractStructBase
      * - ref: common:Payment
      * @var \Travelport\UniversalRecord\StructType\Payment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Payment $Payment = null;
+    public ?\Travelport\UniversalRecord\StructType\Payment $Payment = null;
     /**
      * Constructor method for BookingAction
      * @uses BookingAction::setType()
@@ -68,10 +67,6 @@ class BookingAction extends AbstractStructBase
      */
     public function setType(string $type): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;

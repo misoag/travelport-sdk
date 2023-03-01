@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class TypeVoucherInformation extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $VoucherType;
+    public string $VoucherType;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class TypeVoucherInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The ConfirmationNumber
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class TypeVoucherInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ConfirmationNumber = null;
+    public ?string $ConfirmationNumber = null;
     /**
      * The AccountName
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class TypeVoucherInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AccountName = null;
+    public ?string $AccountName = null;
     /**
      * The Number
      * Meta information extracted from the WSDL
@@ -58,7 +57,7 @@ class TypeVoucherInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Number = null;
+    public ?string $Number = null;
     /**
      * Constructor method for typeVoucherInformation
      * @uses TypeVoucherInformation::setVoucherType()
@@ -91,18 +90,11 @@ class TypeVoucherInformation extends AbstractStructBase
     }
     /**
      * Set VoucherType value
-     * @uses \Travelport\Hotel\EnumType\TypeVoucherType::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeVoucherType::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $voucherType
      * @return \Travelport\Hotel\StructType\TypeVoucherInformation
      */
     public function setVoucherType(string $voucherType): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeVoucherType::valueIsValid($voucherType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeVoucherType', is_array($voucherType) ? implode(', ', $voucherType) : var_export($voucherType, true), implode(', ', \Travelport\Hotel\EnumType\TypeVoucherType::getValidValues())), __LINE__);
-        }
         $this->VoucherType = $voucherType;
         
         return $this;
@@ -122,10 +114,6 @@ class TypeVoucherInformation extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -145,10 +133,6 @@ class TypeVoucherInformation extends AbstractStructBase
      */
     public function setConfirmationNumber(?string $confirmationNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($confirmationNumber) && !is_string($confirmationNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($confirmationNumber, true), gettype($confirmationNumber)), __LINE__);
-        }
         $this->ConfirmationNumber = $confirmationNumber;
         
         return $this;
@@ -168,10 +152,6 @@ class TypeVoucherInformation extends AbstractStructBase
      */
     public function setAccountName(?string $accountName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($accountName) && !is_string($accountName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountName, true), gettype($accountName)), __LINE__);
-        }
         $this->AccountName = $accountName;
         
         return $this;
@@ -191,18 +171,6 @@ class TypeVoucherInformation extends AbstractStructBase
      */
     public function setNumber(?string $number = null): self
     {
-        // validation for constraint: string
-        if (!is_null($number) && !is_string($number)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
-        }
-        // validation for constraint: maxLength(16)
-        if (!is_null($number) && mb_strlen((string) $number) > 16) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 16', mb_strlen((string) $number)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($number) && mb_strlen((string) $number) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $number)), __LINE__);
-        }
         $this->Number = $number;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,56 +18,56 @@ class DaysOfWeekRestriction extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $RestrictionExistsInd = null;
+    public ?bool $RestrictionExistsInd = null;
     /**
      * The Application
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $Application = null;
+    public ?string $Application = null;
     /**
      * The IncludeExcludeUseInd
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $IncludeExcludeUseInd = null;
+    public ?bool $IncludeExcludeUseInd = null;
     /**
      * The Mon
      * @var bool|null
      */
-    protected ?bool $Mon = null;
+    public ?bool $Mon = null;
     /**
      * The Tue
      * @var bool|null
      */
-    protected ?bool $Tue = null;
+    public ?bool $Tue = null;
     /**
      * The Wed
      * @var bool|null
      */
-    protected ?bool $Wed = null;
+    public ?bool $Wed = null;
     /**
      * The Thu
      * @var bool|null
      */
-    protected ?bool $Thu = null;
+    public ?bool $Thu = null;
     /**
      * The Fri
      * @var bool|null
      */
-    protected ?bool $Fri = null;
+    public ?bool $Fri = null;
     /**
      * The Sat
      * @var bool|null
      */
-    protected ?bool $Sat = null;
+    public ?bool $Sat = null;
     /**
      * The Sun
      * @var bool|null
      */
-    protected ?bool $Sun = null;
+    public ?bool $Sun = null;
     /**
      * Constructor method for DaysOfWeekRestriction
      * @uses DaysOfWeekRestriction::setRestrictionExistsInd()
@@ -121,10 +120,6 @@ class DaysOfWeekRestriction extends AbstractStructBase
      */
     public function setRestrictionExistsInd(?bool $restrictionExistsInd = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($restrictionExistsInd) && !is_bool($restrictionExistsInd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($restrictionExistsInd, true), gettype($restrictionExistsInd)), __LINE__);
-        }
         $this->RestrictionExistsInd = $restrictionExistsInd;
         
         return $this;
@@ -144,10 +139,6 @@ class DaysOfWeekRestriction extends AbstractStructBase
      */
     public function setApplication(?string $application = null): self
     {
-        // validation for constraint: string
-        if (!is_null($application) && !is_string($application)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($application, true), gettype($application)), __LINE__);
-        }
         $this->Application = $application;
         
         return $this;
@@ -167,10 +158,6 @@ class DaysOfWeekRestriction extends AbstractStructBase
      */
     public function setIncludeExcludeUseInd(?bool $includeExcludeUseInd = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($includeExcludeUseInd) && !is_bool($includeExcludeUseInd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($includeExcludeUseInd, true), gettype($includeExcludeUseInd)), __LINE__);
-        }
         $this->IncludeExcludeUseInd = $includeExcludeUseInd;
         
         return $this;
@@ -190,10 +177,6 @@ class DaysOfWeekRestriction extends AbstractStructBase
      */
     public function setMon(?bool $mon = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($mon) && !is_bool($mon)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($mon, true), gettype($mon)), __LINE__);
-        }
         $this->Mon = $mon;
         
         return $this;
@@ -213,10 +196,6 @@ class DaysOfWeekRestriction extends AbstractStructBase
      */
     public function setTue(?bool $tue = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($tue) && !is_bool($tue)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($tue, true), gettype($tue)), __LINE__);
-        }
         $this->Tue = $tue;
         
         return $this;
@@ -236,10 +215,6 @@ class DaysOfWeekRestriction extends AbstractStructBase
      */
     public function setWed(?bool $wed = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($wed) && !is_bool($wed)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($wed, true), gettype($wed)), __LINE__);
-        }
         $this->Wed = $wed;
         
         return $this;
@@ -259,10 +234,6 @@ class DaysOfWeekRestriction extends AbstractStructBase
      */
     public function setThu(?bool $thu = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($thu) && !is_bool($thu)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($thu, true), gettype($thu)), __LINE__);
-        }
         $this->Thu = $thu;
         
         return $this;
@@ -282,10 +253,6 @@ class DaysOfWeekRestriction extends AbstractStructBase
      */
     public function setFri(?bool $fri = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($fri) && !is_bool($fri)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($fri, true), gettype($fri)), __LINE__);
-        }
         $this->Fri = $fri;
         
         return $this;
@@ -305,10 +272,6 @@ class DaysOfWeekRestriction extends AbstractStructBase
      */
     public function setSat(?bool $sat = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($sat) && !is_bool($sat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($sat, true), gettype($sat)), __LINE__);
-        }
         $this->Sat = $sat;
         
         return $this;
@@ -328,10 +291,6 @@ class DaysOfWeekRestriction extends AbstractStructBase
      */
     public function setSun(?bool $sun = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($sun) && !is_bool($sun)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($sun, true), gettype($sun)), __LINE__);
-        }
         $this->Sun = $sun;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class TypeGuestChildInformation extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Age = null;
+    public ?int $Age = null;
     /**
      * Constructor method for typeGuestChildInformation
      * @uses TypeGuestChildInformation::setAge()
@@ -48,10 +47,6 @@ class TypeGuestChildInformation extends AbstractStructBase
      */
     public function setAge(?int $age = null): self
     {
-        // validation for constraint: int
-        if (!is_null($age) && !(is_int($age) || ctype_digit($age))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($age, true), gettype($age)), __LINE__);
-        }
         $this->Age = $age;
         
         return $this;

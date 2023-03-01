@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class BackOfficeHandOff extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The Location
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class BackOfficeHandOff extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Location = null;
+    public ?string $Location = null;
     /**
      * The PseudoCityCode
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class BackOfficeHandOff extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PseudoCityCode = null;
+    public ?string $PseudoCityCode = null;
     /**
      * Constructor method for BackOfficeHandOff
      * @uses BackOfficeHandOff::setType()
@@ -68,18 +67,11 @@ class BackOfficeHandOff extends AbstractStructBase
     }
     /**
      * Set Type value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeBackOffice::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeBackOffice::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $type
      * @return \Travelport\UniversalRecord\StructType\BackOfficeHandOff
      */
     public function setType(string $type): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeBackOffice::valueIsValid($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeBackOffice', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeBackOffice::getValidValues())), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -99,10 +91,6 @@ class BackOfficeHandOff extends AbstractStructBase
      */
     public function setLocation(?string $location = null): self
     {
-        // validation for constraint: string
-        if (!is_null($location) && !is_string($location)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($location, true), gettype($location)), __LINE__);
-        }
         $this->Location = $location;
         
         return $this;
@@ -122,18 +110,6 @@ class BackOfficeHandOff extends AbstractStructBase
      */
     public function setPseudoCityCode(?string $pseudoCityCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($pseudoCityCode) && !is_string($pseudoCityCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pseudoCityCode, true), gettype($pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
         $this->PseudoCityCode = $pseudoCityCode;
         
         return $this;

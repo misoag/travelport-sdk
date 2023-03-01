@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class BrandInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $BrandID;
+    public string $BrandID;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class BrandInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The AirPricingInfoRef
      * Meta information extracted from the WSDL
@@ -43,7 +42,7 @@ class BrandInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AirPricingInfoRef = null;
+    public ?string $AirPricingInfoRef = null;
     /**
      * The FareInfoRef
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class BrandInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FareInfoRef = null;
+    public ?string $FareInfoRef = null;
     /**
      * Constructor method for BrandInfo
      * @uses BrandInfo::setBrandID()
@@ -87,18 +86,6 @@ class BrandInfo extends AbstractStructBase
      */
     public function setBrandID(string $brandID): self
     {
-        // validation for constraint: string
-        if (!is_null($brandID) && !is_string($brandID)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($brandID, true), gettype($brandID)), __LINE__);
-        }
-        // validation for constraint: maxLength(19)
-        if (!is_null($brandID) && mb_strlen((string) $brandID) > 19) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 19', mb_strlen((string) $brandID)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($brandID) && mb_strlen((string) $brandID) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $brandID)), __LINE__);
-        }
         $this->BrandID = $brandID;
         
         return $this;
@@ -118,10 +105,6 @@ class BrandInfo extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -141,10 +124,6 @@ class BrandInfo extends AbstractStructBase
      */
     public function setAirPricingInfoRef(?string $airPricingInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($airPricingInfoRef) && !is_string($airPricingInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($airPricingInfoRef, true), gettype($airPricingInfoRef)), __LINE__);
-        }
         $this->AirPricingInfoRef = $airPricingInfoRef;
         
         return $this;
@@ -164,10 +143,6 @@ class BrandInfo extends AbstractStructBase
      */
     public function setFareInfoRef(?string $fareInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fareInfoRef) && !is_string($fareInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareInfoRef, true), gettype($fareInfoRef)), __LINE__);
-        }
         $this->FareInfoRef = $fareInfoRef;
         
         return $this;

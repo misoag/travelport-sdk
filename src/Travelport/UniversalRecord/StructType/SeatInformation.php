@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,40 +22,40 @@ class SeatInformation extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * The Power
      * Meta information extracted from the WSDL
      * - documentation: Detail about any electrical power the seat might have. For example: No Power Providers: 1G, 1V, 1P
      * @var string|null
      */
-    protected ?string $Power = null;
+    public ?string $Power = null;
     /**
      * The Video
      * Meta information extracted from the WSDL
      * - documentation: Detail about any video components the seat might have. For example: No Video Providers: 1G, 1V, 1P
      * @var string|null
      */
-    protected ?string $Video = null;
+    public ?string $Video = null;
     /**
      * The Type
      * Meta information extracted from the WSDL
      * - documentation: Detail about the type of seat. For example: Exit Row, Standard, etc. Providers: 1G, 1V, 1P
      * @var string|null
      */
-    protected ?string $Type = null;
+    public ?string $Type = null;
     /**
      * The Description
      * Meta information extracted from the WSDL
      * - documentation: Detailed description of the seat. Providers: 1G, 1V, 1P
      * @var string|null
      */
-    protected ?string $Description = null;
+    public ?string $Description = null;
     /**
      * The Rating
      * @var \Travelport\UniversalRecord\StructType\Rating|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Rating $Rating = null;
+    public ?\Travelport\UniversalRecord\StructType\Rating $Rating = null;
     /**
      * Constructor method for SeatInformation
      * @uses SeatInformation::setKey()
@@ -97,10 +96,6 @@ class SeatInformation extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -120,10 +115,6 @@ class SeatInformation extends AbstractStructBase
      */
     public function setPower(?string $power = null): self
     {
-        // validation for constraint: string
-        if (!is_null($power) && !is_string($power)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($power, true), gettype($power)), __LINE__);
-        }
         $this->Power = $power;
         
         return $this;
@@ -143,10 +134,6 @@ class SeatInformation extends AbstractStructBase
      */
     public function setVideo(?string $video = null): self
     {
-        // validation for constraint: string
-        if (!is_null($video) && !is_string($video)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($video, true), gettype($video)), __LINE__);
-        }
         $this->Video = $video;
         
         return $this;
@@ -166,10 +153,6 @@ class SeatInformation extends AbstractStructBase
      */
     public function setType(?string $type = null): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -189,10 +172,6 @@ class SeatInformation extends AbstractStructBase
      */
     public function setDescription(?string $description = null): self
     {
-        // validation for constraint: string
-        if (!is_null($description) && !is_string($description)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
-        }
         $this->Description = $description;
         
         return $this;

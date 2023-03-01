@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class SegmentModifiers extends AbstractStructBase
      * - ref: AirSegmentRef
      * @var \Travelport\UniversalRecord\StructType\AirSegmentRef|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AirSegmentRef $AirSegmentRef = null;
+    public ?\Travelport\UniversalRecord\StructType\AirSegmentRef $AirSegmentRef = null;
     /**
      * The TicketValidity
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class SegmentModifiers extends AbstractStructBase
      * - ref: TicketValidity
      * @var \Travelport\UniversalRecord\StructType\TicketValidity|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TicketValidity $TicketValidity = null;
+    public ?\Travelport\UniversalRecord\StructType\TicketValidity $TicketValidity = null;
     /**
      * The BaggageAllowance
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class SegmentModifiers extends AbstractStructBase
      * - ref: BaggageAllowance
      * @var \Travelport\UniversalRecord\StructType\BaggageAllowance|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\BaggageAllowance $BaggageAllowance = null;
+    public ?\Travelport\UniversalRecord\StructType\BaggageAllowance $BaggageAllowance = null;
     /**
      * The TicketDesignator
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class SegmentModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $TicketDesignator = null;
+    public ?string $TicketDesignator = null;
     /**
      * Constructor method for SegmentModifiers
      * @uses SegmentModifiers::setAirSegmentRef()
@@ -140,18 +139,6 @@ class SegmentModifiers extends AbstractStructBase
      */
     public function setTicketDesignator(?string $ticketDesignator = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketDesignator) && !is_string($ticketDesignator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketDesignator, true), gettype($ticketDesignator)), __LINE__);
-        }
-        // validation for constraint: maxLength(20)
-        if (!is_null($ticketDesignator) && mb_strlen((string) $ticketDesignator) > 20) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 20', mb_strlen((string) $ticketDesignator)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if (!is_null($ticketDesignator) && mb_strlen((string) $ticketDesignator) < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $ticketDesignator)), __LINE__);
-        }
         $this->TicketDesignator = $ticketDesignator;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class FareFamilyDisplay extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ModifierType;
+    public string $ModifierType;
     /**
      * Constructor method for FareFamilyDisplay
      * @uses FareFamilyDisplay::setModifierType()
@@ -49,10 +48,6 @@ class FareFamilyDisplay extends AbstractStructBase
      */
     public function setModifierType(string $modifierType): self
     {
-        // validation for constraint: string
-        if (!is_null($modifierType) && !is_string($modifierType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($modifierType, true), gettype($modifierType)), __LINE__);
-        }
         $this->ModifierType = $modifierType;
         
         return $this;

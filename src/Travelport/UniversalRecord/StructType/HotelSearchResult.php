@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class HotelSearchResult extends AbstractStructBase
      * - ref: HotelProperty
      * @var \Travelport\UniversalRecord\StructType\HotelProperty[]
      */
-    protected array $HotelProperty;
+    public array $HotelProperty;
     /**
      * The VendorLocation
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class HotelSearchResult extends AbstractStructBase
      * - ref: common:VendorLocation
      * @var \Travelport\UniversalRecord\StructType\VendorLocation[]
      */
-    protected ?array $VendorLocation = null;
+    public ?array $VendorLocation = null;
     /**
      * The HotelSearchError
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class HotelSearchResult extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\HotelSearchError[]
      */
-    protected ?array $HotelSearchError = null;
+    public ?array $HotelSearchError = null;
     /**
      * The CorporateDiscountID
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class HotelSearchResult extends AbstractStructBase
      * - ref: common:CorporateDiscountID
      * @var \Travelport\UniversalRecord\StructType\CorporateDiscountID[]
      */
-    protected ?array $CorporateDiscountID = null;
+    public ?array $CorporateDiscountID = null;
     /**
      * The RateInfo
      * Meta information extracted from the WSDL
@@ -58,7 +57,7 @@ class HotelSearchResult extends AbstractStructBase
      * - ref: RateInfo
      * @var \Travelport\UniversalRecord\StructType\RateInfo[]
      */
-    protected ?array $RateInfo = null;
+    public ?array $RateInfo = null;
     /**
      * The MediaItem
      * Meta information extracted from the WSDL
@@ -66,7 +65,7 @@ class HotelSearchResult extends AbstractStructBase
      * - ref: common:MediaItem
      * @var \Travelport\UniversalRecord\StructType\MediaItem|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\MediaItem $MediaItem = null;
+    public ?\Travelport\UniversalRecord\StructType\MediaItem $MediaItem = null;
     /**
      * The HotelType
      * Meta information extracted from the WSDL
@@ -74,7 +73,7 @@ class HotelSearchResult extends AbstractStructBase
      * - ref: HotelType
      * @var \Travelport\UniversalRecord\StructType\HotelType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\HotelType $HotelType = null;
+    public ?\Travelport\UniversalRecord\StructType\HotelType $HotelType = null;
     /**
      * The PropertyDescription
      * Meta information extracted from the WSDL
@@ -82,7 +81,7 @@ class HotelSearchResult extends AbstractStructBase
      * - ref: PropertyDescription
      * @var \Travelport\UniversalRecord\StructType\PropertyDescription|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PropertyDescription $PropertyDescription = null;
+    public ?\Travelport\UniversalRecord\StructType\PropertyDescription $PropertyDescription = null;
     /**
      * Constructor method for HotelSearchResult
      * @uses HotelSearchResult::setHotelProperty()
@@ -123,48 +122,12 @@ class HotelSearchResult extends AbstractStructBase
         return $this->HotelProperty;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHotelProperty method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHotelProperty method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateHotelPropertyForArrayConstraintFromSetHotelProperty(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelSearchResultHotelPropertyItem) {
-            // validation for constraint: itemType
-            if (!$hotelSearchResultHotelPropertyItem instanceof \Travelport\UniversalRecord\StructType\HotelProperty) {
-                $invalidValues[] = is_object($hotelSearchResultHotelPropertyItem) ? get_class($hotelSearchResultHotelPropertyItem) : sprintf('%s(%s)', gettype($hotelSearchResultHotelPropertyItem), var_export($hotelSearchResultHotelPropertyItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The HotelProperty property can only contain items of type \Travelport\UniversalRecord\StructType\HotelProperty, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set HotelProperty value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\HotelProperty[] $hotelProperty
      * @return \Travelport\UniversalRecord\StructType\HotelSearchResult
      */
     public function setHotelProperty(array $hotelProperty): self
     {
-        // validation for constraint: array
-        if ('' !== ($hotelPropertyArrayErrorMessage = self::validateHotelPropertyForArrayConstraintFromSetHotelProperty($hotelProperty))) {
-            throw new InvalidArgumentException($hotelPropertyArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($hotelProperty) && count($hotelProperty) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($hotelProperty)), __LINE__);
-        }
         $this->HotelProperty = $hotelProperty;
         
         return $this;
@@ -177,14 +140,6 @@ class HotelSearchResult extends AbstractStructBase
      */
     public function addToHotelProperty(\Travelport\UniversalRecord\StructType\HotelProperty $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\HotelProperty) {
-            throw new InvalidArgumentException(sprintf('The HotelProperty property can only contain items of type \Travelport\UniversalRecord\StructType\HotelProperty, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->HotelProperty) && count($this->HotelProperty) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->HotelProperty)), __LINE__);
-        }
         $this->HotelProperty[] = $item;
         
         return $this;
@@ -198,48 +153,12 @@ class HotelSearchResult extends AbstractStructBase
         return $this->VendorLocation;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setVendorLocation method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setVendorLocation method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateVendorLocationForArrayConstraintFromSetVendorLocation(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelSearchResultVendorLocationItem) {
-            // validation for constraint: itemType
-            if (!$hotelSearchResultVendorLocationItem instanceof \Travelport\UniversalRecord\StructType\VendorLocation) {
-                $invalidValues[] = is_object($hotelSearchResultVendorLocationItem) ? get_class($hotelSearchResultVendorLocationItem) : sprintf('%s(%s)', gettype($hotelSearchResultVendorLocationItem), var_export($hotelSearchResultVendorLocationItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The VendorLocation property can only contain items of type \Travelport\UniversalRecord\StructType\VendorLocation, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set VendorLocation value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\VendorLocation[] $vendorLocation
      * @return \Travelport\UniversalRecord\StructType\HotelSearchResult
      */
     public function setVendorLocation(?array $vendorLocation = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($vendorLocationArrayErrorMessage = self::validateVendorLocationForArrayConstraintFromSetVendorLocation($vendorLocation))) {
-            throw new InvalidArgumentException($vendorLocationArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($vendorLocation) && count($vendorLocation) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($vendorLocation)), __LINE__);
-        }
         $this->VendorLocation = $vendorLocation;
         
         return $this;
@@ -252,14 +171,6 @@ class HotelSearchResult extends AbstractStructBase
      */
     public function addToVendorLocation(\Travelport\UniversalRecord\StructType\VendorLocation $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\VendorLocation) {
-            throw new InvalidArgumentException(sprintf('The VendorLocation property can only contain items of type \Travelport\UniversalRecord\StructType\VendorLocation, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->VendorLocation) && count($this->VendorLocation) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->VendorLocation)), __LINE__);
-        }
         $this->VendorLocation[] = $item;
         
         return $this;
@@ -273,48 +184,12 @@ class HotelSearchResult extends AbstractStructBase
         return $this->HotelSearchError;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHotelSearchError method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHotelSearchError method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateHotelSearchErrorForArrayConstraintFromSetHotelSearchError(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelSearchResultHotelSearchErrorItem) {
-            // validation for constraint: itemType
-            if (!$hotelSearchResultHotelSearchErrorItem instanceof \Travelport\UniversalRecord\StructType\HotelSearchError) {
-                $invalidValues[] = is_object($hotelSearchResultHotelSearchErrorItem) ? get_class($hotelSearchResultHotelSearchErrorItem) : sprintf('%s(%s)', gettype($hotelSearchResultHotelSearchErrorItem), var_export($hotelSearchResultHotelSearchErrorItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The HotelSearchError property can only contain items of type \Travelport\UniversalRecord\StructType\HotelSearchError, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set HotelSearchError value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\HotelSearchError[] $hotelSearchError
      * @return \Travelport\UniversalRecord\StructType\HotelSearchResult
      */
     public function setHotelSearchError(?array $hotelSearchError = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($hotelSearchErrorArrayErrorMessage = self::validateHotelSearchErrorForArrayConstraintFromSetHotelSearchError($hotelSearchError))) {
-            throw new InvalidArgumentException($hotelSearchErrorArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($hotelSearchError) && count($hotelSearchError) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($hotelSearchError)), __LINE__);
-        }
         $this->HotelSearchError = $hotelSearchError;
         
         return $this;
@@ -327,14 +202,6 @@ class HotelSearchResult extends AbstractStructBase
      */
     public function addToHotelSearchError(\Travelport\UniversalRecord\StructType\HotelSearchError $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\HotelSearchError) {
-            throw new InvalidArgumentException(sprintf('The HotelSearchError property can only contain items of type \Travelport\UniversalRecord\StructType\HotelSearchError, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->HotelSearchError) && count($this->HotelSearchError) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->HotelSearchError)), __LINE__);
-        }
         $this->HotelSearchError[] = $item;
         
         return $this;
@@ -348,48 +215,12 @@ class HotelSearchResult extends AbstractStructBase
         return $this->CorporateDiscountID;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setCorporateDiscountID method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setCorporateDiscountID method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateCorporateDiscountIDForArrayConstraintFromSetCorporateDiscountID(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelSearchResultCorporateDiscountIDItem) {
-            // validation for constraint: itemType
-            if (!$hotelSearchResultCorporateDiscountIDItem instanceof \Travelport\UniversalRecord\StructType\CorporateDiscountID) {
-                $invalidValues[] = is_object($hotelSearchResultCorporateDiscountIDItem) ? get_class($hotelSearchResultCorporateDiscountIDItem) : sprintf('%s(%s)', gettype($hotelSearchResultCorporateDiscountIDItem), var_export($hotelSearchResultCorporateDiscountIDItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The CorporateDiscountID property can only contain items of type \Travelport\UniversalRecord\StructType\CorporateDiscountID, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set CorporateDiscountID value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\CorporateDiscountID[] $corporateDiscountID
      * @return \Travelport\UniversalRecord\StructType\HotelSearchResult
      */
     public function setCorporateDiscountID(?array $corporateDiscountID = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($corporateDiscountIDArrayErrorMessage = self::validateCorporateDiscountIDForArrayConstraintFromSetCorporateDiscountID($corporateDiscountID))) {
-            throw new InvalidArgumentException($corporateDiscountIDArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($corporateDiscountID) && count($corporateDiscountID) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($corporateDiscountID)), __LINE__);
-        }
         $this->CorporateDiscountID = $corporateDiscountID;
         
         return $this;
@@ -402,14 +233,6 @@ class HotelSearchResult extends AbstractStructBase
      */
     public function addToCorporateDiscountID(\Travelport\UniversalRecord\StructType\CorporateDiscountID $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\CorporateDiscountID) {
-            throw new InvalidArgumentException(sprintf('The CorporateDiscountID property can only contain items of type \Travelport\UniversalRecord\StructType\CorporateDiscountID, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->CorporateDiscountID) && count($this->CorporateDiscountID) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->CorporateDiscountID)), __LINE__);
-        }
         $this->CorporateDiscountID[] = $item;
         
         return $this;
@@ -423,48 +246,12 @@ class HotelSearchResult extends AbstractStructBase
         return $this->RateInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRateInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRateInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateRateInfoForArrayConstraintFromSetRateInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelSearchResultRateInfoItem) {
-            // validation for constraint: itemType
-            if (!$hotelSearchResultRateInfoItem instanceof \Travelport\UniversalRecord\StructType\RateInfo) {
-                $invalidValues[] = is_object($hotelSearchResultRateInfoItem) ? get_class($hotelSearchResultRateInfoItem) : sprintf('%s(%s)', gettype($hotelSearchResultRateInfoItem), var_export($hotelSearchResultRateInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The RateInfo property can only contain items of type \Travelport\UniversalRecord\StructType\RateInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set RateInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\RateInfo[] $rateInfo
      * @return \Travelport\UniversalRecord\StructType\HotelSearchResult
      */
     public function setRateInfo(?array $rateInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($rateInfoArrayErrorMessage = self::validateRateInfoForArrayConstraintFromSetRateInfo($rateInfo))) {
-            throw new InvalidArgumentException($rateInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($rateInfo) && count($rateInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($rateInfo)), __LINE__);
-        }
         $this->RateInfo = $rateInfo;
         
         return $this;
@@ -477,14 +264,6 @@ class HotelSearchResult extends AbstractStructBase
      */
     public function addToRateInfo(\Travelport\UniversalRecord\StructType\RateInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\RateInfo) {
-            throw new InvalidArgumentException(sprintf('The RateInfo property can only contain items of type \Travelport\UniversalRecord\StructType\RateInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->RateInfo) && count($this->RateInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->RateInfo)), __LINE__);
-        }
         $this->RateInfo[] = $item;
         
         return $this;

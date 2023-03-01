@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,42 +21,42 @@ class SolutionGroup extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $TripType;
+    public string $TripType;
     /**
      * The PermittedAccountCodes
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\PermittedAccountCodes|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PermittedAccountCodes $PermittedAccountCodes = null;
+    public ?\Travelport\UniversalRecord\StructType\PermittedAccountCodes $PermittedAccountCodes = null;
     /**
      * The PreferredAccountCodes
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\PreferredAccountCodes|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PreferredAccountCodes $PreferredAccountCodes = null;
+    public ?\Travelport\UniversalRecord\StructType\PreferredAccountCodes $PreferredAccountCodes = null;
     /**
      * The ProhibitedAccountCodes
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\ProhibitedAccountCodes|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ProhibitedAccountCodes $ProhibitedAccountCodes = null;
+    public ?\Travelport\UniversalRecord\StructType\ProhibitedAccountCodes $ProhibitedAccountCodes = null;
     /**
      * The PermittedPointOfSales
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\PermittedPointOfSales|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PermittedPointOfSales $PermittedPointOfSales = null;
+    public ?\Travelport\UniversalRecord\StructType\PermittedPointOfSales $PermittedPointOfSales = null;
     /**
      * The ProhibitedPointOfSales
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\ProhibitedPointOfSales|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ProhibitedPointOfSales $ProhibitedPointOfSales = null;
+    public ?\Travelport\UniversalRecord\StructType\ProhibitedPointOfSales $ProhibitedPointOfSales = null;
     /**
      * The Count
      * Meta information extracted from the WSDL
@@ -65,7 +64,7 @@ class SolutionGroup extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Count = null;
+    public ?int $Count = null;
     /**
      * The Diversification
      * Meta information extracted from the WSDL
@@ -73,7 +72,7 @@ class SolutionGroup extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Diversification = null;
+    public ?string $Diversification = null;
     /**
      * The Tag
      * Meta information extracted from the WSDL
@@ -82,7 +81,7 @@ class SolutionGroup extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Tag = null;
+    public ?string $Tag = null;
     /**
      * The Primary
      * Meta information extracted from the WSDL
@@ -91,7 +90,7 @@ class SolutionGroup extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Primary = null;
+    public ?bool $Primary = null;
     /**
      * Constructor method for SolutionGroup
      * @uses SolutionGroup::setTripType()
@@ -139,18 +138,11 @@ class SolutionGroup extends AbstractStructBase
     }
     /**
      * Set TripType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTripType::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTripType::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $tripType
      * @return \Travelport\UniversalRecord\StructType\SolutionGroup
      */
     public function setTripType(string $tripType): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeTripType::valueIsValid($tripType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeTripType', is_array($tripType) ? implode(', ', $tripType) : var_export($tripType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeTripType::getValidValues())), __LINE__);
-        }
         $this->TripType = $tripType;
         
         return $this;
@@ -265,10 +257,6 @@ class SolutionGroup extends AbstractStructBase
      */
     public function setCount(?int $count = null): self
     {
-        // validation for constraint: int
-        if (!is_null($count) && !(is_int($count) || ctype_digit($count))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($count, true), gettype($count)), __LINE__);
-        }
         $this->Count = $count;
         
         return $this;
@@ -283,18 +271,11 @@ class SolutionGroup extends AbstractStructBase
     }
     /**
      * Set Diversification value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeDiversity::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeDiversity::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $diversification
      * @return \Travelport\UniversalRecord\StructType\SolutionGroup
      */
     public function setDiversification(?string $diversification = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeDiversity::valueIsValid($diversification)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeDiversity', is_array($diversification) ? implode(', ', $diversification) : var_export($diversification, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeDiversity::getValidValues())), __LINE__);
-        }
         $this->Diversification = $diversification;
         
         return $this;
@@ -314,14 +295,6 @@ class SolutionGroup extends AbstractStructBase
      */
     public function setTag(?string $tag = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tag) && !is_string($tag)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tag, true), gettype($tag)), __LINE__);
-        }
-        // validation for constraint: maxLength(20)
-        if (!is_null($tag) && mb_strlen((string) $tag) > 20) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 20', mb_strlen((string) $tag)), __LINE__);
-        }
         $this->Tag = $tag;
         
         return $this;
@@ -341,10 +314,6 @@ class SolutionGroup extends AbstractStructBase
      */
     public function setPrimary(?bool $primary = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($primary) && !is_bool($primary)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($primary, true), gettype($primary)), __LINE__);
-        }
         $this->Primary = $primary;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class RailInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $TrainNumber;
+    public string $TrainNumber;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class RailInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ProviderCode;
+    public string $ProviderCode;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class RailInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $SupplierCode;
+    public string $SupplierCode;
     /**
      * The DepartureTime
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class RailInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $DepartureTime;
+    public string $DepartureTime;
     /**
      * The Origin
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class RailInfo extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Origin = null;
+    public ?string $Origin = null;
     /**
      * The RailLocOrigin
      * Meta information extracted from the WSDL
@@ -81,7 +80,7 @@ class RailInfo extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $RailLocOrigin = null;
+    public ?string $RailLocOrigin = null;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -93,7 +92,7 @@ class RailInfo extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Destination = null;
+    public ?string $Destination = null;
     /**
      * The RailLocDestination
      * Meta information extracted from the WSDL
@@ -106,7 +105,7 @@ class RailInfo extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $RailLocDestination = null;
+    public ?string $RailLocDestination = null;
     /**
      * The ArrivalTime
      * Meta information extracted from the WSDL
@@ -115,7 +114,7 @@ class RailInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ArrivalTime = null;
+    public ?string $ArrivalTime = null;
     /**
      * Constructor method for RailInfo
      * @uses RailInfo::setTrainNumber()
@@ -165,18 +164,6 @@ class RailInfo extends AbstractStructBase
      */
     public function setTrainNumber(string $trainNumber): self
     {
-        // validation for constraint: string
-        if (!is_null($trainNumber) && !is_string($trainNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($trainNumber, true), gettype($trainNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($trainNumber) && mb_strlen((string) $trainNumber) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $trainNumber)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($trainNumber) && mb_strlen((string) $trainNumber) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $trainNumber)), __LINE__);
-        }
         $this->TrainNumber = $trainNumber;
         
         return $this;
@@ -196,18 +183,6 @@ class RailInfo extends AbstractStructBase
      */
     public function setProviderCode(string $providerCode): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -227,18 +202,6 @@ class RailInfo extends AbstractStructBase
      */
     public function setSupplierCode(string $supplierCode): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $supplierCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;
@@ -258,10 +221,6 @@ class RailInfo extends AbstractStructBase
      */
     public function setDepartureTime(string $departureTime): self
     {
-        // validation for constraint: string
-        if (!is_null($departureTime) && !is_string($departureTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($departureTime, true), gettype($departureTime)), __LINE__);
-        }
         $this->DepartureTime = $departureTime;
         
         return $this;
@@ -281,14 +240,6 @@ class RailInfo extends AbstractStructBase
      */
     public function setOrigin(?string $origin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($origin) && mb_strlen((string) $origin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -308,18 +259,6 @@ class RailInfo extends AbstractStructBase
      */
     public function setRailLocOrigin(?string $railLocOrigin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($railLocOrigin) && !is_string($railLocOrigin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($railLocOrigin, true), gettype($railLocOrigin)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($railLocOrigin) && mb_strlen((string) $railLocOrigin) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $railLocOrigin)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($railLocOrigin) && mb_strlen((string) $railLocOrigin) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $railLocOrigin)), __LINE__);
-        }
         $this->RailLocOrigin = $railLocOrigin;
         
         return $this;
@@ -339,14 +278,6 @@ class RailInfo extends AbstractStructBase
      */
     public function setDestination(?string $destination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destination) && mb_strlen((string) $destination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -366,18 +297,6 @@ class RailInfo extends AbstractStructBase
      */
     public function setRailLocDestination(?string $railLocDestination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($railLocDestination) && !is_string($railLocDestination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($railLocDestination, true), gettype($railLocDestination)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($railLocDestination) && mb_strlen((string) $railLocDestination) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $railLocDestination)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($railLocDestination) && mb_strlen((string) $railLocDestination) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $railLocDestination)), __LINE__);
-        }
         $this->RailLocDestination = $railLocDestination;
         
         return $this;
@@ -397,10 +316,6 @@ class RailInfo extends AbstractStructBase
      */
     public function setArrivalTime(?string $arrivalTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($arrivalTime) && !is_string($arrivalTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($arrivalTime, true), gettype($arrivalTime)), __LINE__);
-        }
         $this->ArrivalTime = $arrivalTime;
         
         return $this;

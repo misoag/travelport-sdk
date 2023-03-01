@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class CreditCardAuth extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Amount;
+    public string $Amount;
     /**
      * The AuthResultCode
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class CreditCardAuth extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $AuthResultCode;
+    public string $AuthResultCode;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class CreditCardAuth extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The PaymentRef
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class CreditCardAuth extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PaymentRef = null;
+    public ?string $PaymentRef = null;
     /**
      * The TransId
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class CreditCardAuth extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TransId = null;
+    public ?string $TransId = null;
     /**
      * The Number
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class CreditCardAuth extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Number = null;
+    public ?string $Number = null;
     /**
      * The AuthCode
      * Meta information extracted from the WSDL
@@ -76,7 +75,7 @@ class CreditCardAuth extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AuthCode = null;
+    public ?string $AuthCode = null;
     /**
      * The AVSResultCode
      * Meta information extracted from the WSDL
@@ -84,7 +83,7 @@ class CreditCardAuth extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AVSResultCode = null;
+    public ?string $AVSResultCode = null;
     /**
      * The Message
      * Meta information extracted from the WSDL
@@ -92,7 +91,7 @@ class CreditCardAuth extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Message = null;
+    public ?string $Message = null;
     /**
      * The ProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -101,7 +100,7 @@ class CreditCardAuth extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderReservationInfoRef = null;
+    public ?string $ProviderReservationInfoRef = null;
     /**
      * The FormOfPaymentRef
      * Meta information extracted from the WSDL
@@ -110,7 +109,7 @@ class CreditCardAuth extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FormOfPaymentRef = null;
+    public ?string $FormOfPaymentRef = null;
     /**
      * Constructor method for CreditCardAuth
      * @uses CreditCardAuth::setAmount()
@@ -166,10 +165,6 @@ class CreditCardAuth extends AbstractStructBase
      */
     public function setAmount(string $amount): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -189,10 +184,6 @@ class CreditCardAuth extends AbstractStructBase
      */
     public function setAuthResultCode(string $authResultCode): self
     {
-        // validation for constraint: string
-        if (!is_null($authResultCode) && !is_string($authResultCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authResultCode, true), gettype($authResultCode)), __LINE__);
-        }
         $this->AuthResultCode = $authResultCode;
         
         return $this;
@@ -212,10 +203,6 @@ class CreditCardAuth extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -235,10 +222,6 @@ class CreditCardAuth extends AbstractStructBase
      */
     public function setPaymentRef(?string $paymentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($paymentRef) && !is_string($paymentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($paymentRef, true), gettype($paymentRef)), __LINE__);
-        }
         $this->PaymentRef = $paymentRef;
         
         return $this;
@@ -258,10 +241,6 @@ class CreditCardAuth extends AbstractStructBase
      */
     public function setTransId(?string $transId = null): self
     {
-        // validation for constraint: string
-        if (!is_null($transId) && !is_string($transId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transId, true), gettype($transId)), __LINE__);
-        }
         $this->TransId = $transId;
         
         return $this;
@@ -281,18 +260,6 @@ class CreditCardAuth extends AbstractStructBase
      */
     public function setNumber(?string $number = null): self
     {
-        // validation for constraint: string
-        if (!is_null($number) && !is_string($number)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($number) && mb_strlen((string) $number) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $number)), __LINE__);
-        }
-        // validation for constraint: minLength(13)
-        if (!is_null($number) && mb_strlen((string) $number) < 13) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 13', mb_strlen((string) $number)), __LINE__);
-        }
         $this->Number = $number;
         
         return $this;
@@ -312,10 +279,6 @@ class CreditCardAuth extends AbstractStructBase
      */
     public function setAuthCode(?string $authCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($authCode) && !is_string($authCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($authCode, true), gettype($authCode)), __LINE__);
-        }
         $this->AuthCode = $authCode;
         
         return $this;
@@ -335,10 +298,6 @@ class CreditCardAuth extends AbstractStructBase
      */
     public function setAVSResultCode(?string $aVSResultCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($aVSResultCode) && !is_string($aVSResultCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($aVSResultCode, true), gettype($aVSResultCode)), __LINE__);
-        }
         $this->AVSResultCode = $aVSResultCode;
         
         return $this;
@@ -358,10 +317,6 @@ class CreditCardAuth extends AbstractStructBase
      */
     public function setMessage(?string $message = null): self
     {
-        // validation for constraint: string
-        if (!is_null($message) && !is_string($message)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($message, true), gettype($message)), __LINE__);
-        }
         $this->Message = $message;
         
         return $this;
@@ -381,10 +336,6 @@ class CreditCardAuth extends AbstractStructBase
      */
     public function setProviderReservationInfoRef(?string $providerReservationInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerReservationInfoRef) && !is_string($providerReservationInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerReservationInfoRef, true), gettype($providerReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef = $providerReservationInfoRef;
         
         return $this;
@@ -404,10 +355,6 @@ class CreditCardAuth extends AbstractStructBase
      */
     public function setFormOfPaymentRef(?string $formOfPaymentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($formOfPaymentRef) && !is_string($formOfPaymentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($formOfPaymentRef, true), gettype($formOfPaymentRef)), __LINE__);
-        }
         $this->FormOfPaymentRef = $formOfPaymentRef;
         
         return $this;

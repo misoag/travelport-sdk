@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,17 +18,17 @@ class NameInfo extends AbstractStructBase
      * The Prefix
      * @var string|null
      */
-    protected ?string $Prefix = null;
+    public ?string $Prefix = null;
     /**
      * The First
      * @var string|null
      */
-    protected ?string $First = null;
+    public ?string $First = null;
     /**
      * The Middle
      * @var string|null
      */
-    protected ?string $Middle = null;
+    public ?string $Middle = null;
     /**
      * The Last
      * Meta information extracted from the WSDL
@@ -39,12 +38,12 @@ class NameInfo extends AbstractStructBase
      * - minLength: 1
      * @var string|null
      */
-    protected ?string $Last = null;
+    public ?string $Last = null;
     /**
      * The Suffix
      * @var string|null
      */
-    protected ?string $Suffix = null;
+    public ?string $Suffix = null;
     /**
      * Constructor method for NameInfo
      * @uses NameInfo::setPrefix()
@@ -82,10 +81,6 @@ class NameInfo extends AbstractStructBase
      */
     public function setPrefix(?string $prefix = null): self
     {
-        // validation for constraint: string
-        if (!is_null($prefix) && !is_string($prefix)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($prefix, true), gettype($prefix)), __LINE__);
-        }
         $this->Prefix = $prefix;
         
         return $this;
@@ -105,10 +100,6 @@ class NameInfo extends AbstractStructBase
      */
     public function setFirst(?string $first = null): self
     {
-        // validation for constraint: string
-        if (!is_null($first) && !is_string($first)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($first, true), gettype($first)), __LINE__);
-        }
         $this->First = $first;
         
         return $this;
@@ -128,10 +119,6 @@ class NameInfo extends AbstractStructBase
      */
     public function setMiddle(?string $middle = null): self
     {
-        // validation for constraint: string
-        if (!is_null($middle) && !is_string($middle)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($middle, true), gettype($middle)), __LINE__);
-        }
         $this->Middle = $middle;
         
         return $this;
@@ -151,18 +138,6 @@ class NameInfo extends AbstractStructBase
      */
     public function setLast(?string $last = null): self
     {
-        // validation for constraint: string
-        if (!is_null($last) && !is_string($last)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($last, true), gettype($last)), __LINE__);
-        }
-        // validation for constraint: maxLength(256)
-        if (!is_null($last) && mb_strlen((string) $last) > 256) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 256', mb_strlen((string) $last)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($last) && mb_strlen((string) $last) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $last)), __LINE__);
-        }
         $this->Last = $last;
         
         return $this;
@@ -182,10 +157,6 @@ class NameInfo extends AbstractStructBase
      */
     public function setSuffix(?string $suffix = null): self
     {
-        // validation for constraint: string
-        if (!is_null($suffix) && !is_string($suffix)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($suffix, true), gettype($suffix)), __LINE__);
-        }
         $this->Suffix = $suffix;
         
         return $this;

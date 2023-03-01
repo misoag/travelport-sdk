@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class MCO extends MCOInformation
      * - use: required
      * @var bool
      */
-    protected bool $MCOIssued;
+    public bool $MCOIssued;
     /**
      * The FormOfPayment
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class MCO extends MCOInformation
      * - ref: FormOfPayment
      * @var \Travelport\UniversalRecord\StructType\FormOfPayment[]
      */
-    protected ?array $FormOfPayment = null;
+    public ?array $FormOfPayment = null;
     /**
      * The Endorsement
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class MCO extends MCOInformation
      * - ref: Endorsement
      * @var \Travelport\UniversalRecord\StructType\Endorsement|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Endorsement $Endorsement = null;
+    public ?\Travelport\UniversalRecord\StructType\Endorsement $Endorsement = null;
     /**
      * The MCOExchangeInfo
      * Meta information extracted from the WSDL
@@ -45,7 +44,7 @@ class MCO extends MCOInformation
      * - ref: MCOExchangeInfo
      * @var \Travelport\UniversalRecord\StructType\MCOExchangeInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\MCOExchangeInfo $MCOExchangeInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\MCOExchangeInfo $MCOExchangeInfo = null;
     /**
      * The MCOFeeInfo
      * Meta information extracted from the WSDL
@@ -53,7 +52,7 @@ class MCO extends MCOInformation
      * - ref: MCOFeeInfo
      * @var \Travelport\UniversalRecord\StructType\MCOFeeInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\MCOFeeInfo $MCOFeeInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\MCOFeeInfo $MCOFeeInfo = null;
     /**
      * The MCORemark
      * Meta information extracted from the WSDL
@@ -62,7 +61,7 @@ class MCO extends MCOInformation
      * - ref: MCORemark
      * @var \Travelport\UniversalRecord\StructType\MCORemark[]
      */
-    protected ?array $MCORemark = null;
+    public ?array $MCORemark = null;
     /**
      * The MCOPriceData
      * Meta information extracted from the WSDL
@@ -70,7 +69,7 @@ class MCO extends MCOInformation
      * - ref: MCOPriceData
      * @var \Travelport\UniversalRecord\StructType\MCOPriceData|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\MCOPriceData $MCOPriceData = null;
+    public ?\Travelport\UniversalRecord\StructType\MCOPriceData $MCOPriceData = null;
     /**
      * The StockControl
      * Meta information extracted from the WSDL
@@ -79,7 +78,7 @@ class MCO extends MCOInformation
      * - ref: StockControl
      * @var \Travelport\UniversalRecord\StructType\StockControl[]
      */
-    protected ?array $StockControl = null;
+    public ?array $StockControl = null;
     /**
      * The MCOText
      * Meta information extracted from the WSDL
@@ -88,7 +87,7 @@ class MCO extends MCOInformation
      * - ref: MCOText
      * @var \Travelport\UniversalRecord\StructType\MCOText[]
      */
-    protected ?array $MCOText = null;
+    public ?array $MCOText = null;
     /**
      * The TicketType
      * Meta information extracted from the WSDL
@@ -96,7 +95,7 @@ class MCO extends MCOInformation
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketType = null;
+    public ?string $TicketType = null;
     /**
      * The TicketNumber
      * Meta information extracted from the WSDL
@@ -104,7 +103,7 @@ class MCO extends MCOInformation
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketNumber = null;
+    public ?string $TicketNumber = null;
     /**
      * The MCOIssueDate
      * Meta information extracted from the WSDL
@@ -112,7 +111,7 @@ class MCO extends MCOInformation
      * - use: optional
      * @var string|null
      */
-    protected ?string $MCOIssueDate = null;
+    public ?string $MCOIssueDate = null;
     /**
      * The MCODocNum
      * Meta information extracted from the WSDL
@@ -120,7 +119,7 @@ class MCO extends MCOInformation
      * - use: optional
      * @var string|null
      */
-    protected ?string $MCODocNum = null;
+    public ?string $MCODocNum = null;
     /**
      * The IssueReasonCode
      * Meta information extracted from the WSDL
@@ -128,7 +127,7 @@ class MCO extends MCOInformation
      * Deposits down payments | C - Bag shipped as cargo, D - Land arrgs for it, E - Car hire, F - Sleeper / berth | MCO issuing reason code. Possible Values (List): A - Air transportation, B - Surface transportation
      * @var string|null
      */
-    protected ?string $IssueReasonCode = null;
+    public ?string $IssueReasonCode = null;
     /**
      * The PlatingCarrier
      * Meta information extracted from the WSDL
@@ -138,7 +137,7 @@ class MCO extends MCOInformation
      * - use: optional
      * @var string|null
      */
-    protected ?string $PlatingCarrier = null;
+    public ?string $PlatingCarrier = null;
     /**
      * The TourOperator
      * Meta information extracted from the WSDL
@@ -146,7 +145,7 @@ class MCO extends MCOInformation
      * - use: optional
      * @var string|null
      */
-    protected ?string $TourOperator = null;
+    public ?string $TourOperator = null;
     /**
      * The Location
      * Meta information extracted from the WSDL
@@ -154,14 +153,14 @@ class MCO extends MCOInformation
      * - use: optional
      * @var string|null
      */
-    protected ?string $Location = null;
+    public ?string $Location = null;
     /**
      * The TourCode
      * Meta information extracted from the WSDL
      * - documentation: The Tour Code of the MCO.
      * @var string|null
      */
-    protected ?string $TourCode = null;
+    public ?string $TourCode = null;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -172,7 +171,7 @@ class MCO extends MCOInformation
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The ProviderLocatorCode
      * Meta information extracted from the WSDL
@@ -182,7 +181,7 @@ class MCO extends MCOInformation
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderLocatorCode = null;
+    public ?string $ProviderLocatorCode = null;
     /**
      * The PseudoCityCode
      * Meta information extracted from the WSDL
@@ -193,7 +192,7 @@ class MCO extends MCOInformation
      * - use: optional
      * @var string|null
      */
-    protected ?string $PseudoCityCode = null;
+    public ?string $PseudoCityCode = null;
     /**
      * The ExpiryDate
      * Meta information extracted from the WSDL
@@ -201,7 +200,7 @@ class MCO extends MCOInformation
      * - use: optional
      * @var string|null
      */
-    protected ?string $ExpiryDate = null;
+    public ?string $ExpiryDate = null;
     /**
      * Constructor method for MCO
      * @uses MCO::setMCOIssued()
@@ -290,10 +289,6 @@ class MCO extends MCOInformation
      */
     public function setMCOIssued(bool $mCOIssued): self
     {
-        // validation for constraint: boolean
-        if (!is_null($mCOIssued) && !is_bool($mCOIssued)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($mCOIssued, true), gettype($mCOIssued)), __LINE__);
-        }
         $this->MCOIssued = $mCOIssued;
         
         return $this;
@@ -307,48 +302,12 @@ class MCO extends MCOInformation
         return $this->FormOfPayment;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFormOfPayment method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPayment method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFormOfPaymentForArrayConstraintFromSetFormOfPayment(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $mCOFormOfPaymentItem) {
-            // validation for constraint: itemType
-            if (!$mCOFormOfPaymentItem instanceof \Travelport\UniversalRecord\StructType\FormOfPayment) {
-                $invalidValues[] = is_object($mCOFormOfPaymentItem) ? get_class($mCOFormOfPaymentItem) : sprintf('%s(%s)', gettype($mCOFormOfPaymentItem), var_export($mCOFormOfPaymentItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FormOfPayment property can only contain items of type \Travelport\UniversalRecord\StructType\FormOfPayment, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FormOfPayment value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FormOfPayment[] $formOfPayment
      * @return \Travelport\UniversalRecord\StructType\MCO
      */
     public function setFormOfPayment(?array $formOfPayment = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintFromSetFormOfPayment($formOfPayment))) {
-            throw new InvalidArgumentException($formOfPaymentArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($formOfPayment) && count($formOfPayment) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($formOfPayment)), __LINE__);
-        }
         $this->FormOfPayment = $formOfPayment;
         
         return $this;
@@ -361,14 +320,6 @@ class MCO extends MCOInformation
      */
     public function addToFormOfPayment(\Travelport\UniversalRecord\StructType\FormOfPayment $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\FormOfPayment) {
-            throw new InvalidArgumentException(sprintf('The FormOfPayment property can only contain items of type \Travelport\UniversalRecord\StructType\FormOfPayment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FormOfPayment) && count($this->FormOfPayment) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FormOfPayment)), __LINE__);
-        }
         $this->FormOfPayment[] = $item;
         
         return $this;
@@ -439,48 +390,12 @@ class MCO extends MCOInformation
         return $this->MCORemark;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setMCORemark method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setMCORemark method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateMCORemarkForArrayConstraintFromSetMCORemark(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $mCOMCORemarkItem) {
-            // validation for constraint: itemType
-            if (!$mCOMCORemarkItem instanceof \Travelport\UniversalRecord\StructType\MCORemark) {
-                $invalidValues[] = is_object($mCOMCORemarkItem) ? get_class($mCOMCORemarkItem) : sprintf('%s(%s)', gettype($mCOMCORemarkItem), var_export($mCOMCORemarkItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The MCORemark property can only contain items of type \Travelport\UniversalRecord\StructType\MCORemark, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set MCORemark value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\MCORemark[] $mCORemark
      * @return \Travelport\UniversalRecord\StructType\MCO
      */
     public function setMCORemark(?array $mCORemark = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($mCORemarkArrayErrorMessage = self::validateMCORemarkForArrayConstraintFromSetMCORemark($mCORemark))) {
-            throw new InvalidArgumentException($mCORemarkArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($mCORemark) && count($mCORemark) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($mCORemark)), __LINE__);
-        }
         $this->MCORemark = $mCORemark;
         
         return $this;
@@ -493,14 +408,6 @@ class MCO extends MCOInformation
      */
     public function addToMCORemark(\Travelport\UniversalRecord\StructType\MCORemark $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\MCORemark) {
-            throw new InvalidArgumentException(sprintf('The MCORemark property can only contain items of type \Travelport\UniversalRecord\StructType\MCORemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->MCORemark) && count($this->MCORemark) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->MCORemark)), __LINE__);
-        }
         $this->MCORemark[] = $item;
         
         return $this;
@@ -533,48 +440,12 @@ class MCO extends MCOInformation
         return $this->StockControl;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setStockControl method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setStockControl method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateStockControlForArrayConstraintFromSetStockControl(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $mCOStockControlItem) {
-            // validation for constraint: itemType
-            if (!$mCOStockControlItem instanceof \Travelport\UniversalRecord\StructType\StockControl) {
-                $invalidValues[] = is_object($mCOStockControlItem) ? get_class($mCOStockControlItem) : sprintf('%s(%s)', gettype($mCOStockControlItem), var_export($mCOStockControlItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The StockControl property can only contain items of type \Travelport\UniversalRecord\StructType\StockControl, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set StockControl value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\StockControl[] $stockControl
      * @return \Travelport\UniversalRecord\StructType\MCO
      */
     public function setStockControl(?array $stockControl = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($stockControlArrayErrorMessage = self::validateStockControlForArrayConstraintFromSetStockControl($stockControl))) {
-            throw new InvalidArgumentException($stockControlArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($stockControl) && count($stockControl) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($stockControl)), __LINE__);
-        }
         $this->StockControl = $stockControl;
         
         return $this;
@@ -587,14 +458,6 @@ class MCO extends MCOInformation
      */
     public function addToStockControl(\Travelport\UniversalRecord\StructType\StockControl $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\StockControl) {
-            throw new InvalidArgumentException(sprintf('The StockControl property can only contain items of type \Travelport\UniversalRecord\StructType\StockControl, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->StockControl) && count($this->StockControl) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->StockControl)), __LINE__);
-        }
         $this->StockControl[] = $item;
         
         return $this;
@@ -608,48 +471,12 @@ class MCO extends MCOInformation
         return $this->MCOText;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setMCOText method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setMCOText method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateMCOTextForArrayConstraintFromSetMCOText(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $mCOMCOTextItem) {
-            // validation for constraint: itemType
-            if (!$mCOMCOTextItem instanceof \Travelport\UniversalRecord\StructType\MCOText) {
-                $invalidValues[] = is_object($mCOMCOTextItem) ? get_class($mCOMCOTextItem) : sprintf('%s(%s)', gettype($mCOMCOTextItem), var_export($mCOMCOTextItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The MCOText property can only contain items of type \Travelport\UniversalRecord\StructType\MCOText, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set MCOText value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\MCOText[] $mCOText
      * @return \Travelport\UniversalRecord\StructType\MCO
      */
     public function setMCOText(?array $mCOText = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($mCOTextArrayErrorMessage = self::validateMCOTextForArrayConstraintFromSetMCOText($mCOText))) {
-            throw new InvalidArgumentException($mCOTextArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($mCOText) && count($mCOText) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($mCOText)), __LINE__);
-        }
         $this->MCOText = $mCOText;
         
         return $this;
@@ -662,14 +489,6 @@ class MCO extends MCOInformation
      */
     public function addToMCOText(\Travelport\UniversalRecord\StructType\MCOText $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\MCOText) {
-            throw new InvalidArgumentException(sprintf('The MCOText property can only contain items of type \Travelport\UniversalRecord\StructType\MCOText, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->MCOText) && count($this->MCOText) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->MCOText)), __LINE__);
-        }
         $this->MCOText[] = $item;
         
         return $this;
@@ -689,10 +508,6 @@ class MCO extends MCOInformation
      */
     public function setTicketType(?string $ticketType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketType) && !is_string($ticketType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketType, true), gettype($ticketType)), __LINE__);
-        }
         $this->TicketType = $ticketType;
         
         return $this;
@@ -712,10 +527,6 @@ class MCO extends MCOInformation
      */
     public function setTicketNumber(?string $ticketNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketNumber) && !is_string($ticketNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketNumber, true), gettype($ticketNumber)), __LINE__);
-        }
         $this->TicketNumber = $ticketNumber;
         
         return $this;
@@ -735,10 +546,6 @@ class MCO extends MCOInformation
      */
     public function setMCOIssueDate(?string $mCOIssueDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($mCOIssueDate) && !is_string($mCOIssueDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mCOIssueDate, true), gettype($mCOIssueDate)), __LINE__);
-        }
         $this->MCOIssueDate = $mCOIssueDate;
         
         return $this;
@@ -758,10 +565,6 @@ class MCO extends MCOInformation
      */
     public function setMCODocNum(?string $mCODocNum = null): self
     {
-        // validation for constraint: string
-        if (!is_null($mCODocNum) && !is_string($mCODocNum)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mCODocNum, true), gettype($mCODocNum)), __LINE__);
-        }
         $this->MCODocNum = $mCODocNum;
         
         return $this;
@@ -781,10 +584,6 @@ class MCO extends MCOInformation
      */
     public function setIssueReasonCode(?string $issueReasonCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($issueReasonCode) && !is_string($issueReasonCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($issueReasonCode, true), gettype($issueReasonCode)), __LINE__);
-        }
         $this->IssueReasonCode = $issueReasonCode;
         
         return $this;
@@ -804,14 +603,6 @@ class MCO extends MCOInformation
      */
     public function setPlatingCarrier(?string $platingCarrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($platingCarrier) && !is_string($platingCarrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($platingCarrier, true), gettype($platingCarrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($platingCarrier) && mb_strlen((string) $platingCarrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $platingCarrier)), __LINE__);
-        }
         $this->PlatingCarrier = $platingCarrier;
         
         return $this;
@@ -831,10 +622,6 @@ class MCO extends MCOInformation
      */
     public function setTourOperator(?string $tourOperator = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tourOperator) && !is_string($tourOperator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tourOperator, true), gettype($tourOperator)), __LINE__);
-        }
         $this->TourOperator = $tourOperator;
         
         return $this;
@@ -854,10 +641,6 @@ class MCO extends MCOInformation
      */
     public function setLocation(?string $location = null): self
     {
-        // validation for constraint: string
-        if (!is_null($location) && !is_string($location)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($location, true), gettype($location)), __LINE__);
-        }
         $this->Location = $location;
         
         return $this;
@@ -877,10 +660,6 @@ class MCO extends MCOInformation
      */
     public function setTourCode(?string $tourCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tourCode) && !is_string($tourCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tourCode, true), gettype($tourCode)), __LINE__);
-        }
         $this->TourCode = $tourCode;
         
         return $this;
@@ -900,18 +679,6 @@ class MCO extends MCOInformation
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -931,14 +698,6 @@ class MCO extends MCOInformation
      */
     public function setProviderLocatorCode(?string $providerLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerLocatorCode) && !is_string($providerLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerLocatorCode, true), gettype($providerLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($providerLocatorCode) && mb_strlen((string) $providerLocatorCode) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $providerLocatorCode)), __LINE__);
-        }
         $this->ProviderLocatorCode = $providerLocatorCode;
         
         return $this;
@@ -958,18 +717,6 @@ class MCO extends MCOInformation
      */
     public function setPseudoCityCode(?string $pseudoCityCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($pseudoCityCode) && !is_string($pseudoCityCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pseudoCityCode, true), gettype($pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
         $this->PseudoCityCode = $pseudoCityCode;
         
         return $this;
@@ -989,10 +736,6 @@ class MCO extends MCOInformation
      */
     public function setExpiryDate(?string $expiryDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($expiryDate) && !is_string($expiryDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($expiryDate, true), gettype($expiryDate)), __LINE__);
-        }
         $this->ExpiryDate = $expiryDate;
         
         return $this;

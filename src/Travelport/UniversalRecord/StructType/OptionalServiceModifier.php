@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class OptionalServiceModifier extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class OptionalServiceModifier extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $SupplierCode;
+    public string $SupplierCode;
     /**
      * The ServiceSubCode
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class OptionalServiceModifier extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ServiceSubCode;
+    public string $ServiceSubCode;
     /**
      * The TravelDate
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class OptionalServiceModifier extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $TravelDate;
+    public string $TravelDate;
     /**
      * The Description
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class OptionalServiceModifier extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Description;
+    public string $Description;
     /**
      * The SecondaryType
      * Meta information extracted from the WSDL
@@ -70,7 +69,7 @@ class OptionalServiceModifier extends AbstractStructBase
      * - minLength: 1
      * @var string|null
      */
-    protected ?string $SecondaryType = null;
+    public ?string $SecondaryType = null;
     /**
      * Constructor method for OptionalServiceModifier
      * @uses OptionalServiceModifier::setType()
@@ -111,18 +110,6 @@ class OptionalServiceModifier extends AbstractStructBase
      */
     public function setType(string $type): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($type) && mb_strlen((string) $type) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $type)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($type) && mb_strlen((string) $type) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -142,18 +129,6 @@ class OptionalServiceModifier extends AbstractStructBase
      */
     public function setSupplierCode(string $supplierCode): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $supplierCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;
@@ -173,10 +148,6 @@ class OptionalServiceModifier extends AbstractStructBase
      */
     public function setServiceSubCode(string $serviceSubCode): self
     {
-        // validation for constraint: string
-        if (!is_null($serviceSubCode) && !is_string($serviceSubCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($serviceSubCode, true), gettype($serviceSubCode)), __LINE__);
-        }
         $this->ServiceSubCode = $serviceSubCode;
         
         return $this;
@@ -196,10 +167,6 @@ class OptionalServiceModifier extends AbstractStructBase
      */
     public function setTravelDate(string $travelDate): self
     {
-        // validation for constraint: string
-        if (!is_null($travelDate) && !is_string($travelDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelDate, true), gettype($travelDate)), __LINE__);
-        }
         $this->TravelDate = $travelDate;
         
         return $this;
@@ -219,10 +186,6 @@ class OptionalServiceModifier extends AbstractStructBase
      */
     public function setDescription(string $description): self
     {
-        // validation for constraint: string
-        if (!is_null($description) && !is_string($description)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
-        }
         $this->Description = $description;
         
         return $this;
@@ -242,18 +205,6 @@ class OptionalServiceModifier extends AbstractStructBase
      */
     public function setSecondaryType(?string $secondaryType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($secondaryType) && !is_string($secondaryType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($secondaryType, true), gettype($secondaryType)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($secondaryType) && mb_strlen((string) $secondaryType) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $secondaryType)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($secondaryType) && mb_strlen((string) $secondaryType) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $secondaryType)), __LINE__);
-        }
         $this->SecondaryType = $secondaryType;
         
         return $this;

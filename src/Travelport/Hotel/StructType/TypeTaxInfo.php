@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Category;
+    public string $Category;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Amount;
+    public string $Amount;
     /**
      * The TaxDetail
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - ref: TaxDetail
      * @var \Travelport\Hotel\StructType\TaxDetail[]
      */
-    protected ?array $TaxDetail = null;
+    public ?array $TaxDetail = null;
     /**
      * The IncludedInBase
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - ref: IncludedInBase
      * @var \Travelport\Hotel\StructType\IncludedInBase|null
      */
-    protected ?\Travelport\Hotel\StructType\IncludedInBase $IncludedInBase = null;
+    public ?\Travelport\Hotel\StructType\IncludedInBase $IncludedInBase = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The CarrierDefinedCategory
      * Meta information extracted from the WSDL
@@ -65,7 +64,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CarrierDefinedCategory = null;
+    public ?string $CarrierDefinedCategory = null;
     /**
      * The SegmentRef
      * Meta information extracted from the WSDL
@@ -74,7 +73,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SegmentRef = null;
+    public ?string $SegmentRef = null;
     /**
      * The FlightDetailsRef
      * Meta information extracted from the WSDL
@@ -83,7 +82,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FlightDetailsRef = null;
+    public ?string $FlightDetailsRef = null;
     /**
      * The CouponRef
      * Meta information extracted from the WSDL
@@ -92,7 +91,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CouponRef = null;
+    public ?string $CouponRef = null;
     /**
      * The TaxExempted
      * Meta information extracted from the WSDL
@@ -100,7 +99,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $TaxExempted = null;
+    public ?bool $TaxExempted = null;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -111,7 +110,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
@@ -122,7 +121,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SupplierCode = null;
+    public ?string $SupplierCode = null;
     /**
      * The Text
      * Meta information extracted from the WSDL
@@ -133,7 +132,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Text = null;
+    public ?string $Text = null;
     /**
      * The OriginAirport
      * Meta information extracted from the WSDL
@@ -144,7 +143,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OriginAirport = null;
+    public ?string $OriginAirport = null;
     /**
      * The DestinationAirport
      * Meta information extracted from the WSDL
@@ -155,7 +154,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DestinationAirport = null;
+    public ?string $DestinationAirport = null;
     /**
      * The CountryCode
      * Meta information extracted from the WSDL
@@ -163,7 +162,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CountryCode = null;
+    public ?string $CountryCode = null;
     /**
      * The FareInfoRef
      * Meta information extracted from the WSDL
@@ -173,7 +172,7 @@ class TypeTaxInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FareInfoRef = null;
+    public ?string $FareInfoRef = null;
     /**
      * Constructor method for typeTaxInfo
      * @uses TypeTaxInfo::setCategory()
@@ -247,10 +246,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function setCategory(string $category): self
     {
-        // validation for constraint: string
-        if (!is_null($category) && !is_string($category)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($category, true), gettype($category)), __LINE__);
-        }
         $this->Category = $category;
         
         return $this;
@@ -270,10 +265,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function setAmount(string $amount): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -287,48 +278,12 @@ class TypeTaxInfo extends AbstractStructBase
         return $this->TaxDetail;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setTaxDetail method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setTaxDetail method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTaxDetailForArrayConstraintFromSetTaxDetail(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $typeTaxInfoTaxDetailItem) {
-            // validation for constraint: itemType
-            if (!$typeTaxInfoTaxDetailItem instanceof \Travelport\Hotel\StructType\TaxDetail) {
-                $invalidValues[] = is_object($typeTaxInfoTaxDetailItem) ? get_class($typeTaxInfoTaxDetailItem) : sprintf('%s(%s)', gettype($typeTaxInfoTaxDetailItem), var_export($typeTaxInfoTaxDetailItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The TaxDetail property can only contain items of type \Travelport\Hotel\StructType\TaxDetail, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set TaxDetail value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\TaxDetail[] $taxDetail
      * @return \Travelport\Hotel\StructType\TypeTaxInfo
      */
     public function setTaxDetail(?array $taxDetail = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($taxDetailArrayErrorMessage = self::validateTaxDetailForArrayConstraintFromSetTaxDetail($taxDetail))) {
-            throw new InvalidArgumentException($taxDetailArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($taxDetail) && count($taxDetail) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($taxDetail)), __LINE__);
-        }
         $this->TaxDetail = $taxDetail;
         
         return $this;
@@ -341,14 +296,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function addToTaxDetail(\Travelport\Hotel\StructType\TaxDetail $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\TaxDetail) {
-            throw new InvalidArgumentException(sprintf('The TaxDetail property can only contain items of type \Travelport\Hotel\StructType\TaxDetail, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->TaxDetail) && count($this->TaxDetail) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->TaxDetail)), __LINE__);
-        }
         $this->TaxDetail[] = $item;
         
         return $this;
@@ -387,10 +334,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -410,10 +353,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function setCarrierDefinedCategory(?string $carrierDefinedCategory = null): self
     {
-        // validation for constraint: string
-        if (!is_null($carrierDefinedCategory) && !is_string($carrierDefinedCategory)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrierDefinedCategory, true), gettype($carrierDefinedCategory)), __LINE__);
-        }
         $this->CarrierDefinedCategory = $carrierDefinedCategory;
         
         return $this;
@@ -433,10 +372,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function setSegmentRef(?string $segmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($segmentRef) && !is_string($segmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($segmentRef, true), gettype($segmentRef)), __LINE__);
-        }
         $this->SegmentRef = $segmentRef;
         
         return $this;
@@ -456,10 +391,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function setFlightDetailsRef(?string $flightDetailsRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($flightDetailsRef) && !is_string($flightDetailsRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($flightDetailsRef, true), gettype($flightDetailsRef)), __LINE__);
-        }
         $this->FlightDetailsRef = $flightDetailsRef;
         
         return $this;
@@ -479,10 +410,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function setCouponRef(?string $couponRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($couponRef) && !is_string($couponRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($couponRef, true), gettype($couponRef)), __LINE__);
-        }
         $this->CouponRef = $couponRef;
         
         return $this;
@@ -502,10 +429,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function setTaxExempted(?bool $taxExempted = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($taxExempted) && !is_bool($taxExempted)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($taxExempted, true), gettype($taxExempted)), __LINE__);
-        }
         $this->TaxExempted = $taxExempted;
         
         return $this;
@@ -525,18 +448,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -556,18 +467,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function setSupplierCode(?string $supplierCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $supplierCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;
@@ -587,18 +486,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function setText(?string $text = null): self
     {
-        // validation for constraint: string
-        if (!is_null($text) && !is_string($text)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($text, true), gettype($text)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($text) && mb_strlen((string) $text) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $text)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($text) && mb_strlen((string) $text) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $text)), __LINE__);
-        }
         $this->Text = $text;
         
         return $this;
@@ -618,14 +505,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function setOriginAirport(?string $originAirport = null): self
     {
-        // validation for constraint: string
-        if (!is_null($originAirport) && !is_string($originAirport)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($originAirport, true), gettype($originAirport)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($originAirport) && mb_strlen((string) $originAirport) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $originAirport)), __LINE__);
-        }
         $this->OriginAirport = $originAirport;
         
         return $this;
@@ -645,14 +524,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function setDestinationAirport(?string $destinationAirport = null): self
     {
-        // validation for constraint: string
-        if (!is_null($destinationAirport) && !is_string($destinationAirport)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destinationAirport, true), gettype($destinationAirport)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destinationAirport) && mb_strlen((string) $destinationAirport) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destinationAirport)), __LINE__);
-        }
         $this->DestinationAirport = $destinationAirport;
         
         return $this;
@@ -672,10 +543,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function setCountryCode(?string $countryCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($countryCode) && !is_string($countryCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($countryCode, true), gettype($countryCode)), __LINE__);
-        }
         $this->CountryCode = $countryCode;
         
         return $this;
@@ -695,10 +562,6 @@ class TypeTaxInfo extends AbstractStructBase
      */
     public function setFareInfoRef(?string $fareInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fareInfoRef) && !is_string($fareInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareInfoRef, true), gettype($fareInfoRef)), __LINE__);
-        }
         $this->FareInfoRef = $fareInfoRef;
         
         return $this;

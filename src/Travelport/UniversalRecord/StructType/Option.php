@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class Option extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * The BookingInfo
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class Option extends AbstractStructBase
      * - ref: BookingInfo
      * @var \Travelport\UniversalRecord\StructType\BookingInfo[]
      */
-    protected ?array $BookingInfo = null;
+    public ?array $BookingInfo = null;
     /**
      * The Connection
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class Option extends AbstractStructBase
      * - ref: Connection
      * @var \Travelport\UniversalRecord\StructType\Connection[]
      */
-    protected ?array $Connection = null;
+    public ?array $Connection = null;
     /**
      * The TravelTime
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class Option extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TravelTime = null;
+    public ?string $TravelTime = null;
     /**
      * Constructor method for Option
      * @uses Option::setKey()
@@ -84,10 +83,6 @@ class Option extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -101,48 +96,12 @@ class Option extends AbstractStructBase
         return $this->BookingInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setBookingInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setBookingInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateBookingInfoForArrayConstraintFromSetBookingInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $optionBookingInfoItem) {
-            // validation for constraint: itemType
-            if (!$optionBookingInfoItem instanceof \Travelport\UniversalRecord\StructType\BookingInfo) {
-                $invalidValues[] = is_object($optionBookingInfoItem) ? get_class($optionBookingInfoItem) : sprintf('%s(%s)', gettype($optionBookingInfoItem), var_export($optionBookingInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The BookingInfo property can only contain items of type \Travelport\UniversalRecord\StructType\BookingInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set BookingInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\BookingInfo[] $bookingInfo
      * @return \Travelport\UniversalRecord\StructType\Option
      */
     public function setBookingInfo(?array $bookingInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($bookingInfoArrayErrorMessage = self::validateBookingInfoForArrayConstraintFromSetBookingInfo($bookingInfo))) {
-            throw new InvalidArgumentException($bookingInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($bookingInfo) && count($bookingInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($bookingInfo)), __LINE__);
-        }
         $this->BookingInfo = $bookingInfo;
         
         return $this;
@@ -155,14 +114,6 @@ class Option extends AbstractStructBase
      */
     public function addToBookingInfo(\Travelport\UniversalRecord\StructType\BookingInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\BookingInfo) {
-            throw new InvalidArgumentException(sprintf('The BookingInfo property can only contain items of type \Travelport\UniversalRecord\StructType\BookingInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->BookingInfo) && count($this->BookingInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->BookingInfo)), __LINE__);
-        }
         $this->BookingInfo[] = $item;
         
         return $this;
@@ -176,48 +127,12 @@ class Option extends AbstractStructBase
         return $this->Connection;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setConnection method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setConnection method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateConnectionForArrayConstraintFromSetConnection(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $optionConnectionItem) {
-            // validation for constraint: itemType
-            if (!$optionConnectionItem instanceof \Travelport\UniversalRecord\StructType\Connection) {
-                $invalidValues[] = is_object($optionConnectionItem) ? get_class($optionConnectionItem) : sprintf('%s(%s)', gettype($optionConnectionItem), var_export($optionConnectionItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Connection property can only contain items of type \Travelport\UniversalRecord\StructType\Connection, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Connection value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\Connection[] $connection
      * @return \Travelport\UniversalRecord\StructType\Option
      */
     public function setConnection(?array $connection = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($connectionArrayErrorMessage = self::validateConnectionForArrayConstraintFromSetConnection($connection))) {
-            throw new InvalidArgumentException($connectionArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($connection) && count($connection) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($connection)), __LINE__);
-        }
         $this->Connection = $connection;
         
         return $this;
@@ -230,14 +145,6 @@ class Option extends AbstractStructBase
      */
     public function addToConnection(\Travelport\UniversalRecord\StructType\Connection $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\Connection) {
-            throw new InvalidArgumentException(sprintf('The Connection property can only contain items of type \Travelport\UniversalRecord\StructType\Connection, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->Connection) && count($this->Connection) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->Connection)), __LINE__);
-        }
         $this->Connection[] = $item;
         
         return $this;
@@ -257,10 +164,6 @@ class Option extends AbstractStructBase
      */
     public function setTravelTime(?string $travelTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($travelTime) && !is_string($travelTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelTime, true), gettype($travelTime)), __LINE__);
-        }
         $this->TravelTime = $travelTime;
         
         return $this;

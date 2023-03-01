@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,14 +21,14 @@ class AirSolutionChangedInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ReasonCode;
+    public string $ReasonCode;
     /**
      * The AirPricingSolution
      * Meta information extracted from the WSDL
      * - ref: AirPricingSolution
      * @var \Travelport\UniversalRecord\StructType\AirPricingSolution|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AirPricingSolution $AirPricingSolution = null;
+    public ?\Travelport\UniversalRecord\StructType\AirPricingSolution $AirPricingSolution = null;
     /**
      * Constructor method for AirSolutionChangedInfo
      * @uses AirSolutionChangedInfo::setReasonCode()
@@ -58,10 +57,6 @@ class AirSolutionChangedInfo extends AbstractStructBase
      */
     public function setReasonCode(string $reasonCode): self
     {
-        // validation for constraint: string
-        if (!is_null($reasonCode) && !is_string($reasonCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reasonCode, true), gettype($reasonCode)), __LINE__);
-        }
         $this->ReasonCode = $reasonCode;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class SpecificTimeTable extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $StartDate;
+    public string $StartDate;
     /**
      * The Carrier
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class SpecificTimeTable extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Carrier;
+    public string $Carrier;
     /**
      * The FlightNumber
      * Meta information extracted from the WSDL
@@ -39,21 +38,21 @@ class SpecificTimeTable extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $FlightNumber;
+    public string $FlightNumber;
     /**
      * The FlightOrigin
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\FlightOrigin|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FlightOrigin $FlightOrigin = null;
+    public ?\Travelport\UniversalRecord\StructType\FlightOrigin $FlightOrigin = null;
     /**
      * The FlightDestination
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\FlightDestination|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FlightDestination $FlightDestination = null;
+    public ?\Travelport\UniversalRecord\StructType\FlightDestination $FlightDestination = null;
     /**
      * Constructor method for SpecificTimeTable
      * @uses SpecificTimeTable::setStartDate()
@@ -91,10 +90,6 @@ class SpecificTimeTable extends AbstractStructBase
      */
     public function setStartDate(string $startDate): self
     {
-        // validation for constraint: string
-        if (!is_null($startDate) && !is_string($startDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
-        }
         $this->StartDate = $startDate;
         
         return $this;
@@ -114,14 +109,6 @@ class SpecificTimeTable extends AbstractStructBase
      */
     public function setCarrier(string $carrier): self
     {
-        // validation for constraint: string
-        if (!is_null($carrier) && !is_string($carrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrier, true), gettype($carrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($carrier) && mb_strlen((string) $carrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $carrier)), __LINE__);
-        }
         $this->Carrier = $carrier;
         
         return $this;
@@ -141,14 +128,6 @@ class SpecificTimeTable extends AbstractStructBase
      */
     public function setFlightNumber(string $flightNumber): self
     {
-        // validation for constraint: string
-        if (!is_null($flightNumber) && !is_string($flightNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($flightNumber, true), gettype($flightNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($flightNumber) && mb_strlen((string) $flightNumber) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $flightNumber)), __LINE__);
-        }
         $this->FlightNumber = $flightNumber;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -17,12 +16,12 @@ class TypeWeight extends AbstractStructBase
      * The Value
      * @var int|null
      */
-    protected ?int $Value = null;
+    public ?int $Value = null;
     /**
      * The Unit
      * @var string|null
      */
-    protected ?string $Unit = null;
+    public ?string $Unit = null;
     /**
      * Constructor method for typeWeight
      * @uses TypeWeight::setValue()
@@ -51,10 +50,6 @@ class TypeWeight extends AbstractStructBase
      */
     public function setValue(?int $value = null): self
     {
-        // validation for constraint: int
-        if (!is_null($value) && !(is_int($value) || ctype_digit($value))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($value, true), gettype($value)), __LINE__);
-        }
         $this->Value = $value;
         
         return $this;
@@ -69,18 +64,11 @@ class TypeWeight extends AbstractStructBase
     }
     /**
      * Set Unit value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeUnitWeight::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeUnitWeight::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $unit
      * @return \Travelport\UniversalRecord\StructType\TypeWeight
      */
     public function setUnit(?string $unit = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeUnitWeight::valueIsValid($unit)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeUnitWeight', is_array($unit) ? implode(', ', $unit) : var_export($unit, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeUnitWeight::getValidValues())), __LINE__);
-        }
         $this->Unit = $unit;
         
         return $this;

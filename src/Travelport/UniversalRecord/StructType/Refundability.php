@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class Refundability extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Value;
+    public string $Value;
     /**
      * Constructor method for Refundability
      * @uses Refundability::setValue()
@@ -50,10 +49,6 @@ class Refundability extends AbstractStructBase
      */
     public function setValue(string $value): self
     {
-        // validation for constraint: string
-        if (!is_null($value) && !is_string($value)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($value, true), gettype($value)), __LINE__);
-        }
         $this->Value = $value;
         
         return $this;

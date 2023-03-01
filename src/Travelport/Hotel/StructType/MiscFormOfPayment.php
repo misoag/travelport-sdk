@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class MiscFormOfPayment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Category;
+    public string $Category;
     /**
      * The CreditCardType
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class MiscFormOfPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CreditCardType = null;
+    public ?string $CreditCardType = null;
     /**
      * The CreditCardNumber
      * Meta information extracted from the WSDL
@@ -42,15 +41,15 @@ class MiscFormOfPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CreditCardNumber = null;
+    public ?string $CreditCardNumber = null;
     /**
      * The ExpDate
      * Meta information extracted from the WSDL
      * - documentation: The Expiration date of this card in YYYY-MM format.
      * - use: optional
-     * @var int|null
+     * @var string|null
      */
-    protected ?string $ExpDate = null;
+    public ?string $ExpDate = null;
     /**
      * The Text
      * Meta information extracted from the WSDL
@@ -58,7 +57,7 @@ class MiscFormOfPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Text = null;
+    public ?string $Text = null;
     /**
      * The AcceptanceOverride
      * Meta information extracted from the WSDL
@@ -66,7 +65,7 @@ class MiscFormOfPayment extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AcceptanceOverride = null;
+    public ?bool $AcceptanceOverride = null;
     /**
      * Constructor method for MiscFormOfPayment
      * @uses MiscFormOfPayment::setCategory()
@@ -107,10 +106,6 @@ class MiscFormOfPayment extends AbstractStructBase
      */
     public function setCategory(string $category): self
     {
-        // validation for constraint: string
-        if (!is_null($category) && !is_string($category)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($category, true), gettype($category)), __LINE__);
-        }
         $this->Category = $category;
         
         return $this;
@@ -130,14 +125,6 @@ class MiscFormOfPayment extends AbstractStructBase
      */
     public function setCreditCardType(?string $creditCardType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($creditCardType) && !is_string($creditCardType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($creditCardType, true), gettype($creditCardType)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($creditCardType) && mb_strlen((string) $creditCardType) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $creditCardType)), __LINE__);
-        }
         $this->CreditCardType = $creditCardType;
         
         return $this;
@@ -157,25 +144,13 @@ class MiscFormOfPayment extends AbstractStructBase
      */
     public function setCreditCardNumber(?string $creditCardNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($creditCardNumber) && !is_string($creditCardNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($creditCardNumber, true), gettype($creditCardNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($creditCardNumber) && mb_strlen((string) $creditCardNumber) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $creditCardNumber)), __LINE__);
-        }
-        // validation for constraint: minLength(13)
-        if (!is_null($creditCardNumber) && mb_strlen((string) $creditCardNumber) < 13) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 13', mb_strlen((string) $creditCardNumber)), __LINE__);
-        }
         $this->CreditCardNumber = $creditCardNumber;
         
         return $this;
     }
     /**
      * Get ExpDate value
-     * @return int|null
+     * @return string|null
      */
     public function getExpDate(): ?string
     {
@@ -188,7 +163,6 @@ class MiscFormOfPayment extends AbstractStructBase
      */
     public function setExpDate(?string $expDate = null): self
     {
-        
         $this->ExpDate = $expDate;
         
         return $this;
@@ -208,10 +182,6 @@ class MiscFormOfPayment extends AbstractStructBase
      */
     public function setText(?string $text = null): self
     {
-        // validation for constraint: string
-        if (!is_null($text) && !is_string($text)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($text, true), gettype($text)), __LINE__);
-        }
         $this->Text = $text;
         
         return $this;
@@ -231,10 +201,6 @@ class MiscFormOfPayment extends AbstractStructBase
      */
     public function setAcceptanceOverride(?bool $acceptanceOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($acceptanceOverride) && !is_bool($acceptanceOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($acceptanceOverride, true), gettype($acceptanceOverride)), __LINE__);
-        }
         $this->AcceptanceOverride = $acceptanceOverride;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class RailBookingInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $RailFareRef;
+    public string $RailFareRef;
     /**
      * The RailJourneyRef
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class RailBookingInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $RailJourneyRef;
+    public string $RailJourneyRef;
     /**
      * The OptionalService
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class RailBookingInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $OptionalService = null;
+    public ?bool $OptionalService = null;
     /**
      * Constructor method for RailBookingInfo
      * @uses RailBookingInfo::setRailFareRef()
@@ -73,10 +72,6 @@ class RailBookingInfo extends AbstractStructBase
      */
     public function setRailFareRef(string $railFareRef): self
     {
-        // validation for constraint: string
-        if (!is_null($railFareRef) && !is_string($railFareRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($railFareRef, true), gettype($railFareRef)), __LINE__);
-        }
         $this->RailFareRef = $railFareRef;
         
         return $this;
@@ -96,10 +91,6 @@ class RailBookingInfo extends AbstractStructBase
      */
     public function setRailJourneyRef(string $railJourneyRef): self
     {
-        // validation for constraint: string
-        if (!is_null($railJourneyRef) && !is_string($railJourneyRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($railJourneyRef, true), gettype($railJourneyRef)), __LINE__);
-        }
         $this->RailJourneyRef = $railJourneyRef;
         
         return $this;
@@ -119,10 +110,6 @@ class RailBookingInfo extends AbstractStructBase
      */
     public function setOptionalService(?bool $optionalService = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($optionalService) && !is_bool($optionalService)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($optionalService, true), gettype($optionalService)), __LINE__);
-        }
         $this->OptionalService = $optionalService;
         
         return $this;

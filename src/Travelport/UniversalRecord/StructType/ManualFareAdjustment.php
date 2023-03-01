@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class ManualFareAdjustment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $AppliedOn;
+    public string $AppliedOn;
     /**
      * The AdjustmentType
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class ManualFareAdjustment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $AdjustmentType;
+    public string $AdjustmentType;
     /**
      * The Value
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class ManualFareAdjustment extends AbstractStructBase
      * - use: required
      * @var float
      */
-    protected float $Value;
+    public float $Value;
     /**
      * The PassengerRef
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class ManualFareAdjustment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PassengerRef = null;
+    public ?string $PassengerRef = null;
     /**
      * The TicketDesignator
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class ManualFareAdjustment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketDesignator = null;
+    public ?string $TicketDesignator = null;
     /**
      * The FareType
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class ManualFareAdjustment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FareType = null;
+    public ?string $FareType = null;
     /**
      * Constructor method for ManualFareAdjustment
      * @uses ManualFareAdjustment::setAppliedOn()
@@ -104,18 +103,11 @@ class ManualFareAdjustment extends AbstractStructBase
     }
     /**
      * Set AppliedOn value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeAdjustmentTarget::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeAdjustmentTarget::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $appliedOn
      * @return \Travelport\UniversalRecord\StructType\ManualFareAdjustment
      */
     public function setAppliedOn(string $appliedOn): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeAdjustmentTarget::valueIsValid($appliedOn)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeAdjustmentTarget', is_array($appliedOn) ? implode(', ', $appliedOn) : var_export($appliedOn, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeAdjustmentTarget::getValidValues())), __LINE__);
-        }
         $this->AppliedOn = $appliedOn;
         
         return $this;
@@ -130,18 +122,11 @@ class ManualFareAdjustment extends AbstractStructBase
     }
     /**
      * Set AdjustmentType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeAdjustmentType::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeAdjustmentType::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $adjustmentType
      * @return \Travelport\UniversalRecord\StructType\ManualFareAdjustment
      */
     public function setAdjustmentType(string $adjustmentType): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeAdjustmentType::valueIsValid($adjustmentType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeAdjustmentType', is_array($adjustmentType) ? implode(', ', $adjustmentType) : var_export($adjustmentType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeAdjustmentType::getValidValues())), __LINE__);
-        }
         $this->AdjustmentType = $adjustmentType;
         
         return $this;
@@ -161,10 +146,6 @@ class ManualFareAdjustment extends AbstractStructBase
      */
     public function setValue(float $value): self
     {
-        // validation for constraint: float
-        if (!is_null($value) && !(is_float($value) || is_numeric($value))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($value, true), gettype($value)), __LINE__);
-        }
         $this->Value = $value;
         
         return $this;
@@ -184,10 +165,6 @@ class ManualFareAdjustment extends AbstractStructBase
      */
     public function setPassengerRef(?string $passengerRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($passengerRef) && !is_string($passengerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passengerRef, true), gettype($passengerRef)), __LINE__);
-        }
         $this->PassengerRef = $passengerRef;
         
         return $this;
@@ -207,18 +184,6 @@ class ManualFareAdjustment extends AbstractStructBase
      */
     public function setTicketDesignator(?string $ticketDesignator = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketDesignator) && !is_string($ticketDesignator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketDesignator, true), gettype($ticketDesignator)), __LINE__);
-        }
-        // validation for constraint: maxLength(20)
-        if (!is_null($ticketDesignator) && mb_strlen((string) $ticketDesignator) > 20) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 20', mb_strlen((string) $ticketDesignator)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if (!is_null($ticketDesignator) && mb_strlen((string) $ticketDesignator) < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $ticketDesignator)), __LINE__);
-        }
         $this->TicketDesignator = $ticketDesignator;
         
         return $this;
@@ -238,18 +203,6 @@ class ManualFareAdjustment extends AbstractStructBase
      */
     public function setFareType(?string $fareType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fareType) && !is_string($fareType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareType, true), gettype($fareType)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($fareType) && mb_strlen((string) $fareType) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $fareType)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($fareType) && mb_strlen((string) $fareType) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $fareType)), __LINE__);
-        }
         $this->FareType = $fareType;
         
         return $this;

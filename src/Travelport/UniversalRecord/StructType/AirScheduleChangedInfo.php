@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class AirScheduleChangedInfo extends AbstractStructBase
      * - ref: AirPricingSolution
      * @var \Travelport\UniversalRecord\StructType\AirPricingSolution|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AirPricingSolution $AirPricingSolution = null;
+    public ?\Travelport\UniversalRecord\StructType\AirPricingSolution $AirPricingSolution = null;
     /**
      * Constructor method for AirScheduleChangedInfo
      * @uses AirScheduleChangedInfo::setAirPricingSolution()

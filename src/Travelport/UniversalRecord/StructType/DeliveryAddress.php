@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class DeliveryAddress extends TypeStructuredAddress
      * - ref: common:PhoneNumber
      * @var \Travelport\UniversalRecord\StructType\PhoneNumber|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PhoneNumber $PhoneNumber = null;
+    public ?\Travelport\UniversalRecord\StructType\PhoneNumber $PhoneNumber = null;
     /**
      * Constructor method for DeliveryAddress
      * @uses DeliveryAddress::setPhoneNumber()

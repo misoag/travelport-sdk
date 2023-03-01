@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class RequiredField extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Name;
+    public string $Name;
     /**
      * Constructor method for RequiredField
      * @uses RequiredField::setName()
@@ -45,10 +44,6 @@ class RequiredField extends AbstractStructBase
      */
     public function setName(string $name): self
     {
-        // validation for constraint: string
-        if (!is_null($name) && !is_string($name)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
-        }
         $this->Name = $name;
         
         return $this;

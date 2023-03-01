@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class SponsoredFltInfo extends AbstractStructBase
      * - use: required
      * @var int
      */
-    protected int $SponsoredLNB;
+    public int $SponsoredLNB;
     /**
      * The NeutralLNB
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class SponsoredFltInfo extends AbstractStructBase
      * - use: required
      * @var int
      */
-    protected int $NeutralLNB;
+    public int $NeutralLNB;
     /**
      * The FltKey
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class SponsoredFltInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $FltKey;
+    public string $FltKey;
     /**
      * Constructor method for SponsoredFltInfo
      * @uses SponsoredFltInfo::setSponsoredLNB()
@@ -71,10 +70,6 @@ class SponsoredFltInfo extends AbstractStructBase
      */
     public function setSponsoredLNB(int $sponsoredLNB): self
     {
-        // validation for constraint: int
-        if (!is_null($sponsoredLNB) && !(is_int($sponsoredLNB) || ctype_digit($sponsoredLNB))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($sponsoredLNB, true), gettype($sponsoredLNB)), __LINE__);
-        }
         $this->SponsoredLNB = $sponsoredLNB;
         
         return $this;
@@ -94,10 +89,6 @@ class SponsoredFltInfo extends AbstractStructBase
      */
     public function setNeutralLNB(int $neutralLNB): self
     {
-        // validation for constraint: int
-        if (!is_null($neutralLNB) && !(is_int($neutralLNB) || ctype_digit($neutralLNB))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($neutralLNB, true), gettype($neutralLNB)), __LINE__);
-        }
         $this->NeutralLNB = $neutralLNB;
         
         return $this;
@@ -117,14 +108,6 @@ class SponsoredFltInfo extends AbstractStructBase
      */
     public function setFltKey(string $fltKey): self
     {
-        // validation for constraint: string
-        if (!is_null($fltKey) && !is_string($fltKey)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fltKey, true), gettype($fltKey)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($fltKey) && mb_strlen((string) $fltKey) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $fltKey)), __LINE__);
-        }
         $this->FltKey = $fltKey;
         
         return $this;

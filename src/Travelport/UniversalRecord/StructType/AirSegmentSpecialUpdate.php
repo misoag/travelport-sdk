@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class AirSegmentSpecialUpdate extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Action;
+    public string $Action;
     /**
      * The AirSegment
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class AirSegmentSpecialUpdate extends AbstractStructBase
      * - ref: air_v52_0:AirSegment
      * @var \Travelport\UniversalRecord\StructType\TypeBaseAirSegment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeBaseAirSegment $AirSegment = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeBaseAirSegment $AirSegment = null;
     /**
      * Constructor method for AirSegmentSpecialUpdate
      * @uses AirSegmentSpecialUpdate::setAction()
@@ -58,10 +57,6 @@ class AirSegmentSpecialUpdate extends AbstractStructBase
      */
     public function setAction(string $action): self
     {
-        // validation for constraint: string
-        if (!is_null($action) && !is_string($action)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($action, true), gettype($action)), __LINE__);
-        }
         $this->Action = $action;
         
         return $this;
@@ -75,47 +70,15 @@ class AirSegmentSpecialUpdate extends AbstractStructBase
         return $this->AirSegment ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirSegment method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegment method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateAirSegmentForChoiceConstraintFromSetAirSegment($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property AirSegment can\'t be set as the property %s is already set. Only one property must be set among these properties: AirSegment, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set AirSegment value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeBaseAirSegment $airSegment
      * @return \Travelport\UniversalRecord\StructType\AirSegmentSpecialUpdate
      */
     public function setAirSegment(?\Travelport\UniversalRecord\StructType\TypeBaseAirSegment $airSegment = null): self
     {
-        // validation for constraint: choice(AirSegment)
-        if ('' !== ($airSegmentChoiceErrorMessage = self::validateAirSegmentForChoiceConstraintFromSetAirSegment($airSegment))) {
-            throw new InvalidArgumentException($airSegmentChoiceErrorMessage, __LINE__);
-        }
         if (is_null($airSegment) || (is_array($airSegment) && empty($airSegment))) {
             unset($this->AirSegment);
         } else {

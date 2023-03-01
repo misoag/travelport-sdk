@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class FlightTimeTableCriteria extends AbstractStructBase
      * - ref: GeneralTimeTable
      * @var \Travelport\UniversalRecord\StructType\GeneralTimeTable|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\GeneralTimeTable $GeneralTimeTable = null;
+    public ?\Travelport\UniversalRecord\StructType\GeneralTimeTable $GeneralTimeTable = null;
     /**
      * The SpecificTimeTable
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class FlightTimeTableCriteria extends AbstractStructBase
      * - ref: SpecificTimeTable
      * @var \Travelport\UniversalRecord\StructType\SpecificTimeTable|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\SpecificTimeTable $SpecificTimeTable = null;
+    public ?\Travelport\UniversalRecord\StructType\SpecificTimeTable $SpecificTimeTable = null;
     /**
      * Constructor method for FlightTimeTableCriteria
      * @uses FlightTimeTableCriteria::setGeneralTimeTable()
@@ -57,48 +56,15 @@ class FlightTimeTableCriteria extends AbstractStructBase
         return $this->GeneralTimeTable ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setGeneralTimeTable method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setGeneralTimeTable method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateGeneralTimeTableForChoiceConstraintFromSetGeneralTimeTable($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'SpecificTimeTable',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property GeneralTimeTable can\'t be set as the property %s is already set. Only one property must be set among these properties: GeneralTimeTable, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set GeneralTimeTable value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\GeneralTimeTable $generalTimeTable
      * @return \Travelport\UniversalRecord\StructType\FlightTimeTableCriteria
      */
     public function setGeneralTimeTable(?\Travelport\UniversalRecord\StructType\GeneralTimeTable $generalTimeTable = null): self
     {
-        // validation for constraint: choice(GeneralTimeTable, SpecificTimeTable)
-        if ('' !== ($generalTimeTableChoiceErrorMessage = self::validateGeneralTimeTableForChoiceConstraintFromSetGeneralTimeTable($generalTimeTable))) {
-            throw new InvalidArgumentException($generalTimeTableChoiceErrorMessage, __LINE__);
-        }
         if (is_null($generalTimeTable) || (is_array($generalTimeTable) && empty($generalTimeTable))) {
             unset($this->GeneralTimeTable);
         } else {
@@ -116,48 +82,15 @@ class FlightTimeTableCriteria extends AbstractStructBase
         return $this->SpecificTimeTable ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setSpecificTimeTable method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setSpecificTimeTable method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateSpecificTimeTableForChoiceConstraintFromSetSpecificTimeTable($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'GeneralTimeTable',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property SpecificTimeTable can\'t be set as the property %s is already set. Only one property must be set among these properties: SpecificTimeTable, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set SpecificTimeTable value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\SpecificTimeTable $specificTimeTable
      * @return \Travelport\UniversalRecord\StructType\FlightTimeTableCriteria
      */
     public function setSpecificTimeTable(?\Travelport\UniversalRecord\StructType\SpecificTimeTable $specificTimeTable = null): self
     {
-        // validation for constraint: choice(GeneralTimeTable, SpecificTimeTable)
-        if ('' !== ($specificTimeTableChoiceErrorMessage = self::validateSpecificTimeTableForChoiceConstraintFromSetSpecificTimeTable($specificTimeTable))) {
-            throw new InvalidArgumentException($specificTimeTableChoiceErrorMessage, __LINE__);
-        }
         if (is_null($specificTimeTable) || (is_array($specificTimeTable) && empty($specificTimeTable))) {
             unset($this->SpecificTimeTable);
         } else {

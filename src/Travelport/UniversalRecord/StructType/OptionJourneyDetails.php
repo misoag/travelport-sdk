@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class OptionJourneyDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PickUpLocation = null;
+    public ?string $PickUpLocation = null;
     /**
      * The PickUpTime
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class OptionJourneyDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PickUpTime = null;
+    public ?string $PickUpTime = null;
     /**
      * The PickUpDescription
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class OptionJourneyDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PickUpDescription = null;
+    public ?string $PickUpDescription = null;
     /**
      * The PickUpCarrier
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class OptionJourneyDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PickUpCarrier = null;
+    public ?string $PickUpCarrier = null;
     /**
      * The PickUpFlightNumber
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class OptionJourneyDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PickUpFlightNumber = null;
+    public ?string $PickUpFlightNumber = null;
     /**
      * The ReturnLocation
      * Meta information extracted from the WSDL
@@ -75,7 +74,7 @@ class OptionJourneyDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ReturnLocation = null;
+    public ?string $ReturnLocation = null;
     /**
      * The ReturnTime
      * Meta information extracted from the WSDL
@@ -83,7 +82,7 @@ class OptionJourneyDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ReturnTime = null;
+    public ?string $ReturnTime = null;
     /**
      * The ReturnDescription
      * Meta information extracted from the WSDL
@@ -94,7 +93,7 @@ class OptionJourneyDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ReturnDescription = null;
+    public ?string $ReturnDescription = null;
     /**
      * The ReturnCarrier
      * Meta information extracted from the WSDL
@@ -104,7 +103,7 @@ class OptionJourneyDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ReturnCarrier = null;
+    public ?string $ReturnCarrier = null;
     /**
      * The ReturnFlightNumber
      * Meta information extracted from the WSDL
@@ -114,7 +113,7 @@ class OptionJourneyDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ReturnFlightNumber = null;
+    public ?string $ReturnFlightNumber = null;
     /**
      * Constructor method for OptionJourneyDetails
      * @uses OptionJourneyDetails::setPickUpLocation()
@@ -167,18 +166,6 @@ class OptionJourneyDetails extends AbstractStructBase
      */
     public function setPickUpLocation(?string $pickUpLocation = null): self
     {
-        // validation for constraint: string
-        if (!is_null($pickUpLocation) && !is_string($pickUpLocation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pickUpLocation, true), gettype($pickUpLocation)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($pickUpLocation) && mb_strlen((string) $pickUpLocation) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $pickUpLocation)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($pickUpLocation) && mb_strlen((string) $pickUpLocation) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $pickUpLocation)), __LINE__);
-        }
         $this->PickUpLocation = $pickUpLocation;
         
         return $this;
@@ -198,10 +185,6 @@ class OptionJourneyDetails extends AbstractStructBase
      */
     public function setPickUpTime(?string $pickUpTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($pickUpTime) && !is_string($pickUpTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pickUpTime, true), gettype($pickUpTime)), __LINE__);
-        }
         $this->PickUpTime = $pickUpTime;
         
         return $this;
@@ -221,18 +204,6 @@ class OptionJourneyDetails extends AbstractStructBase
      */
     public function setPickUpDescription(?string $pickUpDescription = null): self
     {
-        // validation for constraint: string
-        if (!is_null($pickUpDescription) && !is_string($pickUpDescription)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pickUpDescription, true), gettype($pickUpDescription)), __LINE__);
-        }
-        // validation for constraint: maxLength(30)
-        if (!is_null($pickUpDescription) && mb_strlen((string) $pickUpDescription) > 30) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 30', mb_strlen((string) $pickUpDescription)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($pickUpDescription) && mb_strlen((string) $pickUpDescription) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $pickUpDescription)), __LINE__);
-        }
         $this->PickUpDescription = $pickUpDescription;
         
         return $this;
@@ -252,14 +223,6 @@ class OptionJourneyDetails extends AbstractStructBase
      */
     public function setPickUpCarrier(?string $pickUpCarrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($pickUpCarrier) && !is_string($pickUpCarrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pickUpCarrier, true), gettype($pickUpCarrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($pickUpCarrier) && mb_strlen((string) $pickUpCarrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $pickUpCarrier)), __LINE__);
-        }
         $this->PickUpCarrier = $pickUpCarrier;
         
         return $this;
@@ -279,14 +242,6 @@ class OptionJourneyDetails extends AbstractStructBase
      */
     public function setPickUpFlightNumber(?string $pickUpFlightNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($pickUpFlightNumber) && !is_string($pickUpFlightNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pickUpFlightNumber, true), gettype($pickUpFlightNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($pickUpFlightNumber) && mb_strlen((string) $pickUpFlightNumber) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $pickUpFlightNumber)), __LINE__);
-        }
         $this->PickUpFlightNumber = $pickUpFlightNumber;
         
         return $this;
@@ -306,18 +261,6 @@ class OptionJourneyDetails extends AbstractStructBase
      */
     public function setReturnLocation(?string $returnLocation = null): self
     {
-        // validation for constraint: string
-        if (!is_null($returnLocation) && !is_string($returnLocation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnLocation, true), gettype($returnLocation)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($returnLocation) && mb_strlen((string) $returnLocation) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $returnLocation)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($returnLocation) && mb_strlen((string) $returnLocation) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $returnLocation)), __LINE__);
-        }
         $this->ReturnLocation = $returnLocation;
         
         return $this;
@@ -337,10 +280,6 @@ class OptionJourneyDetails extends AbstractStructBase
      */
     public function setReturnTime(?string $returnTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($returnTime) && !is_string($returnTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnTime, true), gettype($returnTime)), __LINE__);
-        }
         $this->ReturnTime = $returnTime;
         
         return $this;
@@ -360,18 +299,6 @@ class OptionJourneyDetails extends AbstractStructBase
      */
     public function setReturnDescription(?string $returnDescription = null): self
     {
-        // validation for constraint: string
-        if (!is_null($returnDescription) && !is_string($returnDescription)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnDescription, true), gettype($returnDescription)), __LINE__);
-        }
-        // validation for constraint: maxLength(30)
-        if (!is_null($returnDescription) && mb_strlen((string) $returnDescription) > 30) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 30', mb_strlen((string) $returnDescription)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($returnDescription) && mb_strlen((string) $returnDescription) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $returnDescription)), __LINE__);
-        }
         $this->ReturnDescription = $returnDescription;
         
         return $this;
@@ -391,14 +318,6 @@ class OptionJourneyDetails extends AbstractStructBase
      */
     public function setReturnCarrier(?string $returnCarrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($returnCarrier) && !is_string($returnCarrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnCarrier, true), gettype($returnCarrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($returnCarrier) && mb_strlen((string) $returnCarrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $returnCarrier)), __LINE__);
-        }
         $this->ReturnCarrier = $returnCarrier;
         
         return $this;
@@ -418,14 +337,6 @@ class OptionJourneyDetails extends AbstractStructBase
      */
     public function setReturnFlightNumber(?string $returnFlightNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($returnFlightNumber) && !is_string($returnFlightNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($returnFlightNumber, true), gettype($returnFlightNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($returnFlightNumber) && mb_strlen((string) $returnFlightNumber) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $returnFlightNumber)), __LINE__);
-        }
         $this->ReturnFlightNumber = $returnFlightNumber;
         
         return $this;

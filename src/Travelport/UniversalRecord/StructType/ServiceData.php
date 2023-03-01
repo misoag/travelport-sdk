@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class ServiceData extends AbstractStructBase
      * - ref: SeatAttributes
      * @var \Travelport\UniversalRecord\StructType\SeatAttributes|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\SeatAttributes $SeatAttributes = null;
+    public ?\Travelport\UniversalRecord\StructType\SeatAttributes $SeatAttributes = null;
     /**
      * The CabinClass
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class ServiceData extends AbstractStructBase
      * - ref: CabinClass
      * @var \Travelport\UniversalRecord\StructType\CabinClass|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CabinClass $CabinClass = null;
+    public ?\Travelport\UniversalRecord\StructType\CabinClass $CabinClass = null;
     /**
      * The SSRRef
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class ServiceData extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeKeyBasedReference[]
      */
-    protected ?array $SSRRef = null;
+    public ?array $SSRRef = null;
     /**
      * The Data
      * Meta information extracted from the WSDL
@@ -45,7 +44,7 @@ class ServiceData extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Data = null;
+    public ?string $Data = null;
     /**
      * The AirSegmentRef
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class ServiceData extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AirSegmentRef = null;
+    public ?string $AirSegmentRef = null;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -63,7 +62,7 @@ class ServiceData extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingTravelerRef = null;
+    public ?string $BookingTravelerRef = null;
     /**
      * The StopOver
      * Meta information extracted from the WSDL
@@ -72,7 +71,7 @@ class ServiceData extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $StopOver = null;
+    public ?bool $StopOver = null;
     /**
      * The TravelerType
      * Meta information extracted from the WSDL
@@ -83,7 +82,7 @@ class ServiceData extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TravelerType = null;
+    public ?string $TravelerType = null;
     /**
      * The EMDSummaryRef
      * Meta information extracted from the WSDL
@@ -92,7 +91,7 @@ class ServiceData extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $EMDSummaryRef = null;
+    public ?string $EMDSummaryRef = null;
     /**
      * The EMDCouponRef
      * Meta information extracted from the WSDL
@@ -101,7 +100,7 @@ class ServiceData extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $EMDCouponRef = null;
+    public ?string $EMDCouponRef = null;
     /**
      * Constructor method for ServiceData
      * @uses ServiceData::setSeatAttributes()
@@ -186,48 +185,12 @@ class ServiceData extends AbstractStructBase
         return $this->SSRRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setSSRRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setSSRRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateSSRRefForArrayConstraintFromSetSSRRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $serviceDataSSRRefItem) {
-            // validation for constraint: itemType
-            if (!$serviceDataSSRRefItem instanceof \Travelport\UniversalRecord\StructType\TypeKeyBasedReference) {
-                $invalidValues[] = is_object($serviceDataSSRRefItem) ? get_class($serviceDataSSRRefItem) : sprintf('%s(%s)', gettype($serviceDataSSRRefItem), var_export($serviceDataSSRRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The SSRRef property can only contain items of type \Travelport\UniversalRecord\StructType\TypeKeyBasedReference, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set SSRRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeKeyBasedReference[] $sSRRef
      * @return \Travelport\UniversalRecord\StructType\ServiceData
      */
     public function setSSRRef(?array $sSRRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($sSRRefArrayErrorMessage = self::validateSSRRefForArrayConstraintFromSetSSRRef($sSRRef))) {
-            throw new InvalidArgumentException($sSRRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($sSRRef) && count($sSRRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($sSRRef)), __LINE__);
-        }
         $this->SSRRef = $sSRRef;
         
         return $this;
@@ -240,14 +203,6 @@ class ServiceData extends AbstractStructBase
      */
     public function addToSSRRef(\Travelport\UniversalRecord\StructType\TypeKeyBasedReference $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeKeyBasedReference) {
-            throw new InvalidArgumentException(sprintf('The SSRRef property can only contain items of type \Travelport\UniversalRecord\StructType\TypeKeyBasedReference, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->SSRRef) && count($this->SSRRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->SSRRef)), __LINE__);
-        }
         $this->SSRRef[] = $item;
         
         return $this;
@@ -267,10 +222,6 @@ class ServiceData extends AbstractStructBase
      */
     public function setData(?string $data = null): self
     {
-        // validation for constraint: string
-        if (!is_null($data) && !is_string($data)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($data, true), gettype($data)), __LINE__);
-        }
         $this->Data = $data;
         
         return $this;
@@ -290,10 +241,6 @@ class ServiceData extends AbstractStructBase
      */
     public function setAirSegmentRef(?string $airSegmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($airSegmentRef) && !is_string($airSegmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($airSegmentRef, true), gettype($airSegmentRef)), __LINE__);
-        }
         $this->AirSegmentRef = $airSegmentRef;
         
         return $this;
@@ -313,10 +260,6 @@ class ServiceData extends AbstractStructBase
      */
     public function setBookingTravelerRef(?string $bookingTravelerRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;
@@ -336,10 +279,6 @@ class ServiceData extends AbstractStructBase
      */
     public function setStopOver(?bool $stopOver = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($stopOver) && !is_bool($stopOver)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($stopOver, true), gettype($stopOver)), __LINE__);
-        }
         $this->StopOver = $stopOver;
         
         return $this;
@@ -359,18 +298,6 @@ class ServiceData extends AbstractStructBase
      */
     public function setTravelerType(?string $travelerType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($travelerType) && !is_string($travelerType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelerType, true), gettype($travelerType)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($travelerType) && mb_strlen((string) $travelerType) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $travelerType)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($travelerType) && mb_strlen((string) $travelerType) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $travelerType)), __LINE__);
-        }
         $this->TravelerType = $travelerType;
         
         return $this;
@@ -390,10 +317,6 @@ class ServiceData extends AbstractStructBase
      */
     public function setEMDSummaryRef(?string $eMDSummaryRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($eMDSummaryRef) && !is_string($eMDSummaryRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eMDSummaryRef, true), gettype($eMDSummaryRef)), __LINE__);
-        }
         $this->EMDSummaryRef = $eMDSummaryRef;
         
         return $this;
@@ -413,10 +336,6 @@ class ServiceData extends AbstractStructBase
      */
     public function setEMDCouponRef(?string $eMDCouponRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($eMDCouponRef) && !is_string($eMDCouponRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eMDCouponRef, true), gettype($eMDCouponRef)), __LINE__);
-        }
         $this->EMDCouponRef = $eMDCouponRef;
         
         return $this;

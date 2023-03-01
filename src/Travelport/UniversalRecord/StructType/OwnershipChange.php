@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class OwnershipChange extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $OwningPCC;
+    public string $OwningPCC;
     /**
      * Constructor method for OwnershipChange
      * @uses OwnershipChange::setOwningPCC()
@@ -49,10 +48,6 @@ class OwnershipChange extends AbstractStructBase
      */
     public function setOwningPCC(string $owningPCC): self
     {
-        // validation for constraint: string
-        if (!is_null($owningPCC) && !is_string($owningPCC)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($owningPCC, true), gettype($owningPCC)), __LINE__);
-        }
         $this->OwningPCC = $owningPCC;
         
         return $this;

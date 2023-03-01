@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class MultiGDSSearchIndicator extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Type = null;
+    public ?string $Type = null;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class MultiGDSSearchIndicator extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The DefaultProvider
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class MultiGDSSearchIndicator extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $DefaultProvider = null;
+    public ?bool $DefaultProvider = null;
     /**
      * The PrivateFareCode
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class MultiGDSSearchIndicator extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PrivateFareCode = null;
+    public ?string $PrivateFareCode = null;
     /**
      * The PrivateFareCodeOnly
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class MultiGDSSearchIndicator extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PrivateFareCodeOnly = null;
+    public ?bool $PrivateFareCodeOnly = null;
     /**
      * Constructor method for MultiGDSSearchIndicator
      * @uses MultiGDSSearchIndicator::setType()
@@ -97,10 +96,6 @@ class MultiGDSSearchIndicator extends AbstractStructBase
      */
     public function setType(?string $type = null): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -120,18 +115,6 @@ class MultiGDSSearchIndicator extends AbstractStructBase
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -151,10 +134,6 @@ class MultiGDSSearchIndicator extends AbstractStructBase
      */
     public function setDefaultProvider(?bool $defaultProvider = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($defaultProvider) && !is_bool($defaultProvider)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($defaultProvider, true), gettype($defaultProvider)), __LINE__);
-        }
         $this->DefaultProvider = $defaultProvider;
         
         return $this;
@@ -174,10 +153,6 @@ class MultiGDSSearchIndicator extends AbstractStructBase
      */
     public function setPrivateFareCode(?string $privateFareCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($privateFareCode) && !is_string($privateFareCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($privateFareCode, true), gettype($privateFareCode)), __LINE__);
-        }
         $this->PrivateFareCode = $privateFareCode;
         
         return $this;
@@ -197,10 +172,6 @@ class MultiGDSSearchIndicator extends AbstractStructBase
      */
     public function setPrivateFareCodeOnly(?bool $privateFareCodeOnly = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($privateFareCodeOnly) && !is_bool($privateFareCodeOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($privateFareCodeOnly, true), gettype($privateFareCodeOnly)), __LINE__);
-        }
         $this->PrivateFareCodeOnly = $privateFareCodeOnly;
         
         return $this;

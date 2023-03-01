@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class MerchandisingDetails extends AbstractStructBase
      * - ref: AirItineraryDetails
      * @var \Travelport\UniversalRecord\StructType\AirItineraryDetails[]
      */
-    protected ?array $AirItineraryDetails = null;
+    public ?array $AirItineraryDetails = null;
     /**
      * The AccountCode
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class MerchandisingDetails extends AbstractStructBase
      * - ref: common:AccountCode
      * @var \Travelport\UniversalRecord\StructType\AccountCode[]
      */
-    protected ?array $AccountCode = null;
+    public ?array $AccountCode = null;
     /**
      * Constructor method for MerchandisingDetails
      * @uses MerchandisingDetails::setAirItineraryDetails()
@@ -54,48 +53,12 @@ class MerchandisingDetails extends AbstractStructBase
         return $this->AirItineraryDetails;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirItineraryDetails method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirItineraryDetails method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAirItineraryDetailsForArrayConstraintFromSetAirItineraryDetails(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $merchandisingDetailsAirItineraryDetailsItem) {
-            // validation for constraint: itemType
-            if (!$merchandisingDetailsAirItineraryDetailsItem instanceof \Travelport\UniversalRecord\StructType\AirItineraryDetails) {
-                $invalidValues[] = is_object($merchandisingDetailsAirItineraryDetailsItem) ? get_class($merchandisingDetailsAirItineraryDetailsItem) : sprintf('%s(%s)', gettype($merchandisingDetailsAirItineraryDetailsItem), var_export($merchandisingDetailsAirItineraryDetailsItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AirItineraryDetails property can only contain items of type \Travelport\UniversalRecord\StructType\AirItineraryDetails, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AirItineraryDetails value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AirItineraryDetails[] $airItineraryDetails
      * @return \Travelport\UniversalRecord\StructType\MerchandisingDetails
      */
     public function setAirItineraryDetails(?array $airItineraryDetails = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($airItineraryDetailsArrayErrorMessage = self::validateAirItineraryDetailsForArrayConstraintFromSetAirItineraryDetails($airItineraryDetails))) {
-            throw new InvalidArgumentException($airItineraryDetailsArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($airItineraryDetails) && count($airItineraryDetails) > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 99', count($airItineraryDetails)), __LINE__);
-        }
         $this->AirItineraryDetails = $airItineraryDetails;
         
         return $this;
@@ -108,14 +71,6 @@ class MerchandisingDetails extends AbstractStructBase
      */
     public function addToAirItineraryDetails(\Travelport\UniversalRecord\StructType\AirItineraryDetails $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AirItineraryDetails) {
-            throw new InvalidArgumentException(sprintf('The AirItineraryDetails property can only contain items of type \Travelport\UniversalRecord\StructType\AirItineraryDetails, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($this->AirItineraryDetails) && count($this->AirItineraryDetails) >= 99) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 99', count($this->AirItineraryDetails)), __LINE__);
-        }
         $this->AirItineraryDetails[] = $item;
         
         return $this;
@@ -129,48 +84,12 @@ class MerchandisingDetails extends AbstractStructBase
         return $this->AccountCode;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAccountCode method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAccountCode method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAccountCodeForArrayConstraintFromSetAccountCode(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $merchandisingDetailsAccountCodeItem) {
-            // validation for constraint: itemType
-            if (!$merchandisingDetailsAccountCodeItem instanceof \Travelport\UniversalRecord\StructType\AccountCode) {
-                $invalidValues[] = is_object($merchandisingDetailsAccountCodeItem) ? get_class($merchandisingDetailsAccountCodeItem) : sprintf('%s(%s)', gettype($merchandisingDetailsAccountCodeItem), var_export($merchandisingDetailsAccountCodeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AccountCode property can only contain items of type \Travelport\UniversalRecord\StructType\AccountCode, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AccountCode value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AccountCode[] $accountCode
      * @return \Travelport\UniversalRecord\StructType\MerchandisingDetails
      */
     public function setAccountCode(?array $accountCode = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($accountCodeArrayErrorMessage = self::validateAccountCodeForArrayConstraintFromSetAccountCode($accountCode))) {
-            throw new InvalidArgumentException($accountCodeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(10)
-        if (is_array($accountCode) && count($accountCode) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 10', count($accountCode)), __LINE__);
-        }
         $this->AccountCode = $accountCode;
         
         return $this;
@@ -183,14 +102,6 @@ class MerchandisingDetails extends AbstractStructBase
      */
     public function addToAccountCode(\Travelport\UniversalRecord\StructType\AccountCode $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AccountCode) {
-            throw new InvalidArgumentException(sprintf('The AccountCode property can only contain items of type \Travelport\UniversalRecord\StructType\AccountCode, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(10)
-        if (is_array($this->AccountCode) && count($this->AccountCode) >= 10) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 10', count($this->AccountCode)), __LINE__);
-        }
         $this->AccountCode[] = $item;
         
         return $this;

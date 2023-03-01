@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class TypeSavedTripNote extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Text;
+    public string $Text;
     /**
      * Constructor method for typeSavedTripNote
      * @uses TypeSavedTripNote::setText()
@@ -47,14 +46,6 @@ class TypeSavedTripNote extends AbstractStructBase
      */
     public function setText(string $text): self
     {
-        // validation for constraint: string
-        if (!is_null($text) && !is_string($text)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($text, true), gettype($text)), __LINE__);
-        }
-        // validation for constraint: maxLength(333)
-        if (!is_null($text) && mb_strlen((string) $text) > 333) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 333', mb_strlen((string) $text)), __LINE__);
-        }
         $this->Text = $text;
         
         return $this;

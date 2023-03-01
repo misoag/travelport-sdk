@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,32 +18,32 @@ class MediaItem extends AbstractStructBase
      * The caption
      * @var string|null
      */
-    protected ?string $caption = null;
+    public ?string $caption = null;
     /**
      * The height
      * @var int|null
      */
-    protected ?int $height = null;
+    public ?int $height = null;
     /**
      * The width
      * @var int|null
      */
-    protected ?int $width = null;
+    public ?int $width = null;
     /**
      * The type
      * @var string|null
      */
-    protected ?string $type = null;
+    public ?string $type = null;
     /**
      * The url
      * @var string|null
      */
-    protected ?string $url = null;
+    public ?string $url = null;
     /**
      * The icon
      * @var string|null
      */
-    protected ?string $icon = null;
+    public ?string $icon = null;
     /**
      * The sizeCode
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class MediaItem extends AbstractStructBase
      * - union: typeImageSize | typeOtherImageSize
      * @var string|null
      */
-    protected ?string $sizeCode = null;
+    public ?string $sizeCode = null;
     /**
      * Constructor method for MediaItem
      * @uses MediaItem::setCaption()
@@ -96,10 +95,6 @@ class MediaItem extends AbstractStructBase
      */
     public function setCaption(?string $caption = null): self
     {
-        // validation for constraint: string
-        if (!is_null($caption) && !is_string($caption)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($caption, true), gettype($caption)), __LINE__);
-        }
         $this->caption = $caption;
         
         return $this;
@@ -119,10 +114,6 @@ class MediaItem extends AbstractStructBase
      */
     public function setHeight(?int $height = null): self
     {
-        // validation for constraint: int
-        if (!is_null($height) && !(is_int($height) || ctype_digit($height))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($height, true), gettype($height)), __LINE__);
-        }
         $this->height = $height;
         
         return $this;
@@ -142,10 +133,6 @@ class MediaItem extends AbstractStructBase
      */
     public function setWidth(?int $width = null): self
     {
-        // validation for constraint: int
-        if (!is_null($width) && !(is_int($width) || ctype_digit($width))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($width, true), gettype($width)), __LINE__);
-        }
         $this->width = $width;
         
         return $this;
@@ -165,10 +152,6 @@ class MediaItem extends AbstractStructBase
      */
     public function setType(?string $type = null): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->type = $type;
         
         return $this;
@@ -188,10 +171,6 @@ class MediaItem extends AbstractStructBase
      */
     public function setUrl(?string $url = null): self
     {
-        // validation for constraint: string
-        if (!is_null($url) && !is_string($url)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($url, true), gettype($url)), __LINE__);
-        }
         $this->url = $url;
         
         return $this;
@@ -211,10 +190,6 @@ class MediaItem extends AbstractStructBase
      */
     public function setIcon(?string $icon = null): self
     {
-        // validation for constraint: string
-        if (!is_null($icon) && !is_string($icon)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($icon, true), gettype($icon)), __LINE__);
-        }
         $this->icon = $icon;
         
         return $this;
@@ -228,45 +203,12 @@ class MediaItem extends AbstractStructBase
         return $this->sizeCode;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setSizeCode method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setSizeCode method
-     * This is a set of validation rules based on the union types associated to the property SizeCode
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateSizeCodeForUnionConstraintFromSetSizeCode($value): string
-    {
-        $message = '';
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeImageSize::valueIsValid($value)) {
-            $exception0 = new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeImageSize', is_array($value) ? implode(', ', $value) : var_export($value, true), implode(', ', \Travelport\Hotel\EnumType\TypeImageSize::getValidValues())), __LINE__);
-        }
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeOtherImageSize::valueIsValid($value)) {
-            $exception1 = new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeOtherImageSize', is_array($value) ? implode(', ', $value) : var_export($value, true), implode(', ', \Travelport\Hotel\EnumType\TypeOtherImageSize::getValidValues())), __LINE__);
-        }
-        if (isset($exception0) && isset($exception1)) {
-            $message = sprintf("The value %s does not match any of the union rules: typeImageSize, typeOtherImageSize. See following errors:\n%s", var_export($value, true), implode("\n", array_map(function(InvalidArgumentException $e) { return sprintf(' - %s', $e->getMessage()); }, [$exception0, $exception1])));
-        }
-        unset($exception0, $exception1);
-        
-        return $message;
-    }
-    /**
      * Set sizeCode value
      * @param string $sizeCode
      * @return \Travelport\Hotel\StructType\MediaItem
      */
     public function setSizeCode(?string $sizeCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($sizeCode) && !is_string($sizeCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sizeCode, true), gettype($sizeCode)), __LINE__);
-        }
-        // validation for constraint: union(typeImageSize, typeOtherImageSize)
-        if ('' !== ($sizeCodeUnionErrorMessage = self::validateSizeCodeForUnionConstraintFromSetSizeCode($sizeCode))) {
-            throw new InvalidArgumentException($sizeCodeUnionErrorMessage, __LINE__);
-        }
         $this->sizeCode = $sizeCode;
         
         return $this;

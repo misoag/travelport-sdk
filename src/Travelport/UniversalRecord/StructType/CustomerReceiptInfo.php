@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class CustomerReceiptInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $BookingTravelerRef;
+    public string $BookingTravelerRef;
     /**
      * The EmailRef
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class CustomerReceiptInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $EmailRef;
+    public string $EmailRef;
     /**
      * Constructor method for CustomerReceiptInfo
      * @uses CustomerReceiptInfo::setBookingTravelerRef()
@@ -61,10 +60,6 @@ class CustomerReceiptInfo extends AbstractStructBase
      */
     public function setBookingTravelerRef(string $bookingTravelerRef): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;
@@ -84,10 +79,6 @@ class CustomerReceiptInfo extends AbstractStructBase
      */
     public function setEmailRef(string $emailRef): self
     {
-        // validation for constraint: string
-        if (!is_null($emailRef) && !is_string($emailRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($emailRef, true), gettype($emailRef)), __LINE__);
-        }
         $this->EmailRef = $emailRef;
         
         return $this;

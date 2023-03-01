@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,14 +18,14 @@ class ConjunctedTicketInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Number;
+    public string $Number;
     /**
      * The Status
      * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
-    protected string $Status;
+    public string $Status;
     /**
      * The IATANumber
      * Meta information extracted from the WSDL
@@ -36,14 +35,14 @@ class ConjunctedTicketInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $IATANumber = null;
+    public ?string $IATANumber = null;
     /**
      * The TicketIssueDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketIssueDate = null;
+    public ?string $TicketIssueDate = null;
     /**
      * The TicketingAgentSignOn
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class ConjunctedTicketInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketingAgentSignOn = null;
+    public ?string $TicketingAgentSignOn = null;
     /**
      * The CountryCode
      * Meta information extracted from the WSDL
@@ -62,7 +61,7 @@ class ConjunctedTicketInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CountryCode = null;
+    public ?string $CountryCode = null;
     /**
      * Constructor method for ConjunctedTicketInfo
      * @uses ConjunctedTicketInfo::setNumber()
@@ -103,10 +102,6 @@ class ConjunctedTicketInfo extends AbstractStructBase
      */
     public function setNumber(string $number): self
     {
-        // validation for constraint: string
-        if (!is_null($number) && !is_string($number)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
-        }
         $this->Number = $number;
         
         return $this;
@@ -121,18 +116,11 @@ class ConjunctedTicketInfo extends AbstractStructBase
     }
     /**
      * Set Status value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTicketStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTicketStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $status
      * @return \Travelport\UniversalRecord\StructType\ConjunctedTicketInfo
      */
     public function setStatus(string $status): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeTicketStatus::valueIsValid($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeTicketStatus', is_array($status) ? implode(', ', $status) : var_export($status, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeTicketStatus::getValidValues())), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -152,14 +140,6 @@ class ConjunctedTicketInfo extends AbstractStructBase
      */
     public function setIATANumber(?string $iATANumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($iATANumber) && !is_string($iATANumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iATANumber, true), gettype($iATANumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($iATANumber) && mb_strlen((string) $iATANumber) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $iATANumber)), __LINE__);
-        }
         $this->IATANumber = $iATANumber;
         
         return $this;
@@ -179,10 +159,6 @@ class ConjunctedTicketInfo extends AbstractStructBase
      */
     public function setTicketIssueDate(?string $ticketIssueDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketIssueDate) && !is_string($ticketIssueDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketIssueDate, true), gettype($ticketIssueDate)), __LINE__);
-        }
         $this->TicketIssueDate = $ticketIssueDate;
         
         return $this;
@@ -202,14 +178,6 @@ class ConjunctedTicketInfo extends AbstractStructBase
      */
     public function setTicketingAgentSignOn(?string $ticketingAgentSignOn = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketingAgentSignOn) && !is_string($ticketingAgentSignOn)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketingAgentSignOn, true), gettype($ticketingAgentSignOn)), __LINE__);
-        }
-        // validation for constraint: maxLength(9)
-        if (!is_null($ticketingAgentSignOn) && mb_strlen((string) $ticketingAgentSignOn) > 9) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 9', mb_strlen((string) $ticketingAgentSignOn)), __LINE__);
-        }
         $this->TicketingAgentSignOn = $ticketingAgentSignOn;
         
         return $this;
@@ -229,14 +197,6 @@ class ConjunctedTicketInfo extends AbstractStructBase
      */
     public function setCountryCode(?string $countryCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($countryCode) && !is_string($countryCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($countryCode, true), gettype($countryCode)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($countryCode) && mb_strlen((string) $countryCode) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $countryCode)), __LINE__);
-        }
         $this->CountryCode = $countryCode;
         
         return $this;

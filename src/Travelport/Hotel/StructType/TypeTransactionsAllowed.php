@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class TypeTransactionsAllowed extends TypeBookingTransactionsAllowed
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ShoppingEnabled = null;
+    public ?bool $ShoppingEnabled = null;
     /**
      * The PricingEnabled
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class TypeTransactionsAllowed extends TypeBookingTransactionsAllowed
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PricingEnabled = null;
+    public ?bool $PricingEnabled = null;
     /**
      * Constructor method for typeTransactionsAllowed
      * @uses TypeTransactionsAllowed::setShoppingEnabled()
@@ -57,10 +56,6 @@ class TypeTransactionsAllowed extends TypeBookingTransactionsAllowed
      */
     public function setShoppingEnabled(?bool $shoppingEnabled = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($shoppingEnabled) && !is_bool($shoppingEnabled)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($shoppingEnabled, true), gettype($shoppingEnabled)), __LINE__);
-        }
         $this->ShoppingEnabled = $shoppingEnabled;
         
         return $this;
@@ -80,10 +75,6 @@ class TypeTransactionsAllowed extends TypeBookingTransactionsAllowed
      */
     public function setPricingEnabled(?bool $pricingEnabled = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($pricingEnabled) && !is_bool($pricingEnabled)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($pricingEnabled, true), gettype($pricingEnabled)), __LINE__);
-        }
         $this->PricingEnabled = $pricingEnabled;
         
         return $this;

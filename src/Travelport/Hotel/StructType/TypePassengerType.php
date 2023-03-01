@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -26,7 +25,7 @@ class TypePassengerType extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Code;
+    public string $Code;
     /**
      * The Name
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class TypePassengerType extends AbstractStructBase
      * - ref: Name
      * @var \Travelport\Hotel\StructType\Name|null
      */
-    protected ?\Travelport\Hotel\StructType\Name $Name = null;
+    public ?\Travelport\Hotel\StructType\Name $Name = null;
     /**
      * The LoyaltyCard
      * Meta information extracted from the WSDL
@@ -43,7 +42,7 @@ class TypePassengerType extends AbstractStructBase
      * - ref: LoyaltyCard
      * @var \Travelport\Hotel\StructType\LoyaltyCard[]
      */
-    protected ?array $LoyaltyCard = null;
+    public ?array $LoyaltyCard = null;
     /**
      * The DiscountCard
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class TypePassengerType extends AbstractStructBase
      * - ref: DiscountCard
      * @var \Travelport\Hotel\StructType\DiscountCard[]
      */
-    protected ?array $DiscountCard = null;
+    public ?array $DiscountCard = null;
     /**
      * The PersonalGeography
      * Meta information extracted from the WSDL
@@ -60,14 +59,14 @@ class TypePassengerType extends AbstractStructBase
      * - ref: PersonalGeography
      * @var \Travelport\Hotel\StructType\PersonalGeography|null
      */
-    protected ?\Travelport\Hotel\StructType\PersonalGeography $PersonalGeography = null;
+    public ?\Travelport\Hotel\StructType\PersonalGeography $PersonalGeography = null;
     /**
      * The Age
      * Meta information extracted from the WSDL
      * - use: optional
      * @var int|null
      */
-    protected ?int $Age = null;
+    public ?int $Age = null;
     /**
      * The DOB
      * Meta information extracted from the WSDL
@@ -75,7 +74,7 @@ class TypePassengerType extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DOB = null;
+    public ?string $DOB = null;
     /**
      * The Gender
      * Meta information extracted from the WSDL
@@ -86,14 +85,14 @@ class TypePassengerType extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Gender = null;
+    public ?string $Gender = null;
     /**
      * The PricePTCOnly
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PricePTCOnly = null;
+    public ?bool $PricePTCOnly = null;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -101,7 +100,7 @@ class TypePassengerType extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingTravelerRef = null;
+    public ?string $BookingTravelerRef = null;
     /**
      * The AccompaniedPassenger
      * Meta information extracted from the WSDL
@@ -110,7 +109,7 @@ class TypePassengerType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AccompaniedPassenger = null;
+    public ?bool $AccompaniedPassenger = null;
     /**
      * The ResidencyType
      * Meta information extracted from the WSDL
@@ -118,7 +117,7 @@ class TypePassengerType extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ResidencyType = null;
+    public ?string $ResidencyType = null;
     /**
      * Constructor method for typePassengerType
      * @uses TypePassengerType::setCode()
@@ -177,18 +176,6 @@ class TypePassengerType extends AbstractStructBase
      */
     public function setCode(string $code): self
     {
-        // validation for constraint: string
-        if (!is_null($code) && !is_string($code)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($code) && mb_strlen((string) $code) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $code)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($code) && mb_strlen((string) $code) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $code)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;
@@ -221,48 +208,12 @@ class TypePassengerType extends AbstractStructBase
         return $this->LoyaltyCard;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setLoyaltyCard method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyCard method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $typePassengerTypeLoyaltyCardItem) {
-            // validation for constraint: itemType
-            if (!$typePassengerTypeLoyaltyCardItem instanceof \Travelport\Hotel\StructType\LoyaltyCard) {
-                $invalidValues[] = is_object($typePassengerTypeLoyaltyCardItem) ? get_class($typePassengerTypeLoyaltyCardItem) : sprintf('%s(%s)', gettype($typePassengerTypeLoyaltyCardItem), var_export($typePassengerTypeLoyaltyCardItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The LoyaltyCard property can only contain items of type \Travelport\Hotel\StructType\LoyaltyCard, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set LoyaltyCard value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\LoyaltyCard[] $loyaltyCard
      * @return \Travelport\Hotel\StructType\TypePassengerType
      */
     public function setLoyaltyCard(?array $loyaltyCard = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($loyaltyCardArrayErrorMessage = self::validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard($loyaltyCard))) {
-            throw new InvalidArgumentException($loyaltyCardArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($loyaltyCard) && count($loyaltyCard) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($loyaltyCard)), __LINE__);
-        }
         $this->LoyaltyCard = $loyaltyCard;
         
         return $this;
@@ -275,14 +226,6 @@ class TypePassengerType extends AbstractStructBase
      */
     public function addToLoyaltyCard(\Travelport\Hotel\StructType\LoyaltyCard $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\LoyaltyCard) {
-            throw new InvalidArgumentException(sprintf('The LoyaltyCard property can only contain items of type \Travelport\Hotel\StructType\LoyaltyCard, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->LoyaltyCard) && count($this->LoyaltyCard) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->LoyaltyCard)), __LINE__);
-        }
         $this->LoyaltyCard[] = $item;
         
         return $this;
@@ -296,48 +239,12 @@ class TypePassengerType extends AbstractStructBase
         return $this->DiscountCard;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setDiscountCard method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setDiscountCard method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateDiscountCardForArrayConstraintFromSetDiscountCard(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $typePassengerTypeDiscountCardItem) {
-            // validation for constraint: itemType
-            if (!$typePassengerTypeDiscountCardItem instanceof \Travelport\Hotel\StructType\DiscountCard) {
-                $invalidValues[] = is_object($typePassengerTypeDiscountCardItem) ? get_class($typePassengerTypeDiscountCardItem) : sprintf('%s(%s)', gettype($typePassengerTypeDiscountCardItem), var_export($typePassengerTypeDiscountCardItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The DiscountCard property can only contain items of type \Travelport\Hotel\StructType\DiscountCard, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set DiscountCard value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\DiscountCard[] $discountCard
      * @return \Travelport\Hotel\StructType\TypePassengerType
      */
     public function setDiscountCard(?array $discountCard = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($discountCardArrayErrorMessage = self::validateDiscountCardForArrayConstraintFromSetDiscountCard($discountCard))) {
-            throw new InvalidArgumentException($discountCardArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(9)
-        if (is_array($discountCard) && count($discountCard) > 9) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 9', count($discountCard)), __LINE__);
-        }
         $this->DiscountCard = $discountCard;
         
         return $this;
@@ -350,14 +257,6 @@ class TypePassengerType extends AbstractStructBase
      */
     public function addToDiscountCard(\Travelport\Hotel\StructType\DiscountCard $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\DiscountCard) {
-            throw new InvalidArgumentException(sprintf('The DiscountCard property can only contain items of type \Travelport\Hotel\StructType\DiscountCard, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(9)
-        if (is_array($this->DiscountCard) && count($this->DiscountCard) >= 9) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 9', count($this->DiscountCard)), __LINE__);
-        }
         $this->DiscountCard[] = $item;
         
         return $this;
@@ -396,10 +295,6 @@ class TypePassengerType extends AbstractStructBase
      */
     public function setAge(?int $age = null): self
     {
-        // validation for constraint: int
-        if (!is_null($age) && !(is_int($age) || ctype_digit($age))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($age, true), gettype($age)), __LINE__);
-        }
         $this->Age = $age;
         
         return $this;
@@ -419,10 +314,6 @@ class TypePassengerType extends AbstractStructBase
      */
     public function setDOB(?string $dOB = null): self
     {
-        // validation for constraint: string
-        if (!is_null($dOB) && !is_string($dOB)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dOB, true), gettype($dOB)), __LINE__);
-        }
         $this->DOB = $dOB;
         
         return $this;
@@ -442,18 +333,6 @@ class TypePassengerType extends AbstractStructBase
      */
     public function setGender(?string $gender = null): self
     {
-        // validation for constraint: string
-        if (!is_null($gender) && !is_string($gender)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($gender, true), gettype($gender)), __LINE__);
-        }
-        // validation for constraint: maxLength(2)
-        if (!is_null($gender) && mb_strlen((string) $gender) > 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 2', mb_strlen((string) $gender)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($gender) && mb_strlen((string) $gender) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $gender)), __LINE__);
-        }
         $this->Gender = $gender;
         
         return $this;
@@ -473,10 +352,6 @@ class TypePassengerType extends AbstractStructBase
      */
     public function setPricePTCOnly(?bool $pricePTCOnly = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($pricePTCOnly) && !is_bool($pricePTCOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($pricePTCOnly, true), gettype($pricePTCOnly)), __LINE__);
-        }
         $this->PricePTCOnly = $pricePTCOnly;
         
         return $this;
@@ -496,10 +371,6 @@ class TypePassengerType extends AbstractStructBase
      */
     public function setBookingTravelerRef(?string $bookingTravelerRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;
@@ -519,10 +390,6 @@ class TypePassengerType extends AbstractStructBase
      */
     public function setAccompaniedPassenger(?bool $accompaniedPassenger = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($accompaniedPassenger) && !is_bool($accompaniedPassenger)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($accompaniedPassenger, true), gettype($accompaniedPassenger)), __LINE__);
-        }
         $this->AccompaniedPassenger = $accompaniedPassenger;
         
         return $this;
@@ -537,18 +404,11 @@ class TypePassengerType extends AbstractStructBase
     }
     /**
      * Set ResidencyType value
-     * @uses \Travelport\Hotel\EnumType\TypeResidency::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeResidency::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $residencyType
      * @return \Travelport\Hotel\StructType\TypePassengerType
      */
     public function setResidencyType(?string $residencyType = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeResidency::valueIsValid($residencyType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeResidency', is_array($residencyType) ? implode(', ', $residencyType) : var_export($residencyType, true), implode(', ', \Travelport\Hotel\EnumType\TypeResidency::getValidValues())), __LINE__);
-        }
         $this->ResidencyType = $residencyType;
         
         return $this;

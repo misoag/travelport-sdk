@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class StockControl extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Type = null;
+    public ?string $Type = null;
     /**
      * The Number
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class StockControl extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Number = null;
+    public ?string $Number = null;
     /**
      * Constructor method for StockControl
      * @uses StockControl::setType()
@@ -59,10 +58,6 @@ class StockControl extends AbstractStructBase
      */
     public function setType(?string $type = null): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -82,10 +77,6 @@ class StockControl extends AbstractStructBase
      */
     public function setNumber(?string $number = null): self
     {
-        // validation for constraint: string
-        if (!is_null($number) && !is_string($number)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
-        }
         $this->Number = $number;
         
         return $this;

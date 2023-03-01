@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class RefundRemark extends AbstractStructBase
      * - documentation: Actual remark data.
      * @var string|null
      */
-    protected ?string $RemarkData = null;
+    public ?string $RemarkData = null;
     /**
      * Constructor method for RefundRemark
      * @uses RefundRemark::setRemarkData()
@@ -47,10 +46,6 @@ class RefundRemark extends AbstractStructBase
      */
     public function setRemarkData(?string $remarkData = null): self
     {
-        // validation for constraint: string
-        if (!is_null($remarkData) && !is_string($remarkData)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($remarkData, true), gettype($remarkData)), __LINE__);
-        }
         $this->RemarkData = $remarkData;
         
         return $this;

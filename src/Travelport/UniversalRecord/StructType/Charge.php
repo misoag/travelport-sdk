@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class Charge extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Amount;
+    public string $Amount;
     /**
      * The RatePeriod
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class Charge extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $RatePeriod;
+    public string $RatePeriod;
     /**
      * The IncludedInEstTotalInd
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class Charge extends AbstractStructBase
      * - use: required
      * @var bool
      */
-    protected bool $IncludedInEstTotalInd;
+    public bool $IncludedInEstTotalInd;
     /**
      * Constructor method for Charge
      * @uses Charge::setAmount()
@@ -71,10 +70,6 @@ class Charge extends AbstractStructBase
      */
     public function setAmount(string $amount): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -94,10 +89,6 @@ class Charge extends AbstractStructBase
      */
     public function setRatePeriod(string $ratePeriod): self
     {
-        // validation for constraint: string
-        if (!is_null($ratePeriod) && !is_string($ratePeriod)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ratePeriod, true), gettype($ratePeriod)), __LINE__);
-        }
         $this->RatePeriod = $ratePeriod;
         
         return $this;
@@ -117,10 +108,6 @@ class Charge extends AbstractStructBase
      */
     public function setIncludedInEstTotalInd(bool $includedInEstTotalInd): self
     {
-        // validation for constraint: boolean
-        if (!is_null($includedInEstTotalInd) && !is_bool($includedInEstTotalInd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($includedInEstTotalInd, true), gettype($includedInEstTotalInd)), __LINE__);
-        }
         $this->IncludedInEstTotalInd = $includedInEstTotalInd;
         
         return $this;

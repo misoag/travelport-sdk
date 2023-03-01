@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class ProviderReservationStatus extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $CreateDate;
+    public string $CreateDate;
     /**
      * The ModifiedDate
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class ProviderReservationStatus extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ModifiedDate;
+    public string $ModifiedDate;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class ProviderReservationStatus extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ProviderCode;
+    public string $ProviderCode;
     /**
      * The LocatorCode
      * Meta information extracted from the WSDL
@@ -51,7 +50,7 @@ class ProviderReservationStatus extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $LocatorCode;
+    public string $LocatorCode;
     /**
      * The Cancelled
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class ProviderReservationStatus extends AbstractStructBase
      * - use: required
      * @var bool
      */
-    protected bool $Cancelled;
+    public bool $Cancelled;
     /**
      * The CancelInfo
      * Meta information extracted from the WSDL
@@ -67,7 +66,7 @@ class ProviderReservationStatus extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeResultMessage|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeResultMessage $CancelInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeResultMessage $CancelInfo = null;
     /**
      * Constructor method for ProviderReservationStatus
      * @uses ProviderReservationStatus::setCreateDate()
@@ -108,10 +107,6 @@ class ProviderReservationStatus extends AbstractStructBase
      */
     public function setCreateDate(string $createDate): self
     {
-        // validation for constraint: string
-        if (!is_null($createDate) && !is_string($createDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($createDate, true), gettype($createDate)), __LINE__);
-        }
         $this->CreateDate = $createDate;
         
         return $this;
@@ -131,10 +126,6 @@ class ProviderReservationStatus extends AbstractStructBase
      */
     public function setModifiedDate(string $modifiedDate): self
     {
-        // validation for constraint: string
-        if (!is_null($modifiedDate) && !is_string($modifiedDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($modifiedDate, true), gettype($modifiedDate)), __LINE__);
-        }
         $this->ModifiedDate = $modifiedDate;
         
         return $this;
@@ -154,18 +145,6 @@ class ProviderReservationStatus extends AbstractStructBase
      */
     public function setProviderCode(string $providerCode): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -185,14 +164,6 @@ class ProviderReservationStatus extends AbstractStructBase
      */
     public function setLocatorCode(string $locatorCode): self
     {
-        // validation for constraint: string
-        if (!is_null($locatorCode) && !is_string($locatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($locatorCode, true), gettype($locatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($locatorCode) && mb_strlen((string) $locatorCode) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $locatorCode)), __LINE__);
-        }
         $this->LocatorCode = $locatorCode;
         
         return $this;
@@ -212,10 +183,6 @@ class ProviderReservationStatus extends AbstractStructBase
      */
     public function setCancelled(bool $cancelled): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cancelled) && !is_bool($cancelled)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cancelled, true), gettype($cancelled)), __LINE__);
-        }
         $this->Cancelled = $cancelled;
         
         return $this;

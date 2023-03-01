@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class PenaltyFareInformation extends AbstractStructBase
      * - use: required
      * @var bool
      */
-    protected bool $ProhibitPenaltyFares;
+    public bool $ProhibitPenaltyFares;
     /**
      * The PenaltyInfo
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class PenaltyFareInformation extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeFarePenalty|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeFarePenalty $PenaltyInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeFarePenalty $PenaltyInfo = null;
     /**
      * Constructor method for PenaltyFareInformation
      * @uses PenaltyFareInformation::setProhibitPenaltyFares()
@@ -57,10 +56,6 @@ class PenaltyFareInformation extends AbstractStructBase
      */
     public function setProhibitPenaltyFares(bool $prohibitPenaltyFares): self
     {
-        // validation for constraint: boolean
-        if (!is_null($prohibitPenaltyFares) && !is_bool($prohibitPenaltyFares)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($prohibitPenaltyFares, true), gettype($prohibitPenaltyFares)), __LINE__);
-        }
         $this->ProhibitPenaltyFares = $prohibitPenaltyFares;
         
         return $this;

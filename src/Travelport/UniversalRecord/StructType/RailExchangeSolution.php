@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class RailExchangeSolution extends TypeRailPricingSolution
      * - ref: RailExchangeInfo
      * @var \Travelport\UniversalRecord\StructType\RailExchangeInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\RailExchangeInfo $RailExchangeInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\RailExchangeInfo $RailExchangeInfo = null;
     /**
      * Constructor method for RailExchangeSolution
      * @uses RailExchangeSolution::setRailExchangeInfo()

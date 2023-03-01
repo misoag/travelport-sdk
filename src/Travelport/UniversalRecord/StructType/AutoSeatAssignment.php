@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class AutoSeatAssignment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $SeatType;
+    public string $SeatType;
     /**
      * The SegmentRef
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class AutoSeatAssignment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SegmentRef = null;
+    public ?string $SegmentRef = null;
     /**
      * The Smoking
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class AutoSeatAssignment extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Smoking = null;
+    public ?bool $Smoking = null;
     /**
      * The Group
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class AutoSeatAssignment extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Group = null;
+    public ?bool $Group = null;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -58,7 +57,7 @@ class AutoSeatAssignment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingTravelerRef = null;
+    public ?string $BookingTravelerRef = null;
     /**
      * Constructor method for AutoSeatAssignment
      * @uses AutoSeatAssignment::setSeatType()
@@ -91,18 +90,11 @@ class AutoSeatAssignment extends AbstractStructBase
     }
     /**
      * Set SeatType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeReqSeat::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeReqSeat::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $seatType
      * @return \Travelport\UniversalRecord\StructType\AutoSeatAssignment
      */
     public function setSeatType(string $seatType): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeReqSeat::valueIsValid($seatType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeReqSeat', is_array($seatType) ? implode(', ', $seatType) : var_export($seatType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeReqSeat::getValidValues())), __LINE__);
-        }
         $this->SeatType = $seatType;
         
         return $this;
@@ -122,10 +114,6 @@ class AutoSeatAssignment extends AbstractStructBase
      */
     public function setSegmentRef(?string $segmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($segmentRef) && !is_string($segmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($segmentRef, true), gettype($segmentRef)), __LINE__);
-        }
         $this->SegmentRef = $segmentRef;
         
         return $this;
@@ -145,10 +133,6 @@ class AutoSeatAssignment extends AbstractStructBase
      */
     public function setSmoking(?bool $smoking = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($smoking) && !is_bool($smoking)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($smoking, true), gettype($smoking)), __LINE__);
-        }
         $this->Smoking = $smoking;
         
         return $this;
@@ -168,10 +152,6 @@ class AutoSeatAssignment extends AbstractStructBase
      */
     public function setGroup(?bool $group = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($group) && !is_bool($group)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($group, true), gettype($group)), __LINE__);
-        }
         $this->Group = $group;
         
         return $this;
@@ -191,10 +171,6 @@ class AutoSeatAssignment extends AbstractStructBase
      */
     public function setBookingTravelerRef(?string $bookingTravelerRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;

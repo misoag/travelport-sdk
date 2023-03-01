@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class DocumentSelect extends AbstractStructBase
      * - ref: BackOfficeHandOff
      * @var \Travelport\UniversalRecord\StructType\BackOfficeHandOff|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\BackOfficeHandOff $BackOfficeHandOff = null;
+    public ?\Travelport\UniversalRecord\StructType\BackOfficeHandOff $BackOfficeHandOff = null;
     /**
      * The Itinerary
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class DocumentSelect extends AbstractStructBase
      * - ref: Itinerary
      * @var \Travelport\UniversalRecord\StructType\Itinerary|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Itinerary $Itinerary = null;
+    public ?\Travelport\UniversalRecord\StructType\Itinerary $Itinerary = null;
     /**
      * The IssueTicketOnly
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class DocumentSelect extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $IssueTicketOnly = null;
+    public ?bool $IssueTicketOnly = null;
     /**
      * The IssueElectronicTicket
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class DocumentSelect extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $IssueElectronicTicket = null;
+    public ?bool $IssueElectronicTicket = null;
     /**
      * The FaxIndicator
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class DocumentSelect extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $FaxIndicator = null;
+    public ?bool $FaxIndicator = null;
     /**
      * Constructor method for DocumentSelect
      * @uses DocumentSelect::setBackOfficeHandOff()
@@ -130,10 +129,6 @@ class DocumentSelect extends AbstractStructBase
      */
     public function setIssueTicketOnly(?bool $issueTicketOnly = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($issueTicketOnly) && !is_bool($issueTicketOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($issueTicketOnly, true), gettype($issueTicketOnly)), __LINE__);
-        }
         $this->IssueTicketOnly = $issueTicketOnly;
         
         return $this;
@@ -153,10 +148,6 @@ class DocumentSelect extends AbstractStructBase
      */
     public function setIssueElectronicTicket(?bool $issueElectronicTicket = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($issueElectronicTicket) && !is_bool($issueElectronicTicket)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($issueElectronicTicket, true), gettype($issueElectronicTicket)), __LINE__);
-        }
         $this->IssueElectronicTicket = $issueElectronicTicket;
         
         return $this;
@@ -176,10 +167,6 @@ class DocumentSelect extends AbstractStructBase
      */
     public function setFaxIndicator(?bool $faxIndicator = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($faxIndicator) && !is_bool($faxIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($faxIndicator, true), gettype($faxIndicator)), __LINE__);
-        }
         $this->FaxIndicator = $faxIndicator;
         
         return $this;

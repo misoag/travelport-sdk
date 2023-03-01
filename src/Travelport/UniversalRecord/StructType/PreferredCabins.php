@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class PreferredCabins extends AbstractStructBase
      * - ref: common:CabinClass
      * @var \Travelport\UniversalRecord\StructType\CabinClass|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CabinClass $CabinClass = null;
+    public ?\Travelport\UniversalRecord\StructType\CabinClass $CabinClass = null;
     /**
      * Constructor method for PreferredCabins
      * @uses PreferredCabins::setCabinClass()

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class TypeSpecificTime extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Time;
+    public string $Time;
     /**
      * Constructor method for typeSpecificTime
      * @uses TypeSpecificTime::setTime()
@@ -47,10 +46,6 @@ class TypeSpecificTime extends AbstractStructBase
      */
     public function setTime(string $time): self
     {
-        // validation for constraint: string
-        if (!is_null($time) && !is_string($time)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($time, true), gettype($time)), __LINE__);
-        }
         $this->Time = $time;
         
         return $this;

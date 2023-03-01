@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class HotelMediaLinksReq extends BaseReq
      * - ref: common:PermittedProviders
      * @var \Travelport\Hotel\StructType\PermittedProviders|null
      */
-    protected ?\Travelport\Hotel\StructType\PermittedProviders $PermittedProviders = null;
+    public ?\Travelport\Hotel\StructType\PermittedProviders $PermittedProviders = null;
     /**
      * The HotelProperty
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class HotelMediaLinksReq extends BaseReq
      * - ref: HotelProperty
      * @var \Travelport\Hotel\StructType\HotelProperty[]
      */
-    protected ?array $HotelProperty = null;
+    public ?array $HotelProperty = null;
     /**
      * The SecureLinks
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class HotelMediaLinksReq extends BaseReq
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $SecureLinks = null;
+    public ?bool $SecureLinks = null;
     /**
      * The SizeCode
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class HotelMediaLinksReq extends BaseReq
      * - use: optional
      * @var string|null
      */
-    protected ?string $SizeCode = null;
+    public ?string $SizeCode = null;
     /**
      * The RichMedia
      * Meta information extracted from the WSDL
@@ -58,7 +57,7 @@ class HotelMediaLinksReq extends BaseReq
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $RichMedia = null;
+    public ?bool $RichMedia = null;
     /**
      * The Gallery
      * Meta information extracted from the WSDL
@@ -67,7 +66,7 @@ class HotelMediaLinksReq extends BaseReq
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Gallery = null;
+    public ?bool $Gallery = null;
     /**
      * Constructor method for HotelMediaLinksReq
      * @uses HotelMediaLinksReq::setPermittedProviders()
@@ -121,48 +120,12 @@ class HotelMediaLinksReq extends BaseReq
         return $this->HotelProperty;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHotelProperty method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHotelProperty method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateHotelPropertyForArrayConstraintFromSetHotelProperty(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelMediaLinksReqHotelPropertyItem) {
-            // validation for constraint: itemType
-            if (!$hotelMediaLinksReqHotelPropertyItem instanceof \Travelport\Hotel\StructType\HotelProperty) {
-                $invalidValues[] = is_object($hotelMediaLinksReqHotelPropertyItem) ? get_class($hotelMediaLinksReqHotelPropertyItem) : sprintf('%s(%s)', gettype($hotelMediaLinksReqHotelPropertyItem), var_export($hotelMediaLinksReqHotelPropertyItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The HotelProperty property can only contain items of type \Travelport\Hotel\StructType\HotelProperty, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set HotelProperty value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\HotelProperty[] $hotelProperty
      * @return \Travelport\Hotel\StructType\HotelMediaLinksReq
      */
     public function setHotelProperty(?array $hotelProperty = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($hotelPropertyArrayErrorMessage = self::validateHotelPropertyForArrayConstraintFromSetHotelProperty($hotelProperty))) {
-            throw new InvalidArgumentException($hotelPropertyArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(20)
-        if (is_array($hotelProperty) && count($hotelProperty) > 20) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 20', count($hotelProperty)), __LINE__);
-        }
         $this->HotelProperty = $hotelProperty;
         
         return $this;
@@ -175,14 +138,6 @@ class HotelMediaLinksReq extends BaseReq
      */
     public function addToHotelProperty(\Travelport\Hotel\StructType\HotelProperty $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\HotelProperty) {
-            throw new InvalidArgumentException(sprintf('The HotelProperty property can only contain items of type \Travelport\Hotel\StructType\HotelProperty, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(20)
-        if (is_array($this->HotelProperty) && count($this->HotelProperty) >= 20) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 20', count($this->HotelProperty)), __LINE__);
-        }
         $this->HotelProperty[] = $item;
         
         return $this;
@@ -202,10 +157,6 @@ class HotelMediaLinksReq extends BaseReq
      */
     public function setSecureLinks(?bool $secureLinks = true): self
     {
-        // validation for constraint: boolean
-        if (!is_null($secureLinks) && !is_bool($secureLinks)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($secureLinks, true), gettype($secureLinks)), __LINE__);
-        }
         $this->SecureLinks = $secureLinks;
         
         return $this;
@@ -219,45 +170,12 @@ class HotelMediaLinksReq extends BaseReq
         return $this->SizeCode;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setSizeCode method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setSizeCode method
-     * This is a set of validation rules based on the union types associated to the property SizeCode
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateSizeCodeForUnionConstraintFromSetSizeCode($value): string
-    {
-        $message = '';
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeImageSize::valueIsValid($value)) {
-            $exception0 = new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeImageSize', is_array($value) ? implode(', ', $value) : var_export($value, true), implode(', ', \Travelport\Hotel\EnumType\TypeImageSize::getValidValues())), __LINE__);
-        }
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeAllImageSize::valueIsValid($value)) {
-            $exception1 = new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeAllImageSize', is_array($value) ? implode(', ', $value) : var_export($value, true), implode(', ', \Travelport\Hotel\EnumType\TypeAllImageSize::getValidValues())), __LINE__);
-        }
-        if (isset($exception0) && isset($exception1)) {
-            $message = sprintf("The value %s does not match any of the union rules: typeImageSize, typeAllImageSize. See following errors:\n%s", var_export($value, true), implode("\n", array_map(function(InvalidArgumentException $e) { return sprintf(' - %s', $e->getMessage()); }, [$exception0, $exception1])));
-        }
-        unset($exception0, $exception1);
-        
-        return $message;
-    }
-    /**
      * Set SizeCode value
      * @param string $sizeCode
      * @return \Travelport\Hotel\StructType\HotelMediaLinksReq
      */
     public function setSizeCode(?string $sizeCode = 'A'): self
     {
-        // validation for constraint: string
-        if (!is_null($sizeCode) && !is_string($sizeCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sizeCode, true), gettype($sizeCode)), __LINE__);
-        }
-        // validation for constraint: union(typeImageSize, typeAllImageSize)
-        if ('' !== ($sizeCodeUnionErrorMessage = self::validateSizeCodeForUnionConstraintFromSetSizeCode($sizeCode))) {
-            throw new InvalidArgumentException($sizeCodeUnionErrorMessage, __LINE__);
-        }
         $this->SizeCode = $sizeCode;
         
         return $this;
@@ -277,10 +195,6 @@ class HotelMediaLinksReq extends BaseReq
      */
     public function setRichMedia(?bool $richMedia = true): self
     {
-        // validation for constraint: boolean
-        if (!is_null($richMedia) && !is_bool($richMedia)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($richMedia, true), gettype($richMedia)), __LINE__);
-        }
         $this->RichMedia = $richMedia;
         
         return $this;
@@ -300,10 +214,6 @@ class HotelMediaLinksReq extends BaseReq
      */
     public function setGallery(?bool $gallery = true): self
     {
-        // validation for constraint: boolean
-        if (!is_null($gallery) && !is_bool($gallery)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($gallery, true), gettype($gallery)), __LINE__);
-        }
         $this->Gallery = $gallery;
         
         return $this;

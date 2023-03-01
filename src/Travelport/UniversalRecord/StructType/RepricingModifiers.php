@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class RepricingModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $PrivateFareOptions = null;
+    public ?string $PrivateFareOptions = null;
     /**
      * The FareType
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class RepricingModifiers extends AbstractStructBase
      * - ref: FareType
      * @var \Travelport\UniversalRecord\StructType\FareType[]
      */
-    protected ?array $FareType = null;
+    public ?array $FareType = null;
     /**
      * The FareTicketDesignator
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class RepricingModifiers extends AbstractStructBase
      * - ref: FareTicketDesignator
      * @var \Travelport\UniversalRecord\StructType\FareTicketDesignator|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FareTicketDesignator $FareTicketDesignator = null;
+    public ?\Travelport\UniversalRecord\StructType\FareTicketDesignator $FareTicketDesignator = null;
     /**
      * The OverrideCurrency
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class RepricingModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\OverrideCurrency|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\OverrideCurrency $OverrideCurrency = null;
+    public ?\Travelport\UniversalRecord\StructType\OverrideCurrency $OverrideCurrency = null;
     /**
      * The AirSegmentPricingModifiers
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class RepricingModifiers extends AbstractStructBase
      * - ref: AirSegmentPricingModifiers
      * @var \Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers[]
      */
-    protected ?array $AirSegmentPricingModifiers = null;
+    public ?array $AirSegmentPricingModifiers = null;
     /**
      * The WithholdTaxCode
      * Meta information extracted from the WSDL
@@ -70,7 +69,7 @@ class RepricingModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected ?array $WithholdTaxCode = null;
+    public ?array $WithholdTaxCode = null;
     /**
      * The PriceClassOfService
      * Meta information extracted from the WSDL
@@ -78,7 +77,7 @@ class RepricingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PriceClassOfService = null;
+    public ?string $PriceClassOfService = null;
     /**
      * The CreateDate
      * Meta information extracted from the WSDL
@@ -86,7 +85,7 @@ class RepricingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CreateDate = null;
+    public ?string $CreateDate = null;
     /**
      * The ReissueLocCityCode
      * Meta information extracted from the WSDL
@@ -96,7 +95,7 @@ class RepricingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ReissueLocCityCode = null;
+    public ?string $ReissueLocCityCode = null;
     /**
      * The ReissueLocCountryCode
      * Meta information extracted from the WSDL
@@ -106,7 +105,7 @@ class RepricingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ReissueLocCountryCode = null;
+    public ?string $ReissueLocCountryCode = null;
     /**
      * The BulkTicket
      * Meta information extracted from the WSDL
@@ -115,7 +114,7 @@ class RepricingModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $BulkTicket = null;
+    public ?bool $BulkTicket = null;
     /**
      * The AccountCode
      * Meta information extracted from the WSDL
@@ -123,7 +122,7 @@ class RepricingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AccountCode = null;
+    public ?string $AccountCode = null;
     /**
      * The PenaltyAsTaxCode
      * Meta information extracted from the WSDL
@@ -132,7 +131,7 @@ class RepricingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PenaltyAsTaxCode = null;
+    public ?string $PenaltyAsTaxCode = null;
     /**
      * The AirPricingSolutionRef
      * Meta information extracted from the WSDL
@@ -141,7 +140,7 @@ class RepricingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AirPricingSolutionRef = null;
+    public ?string $AirPricingSolutionRef = null;
     /**
      * The PenaltyToFare
      * Meta information extracted from the WSDL
@@ -149,7 +148,7 @@ class RepricingModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PenaltyToFare = null;
+    public ?bool $PenaltyToFare = null;
     /**
      * The PricePTCOnly
      * Meta information extracted from the WSDL
@@ -158,7 +157,7 @@ class RepricingModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PricePTCOnly = null;
+    public ?bool $PricePTCOnly = null;
     /**
      * The BrandDetails
      * Meta information extracted from the WSDL
@@ -167,7 +166,7 @@ class RepricingModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $BrandDetails = null;
+    public ?bool $BrandDetails = null;
     /**
      * The BrandModifier
      * Meta information extracted from the WSDL
@@ -175,7 +174,7 @@ class RepricingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BrandModifier = null;
+    public ?string $BrandModifier = null;
     /**
      * The JetServiceOnly
      * Meta information extracted from the WSDL
@@ -183,7 +182,7 @@ class RepricingModifiers extends AbstractStructBase
      * - default: false
      * @var bool|null
      */
-    protected ?bool $JetServiceOnly = null;
+    public ?bool $JetServiceOnly = null;
     /**
      * The TimeWindow
      * Meta information extracted from the WSDL
@@ -193,7 +192,7 @@ class RepricingModifiers extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $TimeWindow = null;
+    public ?int $TimeWindow = null;
     /**
      * The FlightType
      * Meta information extracted from the WSDL
@@ -201,7 +200,7 @@ class RepricingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FlightType = null;
+    public ?string $FlightType = null;
     /**
      * The MultiAirportSearch
      * Meta information extracted from the WSDL
@@ -210,7 +209,7 @@ class RepricingModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $MultiAirportSearch = null;
+    public ?bool $MultiAirportSearch = null;
     /**
      * The ConnectionPoint
      * Meta information extracted from the WSDL
@@ -221,7 +220,7 @@ class RepricingModifiers extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $ConnectionPoint = null;
+    public ?string $ConnectionPoint = null;
     /**
      * Constructor method for RepricingModifiers
      * @uses RepricingModifiers::setPrivateFareOptions()
@@ -313,14 +312,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setPrivateFareOptions(?string $privateFareOptions = null): self
     {
-        // validation for constraint: string
-        if (!is_null($privateFareOptions) && !is_string($privateFareOptions)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($privateFareOptions, true), gettype($privateFareOptions)), __LINE__);
-        }
-        // validation for constraint: maxLength(50)
-        if (!is_null($privateFareOptions) && mb_strlen((string) $privateFareOptions) > 50) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 50', mb_strlen((string) $privateFareOptions)), __LINE__);
-        }
         $this->PrivateFareOptions = $privateFareOptions;
         
         return $this;
@@ -334,48 +325,12 @@ class RepricingModifiers extends AbstractStructBase
         return $this->FareType;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFareType method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFareType method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFareTypeForArrayConstraintFromSetFareType(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $repricingModifiersFareTypeItem) {
-            // validation for constraint: itemType
-            if (!$repricingModifiersFareTypeItem instanceof \Travelport\UniversalRecord\StructType\FareType) {
-                $invalidValues[] = is_object($repricingModifiersFareTypeItem) ? get_class($repricingModifiersFareTypeItem) : sprintf('%s(%s)', gettype($repricingModifiersFareTypeItem), var_export($repricingModifiersFareTypeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FareType property can only contain items of type \Travelport\UniversalRecord\StructType\FareType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FareType value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FareType[] $fareType
      * @return \Travelport\UniversalRecord\StructType\RepricingModifiers
      */
     public function setFareType(?array $fareType = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($fareTypeArrayErrorMessage = self::validateFareTypeForArrayConstraintFromSetFareType($fareType))) {
-            throw new InvalidArgumentException($fareTypeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(100)
-        if (is_array($fareType) && count($fareType) > 100) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 100', count($fareType)), __LINE__);
-        }
         $this->FareType = $fareType;
         
         return $this;
@@ -388,14 +343,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function addToFareType(\Travelport\UniversalRecord\StructType\FareType $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\FareType) {
-            throw new InvalidArgumentException(sprintf('The FareType property can only contain items of type \Travelport\UniversalRecord\StructType\FareType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(100)
-        if (is_array($this->FareType) && count($this->FareType) >= 100) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 100', count($this->FareType)), __LINE__);
-        }
         $this->FareType[] = $item;
         
         return $this;
@@ -447,48 +394,12 @@ class RepricingModifiers extends AbstractStructBase
         return $this->AirSegmentPricingModifiers;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirSegmentPricingModifiers method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegmentPricingModifiers method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAirSegmentPricingModifiersForArrayConstraintFromSetAirSegmentPricingModifiers(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $repricingModifiersAirSegmentPricingModifiersItem) {
-            // validation for constraint: itemType
-            if (!$repricingModifiersAirSegmentPricingModifiersItem instanceof \Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers) {
-                $invalidValues[] = is_object($repricingModifiersAirSegmentPricingModifiersItem) ? get_class($repricingModifiersAirSegmentPricingModifiersItem) : sprintf('%s(%s)', gettype($repricingModifiersAirSegmentPricingModifiersItem), var_export($repricingModifiersAirSegmentPricingModifiersItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AirSegmentPricingModifiers property can only contain items of type \Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AirSegmentPricingModifiers value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers[] $airSegmentPricingModifiers
      * @return \Travelport\UniversalRecord\StructType\RepricingModifiers
      */
     public function setAirSegmentPricingModifiers(?array $airSegmentPricingModifiers = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($airSegmentPricingModifiersArrayErrorMessage = self::validateAirSegmentPricingModifiersForArrayConstraintFromSetAirSegmentPricingModifiers($airSegmentPricingModifiers))) {
-            throw new InvalidArgumentException($airSegmentPricingModifiersArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($airSegmentPricingModifiers) && count($airSegmentPricingModifiers) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($airSegmentPricingModifiers)), __LINE__);
-        }
         $this->AirSegmentPricingModifiers = $airSegmentPricingModifiers;
         
         return $this;
@@ -501,14 +412,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function addToAirSegmentPricingModifiers(\Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers) {
-            throw new InvalidArgumentException(sprintf('The AirSegmentPricingModifiers property can only contain items of type \Travelport\UniversalRecord\StructType\AirSegmentPricingModifiers, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->AirSegmentPricingModifiers) && count($this->AirSegmentPricingModifiers) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->AirSegmentPricingModifiers)), __LINE__);
-        }
         $this->AirSegmentPricingModifiers[] = $item;
         
         return $this;
@@ -522,76 +425,12 @@ class RepricingModifiers extends AbstractStructBase
         return $this->WithholdTaxCode;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setWithholdTaxCode method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setWithholdTaxCode method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateWithholdTaxCodeForArrayConstraintFromSetWithholdTaxCode(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $repricingModifiersWithholdTaxCodeItem) {
-            // validation for constraint: itemType
-            if (!is_string($repricingModifiersWithholdTaxCodeItem)) {
-                $invalidValues[] = is_object($repricingModifiersWithholdTaxCodeItem) ? get_class($repricingModifiersWithholdTaxCodeItem) : sprintf('%s(%s)', gettype($repricingModifiersWithholdTaxCodeItem), var_export($repricingModifiersWithholdTaxCodeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The WithholdTaxCode property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
-     * This method is responsible for validating the value(s) passed to the setWithholdTaxCode method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setWithholdTaxCode method
-     * This has to validate that the items contained by the array match the length constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateWithholdTaxCodeForLengthConstraintFromSetWithholdTaxCode(?array $values = null): string
-    {
-        $message = '';
-        $invalidValues = [];
-        foreach (($values ?? []) as $repricingModifiersWithholdTaxCodeItem) {
-            // validation for constraint: length(2)
-            if (mb_strlen((string) $repricingModifiersWithholdTaxCodeItem) !== 2) {
-                $invalidValues[] = var_export($repricingModifiersWithholdTaxCodeItem, true);
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be equal to 2', implode(', ', $invalidValues));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set WithholdTaxCode value
-     * @throws InvalidArgumentException
      * @param string[] $withholdTaxCode
      * @return \Travelport\UniversalRecord\StructType\RepricingModifiers
      */
     public function setWithholdTaxCode(?array $withholdTaxCode = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($withholdTaxCodeArrayErrorMessage = self::validateWithholdTaxCodeForArrayConstraintFromSetWithholdTaxCode($withholdTaxCode))) {
-            throw new InvalidArgumentException($withholdTaxCodeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: length(2)
-        if ('' !== ($withholdTaxCodeLengthErrorMessage = self::validateWithholdTaxCodeForLengthConstraintFromSetWithholdTaxCode($withholdTaxCode))) {
-            throw new InvalidArgumentException($withholdTaxCodeLengthErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(4)
-        if (is_array($withholdTaxCode) && count($withholdTaxCode) > 4) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 4', count($withholdTaxCode)), __LINE__);
-        }
         $this->WithholdTaxCode = $withholdTaxCode;
         
         return $this;
@@ -604,18 +443,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function addToWithholdTaxCode(string $item): self
     {
-        // validation for constraint: itemType
-        if (!is_string($item)) {
-            throw new InvalidArgumentException(sprintf('The WithholdTaxCode property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (mb_strlen((string) $item) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $item)), __LINE__);
-        }
-        // validation for constraint: maxOccurs(4)
-        if (is_array($this->WithholdTaxCode) && count($this->WithholdTaxCode) >= 4) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 4', count($this->WithholdTaxCode)), __LINE__);
-        }
         $this->WithholdTaxCode[] = $item;
         
         return $this;
@@ -630,18 +457,11 @@ class RepricingModifiers extends AbstractStructBase
     }
     /**
      * Set PriceClassOfService value
-     * @uses \Travelport\UniversalRecord\EnumType\TypePriceClassOfService::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypePriceClassOfService::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $priceClassOfService
      * @return \Travelport\UniversalRecord\StructType\RepricingModifiers
      */
     public function setPriceClassOfService(?string $priceClassOfService = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypePriceClassOfService::valueIsValid($priceClassOfService)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypePriceClassOfService', is_array($priceClassOfService) ? implode(', ', $priceClassOfService) : var_export($priceClassOfService, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypePriceClassOfService::getValidValues())), __LINE__);
-        }
         $this->PriceClassOfService = $priceClassOfService;
         
         return $this;
@@ -661,10 +481,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setCreateDate(?string $createDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($createDate) && !is_string($createDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($createDate, true), gettype($createDate)), __LINE__);
-        }
         $this->CreateDate = $createDate;
         
         return $this;
@@ -684,14 +500,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setReissueLocCityCode(?string $reissueLocCityCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($reissueLocCityCode) && !is_string($reissueLocCityCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reissueLocCityCode, true), gettype($reissueLocCityCode)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($reissueLocCityCode) && mb_strlen((string) $reissueLocCityCode) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $reissueLocCityCode)), __LINE__);
-        }
         $this->ReissueLocCityCode = $reissueLocCityCode;
         
         return $this;
@@ -711,14 +519,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setReissueLocCountryCode(?string $reissueLocCountryCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($reissueLocCountryCode) && !is_string($reissueLocCountryCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reissueLocCountryCode, true), gettype($reissueLocCountryCode)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($reissueLocCountryCode) && mb_strlen((string) $reissueLocCountryCode) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $reissueLocCountryCode)), __LINE__);
-        }
         $this->ReissueLocCountryCode = $reissueLocCountryCode;
         
         return $this;
@@ -738,10 +538,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setBulkTicket(?bool $bulkTicket = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($bulkTicket) && !is_bool($bulkTicket)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($bulkTicket, true), gettype($bulkTicket)), __LINE__);
-        }
         $this->BulkTicket = $bulkTicket;
         
         return $this;
@@ -761,10 +557,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setAccountCode(?string $accountCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($accountCode) && !is_string($accountCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountCode, true), gettype($accountCode)), __LINE__);
-        }
         $this->AccountCode = $accountCode;
         
         return $this;
@@ -784,14 +576,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setPenaltyAsTaxCode(?string $penaltyAsTaxCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($penaltyAsTaxCode) && !is_string($penaltyAsTaxCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($penaltyAsTaxCode, true), gettype($penaltyAsTaxCode)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($penaltyAsTaxCode) && mb_strlen((string) $penaltyAsTaxCode) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $penaltyAsTaxCode)), __LINE__);
-        }
         $this->PenaltyAsTaxCode = $penaltyAsTaxCode;
         
         return $this;
@@ -811,10 +595,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setAirPricingSolutionRef(?string $airPricingSolutionRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($airPricingSolutionRef) && !is_string($airPricingSolutionRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($airPricingSolutionRef, true), gettype($airPricingSolutionRef)), __LINE__);
-        }
         $this->AirPricingSolutionRef = $airPricingSolutionRef;
         
         return $this;
@@ -834,10 +614,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setPenaltyToFare(?bool $penaltyToFare = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($penaltyToFare) && !is_bool($penaltyToFare)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($penaltyToFare, true), gettype($penaltyToFare)), __LINE__);
-        }
         $this->PenaltyToFare = $penaltyToFare;
         
         return $this;
@@ -857,10 +633,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setPricePTCOnly(?bool $pricePTCOnly = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($pricePTCOnly) && !is_bool($pricePTCOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($pricePTCOnly, true), gettype($pricePTCOnly)), __LINE__);
-        }
         $this->PricePTCOnly = $pricePTCOnly;
         
         return $this;
@@ -880,10 +652,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setBrandDetails(?bool $brandDetails = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($brandDetails) && !is_bool($brandDetails)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($brandDetails, true), gettype($brandDetails)), __LINE__);
-        }
         $this->BrandDetails = $brandDetails;
         
         return $this;
@@ -903,10 +671,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setBrandModifier(?string $brandModifier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($brandModifier) && !is_string($brandModifier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($brandModifier, true), gettype($brandModifier)), __LINE__);
-        }
         $this->BrandModifier = $brandModifier;
         
         return $this;
@@ -926,10 +690,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setJetServiceOnly(?bool $jetServiceOnly = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($jetServiceOnly) && !is_bool($jetServiceOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($jetServiceOnly, true), gettype($jetServiceOnly)), __LINE__);
-        }
         $this->JetServiceOnly = $jetServiceOnly;
         
         return $this;
@@ -949,18 +709,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setTimeWindow(?int $timeWindow = null): self
     {
-        // validation for constraint: int
-        if (!is_null($timeWindow) && !(is_int($timeWindow) || ctype_digit($timeWindow))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($timeWindow, true), gettype($timeWindow)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(12)
-        if (!is_null($timeWindow) && $timeWindow > 12) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 12', var_export($timeWindow, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive(01)
-        if (!is_null($timeWindow) && $timeWindow < 01) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 01', var_export($timeWindow, true)), __LINE__);
-        }
         $this->TimeWindow = $timeWindow;
         
         return $this;
@@ -980,10 +728,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setFlightType(?string $flightType = 'Direct'): self
     {
-        // validation for constraint: string
-        if (!is_null($flightType) && !is_string($flightType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($flightType, true), gettype($flightType)), __LINE__);
-        }
         $this->FlightType = $flightType;
         
         return $this;
@@ -1003,10 +747,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setMultiAirportSearch(?bool $multiAirportSearch = true): self
     {
-        // validation for constraint: boolean
-        if (!is_null($multiAirportSearch) && !is_bool($multiAirportSearch)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($multiAirportSearch, true), gettype($multiAirportSearch)), __LINE__);
-        }
         $this->MultiAirportSearch = $multiAirportSearch;
         
         return $this;
@@ -1026,14 +766,6 @@ class RepricingModifiers extends AbstractStructBase
      */
     public function setConnectionPoint(?string $connectionPoint = null): self
     {
-        // validation for constraint: string
-        if (!is_null($connectionPoint) && !is_string($connectionPoint)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($connectionPoint, true), gettype($connectionPoint)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($connectionPoint) && mb_strlen((string) $connectionPoint) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $connectionPoint)), __LINE__);
-        }
         $this->ConnectionPoint = $connectionPoint;
         
         return $this;

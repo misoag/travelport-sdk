@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,14 +20,14 @@ class FareRestrictionSaleDate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $StartDate = null;
+    public ?string $StartDate = null;
     /**
      * The EndDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $EndDate = null;
+    public ?string $EndDate = null;
     /**
      * Constructor method for FareRestrictionSaleDate
      * @uses FareRestrictionSaleDate::setStartDate()
@@ -57,10 +56,6 @@ class FareRestrictionSaleDate extends AbstractStructBase
      */
     public function setStartDate(?string $startDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($startDate) && !is_string($startDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
-        }
         $this->StartDate = $startDate;
         
         return $this;
@@ -80,10 +75,6 @@ class FareRestrictionSaleDate extends AbstractStructBase
      */
     public function setEndDate(?string $endDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($endDate) && !is_string($endDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endDate, true), gettype($endDate)), __LINE__);
-        }
         $this->EndDate = $endDate;
         
         return $this;

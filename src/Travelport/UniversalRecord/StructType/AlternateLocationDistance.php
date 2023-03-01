@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class AlternateLocationDistance extends AbstractStructBase
      * - ref: common:Distance
      * @var \Travelport\UniversalRecord\StructType\Distance
      */
-    protected \Travelport\UniversalRecord\StructType\Distance $Distance;
+    public \Travelport\UniversalRecord\StructType\Distance $Distance;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class AlternateLocationDistance extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * The SearchLocation
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class AlternateLocationDistance extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string
      */
-    protected string $SearchLocation;
+    public string $SearchLocation;
     /**
      * The AlternateLocation
      * Meta information extracted from the WSDL
@@ -53,7 +52,7 @@ class AlternateLocationDistance extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string
      */
-    protected string $AlternateLocation;
+    public string $AlternateLocation;
     /**
      * Constructor method for AlternateLocationDistance
      * @uses AlternateLocationDistance::setDistance()
@@ -107,10 +106,6 @@ class AlternateLocationDistance extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -130,14 +125,6 @@ class AlternateLocationDistance extends AbstractStructBase
      */
     public function setSearchLocation(string $searchLocation): self
     {
-        // validation for constraint: string
-        if (!is_null($searchLocation) && !is_string($searchLocation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($searchLocation, true), gettype($searchLocation)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($searchLocation) && mb_strlen((string) $searchLocation) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $searchLocation)), __LINE__);
-        }
         $this->SearchLocation = $searchLocation;
         
         return $this;
@@ -157,14 +144,6 @@ class AlternateLocationDistance extends AbstractStructBase
      */
     public function setAlternateLocation(string $alternateLocation): self
     {
-        // validation for constraint: string
-        if (!is_null($alternateLocation) && !is_string($alternateLocation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($alternateLocation, true), gettype($alternateLocation)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($alternateLocation) && mb_strlen((string) $alternateLocation) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $alternateLocation)), __LINE__);
-        }
         $this->AlternateLocation = $alternateLocation;
         
         return $this;

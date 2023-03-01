@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class Distance extends AbstractStructBase
      * - use: required
      * @var int
      */
-    protected int $Value;
+    public int $Value;
     /**
      * The Units
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class Distance extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Units = null;
+    public ?string $Units = null;
     /**
      * The Direction
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class Distance extends AbstractStructBase
      * - maxLength: 2
      * @var string|null
      */
-    protected ?string $Direction = null;
+    public ?string $Direction = null;
     /**
      * Constructor method for Distance
      * @uses Distance::setValue()
@@ -71,10 +70,6 @@ class Distance extends AbstractStructBase
      */
     public function setValue(int $value): self
     {
-        // validation for constraint: int
-        if (!is_null($value) && !(is_int($value) || ctype_digit($value))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($value, true), gettype($value)), __LINE__);
-        }
         $this->Value = $value;
         
         return $this;
@@ -94,10 +89,6 @@ class Distance extends AbstractStructBase
      */
     public function setUnits(?string $units = 'MI'): self
     {
-        // validation for constraint: string
-        if (!is_null($units) && !is_string($units)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($units, true), gettype($units)), __LINE__);
-        }
         $this->Units = $units;
         
         return $this;
@@ -117,14 +108,6 @@ class Distance extends AbstractStructBase
      */
     public function setDirection(?string $direction = null): self
     {
-        // validation for constraint: string
-        if (!is_null($direction) && !is_string($direction)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($direction, true), gettype($direction)), __LINE__);
-        }
-        // validation for constraint: maxLength(2)
-        if (!is_null($direction) && mb_strlen((string) $direction) > 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 2', mb_strlen((string) $direction)), __LINE__);
-        }
         $this->Direction = $direction;
         
         return $this;

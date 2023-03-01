@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class MCOFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FeeAppliesToInd = null;
+    public ?string $FeeAppliesToInd = null;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class MCOFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The Percentage
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class MCOFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Percentage = null;
+    public ?string $Percentage = null;
     /**
      * Constructor method for MCOFeeInfo
      * @uses MCOFeeInfo::setFeeAppliesToInd()
@@ -74,10 +73,6 @@ class MCOFeeInfo extends AbstractStructBase
      */
     public function setFeeAppliesToInd(?string $feeAppliesToInd = null): self
     {
-        // validation for constraint: string
-        if (!is_null($feeAppliesToInd) && !is_string($feeAppliesToInd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($feeAppliesToInd, true), gettype($feeAppliesToInd)), __LINE__);
-        }
         $this->FeeAppliesToInd = $feeAppliesToInd;
         
         return $this;
@@ -97,10 +92,6 @@ class MCOFeeInfo extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -120,14 +111,6 @@ class MCOFeeInfo extends AbstractStructBase
      */
     public function setPercentage(?string $percentage = null): self
     {
-        // validation for constraint: string
-        if (!is_null($percentage) && !is_string($percentage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($percentage, true), gettype($percentage)), __LINE__);
-        }
-        // validation for constraint: pattern(([0-9]{1,2}|100)\.[0-9]{1,2})
-        if (!is_null($percentage) && !preg_match('/([0-9]{1,2}|100)\\.[0-9]{1,2}/', $percentage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /([0-9]{1,2}|100)\\.[0-9]{1,2}/', var_export($percentage, true)), __LINE__);
-        }
         $this->Percentage = $percentage;
         
         return $this;

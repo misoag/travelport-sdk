@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class ElectronicMiscDocument extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Number;
+    public string $Number;
     /**
      * The EMDCoupon
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class ElectronicMiscDocument extends AbstractStructBase
      * - ref: EMDCoupon
      * @var \Travelport\UniversalRecord\StructType\EMDCoupon[]
      */
-    protected ?array $EMDCoupon = null;
+    public ?array $EMDCoupon = null;
     /**
      * The Status
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class ElectronicMiscDocument extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Status = null;
+    public ?string $Status = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class ElectronicMiscDocument extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The PrimaryDocumentIndicator
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class ElectronicMiscDocument extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PrimaryDocumentIndicator = null;
+    public ?bool $PrimaryDocumentIndicator = null;
     /**
      * The InConjunctionWith
      * Meta information extracted from the WSDL
@@ -70,7 +69,7 @@ class ElectronicMiscDocument extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $InConjunctionWith = null;
+    public ?string $InConjunctionWith = null;
     /**
      * The AssociatedTicketNumber
      * Meta information extracted from the WSDL
@@ -81,7 +80,7 @@ class ElectronicMiscDocument extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AssociatedTicketNumber = null;
+    public ?string $AssociatedTicketNumber = null;
     /**
      * The PlatingCarrier
      * Meta information extracted from the WSDL
@@ -92,7 +91,7 @@ class ElectronicMiscDocument extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PlatingCarrier = null;
+    public ?string $PlatingCarrier = null;
     /**
      * The IssueDate
      * Meta information extracted from the WSDL
@@ -101,17 +100,17 @@ class ElectronicMiscDocument extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $IssueDate = null;
+    public ?string $IssueDate = null;
     /**
      * The ElStat
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for ElectronicMiscDocument
      * @uses ElectronicMiscDocument::setNumber()
@@ -167,14 +166,6 @@ class ElectronicMiscDocument extends AbstractStructBase
      */
     public function setNumber(string $number): self
     {
-        // validation for constraint: string
-        if (!is_null($number) && !is_string($number)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
-        }
-        // validation for constraint: length(13)
-        if (!is_null($number) && mb_strlen((string) $number) !== 13) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 13', mb_strlen((string) $number)), __LINE__);
-        }
         $this->Number = $number;
         
         return $this;
@@ -188,48 +179,12 @@ class ElectronicMiscDocument extends AbstractStructBase
         return $this->EMDCoupon;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setEMDCoupon method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setEMDCoupon method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateEMDCouponForArrayConstraintFromSetEMDCoupon(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $electronicMiscDocumentEMDCouponItem) {
-            // validation for constraint: itemType
-            if (!$electronicMiscDocumentEMDCouponItem instanceof \Travelport\UniversalRecord\StructType\EMDCoupon) {
-                $invalidValues[] = is_object($electronicMiscDocumentEMDCouponItem) ? get_class($electronicMiscDocumentEMDCouponItem) : sprintf('%s(%s)', gettype($electronicMiscDocumentEMDCouponItem), var_export($electronicMiscDocumentEMDCouponItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The EMDCoupon property can only contain items of type \Travelport\UniversalRecord\StructType\EMDCoupon, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set EMDCoupon value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\EMDCoupon[] $eMDCoupon
      * @return \Travelport\UniversalRecord\StructType\ElectronicMiscDocument
      */
     public function setEMDCoupon(?array $eMDCoupon = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($eMDCouponArrayErrorMessage = self::validateEMDCouponForArrayConstraintFromSetEMDCoupon($eMDCoupon))) {
-            throw new InvalidArgumentException($eMDCouponArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($eMDCoupon) && count($eMDCoupon) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($eMDCoupon)), __LINE__);
-        }
         $this->EMDCoupon = $eMDCoupon;
         
         return $this;
@@ -242,14 +197,6 @@ class ElectronicMiscDocument extends AbstractStructBase
      */
     public function addToEMDCoupon(\Travelport\UniversalRecord\StructType\EMDCoupon $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\EMDCoupon) {
-            throw new InvalidArgumentException(sprintf('The EMDCoupon property can only contain items of type \Travelport\UniversalRecord\StructType\EMDCoupon, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->EMDCoupon) && count($this->EMDCoupon) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->EMDCoupon)), __LINE__);
-        }
         $this->EMDCoupon[] = $item;
         
         return $this;
@@ -269,10 +216,6 @@ class ElectronicMiscDocument extends AbstractStructBase
      */
     public function setStatus(?string $status = null): self
     {
-        // validation for constraint: string
-        if (!is_null($status) && !is_string($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -292,10 +235,6 @@ class ElectronicMiscDocument extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -315,10 +254,6 @@ class ElectronicMiscDocument extends AbstractStructBase
      */
     public function setPrimaryDocumentIndicator(?bool $primaryDocumentIndicator = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($primaryDocumentIndicator) && !is_bool($primaryDocumentIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($primaryDocumentIndicator, true), gettype($primaryDocumentIndicator)), __LINE__);
-        }
         $this->PrimaryDocumentIndicator = $primaryDocumentIndicator;
         
         return $this;
@@ -338,14 +273,6 @@ class ElectronicMiscDocument extends AbstractStructBase
      */
     public function setInConjunctionWith(?string $inConjunctionWith = null): self
     {
-        // validation for constraint: string
-        if (!is_null($inConjunctionWith) && !is_string($inConjunctionWith)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($inConjunctionWith, true), gettype($inConjunctionWith)), __LINE__);
-        }
-        // validation for constraint: length(13)
-        if (!is_null($inConjunctionWith) && mb_strlen((string) $inConjunctionWith) !== 13) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 13', mb_strlen((string) $inConjunctionWith)), __LINE__);
-        }
         $this->InConjunctionWith = $inConjunctionWith;
         
         return $this;
@@ -365,14 +292,6 @@ class ElectronicMiscDocument extends AbstractStructBase
      */
     public function setAssociatedTicketNumber(?string $associatedTicketNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($associatedTicketNumber) && !is_string($associatedTicketNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($associatedTicketNumber, true), gettype($associatedTicketNumber)), __LINE__);
-        }
-        // validation for constraint: length(13)
-        if (!is_null($associatedTicketNumber) && mb_strlen((string) $associatedTicketNumber) !== 13) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 13', mb_strlen((string) $associatedTicketNumber)), __LINE__);
-        }
         $this->AssociatedTicketNumber = $associatedTicketNumber;
         
         return $this;
@@ -392,14 +311,6 @@ class ElectronicMiscDocument extends AbstractStructBase
      */
     public function setPlatingCarrier(?string $platingCarrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($platingCarrier) && !is_string($platingCarrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($platingCarrier, true), gettype($platingCarrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($platingCarrier) && mb_strlen((string) $platingCarrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $platingCarrier)), __LINE__);
-        }
         $this->PlatingCarrier = $platingCarrier;
         
         return $this;
@@ -419,10 +330,6 @@ class ElectronicMiscDocument extends AbstractStructBase
      */
     public function setIssueDate(?string $issueDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($issueDate) && !is_string($issueDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($issueDate, true), gettype($issueDate)), __LINE__);
-        }
         $this->IssueDate = $issueDate;
         
         return $this;
@@ -437,18 +344,11 @@ class ElectronicMiscDocument extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\ElectronicMiscDocument
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -468,10 +368,6 @@ class ElectronicMiscDocument extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

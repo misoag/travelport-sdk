@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,56 +21,56 @@ class FareRestrictionSeasonal extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Comment = null;
+    public ?string $Comment = null;
     /**
      * The VariationByTravelDates
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $VariationByTravelDates = null;
+    public ?string $VariationByTravelDates = null;
     /**
      * The SeasonalRange1Ind
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $SeasonalRange1Ind = null;
+    public ?string $SeasonalRange1Ind = null;
     /**
      * The SeasonalRange1StartDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $SeasonalRange1StartDate = null;
+    public ?string $SeasonalRange1StartDate = null;
     /**
      * The SeasonalRange1EndDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $SeasonalRange1EndDate = null;
+    public ?string $SeasonalRange1EndDate = null;
     /**
      * The SeasonalRange2Ind
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $SeasonalRange2Ind = null;
+    public ?string $SeasonalRange2Ind = null;
     /**
      * The SeasonalRange2StartDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $SeasonalRange2StartDate = null;
+    public ?string $SeasonalRange2StartDate = null;
     /**
      * The SeasonalRange2EndDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $SeasonalRange2EndDate = null;
+    public ?string $SeasonalRange2EndDate = null;
     /**
      * Constructor method for FareRestrictionSeasonal
      * @uses FareRestrictionSeasonal::setComment()
@@ -118,10 +117,6 @@ class FareRestrictionSeasonal extends AbstractStructBase
      */
     public function setComment(?string $comment = null): self
     {
-        // validation for constraint: string
-        if (!is_null($comment) && !is_string($comment)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($comment, true), gettype($comment)), __LINE__);
-        }
         $this->Comment = $comment;
         
         return $this;
@@ -141,10 +136,6 @@ class FareRestrictionSeasonal extends AbstractStructBase
      */
     public function setVariationByTravelDates(?string $variationByTravelDates = null): self
     {
-        // validation for constraint: string
-        if (!is_null($variationByTravelDates) && !is_string($variationByTravelDates)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($variationByTravelDates, true), gettype($variationByTravelDates)), __LINE__);
-        }
         $this->VariationByTravelDates = $variationByTravelDates;
         
         return $this;
@@ -164,10 +155,6 @@ class FareRestrictionSeasonal extends AbstractStructBase
      */
     public function setSeasonalRange1Ind(?string $seasonalRange1Ind = null): self
     {
-        // validation for constraint: string
-        if (!is_null($seasonalRange1Ind) && !is_string($seasonalRange1Ind)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seasonalRange1Ind, true), gettype($seasonalRange1Ind)), __LINE__);
-        }
         $this->SeasonalRange1Ind = $seasonalRange1Ind;
         
         return $this;
@@ -187,10 +174,6 @@ class FareRestrictionSeasonal extends AbstractStructBase
      */
     public function setSeasonalRange1StartDate(?string $seasonalRange1StartDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($seasonalRange1StartDate) && !is_string($seasonalRange1StartDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seasonalRange1StartDate, true), gettype($seasonalRange1StartDate)), __LINE__);
-        }
         $this->SeasonalRange1StartDate = $seasonalRange1StartDate;
         
         return $this;
@@ -210,10 +193,6 @@ class FareRestrictionSeasonal extends AbstractStructBase
      */
     public function setSeasonalRange1EndDate(?string $seasonalRange1EndDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($seasonalRange1EndDate) && !is_string($seasonalRange1EndDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seasonalRange1EndDate, true), gettype($seasonalRange1EndDate)), __LINE__);
-        }
         $this->SeasonalRange1EndDate = $seasonalRange1EndDate;
         
         return $this;
@@ -233,10 +212,6 @@ class FareRestrictionSeasonal extends AbstractStructBase
      */
     public function setSeasonalRange2Ind(?string $seasonalRange2Ind = null): self
     {
-        // validation for constraint: string
-        if (!is_null($seasonalRange2Ind) && !is_string($seasonalRange2Ind)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seasonalRange2Ind, true), gettype($seasonalRange2Ind)), __LINE__);
-        }
         $this->SeasonalRange2Ind = $seasonalRange2Ind;
         
         return $this;
@@ -256,10 +231,6 @@ class FareRestrictionSeasonal extends AbstractStructBase
      */
     public function setSeasonalRange2StartDate(?string $seasonalRange2StartDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($seasonalRange2StartDate) && !is_string($seasonalRange2StartDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seasonalRange2StartDate, true), gettype($seasonalRange2StartDate)), __LINE__);
-        }
         $this->SeasonalRange2StartDate = $seasonalRange2StartDate;
         
         return $this;
@@ -279,10 +250,6 @@ class FareRestrictionSeasonal extends AbstractStructBase
      */
     public function setSeasonalRange2EndDate(?string $seasonalRange2EndDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($seasonalRange2EndDate) && !is_string($seasonalRange2EndDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seasonalRange2EndDate, true), gettype($seasonalRange2EndDate)), __LINE__);
-        }
         $this->SeasonalRange2EndDate = $seasonalRange2EndDate;
         
         return $this;

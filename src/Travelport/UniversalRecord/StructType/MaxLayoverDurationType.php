@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class MaxLayoverDurationType extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Domestic = null;
+    public ?int $Domestic = null;
     /**
      * The Gateway
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class MaxLayoverDurationType extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Gateway = null;
+    public ?int $Gateway = null;
     /**
      * The International
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class MaxLayoverDurationType extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $International = null;
+    public ?int $International = null;
     /**
      * Constructor method for MaxLayoverDurationType
      * @uses MaxLayoverDurationType::setDomestic()
@@ -79,18 +78,6 @@ class MaxLayoverDurationType extends AbstractStructBase
      */
     public function setDomestic(?int $domestic = null): self
     {
-        // validation for constraint: int
-        if (!is_null($domestic) && !(is_int($domestic) || ctype_digit($domestic))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($domestic, true), gettype($domestic)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(9999)
-        if (!is_null($domestic) && $domestic > 9999) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 9999', var_export($domestic, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive
-        if (!is_null($domestic) && $domestic < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($domestic, true)), __LINE__);
-        }
         $this->Domestic = $domestic;
         
         return $this;
@@ -110,18 +97,6 @@ class MaxLayoverDurationType extends AbstractStructBase
      */
     public function setGateway(?int $gateway = null): self
     {
-        // validation for constraint: int
-        if (!is_null($gateway) && !(is_int($gateway) || ctype_digit($gateway))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($gateway, true), gettype($gateway)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(9999)
-        if (!is_null($gateway) && $gateway > 9999) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 9999', var_export($gateway, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive
-        if (!is_null($gateway) && $gateway < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($gateway, true)), __LINE__);
-        }
         $this->Gateway = $gateway;
         
         return $this;
@@ -141,18 +116,6 @@ class MaxLayoverDurationType extends AbstractStructBase
      */
     public function setInternational(?int $international = null): self
     {
-        // validation for constraint: int
-        if (!is_null($international) && !(is_int($international) || ctype_digit($international))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($international, true), gettype($international)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(9999)
-        if (!is_null($international) && $international > 9999) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 9999', var_export($international, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive
-        if (!is_null($international) && $international < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($international, true)), __LINE__);
-        }
         $this->International = $international;
         
         return $this;

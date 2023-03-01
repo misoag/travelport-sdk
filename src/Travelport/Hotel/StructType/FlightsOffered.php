@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class FlightsOffered extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Origin = null;
+    public ?string $Origin = null;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -34,19 +33,19 @@ class FlightsOffered extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Destination = null;
+    public ?string $Destination = null;
     /**
      * The DepartureTime
      * Meta information extracted from the WSDL
      * - documentation: Date and Time at which this entity departs. This does not include Time Zone information since it can be derived from origin location
      * @var string|null
      */
-    protected ?string $DepartureTime = null;
+    public ?string $DepartureTime = null;
     /**
      * The TravelOrder
      * @var int|null
      */
-    protected ?int $TravelOrder = null;
+    public ?int $TravelOrder = null;
     /**
      * The Carrier
      * Meta information extracted from the WSDL
@@ -55,7 +54,7 @@ class FlightsOffered extends AbstractStructBase
      * - length: 2
      * @var string|null
      */
-    protected ?string $Carrier = null;
+    public ?string $Carrier = null;
     /**
      * The FlightNumber
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class FlightsOffered extends AbstractStructBase
      * - maxLength: 5
      * @var string|null
      */
-    protected ?string $FlightNumber = null;
+    public ?string $FlightNumber = null;
     /**
      * The ClassOfService
      * Meta information extracted from the WSDL
@@ -74,21 +73,21 @@ class FlightsOffered extends AbstractStructBase
      * - minLength: 1
      * @var string|null
      */
-    protected ?string $ClassOfService = null;
+    public ?string $ClassOfService = null;
     /**
      * The StopOver
      * Meta information extracted from the WSDL
      * - default: false
      * @var bool|null
      */
-    protected ?bool $StopOver = null;
+    public ?bool $StopOver = null;
     /**
      * The Connection
      * Meta information extracted from the WSDL
      * - default: false
      * @var bool|null
      */
-    protected ?bool $Connection = null;
+    public ?bool $Connection = null;
     /**
      * Constructor method for FlightsOffered
      * @uses FlightsOffered::setOrigin()
@@ -138,14 +137,6 @@ class FlightsOffered extends AbstractStructBase
      */
     public function setOrigin(?string $origin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($origin) && mb_strlen((string) $origin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -165,14 +156,6 @@ class FlightsOffered extends AbstractStructBase
      */
     public function setDestination(?string $destination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destination) && mb_strlen((string) $destination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -192,10 +175,6 @@ class FlightsOffered extends AbstractStructBase
      */
     public function setDepartureTime(?string $departureTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($departureTime) && !is_string($departureTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($departureTime, true), gettype($departureTime)), __LINE__);
-        }
         $this->DepartureTime = $departureTime;
         
         return $this;
@@ -215,10 +194,6 @@ class FlightsOffered extends AbstractStructBase
      */
     public function setTravelOrder(?int $travelOrder = null): self
     {
-        // validation for constraint: int
-        if (!is_null($travelOrder) && !(is_int($travelOrder) || ctype_digit($travelOrder))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($travelOrder, true), gettype($travelOrder)), __LINE__);
-        }
         $this->TravelOrder = $travelOrder;
         
         return $this;
@@ -238,14 +213,6 @@ class FlightsOffered extends AbstractStructBase
      */
     public function setCarrier(?string $carrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($carrier) && !is_string($carrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrier, true), gettype($carrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($carrier) && mb_strlen((string) $carrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $carrier)), __LINE__);
-        }
         $this->Carrier = $carrier;
         
         return $this;
@@ -265,14 +232,6 @@ class FlightsOffered extends AbstractStructBase
      */
     public function setFlightNumber(?string $flightNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($flightNumber) && !is_string($flightNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($flightNumber, true), gettype($flightNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($flightNumber) && mb_strlen((string) $flightNumber) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $flightNumber)), __LINE__);
-        }
         $this->FlightNumber = $flightNumber;
         
         return $this;
@@ -292,18 +251,6 @@ class FlightsOffered extends AbstractStructBase
      */
     public function setClassOfService(?string $classOfService = null): self
     {
-        // validation for constraint: string
-        if (!is_null($classOfService) && !is_string($classOfService)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($classOfService, true), gettype($classOfService)), __LINE__);
-        }
-        // validation for constraint: maxLength(2)
-        if (!is_null($classOfService) && mb_strlen((string) $classOfService) > 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 2', mb_strlen((string) $classOfService)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($classOfService) && mb_strlen((string) $classOfService) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $classOfService)), __LINE__);
-        }
         $this->ClassOfService = $classOfService;
         
         return $this;
@@ -323,10 +270,6 @@ class FlightsOffered extends AbstractStructBase
      */
     public function setStopOver(?bool $stopOver = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($stopOver) && !is_bool($stopOver)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($stopOver, true), gettype($stopOver)), __LINE__);
-        }
         $this->StopOver = $stopOver;
         
         return $this;
@@ -346,10 +289,6 @@ class FlightsOffered extends AbstractStructBase
      */
     public function setConnection(?bool $connection = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($connection) && !is_bool($connection)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($connection, true), gettype($connection)), __LINE__);
-        }
         $this->Connection = $connection;
         
         return $this;

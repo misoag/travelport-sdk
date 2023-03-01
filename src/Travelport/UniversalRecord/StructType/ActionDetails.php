@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class ActionDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PseudoCityCode = null;
+    public ?string $PseudoCityCode = null;
     /**
      * The AgentSine
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class ActionDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AgentSine = null;
+    public ?string $AgentSine = null;
     /**
      * The EventDate
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class ActionDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $EventDate = null;
+    public ?string $EventDate = null;
     /**
      * The EventTime
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class ActionDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $EventTime = null;
+    public ?string $EventTime = null;
     /**
      * The Text
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class ActionDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Text = null;
+    public ?string $Text = null;
     /**
      * Constructor method for ActionDetails
      * @uses ActionDetails::setPseudoCityCode()
@@ -95,18 +94,6 @@ class ActionDetails extends AbstractStructBase
      */
     public function setPseudoCityCode(?string $pseudoCityCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($pseudoCityCode) && !is_string($pseudoCityCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pseudoCityCode, true), gettype($pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
         $this->PseudoCityCode = $pseudoCityCode;
         
         return $this;
@@ -126,10 +113,6 @@ class ActionDetails extends AbstractStructBase
      */
     public function setAgentSine(?string $agentSine = null): self
     {
-        // validation for constraint: string
-        if (!is_null($agentSine) && !is_string($agentSine)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($agentSine, true), gettype($agentSine)), __LINE__);
-        }
         $this->AgentSine = $agentSine;
         
         return $this;
@@ -149,10 +132,6 @@ class ActionDetails extends AbstractStructBase
      */
     public function setEventDate(?string $eventDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($eventDate) && !is_string($eventDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventDate, true), gettype($eventDate)), __LINE__);
-        }
         $this->EventDate = $eventDate;
         
         return $this;
@@ -172,10 +151,6 @@ class ActionDetails extends AbstractStructBase
      */
     public function setEventTime(?string $eventTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($eventTime) && !is_string($eventTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventTime, true), gettype($eventTime)), __LINE__);
-        }
         $this->EventTime = $eventTime;
         
         return $this;
@@ -195,10 +170,6 @@ class ActionDetails extends AbstractStructBase
      */
     public function setText(?string $text = null): self
     {
-        // validation for constraint: string
-        if (!is_null($text) && !is_string($text)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($text, true), gettype($text)), __LINE__);
-        }
         $this->Text = $text;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class FareRuleLookup extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string
      */
-    protected string $Origin;
+    public string $Origin;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class FareRuleLookup extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string
      */
-    protected string $Destination;
+    public string $Destination;
     /**
      * The Carrier
      * Meta information extracted from the WSDL
@@ -46,14 +45,14 @@ class FareRuleLookup extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Carrier;
+    public string $Carrier;
     /**
      * The FareBasis
      * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
-    protected string $FareBasis;
+    public string $FareBasis;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class FareRuleLookup extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ProviderCode;
+    public string $ProviderCode;
     /**
      * The AccountCode
      * Meta information extracted from the WSDL
@@ -72,7 +71,7 @@ class FareRuleLookup extends AbstractStructBase
      * - ref: common:AccountCode
      * @var \Travelport\UniversalRecord\StructType\AccountCode|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AccountCode $AccountCode = null;
+    public ?\Travelport\UniversalRecord\StructType\AccountCode $AccountCode = null;
     /**
      * The PointOfSale
      * Meta information extracted from the WSDL
@@ -80,21 +79,21 @@ class FareRuleLookup extends AbstractStructBase
      * - ref: common:PointOfSale
      * @var \Travelport\UniversalRecord\StructType\PointOfSale|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PointOfSale $PointOfSale = null;
+    public ?\Travelport\UniversalRecord\StructType\PointOfSale $PointOfSale = null;
     /**
      * The DepartureDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $DepartureDate = null;
+    public ?string $DepartureDate = null;
     /**
      * The TicketingDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketingDate = null;
+    public ?string $TicketingDate = null;
     /**
      * Constructor method for FareRuleLookup
      * @uses FareRuleLookup::setOrigin()
@@ -144,14 +143,6 @@ class FareRuleLookup extends AbstractStructBase
      */
     public function setOrigin(string $origin): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($origin) && mb_strlen((string) $origin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -171,14 +162,6 @@ class FareRuleLookup extends AbstractStructBase
      */
     public function setDestination(string $destination): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destination) && mb_strlen((string) $destination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -198,14 +181,6 @@ class FareRuleLookup extends AbstractStructBase
      */
     public function setCarrier(string $carrier): self
     {
-        // validation for constraint: string
-        if (!is_null($carrier) && !is_string($carrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrier, true), gettype($carrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($carrier) && mb_strlen((string) $carrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $carrier)), __LINE__);
-        }
         $this->Carrier = $carrier;
         
         return $this;
@@ -225,10 +200,6 @@ class FareRuleLookup extends AbstractStructBase
      */
     public function setFareBasis(string $fareBasis): self
     {
-        // validation for constraint: string
-        if (!is_null($fareBasis) && !is_string($fareBasis)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareBasis, true), gettype($fareBasis)), __LINE__);
-        }
         $this->FareBasis = $fareBasis;
         
         return $this;
@@ -248,18 +219,6 @@ class FareRuleLookup extends AbstractStructBase
      */
     public function setProviderCode(string $providerCode): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -317,10 +276,6 @@ class FareRuleLookup extends AbstractStructBase
      */
     public function setDepartureDate(?string $departureDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($departureDate) && !is_string($departureDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($departureDate, true), gettype($departureDate)), __LINE__);
-        }
         $this->DepartureDate = $departureDate;
         
         return $this;
@@ -340,10 +295,6 @@ class FareRuleLookup extends AbstractStructBase
      */
     public function setTicketingDate(?string $ticketingDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketingDate) && !is_string($ticketingDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketingDate, true), gettype($ticketingDate)), __LINE__);
-        }
         $this->TicketingDate = $ticketingDate;
         
         return $this;

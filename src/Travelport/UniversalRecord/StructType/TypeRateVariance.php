@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class TypeRateVariance extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The Value
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class TypeRateVariance extends AbstractStructBase
      * - use: required
      * @var float
      */
-    protected float $Value;
+    public float $Value;
     /**
      * The Apply
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class TypeRateVariance extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Apply;
+    public string $Apply;
     /**
      * Constructor method for typeRateVariance
      * @uses TypeRateVariance::setType()
@@ -68,10 +67,6 @@ class TypeRateVariance extends AbstractStructBase
      */
     public function setType(string $type): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -91,10 +86,6 @@ class TypeRateVariance extends AbstractStructBase
      */
     public function setValue(float $value): self
     {
-        // validation for constraint: float
-        if (!is_null($value) && !(is_float($value) || is_numeric($value))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($value, true), gettype($value)), __LINE__);
-        }
         $this->Value = $value;
         
         return $this;
@@ -114,10 +105,6 @@ class TypeRateVariance extends AbstractStructBase
      */
     public function setApply(string $apply): self
     {
-        // validation for constraint: string
-        if (!is_null($apply) && !is_string($apply)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($apply, true), gettype($apply)), __LINE__);
-        }
         $this->Apply = $apply;
         
         return $this;

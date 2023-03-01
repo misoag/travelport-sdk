@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class OverrideCurrency extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CurrencyCode = null;
+    public ?string $CurrencyCode = null;
     /**
      * The CountryCode
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class OverrideCurrency extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CountryCode = null;
+    public ?string $CountryCode = null;
     /**
      * Constructor method for OverrideCurrency
      * @uses OverrideCurrency::setCurrencyCode()
@@ -61,14 +60,6 @@ class OverrideCurrency extends AbstractStructBase
      */
     public function setCurrencyCode(?string $currencyCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($currencyCode) && !is_string($currencyCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currencyCode, true), gettype($currencyCode)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($currencyCode) && mb_strlen((string) $currencyCode) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $currencyCode)), __LINE__);
-        }
         $this->CurrencyCode = $currencyCode;
         
         return $this;
@@ -88,14 +79,6 @@ class OverrideCurrency extends AbstractStructBase
      */
     public function setCountryCode(?string $countryCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($countryCode) && !is_string($countryCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($countryCode, true), gettype($countryCode)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($countryCode) && mb_strlen((string) $countryCode) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $countryCode)), __LINE__);
-        }
         $this->CountryCode = $countryCode;
         
         return $this;

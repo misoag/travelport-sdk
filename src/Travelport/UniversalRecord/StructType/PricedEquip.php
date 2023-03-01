@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class PricedEquip extends AbstractStructBase
      * - ref: Equipment
      * @var \Travelport\UniversalRecord\StructType\Equipment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Equipment $Equipment = null;
+    public ?\Travelport\UniversalRecord\StructType\Equipment $Equipment = null;
     /**
      * The Charge
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class PricedEquip extends AbstractStructBase
      * - ref: Charge
      * @var \Travelport\UniversalRecord\StructType\Charge|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Charge $Charge = null;
+    public ?\Travelport\UniversalRecord\StructType\Charge $Charge = null;
     /**
      * Constructor method for PricedEquip
      * @uses PricedEquip::setEquipment()

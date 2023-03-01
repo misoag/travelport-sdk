@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class BaseHotelDetailsReq extends BaseReq
      * - ref: HotelProperty
      * @var \Travelport\Hotel\StructType\HotelProperty|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelProperty $HotelProperty = null;
+    public ?\Travelport\Hotel\StructType\HotelProperty $HotelProperty = null;
     /**
      * The HotelDetailsModifiers
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class BaseHotelDetailsReq extends BaseReq
      * - ref: HotelDetailsModifiers
      * @var \Travelport\Hotel\StructType\HotelDetailsModifiers|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelDetailsModifiers $HotelDetailsModifiers = null;
+    public ?\Travelport\Hotel\StructType\HotelDetailsModifiers $HotelDetailsModifiers = null;
     /**
      * The PointOfSale
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class BaseHotelDetailsReq extends BaseReq
      * - ref: common:PointOfSale
      * @var \Travelport\Hotel\StructType\PointOfSale|null
      */
-    protected ?\Travelport\Hotel\StructType\PointOfSale $PointOfSale = null;
+    public ?\Travelport\Hotel\StructType\PointOfSale $PointOfSale = null;
     /**
      * Constructor method for BaseHotelDetailsReq
      * @uses BaseHotelDetailsReq::setHotelProperty()

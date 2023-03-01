@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class AgencyContactInfo extends AbstractStructBase
      * - ref: PhoneNumber
      * @var \Travelport\UniversalRecord\StructType\PhoneNumber[]
      */
-    protected ?array $PhoneNumber = null;
+    public ?array $PhoneNumber = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class AgencyContactInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * Constructor method for AgencyContactInfo
      * @uses AgencyContactInfo::setPhoneNumber()
@@ -54,48 +53,12 @@ class AgencyContactInfo extends AbstractStructBase
         return $this->PhoneNumber;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPhoneNumber method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPhoneNumber method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePhoneNumberForArrayConstraintFromSetPhoneNumber(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $agencyContactInfoPhoneNumberItem) {
-            // validation for constraint: itemType
-            if (!$agencyContactInfoPhoneNumberItem instanceof \Travelport\UniversalRecord\StructType\PhoneNumber) {
-                $invalidValues[] = is_object($agencyContactInfoPhoneNumberItem) ? get_class($agencyContactInfoPhoneNumberItem) : sprintf('%s(%s)', gettype($agencyContactInfoPhoneNumberItem), var_export($agencyContactInfoPhoneNumberItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The PhoneNumber property can only contain items of type \Travelport\UniversalRecord\StructType\PhoneNumber, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set PhoneNumber value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\PhoneNumber[] $phoneNumber
      * @return \Travelport\UniversalRecord\StructType\AgencyContactInfo
      */
     public function setPhoneNumber(?array $phoneNumber = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($phoneNumberArrayErrorMessage = self::validatePhoneNumberForArrayConstraintFromSetPhoneNumber($phoneNumber))) {
-            throw new InvalidArgumentException($phoneNumberArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($phoneNumber) && count($phoneNumber) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($phoneNumber)), __LINE__);
-        }
         $this->PhoneNumber = $phoneNumber;
         
         return $this;
@@ -108,14 +71,6 @@ class AgencyContactInfo extends AbstractStructBase
      */
     public function addToPhoneNumber(\Travelport\UniversalRecord\StructType\PhoneNumber $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\PhoneNumber) {
-            throw new InvalidArgumentException(sprintf('The PhoneNumber property can only contain items of type \Travelport\UniversalRecord\StructType\PhoneNumber, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->PhoneNumber) && count($this->PhoneNumber) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->PhoneNumber)), __LINE__);
-        }
         $this->PhoneNumber[] = $item;
         
         return $this;
@@ -135,10 +90,6 @@ class AgencyContactInfo extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,14 +22,14 @@ class TravelerInformation extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $BookingTravelerRef;
+    public string $BookingTravelerRef;
     /**
      * The EmergencyContact
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\EmergencyContact|null
      */
-    protected ?\Travelport\Hotel\StructType\EmergencyContact $EmergencyContact = null;
+    public ?\Travelport\Hotel\StructType\EmergencyContact $EmergencyContact = null;
     /**
      * The HomeAirport
      * Meta information extracted from the WSDL
@@ -39,12 +38,12 @@ class TravelerInformation extends AbstractStructBase
      * - length: 3
      * @var string|null
      */
-    protected ?string $HomeAirport = null;
+    public ?string $HomeAirport = null;
     /**
      * The VisaExpirationDate
      * @var string|null
      */
-    protected ?string $VisaExpirationDate = null;
+    public ?string $VisaExpirationDate = null;
     /**
      * Constructor method for TravelerInformation
      * @uses TravelerInformation::setBookingTravelerRef()
@@ -79,10 +78,6 @@ class TravelerInformation extends AbstractStructBase
      */
     public function setBookingTravelerRef(string $bookingTravelerRef): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;
@@ -121,14 +116,6 @@ class TravelerInformation extends AbstractStructBase
      */
     public function setHomeAirport(?string $homeAirport = null): self
     {
-        // validation for constraint: string
-        if (!is_null($homeAirport) && !is_string($homeAirport)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($homeAirport, true), gettype($homeAirport)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($homeAirport) && mb_strlen((string) $homeAirport) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $homeAirport)), __LINE__);
-        }
         $this->HomeAirport = $homeAirport;
         
         return $this;
@@ -148,10 +135,6 @@ class TravelerInformation extends AbstractStructBase
      */
     public function setVisaExpirationDate(?string $visaExpirationDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($visaExpirationDate) && !is_string($visaExpirationDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($visaExpirationDate, true), gettype($visaExpirationDate)), __LINE__);
-        }
         $this->VisaExpirationDate = $visaExpirationDate;
         
         return $this;

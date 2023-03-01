@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,37 +21,37 @@ class UniversalRecordSearchReq extends BaseReq
      * - ref: UniversalRecordSearchModifiers
      * @var \Travelport\UniversalRecord\StructType\UniversalRecordSearchModifiers|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\UniversalRecordSearchModifiers $UniversalRecordSearchModifiers = null;
+    public ?\Travelport\UniversalRecord\StructType\UniversalRecordSearchModifiers $UniversalRecordSearchModifiers = null;
     /**
      * The TravelerCriteria
      * @var \Travelport\UniversalRecord\StructType\TravelerCriteria|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TravelerCriteria $TravelerCriteria = null;
+    public ?\Travelport\UniversalRecord\StructType\TravelerCriteria $TravelerCriteria = null;
     /**
      * The SearchAgent
      * @var \Travelport\UniversalRecord\StructType\SearchAgent|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\SearchAgent $SearchAgent = null;
+    public ?\Travelport\UniversalRecord\StructType\SearchAgent $SearchAgent = null;
     /**
      * The AirReservationCriteria
      * @var \Travelport\UniversalRecord\StructType\AirReservationCriteria|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AirReservationCriteria $AirReservationCriteria = null;
+    public ?\Travelport\UniversalRecord\StructType\AirReservationCriteria $AirReservationCriteria = null;
     /**
      * The HotelReservationCriteria
      * @var \Travelport\UniversalRecord\StructType\HotelReservationCriteria|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\HotelReservationCriteria $HotelReservationCriteria = null;
+    public ?\Travelport\UniversalRecord\StructType\HotelReservationCriteria $HotelReservationCriteria = null;
     /**
      * The VehicleReservationCriteria
      * @var \Travelport\UniversalRecord\StructType\VehicleReservationCriteria|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\VehicleReservationCriteria $VehicleReservationCriteria = null;
+    public ?\Travelport\UniversalRecord\StructType\VehicleReservationCriteria $VehicleReservationCriteria = null;
     /**
      * The RailReservationCriteria
      * @var \Travelport\UniversalRecord\StructType\RailReservationCriteria|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\RailReservationCriteria $RailReservationCriteria = null;
+    public ?\Travelport\UniversalRecord\StructType\RailReservationCriteria $RailReservationCriteria = null;
     /**
      * The SearchAccount
      * Meta information extracted from the WSDL
@@ -60,32 +59,32 @@ class UniversalRecordSearchReq extends BaseReq
      * - ref: SearchAccount
      * @var \Travelport\UniversalRecord\StructType\SearchAccount|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\SearchAccount $SearchAccount = null;
+    public ?\Travelport\UniversalRecord\StructType\SearchAccount $SearchAccount = null;
     /**
      * The ActionDate
      * @var string|null
      */
-    protected ?string $ActionDate = null;
+    public ?string $ActionDate = null;
     /**
      * The RecordStatus
      * @var string|null
      */
-    protected ?string $RecordStatus = null;
+    public ?string $RecordStatus = null;
     /**
      * The ClientId
      * @var string|null
      */
-    protected ?string $ClientId = null;
+    public ?string $ClientId = null;
     /**
      * The ProviderCode
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The ProviderLocatorCode
      * @var string|null
      */
-    protected ?string $ProviderLocatorCode = null;
+    public ?string $ProviderLocatorCode = null;
     /**
      * The ExternalSearchIndex
      * Meta information extracted from the WSDL
@@ -93,12 +92,12 @@ class UniversalRecordSearchReq extends BaseReq
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $ExternalSearchIndex = null;
+    public ?string $ExternalSearchIndex = null;
     /**
      * The RestrictToProfileId
      * @var string|null
      */
-    protected ?string $RestrictToProfileId = null;
+    public ?string $RestrictToProfileId = null;
     /**
      * The PassiveOnly
      * Meta information extracted from the WSDL
@@ -107,7 +106,7 @@ class UniversalRecordSearchReq extends BaseReq
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PassiveOnly = null;
+    public ?bool $PassiveOnly = null;
     /**
      * The TicketStatus
      * Meta information extracted from the WSDL
@@ -115,7 +114,7 @@ class UniversalRecordSearchReq extends BaseReq
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketStatus = null;
+    public ?string $TicketStatus = null;
     /**
      * Constructor method for UniversalRecordSearchReq
      * @uses UniversalRecordSearchReq::setUniversalRecordSearchModifiers()
@@ -341,10 +340,6 @@ class UniversalRecordSearchReq extends BaseReq
      */
     public function setActionDate(?string $actionDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($actionDate) && !is_string($actionDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($actionDate, true), gettype($actionDate)), __LINE__);
-        }
         $this->ActionDate = $actionDate;
         
         return $this;
@@ -359,18 +354,11 @@ class UniversalRecordSearchReq extends BaseReq
     }
     /**
      * Set RecordStatus value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRecordStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRecordStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $recordStatus
      * @return \Travelport\UniversalRecord\StructType\UniversalRecordSearchReq
      */
     public function setRecordStatus(?string $recordStatus = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeRecordStatus::valueIsValid($recordStatus)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeRecordStatus', is_array($recordStatus) ? implode(', ', $recordStatus) : var_export($recordStatus, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeRecordStatus::getValidValues())), __LINE__);
-        }
         $this->RecordStatus = $recordStatus;
         
         return $this;
@@ -390,10 +378,6 @@ class UniversalRecordSearchReq extends BaseReq
      */
     public function setClientId(?string $clientId = null): self
     {
-        // validation for constraint: string
-        if (!is_null($clientId) && !is_string($clientId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($clientId, true), gettype($clientId)), __LINE__);
-        }
         $this->ClientId = $clientId;
         
         return $this;
@@ -413,10 +397,6 @@ class UniversalRecordSearchReq extends BaseReq
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -436,10 +416,6 @@ class UniversalRecordSearchReq extends BaseReq
      */
     public function setProviderLocatorCode(?string $providerLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerLocatorCode) && !is_string($providerLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerLocatorCode, true), gettype($providerLocatorCode)), __LINE__);
-        }
         $this->ProviderLocatorCode = $providerLocatorCode;
         
         return $this;
@@ -459,10 +435,6 @@ class UniversalRecordSearchReq extends BaseReq
      */
     public function setExternalSearchIndex(?string $externalSearchIndex = null): self
     {
-        // validation for constraint: string
-        if (!is_null($externalSearchIndex) && !is_string($externalSearchIndex)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($externalSearchIndex, true), gettype($externalSearchIndex)), __LINE__);
-        }
         $this->ExternalSearchIndex = $externalSearchIndex;
         
         return $this;
@@ -482,10 +454,6 @@ class UniversalRecordSearchReq extends BaseReq
      */
     public function setRestrictToProfileId(?string $restrictToProfileId = null): self
     {
-        // validation for constraint: string
-        if (!is_null($restrictToProfileId) && !is_string($restrictToProfileId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($restrictToProfileId, true), gettype($restrictToProfileId)), __LINE__);
-        }
         $this->RestrictToProfileId = $restrictToProfileId;
         
         return $this;
@@ -505,10 +473,6 @@ class UniversalRecordSearchReq extends BaseReq
      */
     public function setPassiveOnly(?bool $passiveOnly = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($passiveOnly) && !is_bool($passiveOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($passiveOnly, true), gettype($passiveOnly)), __LINE__);
-        }
         $this->PassiveOnly = $passiveOnly;
         
         return $this;
@@ -523,18 +487,11 @@ class UniversalRecordSearchReq extends BaseReq
     }
     /**
      * Set TicketStatus value
-     * @uses \Travelport\UniversalRecord\EnumType\URTicketStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\URTicketStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $ticketStatus
      * @return \Travelport\UniversalRecord\StructType\UniversalRecordSearchReq
      */
     public function setTicketStatus(?string $ticketStatus = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\URTicketStatus::valueIsValid($ticketStatus)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\URTicketStatus', is_array($ticketStatus) ? implode(', ', $ticketStatus) : var_export($ticketStatus, true), implode(', ', \Travelport\UniversalRecord\EnumType\URTicketStatus::getValidValues())), __LINE__);
-        }
         $this->TicketStatus = $ticketStatus;
         
         return $this;

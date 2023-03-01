@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class TypeVendorLocation extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ProviderCode;
+    public string $ProviderCode;
     /**
      * The VendorCode
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class TypeVendorLocation extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $VendorCode;
+    public string $VendorCode;
     /**
      * The PreferredOption
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class TypeVendorLocation extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PreferredOption = null;
+    public ?bool $PreferredOption = null;
     /**
      * The VendorLocationID
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class TypeVendorLocation extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $VendorLocationID = null;
+    public ?string $VendorLocationID = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -61,7 +60,7 @@ class TypeVendorLocation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The MoreRatesToken
      * Meta information extracted from the WSDL
@@ -71,7 +70,7 @@ class TypeVendorLocation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $MoreRatesToken = null;
+    public ?string $MoreRatesToken = null;
     /**
      * Constructor method for typeVendorLocation
      * @uses TypeVendorLocation::setProviderCode()
@@ -112,18 +111,6 @@ class TypeVendorLocation extends AbstractStructBase
      */
     public function setProviderCode(string $providerCode): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -143,18 +130,6 @@ class TypeVendorLocation extends AbstractStructBase
      */
     public function setVendorCode(string $vendorCode): self
     {
-        // validation for constraint: string
-        if (!is_null($vendorCode) && !is_string($vendorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vendorCode, true), gettype($vendorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($vendorCode) && mb_strlen((string) $vendorCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $vendorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($vendorCode) && mb_strlen((string) $vendorCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $vendorCode)), __LINE__);
-        }
         $this->VendorCode = $vendorCode;
         
         return $this;
@@ -174,10 +149,6 @@ class TypeVendorLocation extends AbstractStructBase
      */
     public function setPreferredOption(?bool $preferredOption = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($preferredOption) && !is_bool($preferredOption)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($preferredOption, true), gettype($preferredOption)), __LINE__);
-        }
         $this->PreferredOption = $preferredOption;
         
         return $this;
@@ -197,14 +168,6 @@ class TypeVendorLocation extends AbstractStructBase
      */
     public function setVendorLocationID(?string $vendorLocationID = null): self
     {
-        // validation for constraint: string
-        if (!is_null($vendorLocationID) && !is_string($vendorLocationID)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vendorLocationID, true), gettype($vendorLocationID)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($vendorLocationID) && mb_strlen((string) $vendorLocationID) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $vendorLocationID)), __LINE__);
-        }
         $this->VendorLocationID = $vendorLocationID;
         
         return $this;
@@ -224,10 +187,6 @@ class TypeVendorLocation extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -247,18 +206,6 @@ class TypeVendorLocation extends AbstractStructBase
      */
     public function setMoreRatesToken(?string $moreRatesToken = null): self
     {
-        // validation for constraint: string
-        if (!is_null($moreRatesToken) && !is_string($moreRatesToken)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($moreRatesToken, true), gettype($moreRatesToken)), __LINE__);
-        }
-        // validation for constraint: maxLength(30)
-        if (!is_null($moreRatesToken) && mb_strlen((string) $moreRatesToken) > 30) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 30', mb_strlen((string) $moreRatesToken)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($moreRatesToken) && mb_strlen((string) $moreRatesToken) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $moreRatesToken)), __LINE__);
-        }
         $this->MoreRatesToken = $moreRatesToken;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class PriceRange extends AbstractStructBase
      * - documentation: Indicates if the currency code of StartPrice / EndPrice is the default currency code
      * @var bool|null
      */
-    protected ?bool $DefaultCurrency = null;
+    public ?bool $DefaultCurrency = null;
     /**
      * The StartPrice
      * Meta information extracted from the WSDL
@@ -27,7 +26,7 @@ class PriceRange extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $StartPrice = null;
+    public ?string $StartPrice = null;
     /**
      * The EndPrice
      * Meta information extracted from the WSDL
@@ -35,7 +34,7 @@ class PriceRange extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $EndPrice = null;
+    public ?string $EndPrice = null;
     /**
      * Constructor method for PriceRange
      * @uses PriceRange::setDefaultCurrency()
@@ -67,10 +66,6 @@ class PriceRange extends AbstractStructBase
      */
     public function setDefaultCurrency(?bool $defaultCurrency = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($defaultCurrency) && !is_bool($defaultCurrency)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($defaultCurrency, true), gettype($defaultCurrency)), __LINE__);
-        }
         $this->DefaultCurrency = $defaultCurrency;
         
         return $this;
@@ -90,10 +85,6 @@ class PriceRange extends AbstractStructBase
      */
     public function setStartPrice(?string $startPrice = null): self
     {
-        // validation for constraint: string
-        if (!is_null($startPrice) && !is_string($startPrice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startPrice, true), gettype($startPrice)), __LINE__);
-        }
         $this->StartPrice = $startPrice;
         
         return $this;
@@ -113,10 +104,6 @@ class PriceRange extends AbstractStructBase
      */
     public function setEndPrice(?string $endPrice = null): self
     {
-        // validation for constraint: string
-        if (!is_null($endPrice) && !is_string($endPrice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endPrice, true), gettype($endPrice)), __LINE__);
-        }
         $this->EndPrice = $endPrice;
         
         return $this;

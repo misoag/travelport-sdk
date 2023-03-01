@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class SSR extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class SSR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The SegmentRef
      * Meta information extracted from the WSDL
@@ -43,7 +42,7 @@ class SSR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SegmentRef = null;
+    public ?string $SegmentRef = null;
     /**
      * The PassiveSegmentRef
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class SSR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PassiveSegmentRef = null;
+    public ?string $PassiveSegmentRef = null;
     /**
      * The ProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -61,14 +60,14 @@ class SSR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderReservationInfoRef = null;
+    public ?string $ProviderReservationInfoRef = null;
     /**
      * The Status
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $Status = null;
+    public ?string $Status = null;
     /**
      * The FreeText
      * Meta information extracted from the WSDL
@@ -77,7 +76,7 @@ class SSR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FreeText = null;
+    public ?string $FreeText = null;
     /**
      * The Carrier
      * Meta information extracted from the WSDL
@@ -87,7 +86,7 @@ class SSR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Carrier = null;
+    public ?string $Carrier = null;
     /**
      * The CarrierSpecificText
      * Meta information extracted from the WSDL
@@ -97,14 +96,14 @@ class SSR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CarrierSpecificText = null;
+    public ?string $CarrierSpecificText = null;
     /**
      * The Description
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $Description = null;
+    public ?string $Description = null;
     /**
      * The ProviderDefinedType
      * Meta information extracted from the WSDL
@@ -114,7 +113,7 @@ class SSR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderDefinedType = null;
+    public ?string $ProviderDefinedType = null;
     /**
      * The SSRRuleRef
      * Meta information extracted from the WSDL
@@ -123,12 +122,12 @@ class SSR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SSRRuleRef = null;
+    public ?string $SSRRuleRef = null;
     /**
      * The URL
      * @var string|null
      */
-    protected ?string $URL = null;
+    public ?string $URL = null;
     /**
      * The ProfileID
      * Meta information extracted from the WSDL
@@ -136,7 +135,7 @@ class SSR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProfileID = null;
+    public ?string $ProfileID = null;
     /**
      * The ProfileSecureFlightDocKey
      * Meta information extracted from the WSDL
@@ -145,7 +144,7 @@ class SSR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProfileSecureFlightDocKey = null;
+    public ?string $ProfileSecureFlightDocKey = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -154,7 +153,7 @@ class SSR extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -162,7 +161,7 @@ class SSR extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for SSR
      * @uses SSR::setType()
@@ -236,18 +235,6 @@ class SSR extends AbstractStructBase
      */
     public function setType(string $type): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
-        // validation for constraint: maxLength(4)
-        if (!is_null($type) && mb_strlen((string) $type) > 4) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 4', mb_strlen((string) $type)), __LINE__);
-        }
-        // validation for constraint: minLength(4)
-        if (!is_null($type) && mb_strlen((string) $type) < 4) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 4', mb_strlen((string) $type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -267,10 +254,6 @@ class SSR extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -290,10 +273,6 @@ class SSR extends AbstractStructBase
      */
     public function setSegmentRef(?string $segmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($segmentRef) && !is_string($segmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($segmentRef, true), gettype($segmentRef)), __LINE__);
-        }
         $this->SegmentRef = $segmentRef;
         
         return $this;
@@ -313,10 +292,6 @@ class SSR extends AbstractStructBase
      */
     public function setPassiveSegmentRef(?string $passiveSegmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($passiveSegmentRef) && !is_string($passiveSegmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passiveSegmentRef, true), gettype($passiveSegmentRef)), __LINE__);
-        }
         $this->PassiveSegmentRef = $passiveSegmentRef;
         
         return $this;
@@ -336,10 +311,6 @@ class SSR extends AbstractStructBase
      */
     public function setProviderReservationInfoRef(?string $providerReservationInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerReservationInfoRef) && !is_string($providerReservationInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerReservationInfoRef, true), gettype($providerReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef = $providerReservationInfoRef;
         
         return $this;
@@ -359,10 +330,6 @@ class SSR extends AbstractStructBase
      */
     public function setStatus(?string $status = null): self
     {
-        // validation for constraint: string
-        if (!is_null($status) && !is_string($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -382,10 +349,6 @@ class SSR extends AbstractStructBase
      */
     public function setFreeText(?string $freeText = null): self
     {
-        // validation for constraint: string
-        if (!is_null($freeText) && !is_string($freeText)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($freeText, true), gettype($freeText)), __LINE__);
-        }
         $this->FreeText = $freeText;
         
         return $this;
@@ -405,14 +368,6 @@ class SSR extends AbstractStructBase
      */
     public function setCarrier(?string $carrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($carrier) && !is_string($carrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrier, true), gettype($carrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($carrier) && mb_strlen((string) $carrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $carrier)), __LINE__);
-        }
         $this->Carrier = $carrier;
         
         return $this;
@@ -432,18 +387,6 @@ class SSR extends AbstractStructBase
      */
     public function setCarrierSpecificText(?string $carrierSpecificText = null): self
     {
-        // validation for constraint: string
-        if (!is_null($carrierSpecificText) && !is_string($carrierSpecificText)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrierSpecificText, true), gettype($carrierSpecificText)), __LINE__);
-        }
-        // validation for constraint: maxLength(64)
-        if (!is_null($carrierSpecificText) && mb_strlen((string) $carrierSpecificText) > 64) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 64', mb_strlen((string) $carrierSpecificText)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($carrierSpecificText) && mb_strlen((string) $carrierSpecificText) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $carrierSpecificText)), __LINE__);
-        }
         $this->CarrierSpecificText = $carrierSpecificText;
         
         return $this;
@@ -463,10 +406,6 @@ class SSR extends AbstractStructBase
      */
     public function setDescription(?string $description = null): self
     {
-        // validation for constraint: string
-        if (!is_null($description) && !is_string($description)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
-        }
         $this->Description = $description;
         
         return $this;
@@ -486,18 +425,6 @@ class SSR extends AbstractStructBase
      */
     public function setProviderDefinedType(?string $providerDefinedType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerDefinedType) && !is_string($providerDefinedType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerDefinedType, true), gettype($providerDefinedType)), __LINE__);
-        }
-        // validation for constraint: maxLength(16)
-        if (!is_null($providerDefinedType) && mb_strlen((string) $providerDefinedType) > 16) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 16', mb_strlen((string) $providerDefinedType)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($providerDefinedType) && mb_strlen((string) $providerDefinedType) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $providerDefinedType)), __LINE__);
-        }
         $this->ProviderDefinedType = $providerDefinedType;
         
         return $this;
@@ -517,10 +444,6 @@ class SSR extends AbstractStructBase
      */
     public function setSSRRuleRef(?string $sSRRuleRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($sSRRuleRef) && !is_string($sSRRuleRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($sSRRuleRef, true), gettype($sSRRuleRef)), __LINE__);
-        }
         $this->SSRRuleRef = $sSRRuleRef;
         
         return $this;
@@ -540,10 +463,6 @@ class SSR extends AbstractStructBase
      */
     public function setURL(?string $uRL = null): self
     {
-        // validation for constraint: string
-        if (!is_null($uRL) && !is_string($uRL)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($uRL, true), gettype($uRL)), __LINE__);
-        }
         $this->URL = $uRL;
         
         return $this;
@@ -563,10 +482,6 @@ class SSR extends AbstractStructBase
      */
     public function setProfileID(?string $profileID = null): self
     {
-        // validation for constraint: string
-        if (!is_null($profileID) && !is_string($profileID)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileID, true), gettype($profileID)), __LINE__);
-        }
         $this->ProfileID = $profileID;
         
         return $this;
@@ -586,10 +501,6 @@ class SSR extends AbstractStructBase
      */
     public function setProfileSecureFlightDocKey(?string $profileSecureFlightDocKey = null): self
     {
-        // validation for constraint: string
-        if (!is_null($profileSecureFlightDocKey) && !is_string($profileSecureFlightDocKey)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileSecureFlightDocKey, true), gettype($profileSecureFlightDocKey)), __LINE__);
-        }
         $this->ProfileSecureFlightDocKey = $profileSecureFlightDocKey;
         
         return $this;
@@ -604,18 +515,11 @@ class SSR extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\SSR
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -635,10 +539,6 @@ class SSR extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

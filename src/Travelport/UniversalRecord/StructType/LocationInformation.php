@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,14 +21,14 @@ class LocationInformation extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeStructuredAddress|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeStructuredAddress $Address = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeStructuredAddress $Address = null;
     /**
      * The LocationType
      * Meta information extracted from the WSDL
      * - documentation: Specifies the type of location, such as city center, airport, or near resort.
      * @var string|null
      */
-    protected ?string $LocationType = null;
+    public ?string $LocationType = null;
     /**
      * The AreaGroup
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class LocationInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AreaGroup = null;
+    public ?string $AreaGroup = null;
     /**
      * The Location
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class LocationInformation extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Location = null;
+    public ?string $Location = null;
     /**
      * The AreaType
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class LocationInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AreaType = null;
+    public ?string $AreaType = null;
     /**
      * Constructor method for LocationInformation
      * @uses LocationInformation::setAddress()
@@ -111,18 +110,11 @@ class LocationInformation extends AbstractStructBase
     }
     /**
      * Set LocationType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleLocation::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleLocation::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $locationType
      * @return \Travelport\UniversalRecord\StructType\LocationInformation
      */
     public function setLocationType(?string $locationType = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeVehicleLocation::valueIsValid($locationType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeVehicleLocation', is_array($locationType) ? implode(', ', $locationType) : var_export($locationType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeVehicleLocation::getValidValues())), __LINE__);
-        }
         $this->LocationType = $locationType;
         
         return $this;
@@ -142,10 +134,6 @@ class LocationInformation extends AbstractStructBase
      */
     public function setAreaGroup(?string $areaGroup = null): self
     {
-        // validation for constraint: string
-        if (!is_null($areaGroup) && !is_string($areaGroup)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($areaGroup, true), gettype($areaGroup)), __LINE__);
-        }
         $this->AreaGroup = $areaGroup;
         
         return $this;
@@ -165,14 +153,6 @@ class LocationInformation extends AbstractStructBase
      */
     public function setLocation(?string $location = null): self
     {
-        // validation for constraint: string
-        if (!is_null($location) && !is_string($location)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($location, true), gettype($location)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($location) && mb_strlen((string) $location) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $location)), __LINE__);
-        }
         $this->Location = $location;
         
         return $this;
@@ -187,18 +167,11 @@ class LocationInformation extends AbstractStructBase
     }
     /**
      * Set AreaType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeAreaInfo::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeAreaInfo::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $areaType
      * @return \Travelport\UniversalRecord\StructType\LocationInformation
      */
     public function setAreaType(?string $areaType = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeAreaInfo::valueIsValid($areaType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeAreaInfo', is_array($areaType) ? implode(', ', $areaType) : var_export($areaType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeAreaInfo::getValidValues())), __LINE__);
-        }
         $this->AreaType = $areaType;
         
         return $this;

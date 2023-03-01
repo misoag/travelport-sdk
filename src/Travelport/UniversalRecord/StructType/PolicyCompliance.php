@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class PolicyCompliance extends AbstractStructBase
      * - use: required
      * @var bool
      */
-    protected bool $InPolicy;
+    public bool $InPolicy;
     /**
      * The PolicyToken
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class PolicyCompliance extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PolicyToken = null;
+    public ?string $PolicyToken = null;
     /**
      * Constructor method for PolicyCompliance
      * @uses PolicyCompliance::setInPolicy()
@@ -60,10 +59,6 @@ class PolicyCompliance extends AbstractStructBase
      */
     public function setInPolicy(bool $inPolicy): self
     {
-        // validation for constraint: boolean
-        if (!is_null($inPolicy) && !is_bool($inPolicy)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($inPolicy, true), gettype($inPolicy)), __LINE__);
-        }
         $this->InPolicy = $inPolicy;
         
         return $this;
@@ -83,18 +78,6 @@ class PolicyCompliance extends AbstractStructBase
      */
     public function setPolicyToken(?string $policyToken = null): self
     {
-        // validation for constraint: string
-        if (!is_null($policyToken) && !is_string($policyToken)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($policyToken, true), gettype($policyToken)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($policyToken) && mb_strlen((string) $policyToken) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $policyToken)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($policyToken) && mb_strlen((string) $policyToken) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $policyToken)), __LINE__);
-        }
         $this->PolicyToken = $policyToken;
         
         return $this;

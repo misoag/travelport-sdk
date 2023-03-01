@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class Email extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $EmailID;
+    public string $EmailID;
     /**
      * The ProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class Email extends AbstractStructBase
      * - ref: ProviderReservationInfoRef
      * @var \Travelport\Hotel\StructType\ProviderReservationInfoRef[]
      */
-    protected ?array $ProviderReservationInfoRef = null;
+    public ?array $ProviderReservationInfoRef = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class Email extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The Type
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class Email extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Type = null;
+    public ?string $Type = null;
     /**
      * The Comment
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class Email extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Comment = null;
+    public ?string $Comment = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -69,7 +68,7 @@ class Email extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -77,7 +76,7 @@ class Email extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for Email
      * @uses Email::setEmailID()
@@ -121,10 +120,6 @@ class Email extends AbstractStructBase
      */
     public function setEmailID(string $emailID): self
     {
-        // validation for constraint: string
-        if (!is_null($emailID) && !is_string($emailID)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($emailID, true), gettype($emailID)), __LINE__);
-        }
         $this->EmailID = $emailID;
         
         return $this;
@@ -138,48 +133,12 @@ class Email extends AbstractStructBase
         return $this->ProviderReservationInfoRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setProviderReservationInfoRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationInfoRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateProviderReservationInfoRefForArrayConstraintFromSetProviderReservationInfoRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $emailProviderReservationInfoRefItem) {
-            // validation for constraint: itemType
-            if (!$emailProviderReservationInfoRefItem instanceof \Travelport\Hotel\StructType\ProviderReservationInfoRef) {
-                $invalidValues[] = is_object($emailProviderReservationInfoRefItem) ? get_class($emailProviderReservationInfoRefItem) : sprintf('%s(%s)', gettype($emailProviderReservationInfoRefItem), var_export($emailProviderReservationInfoRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ProviderReservationInfoRef property can only contain items of type \Travelport\Hotel\StructType\ProviderReservationInfoRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ProviderReservationInfoRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\ProviderReservationInfoRef[] $providerReservationInfoRef
      * @return \Travelport\Hotel\StructType\Email
      */
     public function setProviderReservationInfoRef(?array $providerReservationInfoRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($providerReservationInfoRefArrayErrorMessage = self::validateProviderReservationInfoRefForArrayConstraintFromSetProviderReservationInfoRef($providerReservationInfoRef))) {
-            throw new InvalidArgumentException($providerReservationInfoRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($providerReservationInfoRef) && count($providerReservationInfoRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($providerReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef = $providerReservationInfoRef;
         
         return $this;
@@ -192,14 +151,6 @@ class Email extends AbstractStructBase
      */
     public function addToProviderReservationInfoRef(\Travelport\Hotel\StructType\ProviderReservationInfoRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\ProviderReservationInfoRef) {
-            throw new InvalidArgumentException(sprintf('The ProviderReservationInfoRef property can only contain items of type \Travelport\Hotel\StructType\ProviderReservationInfoRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->ProviderReservationInfoRef) && count($this->ProviderReservationInfoRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->ProviderReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef[] = $item;
         
         return $this;
@@ -219,10 +170,6 @@ class Email extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -242,18 +189,6 @@ class Email extends AbstractStructBase
      */
     public function setType(?string $type = null): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($type) && mb_strlen((string) $type) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $type)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($type) && mb_strlen((string) $type) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -273,14 +208,6 @@ class Email extends AbstractStructBase
      */
     public function setComment(?string $comment = null): self
     {
-        // validation for constraint: string
-        if (!is_null($comment) && !is_string($comment)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($comment, true), gettype($comment)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($comment) && mb_strlen((string) $comment) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $comment)), __LINE__);
-        }
         $this->Comment = $comment;
         
         return $this;
@@ -295,18 +222,11 @@ class Email extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\Hotel\StructType\Email
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\Hotel\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -326,10 +246,6 @@ class Email extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

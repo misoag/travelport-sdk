@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class Rules extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $RulesText = null;
+    public ?string $RulesText = null;
     /**
      * Constructor method for Rules
      * @uses Rules::setRulesText()
@@ -46,10 +45,6 @@ class Rules extends AbstractStructBase
      */
     public function setRulesText(?string $rulesText = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rulesText) && !is_string($rulesText)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rulesText, true), gettype($rulesText)), __LINE__);
-        }
         $this->RulesText = $rulesText;
         
         return $this;

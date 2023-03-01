@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class TypeBulkTicketModifierType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $SuppressOnFareCalc = null;
+    public ?bool $SuppressOnFareCalc = null;
     /**
      * Constructor method for typeBulkTicketModifierType
      * @uses TypeBulkTicketModifierType::setSuppressOnFareCalc()
@@ -48,10 +47,6 @@ class TypeBulkTicketModifierType extends AbstractStructBase
      */
     public function setSuppressOnFareCalc(?bool $suppressOnFareCalc = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($suppressOnFareCalc) && !is_bool($suppressOnFareCalc)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($suppressOnFareCalc, true), gettype($suppressOnFareCalc)), __LINE__);
-        }
         $this->SuppressOnFareCalc = $suppressOnFareCalc;
         
         return $this;

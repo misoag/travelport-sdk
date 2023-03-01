@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - ref: FormOfPayment
      * @var \Travelport\UniversalRecord\StructType\FormOfPayment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FormOfPayment $FormOfPayment = null;
+    public ?\Travelport\UniversalRecord\StructType\FormOfPayment $FormOfPayment = null;
     /**
      * The ServiceFeeTaxInfo
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - ref: ServiceFeeTaxInfo
      * @var \Travelport\UniversalRecord\StructType\ServiceFeeTaxInfo[]
      */
-    protected ?array $ServiceFeeTaxInfo = null;
+    public ?array $ServiceFeeTaxInfo = null;
     /**
      * The CreditCardAuth
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - ref: CreditCardAuth
      * @var \Travelport\UniversalRecord\StructType\CreditCardAuth|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CreditCardAuth $CreditCardAuth = null;
+    public ?\Travelport\UniversalRecord\StructType\CreditCardAuth $CreditCardAuth = null;
     /**
      * The Payment
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - ref: Payment
      * @var \Travelport\UniversalRecord\StructType\Payment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Payment $Payment = null;
+    public ?\Travelport\UniversalRecord\StructType\Payment $Payment = null;
     /**
      * The Status
      * Meta information extracted from the WSDL
@@ -55,7 +54,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Status = null;
+    public ?string $Status = null;
     /**
      * The Description
      * Meta information extracted from the WSDL
@@ -63,7 +62,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Description = null;
+    public ?string $Description = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -72,7 +71,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The Confirmation
      * Meta information extracted from the WSDL
@@ -80,7 +79,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Confirmation = null;
+    public ?string $Confirmation = null;
     /**
      * The TicketNumber
      * Meta information extracted from the WSDL
@@ -88,7 +87,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketNumber = null;
+    public ?string $TicketNumber = null;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -97,7 +96,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingTravelerRef = null;
+    public ?string $BookingTravelerRef = null;
     /**
      * The ProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -106,7 +105,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderReservationInfoRef = null;
+    public ?string $ProviderReservationInfoRef = null;
     /**
      * The PassiveProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -115,7 +114,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PassiveProviderReservationInfoRef = null;
+    public ?string $PassiveProviderReservationInfoRef = null;
     /**
      * The TotalAmount
      * Meta information extracted from the WSDL
@@ -124,7 +123,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TotalAmount = null;
+    public ?string $TotalAmount = null;
     /**
      * The BaseAmount
      * Meta information extracted from the WSDL
@@ -133,7 +132,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BaseAmount = null;
+    public ?string $BaseAmount = null;
     /**
      * The Taxes
      * Meta information extracted from the WSDL
@@ -143,7 +142,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Taxes = null;
+    public ?string $Taxes = null;
     /**
      * The BookingTravelerName
      * Meta information extracted from the WSDL
@@ -151,7 +150,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingTravelerName = null;
+    public ?string $BookingTravelerName = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -160,7 +159,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -168,7 +167,7 @@ class ServiceFeeInfo extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for ServiceFeeInfo
      * @uses ServiceFeeInfo::setFormOfPayment()
@@ -258,48 +257,12 @@ class ServiceFeeInfo extends AbstractStructBase
         return $this->ServiceFeeTaxInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setServiceFeeTaxInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setServiceFeeTaxInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateServiceFeeTaxInfoForArrayConstraintFromSetServiceFeeTaxInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $serviceFeeInfoServiceFeeTaxInfoItem) {
-            // validation for constraint: itemType
-            if (!$serviceFeeInfoServiceFeeTaxInfoItem instanceof \Travelport\UniversalRecord\StructType\ServiceFeeTaxInfo) {
-                $invalidValues[] = is_object($serviceFeeInfoServiceFeeTaxInfoItem) ? get_class($serviceFeeInfoServiceFeeTaxInfoItem) : sprintf('%s(%s)', gettype($serviceFeeInfoServiceFeeTaxInfoItem), var_export($serviceFeeInfoServiceFeeTaxInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ServiceFeeTaxInfo property can only contain items of type \Travelport\UniversalRecord\StructType\ServiceFeeTaxInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ServiceFeeTaxInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\ServiceFeeTaxInfo[] $serviceFeeTaxInfo
      * @return \Travelport\UniversalRecord\StructType\ServiceFeeInfo
      */
     public function setServiceFeeTaxInfo(?array $serviceFeeTaxInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($serviceFeeTaxInfoArrayErrorMessage = self::validateServiceFeeTaxInfoForArrayConstraintFromSetServiceFeeTaxInfo($serviceFeeTaxInfo))) {
-            throw new InvalidArgumentException($serviceFeeTaxInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($serviceFeeTaxInfo) && count($serviceFeeTaxInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($serviceFeeTaxInfo)), __LINE__);
-        }
         $this->ServiceFeeTaxInfo = $serviceFeeTaxInfo;
         
         return $this;
@@ -312,14 +275,6 @@ class ServiceFeeInfo extends AbstractStructBase
      */
     public function addToServiceFeeTaxInfo(\Travelport\UniversalRecord\StructType\ServiceFeeTaxInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\ServiceFeeTaxInfo) {
-            throw new InvalidArgumentException(sprintf('The ServiceFeeTaxInfo property can only contain items of type \Travelport\UniversalRecord\StructType\ServiceFeeTaxInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->ServiceFeeTaxInfo) && count($this->ServiceFeeTaxInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->ServiceFeeTaxInfo)), __LINE__);
-        }
         $this->ServiceFeeTaxInfo[] = $item;
         
         return $this;
@@ -372,18 +327,11 @@ class ServiceFeeInfo extends AbstractStructBase
     }
     /**
      * Set Status value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $status
      * @return \Travelport\UniversalRecord\StructType\ServiceFeeInfo
      */
     public function setStatus(?string $status = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeStatus::valueIsValid($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeStatus', is_array($status) ? implode(', ', $status) : var_export($status, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeStatus::getValidValues())), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -403,10 +351,6 @@ class ServiceFeeInfo extends AbstractStructBase
      */
     public function setDescription(?string $description = null): self
     {
-        // validation for constraint: string
-        if (!is_null($description) && !is_string($description)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
-        }
         $this->Description = $description;
         
         return $this;
@@ -426,10 +370,6 @@ class ServiceFeeInfo extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -449,10 +389,6 @@ class ServiceFeeInfo extends AbstractStructBase
      */
     public function setConfirmation(?string $confirmation = null): self
     {
-        // validation for constraint: string
-        if (!is_null($confirmation) && !is_string($confirmation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($confirmation, true), gettype($confirmation)), __LINE__);
-        }
         $this->Confirmation = $confirmation;
         
         return $this;
@@ -472,10 +408,6 @@ class ServiceFeeInfo extends AbstractStructBase
      */
     public function setTicketNumber(?string $ticketNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketNumber) && !is_string($ticketNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketNumber, true), gettype($ticketNumber)), __LINE__);
-        }
         $this->TicketNumber = $ticketNumber;
         
         return $this;
@@ -495,10 +427,6 @@ class ServiceFeeInfo extends AbstractStructBase
      */
     public function setBookingTravelerRef(?string $bookingTravelerRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;
@@ -518,10 +446,6 @@ class ServiceFeeInfo extends AbstractStructBase
      */
     public function setProviderReservationInfoRef(?string $providerReservationInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerReservationInfoRef) && !is_string($providerReservationInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerReservationInfoRef, true), gettype($providerReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef = $providerReservationInfoRef;
         
         return $this;
@@ -541,10 +465,6 @@ class ServiceFeeInfo extends AbstractStructBase
      */
     public function setPassiveProviderReservationInfoRef(?string $passiveProviderReservationInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($passiveProviderReservationInfoRef) && !is_string($passiveProviderReservationInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passiveProviderReservationInfoRef, true), gettype($passiveProviderReservationInfoRef)), __LINE__);
-        }
         $this->PassiveProviderReservationInfoRef = $passiveProviderReservationInfoRef;
         
         return $this;
@@ -564,10 +484,6 @@ class ServiceFeeInfo extends AbstractStructBase
      */
     public function setTotalAmount(?string $totalAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($totalAmount) && !is_string($totalAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($totalAmount, true), gettype($totalAmount)), __LINE__);
-        }
         $this->TotalAmount = $totalAmount;
         
         return $this;
@@ -587,10 +503,6 @@ class ServiceFeeInfo extends AbstractStructBase
      */
     public function setBaseAmount(?string $baseAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($baseAmount) && !is_string($baseAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($baseAmount, true), gettype($baseAmount)), __LINE__);
-        }
         $this->BaseAmount = $baseAmount;
         
         return $this;
@@ -610,10 +522,6 @@ class ServiceFeeInfo extends AbstractStructBase
      */
     public function setTaxes(?string $taxes = null): self
     {
-        // validation for constraint: string
-        if (!is_null($taxes) && !is_string($taxes)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($taxes, true), gettype($taxes)), __LINE__);
-        }
         $this->Taxes = $taxes;
         
         return $this;
@@ -633,10 +541,6 @@ class ServiceFeeInfo extends AbstractStructBase
      */
     public function setBookingTravelerName(?string $bookingTravelerName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerName) && !is_string($bookingTravelerName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerName, true), gettype($bookingTravelerName)), __LINE__);
-        }
         $this->BookingTravelerName = $bookingTravelerName;
         
         return $this;
@@ -651,18 +555,11 @@ class ServiceFeeInfo extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\ServiceFeeInfo
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -682,10 +579,6 @@ class ServiceFeeInfo extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

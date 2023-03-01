@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class BaseReq extends BaseCoreReq
      * - ref: OverridePCC
      * @var \Travelport\Hotel\StructType\OverridePCC|null
      */
-    protected ?\Travelport\Hotel\StructType\OverridePCC $OverridePCC = null;
+    public ?\Travelport\Hotel\StructType\OverridePCC $OverridePCC = null;
     /**
      * The RetrieveProviderReservationDetails
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class BaseReq extends BaseCoreReq
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $RetrieveProviderReservationDetails = null;
+    public ?bool $RetrieveProviderReservationDetails = null;
     /**
      * Constructor method for BaseReq
      * @uses BaseReq::setOverridePCC()
@@ -77,10 +76,6 @@ class BaseReq extends BaseCoreReq
      */
     public function setRetrieveProviderReservationDetails(?bool $retrieveProviderReservationDetails = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($retrieveProviderReservationDetails) && !is_bool($retrieveProviderReservationDetails)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($retrieveProviderReservationDetails, true), gettype($retrieveProviderReservationDetails)), __LINE__);
-        }
         $this->RetrieveProviderReservationDetails = $retrieveProviderReservationDetails;
         
         return $this;

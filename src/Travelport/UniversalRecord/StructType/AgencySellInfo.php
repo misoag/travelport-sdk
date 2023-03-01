@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class AgencySellInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $IataCode = null;
+    public ?string $IataCode = null;
     /**
      * The Country
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class AgencySellInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Country = null;
+    public ?string $Country = null;
     /**
      * The CurrencyCode
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class AgencySellInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CurrencyCode = null;
+    public ?string $CurrencyCode = null;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -55,7 +54,7 @@ class AgencySellInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The PseudoCityCode
      * Meta information extracted from the WSDL
@@ -66,7 +65,7 @@ class AgencySellInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PseudoCityCode = null;
+    public ?string $PseudoCityCode = null;
     /**
      * The CityCode
      * Meta information extracted from the WSDL
@@ -77,7 +76,7 @@ class AgencySellInfo extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $CityCode = null;
+    public ?string $CityCode = null;
     /**
      * Constructor method for AgencySellInfo
      * @uses AgencySellInfo::setIataCode()
@@ -118,14 +117,6 @@ class AgencySellInfo extends AbstractStructBase
      */
     public function setIataCode(?string $iataCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($iataCode) && !is_string($iataCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($iataCode, true), gettype($iataCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($iataCode) && mb_strlen((string) $iataCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $iataCode)), __LINE__);
-        }
         $this->IataCode = $iataCode;
         
         return $this;
@@ -145,14 +136,6 @@ class AgencySellInfo extends AbstractStructBase
      */
     public function setCountry(?string $country = null): self
     {
-        // validation for constraint: string
-        if (!is_null($country) && !is_string($country)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($country, true), gettype($country)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($country) && mb_strlen((string) $country) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $country)), __LINE__);
-        }
         $this->Country = $country;
         
         return $this;
@@ -172,14 +155,6 @@ class AgencySellInfo extends AbstractStructBase
      */
     public function setCurrencyCode(?string $currencyCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($currencyCode) && !is_string($currencyCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currencyCode, true), gettype($currencyCode)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($currencyCode) && mb_strlen((string) $currencyCode) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $currencyCode)), __LINE__);
-        }
         $this->CurrencyCode = $currencyCode;
         
         return $this;
@@ -199,18 +174,6 @@ class AgencySellInfo extends AbstractStructBase
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -230,18 +193,6 @@ class AgencySellInfo extends AbstractStructBase
      */
     public function setPseudoCityCode(?string $pseudoCityCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($pseudoCityCode) && !is_string($pseudoCityCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pseudoCityCode, true), gettype($pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($pseudoCityCode) && mb_strlen((string) $pseudoCityCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $pseudoCityCode)), __LINE__);
-        }
         $this->PseudoCityCode = $pseudoCityCode;
         
         return $this;
@@ -261,14 +212,6 @@ class AgencySellInfo extends AbstractStructBase
      */
     public function setCityCode(?string $cityCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cityCode) && !is_string($cityCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cityCode, true), gettype($cityCode)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($cityCode) && mb_strlen((string) $cityCode) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $cityCode)), __LINE__);
-        }
         $this->CityCode = $cityCode;
         
         return $this;

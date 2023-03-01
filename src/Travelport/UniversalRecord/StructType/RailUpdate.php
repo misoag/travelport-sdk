@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,12 +22,12 @@ class RailUpdate extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ReservationLocatorCode;
+    public string $ReservationLocatorCode;
     /**
      * The BookingAction
      * @var \Travelport\UniversalRecord\StructType\BookingAction|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\BookingAction $BookingAction = null;
+    public ?\Travelport\UniversalRecord\StructType\BookingAction $BookingAction = null;
     /**
      * Constructor method for RailUpdate
      * @uses RailUpdate::setReservationLocatorCode()
@@ -57,18 +56,6 @@ class RailUpdate extends AbstractStructBase
      */
     public function setReservationLocatorCode(string $reservationLocatorCode): self
     {
-        // validation for constraint: string
-        if (!is_null($reservationLocatorCode) && !is_string($reservationLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reservationLocatorCode, true), gettype($reservationLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($reservationLocatorCode) && mb_strlen((string) $reservationLocatorCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $reservationLocatorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($reservationLocatorCode) && mb_strlen((string) $reservationLocatorCode) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $reservationLocatorCode)), __LINE__);
-        }
         $this->ReservationLocatorCode = $reservationLocatorCode;
         
         return $this;

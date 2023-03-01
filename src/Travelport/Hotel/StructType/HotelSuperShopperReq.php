@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class HotelSuperShopperReq extends BaseSearchReq
      * - ref: HotelSearchLocation
      * @var \Travelport\Hotel\StructType\HotelSearchLocation|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelSearchLocation $HotelSearchLocation = null;
+    public ?\Travelport\Hotel\StructType\HotelSearchLocation $HotelSearchLocation = null;
     /**
      * The HotelSearchModifiers
      * Meta information extracted from the WSDL
@@ -28,14 +27,14 @@ class HotelSuperShopperReq extends BaseSearchReq
      * - ref: HotelSearchModifiers
      * @var \Travelport\Hotel\StructType\HotelSearchModifiers|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelSearchModifiers $HotelSearchModifiers = null;
+    public ?\Travelport\Hotel\StructType\HotelSearchModifiers $HotelSearchModifiers = null;
     /**
      * The HotelStay
      * Meta information extracted from the WSDL
      * - ref: HotelStay
      * @var \Travelport\Hotel\StructType\HotelStay|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelStay $HotelStay = null;
+    public ?\Travelport\Hotel\StructType\HotelStay $HotelStay = null;
     /**
      * The QuickResponse
      * Meta information extracted from the WSDL
@@ -43,7 +42,7 @@ class HotelSuperShopperReq extends BaseSearchReq
      * - ref: QuickResponse
      * @var \Travelport\Hotel\StructType\QuickResponse|null
      */
-    protected ?\Travelport\Hotel\StructType\QuickResponse $QuickResponse = null;
+    public ?\Travelport\Hotel\StructType\QuickResponse $QuickResponse = null;
     /**
      * Constructor method for HotelSuperShopperReq
      * @uses HotelSuperShopperReq::setHotelSearchLocation()

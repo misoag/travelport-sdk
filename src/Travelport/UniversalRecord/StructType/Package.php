@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class Package extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Name = null;
+    public ?string $Name = null;
     /**
      * The Identifier
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class Package extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Identifier = null;
+    public ?string $Identifier = null;
     /**
      * The PassengerCount
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class Package extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $PassengerCount = null;
+    public ?int $PassengerCount = null;
     /**
      * The PackageIdentifier
      * Meta information extracted from the WSDL
@@ -53,7 +52,7 @@ class Package extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PackageIdentifier = null;
+    public ?string $PackageIdentifier = null;
     /**
      * Constructor method for Package
      * @uses Package::setName()
@@ -88,18 +87,6 @@ class Package extends AbstractStructBase
      */
     public function setName(?string $name = null): self
     {
-        // validation for constraint: string
-        if (!is_null($name) && !is_string($name)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
-        }
-        // validation for constraint: maxLength(30)
-        if (!is_null($name) && mb_strlen((string) $name) > 30) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 30', mb_strlen((string) $name)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($name) && mb_strlen((string) $name) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $name)), __LINE__);
-        }
         $this->Name = $name;
         
         return $this;
@@ -119,14 +106,6 @@ class Package extends AbstractStructBase
      */
     public function setIdentifier(?string $identifier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($identifier) && !is_string($identifier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($identifier, true), gettype($identifier)), __LINE__);
-        }
-        // validation for constraint: maxLength(30)
-        if (!is_null($identifier) && mb_strlen((string) $identifier) > 30) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 30', mb_strlen((string) $identifier)), __LINE__);
-        }
         $this->Identifier = $identifier;
         
         return $this;
@@ -146,10 +125,6 @@ class Package extends AbstractStructBase
      */
     public function setPassengerCount(?int $passengerCount = null): self
     {
-        // validation for constraint: int
-        if (!is_null($passengerCount) && !(is_int($passengerCount) || ctype_digit($passengerCount))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($passengerCount, true), gettype($passengerCount)), __LINE__);
-        }
         $this->PassengerCount = $passengerCount;
         
         return $this;
@@ -169,18 +144,6 @@ class Package extends AbstractStructBase
      */
     public function setPackageIdentifier(?string $packageIdentifier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($packageIdentifier) && !is_string($packageIdentifier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($packageIdentifier, true), gettype($packageIdentifier)), __LINE__);
-        }
-        // validation for constraint: maxLength(14)
-        if (!is_null($packageIdentifier) && mb_strlen((string) $packageIdentifier) > 14) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 14', mb_strlen((string) $packageIdentifier)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($packageIdentifier) && mb_strlen((string) $packageIdentifier) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $packageIdentifier)), __LINE__);
-        }
         $this->PackageIdentifier = $packageIdentifier;
         
         return $this;

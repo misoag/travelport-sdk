@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,14 +20,14 @@ class ExtraChild extends AbstractStructBase
      * - documentation: The number of extra children in the room
      * @var int|null
      */
-    protected ?int $Count = null;
+    public ?int $Count = null;
     /**
      * The Content
      * Meta information extracted from the WSDL
      * - documentation: Additional information
      * @var string|null
      */
-    protected ?string $Content = null;
+    public ?string $Content = null;
     /**
      * Constructor method for ExtraChild
      * @uses ExtraChild::setCount()
@@ -57,10 +56,6 @@ class ExtraChild extends AbstractStructBase
      */
     public function setCount(?int $count = null): self
     {
-        // validation for constraint: int
-        if (!is_null($count) && !(is_int($count) || ctype_digit($count))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($count, true), gettype($count)), __LINE__);
-        }
         $this->Count = $count;
         
         return $this;
@@ -80,10 +75,6 @@ class ExtraChild extends AbstractStructBase
      */
     public function setContent(?string $content = null): self
     {
-        // validation for constraint: string
-        if (!is_null($content) && !is_string($content)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($content, true), gettype($content)), __LINE__);
-        }
         $this->Content = $content;
         
         return $this;

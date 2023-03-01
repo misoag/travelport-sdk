@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,28 +20,28 @@ class AirExchangeModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\ContractCodes|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ContractCodes $ContractCodes = null;
+    public ?\Travelport\UniversalRecord\StructType\ContractCodes $ContractCodes = null;
     /**
      * The BookingDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingDate = null;
+    public ?string $BookingDate = null;
     /**
      * The TicketingDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketingDate = null;
+    public ?string $TicketingDate = null;
     /**
      * The AccountCode
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $AccountCode = null;
+    public ?string $AccountCode = null;
     /**
      * The TicketDesignator
      * Meta information extracted from the WSDL
@@ -53,7 +52,7 @@ class AirExchangeModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketDesignator = null;
+    public ?string $TicketDesignator = null;
     /**
      * The AllowPenaltyFares
      * Meta information extracted from the WSDL
@@ -61,7 +60,7 @@ class AirExchangeModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AllowPenaltyFares = null;
+    public ?bool $AllowPenaltyFares = null;
     /**
      * The PrivateFaresOnly
      * Meta information extracted from the WSDL
@@ -69,7 +68,7 @@ class AirExchangeModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PrivateFaresOnly = null;
+    public ?bool $PrivateFaresOnly = null;
     /**
      * The UniversalRecordLocatorCode
      * Meta information extracted from the WSDL
@@ -80,7 +79,7 @@ class AirExchangeModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $UniversalRecordLocatorCode = null;
+    public ?string $UniversalRecordLocatorCode = null;
     /**
      * The ProviderLocatorCode
      * Meta information extracted from the WSDL
@@ -91,7 +90,7 @@ class AirExchangeModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderLocatorCode = null;
+    public ?string $ProviderLocatorCode = null;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -99,7 +98,7 @@ class AirExchangeModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * Constructor method for AirExchangeModifiers
      * @uses AirExchangeModifiers::setContractCodes()
@@ -171,10 +170,6 @@ class AirExchangeModifiers extends AbstractStructBase
      */
     public function setBookingDate(?string $bookingDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingDate) && !is_string($bookingDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingDate, true), gettype($bookingDate)), __LINE__);
-        }
         $this->BookingDate = $bookingDate;
         
         return $this;
@@ -194,10 +189,6 @@ class AirExchangeModifiers extends AbstractStructBase
      */
     public function setTicketingDate(?string $ticketingDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketingDate) && !is_string($ticketingDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketingDate, true), gettype($ticketingDate)), __LINE__);
-        }
         $this->TicketingDate = $ticketingDate;
         
         return $this;
@@ -217,10 +208,6 @@ class AirExchangeModifiers extends AbstractStructBase
      */
     public function setAccountCode(?string $accountCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($accountCode) && !is_string($accountCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountCode, true), gettype($accountCode)), __LINE__);
-        }
         $this->AccountCode = $accountCode;
         
         return $this;
@@ -240,18 +227,6 @@ class AirExchangeModifiers extends AbstractStructBase
      */
     public function setTicketDesignator(?string $ticketDesignator = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketDesignator) && !is_string($ticketDesignator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketDesignator, true), gettype($ticketDesignator)), __LINE__);
-        }
-        // validation for constraint: maxLength(20)
-        if (!is_null($ticketDesignator) && mb_strlen((string) $ticketDesignator) > 20) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 20', mb_strlen((string) $ticketDesignator)), __LINE__);
-        }
-        // validation for constraint: minLength
-        if (!is_null($ticketDesignator) && mb_strlen((string) $ticketDesignator) < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 0', mb_strlen((string) $ticketDesignator)), __LINE__);
-        }
         $this->TicketDesignator = $ticketDesignator;
         
         return $this;
@@ -271,10 +246,6 @@ class AirExchangeModifiers extends AbstractStructBase
      */
     public function setAllowPenaltyFares(?bool $allowPenaltyFares = true): self
     {
-        // validation for constraint: boolean
-        if (!is_null($allowPenaltyFares) && !is_bool($allowPenaltyFares)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($allowPenaltyFares, true), gettype($allowPenaltyFares)), __LINE__);
-        }
         $this->AllowPenaltyFares = $allowPenaltyFares;
         
         return $this;
@@ -294,10 +265,6 @@ class AirExchangeModifiers extends AbstractStructBase
      */
     public function setPrivateFaresOnly(?bool $privateFaresOnly = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($privateFaresOnly) && !is_bool($privateFaresOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($privateFaresOnly, true), gettype($privateFaresOnly)), __LINE__);
-        }
         $this->PrivateFaresOnly = $privateFaresOnly;
         
         return $this;
@@ -317,18 +284,6 @@ class AirExchangeModifiers extends AbstractStructBase
      */
     public function setUniversalRecordLocatorCode(?string $universalRecordLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($universalRecordLocatorCode) && !is_string($universalRecordLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($universalRecordLocatorCode, true), gettype($universalRecordLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($universalRecordLocatorCode) && mb_strlen((string) $universalRecordLocatorCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $universalRecordLocatorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($universalRecordLocatorCode) && mb_strlen((string) $universalRecordLocatorCode) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $universalRecordLocatorCode)), __LINE__);
-        }
         $this->UniversalRecordLocatorCode = $universalRecordLocatorCode;
         
         return $this;
@@ -348,18 +303,6 @@ class AirExchangeModifiers extends AbstractStructBase
      */
     public function setProviderLocatorCode(?string $providerLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerLocatorCode) && !is_string($providerLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerLocatorCode, true), gettype($providerLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($providerLocatorCode) && mb_strlen((string) $providerLocatorCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $providerLocatorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($providerLocatorCode) && mb_strlen((string) $providerLocatorCode) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $providerLocatorCode)), __LINE__);
-        }
         $this->ProviderLocatorCode = $providerLocatorCode;
         
         return $this;
@@ -379,10 +322,6 @@ class AirExchangeModifiers extends AbstractStructBase
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvRsvnOnlyIfTk = null;
+    public ?bool $AdvRsvnOnlyIfTk = null;
     /**
      * The AdvRsvnAnyTm
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvRsvnAnyTm = null;
+    public ?bool $AdvRsvnAnyTm = null;
     /**
      * The AdvRsvnHrs
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvRsvnHrs = null;
+    public ?bool $AdvRsvnHrs = null;
     /**
      * The AdvRsvnDays
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvRsvnDays = null;
+    public ?bool $AdvRsvnDays = null;
     /**
      * The AdvRsvnMonths
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvRsvnMonths = null;
+    public ?bool $AdvRsvnMonths = null;
     /**
      * The AdvRsvnEarliestTm
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvRsvnEarliestTm = null;
+    public ?bool $AdvRsvnEarliestTm = null;
     /**
      * The AdvRsvnLatestTm
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvRsvnLatestTm = null;
+    public ?bool $AdvRsvnLatestTm = null;
     /**
      * The AdvRsvnWaived
      * Meta information extracted from the WSDL
@@ -76,7 +75,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvRsvnWaived = null;
+    public ?bool $AdvRsvnWaived = null;
     /**
      * The AdvRsvnDataExists
      * Meta information extracted from the WSDL
@@ -84,7 +83,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvRsvnDataExists = null;
+    public ?bool $AdvRsvnDataExists = null;
     /**
      * The AdvRsvnEndItem
      * Meta information extracted from the WSDL
@@ -92,7 +91,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvRsvnEndItem = null;
+    public ?bool $AdvRsvnEndItem = null;
     /**
      * The AdvTkEarliestTm
      * Meta information extracted from the WSDL
@@ -100,7 +99,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvTkEarliestTm = null;
+    public ?bool $AdvTkEarliestTm = null;
     /**
      * The AdvTkLatestTm
      * Meta information extracted from the WSDL
@@ -108,7 +107,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvTkLatestTm = null;
+    public ?bool $AdvTkLatestTm = null;
     /**
      * The AdvTkRsvnHrs
      * Meta information extracted from the WSDL
@@ -116,7 +115,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvTkRsvnHrs = null;
+    public ?bool $AdvTkRsvnHrs = null;
     /**
      * The AdvTkRsvnDays
      * Meta information extracted from the WSDL
@@ -124,7 +123,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvTkRsvnDays = null;
+    public ?bool $AdvTkRsvnDays = null;
     /**
      * The AdvTkRsvnMonths
      * Meta information extracted from the WSDL
@@ -132,7 +131,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvTkRsvnMonths = null;
+    public ?bool $AdvTkRsvnMonths = null;
     /**
      * The AdvTkStartHrs
      * Meta information extracted from the WSDL
@@ -140,7 +139,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvTkStartHrs = null;
+    public ?bool $AdvTkStartHrs = null;
     /**
      * The AdvTkStartDays
      * Meta information extracted from the WSDL
@@ -148,7 +147,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvTkStartDays = null;
+    public ?bool $AdvTkStartDays = null;
     /**
      * The AdvTkStartMonths
      * Meta information extracted from the WSDL
@@ -156,7 +155,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvTkStartMonths = null;
+    public ?bool $AdvTkStartMonths = null;
     /**
      * The AdvTkWaived
      * Meta information extracted from the WSDL
@@ -164,7 +163,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvTkWaived = null;
+    public ?bool $AdvTkWaived = null;
     /**
      * The AdvTkAnyTm
      * Meta information extracted from the WSDL
@@ -172,7 +171,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvTkAnyTm = null;
+    public ?bool $AdvTkAnyTm = null;
     /**
      * The AdvTkEndItem
      * Meta information extracted from the WSDL
@@ -180,7 +179,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AdvTkEndItem = null;
+    public ?bool $AdvTkEndItem = null;
     /**
      * The AdvRsvnTm
      * Meta information extracted from the WSDL
@@ -188,7 +187,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $AdvRsvnTm = null;
+    public ?int $AdvRsvnTm = null;
     /**
      * The AdvTkRsvnTm
      * Meta information extracted from the WSDL
@@ -196,7 +195,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $AdvTkRsvnTm = null;
+    public ?int $AdvTkRsvnTm = null;
     /**
      * The AdvTkStartTm
      * Meta information extracted from the WSDL
@@ -204,7 +203,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $AdvTkStartTm = null;
+    public ?int $AdvTkStartTm = null;
     /**
      * The EarliestRsvnDtPresent
      * Meta information extracted from the WSDL
@@ -212,7 +211,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $EarliestRsvnDtPresent = null;
+    public ?bool $EarliestRsvnDtPresent = null;
     /**
      * The EarliestTkDtPresent
      * Meta information extracted from the WSDL
@@ -220,7 +219,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $EarliestTkDtPresent = null;
+    public ?bool $EarliestTkDtPresent = null;
     /**
      * The LatestRsvnDtPresent
      * Meta information extracted from the WSDL
@@ -228,7 +227,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $LatestRsvnDtPresent = null;
+    public ?bool $LatestRsvnDtPresent = null;
     /**
      * The LatestTkDtPresent
      * Meta information extracted from the WSDL
@@ -236,7 +235,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $LatestTkDtPresent = null;
+    public ?bool $LatestTkDtPresent = null;
     /**
      * The EarliestRsvnDt
      * Meta information extracted from the WSDL
@@ -244,7 +243,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $EarliestRsvnDt = null;
+    public ?string $EarliestRsvnDt = null;
     /**
      * The EarliestTkDt
      * Meta information extracted from the WSDL
@@ -252,7 +251,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $EarliestTkDt = null;
+    public ?string $EarliestTkDt = null;
     /**
      * The LatestRsvnDt
      * Meta information extracted from the WSDL
@@ -260,7 +259,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $LatestRsvnDt = null;
+    public ?string $LatestRsvnDt = null;
     /**
      * The LatestTkDt
      * Meta information extracted from the WSDL
@@ -268,7 +267,7 @@ class ADVType extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $LatestTkDt = null;
+    public ?string $LatestTkDt = null;
     /**
      * Constructor method for ADVType
      * @uses ADVType::setAdvRsvnOnlyIfTk()
@@ -387,10 +386,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvRsvnOnlyIfTk(?bool $advRsvnOnlyIfTk = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advRsvnOnlyIfTk) && !is_bool($advRsvnOnlyIfTk)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advRsvnOnlyIfTk, true), gettype($advRsvnOnlyIfTk)), __LINE__);
-        }
         $this->AdvRsvnOnlyIfTk = $advRsvnOnlyIfTk;
         
         return $this;
@@ -410,10 +405,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvRsvnAnyTm(?bool $advRsvnAnyTm = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advRsvnAnyTm) && !is_bool($advRsvnAnyTm)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advRsvnAnyTm, true), gettype($advRsvnAnyTm)), __LINE__);
-        }
         $this->AdvRsvnAnyTm = $advRsvnAnyTm;
         
         return $this;
@@ -433,10 +424,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvRsvnHrs(?bool $advRsvnHrs = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advRsvnHrs) && !is_bool($advRsvnHrs)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advRsvnHrs, true), gettype($advRsvnHrs)), __LINE__);
-        }
         $this->AdvRsvnHrs = $advRsvnHrs;
         
         return $this;
@@ -456,10 +443,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvRsvnDays(?bool $advRsvnDays = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advRsvnDays) && !is_bool($advRsvnDays)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advRsvnDays, true), gettype($advRsvnDays)), __LINE__);
-        }
         $this->AdvRsvnDays = $advRsvnDays;
         
         return $this;
@@ -479,10 +462,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvRsvnMonths(?bool $advRsvnMonths = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advRsvnMonths) && !is_bool($advRsvnMonths)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advRsvnMonths, true), gettype($advRsvnMonths)), __LINE__);
-        }
         $this->AdvRsvnMonths = $advRsvnMonths;
         
         return $this;
@@ -502,10 +481,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvRsvnEarliestTm(?bool $advRsvnEarliestTm = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advRsvnEarliestTm) && !is_bool($advRsvnEarliestTm)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advRsvnEarliestTm, true), gettype($advRsvnEarliestTm)), __LINE__);
-        }
         $this->AdvRsvnEarliestTm = $advRsvnEarliestTm;
         
         return $this;
@@ -525,10 +500,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvRsvnLatestTm(?bool $advRsvnLatestTm = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advRsvnLatestTm) && !is_bool($advRsvnLatestTm)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advRsvnLatestTm, true), gettype($advRsvnLatestTm)), __LINE__);
-        }
         $this->AdvRsvnLatestTm = $advRsvnLatestTm;
         
         return $this;
@@ -548,10 +519,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvRsvnWaived(?bool $advRsvnWaived = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advRsvnWaived) && !is_bool($advRsvnWaived)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advRsvnWaived, true), gettype($advRsvnWaived)), __LINE__);
-        }
         $this->AdvRsvnWaived = $advRsvnWaived;
         
         return $this;
@@ -571,10 +538,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvRsvnDataExists(?bool $advRsvnDataExists = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advRsvnDataExists) && !is_bool($advRsvnDataExists)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advRsvnDataExists, true), gettype($advRsvnDataExists)), __LINE__);
-        }
         $this->AdvRsvnDataExists = $advRsvnDataExists;
         
         return $this;
@@ -594,10 +557,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvRsvnEndItem(?bool $advRsvnEndItem = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advRsvnEndItem) && !is_bool($advRsvnEndItem)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advRsvnEndItem, true), gettype($advRsvnEndItem)), __LINE__);
-        }
         $this->AdvRsvnEndItem = $advRsvnEndItem;
         
         return $this;
@@ -617,10 +576,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvTkEarliestTm(?bool $advTkEarliestTm = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advTkEarliestTm) && !is_bool($advTkEarliestTm)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advTkEarliestTm, true), gettype($advTkEarliestTm)), __LINE__);
-        }
         $this->AdvTkEarliestTm = $advTkEarliestTm;
         
         return $this;
@@ -640,10 +595,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvTkLatestTm(?bool $advTkLatestTm = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advTkLatestTm) && !is_bool($advTkLatestTm)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advTkLatestTm, true), gettype($advTkLatestTm)), __LINE__);
-        }
         $this->AdvTkLatestTm = $advTkLatestTm;
         
         return $this;
@@ -663,10 +614,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvTkRsvnHrs(?bool $advTkRsvnHrs = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advTkRsvnHrs) && !is_bool($advTkRsvnHrs)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advTkRsvnHrs, true), gettype($advTkRsvnHrs)), __LINE__);
-        }
         $this->AdvTkRsvnHrs = $advTkRsvnHrs;
         
         return $this;
@@ -686,10 +633,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvTkRsvnDays(?bool $advTkRsvnDays = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advTkRsvnDays) && !is_bool($advTkRsvnDays)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advTkRsvnDays, true), gettype($advTkRsvnDays)), __LINE__);
-        }
         $this->AdvTkRsvnDays = $advTkRsvnDays;
         
         return $this;
@@ -709,10 +652,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvTkRsvnMonths(?bool $advTkRsvnMonths = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advTkRsvnMonths) && !is_bool($advTkRsvnMonths)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advTkRsvnMonths, true), gettype($advTkRsvnMonths)), __LINE__);
-        }
         $this->AdvTkRsvnMonths = $advTkRsvnMonths;
         
         return $this;
@@ -732,10 +671,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvTkStartHrs(?bool $advTkStartHrs = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advTkStartHrs) && !is_bool($advTkStartHrs)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advTkStartHrs, true), gettype($advTkStartHrs)), __LINE__);
-        }
         $this->AdvTkStartHrs = $advTkStartHrs;
         
         return $this;
@@ -755,10 +690,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvTkStartDays(?bool $advTkStartDays = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advTkStartDays) && !is_bool($advTkStartDays)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advTkStartDays, true), gettype($advTkStartDays)), __LINE__);
-        }
         $this->AdvTkStartDays = $advTkStartDays;
         
         return $this;
@@ -778,10 +709,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvTkStartMonths(?bool $advTkStartMonths = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advTkStartMonths) && !is_bool($advTkStartMonths)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advTkStartMonths, true), gettype($advTkStartMonths)), __LINE__);
-        }
         $this->AdvTkStartMonths = $advTkStartMonths;
         
         return $this;
@@ -801,10 +728,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvTkWaived(?bool $advTkWaived = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advTkWaived) && !is_bool($advTkWaived)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advTkWaived, true), gettype($advTkWaived)), __LINE__);
-        }
         $this->AdvTkWaived = $advTkWaived;
         
         return $this;
@@ -824,10 +747,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvTkAnyTm(?bool $advTkAnyTm = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advTkAnyTm) && !is_bool($advTkAnyTm)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advTkAnyTm, true), gettype($advTkAnyTm)), __LINE__);
-        }
         $this->AdvTkAnyTm = $advTkAnyTm;
         
         return $this;
@@ -847,10 +766,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvTkEndItem(?bool $advTkEndItem = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($advTkEndItem) && !is_bool($advTkEndItem)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($advTkEndItem, true), gettype($advTkEndItem)), __LINE__);
-        }
         $this->AdvTkEndItem = $advTkEndItem;
         
         return $this;
@@ -870,10 +785,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvRsvnTm(?int $advRsvnTm = null): self
     {
-        // validation for constraint: int
-        if (!is_null($advRsvnTm) && !(is_int($advRsvnTm) || ctype_digit($advRsvnTm))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($advRsvnTm, true), gettype($advRsvnTm)), __LINE__);
-        }
         $this->AdvRsvnTm = $advRsvnTm;
         
         return $this;
@@ -893,10 +804,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvTkRsvnTm(?int $advTkRsvnTm = null): self
     {
-        // validation for constraint: int
-        if (!is_null($advTkRsvnTm) && !(is_int($advTkRsvnTm) || ctype_digit($advTkRsvnTm))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($advTkRsvnTm, true), gettype($advTkRsvnTm)), __LINE__);
-        }
         $this->AdvTkRsvnTm = $advTkRsvnTm;
         
         return $this;
@@ -916,10 +823,6 @@ class ADVType extends AbstractStructBase
      */
     public function setAdvTkStartTm(?int $advTkStartTm = null): self
     {
-        // validation for constraint: int
-        if (!is_null($advTkStartTm) && !(is_int($advTkStartTm) || ctype_digit($advTkStartTm))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($advTkStartTm, true), gettype($advTkStartTm)), __LINE__);
-        }
         $this->AdvTkStartTm = $advTkStartTm;
         
         return $this;
@@ -939,10 +842,6 @@ class ADVType extends AbstractStructBase
      */
     public function setEarliestRsvnDtPresent(?bool $earliestRsvnDtPresent = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($earliestRsvnDtPresent) && !is_bool($earliestRsvnDtPresent)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($earliestRsvnDtPresent, true), gettype($earliestRsvnDtPresent)), __LINE__);
-        }
         $this->EarliestRsvnDtPresent = $earliestRsvnDtPresent;
         
         return $this;
@@ -962,10 +861,6 @@ class ADVType extends AbstractStructBase
      */
     public function setEarliestTkDtPresent(?bool $earliestTkDtPresent = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($earliestTkDtPresent) && !is_bool($earliestTkDtPresent)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($earliestTkDtPresent, true), gettype($earliestTkDtPresent)), __LINE__);
-        }
         $this->EarliestTkDtPresent = $earliestTkDtPresent;
         
         return $this;
@@ -985,10 +880,6 @@ class ADVType extends AbstractStructBase
      */
     public function setLatestRsvnDtPresent(?bool $latestRsvnDtPresent = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($latestRsvnDtPresent) && !is_bool($latestRsvnDtPresent)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($latestRsvnDtPresent, true), gettype($latestRsvnDtPresent)), __LINE__);
-        }
         $this->LatestRsvnDtPresent = $latestRsvnDtPresent;
         
         return $this;
@@ -1008,10 +899,6 @@ class ADVType extends AbstractStructBase
      */
     public function setLatestTkDtPresent(?bool $latestTkDtPresent = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($latestTkDtPresent) && !is_bool($latestTkDtPresent)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($latestTkDtPresent, true), gettype($latestTkDtPresent)), __LINE__);
-        }
         $this->LatestTkDtPresent = $latestTkDtPresent;
         
         return $this;
@@ -1031,10 +918,6 @@ class ADVType extends AbstractStructBase
      */
     public function setEarliestRsvnDt(?string $earliestRsvnDt = null): self
     {
-        // validation for constraint: string
-        if (!is_null($earliestRsvnDt) && !is_string($earliestRsvnDt)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($earliestRsvnDt, true), gettype($earliestRsvnDt)), __LINE__);
-        }
         $this->EarliestRsvnDt = $earliestRsvnDt;
         
         return $this;
@@ -1054,10 +937,6 @@ class ADVType extends AbstractStructBase
      */
     public function setEarliestTkDt(?string $earliestTkDt = null): self
     {
-        // validation for constraint: string
-        if (!is_null($earliestTkDt) && !is_string($earliestTkDt)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($earliestTkDt, true), gettype($earliestTkDt)), __LINE__);
-        }
         $this->EarliestTkDt = $earliestTkDt;
         
         return $this;
@@ -1077,10 +956,6 @@ class ADVType extends AbstractStructBase
      */
     public function setLatestRsvnDt(?string $latestRsvnDt = null): self
     {
-        // validation for constraint: string
-        if (!is_null($latestRsvnDt) && !is_string($latestRsvnDt)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($latestRsvnDt, true), gettype($latestRsvnDt)), __LINE__);
-        }
         $this->LatestRsvnDt = $latestRsvnDt;
         
         return $this;
@@ -1100,10 +975,6 @@ class ADVType extends AbstractStructBase
      */
     public function setLatestTkDt(?string $latestTkDt = null): self
     {
-        // validation for constraint: string
-        if (!is_null($latestTkDt) && !is_string($latestTkDt)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($latestTkDt, true), gettype($latestTkDt)), __LINE__);
-        }
         $this->LatestTkDt = $latestTkDt;
         
         return $this;

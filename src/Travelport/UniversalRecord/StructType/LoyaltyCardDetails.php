@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class LoyaltyCardDetails extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $SupplierCode;
+    public string $SupplierCode;
     /**
      * The PriorityCode
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class LoyaltyCardDetails extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $PriorityCode;
+    public string $PriorityCode;
     /**
      * Constructor method for LoyaltyCardDetails
      * @uses LoyaltyCardDetails::setSupplierCode()
@@ -62,14 +61,6 @@ class LoyaltyCardDetails extends AbstractStructBase
      */
     public function setSupplierCode(string $supplierCode): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;
@@ -89,14 +80,6 @@ class LoyaltyCardDetails extends AbstractStructBase
      */
     public function setPriorityCode(string $priorityCode): self
     {
-        // validation for constraint: string
-        if (!is_null($priorityCode) && !is_string($priorityCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($priorityCode, true), gettype($priorityCode)), __LINE__);
-        }
-        // validation for constraint: pattern([a-zA-Z0-9]{1,1})
-        if (!is_null($priorityCode) && !preg_match('/[a-zA-Z0-9]{1,1}/', $priorityCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[a-zA-Z0-9]{1,1}/', var_export($priorityCode, true)), __LINE__);
-        }
         $this->PriorityCode = $priorityCode;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class RateModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RateCode = null;
+    public ?string $RateCode = null;
     /**
      * The DiscountNumber
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class RateModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DiscountNumber = null;
+    public ?string $DiscountNumber = null;
     /**
      * The VendorCode
      * Meta information extracted from the WSDL
@@ -43,7 +42,7 @@ class RateModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $VendorCode = null;
+    public ?string $VendorCode = null;
     /**
      * The PromotionalCode
      * Meta information extracted from the WSDL
@@ -51,14 +50,14 @@ class RateModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PromotionalCode = null;
+    public ?string $PromotionalCode = null;
     /**
      * The VendorLocationRef
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $VendorLocationRef = null;
+    public ?string $VendorLocationRef = null;
     /**
      * The TourCode
      * Meta information extracted from the WSDL
@@ -66,7 +65,7 @@ class RateModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TourCode = null;
+    public ?string $TourCode = null;
     /**
      * Constructor method for RateModifiers
      * @uses RateModifiers::setRateCode()
@@ -107,14 +106,6 @@ class RateModifiers extends AbstractStructBase
      */
     public function setRateCode(?string $rateCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rateCode) && !is_string($rateCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rateCode, true), gettype($rateCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($rateCode) && mb_strlen((string) $rateCode) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $rateCode)), __LINE__);
-        }
         $this->RateCode = $rateCode;
         
         return $this;
@@ -134,14 +125,6 @@ class RateModifiers extends AbstractStructBase
      */
     public function setDiscountNumber(?string $discountNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($discountNumber) && !is_string($discountNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($discountNumber, true), gettype($discountNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(25)
-        if (!is_null($discountNumber) && mb_strlen((string) $discountNumber) > 25) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 25', mb_strlen((string) $discountNumber)), __LINE__);
-        }
         $this->DiscountNumber = $discountNumber;
         
         return $this;
@@ -161,18 +144,6 @@ class RateModifiers extends AbstractStructBase
      */
     public function setVendorCode(?string $vendorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($vendorCode) && !is_string($vendorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vendorCode, true), gettype($vendorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($vendorCode) && mb_strlen((string) $vendorCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $vendorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($vendorCode) && mb_strlen((string) $vendorCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $vendorCode)), __LINE__);
-        }
         $this->VendorCode = $vendorCode;
         
         return $this;
@@ -192,10 +163,6 @@ class RateModifiers extends AbstractStructBase
      */
     public function setPromotionalCode(?string $promotionalCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($promotionalCode) && !is_string($promotionalCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($promotionalCode, true), gettype($promotionalCode)), __LINE__);
-        }
         $this->PromotionalCode = $promotionalCode;
         
         return $this;
@@ -215,10 +182,6 @@ class RateModifiers extends AbstractStructBase
      */
     public function setVendorLocationRef(?string $vendorLocationRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($vendorLocationRef) && !is_string($vendorLocationRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vendorLocationRef, true), gettype($vendorLocationRef)), __LINE__);
-        }
         $this->VendorLocationRef = $vendorLocationRef;
         
         return $this;
@@ -238,10 +201,6 @@ class RateModifiers extends AbstractStructBase
      */
     public function setTourCode(?string $tourCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tourCode) && !is_string($tourCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tourCode, true), gettype($tourCode)), __LINE__);
-        }
         $this->TourCode = $tourCode;
         
         return $this;

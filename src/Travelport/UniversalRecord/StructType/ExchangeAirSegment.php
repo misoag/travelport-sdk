@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,14 +20,14 @@ class ExchangeAirSegment extends AbstractStructBase
      * - ref: AirSegment
      * @var \Travelport\UniversalRecord\StructType\TypeBaseAirSegment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeBaseAirSegment $AirSegment = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeBaseAirSegment $AirSegment = null;
     /**
      * The CabinClass
      * Meta information extracted from the WSDL
      * - ref: common:CabinClass
      * @var \Travelport\UniversalRecord\StructType\CabinClass|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CabinClass $CabinClass = null;
+    public ?\Travelport\UniversalRecord\StructType\CabinClass $CabinClass = null;
     /**
      * The FareBasisCode
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class ExchangeAirSegment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FareBasisCode = null;
+    public ?string $FareBasisCode = null;
     /**
      * Constructor method for ExchangeAirSegment
      * @uses ExchangeAirSegment::setAirSegment()
@@ -106,10 +105,6 @@ class ExchangeAirSegment extends AbstractStructBase
      */
     public function setFareBasisCode(?string $fareBasisCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fareBasisCode) && !is_string($fareBasisCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareBasisCode, true), gettype($fareBasisCode)), __LINE__);
-        }
         $this->FareBasisCode = $fareBasisCode;
         
         return $this;

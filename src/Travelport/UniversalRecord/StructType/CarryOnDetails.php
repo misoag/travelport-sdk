@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,14 +22,14 @@ class CarryOnDetails extends AbstractStructBase
      * - ref: BaggageRestriction
      * @var \Travelport\UniversalRecord\StructType\BaggageRestriction[]
      */
-    protected ?array $BaggageRestriction = null;
+    public ?array $BaggageRestriction = null;
     /**
      * The ApplicableCarryOnBags
      * Meta information extracted from the WSDL
      * - documentation: Applicable Carry-On baggage "First", "Second", "Third" etc
      * @var string|null
      */
-    protected ?string $ApplicableCarryOnBags = null;
+    public ?string $ApplicableCarryOnBags = null;
     /**
      * The BasePrice
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class CarryOnDetails extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $BasePrice = null;
+    public ?string $BasePrice = null;
     /**
      * The ApproximateBasePrice
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class CarryOnDetails extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $ApproximateBasePrice = null;
+    public ?string $ApproximateBasePrice = null;
     /**
      * The Taxes
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class CarryOnDetails extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $Taxes = null;
+    public ?string $Taxes = null;
     /**
      * The TotalPrice
      * Meta information extracted from the WSDL
@@ -62,7 +61,7 @@ class CarryOnDetails extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $TotalPrice = null;
+    public ?string $TotalPrice = null;
     /**
      * The ApproximateTotalPrice
      * Meta information extracted from the WSDL
@@ -70,7 +69,7 @@ class CarryOnDetails extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $ApproximateTotalPrice = null;
+    public ?string $ApproximateTotalPrice = null;
     /**
      * Constructor method for CarryOnDetails
      * @uses CarryOnDetails::setBaggageRestriction()
@@ -108,48 +107,12 @@ class CarryOnDetails extends AbstractStructBase
         return $this->BaggageRestriction;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setBaggageRestriction method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setBaggageRestriction method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateBaggageRestrictionForArrayConstraintFromSetBaggageRestriction(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $carryOnDetailsBaggageRestrictionItem) {
-            // validation for constraint: itemType
-            if (!$carryOnDetailsBaggageRestrictionItem instanceof \Travelport\UniversalRecord\StructType\BaggageRestriction) {
-                $invalidValues[] = is_object($carryOnDetailsBaggageRestrictionItem) ? get_class($carryOnDetailsBaggageRestrictionItem) : sprintf('%s(%s)', gettype($carryOnDetailsBaggageRestrictionItem), var_export($carryOnDetailsBaggageRestrictionItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The BaggageRestriction property can only contain items of type \Travelport\UniversalRecord\StructType\BaggageRestriction, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set BaggageRestriction value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\BaggageRestriction[] $baggageRestriction
      * @return \Travelport\UniversalRecord\StructType\CarryOnDetails
      */
     public function setBaggageRestriction(?array $baggageRestriction = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($baggageRestrictionArrayErrorMessage = self::validateBaggageRestrictionForArrayConstraintFromSetBaggageRestriction($baggageRestriction))) {
-            throw new InvalidArgumentException($baggageRestrictionArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($baggageRestriction) && count($baggageRestriction) > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 99', count($baggageRestriction)), __LINE__);
-        }
         $this->BaggageRestriction = $baggageRestriction;
         
         return $this;
@@ -162,14 +125,6 @@ class CarryOnDetails extends AbstractStructBase
      */
     public function addToBaggageRestriction(\Travelport\UniversalRecord\StructType\BaggageRestriction $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\BaggageRestriction) {
-            throw new InvalidArgumentException(sprintf('The BaggageRestriction property can only contain items of type \Travelport\UniversalRecord\StructType\BaggageRestriction, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($this->BaggageRestriction) && count($this->BaggageRestriction) >= 99) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 99', count($this->BaggageRestriction)), __LINE__);
-        }
         $this->BaggageRestriction[] = $item;
         
         return $this;
@@ -189,10 +144,6 @@ class CarryOnDetails extends AbstractStructBase
      */
     public function setApplicableCarryOnBags(?string $applicableCarryOnBags = null): self
     {
-        // validation for constraint: string
-        if (!is_null($applicableCarryOnBags) && !is_string($applicableCarryOnBags)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($applicableCarryOnBags, true), gettype($applicableCarryOnBags)), __LINE__);
-        }
         $this->ApplicableCarryOnBags = $applicableCarryOnBags;
         
         return $this;
@@ -212,10 +163,6 @@ class CarryOnDetails extends AbstractStructBase
      */
     public function setBasePrice(?string $basePrice = null): self
     {
-        // validation for constraint: string
-        if (!is_null($basePrice) && !is_string($basePrice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($basePrice, true), gettype($basePrice)), __LINE__);
-        }
         $this->BasePrice = $basePrice;
         
         return $this;
@@ -235,10 +182,6 @@ class CarryOnDetails extends AbstractStructBase
      */
     public function setApproximateBasePrice(?string $approximateBasePrice = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateBasePrice) && !is_string($approximateBasePrice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateBasePrice, true), gettype($approximateBasePrice)), __LINE__);
-        }
         $this->ApproximateBasePrice = $approximateBasePrice;
         
         return $this;
@@ -258,10 +201,6 @@ class CarryOnDetails extends AbstractStructBase
      */
     public function setTaxes(?string $taxes = null): self
     {
-        // validation for constraint: string
-        if (!is_null($taxes) && !is_string($taxes)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($taxes, true), gettype($taxes)), __LINE__);
-        }
         $this->Taxes = $taxes;
         
         return $this;
@@ -281,10 +220,6 @@ class CarryOnDetails extends AbstractStructBase
      */
     public function setTotalPrice(?string $totalPrice = null): self
     {
-        // validation for constraint: string
-        if (!is_null($totalPrice) && !is_string($totalPrice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($totalPrice, true), gettype($totalPrice)), __LINE__);
-        }
         $this->TotalPrice = $totalPrice;
         
         return $this;
@@ -304,10 +239,6 @@ class CarryOnDetails extends AbstractStructBase
      */
     public function setApproximateTotalPrice(?string $approximateTotalPrice = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateTotalPrice) && !is_string($approximateTotalPrice)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateTotalPrice, true), gettype($approximateTotalPrice)), __LINE__);
-        }
         $this->ApproximateTotalPrice = $approximateTotalPrice;
         
         return $this;

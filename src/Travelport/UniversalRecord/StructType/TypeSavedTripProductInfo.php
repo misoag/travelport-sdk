@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class TypeSavedTripProductInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ProductType;
+    public string $ProductType;
     /**
      * The VendorCode
      * Meta information extracted from the WSDL
@@ -30,14 +29,14 @@ class TypeSavedTripProductInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $VendorCode;
+    public string $VendorCode;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
-    protected string $ProviderCode;
+    public string $ProviderCode;
     /**
      * Constructor method for typeSavedTripProductInfo
      * @uses TypeSavedTripProductInfo::setProductType()
@@ -64,18 +63,11 @@ class TypeSavedTripProductInfo extends AbstractStructBase
     }
     /**
      * Set ProductType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeProduct::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeProduct::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $productType
      * @return \Travelport\UniversalRecord\StructType\TypeSavedTripProductInfo
      */
     public function setProductType(string $productType): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeProduct::valueIsValid($productType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeProduct', is_array($productType) ? implode(', ', $productType) : var_export($productType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeProduct::getValidValues())), __LINE__);
-        }
         $this->ProductType = $productType;
         
         return $this;
@@ -95,10 +87,6 @@ class TypeSavedTripProductInfo extends AbstractStructBase
      */
     public function setVendorCode(string $vendorCode): self
     {
-        // validation for constraint: string
-        if (!is_null($vendorCode) && !is_string($vendorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vendorCode, true), gettype($vendorCode)), __LINE__);
-        }
         $this->VendorCode = $vendorCode;
         
         return $this;
@@ -118,10 +106,6 @@ class TypeSavedTripProductInfo extends AbstractStructBase
      */
     public function setProviderCode(string $providerCode): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;

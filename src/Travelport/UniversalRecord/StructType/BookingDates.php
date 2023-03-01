@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class BookingDates extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CheckInDate = null;
+    public ?string $CheckInDate = null;
     /**
      * The CheckOutDate
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class BookingDates extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CheckOutDate = null;
+    public ?string $CheckOutDate = null;
     /**
      * Constructor method for BookingDates
      * @uses BookingDates::setCheckInDate()
@@ -63,14 +62,6 @@ class BookingDates extends AbstractStructBase
      */
     public function setCheckInDate(?string $checkInDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($checkInDate) && !is_string($checkInDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($checkInDate, true), gettype($checkInDate)), __LINE__);
-        }
-        // validation for constraint: pattern([^:Z].*)
-        if (!is_null($checkInDate) && !preg_match('/[^:Z].*/', $checkInDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[^:Z].*/', var_export($checkInDate, true)), __LINE__);
-        }
         $this->CheckInDate = $checkInDate;
         
         return $this;
@@ -90,14 +81,6 @@ class BookingDates extends AbstractStructBase
      */
     public function setCheckOutDate(?string $checkOutDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($checkOutDate) && !is_string($checkOutDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($checkOutDate, true), gettype($checkOutDate)), __LINE__);
-        }
-        // validation for constraint: pattern([^:Z].*)
-        if (!is_null($checkOutDate) && !preg_match('/[^:Z].*/', $checkOutDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[^:Z].*/', var_export($checkOutDate, true)), __LINE__);
-        }
         $this->CheckOutDate = $checkOutDate;
         
         return $this;

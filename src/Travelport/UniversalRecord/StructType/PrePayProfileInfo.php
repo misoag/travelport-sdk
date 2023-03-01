@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class PrePayProfileInfo extends AbstractStructBase
      * - ref: PrePayId
      * @var \Travelport\UniversalRecord\StructType\PrePayId
      */
-    protected \Travelport\UniversalRecord\StructType\PrePayId $PrePayId;
+    public \Travelport\UniversalRecord\StructType\PrePayId $PrePayId;
     /**
      * The PrePayCustomer
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class PrePayProfileInfo extends AbstractStructBase
      * - ref: PrePayCustomer
      * @var \Travelport\UniversalRecord\StructType\PrePayCustomer|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PrePayCustomer $PrePayCustomer = null;
+    public ?\Travelport\UniversalRecord\StructType\PrePayCustomer $PrePayCustomer = null;
     /**
      * The PrePayAccount
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class PrePayProfileInfo extends AbstractStructBase
      * - ref: PrePayAccount
      * @var \Travelport\UniversalRecord\StructType\PrePayAccount|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PrePayAccount $PrePayAccount = null;
+    public ?\Travelport\UniversalRecord\StructType\PrePayAccount $PrePayAccount = null;
     /**
      * The Affiliations
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class PrePayProfileInfo extends AbstractStructBase
      * - ref: Affiliations
      * @var \Travelport\UniversalRecord\StructType\Affiliations|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Affiliations $Affiliations = null;
+    public ?\Travelport\UniversalRecord\StructType\Affiliations $Affiliations = null;
     /**
      * The AccountRelatedRules
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class PrePayProfileInfo extends AbstractStructBase
      * - ref: AccountRelatedRules
      * @var \Travelport\UniversalRecord\StructType\AccountRelatedRules|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AccountRelatedRules $AccountRelatedRules = null;
+    public ?\Travelport\UniversalRecord\StructType\AccountRelatedRules $AccountRelatedRules = null;
     /**
      * The StatusCode
      * Meta information extracted from the WSDL
@@ -65,7 +64,7 @@ class PrePayProfileInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $StatusCode = null;
+    public ?string $StatusCode = null;
     /**
      * The CreatorID
      * Meta information extracted from the WSDL
@@ -76,7 +75,7 @@ class PrePayProfileInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CreatorID = null;
+    public ?string $CreatorID = null;
     /**
      * Constructor method for PrePayProfileInfo
      * @uses PrePayProfileInfo::setPrePayId()
@@ -215,10 +214,6 @@ class PrePayProfileInfo extends AbstractStructBase
      */
     public function setStatusCode(?string $statusCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($statusCode) && !is_string($statusCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusCode, true), gettype($statusCode)), __LINE__);
-        }
         $this->StatusCode = $statusCode;
         
         return $this;
@@ -238,18 +233,6 @@ class PrePayProfileInfo extends AbstractStructBase
      */
     public function setCreatorID(?string $creatorID = null): self
     {
-        // validation for constraint: string
-        if (!is_null($creatorID) && !is_string($creatorID)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($creatorID, true), gettype($creatorID)), __LINE__);
-        }
-        // validation for constraint: maxLength(36)
-        if (!is_null($creatorID) && mb_strlen((string) $creatorID) > 36) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 36', mb_strlen((string) $creatorID)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($creatorID) && mb_strlen((string) $creatorID) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $creatorID)), __LINE__);
-        }
         $this->CreatorID = $creatorID;
         
         return $this;

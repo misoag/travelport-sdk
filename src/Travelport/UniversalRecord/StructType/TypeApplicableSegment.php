@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class TypeApplicableSegment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * The AirItineraryDetailsRef
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class TypeApplicableSegment extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $AirItineraryDetailsRef = null;
+    public ?string $AirItineraryDetailsRef = null;
     /**
      * The BookingCounts
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class TypeApplicableSegment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingCounts = null;
+    public ?string $BookingCounts = null;
     /**
      * Constructor method for typeApplicableSegment
      * @uses TypeApplicableSegment::setKey()
@@ -69,10 +68,6 @@ class TypeApplicableSegment extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -92,10 +87,6 @@ class TypeApplicableSegment extends AbstractStructBase
      */
     public function setAirItineraryDetailsRef(?string $airItineraryDetailsRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($airItineraryDetailsRef) && !is_string($airItineraryDetailsRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($airItineraryDetailsRef, true), gettype($airItineraryDetailsRef)), __LINE__);
-        }
         $this->AirItineraryDetailsRef = $airItineraryDetailsRef;
         
         return $this;
@@ -115,10 +106,6 @@ class TypeApplicableSegment extends AbstractStructBase
      */
     public function setBookingCounts(?string $bookingCounts = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingCounts) && !is_string($bookingCounts)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingCounts, true), gettype($bookingCounts)), __LINE__);
-        }
         $this->BookingCounts = $bookingCounts;
         
         return $this;

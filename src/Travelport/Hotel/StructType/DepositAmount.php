@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class DepositAmount extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The ApproximateAmount
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class DepositAmount extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ApproximateAmount = null;
+    public ?string $ApproximateAmount = null;
     /**
      * Constructor method for DepositAmount
      * @uses DepositAmount::setAmount()
@@ -61,10 +60,6 @@ class DepositAmount extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -84,10 +79,6 @@ class DepositAmount extends AbstractStructBase
      */
     public function setApproximateAmount(?string $approximateAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateAmount) && !is_string($approximateAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateAmount, true), gettype($approximateAmount)), __LINE__);
-        }
         $this->ApproximateAmount = $approximateAmount;
         
         return $this;

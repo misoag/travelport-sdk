@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -17,12 +16,12 @@ class Entry extends AbstractStructBase
      * The Reason
      * @var string|null
      */
-    protected ?string $Reason = null;
+    public ?string $Reason = null;
     /**
      * The Description
      * @var string|null
      */
-    protected ?string $Description = null;
+    public ?string $Description = null;
     /**
      * Constructor method for Entry
      * @uses Entry::setReason()
@@ -51,10 +50,6 @@ class Entry extends AbstractStructBase
      */
     public function setReason(?string $reason = null): self
     {
-        // validation for constraint: string
-        if (!is_null($reason) && !is_string($reason)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reason, true), gettype($reason)), __LINE__);
-        }
         $this->Reason = $reason;
         
         return $this;
@@ -74,10 +69,6 @@ class Entry extends AbstractStructBase
      */
     public function setDescription(?string $description = null): self
     {
-        // validation for constraint: string
-        if (!is_null($description) && !is_string($description)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
-        }
         $this->Description = $description;
         
         return $this;

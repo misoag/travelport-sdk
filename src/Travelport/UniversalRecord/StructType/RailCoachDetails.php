@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,21 +18,21 @@ class RailCoachDetails extends AbstractStructBase
      * - documentation: Rail coach number for the returned coach details.
      * @var string|null
      */
-    protected ?string $RailCoachNumber = null;
+    public ?string $RailCoachNumber = null;
     /**
      * The AvailableRailSeats
      * Meta information extracted from the WSDL
      * - documentation: Number of available seats present in this rail coach.
      * @var string|null
      */
-    protected ?string $AvailableRailSeats = null;
+    public ?string $AvailableRailSeats = null;
     /**
      * The RailSeatMapAvailability
      * Meta information extracted from the WSDL
      * - documentation: Indicates if seats are available in this rail coach which can be mapped.
      * @var bool|null
      */
-    protected ?bool $RailSeatMapAvailability = null;
+    public ?bool $RailSeatMapAvailability = null;
     /**
      * Constructor method for RailCoachDetails
      * @uses RailCoachDetails::setRailCoachNumber()
@@ -65,10 +64,6 @@ class RailCoachDetails extends AbstractStructBase
      */
     public function setRailCoachNumber(?string $railCoachNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($railCoachNumber) && !is_string($railCoachNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($railCoachNumber, true), gettype($railCoachNumber)), __LINE__);
-        }
         $this->RailCoachNumber = $railCoachNumber;
         
         return $this;
@@ -88,10 +83,6 @@ class RailCoachDetails extends AbstractStructBase
      */
     public function setAvailableRailSeats(?string $availableRailSeats = null): self
     {
-        // validation for constraint: string
-        if (!is_null($availableRailSeats) && !is_string($availableRailSeats)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($availableRailSeats, true), gettype($availableRailSeats)), __LINE__);
-        }
         $this->AvailableRailSeats = $availableRailSeats;
         
         return $this;
@@ -111,10 +102,6 @@ class RailCoachDetails extends AbstractStructBase
      */
     public function setRailSeatMapAvailability(?bool $railSeatMapAvailability = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($railSeatMapAvailability) && !is_bool($railSeatMapAvailability)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($railSeatMapAvailability, true), gettype($railSeatMapAvailability)), __LINE__);
-        }
         $this->RailSeatMapAvailability = $railSeatMapAvailability;
         
         return $this;

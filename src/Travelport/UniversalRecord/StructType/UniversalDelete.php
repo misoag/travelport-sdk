@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class UniversalDelete extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Element;
+    public string $Element;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class UniversalDelete extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * Constructor method for UniversalDelete
      * @uses UniversalDelete::setElement()
@@ -52,18 +51,11 @@ class UniversalDelete extends AbstractStructBase
     }
     /**
      * Set Element value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElement::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElement::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $element
      * @return \Travelport\UniversalRecord\StructType\UniversalDelete
      */
     public function setElement(string $element): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElement::valueIsValid($element)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElement', is_array($element) ? implode(', ', $element) : var_export($element, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElement::getValidValues())), __LINE__);
-        }
         $this->Element = $element;
         
         return $this;
@@ -83,10 +75,6 @@ class UniversalDelete extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;

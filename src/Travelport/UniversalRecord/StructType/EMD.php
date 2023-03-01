@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class EMD extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $FulfillmentType = null;
+    public ?int $FulfillmentType = null;
     /**
      * The FulfillmentTypeDescription
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class EMD extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FulfillmentTypeDescription = null;
+    public ?string $FulfillmentTypeDescription = null;
     /**
      * The AssociatedItem
      * Meta information extracted from the WSDL
@@ -40,21 +39,21 @@ class EMD extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AssociatedItem = null;
+    public ?string $AssociatedItem = null;
     /**
      * The AvailabilityChargeIndicator
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $AvailabilityChargeIndicator = null;
+    public ?string $AvailabilityChargeIndicator = null;
     /**
      * The RefundReissueIndicator
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $RefundReissueIndicator = null;
+    public ?string $RefundReissueIndicator = null;
     /**
      * The Commissionable
      * Meta information extracted from the WSDL
@@ -62,7 +61,7 @@ class EMD extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Commissionable = null;
+    public ?bool $Commissionable = null;
     /**
      * The MileageIndicator
      * Meta information extracted from the WSDL
@@ -70,7 +69,7 @@ class EMD extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $MileageIndicator = null;
+    public ?bool $MileageIndicator = null;
     /**
      * The Location
      * Meta information extracted from the WSDL
@@ -81,7 +80,7 @@ class EMD extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Location = null;
+    public ?string $Location = null;
     /**
      * The Date
      * Meta information extracted from the WSDL
@@ -89,7 +88,7 @@ class EMD extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Date = null;
+    public ?string $Date = null;
     /**
      * The Booking
      * Meta information extracted from the WSDL
@@ -97,7 +96,7 @@ class EMD extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Booking = null;
+    public ?string $Booking = null;
     /**
      * The DisplayCategory
      * Meta information extracted from the WSDL
@@ -105,7 +104,7 @@ class EMD extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DisplayCategory = null;
+    public ?string $DisplayCategory = null;
     /**
      * The Reusable
      * Meta information extracted from the WSDL
@@ -113,7 +112,7 @@ class EMD extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Reusable = null;
+    public ?bool $Reusable = null;
     /**
      * Constructor method for EMD
      * @uses EMD::setFulfillmentType()
@@ -172,18 +171,6 @@ class EMD extends AbstractStructBase
      */
     public function setFulfillmentType(?int $fulfillmentType = null): self
     {
-        // validation for constraint: int
-        if (!is_null($fulfillmentType) && !(is_int($fulfillmentType) || ctype_digit($fulfillmentType))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($fulfillmentType, true), gettype($fulfillmentType)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(5)
-        if (!is_null($fulfillmentType) && $fulfillmentType > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 5', var_export($fulfillmentType, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive(1)
-        if (!is_null($fulfillmentType) && $fulfillmentType < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 1', var_export($fulfillmentType, true)), __LINE__);
-        }
         $this->FulfillmentType = $fulfillmentType;
         
         return $this;
@@ -203,10 +190,6 @@ class EMD extends AbstractStructBase
      */
     public function setFulfillmentTypeDescription(?string $fulfillmentTypeDescription = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fulfillmentTypeDescription) && !is_string($fulfillmentTypeDescription)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fulfillmentTypeDescription, true), gettype($fulfillmentTypeDescription)), __LINE__);
-        }
         $this->FulfillmentTypeDescription = $fulfillmentTypeDescription;
         
         return $this;
@@ -226,10 +209,6 @@ class EMD extends AbstractStructBase
      */
     public function setAssociatedItem(?string $associatedItem = null): self
     {
-        // validation for constraint: string
-        if (!is_null($associatedItem) && !is_string($associatedItem)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($associatedItem, true), gettype($associatedItem)), __LINE__);
-        }
         $this->AssociatedItem = $associatedItem;
         
         return $this;
@@ -249,10 +228,6 @@ class EMD extends AbstractStructBase
      */
     public function setAvailabilityChargeIndicator(?string $availabilityChargeIndicator = null): self
     {
-        // validation for constraint: string
-        if (!is_null($availabilityChargeIndicator) && !is_string($availabilityChargeIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($availabilityChargeIndicator, true), gettype($availabilityChargeIndicator)), __LINE__);
-        }
         $this->AvailabilityChargeIndicator = $availabilityChargeIndicator;
         
         return $this;
@@ -272,10 +247,6 @@ class EMD extends AbstractStructBase
      */
     public function setRefundReissueIndicator(?string $refundReissueIndicator = null): self
     {
-        // validation for constraint: string
-        if (!is_null($refundReissueIndicator) && !is_string($refundReissueIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($refundReissueIndicator, true), gettype($refundReissueIndicator)), __LINE__);
-        }
         $this->RefundReissueIndicator = $refundReissueIndicator;
         
         return $this;
@@ -295,10 +266,6 @@ class EMD extends AbstractStructBase
      */
     public function setCommissionable(?bool $commissionable = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($commissionable) && !is_bool($commissionable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($commissionable, true), gettype($commissionable)), __LINE__);
-        }
         $this->Commissionable = $commissionable;
         
         return $this;
@@ -318,10 +285,6 @@ class EMD extends AbstractStructBase
      */
     public function setMileageIndicator(?bool $mileageIndicator = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($mileageIndicator) && !is_bool($mileageIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($mileageIndicator, true), gettype($mileageIndicator)), __LINE__);
-        }
         $this->MileageIndicator = $mileageIndicator;
         
         return $this;
@@ -341,14 +304,6 @@ class EMD extends AbstractStructBase
      */
     public function setLocation(?string $location = null): self
     {
-        // validation for constraint: string
-        if (!is_null($location) && !is_string($location)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($location, true), gettype($location)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($location) && mb_strlen((string) $location) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $location)), __LINE__);
-        }
         $this->Location = $location;
         
         return $this;
@@ -368,10 +323,6 @@ class EMD extends AbstractStructBase
      */
     public function setDate(?string $date = null): self
     {
-        // validation for constraint: string
-        if (!is_null($date) && !is_string($date)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
-        }
         $this->Date = $date;
         
         return $this;
@@ -391,10 +342,6 @@ class EMD extends AbstractStructBase
      */
     public function setBooking(?string $booking = null): self
     {
-        // validation for constraint: string
-        if (!is_null($booking) && !is_string($booking)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($booking, true), gettype($booking)), __LINE__);
-        }
         $this->Booking = $booking;
         
         return $this;
@@ -414,10 +361,6 @@ class EMD extends AbstractStructBase
      */
     public function setDisplayCategory(?string $displayCategory = null): self
     {
-        // validation for constraint: string
-        if (!is_null($displayCategory) && !is_string($displayCategory)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($displayCategory, true), gettype($displayCategory)), __LINE__);
-        }
         $this->DisplayCategory = $displayCategory;
         
         return $this;
@@ -437,10 +380,6 @@ class EMD extends AbstractStructBase
      */
     public function setReusable(?bool $reusable = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($reusable) && !is_bool($reusable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($reusable, true), gettype($reusable)), __LINE__);
-        }
         $this->Reusable = $reusable;
         
         return $this;

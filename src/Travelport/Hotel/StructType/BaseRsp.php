@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class BaseRsp extends AbstractStructBase
      * - ref: ResponseMessage
      * @var \Travelport\Hotel\StructType\ResponseMessage[]
      */
-    protected ?array $ResponseMessage = null;
+    public ?array $ResponseMessage = null;
     /**
      * The TraceId
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class BaseRsp extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TraceId = null;
+    public ?string $TraceId = null;
     /**
      * The TransactionId
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class BaseRsp extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TransactionId = null;
+    public ?string $TransactionId = null;
     /**
      * The ResponseTime
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class BaseRsp extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $ResponseTime = null;
+    public ?int $ResponseTime = null;
     /**
      * The CommandHistory
      * Meta information extracted from the WSDL
@@ -55,7 +54,7 @@ class BaseRsp extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CommandHistory = null;
+    public ?string $CommandHistory = null;
     /**
      * Constructor method for BaseRsp
      * @uses BaseRsp::setResponseMessage()
@@ -87,48 +86,12 @@ class BaseRsp extends AbstractStructBase
         return $this->ResponseMessage;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setResponseMessage method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setResponseMessage method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateResponseMessageForArrayConstraintFromSetResponseMessage(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $baseRspResponseMessageItem) {
-            // validation for constraint: itemType
-            if (!$baseRspResponseMessageItem instanceof \Travelport\Hotel\StructType\ResponseMessage) {
-                $invalidValues[] = is_object($baseRspResponseMessageItem) ? get_class($baseRspResponseMessageItem) : sprintf('%s(%s)', gettype($baseRspResponseMessageItem), var_export($baseRspResponseMessageItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ResponseMessage property can only contain items of type \Travelport\Hotel\StructType\ResponseMessage, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ResponseMessage value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\ResponseMessage[] $responseMessage
      * @return \Travelport\Hotel\StructType\BaseRsp
      */
     public function setResponseMessage(?array $responseMessage = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($responseMessageArrayErrorMessage = self::validateResponseMessageForArrayConstraintFromSetResponseMessage($responseMessage))) {
-            throw new InvalidArgumentException($responseMessageArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($responseMessage) && count($responseMessage) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($responseMessage)), __LINE__);
-        }
         $this->ResponseMessage = $responseMessage;
         
         return $this;
@@ -141,14 +104,6 @@ class BaseRsp extends AbstractStructBase
      */
     public function addToResponseMessage(\Travelport\Hotel\StructType\ResponseMessage $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\ResponseMessage) {
-            throw new InvalidArgumentException(sprintf('The ResponseMessage property can only contain items of type \Travelport\Hotel\StructType\ResponseMessage, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->ResponseMessage) && count($this->ResponseMessage) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->ResponseMessage)), __LINE__);
-        }
         $this->ResponseMessage[] = $item;
         
         return $this;
@@ -168,10 +123,6 @@ class BaseRsp extends AbstractStructBase
      */
     public function setTraceId(?string $traceId = null): self
     {
-        // validation for constraint: string
-        if (!is_null($traceId) && !is_string($traceId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($traceId, true), gettype($traceId)), __LINE__);
-        }
         $this->TraceId = $traceId;
         
         return $this;
@@ -191,10 +142,6 @@ class BaseRsp extends AbstractStructBase
      */
     public function setTransactionId(?string $transactionId = null): self
     {
-        // validation for constraint: string
-        if (!is_null($transactionId) && !is_string($transactionId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionId, true), gettype($transactionId)), __LINE__);
-        }
         $this->TransactionId = $transactionId;
         
         return $this;
@@ -214,10 +161,6 @@ class BaseRsp extends AbstractStructBase
      */
     public function setResponseTime(?int $responseTime = null): self
     {
-        // validation for constraint: int
-        if (!is_null($responseTime) && !(is_int($responseTime) || ctype_digit($responseTime))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($responseTime, true), gettype($responseTime)), __LINE__);
-        }
         $this->ResponseTime = $responseTime;
         
         return $this;
@@ -237,10 +180,6 @@ class BaseRsp extends AbstractStructBase
      */
     public function setCommandHistory(?string $commandHistory = null): self
     {
-        // validation for constraint: string
-        if (!is_null($commandHistory) && !is_string($commandHistory)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($commandHistory, true), gettype($commandHistory)), __LINE__);
-        }
         $this->CommandHistory = $commandHistory;
         
         return $this;

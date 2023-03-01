@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -17,37 +16,37 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * The Email
      * @var \Travelport\UniversalRecord\StructType\Email|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Email $Email = null;
+    public ?\Travelport\UniversalRecord\StructType\Email $Email = null;
     /**
      * The PhoneNumber
      * @var \Travelport\UniversalRecord\StructType\PhoneNumber|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PhoneNumber $PhoneNumber = null;
+    public ?\Travelport\UniversalRecord\StructType\PhoneNumber $PhoneNumber = null;
     /**
      * The VehicleDateLocation
      * @var \Travelport\UniversalRecord\StructType\VehicleDateLocation|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\VehicleDateLocation $VehicleDateLocation = null;
+    public ?\Travelport\UniversalRecord\StructType\VehicleDateLocation $VehicleDateLocation = null;
     /**
      * The Vehicle
      * @var \Travelport\UniversalRecord\StructType\Vehicle|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Vehicle $Vehicle = null;
+    public ?\Travelport\UniversalRecord\StructType\Vehicle $Vehicle = null;
     /**
      * The SpecialEquipment
      * @var \Travelport\UniversalRecord\StructType\SpecialEquipment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\SpecialEquipment $SpecialEquipment = null;
+    public ?\Travelport\UniversalRecord\StructType\SpecialEquipment $SpecialEquipment = null;
     /**
      * The VehicleSpecialRequest
      * @var \Travelport\UniversalRecord\StructType\VehicleSpecialRequest|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\VehicleSpecialRequest $VehicleSpecialRequest = null;
+    public ?\Travelport\UniversalRecord\StructType\VehicleSpecialRequest $VehicleSpecialRequest = null;
     /**
      * The PaymentInformation
      * @var \Travelport\UniversalRecord\StructType\PaymentInformation|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PaymentInformation $PaymentInformation = null;
+    public ?\Travelport\UniversalRecord\StructType\PaymentInformation $PaymentInformation = null;
     /**
      * The PointOfSale
      * Meta information extracted from the WSDL
@@ -55,22 +54,22 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:PointOfSale
      * @var \Travelport\UniversalRecord\StructType\PointOfSale|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PointOfSale $PointOfSale = null;
+    public ?\Travelport\UniversalRecord\StructType\PointOfSale $PointOfSale = null;
     /**
      * The DeliveryAddress
      * @var \Travelport\UniversalRecord\StructType\DeliveryAddress|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\DeliveryAddress $DeliveryAddress = null;
+    public ?\Travelport\UniversalRecord\StructType\DeliveryAddress $DeliveryAddress = null;
     /**
      * The CollectionAddress
      * @var \Travelport\UniversalRecord\StructType\CollectionAddress|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CollectionAddress $CollectionAddress = null;
+    public ?\Travelport\UniversalRecord\StructType\CollectionAddress $CollectionAddress = null;
     /**
      * The FlightArrivalInformation
      * @var \Travelport\UniversalRecord\StructType\FlightArrivalInformation|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FlightArrivalInformation $FlightArrivalInformation = null;
+    public ?\Travelport\UniversalRecord\StructType\FlightArrivalInformation $FlightArrivalInformation = null;
     /**
      * The Guarantee
      * Meta information extracted from the WSDL
@@ -78,7 +77,7 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:Guarantee
      * @var \Travelport\UniversalRecord\StructType\Guarantee|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Guarantee $Guarantee = null;
+    public ?\Travelport\UniversalRecord\StructType\Guarantee $Guarantee = null;
     /**
      * The AssociatedRemark
      * Meta information extracted from the WSDL
@@ -90,7 +89,7 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: vehicle:AssociatedRemark
      * @var \Travelport\UniversalRecord\StructType\AssociatedRemark[]
      */
-    protected ?array $AssociatedRemark = null;
+    public ?array $AssociatedRemark = null;
     /**
      * The BookingSource
      * Meta information extracted from the WSDL
@@ -98,7 +97,7 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:BookingSource
      * @var \Travelport\UniversalRecord\StructType\BookingSource|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\BookingSource $BookingSource = null;
+    public ?\Travelport\UniversalRecord\StructType\BookingSource $BookingSource = null;
     /**
      * The ReservationName
      * Meta information extracted from the WSDL
@@ -106,7 +105,7 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:ReservationName
      * @var \Travelport\UniversalRecord\StructType\ReservationName|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ReservationName $ReservationName = null;
+    public ?\Travelport\UniversalRecord\StructType\ReservationName $ReservationName = null;
     /**
      * The ThirdPartyInformation
      * Meta information extracted from the WSDL
@@ -114,7 +113,7 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:ThirdPartyInformation
      * @var \Travelport\UniversalRecord\StructType\ThirdPartyInformation|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ThirdPartyInformation $ThirdPartyInformation = null;
+    public ?\Travelport\UniversalRecord\StructType\ThirdPartyInformation $ThirdPartyInformation = null;
     /**
      * The ActionStatus
      * Meta information extracted from the WSDL
@@ -122,7 +121,7 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:ActionStatus
      * @var \Travelport\UniversalRecord\StructType\ActionStatus|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ActionStatus $ActionStatus = null;
+    public ?\Travelport\UniversalRecord\StructType\ActionStatus $ActionStatus = null;
     /**
      * The ReviewBooking
      * Meta information extracted from the WSDL
@@ -131,7 +130,7 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - ref: common:ReviewBooking
      * @var \Travelport\UniversalRecord\StructType\ReviewBooking[]
      */
-    protected ?array $ReviewBooking = null;
+    public ?array $ReviewBooking = null;
     /**
      * The MandatoryRateMatch
      * Meta information extracted from the WSDL
@@ -140,7 +139,7 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $MandatoryRateMatch = null;
+    public ?bool $MandatoryRateMatch = null;
     /**
      * Constructor method for VehicleCreateReservationReq
      * @uses VehicleCreateReservationReq::setEmail()
@@ -442,87 +441,15 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->AssociatedRemark ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAssociatedRemark method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAssociatedRemark method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $vehicleCreateReservationReqAssociatedRemarkItem) {
-            // validation for constraint: itemType
-            if (!$vehicleCreateReservationReqAssociatedRemarkItem instanceof \Travelport\UniversalRecord\StructType\AssociatedRemark) {
-                $invalidValues[] = is_object($vehicleCreateReservationReqAssociatedRemarkItem) ? get_class($vehicleCreateReservationReqAssociatedRemarkItem) : sprintf('%s(%s)', gettype($vehicleCreateReservationReqAssociatedRemarkItem), var_export($vehicleCreateReservationReqAssociatedRemarkItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AssociatedRemark property can only contain items of type \Travelport\UniversalRecord\StructType\AssociatedRemark, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
-     * This method is responsible for validating the value(s) passed to the setAssociatedRemark method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAssociatedRemark method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateAssociatedRemarkForChoiceConstraintFromSetAssociatedRemark($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property AssociatedRemark can\'t be set as the property %s is already set. Only one property must be set among these properties: AssociatedRemark, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set AssociatedRemark value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AssociatedRemark[] $associatedRemark
      * @return \Travelport\UniversalRecord\StructType\VehicleCreateReservationReq
      */
     public function setAssociatedRemark(?array $associatedRemark = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($associatedRemarkArrayErrorMessage = self::validateAssociatedRemarkForArrayConstraintFromSetAssociatedRemark($associatedRemark))) {
-            throw new InvalidArgumentException($associatedRemarkArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: choice(AssociatedRemark)
-        if ('' !== ($associatedRemarkChoiceErrorMessage = self::validateAssociatedRemarkForChoiceConstraintFromSetAssociatedRemark($associatedRemark))) {
-            throw new InvalidArgumentException($associatedRemarkChoiceErrorMessage, __LINE__);
-        }
-        // validation for constraint: choiceMaxOccurs(1)
-        if (is_array($associatedRemark) && count($associatedRemark) > 1) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 1', count($associatedRemark)), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($associatedRemark) && count($associatedRemark) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($associatedRemark)), __LINE__);
-        }
         if (is_null($associatedRemark) || (is_array($associatedRemark) && empty($associatedRemark))) {
             unset($this->AssociatedRemark);
         } else {
@@ -532,33 +459,6 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the addToAssociatedRemark method
-     * This method is willingly generated in order to preserve the one-line inline validation within the addToAssociatedRemark method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateItemForChoiceConstraintFromAddToAssociatedRemark($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property AssociatedRemark can\'t be set as the property %s is already set. Only one property must be set among these properties: AssociatedRemark, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Add item to AssociatedRemark value
      * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AssociatedRemark $item
@@ -566,22 +466,6 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      */
     public function addToAssociatedRemark(\Travelport\UniversalRecord\StructType\AssociatedRemark $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AssociatedRemark) {
-            throw new InvalidArgumentException(sprintf('The AssociatedRemark property can only contain items of type \Travelport\UniversalRecord\StructType\AssociatedRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: choice(AssociatedRemark)
-        if ('' !== ($itemChoiceErrorMessage = self::validateItemForChoiceConstraintFromAddToAssociatedRemark($item))) {
-            throw new InvalidArgumentException($itemChoiceErrorMessage, __LINE__);
-        }
-        // validation for constraint: choiceMaxOccurs(1)
-        if (is_array($this->AssociatedRemark) && count($this->AssociatedRemark) >= 1) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 1', count($this->AssociatedRemark)), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->AssociatedRemark) && count($this->AssociatedRemark) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->AssociatedRemark)), __LINE__);
-        }
         $this->AssociatedRemark[] = $item;
         
         return $this;
@@ -671,48 +555,12 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
         return $this->ReviewBooking;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setReviewBooking method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setReviewBooking method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateReviewBookingForArrayConstraintFromSetReviewBooking(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $vehicleCreateReservationReqReviewBookingItem) {
-            // validation for constraint: itemType
-            if (!$vehicleCreateReservationReqReviewBookingItem instanceof \Travelport\UniversalRecord\StructType\ReviewBooking) {
-                $invalidValues[] = is_object($vehicleCreateReservationReqReviewBookingItem) ? get_class($vehicleCreateReservationReqReviewBookingItem) : sprintf('%s(%s)', gettype($vehicleCreateReservationReqReviewBookingItem), var_export($vehicleCreateReservationReqReviewBookingItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ReviewBooking property can only contain items of type \Travelport\UniversalRecord\StructType\ReviewBooking, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ReviewBooking value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\ReviewBooking[] $reviewBooking
      * @return \Travelport\UniversalRecord\StructType\VehicleCreateReservationReq
      */
     public function setReviewBooking(?array $reviewBooking = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($reviewBookingArrayErrorMessage = self::validateReviewBookingForArrayConstraintFromSetReviewBooking($reviewBooking))) {
-            throw new InvalidArgumentException($reviewBookingArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($reviewBooking) && count($reviewBooking) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($reviewBooking)), __LINE__);
-        }
         $this->ReviewBooking = $reviewBooking;
         
         return $this;
@@ -725,14 +573,6 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      */
     public function addToReviewBooking(\Travelport\UniversalRecord\StructType\ReviewBooking $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\ReviewBooking) {
-            throw new InvalidArgumentException(sprintf('The ReviewBooking property can only contain items of type \Travelport\UniversalRecord\StructType\ReviewBooking, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->ReviewBooking) && count($this->ReviewBooking) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->ReviewBooking)), __LINE__);
-        }
         $this->ReviewBooking[] = $item;
         
         return $this;
@@ -752,10 +592,6 @@ class VehicleCreateReservationReq extends BaseCreateWithFormOfPaymentReq
      */
     public function setMandatoryRateMatch(?bool $mandatoryRateMatch = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($mandatoryRateMatch) && !is_bool($mandatoryRateMatch)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($mandatoryRateMatch, true), gettype($mandatoryRateMatch)), __LINE__);
-        }
         $this->MandatoryRateMatch = $mandatoryRateMatch;
         
         return $this;

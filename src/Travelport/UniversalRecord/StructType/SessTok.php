@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class SessTok extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $id;
+    public string $id;
     /**
      * Constructor method for SessTok
      * @uses SessTok::setId()
@@ -48,10 +47,6 @@ class SessTok extends AbstractStructBase
      */
     public function setId(string $id): self
     {
-        // validation for constraint: string
-        if (!is_null($id) && !is_string($id)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
-        }
         $this->id = $id;
         
         return $this;

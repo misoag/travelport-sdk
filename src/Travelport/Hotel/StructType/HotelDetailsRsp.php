@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class HotelDetailsRsp extends BaseRsp
      * - ref: common:NextResultReference
      * @var \Travelport\Hotel\StructType\NextResultReference|null
      */
-    protected ?\Travelport\Hotel\StructType\NextResultReference $NextResultReference = null;
+    public ?\Travelport\Hotel\StructType\NextResultReference $NextResultReference = null;
     /**
      * The HostToken
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class HotelDetailsRsp extends BaseRsp
      * - ref: common:HostToken
      * @var \Travelport\Hotel\StructType\HostToken|null
      */
-    protected ?\Travelport\Hotel\StructType\HostToken $HostToken = null;
+    public ?\Travelport\Hotel\StructType\HostToken $HostToken = null;
     /**
      * The RequestedHotelDetails
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class HotelDetailsRsp extends BaseRsp
      * - ref: RequestedHotelDetails
      * @var \Travelport\Hotel\StructType\RequestedHotelDetails|null
      */
-    protected ?\Travelport\Hotel\StructType\RequestedHotelDetails $RequestedHotelDetails = null;
+    public ?\Travelport\Hotel\StructType\RequestedHotelDetails $RequestedHotelDetails = null;
     /**
      * The HotelAlternateProperties
      * Meta information extracted from the WSDL
@@ -51,7 +50,7 @@ class HotelDetailsRsp extends BaseRsp
      * - ref: HotelAlternateProperties
      * @var \Travelport\Hotel\StructType\HotelAlternateProperties|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelAlternateProperties $HotelAlternateProperties = null;
+    public ?\Travelport\Hotel\StructType\HotelAlternateProperties $HotelAlternateProperties = null;
     /**
      * The GuestReviews
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class HotelDetailsRsp extends BaseRsp
      * - ref: GuestReviews
      * @var \Travelport\Hotel\StructType\GuestReviews|null
      */
-    protected ?\Travelport\Hotel\StructType\GuestReviews $GuestReviews = null;
+    public ?\Travelport\Hotel\StructType\GuestReviews $GuestReviews = null;
     /**
      * Constructor method for HotelDetailsRsp
      * @uses HotelDetailsRsp::setNextResultReference()
@@ -129,48 +128,15 @@ class HotelDetailsRsp extends BaseRsp
         return $this->RequestedHotelDetails ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRequestedHotelDetails method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRequestedHotelDetails method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateRequestedHotelDetailsForChoiceConstraintFromSetRequestedHotelDetails($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'HotelAlternateProperties',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property RequestedHotelDetails can\'t be set as the property %s is already set. Only one property must be set among these properties: RequestedHotelDetails, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set RequestedHotelDetails value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\RequestedHotelDetails $requestedHotelDetails
      * @return \Travelport\Hotel\StructType\HotelDetailsRsp
      */
     public function setRequestedHotelDetails(?\Travelport\Hotel\StructType\RequestedHotelDetails $requestedHotelDetails = null): self
     {
-        // validation for constraint: choice(RequestedHotelDetails, HotelAlternateProperties)
-        if ('' !== ($requestedHotelDetailsChoiceErrorMessage = self::validateRequestedHotelDetailsForChoiceConstraintFromSetRequestedHotelDetails($requestedHotelDetails))) {
-            throw new InvalidArgumentException($requestedHotelDetailsChoiceErrorMessage, __LINE__);
-        }
         if (is_null($requestedHotelDetails) || (is_array($requestedHotelDetails) && empty($requestedHotelDetails))) {
             unset($this->RequestedHotelDetails);
         } else {
@@ -188,48 +154,15 @@ class HotelDetailsRsp extends BaseRsp
         return $this->HotelAlternateProperties ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHotelAlternateProperties method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHotelAlternateProperties method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateHotelAlternatePropertiesForChoiceConstraintFromSetHotelAlternateProperties($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'RequestedHotelDetails',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property HotelAlternateProperties can\'t be set as the property %s is already set. Only one property must be set among these properties: HotelAlternateProperties, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set HotelAlternateProperties value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\HotelAlternateProperties $hotelAlternateProperties
      * @return \Travelport\Hotel\StructType\HotelDetailsRsp
      */
     public function setHotelAlternateProperties(?\Travelport\Hotel\StructType\HotelAlternateProperties $hotelAlternateProperties = null): self
     {
-        // validation for constraint: choice(RequestedHotelDetails, HotelAlternateProperties)
-        if ('' !== ($hotelAlternatePropertiesChoiceErrorMessage = self::validateHotelAlternatePropertiesForChoiceConstraintFromSetHotelAlternateProperties($hotelAlternateProperties))) {
-            throw new InvalidArgumentException($hotelAlternatePropertiesChoiceErrorMessage, __LINE__);
-        }
         if (is_null($hotelAlternateProperties) || (is_array($hotelAlternateProperties) && empty($hotelAlternateProperties))) {
             unset($this->HotelAlternateProperties);
         } else {

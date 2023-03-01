@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class HostTokenList extends AbstractStructBase
      * - ref: common:HostToken | HostToken
      * @var \Travelport\UniversalRecord\StructType\HostToken[]
      */
-    protected array $HostToken;
+    public array $HostToken;
     /**
      * Constructor method for HostTokenList
      * @uses HostTokenList::setHostToken()
@@ -43,48 +42,12 @@ class HostTokenList extends AbstractStructBase
         return $this->HostToken;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHostToken method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHostToken method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateHostTokenForArrayConstraintFromSetHostToken(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hostTokenListHostTokenItem) {
-            // validation for constraint: itemType
-            if (!$hostTokenListHostTokenItem instanceof \Travelport\UniversalRecord\StructType\HostToken) {
-                $invalidValues[] = is_object($hostTokenListHostTokenItem) ? get_class($hostTokenListHostTokenItem) : sprintf('%s(%s)', gettype($hostTokenListHostTokenItem), var_export($hostTokenListHostTokenItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The HostToken property can only contain items of type \Travelport\UniversalRecord\StructType\HostToken, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set HostToken value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\HostToken[] $hostToken
      * @return \Travelport\UniversalRecord\StructType\HostTokenList
      */
     public function setHostToken(array $hostToken): self
     {
-        // validation for constraint: array
-        if ('' !== ($hostTokenArrayErrorMessage = self::validateHostTokenForArrayConstraintFromSetHostToken($hostToken))) {
-            throw new InvalidArgumentException($hostTokenArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($hostToken) && count($hostToken) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($hostToken)), __LINE__);
-        }
         $this->HostToken = $hostToken;
         
         return $this;
@@ -97,14 +60,6 @@ class HostTokenList extends AbstractStructBase
      */
     public function addToHostToken(\Travelport\UniversalRecord\StructType\HostToken $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\HostToken) {
-            throw new InvalidArgumentException(sprintf('The HostToken property can only contain items of type \Travelport\UniversalRecord\StructType\HostToken, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->HostToken) && count($this->HostToken) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->HostToken)), __LINE__);
-        }
         $this->HostToken[] = $item;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class VehicleRateInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TourCode = null;
+    public ?string $TourCode = null;
     /**
      * The DiscountNumber
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class VehicleRateInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DiscountNumber = null;
+    public ?string $DiscountNumber = null;
     /**
      * The PromotionalCode
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class VehicleRateInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PromotionalCode = null;
+    public ?string $PromotionalCode = null;
     /**
      * Constructor method for VehicleRateInfo
      * @uses VehicleRateInfo::setTourCode()
@@ -73,10 +72,6 @@ class VehicleRateInfo extends AbstractStructBase
      */
     public function setTourCode(?string $tourCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tourCode) && !is_string($tourCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tourCode, true), gettype($tourCode)), __LINE__);
-        }
         $this->TourCode = $tourCode;
         
         return $this;
@@ -96,14 +91,6 @@ class VehicleRateInfo extends AbstractStructBase
      */
     public function setDiscountNumber(?string $discountNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($discountNumber) && !is_string($discountNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($discountNumber, true), gettype($discountNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(25)
-        if (!is_null($discountNumber) && mb_strlen((string) $discountNumber) > 25) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 25', mb_strlen((string) $discountNumber)), __LINE__);
-        }
         $this->DiscountNumber = $discountNumber;
         
         return $this;
@@ -123,10 +110,6 @@ class VehicleRateInfo extends AbstractStructBase
      */
     public function setPromotionalCode(?string $promotionalCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($promotionalCode) && !is_string($promotionalCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($promotionalCode, true), gettype($promotionalCode)), __LINE__);
-        }
         $this->PromotionalCode = $promotionalCode;
         
         return $this;

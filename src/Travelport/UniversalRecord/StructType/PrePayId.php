@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class PrePayId extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Id;
+    public string $Id;
     /**
      * The CompanyName
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class PrePayId extends AbstractStructBase
      * - ref: CompanyName
      * @var \Travelport\UniversalRecord\StructType\CompanyName|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CompanyName $CompanyName = null;
+    public ?\Travelport\UniversalRecord\StructType\CompanyName $CompanyName = null;
     /**
      * The Type
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class PrePayId extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Type = null;
+    public ?string $Type = null;
     /**
      * Constructor method for PrePayId
      * @uses PrePayId::setId()
@@ -73,18 +72,6 @@ class PrePayId extends AbstractStructBase
      */
     public function setId(string $id): self
     {
-        // validation for constraint: string
-        if (!is_null($id) && !is_string($id)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
-        }
-        // validation for constraint: maxLength(36)
-        if (!is_null($id) && mb_strlen((string) $id) > 36) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 36', mb_strlen((string) $id)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($id) && mb_strlen((string) $id) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $id)), __LINE__);
-        }
         $this->Id = $id;
         
         return $this;
@@ -123,10 +110,6 @@ class PrePayId extends AbstractStructBase
      */
     public function setType(?string $type = null): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;

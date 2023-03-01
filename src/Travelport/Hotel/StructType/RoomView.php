@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class RoomView extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Code = null;
+    public ?int $Code = null;
     /**
      * Constructor method for RoomView
      * @uses RoomView::setCode()
@@ -47,10 +46,6 @@ class RoomView extends AbstractStructBase
      */
     public function setCode(?int $code = null): self
     {
-        // validation for constraint: int
-        if (!is_null($code) && !(is_int($code) || ctype_digit($code))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;

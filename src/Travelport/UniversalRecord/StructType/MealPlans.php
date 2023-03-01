@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,28 +21,28 @@ class MealPlans extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\MealPlan[]
      */
-    protected ?array $MealPlan = null;
+    public ?array $MealPlan = null;
     /**
      * The Breakfast
      * Meta information extracted from the WSDL
      * - documentation: Indicates whether a daily breakfast is included in the meal plan. true = Breakfast is included false = Breakfast is not included unknown = Information is not returned by the hotel supplier (chain or property).
      * @var string|null
      */
-    protected ?string $Breakfast = null;
+    public ?string $Breakfast = null;
     /**
      * The Lunch
      * Meta information extracted from the WSDL
      * - documentation: Indicates whether a daily lunch is included in the meal plan. true = Lunch is included false = Lunch is not included unknown = Information is not returned by the hotel supplier (chain or property).
      * @var string|null
      */
-    protected ?string $Lunch = null;
+    public ?string $Lunch = null;
     /**
      * The Dinner
      * Meta information extracted from the WSDL
      * - documentation: Indicates whether a daily dinner is included in the meal plan. true = Dinner is included false = Dinner is not included unknown = Information is not returned by the hotel supplier (chain or property).
      * @var string|null
      */
-    protected ?string $Dinner = null;
+    public ?string $Dinner = null;
     /**
      * Constructor method for MealPlans
      * @uses MealPlans::setMealPlan()
@@ -72,48 +71,12 @@ class MealPlans extends AbstractStructBase
         return $this->MealPlan;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setMealPlan method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setMealPlan method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateMealPlanForArrayConstraintFromSetMealPlan(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $mealPlansMealPlanItem) {
-            // validation for constraint: itemType
-            if (!$mealPlansMealPlanItem instanceof \Travelport\UniversalRecord\StructType\MealPlan) {
-                $invalidValues[] = is_object($mealPlansMealPlanItem) ? get_class($mealPlansMealPlanItem) : sprintf('%s(%s)', gettype($mealPlansMealPlanItem), var_export($mealPlansMealPlanItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The MealPlan property can only contain items of type \Travelport\UniversalRecord\StructType\MealPlan, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set MealPlan value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\MealPlan[] $mealPlan
      * @return \Travelport\UniversalRecord\StructType\MealPlans
      */
     public function setMealPlan(?array $mealPlan = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($mealPlanArrayErrorMessage = self::validateMealPlanForArrayConstraintFromSetMealPlan($mealPlan))) {
-            throw new InvalidArgumentException($mealPlanArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($mealPlan) && count($mealPlan) > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 99', count($mealPlan)), __LINE__);
-        }
         $this->MealPlan = $mealPlan;
         
         return $this;
@@ -126,14 +89,6 @@ class MealPlans extends AbstractStructBase
      */
     public function addToMealPlan(\Travelport\UniversalRecord\StructType\MealPlan $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\MealPlan) {
-            throw new InvalidArgumentException(sprintf('The MealPlan property can only contain items of type \Travelport\UniversalRecord\StructType\MealPlan, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($this->MealPlan) && count($this->MealPlan) >= 99) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 99', count($this->MealPlan)), __LINE__);
-        }
         $this->MealPlan[] = $item;
         
         return $this;
@@ -148,18 +103,11 @@ class MealPlans extends AbstractStructBase
     }
     /**
      * Set Breakfast value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $breakfast
      * @return \Travelport\UniversalRecord\StructType\MealPlans
      */
     public function setBreakfast(?string $breakfast = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid($breakfast)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeTrinary', is_array($breakfast) ? implode(', ', $breakfast) : var_export($breakfast, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues())), __LINE__);
-        }
         $this->Breakfast = $breakfast;
         
         return $this;
@@ -174,18 +122,11 @@ class MealPlans extends AbstractStructBase
     }
     /**
      * Set Lunch value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $lunch
      * @return \Travelport\UniversalRecord\StructType\MealPlans
      */
     public function setLunch(?string $lunch = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid($lunch)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeTrinary', is_array($lunch) ? implode(', ', $lunch) : var_export($lunch, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues())), __LINE__);
-        }
         $this->Lunch = $lunch;
         
         return $this;
@@ -200,18 +141,11 @@ class MealPlans extends AbstractStructBase
     }
     /**
      * Set Dinner value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $dinner
      * @return \Travelport\UniversalRecord\StructType\MealPlans
      */
     public function setDinner(?string $dinner = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid($dinner)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeTrinary', is_array($dinner) ? implode(', ', $dinner) : var_export($dinner, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues())), __LINE__);
-        }
         $this->Dinner = $dinner;
         
         return $this;

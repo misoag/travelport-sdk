@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class FareStatusFailureInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Code;
+    public string $Code;
     /**
      * The Reason
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class FareStatusFailureInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Reason = null;
+    public ?string $Reason = null;
     /**
      * Constructor method for FareStatusFailureInfo
      * @uses FareStatusFailureInfo::setCode()
@@ -59,10 +58,6 @@ class FareStatusFailureInfo extends AbstractStructBase
      */
     public function setCode(string $code): self
     {
-        // validation for constraint: string
-        if (!is_null($code) && !is_string($code)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;
@@ -82,10 +77,6 @@ class FareStatusFailureInfo extends AbstractStructBase
      */
     public function setReason(?string $reason = null): self
     {
-        // validation for constraint: string
-        if (!is_null($reason) && !is_string($reason)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($reason, true), gettype($reason)), __LINE__);
-        }
         $this->Reason = $reason;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class Document extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Sequence = null;
+    public ?int $Sequence = null;
     /**
      * The Type
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class Document extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Type = null;
+    public ?string $Type = null;
     /**
      * The Level
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class Document extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Level = null;
+    public ?string $Level = null;
     /**
      * Constructor method for Document
      * @uses Document::setSequence()
@@ -70,10 +69,6 @@ class Document extends AbstractStructBase
      */
     public function setSequence(?int $sequence = null): self
     {
-        // validation for constraint: int
-        if (!is_null($sequence) && !(is_int($sequence) || ctype_digit($sequence))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($sequence, true), gettype($sequence)), __LINE__);
-        }
         $this->Sequence = $sequence;
         
         return $this;
@@ -93,10 +88,6 @@ class Document extends AbstractStructBase
      */
     public function setType(?string $type = null): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -116,10 +107,6 @@ class Document extends AbstractStructBase
      */
     public function setLevel(?string $level = null): self
     {
-        // validation for constraint: string
-        if (!is_null($level) && !is_string($level)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($level, true), gettype($level)), __LINE__);
-        }
         $this->Level = $level;
         
         return $this;

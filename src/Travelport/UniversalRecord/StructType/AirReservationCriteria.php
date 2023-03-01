@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class AirReservationCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeDateSpec|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeDateSpec $DepartureDate = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeDateSpec $DepartureDate = null;
     /**
      * The ArrivalDate
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class AirReservationCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeDateSpec|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeDateSpec $ArrivalDate = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeDateSpec $ArrivalDate = null;
     /**
      * The Origin
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class AirReservationCriteria extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Origin = null;
+    public ?string $Origin = null;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -52,14 +51,14 @@ class AirReservationCriteria extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Destination = null;
+    public ?string $Destination = null;
     /**
      * The FlightNumber
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $FlightNumber = null;
+    public ?string $FlightNumber = null;
     /**
      * The Carrier
      * Meta information extracted from the WSDL
@@ -69,7 +68,7 @@ class AirReservationCriteria extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Carrier = null;
+    public ?string $Carrier = null;
     /**
      * The PassiveOnly
      * Meta information extracted from the WSDL
@@ -78,7 +77,7 @@ class AirReservationCriteria extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PassiveOnly = null;
+    public ?bool $PassiveOnly = null;
     /**
      * Constructor method for AirReservationCriteria
      * @uses AirReservationCriteria::setDepartureDate()
@@ -160,14 +159,6 @@ class AirReservationCriteria extends AbstractStructBase
      */
     public function setOrigin(?string $origin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($origin) && mb_strlen((string) $origin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -187,14 +178,6 @@ class AirReservationCriteria extends AbstractStructBase
      */
     public function setDestination(?string $destination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destination) && mb_strlen((string) $destination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -214,10 +197,6 @@ class AirReservationCriteria extends AbstractStructBase
      */
     public function setFlightNumber(?string $flightNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($flightNumber) && !is_string($flightNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($flightNumber, true), gettype($flightNumber)), __LINE__);
-        }
         $this->FlightNumber = $flightNumber;
         
         return $this;
@@ -237,14 +216,6 @@ class AirReservationCriteria extends AbstractStructBase
      */
     public function setCarrier(?string $carrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($carrier) && !is_string($carrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrier, true), gettype($carrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($carrier) && mb_strlen((string) $carrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $carrier)), __LINE__);
-        }
         $this->Carrier = $carrier;
         
         return $this;
@@ -264,10 +235,6 @@ class AirReservationCriteria extends AbstractStructBase
      */
     public function setPassiveOnly(?bool $passiveOnly = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($passiveOnly) && !is_bool($passiveOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($passiveOnly, true), gettype($passiveOnly)), __LINE__);
-        }
         $this->PassiveOnly = $passiveOnly;
         
         return $this;

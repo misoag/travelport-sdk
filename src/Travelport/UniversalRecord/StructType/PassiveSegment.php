@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,14 +21,14 @@ class PassiveSegment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $SegmentType;
+    public string $SegmentType;
     /**
      * The Amount
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\Amount|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Amount $Amount = null;
+    public ?\Travelport\UniversalRecord\StructType\Amount $Amount = null;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
@@ -40,22 +39,22 @@ class PassiveSegment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SupplierCode = null;
+    public ?string $SupplierCode = null;
     /**
      * The Status
      * @var string|null
      */
-    protected ?string $Status = null;
+    public ?string $Status = null;
     /**
      * The StartDate
      * @var string|null
      */
-    protected ?string $StartDate = null;
+    public ?string $StartDate = null;
     /**
      * The EndDate
      * @var string|null
      */
-    protected ?string $EndDate = null;
+    public ?string $EndDate = null;
     /**
      * The Origin
      * Meta information extracted from the WSDL
@@ -65,7 +64,7 @@ class PassiveSegment extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Origin = null;
+    public ?string $Origin = null;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -75,43 +74,43 @@ class PassiveSegment extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Destination = null;
+    public ?string $Destination = null;
     /**
      * The AvailabilitySource
      * Meta information extracted from the WSDL
      * - documentation: Indicates Availability source of AirSegment.
      * @var string|null
      */
-    protected ?string $AvailabilitySource = null;
+    public ?string $AvailabilitySource = null;
     /**
      * The PolledAvailabilityOption
      * Meta information extracted from the WSDL
      * - documentation: Indicates if carrier has inside(polled) availability option.
      * @var string|null
      */
-    protected ?string $PolledAvailabilityOption = null;
+    public ?string $PolledAvailabilityOption = null;
     /**
      * The AvailabilityDisplayType
      * Meta information extracted from the WSDL
      * - documentation: The type of availability from which the segment is sold. E.g., General, Carrier Specific/Direct Access, Fare Shop/Optimal Shop, etc.
      * @var string|null
      */
-    protected ?string $AvailabilityDisplayType = null;
+    public ?string $AvailabilityDisplayType = null;
     /**
      * The FlightNumber
      * @var string|null
      */
-    protected ?string $FlightNumber = null;
+    public ?string $FlightNumber = null;
     /**
      * The ClassOfService
      * @var string|null
      */
-    protected ?string $ClassOfService = null;
+    public ?string $ClassOfService = null;
     /**
      * The NumberOfItems
      * @var int|null
      */
-    protected ?int $NumberOfItems = null;
+    public ?int $NumberOfItems = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -119,14 +118,14 @@ class PassiveSegment extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The VehicleType
      * Meta information extracted from the WSDL
      * - documentation: The Type of Vehicle in Passive Segment.
      * @var string|null
      */
-    protected ?string $VehicleType = null;
+    public ?string $VehicleType = null;
     /**
      * The PassiveProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -135,7 +134,7 @@ class PassiveSegment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PassiveProviderReservationInfoRef = null;
+    public ?string $PassiveProviderReservationInfoRef = null;
     /**
      * The Group
      * Meta information extracted from the WSDL
@@ -143,7 +142,7 @@ class PassiveSegment extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Group = null;
+    public ?int $Group = null;
     /**
      * The TravelOrder
      * Meta information extracted from the WSDL
@@ -151,7 +150,7 @@ class PassiveSegment extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $TravelOrder = null;
+    public ?int $TravelOrder = null;
     /**
      * The ProviderSegmentOrder
      * Meta information extracted from the WSDL
@@ -160,7 +159,7 @@ class PassiveSegment extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $ProviderSegmentOrder = null;
+    public ?int $ProviderSegmentOrder = null;
     /**
      * The PassiveGroup
      * Meta information extracted from the WSDL
@@ -168,17 +167,17 @@ class PassiveSegment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PassiveGroup = null;
+    public ?string $PassiveGroup = null;
     /**
      * The ElStat
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for PassiveSegment
      * @uses PassiveSegment::setSegmentType()
@@ -270,10 +269,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setSegmentType(string $segmentType): self
     {
-        // validation for constraint: string
-        if (!is_null($segmentType) && !is_string($segmentType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($segmentType, true), gettype($segmentType)), __LINE__);
-        }
         $this->SegmentType = $segmentType;
         
         return $this;
@@ -312,18 +307,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setSupplierCode(?string $supplierCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(20)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) > 20) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 20', mb_strlen((string) $supplierCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;
@@ -343,10 +326,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setStatus(?string $status = null): self
     {
-        // validation for constraint: string
-        if (!is_null($status) && !is_string($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -366,10 +345,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setStartDate(?string $startDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($startDate) && !is_string($startDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
-        }
         $this->StartDate = $startDate;
         
         return $this;
@@ -389,10 +364,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setEndDate(?string $endDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($endDate) && !is_string($endDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endDate, true), gettype($endDate)), __LINE__);
-        }
         $this->EndDate = $endDate;
         
         return $this;
@@ -412,14 +383,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setOrigin(?string $origin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($origin) && mb_strlen((string) $origin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -439,14 +402,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setDestination(?string $destination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destination) && mb_strlen((string) $destination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -466,10 +421,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setAvailabilitySource(?string $availabilitySource = null): self
     {
-        // validation for constraint: string
-        if (!is_null($availabilitySource) && !is_string($availabilitySource)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($availabilitySource, true), gettype($availabilitySource)), __LINE__);
-        }
         $this->AvailabilitySource = $availabilitySource;
         
         return $this;
@@ -489,10 +440,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setPolledAvailabilityOption(?string $polledAvailabilityOption = null): self
     {
-        // validation for constraint: string
-        if (!is_null($polledAvailabilityOption) && !is_string($polledAvailabilityOption)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($polledAvailabilityOption, true), gettype($polledAvailabilityOption)), __LINE__);
-        }
         $this->PolledAvailabilityOption = $polledAvailabilityOption;
         
         return $this;
@@ -512,10 +459,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setAvailabilityDisplayType(?string $availabilityDisplayType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($availabilityDisplayType) && !is_string($availabilityDisplayType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($availabilityDisplayType, true), gettype($availabilityDisplayType)), __LINE__);
-        }
         $this->AvailabilityDisplayType = $availabilityDisplayType;
         
         return $this;
@@ -535,10 +478,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setFlightNumber(?string $flightNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($flightNumber) && !is_string($flightNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($flightNumber, true), gettype($flightNumber)), __LINE__);
-        }
         $this->FlightNumber = $flightNumber;
         
         return $this;
@@ -558,10 +497,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setClassOfService(?string $classOfService = null): self
     {
-        // validation for constraint: string
-        if (!is_null($classOfService) && !is_string($classOfService)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($classOfService, true), gettype($classOfService)), __LINE__);
-        }
         $this->ClassOfService = $classOfService;
         
         return $this;
@@ -581,10 +516,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setNumberOfItems(?int $numberOfItems = null): self
     {
-        // validation for constraint: int
-        if (!is_null($numberOfItems) && !(is_int($numberOfItems) || ctype_digit($numberOfItems))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($numberOfItems, true), gettype($numberOfItems)), __LINE__);
-        }
         $this->NumberOfItems = $numberOfItems;
         
         return $this;
@@ -604,10 +535,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -627,10 +554,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setVehicleType(?string $vehicleType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($vehicleType) && !is_string($vehicleType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vehicleType, true), gettype($vehicleType)), __LINE__);
-        }
         $this->VehicleType = $vehicleType;
         
         return $this;
@@ -650,10 +573,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setPassiveProviderReservationInfoRef(?string $passiveProviderReservationInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($passiveProviderReservationInfoRef) && !is_string($passiveProviderReservationInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passiveProviderReservationInfoRef, true), gettype($passiveProviderReservationInfoRef)), __LINE__);
-        }
         $this->PassiveProviderReservationInfoRef = $passiveProviderReservationInfoRef;
         
         return $this;
@@ -673,10 +592,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setGroup(?int $group = null): self
     {
-        // validation for constraint: int
-        if (!is_null($group) && !(is_int($group) || ctype_digit($group))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($group, true), gettype($group)), __LINE__);
-        }
         $this->Group = $group;
         
         return $this;
@@ -696,10 +611,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setTravelOrder(?int $travelOrder = null): self
     {
-        // validation for constraint: int
-        if (!is_null($travelOrder) && !(is_int($travelOrder) || ctype_digit($travelOrder))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($travelOrder, true), gettype($travelOrder)), __LINE__);
-        }
         $this->TravelOrder = $travelOrder;
         
         return $this;
@@ -719,14 +630,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setProviderSegmentOrder(?int $providerSegmentOrder = null): self
     {
-        // validation for constraint: int
-        if (!is_null($providerSegmentOrder) && !(is_int($providerSegmentOrder) || ctype_digit($providerSegmentOrder))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($providerSegmentOrder, true), gettype($providerSegmentOrder)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(999)
-        if (!is_null($providerSegmentOrder) && $providerSegmentOrder > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 999', var_export($providerSegmentOrder, true)), __LINE__);
-        }
         $this->ProviderSegmentOrder = $providerSegmentOrder;
         
         return $this;
@@ -746,10 +649,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setPassiveGroup(?string $passiveGroup = null): self
     {
-        // validation for constraint: string
-        if (!is_null($passiveGroup) && !is_string($passiveGroup)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passiveGroup, true), gettype($passiveGroup)), __LINE__);
-        }
         $this->PassiveGroup = $passiveGroup;
         
         return $this;
@@ -764,18 +663,11 @@ class PassiveSegment extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\PassiveSegment
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -795,10 +687,6 @@ class PassiveSegment extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

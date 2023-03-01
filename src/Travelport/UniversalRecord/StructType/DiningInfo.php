@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class DiningInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Seating = null;
+    public ?string $Seating = null;
     /**
      * The Status
      * Meta information extracted from the WSDL
@@ -35,7 +34,7 @@ class DiningInfo extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Status = null;
+    public ?string $Status = null;
     /**
      * The TableSize
      * Meta information extracted from the WSDL
@@ -43,7 +42,7 @@ class DiningInfo extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $TableSize = null;
+    public ?int $TableSize = null;
     /**
      * Constructor method for DiningInfo
      * @uses DiningInfo::setSeating()
@@ -75,14 +74,6 @@ class DiningInfo extends AbstractStructBase
      */
     public function setSeating(?string $seating = null): self
     {
-        // validation for constraint: string
-        if (!is_null($seating) && !is_string($seating)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($seating, true), gettype($seating)), __LINE__);
-        }
-        // validation for constraint: length(1)
-        if (!is_null($seating) && mb_strlen((string) $seating) !== 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 1', mb_strlen((string) $seating)), __LINE__);
-        }
         $this->Seating = $seating;
         
         return $this;
@@ -102,14 +93,6 @@ class DiningInfo extends AbstractStructBase
      */
     public function setStatus(?string $status = null): self
     {
-        // validation for constraint: string
-        if (!is_null($status) && !is_string($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($status) && mb_strlen((string) $status) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $status)), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -129,10 +112,6 @@ class DiningInfo extends AbstractStructBase
      */
     public function setTableSize(?int $tableSize = null): self
     {
-        // validation for constraint: int
-        if (!is_null($tableSize) && !(is_int($tableSize) || ctype_digit($tableSize))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($tableSize, true), gettype($tableSize)), __LINE__);
-        }
         $this->TableSize = $tableSize;
         
         return $this;

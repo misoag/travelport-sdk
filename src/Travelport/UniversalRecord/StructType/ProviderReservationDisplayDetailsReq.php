@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class ProviderReservationDisplayDetailsReq extends BaseReq
      * - minLength: 2
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The ProviderLocatorCode
      * Meta information extracted from the WSDL
@@ -33,47 +32,47 @@ class ProviderReservationDisplayDetailsReq extends BaseReq
      * - maxLength: 15
      * @var string|null
      */
-    protected ?string $ProviderLocatorCode = null;
+    public ?string $ProviderLocatorCode = null;
     /**
      * The ProviderReservationDetail
      * @var bool|null
      */
-    protected ?bool $ProviderReservationDetail = null;
+    public ?bool $ProviderReservationDetail = null;
     /**
      * The CustomCheck
      * @var bool|null
      */
-    protected ?bool $CustomCheck = null;
+    public ?bool $CustomCheck = null;
     /**
      * The ProviderProfile
      * @var bool|null
      */
-    protected ?bool $ProviderProfile = null;
+    public ?bool $ProviderProfile = null;
     /**
      * The DivideDetails
      * @var bool|null
      */
-    protected ?bool $DivideDetails = null;
+    public ?bool $DivideDetails = null;
     /**
      * The EnhancedItinModifiers
      * @var bool|null
      */
-    protected ?bool $EnhancedItinModifiers = null;
+    public ?bool $EnhancedItinModifiers = null;
     /**
      * The IntegratedContent
      * @var bool|null
      */
-    protected ?bool $IntegratedContent = null;
+    public ?bool $IntegratedContent = null;
     /**
      * The Cruise
      * @var bool|null
      */
-    protected ?bool $Cruise = null;
+    public ?bool $Cruise = null;
     /**
      * The RailSegment
      * @var bool|null
      */
-    protected ?bool $RailSegment = null;
+    public ?bool $RailSegment = null;
     /**
      * Constructor method for ProviderReservationDisplayDetailsReq
      * @uses ProviderReservationDisplayDetailsReq::setProviderCode()
@@ -126,18 +125,6 @@ class ProviderReservationDisplayDetailsReq extends BaseReq
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -157,14 +144,6 @@ class ProviderReservationDisplayDetailsReq extends BaseReq
      */
     public function setProviderLocatorCode(?string $providerLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerLocatorCode) && !is_string($providerLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerLocatorCode, true), gettype($providerLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($providerLocatorCode) && mb_strlen((string) $providerLocatorCode) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $providerLocatorCode)), __LINE__);
-        }
         $this->ProviderLocatorCode = $providerLocatorCode;
         
         return $this;
@@ -184,10 +163,6 @@ class ProviderReservationDisplayDetailsReq extends BaseReq
      */
     public function setProviderReservationDetail(?bool $providerReservationDetail = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($providerReservationDetail) && !is_bool($providerReservationDetail)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($providerReservationDetail, true), gettype($providerReservationDetail)), __LINE__);
-        }
         $this->ProviderReservationDetail = $providerReservationDetail;
         
         return $this;
@@ -207,10 +182,6 @@ class ProviderReservationDisplayDetailsReq extends BaseReq
      */
     public function setCustomCheck(?bool $customCheck = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($customCheck) && !is_bool($customCheck)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($customCheck, true), gettype($customCheck)), __LINE__);
-        }
         $this->CustomCheck = $customCheck;
         
         return $this;
@@ -230,10 +201,6 @@ class ProviderReservationDisplayDetailsReq extends BaseReq
      */
     public function setProviderProfile(?bool $providerProfile = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($providerProfile) && !is_bool($providerProfile)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($providerProfile, true), gettype($providerProfile)), __LINE__);
-        }
         $this->ProviderProfile = $providerProfile;
         
         return $this;
@@ -253,10 +220,6 @@ class ProviderReservationDisplayDetailsReq extends BaseReq
      */
     public function setDivideDetails(?bool $divideDetails = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($divideDetails) && !is_bool($divideDetails)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($divideDetails, true), gettype($divideDetails)), __LINE__);
-        }
         $this->DivideDetails = $divideDetails;
         
         return $this;
@@ -276,10 +239,6 @@ class ProviderReservationDisplayDetailsReq extends BaseReq
      */
     public function setEnhancedItinModifiers(?bool $enhancedItinModifiers = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($enhancedItinModifiers) && !is_bool($enhancedItinModifiers)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($enhancedItinModifiers, true), gettype($enhancedItinModifiers)), __LINE__);
-        }
         $this->EnhancedItinModifiers = $enhancedItinModifiers;
         
         return $this;
@@ -299,10 +258,6 @@ class ProviderReservationDisplayDetailsReq extends BaseReq
      */
     public function setIntegratedContent(?bool $integratedContent = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($integratedContent) && !is_bool($integratedContent)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($integratedContent, true), gettype($integratedContent)), __LINE__);
-        }
         $this->IntegratedContent = $integratedContent;
         
         return $this;
@@ -322,10 +277,6 @@ class ProviderReservationDisplayDetailsReq extends BaseReq
      */
     public function setCruise(?bool $cruise = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cruise) && !is_bool($cruise)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cruise, true), gettype($cruise)), __LINE__);
-        }
         $this->Cruise = $cruise;
         
         return $this;
@@ -345,10 +296,6 @@ class ProviderReservationDisplayDetailsReq extends BaseReq
      */
     public function setRailSegment(?bool $railSegment = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($railSegment) && !is_bool($railSegment)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($railSegment, true), gettype($railSegment)), __LINE__);
-        }
         $this->RailSegment = $railSegment;
         
         return $this;

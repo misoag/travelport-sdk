@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class AirFareDiscount extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $Percentage = null;
+    public ?float $Percentage = null;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -30,14 +29,14 @@ class AirFareDiscount extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The DiscountMethod
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $DiscountMethod = null;
+    public ?string $DiscountMethod = null;
     /**
      * Constructor method for AirFareDiscount
      * @uses AirFareDiscount::setPercentage()
@@ -69,10 +68,6 @@ class AirFareDiscount extends AbstractStructBase
      */
     public function setPercentage(?float $percentage = null): self
     {
-        // validation for constraint: float
-        if (!is_null($percentage) && !(is_float($percentage) || is_numeric($percentage))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($percentage, true), gettype($percentage)), __LINE__);
-        }
         $this->Percentage = $percentage;
         
         return $this;
@@ -92,10 +87,6 @@ class AirFareDiscount extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -110,18 +101,11 @@ class AirFareDiscount extends AbstractStructBase
     }
     /**
      * Set DiscountMethod value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareDiscount::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareDiscount::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $discountMethod
      * @return \Travelport\UniversalRecord\StructType\AirFareDiscount
      */
     public function setDiscountMethod(?string $discountMethod = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeFareDiscount::valueIsValid($discountMethod)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeFareDiscount', is_array($discountMethod) ? implode(', ', $discountMethod) : var_export($discountMethod, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeFareDiscount::getValidValues())), __LINE__);
-        }
         $this->DiscountMethod = $discountMethod;
         
         return $this;

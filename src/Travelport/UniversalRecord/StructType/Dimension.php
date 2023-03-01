@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class Dimension extends TypeUnitOfMeasure
      * - use: optional
      * @var string|null
      */
-    protected ?string $type = null;
+    public ?string $type = null;
     /**
      * Constructor method for Dimension
      * @uses Dimension::setType()
@@ -48,10 +47,6 @@ class Dimension extends TypeUnitOfMeasure
      */
     public function setType(?string $type = null): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->type = $type;
         
         return $this;

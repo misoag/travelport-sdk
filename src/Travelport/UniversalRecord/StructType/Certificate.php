@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class Certificate extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Number;
+    public string $Number;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class Certificate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The DiscountAmount
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class Certificate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DiscountAmount = null;
+    public ?string $DiscountAmount = null;
     /**
      * The DiscountPercentage
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class Certificate extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $DiscountPercentage = null;
+    public ?int $DiscountPercentage = null;
     /**
      * The NotValidBefore
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class Certificate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $NotValidBefore = null;
+    public ?string $NotValidBefore = null;
     /**
      * The NotValidAfter
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class Certificate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $NotValidAfter = null;
+    public ?string $NotValidAfter = null;
     /**
      * Constructor method for Certificate
      * @uses Certificate::setNumber()
@@ -105,10 +104,6 @@ class Certificate extends AbstractStructBase
      */
     public function setNumber(string $number): self
     {
-        // validation for constraint: string
-        if (!is_null($number) && !is_string($number)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
-        }
         $this->Number = $number;
         
         return $this;
@@ -128,10 +123,6 @@ class Certificate extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -151,10 +142,6 @@ class Certificate extends AbstractStructBase
      */
     public function setDiscountAmount(?string $discountAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($discountAmount) && !is_string($discountAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($discountAmount, true), gettype($discountAmount)), __LINE__);
-        }
         $this->DiscountAmount = $discountAmount;
         
         return $this;
@@ -174,10 +161,6 @@ class Certificate extends AbstractStructBase
      */
     public function setDiscountPercentage(?int $discountPercentage = null): self
     {
-        // validation for constraint: int
-        if (!is_null($discountPercentage) && !(is_int($discountPercentage) || ctype_digit($discountPercentage))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($discountPercentage, true), gettype($discountPercentage)), __LINE__);
-        }
         $this->DiscountPercentage = $discountPercentage;
         
         return $this;
@@ -197,10 +180,6 @@ class Certificate extends AbstractStructBase
      */
     public function setNotValidBefore(?string $notValidBefore = null): self
     {
-        // validation for constraint: string
-        if (!is_null($notValidBefore) && !is_string($notValidBefore)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($notValidBefore, true), gettype($notValidBefore)), __LINE__);
-        }
         $this->NotValidBefore = $notValidBefore;
         
         return $this;
@@ -220,10 +199,6 @@ class Certificate extends AbstractStructBase
      */
     public function setNotValidAfter(?string $notValidAfter = null): self
     {
-        // validation for constraint: string
-        if (!is_null($notValidAfter) && !is_string($notValidAfter)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($notValidAfter, true), gettype($notValidAfter)), __LINE__);
-        }
         $this->NotValidAfter = $notValidAfter;
         
         return $this;

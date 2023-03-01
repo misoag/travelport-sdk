@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class UniversalRecordCancelReq extends BaseReq
      * - use: required
      * @var string
      */
-    protected string $UniversalRecordLocatorCode;
+    public string $UniversalRecordLocatorCode;
     /**
      * The Version
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class UniversalRecordCancelReq extends BaseReq
      * - use: required
      * @var int
      */
-    protected int $Version;
+    public int $Version;
     /**
      * The FileFinishingInfo
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class UniversalRecordCancelReq extends BaseReq
      * - ref: common:FileFinishingInfo
      * @var \Travelport\UniversalRecord\StructType\FileFinishingInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FileFinishingInfo $FileFinishingInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\FileFinishingInfo $FileFinishingInfo = null;
     /**
      * Constructor method for UniversalRecordCancelReq
      * @uses UniversalRecordCancelReq::setUniversalRecordLocatorCode()
@@ -74,18 +73,6 @@ class UniversalRecordCancelReq extends BaseReq
      */
     public function setUniversalRecordLocatorCode(string $universalRecordLocatorCode): self
     {
-        // validation for constraint: string
-        if (!is_null($universalRecordLocatorCode) && !is_string($universalRecordLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($universalRecordLocatorCode, true), gettype($universalRecordLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($universalRecordLocatorCode) && mb_strlen((string) $universalRecordLocatorCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $universalRecordLocatorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($universalRecordLocatorCode) && mb_strlen((string) $universalRecordLocatorCode) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $universalRecordLocatorCode)), __LINE__);
-        }
         $this->UniversalRecordLocatorCode = $universalRecordLocatorCode;
         
         return $this;
@@ -105,10 +92,6 @@ class UniversalRecordCancelReq extends BaseReq
      */
     public function setVersion(int $version): self
     {
-        // validation for constraint: int
-        if (!is_null($version) && !(is_int($version) || ctype_digit($version))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($version, true), gettype($version)), __LINE__);
-        }
         $this->Version = $version;
         
         return $this;

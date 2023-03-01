@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class RequestedHotelDetails extends TypeHotelDetails
      * - ref: HotelType
      * @var \Travelport\Hotel\StructType\HotelType|null
      */
-    protected ?\Travelport\Hotel\StructType\HotelType $HotelType = null;
+    public ?\Travelport\Hotel\StructType\HotelType $HotelType = null;
     /**
      * Constructor method for RequestedHotelDetails
      * @uses RequestedHotelDetails::setHotelType()

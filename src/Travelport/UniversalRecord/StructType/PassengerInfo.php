@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class PassengerInfo extends AbstractStructBase
      * - ref: Name
      * @var \Travelport\UniversalRecord\StructType\Name|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Name $Name = null;
+    public ?\Travelport\UniversalRecord\StructType\Name $Name = null;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class PassengerInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingTravelerRef = null;
+    public ?string $BookingTravelerRef = null;
     /**
      * The PassengerType
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class PassengerInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PassengerType = null;
+    public ?string $PassengerType = null;
     /**
      * Constructor method for PassengerInfo
      * @uses PassengerInfo::setName()
@@ -93,10 +92,6 @@ class PassengerInfo extends AbstractStructBase
      */
     public function setBookingTravelerRef(?string $bookingTravelerRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;
@@ -116,18 +111,6 @@ class PassengerInfo extends AbstractStructBase
      */
     public function setPassengerType(?string $passengerType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($passengerType) && !is_string($passengerType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passengerType, true), gettype($passengerType)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($passengerType) && mb_strlen((string) $passengerType) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $passengerType)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($passengerType) && mb_strlen((string) $passengerType) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $passengerType)), __LINE__);
-        }
         $this->PassengerType = $passengerType;
         
         return $this;

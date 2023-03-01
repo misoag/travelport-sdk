@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class FlexExploreModifiers extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class FlexExploreModifiers extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string[]
      */
-    protected ?array $Destination = null;
+    public ?array $Destination = null;
     /**
      * The Radius
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class FlexExploreModifiers extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Radius = null;
+    public ?int $Radius = null;
     /**
      * The GroupName
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class FlexExploreModifiers extends AbstractStructBase
      * - maxLength: 15
      * @var string|null
      */
-    protected ?string $GroupName = null;
+    public ?string $GroupName = null;
     /**
      * Constructor method for FlexExploreModifiers
      * @uses FlexExploreModifiers::setType()
@@ -85,10 +84,6 @@ class FlexExploreModifiers extends AbstractStructBase
      */
     public function setType(string $type): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -102,76 +97,12 @@ class FlexExploreModifiers extends AbstractStructBase
         return $this->Destination;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setDestination method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setDestination method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateDestinationForArrayConstraintFromSetDestination(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $flexExploreModifiersDestinationItem) {
-            // validation for constraint: itemType
-            if (!is_string($flexExploreModifiersDestinationItem)) {
-                $invalidValues[] = is_object($flexExploreModifiersDestinationItem) ? get_class($flexExploreModifiersDestinationItem) : sprintf('%s(%s)', gettype($flexExploreModifiersDestinationItem), var_export($flexExploreModifiersDestinationItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Destination property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
-     * This method is responsible for validating the value(s) passed to the setDestination method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setDestination method
-     * This has to validate that the items contained by the array match the length constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateDestinationForLengthConstraintFromSetDestination(?array $values = null): string
-    {
-        $message = '';
-        $invalidValues = [];
-        foreach (($values ?? []) as $flexExploreModifiersDestinationItem) {
-            // validation for constraint: length(3)
-            if (mb_strlen((string) $flexExploreModifiersDestinationItem) !== 3) {
-                $invalidValues[] = var_export($flexExploreModifiersDestinationItem, true);
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be equal to 3', implode(', ', $invalidValues));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Destination value
-     * @throws InvalidArgumentException
      * @param string[] $destination
      * @return \Travelport\UniversalRecord\StructType\FlexExploreModifiers
      */
     public function setDestination(?array $destination = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($destinationArrayErrorMessage = self::validateDestinationForArrayConstraintFromSetDestination($destination))) {
-            throw new InvalidArgumentException($destinationArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: length(3)
-        if ('' !== ($destinationLengthErrorMessage = self::validateDestinationForLengthConstraintFromSetDestination($destination))) {
-            throw new InvalidArgumentException($destinationLengthErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(59)
-        if (is_array($destination) && count($destination) > 59) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 59', count($destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -184,18 +115,6 @@ class FlexExploreModifiers extends AbstractStructBase
      */
     public function addToDestination(string $item): self
     {
-        // validation for constraint: itemType
-        if (!is_string($item)) {
-            throw new InvalidArgumentException(sprintf('The Destination property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (mb_strlen((string) $item) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $item)), __LINE__);
-        }
-        // validation for constraint: maxOccurs(59)
-        if (is_array($this->Destination) && count($this->Destination) >= 59) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 59', count($this->Destination)), __LINE__);
-        }
         $this->Destination[] = $item;
         
         return $this;
@@ -215,10 +134,6 @@ class FlexExploreModifiers extends AbstractStructBase
      */
     public function setRadius(?int $radius = null): self
     {
-        // validation for constraint: int
-        if (!is_null($radius) && !(is_int($radius) || ctype_digit($radius))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($radius, true), gettype($radius)), __LINE__);
-        }
         $this->Radius = $radius;
         
         return $this;
@@ -238,14 +153,6 @@ class FlexExploreModifiers extends AbstractStructBase
      */
     public function setGroupName(?string $groupName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($groupName) && !is_string($groupName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($groupName, true), gettype($groupName)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($groupName) && mb_strlen((string) $groupName) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $groupName)), __LINE__);
-        }
         $this->GroupName = $groupName;
         
         return $this;

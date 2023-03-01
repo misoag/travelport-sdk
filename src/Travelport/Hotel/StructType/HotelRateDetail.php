@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $RatePlanType;
+    public string $RatePlanType;
     /**
      * The PolicyCodesList
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class HotelRateDetail extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\TypePolicyCodesList|null
      */
-    protected ?\Travelport\Hotel\StructType\TypePolicyCodesList $PolicyCodesList = null;
+    public ?\Travelport\Hotel\StructType\TypePolicyCodesList $PolicyCodesList = null;
     /**
      * The RoomRateDescription
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class HotelRateDetail extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\TypeHotelRateDescription[]
      */
-    protected ?array $RoomRateDescription = null;
+    public ?array $RoomRateDescription = null;
     /**
      * The HotelRateByDate
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class HotelRateDetail extends AbstractStructBase
      * - ref: HotelRateByDate
      * @var \Travelport\Hotel\StructType\HotelRateByDate[]
      */
-    protected ?array $HotelRateByDate = null;
+    public ?array $HotelRateByDate = null;
     /**
      * The CorporateDiscountID
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class HotelRateDetail extends AbstractStructBase
      * - ref: common:CorporateDiscountID
      * @var \Travelport\Hotel\StructType\CorporateDiscountID[]
      */
-    protected ?array $CorporateDiscountID = null;
+    public ?array $CorporateDiscountID = null;
     /**
      * The AcceptedPayment
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class HotelRateDetail extends AbstractStructBase
      * - ref: AcceptedPayment
      * @var \Travelport\Hotel\StructType\AcceptedPayment[]
      */
-    protected ?array $AcceptedPayment = null;
+    public ?array $AcceptedPayment = null;
     /**
      * The Commission
      * Meta information extracted from the WSDL
@@ -77,7 +76,7 @@ class HotelRateDetail extends AbstractStructBase
      * - ref: Commission
      * @var \Travelport\Hotel\StructType\Commission|null
      */
-    protected ?\Travelport\Hotel\StructType\Commission $Commission = null;
+    public ?\Travelport\Hotel\StructType\Commission $Commission = null;
     /**
      * The RateMatchIndicator
      * Meta information extracted from the WSDL
@@ -86,7 +85,7 @@ class HotelRateDetail extends AbstractStructBase
      * - ref: RateMatchIndicator
      * @var \Travelport\Hotel\StructType\RateMatchIndicator[]
      */
-    protected ?array $RateMatchIndicator = null;
+    public ?array $RateMatchIndicator = null;
     /**
      * The TaxDetails
      * Meta information extracted from the WSDL
@@ -94,7 +93,7 @@ class HotelRateDetail extends AbstractStructBase
      * - ref: TaxDetails
      * @var \Travelport\Hotel\StructType\TaxDetails|null
      */
-    protected ?\Travelport\Hotel\StructType\TaxDetails $TaxDetails = null;
+    public ?\Travelport\Hotel\StructType\TaxDetails $TaxDetails = null;
     /**
      * The CancelInfo
      * Meta information extracted from the WSDL
@@ -102,7 +101,7 @@ class HotelRateDetail extends AbstractStructBase
      * - ref: CancelInfo
      * @var \Travelport\Hotel\StructType\CancelInfo|null
      */
-    protected ?\Travelport\Hotel\StructType\CancelInfo $CancelInfo = null;
+    public ?\Travelport\Hotel\StructType\CancelInfo $CancelInfo = null;
     /**
      * The GuaranteeInfo
      * Meta information extracted from the WSDL
@@ -110,7 +109,7 @@ class HotelRateDetail extends AbstractStructBase
      * - ref: GuaranteeInfo
      * @var \Travelport\Hotel\StructType\GuaranteeInfo|null
      */
-    protected ?\Travelport\Hotel\StructType\GuaranteeInfo $GuaranteeInfo = null;
+    public ?\Travelport\Hotel\StructType\GuaranteeInfo $GuaranteeInfo = null;
     /**
      * The SupplementalRateInfo
      * Meta information extracted from the WSDL
@@ -118,28 +117,28 @@ class HotelRateDetail extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $SupplementalRateInfo = null;
+    public ?string $SupplementalRateInfo = null;
     /**
      * The RoomCapacity
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\RoomCapacity|null
      */
-    protected ?\Travelport\Hotel\StructType\RoomCapacity $RoomCapacity = null;
+    public ?\Travelport\Hotel\StructType\RoomCapacity $RoomCapacity = null;
     /**
      * The ExtraCharges
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\ExtraCharges|null
      */
-    protected ?\Travelport\Hotel\StructType\ExtraCharges $ExtraCharges = null;
+    public ?\Travelport\Hotel\StructType\ExtraCharges $ExtraCharges = null;
     /**
      * The Inclusions
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\Inclusions|null
      */
-    protected ?\Travelport\Hotel\StructType\Inclusions $Inclusions = null;
+    public ?\Travelport\Hotel\StructType\Inclusions $Inclusions = null;
     /**
      * The ApproximateBase
      * Meta information extracted from the WSDL
@@ -148,7 +147,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ApproximateBase = null;
+    public ?string $ApproximateBase = null;
     /**
      * The ApproximateTax
      * Meta information extracted from the WSDL
@@ -157,7 +156,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ApproximateTax = null;
+    public ?string $ApproximateTax = null;
     /**
      * The ApproximateTotal
      * Meta information extracted from the WSDL
@@ -166,7 +165,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ApproximateTotal = null;
+    public ?string $ApproximateTotal = null;
     /**
      * The ApproximateSurcharge
      * Meta information extracted from the WSDL
@@ -175,14 +174,14 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ApproximateSurcharge = null;
+    public ?string $ApproximateSurcharge = null;
     /**
      * The RateGuaranteed
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $RateGuaranteed = null;
+    public ?bool $RateGuaranteed = null;
     /**
      * The ApproximateRateGuaranteed
      * Meta information extracted from the WSDL
@@ -190,7 +189,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ApproximateRateGuaranteed = null;
+    public ?bool $ApproximateRateGuaranteed = null;
     /**
      * The RateCategory
      * Meta information extracted from the WSDL
@@ -200,7 +199,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $RateCategory = null;
+    public ?int $RateCategory = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -209,7 +208,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The RateSupplier
      * Meta information extracted from the WSDL
@@ -219,7 +218,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RateSupplier = null;
+    public ?string $RateSupplier = null;
     /**
      * The BookableQuantity
      * Meta information extracted from the WSDL
@@ -227,7 +226,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $BookableQuantity = null;
+    public ?int $BookableQuantity = null;
     /**
      * The RateOfferId
      * Meta information extracted from the WSDL
@@ -236,7 +235,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RateOfferId = null;
+    public ?string $RateOfferId = null;
     /**
      * The InPolicy
      * Meta information extracted from the WSDL
@@ -244,7 +243,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $InPolicy = null;
+    public ?bool $InPolicy = null;
     /**
      * The RateChangeIndicator
      * Meta information extracted from the WSDL
@@ -252,7 +251,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RateChangeIndicator = null;
+    public ?string $RateChangeIndicator = null;
     /**
      * The ExtraFeesIncluded
      * Meta information extracted from the WSDL
@@ -260,7 +259,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ExtraFeesIncluded = null;
+    public ?string $ExtraFeesIncluded = null;
     /**
      * The Base
      * Meta information extracted from the WSDL
@@ -270,7 +269,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Base = null;
+    public ?string $Base = null;
     /**
      * The Tax
      * Meta information extracted from the WSDL
@@ -280,7 +279,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Tax = null;
+    public ?string $Tax = null;
     /**
      * The Total
      * Meta information extracted from the WSDL
@@ -290,7 +289,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Total = null;
+    public ?string $Total = null;
     /**
      * The Surcharge
      * Meta information extracted from the WSDL
@@ -300,7 +299,7 @@ class HotelRateDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Surcharge = null;
+    public ?string $Surcharge = null;
     /**
      * Constructor method for HotelRateDetail
      * @uses HotelRateDetail::setRatePlanType()
@@ -422,10 +421,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setRatePlanType(string $ratePlanType): self
     {
-        // validation for constraint: string
-        if (!is_null($ratePlanType) && !is_string($ratePlanType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ratePlanType, true), gettype($ratePlanType)), __LINE__);
-        }
         $this->RatePlanType = $ratePlanType;
         
         return $this;
@@ -458,48 +453,12 @@ class HotelRateDetail extends AbstractStructBase
         return $this->RoomRateDescription;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRoomRateDescription method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRoomRateDescription method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateRoomRateDescriptionForArrayConstraintFromSetRoomRateDescription(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelRateDetailRoomRateDescriptionItem) {
-            // validation for constraint: itemType
-            if (!$hotelRateDetailRoomRateDescriptionItem instanceof \Travelport\Hotel\StructType\TypeHotelRateDescription) {
-                $invalidValues[] = is_object($hotelRateDetailRoomRateDescriptionItem) ? get_class($hotelRateDetailRoomRateDescriptionItem) : sprintf('%s(%s)', gettype($hotelRateDetailRoomRateDescriptionItem), var_export($hotelRateDetailRoomRateDescriptionItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The RoomRateDescription property can only contain items of type \Travelport\Hotel\StructType\TypeHotelRateDescription, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set RoomRateDescription value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\TypeHotelRateDescription[] $roomRateDescription
      * @return \Travelport\Hotel\StructType\HotelRateDetail
      */
     public function setRoomRateDescription(?array $roomRateDescription = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($roomRateDescriptionArrayErrorMessage = self::validateRoomRateDescriptionForArrayConstraintFromSetRoomRateDescription($roomRateDescription))) {
-            throw new InvalidArgumentException($roomRateDescriptionArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($roomRateDescription) && count($roomRateDescription) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($roomRateDescription)), __LINE__);
-        }
         $this->RoomRateDescription = $roomRateDescription;
         
         return $this;
@@ -512,14 +471,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function addToRoomRateDescription(\Travelport\Hotel\StructType\TypeHotelRateDescription $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\TypeHotelRateDescription) {
-            throw new InvalidArgumentException(sprintf('The RoomRateDescription property can only contain items of type \Travelport\Hotel\StructType\TypeHotelRateDescription, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->RoomRateDescription) && count($this->RoomRateDescription) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->RoomRateDescription)), __LINE__);
-        }
         $this->RoomRateDescription[] = $item;
         
         return $this;
@@ -533,48 +484,12 @@ class HotelRateDetail extends AbstractStructBase
         return $this->HotelRateByDate;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHotelRateByDate method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHotelRateByDate method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateHotelRateByDateForArrayConstraintFromSetHotelRateByDate(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelRateDetailHotelRateByDateItem) {
-            // validation for constraint: itemType
-            if (!$hotelRateDetailHotelRateByDateItem instanceof \Travelport\Hotel\StructType\HotelRateByDate) {
-                $invalidValues[] = is_object($hotelRateDetailHotelRateByDateItem) ? get_class($hotelRateDetailHotelRateByDateItem) : sprintf('%s(%s)', gettype($hotelRateDetailHotelRateByDateItem), var_export($hotelRateDetailHotelRateByDateItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The HotelRateByDate property can only contain items of type \Travelport\Hotel\StructType\HotelRateByDate, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set HotelRateByDate value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\HotelRateByDate[] $hotelRateByDate
      * @return \Travelport\Hotel\StructType\HotelRateDetail
      */
     public function setHotelRateByDate(?array $hotelRateByDate = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($hotelRateByDateArrayErrorMessage = self::validateHotelRateByDateForArrayConstraintFromSetHotelRateByDate($hotelRateByDate))) {
-            throw new InvalidArgumentException($hotelRateByDateArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($hotelRateByDate) && count($hotelRateByDate) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($hotelRateByDate)), __LINE__);
-        }
         $this->HotelRateByDate = $hotelRateByDate;
         
         return $this;
@@ -587,14 +502,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function addToHotelRateByDate(\Travelport\Hotel\StructType\HotelRateByDate $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\HotelRateByDate) {
-            throw new InvalidArgumentException(sprintf('The HotelRateByDate property can only contain items of type \Travelport\Hotel\StructType\HotelRateByDate, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->HotelRateByDate) && count($this->HotelRateByDate) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->HotelRateByDate)), __LINE__);
-        }
         $this->HotelRateByDate[] = $item;
         
         return $this;
@@ -608,48 +515,12 @@ class HotelRateDetail extends AbstractStructBase
         return $this->CorporateDiscountID;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setCorporateDiscountID method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setCorporateDiscountID method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateCorporateDiscountIDForArrayConstraintFromSetCorporateDiscountID(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelRateDetailCorporateDiscountIDItem) {
-            // validation for constraint: itemType
-            if (!$hotelRateDetailCorporateDiscountIDItem instanceof \Travelport\Hotel\StructType\CorporateDiscountID) {
-                $invalidValues[] = is_object($hotelRateDetailCorporateDiscountIDItem) ? get_class($hotelRateDetailCorporateDiscountIDItem) : sprintf('%s(%s)', gettype($hotelRateDetailCorporateDiscountIDItem), var_export($hotelRateDetailCorporateDiscountIDItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The CorporateDiscountID property can only contain items of type \Travelport\Hotel\StructType\CorporateDiscountID, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set CorporateDiscountID value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\CorporateDiscountID[] $corporateDiscountID
      * @return \Travelport\Hotel\StructType\HotelRateDetail
      */
     public function setCorporateDiscountID(?array $corporateDiscountID = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($corporateDiscountIDArrayErrorMessage = self::validateCorporateDiscountIDForArrayConstraintFromSetCorporateDiscountID($corporateDiscountID))) {
-            throw new InvalidArgumentException($corporateDiscountIDArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($corporateDiscountID) && count($corporateDiscountID) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($corporateDiscountID)), __LINE__);
-        }
         $this->CorporateDiscountID = $corporateDiscountID;
         
         return $this;
@@ -662,14 +533,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function addToCorporateDiscountID(\Travelport\Hotel\StructType\CorporateDiscountID $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\CorporateDiscountID) {
-            throw new InvalidArgumentException(sprintf('The CorporateDiscountID property can only contain items of type \Travelport\Hotel\StructType\CorporateDiscountID, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->CorporateDiscountID) && count($this->CorporateDiscountID) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->CorporateDiscountID)), __LINE__);
-        }
         $this->CorporateDiscountID[] = $item;
         
         return $this;
@@ -683,48 +546,12 @@ class HotelRateDetail extends AbstractStructBase
         return $this->AcceptedPayment;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAcceptedPayment method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAcceptedPayment method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAcceptedPaymentForArrayConstraintFromSetAcceptedPayment(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelRateDetailAcceptedPaymentItem) {
-            // validation for constraint: itemType
-            if (!$hotelRateDetailAcceptedPaymentItem instanceof \Travelport\Hotel\StructType\AcceptedPayment) {
-                $invalidValues[] = is_object($hotelRateDetailAcceptedPaymentItem) ? get_class($hotelRateDetailAcceptedPaymentItem) : sprintf('%s(%s)', gettype($hotelRateDetailAcceptedPaymentItem), var_export($hotelRateDetailAcceptedPaymentItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AcceptedPayment property can only contain items of type \Travelport\Hotel\StructType\AcceptedPayment, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AcceptedPayment value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\AcceptedPayment[] $acceptedPayment
      * @return \Travelport\Hotel\StructType\HotelRateDetail
      */
     public function setAcceptedPayment(?array $acceptedPayment = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($acceptedPaymentArrayErrorMessage = self::validateAcceptedPaymentForArrayConstraintFromSetAcceptedPayment($acceptedPayment))) {
-            throw new InvalidArgumentException($acceptedPaymentArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($acceptedPayment) && count($acceptedPayment) > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 99', count($acceptedPayment)), __LINE__);
-        }
         $this->AcceptedPayment = $acceptedPayment;
         
         return $this;
@@ -737,14 +564,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function addToAcceptedPayment(\Travelport\Hotel\StructType\AcceptedPayment $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\AcceptedPayment) {
-            throw new InvalidArgumentException(sprintf('The AcceptedPayment property can only contain items of type \Travelport\Hotel\StructType\AcceptedPayment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($this->AcceptedPayment) && count($this->AcceptedPayment) >= 99) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 99', count($this->AcceptedPayment)), __LINE__);
-        }
         $this->AcceptedPayment[] = $item;
         
         return $this;
@@ -777,48 +596,12 @@ class HotelRateDetail extends AbstractStructBase
         return $this->RateMatchIndicator;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRateMatchIndicator method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRateMatchIndicator method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateRateMatchIndicatorForArrayConstraintFromSetRateMatchIndicator(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelRateDetailRateMatchIndicatorItem) {
-            // validation for constraint: itemType
-            if (!$hotelRateDetailRateMatchIndicatorItem instanceof \Travelport\Hotel\StructType\RateMatchIndicator) {
-                $invalidValues[] = is_object($hotelRateDetailRateMatchIndicatorItem) ? get_class($hotelRateDetailRateMatchIndicatorItem) : sprintf('%s(%s)', gettype($hotelRateDetailRateMatchIndicatorItem), var_export($hotelRateDetailRateMatchIndicatorItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The RateMatchIndicator property can only contain items of type \Travelport\Hotel\StructType\RateMatchIndicator, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set RateMatchIndicator value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\RateMatchIndicator[] $rateMatchIndicator
      * @return \Travelport\Hotel\StructType\HotelRateDetail
      */
     public function setRateMatchIndicator(?array $rateMatchIndicator = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($rateMatchIndicatorArrayErrorMessage = self::validateRateMatchIndicatorForArrayConstraintFromSetRateMatchIndicator($rateMatchIndicator))) {
-            throw new InvalidArgumentException($rateMatchIndicatorArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($rateMatchIndicator) && count($rateMatchIndicator) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($rateMatchIndicator)), __LINE__);
-        }
         $this->RateMatchIndicator = $rateMatchIndicator;
         
         return $this;
@@ -831,14 +614,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function addToRateMatchIndicator(\Travelport\Hotel\StructType\RateMatchIndicator $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\RateMatchIndicator) {
-            throw new InvalidArgumentException(sprintf('The RateMatchIndicator property can only contain items of type \Travelport\Hotel\StructType\RateMatchIndicator, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->RateMatchIndicator) && count($this->RateMatchIndicator) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->RateMatchIndicator)), __LINE__);
-        }
         $this->RateMatchIndicator[] = $item;
         
         return $this;
@@ -915,10 +690,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setSupplementalRateInfo(?string $supplementalRateInfo = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplementalRateInfo) && !is_string($supplementalRateInfo)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplementalRateInfo, true), gettype($supplementalRateInfo)), __LINE__);
-        }
         $this->SupplementalRateInfo = $supplementalRateInfo;
         
         return $this;
@@ -995,10 +766,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setApproximateBase(?string $approximateBase = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateBase) && !is_string($approximateBase)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateBase, true), gettype($approximateBase)), __LINE__);
-        }
         $this->ApproximateBase = $approximateBase;
         
         return $this;
@@ -1018,10 +785,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setApproximateTax(?string $approximateTax = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateTax) && !is_string($approximateTax)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateTax, true), gettype($approximateTax)), __LINE__);
-        }
         $this->ApproximateTax = $approximateTax;
         
         return $this;
@@ -1041,10 +804,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setApproximateTotal(?string $approximateTotal = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateTotal) && !is_string($approximateTotal)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateTotal, true), gettype($approximateTotal)), __LINE__);
-        }
         $this->ApproximateTotal = $approximateTotal;
         
         return $this;
@@ -1064,10 +823,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setApproximateSurcharge(?string $approximateSurcharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateSurcharge) && !is_string($approximateSurcharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateSurcharge, true), gettype($approximateSurcharge)), __LINE__);
-        }
         $this->ApproximateSurcharge = $approximateSurcharge;
         
         return $this;
@@ -1087,10 +842,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setRateGuaranteed(?bool $rateGuaranteed = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($rateGuaranteed) && !is_bool($rateGuaranteed)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($rateGuaranteed, true), gettype($rateGuaranteed)), __LINE__);
-        }
         $this->RateGuaranteed = $rateGuaranteed;
         
         return $this;
@@ -1110,10 +861,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setApproximateRateGuaranteed(?bool $approximateRateGuaranteed = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($approximateRateGuaranteed) && !is_bool($approximateRateGuaranteed)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($approximateRateGuaranteed, true), gettype($approximateRateGuaranteed)), __LINE__);
-        }
         $this->ApproximateRateGuaranteed = $approximateRateGuaranteed;
         
         return $this;
@@ -1133,10 +880,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setRateCategory(?int $rateCategory = null): self
     {
-        // validation for constraint: int
-        if (!is_null($rateCategory) && !(is_int($rateCategory) || ctype_digit($rateCategory))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($rateCategory, true), gettype($rateCategory)), __LINE__);
-        }
         $this->RateCategory = $rateCategory;
         
         return $this;
@@ -1156,10 +899,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -1179,14 +918,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setRateSupplier(?string $rateSupplier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rateSupplier) && !is_string($rateSupplier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rateSupplier, true), gettype($rateSupplier)), __LINE__);
-        }
-        // validation for constraint: maxLength(64)
-        if (!is_null($rateSupplier) && mb_strlen((string) $rateSupplier) > 64) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 64', mb_strlen((string) $rateSupplier)), __LINE__);
-        }
         $this->RateSupplier = $rateSupplier;
         
         return $this;
@@ -1206,10 +937,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setBookableQuantity(?int $bookableQuantity = null): self
     {
-        // validation for constraint: int
-        if (!is_null($bookableQuantity) && !(is_int($bookableQuantity) || ctype_digit($bookableQuantity))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($bookableQuantity, true), gettype($bookableQuantity)), __LINE__);
-        }
         $this->BookableQuantity = $bookableQuantity;
         
         return $this;
@@ -1229,10 +956,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setRateOfferId(?string $rateOfferId = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rateOfferId) && !is_string($rateOfferId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rateOfferId, true), gettype($rateOfferId)), __LINE__);
-        }
         $this->RateOfferId = $rateOfferId;
         
         return $this;
@@ -1252,10 +975,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setInPolicy(?bool $inPolicy = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($inPolicy) && !is_bool($inPolicy)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($inPolicy, true), gettype($inPolicy)), __LINE__);
-        }
         $this->InPolicy = $inPolicy;
         
         return $this;
@@ -1270,18 +989,11 @@ class HotelRateDetail extends AbstractStructBase
     }
     /**
      * Set RateChangeIndicator value
-     * @uses \Travelport\Hotel\EnumType\TypeTrinary::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeTrinary::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $rateChangeIndicator
      * @return \Travelport\Hotel\StructType\HotelRateDetail
      */
     public function setRateChangeIndicator(?string $rateChangeIndicator = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeTrinary::valueIsValid($rateChangeIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeTrinary', is_array($rateChangeIndicator) ? implode(', ', $rateChangeIndicator) : var_export($rateChangeIndicator, true), implode(', ', \Travelport\Hotel\EnumType\TypeTrinary::getValidValues())), __LINE__);
-        }
         $this->RateChangeIndicator = $rateChangeIndicator;
         
         return $this;
@@ -1296,18 +1008,11 @@ class HotelRateDetail extends AbstractStructBase
     }
     /**
      * Set ExtraFeesIncluded value
-     * @uses \Travelport\Hotel\EnumType\TypeTrinary::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeTrinary::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $extraFeesIncluded
      * @return \Travelport\Hotel\StructType\HotelRateDetail
      */
     public function setExtraFeesIncluded(?string $extraFeesIncluded = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeTrinary::valueIsValid($extraFeesIncluded)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeTrinary', is_array($extraFeesIncluded) ? implode(', ', $extraFeesIncluded) : var_export($extraFeesIncluded, true), implode(', ', \Travelport\Hotel\EnumType\TypeTrinary::getValidValues())), __LINE__);
-        }
         $this->ExtraFeesIncluded = $extraFeesIncluded;
         
         return $this;
@@ -1327,10 +1032,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setBase(?string $base = null): self
     {
-        // validation for constraint: string
-        if (!is_null($base) && !is_string($base)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($base, true), gettype($base)), __LINE__);
-        }
         $this->Base = $base;
         
         return $this;
@@ -1350,10 +1051,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setTax(?string $tax = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tax) && !is_string($tax)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tax, true), gettype($tax)), __LINE__);
-        }
         $this->Tax = $tax;
         
         return $this;
@@ -1373,10 +1070,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setTotal(?string $total = null): self
     {
-        // validation for constraint: string
-        if (!is_null($total) && !is_string($total)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($total, true), gettype($total)), __LINE__);
-        }
         $this->Total = $total;
         
         return $this;
@@ -1396,10 +1089,6 @@ class HotelRateDetail extends AbstractStructBase
      */
     public function setSurcharge(?string $surcharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($surcharge) && !is_string($surcharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($surcharge, true), gettype($surcharge)), __LINE__);
-        }
         $this->Surcharge = $surcharge;
         
         return $this;

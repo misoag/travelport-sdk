@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class Deposit extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The DueDate
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class Deposit extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DueDate = null;
+    public ?string $DueDate = null;
     /**
      * The ReceivedDate
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class Deposit extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ReceivedDate = null;
+    public ?string $ReceivedDate = null;
     /**
      * Constructor method for Deposit
      * @uses Deposit::setAmount()
@@ -73,10 +72,6 @@ class Deposit extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -96,10 +91,6 @@ class Deposit extends AbstractStructBase
      */
     public function setDueDate(?string $dueDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($dueDate) && !is_string($dueDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dueDate, true), gettype($dueDate)), __LINE__);
-        }
         $this->DueDate = $dueDate;
         
         return $this;
@@ -119,10 +110,6 @@ class Deposit extends AbstractStructBase
      */
     public function setReceivedDate(?string $receivedDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($receivedDate) && !is_string($receivedDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($receivedDate, true), gettype($receivedDate)), __LINE__);
-        }
         $this->ReceivedDate = $receivedDate;
         
         return $this;

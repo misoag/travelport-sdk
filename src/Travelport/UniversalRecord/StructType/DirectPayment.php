@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class DirectPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Text = null;
+    public ?string $Text = null;
     /**
      * Constructor method for DirectPayment
      * @uses DirectPayment::setText()
@@ -47,10 +46,6 @@ class DirectPayment extends AbstractStructBase
      */
     public function setText(?string $text = null): self
     {
-        // validation for constraint: string
-        if (!is_null($text) && !is_string($text)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($text, true), gettype($text)), __LINE__);
-        }
         $this->Text = $text;
         
         return $this;

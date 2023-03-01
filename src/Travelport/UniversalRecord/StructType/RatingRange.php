@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class RatingRange extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MinimumRating = null;
+    public ?int $MinimumRating = null;
     /**
      * The MaximumRating
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class RatingRange extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MaximumRating = null;
+    public ?int $MaximumRating = null;
     /**
      * Constructor method for RatingRange
      * @uses RatingRange::setMinimumRating()
@@ -61,10 +60,6 @@ class RatingRange extends AbstractStructBase
      */
     public function setMinimumRating(?int $minimumRating = null): self
     {
-        // validation for constraint: int
-        if (!is_null($minimumRating) && !(is_int($minimumRating) || ctype_digit($minimumRating))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($minimumRating, true), gettype($minimumRating)), __LINE__);
-        }
         $this->MinimumRating = $minimumRating;
         
         return $this;
@@ -84,10 +79,6 @@ class RatingRange extends AbstractStructBase
      */
     public function setMaximumRating(?int $maximumRating = null): self
     {
-        // validation for constraint: int
-        if (!is_null($maximumRating) && !(is_int($maximumRating) || ctype_digit($maximumRating))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maximumRating, true), gettype($maximumRating)), __LINE__);
-        }
         $this->MaximumRating = $maximumRating;
         
         return $this;

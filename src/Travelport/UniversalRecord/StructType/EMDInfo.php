@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class EMDInfo extends AbstractStructBase
      * - ref: EMDTravelerInfo
      * @var \Travelport\UniversalRecord\StructType\EMDTravelerInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\EMDTravelerInfo $EMDTravelerInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\EMDTravelerInfo $EMDTravelerInfo = null;
     /**
      * The SupplierLocator
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class EMDInfo extends AbstractStructBase
      * - ref: common:SupplierLocator
      * @var \Travelport\UniversalRecord\StructType\SupplierLocator[]
      */
-    protected ?array $SupplierLocator = null;
+    public ?array $SupplierLocator = null;
     /**
      * The ElectronicMiscDocument
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class EMDInfo extends AbstractStructBase
      * - ref: ElectronicMiscDocument
      * @var \Travelport\UniversalRecord\StructType\ElectronicMiscDocument[]
      */
-    protected ?array $ElectronicMiscDocument = null;
+    public ?array $ElectronicMiscDocument = null;
     /**
      * The Payment
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class EMDInfo extends AbstractStructBase
      * - ref: common:Payment
      * @var \Travelport\UniversalRecord\StructType\Payment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Payment $Payment = null;
+    public ?\Travelport\UniversalRecord\StructType\Payment $Payment = null;
     /**
      * The FormOfPayment
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class EMDInfo extends AbstractStructBase
      * - ref: common:FormOfPayment
      * @var \Travelport\UniversalRecord\StructType\FormOfPayment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FormOfPayment $FormOfPayment = null;
+    public ?\Travelport\UniversalRecord\StructType\FormOfPayment $FormOfPayment = null;
     /**
      * The EMDPricingInfo
      * Meta information extracted from the WSDL
@@ -65,7 +64,7 @@ class EMDInfo extends AbstractStructBase
      * - ref: EMDPricingInfo
      * @var \Travelport\UniversalRecord\StructType\EMDPricingInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\EMDPricingInfo $EMDPricingInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\EMDPricingInfo $EMDPricingInfo = null;
     /**
      * The EMDEndorsement
      * Meta information extracted from the WSDL
@@ -78,7 +77,7 @@ class EMDInfo extends AbstractStructBase
      * - ref: EMDEndorsement
      * @var string[]
      */
-    protected ?array $EMDEndorsement = null;
+    public ?array $EMDEndorsement = null;
     /**
      * The FareCalc
      * Meta information extracted from the WSDL
@@ -86,7 +85,7 @@ class EMDInfo extends AbstractStructBase
      * - ref: FareCalc
      * @var string|null
      */
-    protected ?string $FareCalc = null;
+    public ?string $FareCalc = null;
     /**
      * The EMDCommission
      * Meta information extracted from the WSDL
@@ -94,7 +93,7 @@ class EMDInfo extends AbstractStructBase
      * - ref: EMDCommission
      * @var \Travelport\UniversalRecord\StructType\EMDCommission|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\EMDCommission $EMDCommission = null;
+    public ?\Travelport\UniversalRecord\StructType\EMDCommission $EMDCommission = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -103,7 +102,7 @@ class EMDInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -113,7 +112,7 @@ class EMDInfo extends AbstractStructBase
      * - minLength: 2
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The ProviderLocatorCode
      * Meta information extracted from the WSDL
@@ -122,7 +121,7 @@ class EMDInfo extends AbstractStructBase
      * - maxLength: 15
      * @var string|null
      */
-    protected ?string $ProviderLocatorCode = null;
+    public ?string $ProviderLocatorCode = null;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
@@ -132,17 +131,17 @@ class EMDInfo extends AbstractStructBase
      * - minLength: 1
      * @var string|null
      */
-    protected ?string $SupplierCode = null;
+    public ?string $SupplierCode = null;
     /**
      * The ElStat
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for EMDInfo
      * @uses EMDInfo::setEMDTravelerInfo()
@@ -223,48 +222,12 @@ class EMDInfo extends AbstractStructBase
         return $this->SupplierLocator;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setSupplierLocator method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setSupplierLocator method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateSupplierLocatorForArrayConstraintFromSetSupplierLocator(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $eMDInfoSupplierLocatorItem) {
-            // validation for constraint: itemType
-            if (!$eMDInfoSupplierLocatorItem instanceof \Travelport\UniversalRecord\StructType\SupplierLocator) {
-                $invalidValues[] = is_object($eMDInfoSupplierLocatorItem) ? get_class($eMDInfoSupplierLocatorItem) : sprintf('%s(%s)', gettype($eMDInfoSupplierLocatorItem), var_export($eMDInfoSupplierLocatorItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The SupplierLocator property can only contain items of type \Travelport\UniversalRecord\StructType\SupplierLocator, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set SupplierLocator value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\SupplierLocator[] $supplierLocator
      * @return \Travelport\UniversalRecord\StructType\EMDInfo
      */
     public function setSupplierLocator(?array $supplierLocator = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($supplierLocatorArrayErrorMessage = self::validateSupplierLocatorForArrayConstraintFromSetSupplierLocator($supplierLocator))) {
-            throw new InvalidArgumentException($supplierLocatorArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($supplierLocator) && count($supplierLocator) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($supplierLocator)), __LINE__);
-        }
         $this->SupplierLocator = $supplierLocator;
         
         return $this;
@@ -277,14 +240,6 @@ class EMDInfo extends AbstractStructBase
      */
     public function addToSupplierLocator(\Travelport\UniversalRecord\StructType\SupplierLocator $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\SupplierLocator) {
-            throw new InvalidArgumentException(sprintf('The SupplierLocator property can only contain items of type \Travelport\UniversalRecord\StructType\SupplierLocator, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->SupplierLocator) && count($this->SupplierLocator) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->SupplierLocator)), __LINE__);
-        }
         $this->SupplierLocator[] = $item;
         
         return $this;
@@ -298,48 +253,12 @@ class EMDInfo extends AbstractStructBase
         return $this->ElectronicMiscDocument;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setElectronicMiscDocument method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setElectronicMiscDocument method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateElectronicMiscDocumentForArrayConstraintFromSetElectronicMiscDocument(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $eMDInfoElectronicMiscDocumentItem) {
-            // validation for constraint: itemType
-            if (!$eMDInfoElectronicMiscDocumentItem instanceof \Travelport\UniversalRecord\StructType\ElectronicMiscDocument) {
-                $invalidValues[] = is_object($eMDInfoElectronicMiscDocumentItem) ? get_class($eMDInfoElectronicMiscDocumentItem) : sprintf('%s(%s)', gettype($eMDInfoElectronicMiscDocumentItem), var_export($eMDInfoElectronicMiscDocumentItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ElectronicMiscDocument property can only contain items of type \Travelport\UniversalRecord\StructType\ElectronicMiscDocument, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ElectronicMiscDocument value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\ElectronicMiscDocument[] $electronicMiscDocument
      * @return \Travelport\UniversalRecord\StructType\EMDInfo
      */
     public function setElectronicMiscDocument(?array $electronicMiscDocument = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($electronicMiscDocumentArrayErrorMessage = self::validateElectronicMiscDocumentForArrayConstraintFromSetElectronicMiscDocument($electronicMiscDocument))) {
-            throw new InvalidArgumentException($electronicMiscDocumentArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($electronicMiscDocument) && count($electronicMiscDocument) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($electronicMiscDocument)), __LINE__);
-        }
         $this->ElectronicMiscDocument = $electronicMiscDocument;
         
         return $this;
@@ -352,14 +271,6 @@ class EMDInfo extends AbstractStructBase
      */
     public function addToElectronicMiscDocument(\Travelport\UniversalRecord\StructType\ElectronicMiscDocument $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\ElectronicMiscDocument) {
-            throw new InvalidArgumentException(sprintf('The ElectronicMiscDocument property can only contain items of type \Travelport\UniversalRecord\StructType\ElectronicMiscDocument, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->ElectronicMiscDocument) && count($this->ElectronicMiscDocument) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->ElectronicMiscDocument)), __LINE__);
-        }
         $this->ElectronicMiscDocument[] = $item;
         
         return $this;
@@ -430,104 +341,12 @@ class EMDInfo extends AbstractStructBase
         return $this->EMDEndorsement;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setEMDEndorsement method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setEMDEndorsement method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateEMDEndorsementForArrayConstraintFromSetEMDEndorsement(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $eMDInfoEMDEndorsementItem) {
-            // validation for constraint: itemType
-            if (!is_string($eMDInfoEMDEndorsementItem)) {
-                $invalidValues[] = is_object($eMDInfoEMDEndorsementItem) ? get_class($eMDInfoEMDEndorsementItem) : sprintf('%s(%s)', gettype($eMDInfoEMDEndorsementItem), var_export($eMDInfoEMDEndorsementItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The EMDEndorsement property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
-     * This method is responsible for validating the value(s) passed to the setEMDEndorsement method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setEMDEndorsement method
-     * This has to validate that the items contained by the array match the length constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateEMDEndorsementForMaxLengthConstraintFromSetEMDEndorsement(?array $values = null): string
-    {
-        $message = '';
-        $invalidValues = [];
-        foreach (($values ?? []) as $eMDInfoEMDEndorsementItem) {
-            // validation for constraint: maxLength(255)
-            if (mb_strlen((string) $eMDInfoEMDEndorsementItem) > 255) {
-                $invalidValues[] = var_export($eMDInfoEMDEndorsementItem, true);
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be less than or equal to 255', implode(', ', $invalidValues));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
-     * This method is responsible for validating the value(s) passed to the setEMDEndorsement method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setEMDEndorsement method
-     * This has to validate that the items contained by the array match the length constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateEMDEndorsementForMinLengthConstraintFromSetEMDEndorsement(?array $values = null): string
-    {
-        $message = '';
-        $invalidValues = [];
-        foreach (($values ?? []) as $eMDInfoEMDEndorsementItem) {
-            // validation for constraint: minLength(1)
-            if (mb_strlen((string) $eMDInfoEMDEndorsementItem) < 1) {
-                $invalidValues[] = var_export($eMDInfoEMDEndorsementItem, true);
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('Invalid length for value(s) %s, the number of characters/octets contained by the literal must be greater than or equal to 1', implode(', ', $invalidValues));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set EMDEndorsement value
-     * @throws InvalidArgumentException
      * @param string[] $eMDEndorsement
      * @return \Travelport\UniversalRecord\StructType\EMDInfo
      */
     public function setEMDEndorsement(?array $eMDEndorsement = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($eMDEndorsementArrayErrorMessage = self::validateEMDEndorsementForArrayConstraintFromSetEMDEndorsement($eMDEndorsement))) {
-            throw new InvalidArgumentException($eMDEndorsementArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxLength(255)
-        if ('' !== ($eMDEndorsementMaxLengthErrorMessage = self::validateEMDEndorsementForMaxLengthConstraintFromSetEMDEndorsement($eMDEndorsement))) {
-            throw new InvalidArgumentException($eMDEndorsementMaxLengthErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($eMDEndorsement) && count($eMDEndorsement) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($eMDEndorsement)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if ('' !== ($eMDEndorsementMinLengthErrorMessage = self::validateEMDEndorsementForMinLengthConstraintFromSetEMDEndorsement($eMDEndorsement))) {
-            throw new InvalidArgumentException($eMDEndorsementMinLengthErrorMessage, __LINE__);
-        }
         $this->EMDEndorsement = $eMDEndorsement;
         
         return $this;
@@ -540,22 +359,6 @@ class EMDInfo extends AbstractStructBase
      */
     public function addToEMDEndorsement(string $item): self
     {
-        // validation for constraint: itemType
-        if (!is_string($item)) {
-            throw new InvalidArgumentException(sprintf('The EMDEndorsement property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxLength(255)
-        if (mb_strlen((string) $item) > 255) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 255', mb_strlen((string) $item)), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->EMDEndorsement) && count($this->EMDEndorsement) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->EMDEndorsement)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (mb_strlen((string) $item) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $item)), __LINE__);
-        }
         $this->EMDEndorsement[] = $item;
         
         return $this;
@@ -575,10 +378,6 @@ class EMDInfo extends AbstractStructBase
      */
     public function setFareCalc(?string $fareCalc = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fareCalc) && !is_string($fareCalc)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareCalc, true), gettype($fareCalc)), __LINE__);
-        }
         $this->FareCalc = $fareCalc;
         
         return $this;
@@ -617,10 +416,6 @@ class EMDInfo extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -640,18 +435,6 @@ class EMDInfo extends AbstractStructBase
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -671,14 +454,6 @@ class EMDInfo extends AbstractStructBase
      */
     public function setProviderLocatorCode(?string $providerLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerLocatorCode) && !is_string($providerLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerLocatorCode, true), gettype($providerLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($providerLocatorCode) && mb_strlen((string) $providerLocatorCode) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $providerLocatorCode)), __LINE__);
-        }
         $this->ProviderLocatorCode = $providerLocatorCode;
         
         return $this;
@@ -698,18 +473,6 @@ class EMDInfo extends AbstractStructBase
      */
     public function setSupplierCode(?string $supplierCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $supplierCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;
@@ -724,18 +487,11 @@ class EMDInfo extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\EMDInfo
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -755,10 +511,6 @@ class EMDInfo extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

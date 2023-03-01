@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,14 +20,14 @@ class BaggageAllowance extends AbstractStructBase
      * - minOccurs: 0
      * @var int|null
      */
-    protected ?int $NumberOfPieces = null;
+    public ?int $NumberOfPieces = null;
     /**
      * The MaxWeight
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeWeight|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeWeight $MaxWeight = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeWeight $MaxWeight = null;
     /**
      * Constructor method for BaggageAllowance
      * @uses BaggageAllowance::setNumberOfPieces()
@@ -57,10 +56,6 @@ class BaggageAllowance extends AbstractStructBase
      */
     public function setNumberOfPieces(?int $numberOfPieces = null): self
     {
-        // validation for constraint: int
-        if (!is_null($numberOfPieces) && !(is_int($numberOfPieces) || ctype_digit($numberOfPieces))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($numberOfPieces, true), gettype($numberOfPieces)), __LINE__);
-        }
         $this->NumberOfPieces = $numberOfPieces;
         
         return $this;

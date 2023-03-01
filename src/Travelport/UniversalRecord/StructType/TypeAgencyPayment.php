@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class TypeAgencyPayment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $AgencyBillingIdentifier;
+    public string $AgencyBillingIdentifier;
     /**
      * The AgencyBillingNumber
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class TypeAgencyPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AgencyBillingNumber = null;
+    public ?string $AgencyBillingNumber = null;
     /**
      * The AgencyBillingPassword
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class TypeAgencyPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AgencyBillingPassword = null;
+    public ?string $AgencyBillingPassword = null;
     /**
      * Constructor method for typeAgencyPayment
      * @uses TypeAgencyPayment::setAgencyBillingIdentifier()
@@ -73,14 +72,6 @@ class TypeAgencyPayment extends AbstractStructBase
      */
     public function setAgencyBillingIdentifier(string $agencyBillingIdentifier): self
     {
-        // validation for constraint: string
-        if (!is_null($agencyBillingIdentifier) && !is_string($agencyBillingIdentifier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($agencyBillingIdentifier, true), gettype($agencyBillingIdentifier)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($agencyBillingIdentifier) && mb_strlen((string) $agencyBillingIdentifier) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $agencyBillingIdentifier)), __LINE__);
-        }
         $this->AgencyBillingIdentifier = $agencyBillingIdentifier;
         
         return $this;
@@ -100,14 +91,6 @@ class TypeAgencyPayment extends AbstractStructBase
      */
     public function setAgencyBillingNumber(?string $agencyBillingNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($agencyBillingNumber) && !is_string($agencyBillingNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($agencyBillingNumber, true), gettype($agencyBillingNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($agencyBillingNumber) && mb_strlen((string) $agencyBillingNumber) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $agencyBillingNumber)), __LINE__);
-        }
         $this->AgencyBillingNumber = $agencyBillingNumber;
         
         return $this;
@@ -127,14 +110,6 @@ class TypeAgencyPayment extends AbstractStructBase
      */
     public function setAgencyBillingPassword(?string $agencyBillingPassword = null): self
     {
-        // validation for constraint: string
-        if (!is_null($agencyBillingPassword) && !is_string($agencyBillingPassword)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($agencyBillingPassword, true), gettype($agencyBillingPassword)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($agencyBillingPassword) && mb_strlen((string) $agencyBillingPassword) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $agencyBillingPassword)), __LINE__);
-        }
         $this->AgencyBillingPassword = $agencyBillingPassword;
         
         return $this;

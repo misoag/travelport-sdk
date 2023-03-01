@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -17,14 +16,14 @@ class TypeUnitOfMeasure extends AbstractStructBase
      * The Value
      * @var float|null
      */
-    protected ?float $Value = null;
+    public ?float $Value = null;
     /**
      * The Unit
      * Meta information extracted from the WSDL
      * - documentation: Unit values would be lb,Lb,kg etc.
      * @var string|null
      */
-    protected ?string $Unit = null;
+    public ?string $Unit = null;
     /**
      * Constructor method for typeUnitOfMeasure
      * @uses TypeUnitOfMeasure::setValue()
@@ -53,10 +52,6 @@ class TypeUnitOfMeasure extends AbstractStructBase
      */
     public function setValue(?float $value = null): self
     {
-        // validation for constraint: float
-        if (!is_null($value) && !(is_float($value) || is_numeric($value))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($value, true), gettype($value)), __LINE__);
-        }
         $this->Value = $value;
         
         return $this;
@@ -76,10 +71,6 @@ class TypeUnitOfMeasure extends AbstractStructBase
      */
     public function setUnit(?string $unit = null): self
     {
-        // validation for constraint: string
-        if (!is_null($unit) && !is_string($unit)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($unit, true), gettype($unit)), __LINE__);
-        }
         $this->Unit = $unit;
         
         return $this;

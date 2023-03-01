@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class PointOfCommencement extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string
      */
-    protected string $CityOrAirportCode;
+    public string $CityOrAirportCode;
     /**
      * The Time
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class PointOfCommencement extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Time;
+    public string $Time;
     /**
      * Constructor method for PointOfCommencement
      * @uses PointOfCommencement::setCityOrAirportCode()
@@ -62,14 +61,6 @@ class PointOfCommencement extends AbstractStructBase
      */
     public function setCityOrAirportCode(string $cityOrAirportCode): self
     {
-        // validation for constraint: string
-        if (!is_null($cityOrAirportCode) && !is_string($cityOrAirportCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cityOrAirportCode, true), gettype($cityOrAirportCode)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($cityOrAirportCode) && mb_strlen((string) $cityOrAirportCode) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $cityOrAirportCode)), __LINE__);
-        }
         $this->CityOrAirportCode = $cityOrAirportCode;
         
         return $this;
@@ -89,10 +80,6 @@ class PointOfCommencement extends AbstractStructBase
      */
     public function setTime(string $time): self
     {
-        // validation for constraint: string
-        if (!is_null($time) && !is_string($time)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($time, true), gettype($time)), __LINE__);
-        }
         $this->Time = $time;
         
         return $this;

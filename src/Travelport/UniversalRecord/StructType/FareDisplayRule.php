@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class FareDisplayRule extends AbstractStructBase
      * - ref: RuleAdvancedPurchase
      * @var \Travelport\UniversalRecord\StructType\RuleAdvancedPurchase|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\RuleAdvancedPurchase $RuleAdvancedPurchase = null;
+    public ?\Travelport\UniversalRecord\StructType\RuleAdvancedPurchase $RuleAdvancedPurchase = null;
     /**
      * The RuleLengthOfStay
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class FareDisplayRule extends AbstractStructBase
      * - ref: RuleLengthOfStay
      * @var \Travelport\UniversalRecord\StructType\RuleLengthOfStay|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\RuleLengthOfStay $RuleLengthOfStay = null;
+    public ?\Travelport\UniversalRecord\StructType\RuleLengthOfStay $RuleLengthOfStay = null;
     /**
      * The RuleCharges
      * Meta information extracted from the WSDL
@@ -38,28 +37,28 @@ class FareDisplayRule extends AbstractStructBase
      * - ref: RuleCharges
      * @var \Travelport\UniversalRecord\StructType\RuleCharges|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\RuleCharges $RuleCharges = null;
+    public ?\Travelport\UniversalRecord\StructType\RuleCharges $RuleCharges = null;
     /**
      * The RuleNumber
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $RuleNumber = null;
+    public ?string $RuleNumber = null;
     /**
      * The Source
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $Source = null;
+    public ?string $Source = null;
     /**
      * The TariffNumber
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $TariffNumber = null;
+    public ?string $TariffNumber = null;
     /**
      * Constructor method for FareDisplayRule
      * @uses FareDisplayRule::setRuleAdvancedPurchase()
@@ -157,10 +156,6 @@ class FareDisplayRule extends AbstractStructBase
      */
     public function setRuleNumber(?string $ruleNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ruleNumber) && !is_string($ruleNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ruleNumber, true), gettype($ruleNumber)), __LINE__);
-        }
         $this->RuleNumber = $ruleNumber;
         
         return $this;
@@ -180,10 +175,6 @@ class FareDisplayRule extends AbstractStructBase
      */
     public function setSource(?string $source = null): self
     {
-        // validation for constraint: string
-        if (!is_null($source) && !is_string($source)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($source, true), gettype($source)), __LINE__);
-        }
         $this->Source = $source;
         
         return $this;
@@ -203,10 +194,6 @@ class FareDisplayRule extends AbstractStructBase
      */
     public function setTariffNumber(?string $tariffNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tariffNumber) && !is_string($tariffNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tariffNumber, true), gettype($tariffNumber)), __LINE__);
-        }
         $this->TariffNumber = $tariffNumber;
         
         return $this;

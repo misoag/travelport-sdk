@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class CityOrAirport extends Location
      * - whiteSpace: collapse
      * @var string
      */
-    protected string $Code;
+    public string $Code;
     /**
      * The PreferCity
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class CityOrAirport extends Location
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PreferCity = null;
+    public ?bool $PreferCity = null;
     /**
      * Constructor method for CityOrAirport
      * @uses CityOrAirport::setCode()
@@ -63,14 +62,6 @@ class CityOrAirport extends Location
      */
     public function setCode(string $code): self
     {
-        // validation for constraint: string
-        if (!is_null($code) && !is_string($code)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($code) && mb_strlen((string) $code) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $code)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;
@@ -90,10 +81,6 @@ class CityOrAirport extends Location
      */
     public function setPreferCity(?bool $preferCity = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($preferCity) && !is_bool($preferCity)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($preferCity, true), gettype($preferCity)), __LINE__);
-        }
         $this->PreferCity = $preferCity;
         
         return $this;

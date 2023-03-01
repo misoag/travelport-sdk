@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,14 +18,14 @@ class QuickResponse extends AbstractStructBase
      * - documentation: Set to true on initial request to have results returned immediately and may contain fewer hotels. Default is false.
      * @var bool|null
      */
-    protected ?bool $FastResult = null;
+    public ?bool $FastResult = null;
     /**
      * The MoreToken
      * Meta information extracted from the WSDL
      * - documentation: Token is returned for use in subsequent request to retrieve complete results.
      * @var string|null
      */
-    protected ?string $MoreToken = null;
+    public ?string $MoreToken = null;
     /**
      * Constructor method for QuickResponse
      * @uses QuickResponse::setFastResult()
@@ -55,10 +54,6 @@ class QuickResponse extends AbstractStructBase
      */
     public function setFastResult(?bool $fastResult = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($fastResult) && !is_bool($fastResult)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($fastResult, true), gettype($fastResult)), __LINE__);
-        }
         $this->FastResult = $fastResult;
         
         return $this;
@@ -78,10 +73,6 @@ class QuickResponse extends AbstractStructBase
      */
     public function setMoreToken(?string $moreToken = null): self
     {
-        // validation for constraint: string
-        if (!is_null($moreToken) && !is_string($moreToken)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($moreToken, true), gettype($moreToken)), __LINE__);
-        }
         $this->MoreToken = $moreToken;
         
         return $this;

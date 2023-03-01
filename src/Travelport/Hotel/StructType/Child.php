@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class Child extends TypeGuestChildInformation
      * - ref: common:BookingTravelerRef
      * @var \Travelport\Hotel\StructType\BookingTravelerRef|null
      */
-    protected ?\Travelport\Hotel\StructType\BookingTravelerRef $BookingTravelerRef = null;
+    public ?\Travelport\Hotel\StructType\BookingTravelerRef $BookingTravelerRef = null;
     /**
      * Constructor method for Child
      * @uses Child::setBookingTravelerRef()

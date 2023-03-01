@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class PassengerTicketNumber extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketNumber = null;
+    public ?string $TicketNumber = null;
     /**
      * The BookingTravelerRef
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class PassengerTicketNumber extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingTravelerRef = null;
+    public ?string $BookingTravelerRef = null;
     /**
      * Constructor method for PassengerTicketNumber
      * @uses PassengerTicketNumber::setTicketNumber()
@@ -63,18 +62,6 @@ class PassengerTicketNumber extends AbstractStructBase
      */
     public function setTicketNumber(?string $ticketNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketNumber) && !is_string($ticketNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketNumber, true), gettype($ticketNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(13)
-        if (!is_null($ticketNumber) && mb_strlen((string) $ticketNumber) > 13) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 13', mb_strlen((string) $ticketNumber)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($ticketNumber) && mb_strlen((string) $ticketNumber) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $ticketNumber)), __LINE__);
-        }
         $this->TicketNumber = $ticketNumber;
         
         return $this;
@@ -94,10 +81,6 @@ class PassengerTicketNumber extends AbstractStructBase
      */
     public function setBookingTravelerRef(?string $bookingTravelerRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingTravelerRef) && !is_string($bookingTravelerRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingTravelerRef, true), gettype($bookingTravelerRef)), __LINE__);
-        }
         $this->BookingTravelerRef = $bookingTravelerRef;
         
         return $this;

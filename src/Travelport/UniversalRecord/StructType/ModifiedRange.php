@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,12 +18,12 @@ class ModifiedRange extends AbstractStructBase
      * The ModifiedStart
      * @var string|null
      */
-    protected ?string $ModifiedStart = null;
+    public ?string $ModifiedStart = null;
     /**
      * The ModifiedEnd
      * @var string|null
      */
-    protected ?string $ModifiedEnd = null;
+    public ?string $ModifiedEnd = null;
     /**
      * Constructor method for ModifiedRange
      * @uses ModifiedRange::setModifiedStart()
@@ -53,10 +52,6 @@ class ModifiedRange extends AbstractStructBase
      */
     public function setModifiedStart(?string $modifiedStart = null): self
     {
-        // validation for constraint: string
-        if (!is_null($modifiedStart) && !is_string($modifiedStart)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($modifiedStart, true), gettype($modifiedStart)), __LINE__);
-        }
         $this->ModifiedStart = $modifiedStart;
         
         return $this;
@@ -76,10 +71,6 @@ class ModifiedRange extends AbstractStructBase
      */
     public function setModifiedEnd(?string $modifiedEnd = null): self
     {
-        // validation for constraint: string
-        if (!is_null($modifiedEnd) && !is_string($modifiedEnd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($modifiedEnd, true), gettype($modifiedEnd)), __LINE__);
-        }
         $this->ModifiedEnd = $modifiedEnd;
         
         return $this;

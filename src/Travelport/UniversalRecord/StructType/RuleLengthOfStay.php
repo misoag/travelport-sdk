@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,14 +20,14 @@ class RuleLengthOfStay extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeRestrictionLengthOfStay|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeRestrictionLengthOfStay $MinimumStay = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeRestrictionLengthOfStay $MinimumStay = null;
     /**
      * The MaximumStay
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeRestrictionLengthOfStay|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeRestrictionLengthOfStay $MaximumStay = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeRestrictionLengthOfStay $MaximumStay = null;
     /**
      * Constructor method for RuleLengthOfStay
      * @uses RuleLengthOfStay::setMinimumStay()

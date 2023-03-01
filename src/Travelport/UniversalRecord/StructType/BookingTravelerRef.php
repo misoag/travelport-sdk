@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class BookingTravelerRef extends AbstractStructBase
      * - ref: LoyaltyCardRef
      * @var \Travelport\UniversalRecord\StructType\LoyaltyCardRef[]
      */
-    protected ?array $LoyaltyCardRef = null;
+    public ?array $LoyaltyCardRef = null;
     /**
      * The DriversLicenseRef
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class BookingTravelerRef extends AbstractStructBase
      * - ref: DriversLicenseRef
      * @var \Travelport\UniversalRecord\StructType\DriversLicenseRef|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\DriversLicenseRef $DriversLicenseRef = null;
+    public ?\Travelport\UniversalRecord\StructType\DriversLicenseRef $DriversLicenseRef = null;
     /**
      * The DiscountCardRef
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class BookingTravelerRef extends AbstractStructBase
      * - ref: DiscountCardRef
      * @var \Travelport\UniversalRecord\StructType\DiscountCardRef[]
      */
-    protected ?array $DiscountCardRef = null;
+    public ?array $DiscountCardRef = null;
     /**
      * The PaymentRef
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class BookingTravelerRef extends AbstractStructBase
      * - ref: PaymentRef
      * @var \Travelport\UniversalRecord\StructType\PaymentRef[]
      */
-    protected ?array $PaymentRef = null;
+    public ?array $PaymentRef = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -58,7 +57,7 @@ class BookingTravelerRef extends AbstractStructBase
      * - use: required | optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * Constructor method for BookingTravelerRef
      * @uses BookingTravelerRef::setLoyaltyCardRef()
@@ -90,48 +89,12 @@ class BookingTravelerRef extends AbstractStructBase
         return $this->LoyaltyCardRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setLoyaltyCardRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyCardRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateLoyaltyCardRefForArrayConstraintFromSetLoyaltyCardRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $bookingTravelerRefLoyaltyCardRefItem) {
-            // validation for constraint: itemType
-            if (!$bookingTravelerRefLoyaltyCardRefItem instanceof \Travelport\UniversalRecord\StructType\LoyaltyCardRef) {
-                $invalidValues[] = is_object($bookingTravelerRefLoyaltyCardRefItem) ? get_class($bookingTravelerRefLoyaltyCardRefItem) : sprintf('%s(%s)', gettype($bookingTravelerRefLoyaltyCardRefItem), var_export($bookingTravelerRefLoyaltyCardRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The LoyaltyCardRef property can only contain items of type \Travelport\UniversalRecord\StructType\LoyaltyCardRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set LoyaltyCardRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\LoyaltyCardRef[] $loyaltyCardRef
      * @return \Travelport\UniversalRecord\StructType\BookingTravelerRef
      */
     public function setLoyaltyCardRef(?array $loyaltyCardRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($loyaltyCardRefArrayErrorMessage = self::validateLoyaltyCardRefForArrayConstraintFromSetLoyaltyCardRef($loyaltyCardRef))) {
-            throw new InvalidArgumentException($loyaltyCardRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($loyaltyCardRef) && count($loyaltyCardRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($loyaltyCardRef)), __LINE__);
-        }
         $this->LoyaltyCardRef = $loyaltyCardRef;
         
         return $this;
@@ -144,14 +107,6 @@ class BookingTravelerRef extends AbstractStructBase
      */
     public function addToLoyaltyCardRef(\Travelport\UniversalRecord\StructType\LoyaltyCardRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\LoyaltyCardRef) {
-            throw new InvalidArgumentException(sprintf('The LoyaltyCardRef property can only contain items of type \Travelport\UniversalRecord\StructType\LoyaltyCardRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->LoyaltyCardRef) && count($this->LoyaltyCardRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->LoyaltyCardRef)), __LINE__);
-        }
         $this->LoyaltyCardRef[] = $item;
         
         return $this;
@@ -184,48 +139,12 @@ class BookingTravelerRef extends AbstractStructBase
         return $this->DiscountCardRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setDiscountCardRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setDiscountCardRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateDiscountCardRefForArrayConstraintFromSetDiscountCardRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $bookingTravelerRefDiscountCardRefItem) {
-            // validation for constraint: itemType
-            if (!$bookingTravelerRefDiscountCardRefItem instanceof \Travelport\UniversalRecord\StructType\DiscountCardRef) {
-                $invalidValues[] = is_object($bookingTravelerRefDiscountCardRefItem) ? get_class($bookingTravelerRefDiscountCardRefItem) : sprintf('%s(%s)', gettype($bookingTravelerRefDiscountCardRefItem), var_export($bookingTravelerRefDiscountCardRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The DiscountCardRef property can only contain items of type \Travelport\UniversalRecord\StructType\DiscountCardRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set DiscountCardRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\DiscountCardRef[] $discountCardRef
      * @return \Travelport\UniversalRecord\StructType\BookingTravelerRef
      */
     public function setDiscountCardRef(?array $discountCardRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($discountCardRefArrayErrorMessage = self::validateDiscountCardRefForArrayConstraintFromSetDiscountCardRef($discountCardRef))) {
-            throw new InvalidArgumentException($discountCardRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(9)
-        if (is_array($discountCardRef) && count($discountCardRef) > 9) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 9', count($discountCardRef)), __LINE__);
-        }
         $this->DiscountCardRef = $discountCardRef;
         
         return $this;
@@ -238,14 +157,6 @@ class BookingTravelerRef extends AbstractStructBase
      */
     public function addToDiscountCardRef(\Travelport\UniversalRecord\StructType\DiscountCardRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\DiscountCardRef) {
-            throw new InvalidArgumentException(sprintf('The DiscountCardRef property can only contain items of type \Travelport\UniversalRecord\StructType\DiscountCardRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(9)
-        if (is_array($this->DiscountCardRef) && count($this->DiscountCardRef) >= 9) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 9', count($this->DiscountCardRef)), __LINE__);
-        }
         $this->DiscountCardRef[] = $item;
         
         return $this;
@@ -259,48 +170,12 @@ class BookingTravelerRef extends AbstractStructBase
         return $this->PaymentRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPaymentRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPaymentRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePaymentRefForArrayConstraintFromSetPaymentRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $bookingTravelerRefPaymentRefItem) {
-            // validation for constraint: itemType
-            if (!$bookingTravelerRefPaymentRefItem instanceof \Travelport\UniversalRecord\StructType\PaymentRef) {
-                $invalidValues[] = is_object($bookingTravelerRefPaymentRefItem) ? get_class($bookingTravelerRefPaymentRefItem) : sprintf('%s(%s)', gettype($bookingTravelerRefPaymentRefItem), var_export($bookingTravelerRefPaymentRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The PaymentRef property can only contain items of type \Travelport\UniversalRecord\StructType\PaymentRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set PaymentRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\PaymentRef[] $paymentRef
      * @return \Travelport\UniversalRecord\StructType\BookingTravelerRef
      */
     public function setPaymentRef(?array $paymentRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($paymentRefArrayErrorMessage = self::validatePaymentRefForArrayConstraintFromSetPaymentRef($paymentRef))) {
-            throw new InvalidArgumentException($paymentRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(3)
-        if (is_array($paymentRef) && count($paymentRef) > 3) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 3', count($paymentRef)), __LINE__);
-        }
         $this->PaymentRef = $paymentRef;
         
         return $this;
@@ -313,14 +188,6 @@ class BookingTravelerRef extends AbstractStructBase
      */
     public function addToPaymentRef(\Travelport\UniversalRecord\StructType\PaymentRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\PaymentRef) {
-            throw new InvalidArgumentException(sprintf('The PaymentRef property can only contain items of type \Travelport\UniversalRecord\StructType\PaymentRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(3)
-        if (is_array($this->PaymentRef) && count($this->PaymentRef) >= 3) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 3', count($this->PaymentRef)), __LINE__);
-        }
         $this->PaymentRef[] = $item;
         
         return $this;
@@ -340,10 +207,6 @@ class BookingTravelerRef extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;

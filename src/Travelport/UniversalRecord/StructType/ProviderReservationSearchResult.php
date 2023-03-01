@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,14 +21,14 @@ class ProviderReservationSearchResult extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Ticketed;
+    public string $Ticketed;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
-    protected string $ProviderCode;
+    public string $ProviderCode;
     /**
      * The Name
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class ProviderReservationSearchResult extends AbstractStructBase
      * - ref: common:Name
      * @var \Travelport\UniversalRecord\StructType\Name[]
      */
-    protected ?array $Name = null;
+    public ?array $Name = null;
     /**
      * The ProductInfo
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class ProviderReservationSearchResult extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeProductInfo[]
      */
-    protected ?array $ProductInfo = null;
+    public ?array $ProductInfo = null;
     /**
      * The AgencyInfo
      * Meta information extracted from the WSDL
@@ -54,14 +53,14 @@ class ProviderReservationSearchResult extends AbstractStructBase
      * - ref: common:AgencyInfo
      * @var \Travelport\UniversalRecord\StructType\AgencyInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AgencyInfo $AgencyInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\AgencyInfo $AgencyInfo = null;
     /**
      * The UniversalRecordLocatorCode
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $UniversalRecordLocatorCode = null;
+    public ?string $UniversalRecordLocatorCode = null;
     /**
      * The CreatedDate
      * Meta information extracted from the WSDL
@@ -69,7 +68,7 @@ class ProviderReservationSearchResult extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CreatedDate = null;
+    public ?string $CreatedDate = null;
     /**
      * The EarliestTravelDate
      * Meta information extracted from the WSDL
@@ -77,14 +76,14 @@ class ProviderReservationSearchResult extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $EarliestTravelDate = null;
+    public ?string $EarliestTravelDate = null;
     /**
      * The ProviderLocatorCode
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderLocatorCode = null;
+    public ?string $ProviderLocatorCode = null;
     /**
      * The ExternalSearchIndex
      * Meta information extracted from the WSDL
@@ -92,7 +91,7 @@ class ProviderReservationSearchResult extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $ExternalSearchIndex = null;
+    public ?string $ExternalSearchIndex = null;
     /**
      * Constructor method for ProviderReservationSearchResult
      * @uses ProviderReservationSearchResult::setTicketed()
@@ -140,18 +139,11 @@ class ProviderReservationSearchResult extends AbstractStructBase
     }
     /**
      * Set Ticketed value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeReservationTicketed::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeReservationTicketed::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $ticketed
      * @return \Travelport\UniversalRecord\StructType\ProviderReservationSearchResult
      */
     public function setTicketed(string $ticketed): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeReservationTicketed::valueIsValid($ticketed)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeReservationTicketed', is_array($ticketed) ? implode(', ', $ticketed) : var_export($ticketed, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeReservationTicketed::getValidValues())), __LINE__);
-        }
         $this->Ticketed = $ticketed;
         
         return $this;
@@ -171,10 +163,6 @@ class ProviderReservationSearchResult extends AbstractStructBase
      */
     public function setProviderCode(string $providerCode): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -188,48 +176,12 @@ class ProviderReservationSearchResult extends AbstractStructBase
         return $this->Name;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setName method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setName method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateNameForArrayConstraintFromSetName(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $providerReservationSearchResultNameItem) {
-            // validation for constraint: itemType
-            if (!$providerReservationSearchResultNameItem instanceof \Travelport\UniversalRecord\StructType\Name) {
-                $invalidValues[] = is_object($providerReservationSearchResultNameItem) ? get_class($providerReservationSearchResultNameItem) : sprintf('%s(%s)', gettype($providerReservationSearchResultNameItem), var_export($providerReservationSearchResultNameItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Name property can only contain items of type \Travelport\UniversalRecord\StructType\Name, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Name value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\Name[] $name
      * @return \Travelport\UniversalRecord\StructType\ProviderReservationSearchResult
      */
     public function setName(?array $name = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($nameArrayErrorMessage = self::validateNameForArrayConstraintFromSetName($name))) {
-            throw new InvalidArgumentException($nameArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($name) && count($name) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($name)), __LINE__);
-        }
         $this->Name = $name;
         
         return $this;
@@ -242,14 +194,6 @@ class ProviderReservationSearchResult extends AbstractStructBase
      */
     public function addToName(\Travelport\UniversalRecord\StructType\Name $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\Name) {
-            throw new InvalidArgumentException(sprintf('The Name property can only contain items of type \Travelport\UniversalRecord\StructType\Name, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->Name) && count($this->Name) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->Name)), __LINE__);
-        }
         $this->Name[] = $item;
         
         return $this;
@@ -263,48 +207,12 @@ class ProviderReservationSearchResult extends AbstractStructBase
         return $this->ProductInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setProductInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setProductInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateProductInfoForArrayConstraintFromSetProductInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $providerReservationSearchResultProductInfoItem) {
-            // validation for constraint: itemType
-            if (!$providerReservationSearchResultProductInfoItem instanceof \Travelport\UniversalRecord\StructType\TypeProductInfo) {
-                $invalidValues[] = is_object($providerReservationSearchResultProductInfoItem) ? get_class($providerReservationSearchResultProductInfoItem) : sprintf('%s(%s)', gettype($providerReservationSearchResultProductInfoItem), var_export($providerReservationSearchResultProductInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ProductInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TypeProductInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ProductInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeProductInfo[] $productInfo
      * @return \Travelport\UniversalRecord\StructType\ProviderReservationSearchResult
      */
     public function setProductInfo(?array $productInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($productInfoArrayErrorMessage = self::validateProductInfoForArrayConstraintFromSetProductInfo($productInfo))) {
-            throw new InvalidArgumentException($productInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($productInfo) && count($productInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($productInfo)), __LINE__);
-        }
         $this->ProductInfo = $productInfo;
         
         return $this;
@@ -317,14 +225,6 @@ class ProviderReservationSearchResult extends AbstractStructBase
      */
     public function addToProductInfo(\Travelport\UniversalRecord\StructType\TypeProductInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeProductInfo) {
-            throw new InvalidArgumentException(sprintf('The ProductInfo property can only contain items of type \Travelport\UniversalRecord\StructType\TypeProductInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->ProductInfo) && count($this->ProductInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->ProductInfo)), __LINE__);
-        }
         $this->ProductInfo[] = $item;
         
         return $this;
@@ -363,10 +263,6 @@ class ProviderReservationSearchResult extends AbstractStructBase
      */
     public function setUniversalRecordLocatorCode(?string $universalRecordLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($universalRecordLocatorCode) && !is_string($universalRecordLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($universalRecordLocatorCode, true), gettype($universalRecordLocatorCode)), __LINE__);
-        }
         $this->UniversalRecordLocatorCode = $universalRecordLocatorCode;
         
         return $this;
@@ -386,10 +282,6 @@ class ProviderReservationSearchResult extends AbstractStructBase
      */
     public function setCreatedDate(?string $createdDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($createdDate) && !is_string($createdDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($createdDate, true), gettype($createdDate)), __LINE__);
-        }
         $this->CreatedDate = $createdDate;
         
         return $this;
@@ -409,10 +301,6 @@ class ProviderReservationSearchResult extends AbstractStructBase
      */
     public function setEarliestTravelDate(?string $earliestTravelDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($earliestTravelDate) && !is_string($earliestTravelDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($earliestTravelDate, true), gettype($earliestTravelDate)), __LINE__);
-        }
         $this->EarliestTravelDate = $earliestTravelDate;
         
         return $this;
@@ -432,10 +320,6 @@ class ProviderReservationSearchResult extends AbstractStructBase
      */
     public function setProviderLocatorCode(?string $providerLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerLocatorCode) && !is_string($providerLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerLocatorCode, true), gettype($providerLocatorCode)), __LINE__);
-        }
         $this->ProviderLocatorCode = $providerLocatorCode;
         
         return $this;
@@ -455,10 +339,6 @@ class ProviderReservationSearchResult extends AbstractStructBase
      */
     public function setExternalSearchIndex(?string $externalSearchIndex = null): self
     {
-        // validation for constraint: string
-        if (!is_null($externalSearchIndex) && !is_string($externalSearchIndex)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($externalSearchIndex, true), gettype($externalSearchIndex)), __LINE__);
-        }
         $this->ExternalSearchIndex = $externalSearchIndex;
         
         return $this;

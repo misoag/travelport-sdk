@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class RelatedTraveler extends AbstractStructBase
      * - ref: common:LoyaltyCard
      * @var \Travelport\UniversalRecord\StructType\LoyaltyCard[]
      */
-    protected ?array $LoyaltyCard = null;
+    public ?array $LoyaltyCard = null;
     /**
      * The PersonName
      * Meta information extracted from the WSDL
@@ -31,14 +30,14 @@ class RelatedTraveler extends AbstractStructBase
      * - ref: PersonName
      * @var \Travelport\UniversalRecord\StructType\PersonName|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PersonName $PersonName = null;
+    public ?\Travelport\UniversalRecord\StructType\PersonName $PersonName = null;
     /**
      * The CreditsUsed
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\CreditsUsed|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CreditsUsed $CreditsUsed = null;
+    public ?\Travelport\UniversalRecord\StructType\CreditsUsed $CreditsUsed = null;
     /**
      * The StatusCode
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class RelatedTraveler extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $StatusCode = null;
+    public ?string $StatusCode = null;
     /**
      * The Relation
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class RelatedTraveler extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Relation = null;
+    public ?string $Relation = null;
     /**
      * Constructor method for RelatedTraveler
      * @uses RelatedTraveler::setLoyaltyCard()
@@ -86,48 +85,12 @@ class RelatedTraveler extends AbstractStructBase
         return $this->LoyaltyCard;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setLoyaltyCard method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyCard method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $relatedTravelerLoyaltyCardItem) {
-            // validation for constraint: itemType
-            if (!$relatedTravelerLoyaltyCardItem instanceof \Travelport\UniversalRecord\StructType\LoyaltyCard) {
-                $invalidValues[] = is_object($relatedTravelerLoyaltyCardItem) ? get_class($relatedTravelerLoyaltyCardItem) : sprintf('%s(%s)', gettype($relatedTravelerLoyaltyCardItem), var_export($relatedTravelerLoyaltyCardItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The LoyaltyCard property can only contain items of type \Travelport\UniversalRecord\StructType\LoyaltyCard, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set LoyaltyCard value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\LoyaltyCard[] $loyaltyCard
      * @return \Travelport\UniversalRecord\StructType\RelatedTraveler
      */
     public function setLoyaltyCard(?array $loyaltyCard = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($loyaltyCardArrayErrorMessage = self::validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard($loyaltyCard))) {
-            throw new InvalidArgumentException($loyaltyCardArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($loyaltyCard) && count($loyaltyCard) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($loyaltyCard)), __LINE__);
-        }
         $this->LoyaltyCard = $loyaltyCard;
         
         return $this;
@@ -140,14 +103,6 @@ class RelatedTraveler extends AbstractStructBase
      */
     public function addToLoyaltyCard(\Travelport\UniversalRecord\StructType\LoyaltyCard $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\LoyaltyCard) {
-            throw new InvalidArgumentException(sprintf('The LoyaltyCard property can only contain items of type \Travelport\UniversalRecord\StructType\LoyaltyCard, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->LoyaltyCard) && count($this->LoyaltyCard) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->LoyaltyCard)), __LINE__);
-        }
         $this->LoyaltyCard[] = $item;
         
         return $this;
@@ -205,10 +160,6 @@ class RelatedTraveler extends AbstractStructBase
      */
     public function setStatusCode(?string $statusCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($statusCode) && !is_string($statusCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($statusCode, true), gettype($statusCode)), __LINE__);
-        }
         $this->StatusCode = $statusCode;
         
         return $this;
@@ -228,10 +179,6 @@ class RelatedTraveler extends AbstractStructBase
      */
     public function setRelation(?string $relation = null): self
     {
-        // validation for constraint: string
-        if (!is_null($relation) && !is_string($relation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($relation, true), gettype($relation)), __LINE__);
-        }
         $this->Relation = $relation;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class UniversalRecordHistorySearchResult extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ModifiedDate;
+    public string $ModifiedDate;
     /**
      * The ElementType
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class UniversalRecordHistorySearchResult extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ElementType;
+    public string $ElementType;
     /**
      * The Action
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class UniversalRecordHistorySearchResult extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Action;
+    public string $Action;
     /**
      * The Old
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class UniversalRecordHistorySearchResult extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $Old = null;
+    public ?string $Old = null;
     /**
      * The New
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class UniversalRecordHistorySearchResult extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $New = null;
+    public ?string $New = null;
     /**
      * The ModifiedBy
      * Meta information extracted from the WSDL
@@ -62,7 +61,7 @@ class UniversalRecordHistorySearchResult extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ModifiedBy = null;
+    public ?string $ModifiedBy = null;
     /**
      * The TransactionId
      * Meta information extracted from the WSDL
@@ -70,12 +69,12 @@ class UniversalRecordHistorySearchResult extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TransactionId = null;
+    public ?string $TransactionId = null;
     /**
      * The AgentOverride
      * @var string|null
      */
-    protected ?string $AgentOverride = null;
+    public ?string $AgentOverride = null;
     /**
      * Constructor method for UniversalRecordHistorySearchResult
      * @uses UniversalRecordHistorySearchResult::setModifiedDate()
@@ -122,10 +121,6 @@ class UniversalRecordHistorySearchResult extends AbstractStructBase
      */
     public function setModifiedDate(string $modifiedDate): self
     {
-        // validation for constraint: string
-        if (!is_null($modifiedDate) && !is_string($modifiedDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($modifiedDate, true), gettype($modifiedDate)), __LINE__);
-        }
         $this->ModifiedDate = $modifiedDate;
         
         return $this;
@@ -145,10 +140,6 @@ class UniversalRecordHistorySearchResult extends AbstractStructBase
      */
     public function setElementType(string $elementType): self
     {
-        // validation for constraint: string
-        if (!is_null($elementType) && !is_string($elementType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($elementType, true), gettype($elementType)), __LINE__);
-        }
         $this->ElementType = $elementType;
         
         return $this;
@@ -168,10 +159,6 @@ class UniversalRecordHistorySearchResult extends AbstractStructBase
      */
     public function setAction(string $action): self
     {
-        // validation for constraint: string
-        if (!is_null($action) && !is_string($action)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($action, true), gettype($action)), __LINE__);
-        }
         $this->Action = $action;
         
         return $this;
@@ -191,10 +178,6 @@ class UniversalRecordHistorySearchResult extends AbstractStructBase
      */
     public function setOld(?string $old = null): self
     {
-        // validation for constraint: string
-        if (!is_null($old) && !is_string($old)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($old, true), gettype($old)), __LINE__);
-        }
         $this->Old = $old;
         
         return $this;
@@ -214,10 +197,6 @@ class UniversalRecordHistorySearchResult extends AbstractStructBase
      */
     public function setNew(?string $new = null): self
     {
-        // validation for constraint: string
-        if (!is_null($new) && !is_string($new)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($new, true), gettype($new)), __LINE__);
-        }
         $this->New = $new;
         
         return $this;
@@ -237,10 +216,6 @@ class UniversalRecordHistorySearchResult extends AbstractStructBase
      */
     public function setModifiedBy(?string $modifiedBy = null): self
     {
-        // validation for constraint: string
-        if (!is_null($modifiedBy) && !is_string($modifiedBy)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($modifiedBy, true), gettype($modifiedBy)), __LINE__);
-        }
         $this->ModifiedBy = $modifiedBy;
         
         return $this;
@@ -260,10 +235,6 @@ class UniversalRecordHistorySearchResult extends AbstractStructBase
      */
     public function setTransactionId(?string $transactionId = null): self
     {
-        // validation for constraint: string
-        if (!is_null($transactionId) && !is_string($transactionId)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($transactionId, true), gettype($transactionId)), __LINE__);
-        }
         $this->TransactionId = $transactionId;
         
         return $this;
@@ -283,10 +254,6 @@ class UniversalRecordHistorySearchResult extends AbstractStructBase
      */
     public function setAgentOverride(?string $agentOverride = null): self
     {
-        // validation for constraint: string
-        if (!is_null($agentOverride) && !is_string($agentOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($agentOverride, true), gettype($agentOverride)), __LINE__);
-        }
         $this->AgentOverride = $agentOverride;
         
         return $this;

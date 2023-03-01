@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class CodeshareInfo extends AbstractStructBase
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The OperatingCarrier
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class CodeshareInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OperatingCarrier = null;
+    public ?string $OperatingCarrier = null;
     /**
      * The OperatingFlightNumber
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class CodeshareInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OperatingFlightNumber = null;
+    public ?string $OperatingFlightNumber = null;
     /**
      * Constructor method for CodeshareInfo
      * @uses CodeshareInfo::set_()
@@ -71,10 +70,6 @@ class CodeshareInfo extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -94,14 +89,6 @@ class CodeshareInfo extends AbstractStructBase
      */
     public function setOperatingCarrier(?string $operatingCarrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($operatingCarrier) && !is_string($operatingCarrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($operatingCarrier, true), gettype($operatingCarrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($operatingCarrier) && mb_strlen((string) $operatingCarrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $operatingCarrier)), __LINE__);
-        }
         $this->OperatingCarrier = $operatingCarrier;
         
         return $this;
@@ -121,14 +108,6 @@ class CodeshareInfo extends AbstractStructBase
      */
     public function setOperatingFlightNumber(?string $operatingFlightNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($operatingFlightNumber) && !is_string($operatingFlightNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($operatingFlightNumber, true), gettype($operatingFlightNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($operatingFlightNumber) && mb_strlen((string) $operatingFlightNumber) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $operatingFlightNumber)), __LINE__);
-        }
         $this->OperatingFlightNumber = $operatingFlightNumber;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class BookingCodeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CabinClass = null;
+    public ?string $CabinClass = null;
     /**
      * The BookingCounts
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class BookingCodeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingCounts = null;
+    public ?string $BookingCounts = null;
     /**
      * Constructor method for BookingCodeInfo
      * @uses BookingCodeInfo::setCabinClass()
@@ -59,10 +58,6 @@ class BookingCodeInfo extends AbstractStructBase
      */
     public function setCabinClass(?string $cabinClass = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cabinClass) && !is_string($cabinClass)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cabinClass, true), gettype($cabinClass)), __LINE__);
-        }
         $this->CabinClass = $cabinClass;
         
         return $this;
@@ -82,10 +77,6 @@ class BookingCodeInfo extends AbstractStructBase
      */
     public function setBookingCounts(?string $bookingCounts = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingCounts) && !is_string($bookingCounts)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingCounts, true), gettype($bookingCounts)), __LINE__);
-        }
         $this->BookingCounts = $bookingCounts;
         
         return $this;

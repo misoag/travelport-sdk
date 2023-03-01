@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,21 +18,21 @@ class RailLegModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\PermittedConnectionPoints|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PermittedConnectionPoints $PermittedConnectionPoints = null;
+    public ?\Travelport\UniversalRecord\StructType\PermittedConnectionPoints $PermittedConnectionPoints = null;
     /**
      * The ProhibitedConnectionPoints
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\ProhibitedConnectionPoints|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ProhibitedConnectionPoints $ProhibitedConnectionPoints = null;
+    public ?\Travelport\UniversalRecord\StructType\ProhibitedConnectionPoints $ProhibitedConnectionPoints = null;
     /**
      * The Class
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $Class = null;
+    public ?string $Class = null;
     /**
      * Constructor method for RailLegModifiers
      * @uses RailLegModifiers::setPermittedConnectionPoints()
@@ -103,10 +102,6 @@ class RailLegModifiers extends AbstractStructBase
      */
     public function setClass(?string $class = null): self
     {
-        // validation for constraint: string
-        if (!is_null($class) && !is_string($class)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($class, true), gettype($class)), __LINE__);
-        }
         $this->Class = $class;
         
         return $this;

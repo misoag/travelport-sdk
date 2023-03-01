@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class FarePricing extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PassengerType = null;
+    public ?string $PassengerType = null;
     /**
      * The TotalFareAmount
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class FarePricing extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TotalFareAmount = null;
+    public ?string $TotalFareAmount = null;
     /**
      * The PrivateFare
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class FarePricing extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PrivateFare = null;
+    public ?bool $PrivateFare = null;
     /**
      * The NegotiatedFare
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class FarePricing extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $NegotiatedFare = null;
+    public ?bool $NegotiatedFare = null;
     /**
      * The AutoPriceable
      * Meta information extracted from the WSDL
@@ -58,7 +57,7 @@ class FarePricing extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AutoPriceable = null;
+    public ?bool $AutoPriceable = null;
     /**
      * The TotalNetFareAmount
      * Meta information extracted from the WSDL
@@ -67,7 +66,7 @@ class FarePricing extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TotalNetFareAmount = null;
+    public ?string $TotalNetFareAmount = null;
     /**
      * The BaseFare
      * Meta information extracted from the WSDL
@@ -76,7 +75,7 @@ class FarePricing extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BaseFare = null;
+    public ?string $BaseFare = null;
     /**
      * The Taxes
      * Meta information extracted from the WSDL
@@ -85,7 +84,7 @@ class FarePricing extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Taxes = null;
+    public ?string $Taxes = null;
     /**
      * The MMid
      * Meta information extracted from the WSDL
@@ -94,7 +93,7 @@ class FarePricing extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $MMid = null;
+    public ?string $MMid = null;
     /**
      * Constructor method for FarePricing
      * @uses FarePricing::setPassengerType()
@@ -144,18 +143,6 @@ class FarePricing extends AbstractStructBase
      */
     public function setPassengerType(?string $passengerType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($passengerType) && !is_string($passengerType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passengerType, true), gettype($passengerType)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($passengerType) && mb_strlen((string) $passengerType) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $passengerType)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($passengerType) && mb_strlen((string) $passengerType) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $passengerType)), __LINE__);
-        }
         $this->PassengerType = $passengerType;
         
         return $this;
@@ -175,10 +162,6 @@ class FarePricing extends AbstractStructBase
      */
     public function setTotalFareAmount(?string $totalFareAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($totalFareAmount) && !is_string($totalFareAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($totalFareAmount, true), gettype($totalFareAmount)), __LINE__);
-        }
         $this->TotalFareAmount = $totalFareAmount;
         
         return $this;
@@ -198,10 +181,6 @@ class FarePricing extends AbstractStructBase
      */
     public function setPrivateFare(?bool $privateFare = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($privateFare) && !is_bool($privateFare)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($privateFare, true), gettype($privateFare)), __LINE__);
-        }
         $this->PrivateFare = $privateFare;
         
         return $this;
@@ -221,10 +200,6 @@ class FarePricing extends AbstractStructBase
      */
     public function setNegotiatedFare(?bool $negotiatedFare = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($negotiatedFare) && !is_bool($negotiatedFare)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($negotiatedFare, true), gettype($negotiatedFare)), __LINE__);
-        }
         $this->NegotiatedFare = $negotiatedFare;
         
         return $this;
@@ -244,10 +219,6 @@ class FarePricing extends AbstractStructBase
      */
     public function setAutoPriceable(?bool $autoPriceable = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($autoPriceable) && !is_bool($autoPriceable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($autoPriceable, true), gettype($autoPriceable)), __LINE__);
-        }
         $this->AutoPriceable = $autoPriceable;
         
         return $this;
@@ -267,10 +238,6 @@ class FarePricing extends AbstractStructBase
      */
     public function setTotalNetFareAmount(?string $totalNetFareAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($totalNetFareAmount) && !is_string($totalNetFareAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($totalNetFareAmount, true), gettype($totalNetFareAmount)), __LINE__);
-        }
         $this->TotalNetFareAmount = $totalNetFareAmount;
         
         return $this;
@@ -290,10 +257,6 @@ class FarePricing extends AbstractStructBase
      */
     public function setBaseFare(?string $baseFare = null): self
     {
-        // validation for constraint: string
-        if (!is_null($baseFare) && !is_string($baseFare)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($baseFare, true), gettype($baseFare)), __LINE__);
-        }
         $this->BaseFare = $baseFare;
         
         return $this;
@@ -313,10 +276,6 @@ class FarePricing extends AbstractStructBase
      */
     public function setTaxes(?string $taxes = null): self
     {
-        // validation for constraint: string
-        if (!is_null($taxes) && !is_string($taxes)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($taxes, true), gettype($taxes)), __LINE__);
-        }
         $this->Taxes = $taxes;
         
         return $this;
@@ -336,10 +295,6 @@ class FarePricing extends AbstractStructBase
      */
     public function setMMid(?string $mMid = null): self
     {
-        // validation for constraint: string
-        if (!is_null($mMid) && !is_string($mMid)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mMid, true), gettype($mMid)), __LINE__);
-        }
         $this->MMid = $mMid;
         
         return $this;

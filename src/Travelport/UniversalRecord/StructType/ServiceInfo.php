@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class ServiceInfo extends AbstractStructBase
      * - maxOccurs: 999
      * @var string[]
      */
-    protected ?array $Description = null;
+    public ?array $Description = null;
     /**
      * The MediaItem
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class ServiceInfo extends AbstractStructBase
      * - ref: MediaItem
      * @var \Travelport\UniversalRecord\StructType\MediaItem[]
      */
-    protected ?array $MediaItem = null;
+    public ?array $MediaItem = null;
     /**
      * Constructor method for ServiceInfo
      * @uses ServiceInfo::setDescription()
@@ -52,48 +51,12 @@ class ServiceInfo extends AbstractStructBase
         return $this->Description;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setDescription method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setDescription method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateDescriptionForArrayConstraintFromSetDescription(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $serviceInfoDescriptionItem) {
-            // validation for constraint: itemType
-            if (!is_string($serviceInfoDescriptionItem)) {
-                $invalidValues[] = is_object($serviceInfoDescriptionItem) ? get_class($serviceInfoDescriptionItem) : sprintf('%s(%s)', gettype($serviceInfoDescriptionItem), var_export($serviceInfoDescriptionItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Description property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Description value
-     * @throws InvalidArgumentException
      * @param string[] $description
      * @return \Travelport\UniversalRecord\StructType\ServiceInfo
      */
     public function setDescription(?array $description = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($descriptionArrayErrorMessage = self::validateDescriptionForArrayConstraintFromSetDescription($description))) {
-            throw new InvalidArgumentException($descriptionArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($description) && count($description) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($description)), __LINE__);
-        }
         $this->Description = $description;
         
         return $this;
@@ -106,14 +69,6 @@ class ServiceInfo extends AbstractStructBase
      */
     public function addToDescription(string $item): self
     {
-        // validation for constraint: itemType
-        if (!is_string($item)) {
-            throw new InvalidArgumentException(sprintf('The Description property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->Description) && count($this->Description) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->Description)), __LINE__);
-        }
         $this->Description[] = $item;
         
         return $this;
@@ -127,48 +82,12 @@ class ServiceInfo extends AbstractStructBase
         return $this->MediaItem;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setMediaItem method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setMediaItem method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateMediaItemForArrayConstraintFromSetMediaItem(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $serviceInfoMediaItemItem) {
-            // validation for constraint: itemType
-            if (!$serviceInfoMediaItemItem instanceof \Travelport\UniversalRecord\StructType\MediaItem) {
-                $invalidValues[] = is_object($serviceInfoMediaItemItem) ? get_class($serviceInfoMediaItemItem) : sprintf('%s(%s)', gettype($serviceInfoMediaItemItem), var_export($serviceInfoMediaItemItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The MediaItem property can only contain items of type \Travelport\UniversalRecord\StructType\MediaItem, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set MediaItem value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\MediaItem[] $mediaItem
      * @return \Travelport\UniversalRecord\StructType\ServiceInfo
      */
     public function setMediaItem(?array $mediaItem = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($mediaItemArrayErrorMessage = self::validateMediaItemForArrayConstraintFromSetMediaItem($mediaItem))) {
-            throw new InvalidArgumentException($mediaItemArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(3)
-        if (is_array($mediaItem) && count($mediaItem) > 3) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 3', count($mediaItem)), __LINE__);
-        }
         $this->MediaItem = $mediaItem;
         
         return $this;
@@ -181,14 +100,6 @@ class ServiceInfo extends AbstractStructBase
      */
     public function addToMediaItem(\Travelport\UniversalRecord\StructType\MediaItem $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\MediaItem) {
-            throw new InvalidArgumentException(sprintf('The MediaItem property can only contain items of type \Travelport\UniversalRecord\StructType\MediaItem, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(3)
-        if (is_array($this->MediaItem) && count($this->MediaItem) >= 3) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 3', count($this->MediaItem)), __LINE__);
-        }
         $this->MediaItem[] = $item;
         
         return $this;

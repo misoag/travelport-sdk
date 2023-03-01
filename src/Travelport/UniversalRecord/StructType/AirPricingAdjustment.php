@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,14 +22,14 @@ class AirPricingAdjustment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * The Adjustment
      * Meta information extracted from the WSDL
      * - ref: Adjustment
      * @var \Travelport\UniversalRecord\StructType\Adjustment|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Adjustment $Adjustment = null;
+    public ?\Travelport\UniversalRecord\StructType\Adjustment $Adjustment = null;
     /**
      * Constructor method for AirPricingAdjustment
      * @uses AirPricingAdjustment::setKey()
@@ -59,10 +58,6 @@ class AirPricingAdjustment extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;

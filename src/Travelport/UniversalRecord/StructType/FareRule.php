@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class FareRule extends AbstractStructBase
      * - ref: FareRuleLong
      * @var \Travelport\UniversalRecord\StructType\FareRuleLong[]
      */
-    protected ?array $FareRuleLong = null;
+    public ?array $FareRuleLong = null;
     /**
      * The FareRuleShort
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class FareRule extends AbstractStructBase
      * - ref: FareRuleShort
      * @var \Travelport\UniversalRecord\StructType\FareRuleShort[]
      */
-    protected ?array $FareRuleShort = null;
+    public ?array $FareRuleShort = null;
     /**
      * The RuleAdvancedPurchase
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class FareRule extends AbstractStructBase
      * - ref: RuleAdvancedPurchase
      * @var \Travelport\UniversalRecord\StructType\RuleAdvancedPurchase|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\RuleAdvancedPurchase $RuleAdvancedPurchase = null;
+    public ?\Travelport\UniversalRecord\StructType\RuleAdvancedPurchase $RuleAdvancedPurchase = null;
     /**
      * The RuleLengthOfStay
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class FareRule extends AbstractStructBase
      * - ref: RuleLengthOfStay
      * @var \Travelport\UniversalRecord\StructType\RuleLengthOfStay|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\RuleLengthOfStay $RuleLengthOfStay = null;
+    public ?\Travelport\UniversalRecord\StructType\RuleLengthOfStay $RuleLengthOfStay = null;
     /**
      * The RuleCharges
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class FareRule extends AbstractStructBase
      * - ref: RuleCharges
      * @var \Travelport\UniversalRecord\StructType\RuleCharges|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\RuleCharges $RuleCharges = null;
+    public ?\Travelport\UniversalRecord\StructType\RuleCharges $RuleCharges = null;
     /**
      * The FareRuleResultMessage
      * Meta information extracted from the WSDL
@@ -64,42 +63,42 @@ class FareRule extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeResultMessage[]
      */
-    protected ?array $FareRuleResultMessage = null;
+    public ?array $FareRuleResultMessage = null;
     /**
      * The StructuredFareRules
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\StructuredFareRulesType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\StructuredFareRulesType $StructuredFareRules = null;
+    public ?\Travelport\UniversalRecord\StructType\StructuredFareRulesType $StructuredFareRules = null;
     /**
      * The FareInfoRef
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $FareInfoRef = null;
+    public ?string $FareInfoRef = null;
     /**
      * The RuleNumber
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $RuleNumber = null;
+    public ?string $RuleNumber = null;
     /**
      * The Source
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $Source = null;
+    public ?string $Source = null;
     /**
      * The TariffNumber
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $TariffNumber = null;
+    public ?string $TariffNumber = null;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -109,7 +108,7 @@ class FareRule extends AbstractStructBase
      * - minLength: 2
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
@@ -119,7 +118,7 @@ class FareRule extends AbstractStructBase
      * - minLength: 1
      * @var string|null
      */
-    protected ?string $SupplierCode = null;
+    public ?string $SupplierCode = null;
     /**
      * Constructor method for FareRule
      * @uses FareRule::setFareRuleLong()
@@ -175,48 +174,12 @@ class FareRule extends AbstractStructBase
         return $this->FareRuleLong;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFareRuleLong method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFareRuleLong method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFareRuleLongForArrayConstraintFromSetFareRuleLong(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $fareRuleFareRuleLongItem) {
-            // validation for constraint: itemType
-            if (!$fareRuleFareRuleLongItem instanceof \Travelport\UniversalRecord\StructType\FareRuleLong) {
-                $invalidValues[] = is_object($fareRuleFareRuleLongItem) ? get_class($fareRuleFareRuleLongItem) : sprintf('%s(%s)', gettype($fareRuleFareRuleLongItem), var_export($fareRuleFareRuleLongItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FareRuleLong property can only contain items of type \Travelport\UniversalRecord\StructType\FareRuleLong, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FareRuleLong value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FareRuleLong[] $fareRuleLong
      * @return \Travelport\UniversalRecord\StructType\FareRule
      */
     public function setFareRuleLong(?array $fareRuleLong = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($fareRuleLongArrayErrorMessage = self::validateFareRuleLongForArrayConstraintFromSetFareRuleLong($fareRuleLong))) {
-            throw new InvalidArgumentException($fareRuleLongArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($fareRuleLong) && count($fareRuleLong) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($fareRuleLong)), __LINE__);
-        }
         $this->FareRuleLong = $fareRuleLong;
         
         return $this;
@@ -229,14 +192,6 @@ class FareRule extends AbstractStructBase
      */
     public function addToFareRuleLong(\Travelport\UniversalRecord\StructType\FareRuleLong $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\FareRuleLong) {
-            throw new InvalidArgumentException(sprintf('The FareRuleLong property can only contain items of type \Travelport\UniversalRecord\StructType\FareRuleLong, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FareRuleLong) && count($this->FareRuleLong) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FareRuleLong)), __LINE__);
-        }
         $this->FareRuleLong[] = $item;
         
         return $this;
@@ -250,48 +205,12 @@ class FareRule extends AbstractStructBase
         return $this->FareRuleShort;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFareRuleShort method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFareRuleShort method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFareRuleShortForArrayConstraintFromSetFareRuleShort(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $fareRuleFareRuleShortItem) {
-            // validation for constraint: itemType
-            if (!$fareRuleFareRuleShortItem instanceof \Travelport\UniversalRecord\StructType\FareRuleShort) {
-                $invalidValues[] = is_object($fareRuleFareRuleShortItem) ? get_class($fareRuleFareRuleShortItem) : sprintf('%s(%s)', gettype($fareRuleFareRuleShortItem), var_export($fareRuleFareRuleShortItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FareRuleShort property can only contain items of type \Travelport\UniversalRecord\StructType\FareRuleShort, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FareRuleShort value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FareRuleShort[] $fareRuleShort
      * @return \Travelport\UniversalRecord\StructType\FareRule
      */
     public function setFareRuleShort(?array $fareRuleShort = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($fareRuleShortArrayErrorMessage = self::validateFareRuleShortForArrayConstraintFromSetFareRuleShort($fareRuleShort))) {
-            throw new InvalidArgumentException($fareRuleShortArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($fareRuleShort) && count($fareRuleShort) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($fareRuleShort)), __LINE__);
-        }
         $this->FareRuleShort = $fareRuleShort;
         
         return $this;
@@ -304,14 +223,6 @@ class FareRule extends AbstractStructBase
      */
     public function addToFareRuleShort(\Travelport\UniversalRecord\StructType\FareRuleShort $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\FareRuleShort) {
-            throw new InvalidArgumentException(sprintf('The FareRuleShort property can only contain items of type \Travelport\UniversalRecord\StructType\FareRuleShort, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FareRuleShort) && count($this->FareRuleShort) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FareRuleShort)), __LINE__);
-        }
         $this->FareRuleShort[] = $item;
         
         return $this;
@@ -382,48 +293,12 @@ class FareRule extends AbstractStructBase
         return $this->FareRuleResultMessage;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFareRuleResultMessage method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFareRuleResultMessage method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFareRuleResultMessageForArrayConstraintFromSetFareRuleResultMessage(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $fareRuleFareRuleResultMessageItem) {
-            // validation for constraint: itemType
-            if (!$fareRuleFareRuleResultMessageItem instanceof \Travelport\UniversalRecord\StructType\TypeResultMessage) {
-                $invalidValues[] = is_object($fareRuleFareRuleResultMessageItem) ? get_class($fareRuleFareRuleResultMessageItem) : sprintf('%s(%s)', gettype($fareRuleFareRuleResultMessageItem), var_export($fareRuleFareRuleResultMessageItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FareRuleResultMessage property can only contain items of type \Travelport\UniversalRecord\StructType\TypeResultMessage, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FareRuleResultMessage value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeResultMessage[] $fareRuleResultMessage
      * @return \Travelport\UniversalRecord\StructType\FareRule
      */
     public function setFareRuleResultMessage(?array $fareRuleResultMessage = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($fareRuleResultMessageArrayErrorMessage = self::validateFareRuleResultMessageForArrayConstraintFromSetFareRuleResultMessage($fareRuleResultMessage))) {
-            throw new InvalidArgumentException($fareRuleResultMessageArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($fareRuleResultMessage) && count($fareRuleResultMessage) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($fareRuleResultMessage)), __LINE__);
-        }
         $this->FareRuleResultMessage = $fareRuleResultMessage;
         
         return $this;
@@ -436,14 +311,6 @@ class FareRule extends AbstractStructBase
      */
     public function addToFareRuleResultMessage(\Travelport\UniversalRecord\StructType\TypeResultMessage $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeResultMessage) {
-            throw new InvalidArgumentException(sprintf('The FareRuleResultMessage property can only contain items of type \Travelport\UniversalRecord\StructType\TypeResultMessage, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FareRuleResultMessage) && count($this->FareRuleResultMessage) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FareRuleResultMessage)), __LINE__);
-        }
         $this->FareRuleResultMessage[] = $item;
         
         return $this;
@@ -482,10 +349,6 @@ class FareRule extends AbstractStructBase
      */
     public function setFareInfoRef(?string $fareInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fareInfoRef) && !is_string($fareInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareInfoRef, true), gettype($fareInfoRef)), __LINE__);
-        }
         $this->FareInfoRef = $fareInfoRef;
         
         return $this;
@@ -505,10 +368,6 @@ class FareRule extends AbstractStructBase
      */
     public function setRuleNumber(?string $ruleNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ruleNumber) && !is_string($ruleNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ruleNumber, true), gettype($ruleNumber)), __LINE__);
-        }
         $this->RuleNumber = $ruleNumber;
         
         return $this;
@@ -528,10 +387,6 @@ class FareRule extends AbstractStructBase
      */
     public function setSource(?string $source = null): self
     {
-        // validation for constraint: string
-        if (!is_null($source) && !is_string($source)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($source, true), gettype($source)), __LINE__);
-        }
         $this->Source = $source;
         
         return $this;
@@ -551,10 +406,6 @@ class FareRule extends AbstractStructBase
      */
     public function setTariffNumber(?string $tariffNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tariffNumber) && !is_string($tariffNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tariffNumber, true), gettype($tariffNumber)), __LINE__);
-        }
         $this->TariffNumber = $tariffNumber;
         
         return $this;
@@ -574,18 +425,6 @@ class FareRule extends AbstractStructBase
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -605,18 +444,6 @@ class FareRule extends AbstractStructBase
      */
     public function setSupplierCode(?string $supplierCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $supplierCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;

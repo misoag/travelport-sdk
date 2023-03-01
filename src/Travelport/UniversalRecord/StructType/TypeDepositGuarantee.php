@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,14 +21,14 @@ class TypeDepositGuarantee extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Purpose;
+    public string $Purpose;
     /**
      * The Type
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $Type = null;
+    public ?string $Type = null;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class TypeDepositGuarantee extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The Percent
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class TypeDepositGuarantee extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $Percent = null;
+    public ?float $Percent = null;
     /**
      * The DueDate
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class TypeDepositGuarantee extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DueDate = null;
+    public ?string $DueDate = null;
     /**
      * The NumberOfDays
      * Meta information extracted from the WSDL
@@ -62,14 +61,14 @@ class TypeDepositGuarantee extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $NumberOfDays = null;
+    public ?int $NumberOfDays = null;
     /**
      * The OptionType
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $OptionType = null;
+    public ?string $OptionType = null;
     /**
      * The Required
      * Meta information extracted from the WSDL
@@ -77,7 +76,7 @@ class TypeDepositGuarantee extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Required = null;
+    public ?bool $Required = null;
     /**
      * The RequirementPassed
      * Meta information extracted from the WSDL
@@ -85,7 +84,7 @@ class TypeDepositGuarantee extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $RequirementPassed = null;
+    public ?bool $RequirementPassed = null;
     /**
      * Constructor method for typeDepositGuarantee
      * @uses TypeDepositGuarantee::setPurpose()
@@ -130,18 +129,11 @@ class TypeDepositGuarantee extends AbstractStructBase
     }
     /**
      * Set Purpose value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeReserveRequirement::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeReserveRequirement::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $purpose
      * @return \Travelport\UniversalRecord\StructType\TypeDepositGuarantee
      */
     public function setPurpose(string $purpose): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeReserveRequirement::valueIsValid($purpose)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeReserveRequirement', is_array($purpose) ? implode(', ', $purpose) : var_export($purpose, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeReserveRequirement::getValidValues())), __LINE__);
-        }
         $this->Purpose = $purpose;
         
         return $this;
@@ -161,10 +153,6 @@ class TypeDepositGuarantee extends AbstractStructBase
      */
     public function setType(?string $type = null): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -184,10 +172,6 @@ class TypeDepositGuarantee extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -207,10 +191,6 @@ class TypeDepositGuarantee extends AbstractStructBase
      */
     public function setPercent(?float $percent = null): self
     {
-        // validation for constraint: float
-        if (!is_null($percent) && !(is_float($percent) || is_numeric($percent))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($percent, true), gettype($percent)), __LINE__);
-        }
         $this->Percent = $percent;
         
         return $this;
@@ -230,10 +210,6 @@ class TypeDepositGuarantee extends AbstractStructBase
      */
     public function setDueDate(?string $dueDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($dueDate) && !is_string($dueDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dueDate, true), gettype($dueDate)), __LINE__);
-        }
         $this->DueDate = $dueDate;
         
         return $this;
@@ -253,10 +229,6 @@ class TypeDepositGuarantee extends AbstractStructBase
      */
     public function setNumberOfDays(?int $numberOfDays = null): self
     {
-        // validation for constraint: int
-        if (!is_null($numberOfDays) && !(is_int($numberOfDays) || ctype_digit($numberOfDays))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($numberOfDays, true), gettype($numberOfDays)), __LINE__);
-        }
         $this->NumberOfDays = $numberOfDays;
         
         return $this;
@@ -276,10 +248,6 @@ class TypeDepositGuarantee extends AbstractStructBase
      */
     public function setOptionType(?string $optionType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($optionType) && !is_string($optionType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionType, true), gettype($optionType)), __LINE__);
-        }
         $this->OptionType = $optionType;
         
         return $this;
@@ -299,10 +267,6 @@ class TypeDepositGuarantee extends AbstractStructBase
      */
     public function setRequired(?bool $required = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($required) && !is_bool($required)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($required, true), gettype($required)), __LINE__);
-        }
         $this->Required = $required;
         
         return $this;
@@ -322,10 +286,6 @@ class TypeDepositGuarantee extends AbstractStructBase
      */
     public function setRequirementPassed(?bool $requirementPassed = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($requirementPassed) && !is_bool($requirementPassed)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($requirementPassed, true), gettype($requirementPassed)), __LINE__);
-        }
         $this->RequirementPassed = $requirementPassed;
         
         return $this;

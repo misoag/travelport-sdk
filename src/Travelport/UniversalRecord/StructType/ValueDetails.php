@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,14 +18,14 @@ class ValueDetails extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Name;
+    public string $Name;
     /**
      * The Value
      * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
-    protected string $Value;
+    public string $Value;
     /**
      * Constructor method for ValueDetails
      * @uses ValueDetails::setName()
@@ -55,10 +54,6 @@ class ValueDetails extends AbstractStructBase
      */
     public function setName(string $name): self
     {
-        // validation for constraint: string
-        if (!is_null($name) && !is_string($name)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
-        }
         $this->Name = $name;
         
         return $this;
@@ -78,10 +73,6 @@ class ValueDetails extends AbstractStructBase
      */
     public function setValue(string $value): self
     {
-        // validation for constraint: string
-        if (!is_null($value) && !is_string($value)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($value, true), gettype($value)), __LINE__);
-        }
         $this->Value = $value;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class CruiseBookingTravelerRef extends AbstractStructBase
      * - ref: common:LoyaltyCardRef
      * @var \Travelport\UniversalRecord\StructType\LoyaltyCardRef[]
      */
-    protected ?array $LoyaltyCardRef = null;
+    public ?array $LoyaltyCardRef = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class CruiseBookingTravelerRef extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The WaiverIndicator
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class CruiseBookingTravelerRef extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $WaiverIndicator = null;
+    public ?bool $WaiverIndicator = null;
     /**
      * Constructor method for CruiseBookingTravelerRef
      * @uses CruiseBookingTravelerRef::setLoyaltyCardRef()
@@ -66,48 +65,12 @@ class CruiseBookingTravelerRef extends AbstractStructBase
         return $this->LoyaltyCardRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setLoyaltyCardRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyCardRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateLoyaltyCardRefForArrayConstraintFromSetLoyaltyCardRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $cruiseBookingTravelerRefLoyaltyCardRefItem) {
-            // validation for constraint: itemType
-            if (!$cruiseBookingTravelerRefLoyaltyCardRefItem instanceof \Travelport\UniversalRecord\StructType\LoyaltyCardRef) {
-                $invalidValues[] = is_object($cruiseBookingTravelerRefLoyaltyCardRefItem) ? get_class($cruiseBookingTravelerRefLoyaltyCardRefItem) : sprintf('%s(%s)', gettype($cruiseBookingTravelerRefLoyaltyCardRefItem), var_export($cruiseBookingTravelerRefLoyaltyCardRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The LoyaltyCardRef property can only contain items of type \Travelport\UniversalRecord\StructType\LoyaltyCardRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set LoyaltyCardRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\LoyaltyCardRef[] $loyaltyCardRef
      * @return \Travelport\UniversalRecord\StructType\CruiseBookingTravelerRef
      */
     public function setLoyaltyCardRef(?array $loyaltyCardRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($loyaltyCardRefArrayErrorMessage = self::validateLoyaltyCardRefForArrayConstraintFromSetLoyaltyCardRef($loyaltyCardRef))) {
-            throw new InvalidArgumentException($loyaltyCardRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($loyaltyCardRef) && count($loyaltyCardRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($loyaltyCardRef)), __LINE__);
-        }
         $this->LoyaltyCardRef = $loyaltyCardRef;
         
         return $this;
@@ -120,14 +83,6 @@ class CruiseBookingTravelerRef extends AbstractStructBase
      */
     public function addToLoyaltyCardRef(\Travelport\UniversalRecord\StructType\LoyaltyCardRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\LoyaltyCardRef) {
-            throw new InvalidArgumentException(sprintf('The LoyaltyCardRef property can only contain items of type \Travelport\UniversalRecord\StructType\LoyaltyCardRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->LoyaltyCardRef) && count($this->LoyaltyCardRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->LoyaltyCardRef)), __LINE__);
-        }
         $this->LoyaltyCardRef[] = $item;
         
         return $this;
@@ -147,10 +102,6 @@ class CruiseBookingTravelerRef extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -170,10 +121,6 @@ class CruiseBookingTravelerRef extends AbstractStructBase
      */
     public function setWaiverIndicator(?bool $waiverIndicator = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($waiverIndicator) && !is_bool($waiverIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($waiverIndicator, true), gettype($waiverIndicator)), __LINE__);
-        }
         $this->WaiverIndicator = $waiverIndicator;
         
         return $this;

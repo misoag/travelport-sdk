@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class SavedTripRetrieveReq extends BaseReq
      * - use: optional
      * @var string|null
      */
-    protected ?string $LocatorCode = null;
+    public ?string $LocatorCode = null;
     /**
      * The TravelerLastName
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class SavedTripRetrieveReq extends BaseReq
      * - use: optional
      * @var string|null
      */
-    protected ?string $TravelerLastName = null;
+    public ?string $TravelerLastName = null;
     /**
      * Constructor method for SavedTripRetrieveReq
      * @uses SavedTripRetrieveReq::setLocatorCode()
@@ -65,18 +64,6 @@ class SavedTripRetrieveReq extends BaseReq
      */
     public function setLocatorCode(?string $locatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($locatorCode) && !is_string($locatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($locatorCode, true), gettype($locatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($locatorCode) && mb_strlen((string) $locatorCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $locatorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($locatorCode) && mb_strlen((string) $locatorCode) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $locatorCode)), __LINE__);
-        }
         $this->LocatorCode = $locatorCode;
         
         return $this;
@@ -96,18 +83,6 @@ class SavedTripRetrieveReq extends BaseReq
      */
     public function setTravelerLastName(?string $travelerLastName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($travelerLastName) && !is_string($travelerLastName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelerLastName, true), gettype($travelerLastName)), __LINE__);
-        }
-        // validation for constraint: maxLength(256)
-        if (!is_null($travelerLastName) && mb_strlen((string) $travelerLastName) > 256) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 256', mb_strlen((string) $travelerLastName)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($travelerLastName) && mb_strlen((string) $travelerLastName) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $travelerLastName)), __LINE__);
-        }
         $this->TravelerLastName = $travelerLastName;
         
         return $this;

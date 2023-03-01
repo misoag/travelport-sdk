@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class VehicleRate extends AbstractStructBase
      * - ref: SupplierRate
      * @var \Travelport\UniversalRecord\StructType\SupplierRate|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\SupplierRate $SupplierRate = null;
+    public ?\Travelport\UniversalRecord\StructType\SupplierRate $SupplierRate = null;
     /**
      * The RateVariance
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class VehicleRate extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeRateVariance|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeRateVariance $RateVariance = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeRateVariance $RateVariance = null;
     /**
      * The ApproximateRate
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class VehicleRate extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeVehicleRates|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeVehicleRates $ApproximateRate = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeVehicleRates $ApproximateRate = null;
     /**
      * The VehicleCharge
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class VehicleRate extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeVehicleCharge[]
      */
-    protected ?array $VehicleCharge = null;
+    public ?array $VehicleCharge = null;
     /**
      * The VehicleRateDescription
      * Meta information extracted from the WSDL
@@ -56,28 +55,28 @@ class VehicleRate extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeVehicleRateDescription[]
      */
-    protected ?array $VehicleRateDescription = null;
+    public ?array $VehicleRateDescription = null;
     /**
      * The RateHostIndicator
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeRateHostIndicator|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeRateHostIndicator $RateHostIndicator = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeRateHostIndicator $RateHostIndicator = null;
     /**
      * The HourlyLateCharge
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeRateInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeRateInfo $HourlyLateCharge = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeRateInfo $HourlyLateCharge = null;
     /**
      * The DailyLateCharge
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeRateInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeRateInfo $DailyLateCharge = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeRateInfo $DailyLateCharge = null;
     /**
      * The PricedEquip
      * Meta information extracted from the WSDL
@@ -86,7 +85,7 @@ class VehicleRate extends AbstractStructBase
      * - ref: PricedEquip
      * @var \Travelport\UniversalRecord\StructType\PricedEquip[]
      */
-    protected ?array $PricedEquip = null;
+    public ?array $PricedEquip = null;
     /**
      * The RateInclusions
      * Meta information extracted from the WSDL
@@ -94,7 +93,7 @@ class VehicleRate extends AbstractStructBase
      * - ref: RateInclusions
      * @var \Travelport\UniversalRecord\StructType\RateInclusions|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\RateInclusions $RateInclusions = null;
+    public ?\Travelport\UniversalRecord\StructType\RateInclusions $RateInclusions = null;
     /**
      * The WeeklyLateCharge
      * Meta information extracted from the WSDL
@@ -103,7 +102,7 @@ class VehicleRate extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeRateInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeRateInfo $WeeklyLateCharge = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeRateInfo $WeeklyLateCharge = null;
     /**
      * The PrintText
      * Meta information extracted from the WSDL
@@ -112,7 +111,7 @@ class VehicleRate extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $PrintText = null;
+    public ?string $PrintText = null;
     /**
      * The RatePeriod
      * Meta information extracted from the WSDL
@@ -120,14 +119,14 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RatePeriod = null;
+    public ?string $RatePeriod = null;
     /**
      * The NumberOfPeriods
      * Meta information extracted from the WSDL
      * - documentation: Define how many periods (e.g. number of days or weeks)
      * @var int|null
      */
-    protected ?int $NumberOfPeriods = null;
+    public ?int $NumberOfPeriods = null;
     /**
      * The UnlimitedMileage
      * Meta information extracted from the WSDL
@@ -135,7 +134,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $UnlimitedMileage = null;
+    public ?bool $UnlimitedMileage = null;
     /**
      * The MileageAllowance
      * Meta information extracted from the WSDL
@@ -143,7 +142,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MileageAllowance = null;
+    public ?int $MileageAllowance = null;
     /**
      * The Units
      * Meta information extracted from the WSDL
@@ -151,7 +150,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Units = null;
+    public ?string $Units = null;
     /**
      * The RateSource
      * Meta information extracted from the WSDL
@@ -159,7 +158,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RateSource = null;
+    public ?string $RateSource = null;
     /**
      * The RateAvailability
      * Meta information extracted from the WSDL
@@ -167,7 +166,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RateAvailability = null;
+    public ?string $RateAvailability = null;
     /**
      * The RequiredCharges
      * Meta information extracted from the WSDL
@@ -175,7 +174,7 @@ class VehicleRate extends AbstractStructBase
      * - base: xs:string
      * @var string|null
      */
-    protected ?string $RequiredCharges = null;
+    public ?string $RequiredCharges = null;
     /**
      * The RateCode
      * Meta information extracted from the WSDL
@@ -185,7 +184,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RateCode = null;
+    public ?string $RateCode = null;
     /**
      * The RequestedRateCodeApplied
      * Meta information extracted from the WSDL
@@ -193,7 +192,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RequestedRateCodeApplied = null;
+    public ?string $RequestedRateCodeApplied = null;
     /**
      * The RateCategory
      * Meta information extracted from the WSDL
@@ -201,7 +200,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RateCategory = null;
+    public ?string $RateCategory = null;
     /**
      * The DiscountNumber
      * Meta information extracted from the WSDL
@@ -211,7 +210,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DiscountNumber = null;
+    public ?string $DiscountNumber = null;
     /**
      * The DiscountNumberApplied
      * Meta information extracted from the WSDL
@@ -219,7 +218,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DiscountNumberApplied = null;
+    public ?string $DiscountNumberApplied = null;
     /**
      * The VendorCode
      * Meta information extracted from the WSDL
@@ -230,7 +229,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $VendorCode = null;
+    public ?string $VendorCode = null;
     /**
      * The RateGuaranteed
      * Meta information extracted from the WSDL
@@ -239,7 +238,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $RateGuaranteed = null;
+    public ?bool $RateGuaranteed = null;
     /**
      * The RateCodePeriod
      * Meta information extracted from the WSDL
@@ -247,7 +246,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RateCodePeriod = null;
+    public ?string $RateCodePeriod = null;
     /**
      * The PromotionalCode
      * Meta information extracted from the WSDL
@@ -255,7 +254,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PromotionalCode = null;
+    public ?string $PromotionalCode = null;
     /**
      * The PromotionalCodeApplied
      * Meta information extracted from the WSDL
@@ -263,7 +262,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PromotionalCodeApplied = null;
+    public ?string $PromotionalCodeApplied = null;
     /**
      * The TourCode
      * Meta information extracted from the WSDL
@@ -271,7 +270,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TourCode = null;
+    public ?string $TourCode = null;
     /**
      * The TourCodeApplied
      * Meta information extracted from the WSDL
@@ -279,7 +278,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TourCodeApplied = null;
+    public ?string $TourCodeApplied = null;
     /**
      * The RateGuaranteeType
      * Meta information extracted from the WSDL
@@ -287,14 +286,14 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RateGuaranteeType = null;
+    public ?string $RateGuaranteeType = null;
     /**
      * The RequiredPayment
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $RequiredPayment = null;
+    public ?string $RequiredPayment = null;
     /**
      * The DropOffChargesIncluded
      * Meta information extracted from the WSDL
@@ -302,7 +301,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $DropOffChargesIncluded = null;
+    public ?bool $DropOffChargesIncluded = null;
     /**
      * The CorporateRate
      * Meta information extracted from the WSDL
@@ -310,7 +309,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $CorporateRate = null;
+    public ?bool $CorporateRate = null;
     /**
      * The AdvancedBooking
      * Meta information extracted from the WSDL
@@ -318,7 +317,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AdvancedBooking = null;
+    public ?string $AdvancedBooking = null;
     /**
      * The RentalRestriction
      * Meta information extracted from the WSDL
@@ -326,7 +325,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $RentalRestriction = null;
+    public ?bool $RentalRestriction = null;
     /**
      * The FlightRestriction
      * Meta information extracted from the WSDL
@@ -334,7 +333,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $FlightRestriction = null;
+    public ?bool $FlightRestriction = null;
     /**
      * The CardNumber
      * Meta information extracted from the WSDL
@@ -345,7 +344,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CardNumber = null;
+    public ?string $CardNumber = null;
     /**
      * The CardNumberApplied
      * Meta information extracted from the WSDL
@@ -353,7 +352,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CardNumberApplied = null;
+    public ?string $CardNumberApplied = null;
     /**
      * The RateQualifierInd
      * Meta information extracted from the WSDL
@@ -361,7 +360,7 @@ class VehicleRate extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $RateQualifierInd = null;
+    public ?int $RateQualifierInd = null;
     /**
      * Constructor method for VehicleRate
      * @uses VehicleRate::setSupplierRate()
@@ -561,48 +560,12 @@ class VehicleRate extends AbstractStructBase
         return $this->VehicleCharge;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setVehicleCharge method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleCharge method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateVehicleChargeForArrayConstraintFromSetVehicleCharge(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $vehicleRateVehicleChargeItem) {
-            // validation for constraint: itemType
-            if (!$vehicleRateVehicleChargeItem instanceof \Travelport\UniversalRecord\StructType\TypeVehicleCharge) {
-                $invalidValues[] = is_object($vehicleRateVehicleChargeItem) ? get_class($vehicleRateVehicleChargeItem) : sprintf('%s(%s)', gettype($vehicleRateVehicleChargeItem), var_export($vehicleRateVehicleChargeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The VehicleCharge property can only contain items of type \Travelport\UniversalRecord\StructType\TypeVehicleCharge, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set VehicleCharge value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeVehicleCharge[] $vehicleCharge
      * @return \Travelport\UniversalRecord\StructType\VehicleRate
      */
     public function setVehicleCharge(?array $vehicleCharge = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($vehicleChargeArrayErrorMessage = self::validateVehicleChargeForArrayConstraintFromSetVehicleCharge($vehicleCharge))) {
-            throw new InvalidArgumentException($vehicleChargeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($vehicleCharge) && count($vehicleCharge) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($vehicleCharge)), __LINE__);
-        }
         $this->VehicleCharge = $vehicleCharge;
         
         return $this;
@@ -615,14 +578,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function addToVehicleCharge(\Travelport\UniversalRecord\StructType\TypeVehicleCharge $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeVehicleCharge) {
-            throw new InvalidArgumentException(sprintf('The VehicleCharge property can only contain items of type \Travelport\UniversalRecord\StructType\TypeVehicleCharge, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->VehicleCharge) && count($this->VehicleCharge) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->VehicleCharge)), __LINE__);
-        }
         $this->VehicleCharge[] = $item;
         
         return $this;
@@ -636,48 +591,12 @@ class VehicleRate extends AbstractStructBase
         return $this->VehicleRateDescription;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setVehicleRateDescription method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleRateDescription method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateVehicleRateDescriptionForArrayConstraintFromSetVehicleRateDescription(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $vehicleRateVehicleRateDescriptionItem) {
-            // validation for constraint: itemType
-            if (!$vehicleRateVehicleRateDescriptionItem instanceof \Travelport\UniversalRecord\StructType\TypeVehicleRateDescription) {
-                $invalidValues[] = is_object($vehicleRateVehicleRateDescriptionItem) ? get_class($vehicleRateVehicleRateDescriptionItem) : sprintf('%s(%s)', gettype($vehicleRateVehicleRateDescriptionItem), var_export($vehicleRateVehicleRateDescriptionItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The VehicleRateDescription property can only contain items of type \Travelport\UniversalRecord\StructType\TypeVehicleRateDescription, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set VehicleRateDescription value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeVehicleRateDescription[] $vehicleRateDescription
      * @return \Travelport\UniversalRecord\StructType\VehicleRate
      */
     public function setVehicleRateDescription(?array $vehicleRateDescription = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($vehicleRateDescriptionArrayErrorMessage = self::validateVehicleRateDescriptionForArrayConstraintFromSetVehicleRateDescription($vehicleRateDescription))) {
-            throw new InvalidArgumentException($vehicleRateDescriptionArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($vehicleRateDescription) && count($vehicleRateDescription) > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 99', count($vehicleRateDescription)), __LINE__);
-        }
         $this->VehicleRateDescription = $vehicleRateDescription;
         
         return $this;
@@ -690,14 +609,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function addToVehicleRateDescription(\Travelport\UniversalRecord\StructType\TypeVehicleRateDescription $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeVehicleRateDescription) {
-            throw new InvalidArgumentException(sprintf('The VehicleRateDescription property can only contain items of type \Travelport\UniversalRecord\StructType\TypeVehicleRateDescription, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(99)
-        if (is_array($this->VehicleRateDescription) && count($this->VehicleRateDescription) >= 99) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 99', count($this->VehicleRateDescription)), __LINE__);
-        }
         $this->VehicleRateDescription[] = $item;
         
         return $this;
@@ -768,48 +679,12 @@ class VehicleRate extends AbstractStructBase
         return $this->PricedEquip;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPricedEquip method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPricedEquip method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePricedEquipForArrayConstraintFromSetPricedEquip(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $vehicleRatePricedEquipItem) {
-            // validation for constraint: itemType
-            if (!$vehicleRatePricedEquipItem instanceof \Travelport\UniversalRecord\StructType\PricedEquip) {
-                $invalidValues[] = is_object($vehicleRatePricedEquipItem) ? get_class($vehicleRatePricedEquipItem) : sprintf('%s(%s)', gettype($vehicleRatePricedEquipItem), var_export($vehicleRatePricedEquipItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The PricedEquip property can only contain items of type \Travelport\UniversalRecord\StructType\PricedEquip, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set PricedEquip value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\PricedEquip[] $pricedEquip
      * @return \Travelport\UniversalRecord\StructType\VehicleRate
      */
     public function setPricedEquip(?array $pricedEquip = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($pricedEquipArrayErrorMessage = self::validatePricedEquipForArrayConstraintFromSetPricedEquip($pricedEquip))) {
-            throw new InvalidArgumentException($pricedEquipArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($pricedEquip) && count($pricedEquip) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($pricedEquip)), __LINE__);
-        }
         $this->PricedEquip = $pricedEquip;
         
         return $this;
@@ -822,14 +697,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function addToPricedEquip(\Travelport\UniversalRecord\StructType\PricedEquip $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\PricedEquip) {
-            throw new InvalidArgumentException(sprintf('The PricedEquip property can only contain items of type \Travelport\UniversalRecord\StructType\PricedEquip, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->PricedEquip) && count($this->PricedEquip) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->PricedEquip)), __LINE__);
-        }
         $this->PricedEquip[] = $item;
         
         return $this;
@@ -887,10 +754,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setPrintText(?string $printText = null): self
     {
-        // validation for constraint: string
-        if (!is_null($printText) && !is_string($printText)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($printText, true), gettype($printText)), __LINE__);
-        }
         $this->PrintText = $printText;
         
         return $this;
@@ -905,18 +768,11 @@ class VehicleRate extends AbstractStructBase
     }
     /**
      * Set RatePeriod value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRateTimePeriod::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRateTimePeriod::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $ratePeriod
      * @return \Travelport\UniversalRecord\StructType\VehicleRate
      */
     public function setRatePeriod(?string $ratePeriod = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeRateTimePeriod::valueIsValid($ratePeriod)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeRateTimePeriod', is_array($ratePeriod) ? implode(', ', $ratePeriod) : var_export($ratePeriod, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeRateTimePeriod::getValidValues())), __LINE__);
-        }
         $this->RatePeriod = $ratePeriod;
         
         return $this;
@@ -936,10 +792,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setNumberOfPeriods(?int $numberOfPeriods = null): self
     {
-        // validation for constraint: int
-        if (!is_null($numberOfPeriods) && !(is_int($numberOfPeriods) || ctype_digit($numberOfPeriods))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($numberOfPeriods, true), gettype($numberOfPeriods)), __LINE__);
-        }
         $this->NumberOfPeriods = $numberOfPeriods;
         
         return $this;
@@ -959,10 +811,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setUnlimitedMileage(?bool $unlimitedMileage = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($unlimitedMileage) && !is_bool($unlimitedMileage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($unlimitedMileage, true), gettype($unlimitedMileage)), __LINE__);
-        }
         $this->UnlimitedMileage = $unlimitedMileage;
         
         return $this;
@@ -982,10 +830,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setMileageAllowance(?int $mileageAllowance = null): self
     {
-        // validation for constraint: int
-        if (!is_null($mileageAllowance) && !(is_int($mileageAllowance) || ctype_digit($mileageAllowance))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($mileageAllowance, true), gettype($mileageAllowance)), __LINE__);
-        }
         $this->MileageAllowance = $mileageAllowance;
         
         return $this;
@@ -1000,18 +844,11 @@ class VehicleRate extends AbstractStructBase
     }
     /**
      * Set Units value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeDistance::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeDistance::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $units
      * @return \Travelport\UniversalRecord\StructType\VehicleRate
      */
     public function setUnits(?string $units = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeDistance::valueIsValid($units)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeDistance', is_array($units) ? implode(', ', $units) : var_export($units, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeDistance::getValidValues())), __LINE__);
-        }
         $this->Units = $units;
         
         return $this;
@@ -1031,10 +868,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setRateSource(?string $rateSource = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rateSource) && !is_string($rateSource)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rateSource, true), gettype($rateSource)), __LINE__);
-        }
         $this->RateSource = $rateSource;
         
         return $this;
@@ -1049,18 +882,11 @@ class VehicleRate extends AbstractStructBase
     }
     /**
      * Set RateAvailability value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRateAvailability::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRateAvailability::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $rateAvailability
      * @return \Travelport\UniversalRecord\StructType\VehicleRate
      */
     public function setRateAvailability(?string $rateAvailability = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeRateAvailability::valueIsValid($rateAvailability)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeRateAvailability', is_array($rateAvailability) ? implode(', ', $rateAvailability) : var_export($rateAvailability, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeRateAvailability::getValidValues())), __LINE__);
-        }
         $this->RateAvailability = $rateAvailability;
         
         return $this;
@@ -1080,10 +906,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setRequiredCharges(?string $requiredCharges = null): self
     {
-        // validation for constraint: string
-        if (!is_null($requiredCharges) && !is_string($requiredCharges)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($requiredCharges, true), gettype($requiredCharges)), __LINE__);
-        }
         $this->RequiredCharges = $requiredCharges;
         
         return $this;
@@ -1103,14 +925,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setRateCode(?string $rateCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rateCode) && !is_string($rateCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rateCode, true), gettype($rateCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($rateCode) && mb_strlen((string) $rateCode) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $rateCode)), __LINE__);
-        }
         $this->RateCode = $rateCode;
         
         return $this;
@@ -1125,18 +939,11 @@ class VehicleRate extends AbstractStructBase
     }
     /**
      * Set RequestedRateCodeApplied value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $requestedRateCodeApplied
      * @return \Travelport\UniversalRecord\StructType\VehicleRate
      */
     public function setRequestedRateCodeApplied(?string $requestedRateCodeApplied = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid($requestedRateCodeApplied)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeTrinary', is_array($requestedRateCodeApplied) ? implode(', ', $requestedRateCodeApplied) : var_export($requestedRateCodeApplied, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues())), __LINE__);
-        }
         $this->RequestedRateCodeApplied = $requestedRateCodeApplied;
         
         return $this;
@@ -1151,18 +958,11 @@ class VehicleRate extends AbstractStructBase
     }
     /**
      * Set RateCategory value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRateCategory::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRateCategory::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $rateCategory
      * @return \Travelport\UniversalRecord\StructType\VehicleRate
      */
     public function setRateCategory(?string $rateCategory = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeRateCategory::valueIsValid($rateCategory)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeRateCategory', is_array($rateCategory) ? implode(', ', $rateCategory) : var_export($rateCategory, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeRateCategory::getValidValues())), __LINE__);
-        }
         $this->RateCategory = $rateCategory;
         
         return $this;
@@ -1182,14 +982,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setDiscountNumber(?string $discountNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($discountNumber) && !is_string($discountNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($discountNumber, true), gettype($discountNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(25)
-        if (!is_null($discountNumber) && mb_strlen((string) $discountNumber) > 25) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 25', mb_strlen((string) $discountNumber)), __LINE__);
-        }
         $this->DiscountNumber = $discountNumber;
         
         return $this;
@@ -1204,18 +996,11 @@ class VehicleRate extends AbstractStructBase
     }
     /**
      * Set DiscountNumberApplied value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $discountNumberApplied
      * @return \Travelport\UniversalRecord\StructType\VehicleRate
      */
     public function setDiscountNumberApplied(?string $discountNumberApplied = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid($discountNumberApplied)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeTrinary', is_array($discountNumberApplied) ? implode(', ', $discountNumberApplied) : var_export($discountNumberApplied, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues())), __LINE__);
-        }
         $this->DiscountNumberApplied = $discountNumberApplied;
         
         return $this;
@@ -1235,18 +1020,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setVendorCode(?string $vendorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($vendorCode) && !is_string($vendorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($vendorCode, true), gettype($vendorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($vendorCode) && mb_strlen((string) $vendorCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $vendorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($vendorCode) && mb_strlen((string) $vendorCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $vendorCode)), __LINE__);
-        }
         $this->VendorCode = $vendorCode;
         
         return $this;
@@ -1266,10 +1039,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setRateGuaranteed(?bool $rateGuaranteed = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($rateGuaranteed) && !is_bool($rateGuaranteed)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($rateGuaranteed, true), gettype($rateGuaranteed)), __LINE__);
-        }
         $this->RateGuaranteed = $rateGuaranteed;
         
         return $this;
@@ -1289,10 +1058,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setRateCodePeriod(?string $rateCodePeriod = null): self
     {
-        // validation for constraint: string
-        if (!is_null($rateCodePeriod) && !is_string($rateCodePeriod)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($rateCodePeriod, true), gettype($rateCodePeriod)), __LINE__);
-        }
         $this->RateCodePeriod = $rateCodePeriod;
         
         return $this;
@@ -1312,10 +1077,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setPromotionalCode(?string $promotionalCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($promotionalCode) && !is_string($promotionalCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($promotionalCode, true), gettype($promotionalCode)), __LINE__);
-        }
         $this->PromotionalCode = $promotionalCode;
         
         return $this;
@@ -1330,18 +1091,11 @@ class VehicleRate extends AbstractStructBase
     }
     /**
      * Set PromotionalCodeApplied value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $promotionalCodeApplied
      * @return \Travelport\UniversalRecord\StructType\VehicleRate
      */
     public function setPromotionalCodeApplied(?string $promotionalCodeApplied = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid($promotionalCodeApplied)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeTrinary', is_array($promotionalCodeApplied) ? implode(', ', $promotionalCodeApplied) : var_export($promotionalCodeApplied, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues())), __LINE__);
-        }
         $this->PromotionalCodeApplied = $promotionalCodeApplied;
         
         return $this;
@@ -1361,10 +1115,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setTourCode(?string $tourCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tourCode) && !is_string($tourCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tourCode, true), gettype($tourCode)), __LINE__);
-        }
         $this->TourCode = $tourCode;
         
         return $this;
@@ -1379,18 +1129,11 @@ class VehicleRate extends AbstractStructBase
     }
     /**
      * Set TourCodeApplied value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $tourCodeApplied
      * @return \Travelport\UniversalRecord\StructType\VehicleRate
      */
     public function setTourCodeApplied(?string $tourCodeApplied = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid($tourCodeApplied)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeTrinary', is_array($tourCodeApplied) ? implode(', ', $tourCodeApplied) : var_export($tourCodeApplied, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues())), __LINE__);
-        }
         $this->TourCodeApplied = $tourCodeApplied;
         
         return $this;
@@ -1405,18 +1148,11 @@ class VehicleRate extends AbstractStructBase
     }
     /**
      * Set RateGuaranteeType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRateGuarantee::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRateGuarantee::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $rateGuaranteeType
      * @return \Travelport\UniversalRecord\StructType\VehicleRate
      */
     public function setRateGuaranteeType(?string $rateGuaranteeType = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeRateGuarantee::valueIsValid($rateGuaranteeType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeRateGuarantee', is_array($rateGuaranteeType) ? implode(', ', $rateGuaranteeType) : var_export($rateGuaranteeType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeRateGuarantee::getValidValues())), __LINE__);
-        }
         $this->RateGuaranteeType = $rateGuaranteeType;
         
         return $this;
@@ -1436,10 +1172,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setRequiredPayment(?string $requiredPayment = null): self
     {
-        // validation for constraint: string
-        if (!is_null($requiredPayment) && !is_string($requiredPayment)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($requiredPayment, true), gettype($requiredPayment)), __LINE__);
-        }
         $this->RequiredPayment = $requiredPayment;
         
         return $this;
@@ -1459,10 +1191,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setDropOffChargesIncluded(?bool $dropOffChargesIncluded = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($dropOffChargesIncluded) && !is_bool($dropOffChargesIncluded)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($dropOffChargesIncluded, true), gettype($dropOffChargesIncluded)), __LINE__);
-        }
         $this->DropOffChargesIncluded = $dropOffChargesIncluded;
         
         return $this;
@@ -1482,10 +1210,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setCorporateRate(?bool $corporateRate = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($corporateRate) && !is_bool($corporateRate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($corporateRate, true), gettype($corporateRate)), __LINE__);
-        }
         $this->CorporateRate = $corporateRate;
         
         return $this;
@@ -1505,10 +1229,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setAdvancedBooking(?string $advancedBooking = null): self
     {
-        // validation for constraint: string
-        if (!is_null($advancedBooking) && !is_string($advancedBooking)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($advancedBooking, true), gettype($advancedBooking)), __LINE__);
-        }
         $this->AdvancedBooking = $advancedBooking;
         
         return $this;
@@ -1528,10 +1248,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setRentalRestriction(?bool $rentalRestriction = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($rentalRestriction) && !is_bool($rentalRestriction)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($rentalRestriction, true), gettype($rentalRestriction)), __LINE__);
-        }
         $this->RentalRestriction = $rentalRestriction;
         
         return $this;
@@ -1551,10 +1267,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setFlightRestriction(?bool $flightRestriction = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($flightRestriction) && !is_bool($flightRestriction)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($flightRestriction, true), gettype($flightRestriction)), __LINE__);
-        }
         $this->FlightRestriction = $flightRestriction;
         
         return $this;
@@ -1574,18 +1286,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setCardNumber(?string $cardNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cardNumber) && !is_string($cardNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cardNumber, true), gettype($cardNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(36)
-        if (!is_null($cardNumber) && mb_strlen((string) $cardNumber) > 36) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 36', mb_strlen((string) $cardNumber)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($cardNumber) && mb_strlen((string) $cardNumber) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $cardNumber)), __LINE__);
-        }
         $this->CardNumber = $cardNumber;
         
         return $this;
@@ -1600,18 +1300,11 @@ class VehicleRate extends AbstractStructBase
     }
     /**
      * Set CardNumberApplied value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $cardNumberApplied
      * @return \Travelport\UniversalRecord\StructType\VehicleRate
      */
     public function setCardNumberApplied(?string $cardNumberApplied = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeTrinary::valueIsValid($cardNumberApplied)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeTrinary', is_array($cardNumberApplied) ? implode(', ', $cardNumberApplied) : var_export($cardNumberApplied, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeTrinary::getValidValues())), __LINE__);
-        }
         $this->CardNumberApplied = $cardNumberApplied;
         
         return $this;
@@ -1631,10 +1324,6 @@ class VehicleRate extends AbstractStructBase
      */
     public function setRateQualifierInd(?int $rateQualifierInd = null): self
     {
-        // validation for constraint: int
-        if (!is_null($rateQualifierInd) && !(is_int($rateQualifierInd) || ctype_digit($rateQualifierInd))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($rateQualifierInd, true), gettype($rateQualifierInd)), __LINE__);
-        }
         $this->RateQualifierInd = $rateQualifierInd;
         
         return $this;

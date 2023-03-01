@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,32 +18,32 @@ class BookingTraveler extends AbstractStructBase
      * The BookingTravelerName
      * @var \Travelport\UniversalRecord\StructType\BookingTravelerName|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\BookingTravelerName $BookingTravelerName = null;
+    public ?\Travelport\UniversalRecord\StructType\BookingTravelerName $BookingTravelerName = null;
     /**
      * The DeliveryInfo
      * @var \Travelport\UniversalRecord\StructType\DeliveryInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\DeliveryInfo $DeliveryInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\DeliveryInfo $DeliveryInfo = null;
     /**
      * The PhoneNumber
      * @var \Travelport\UniversalRecord\StructType\PhoneNumber|null
      */
-    public $PhoneNumber = null;
+    public ?\Travelport\UniversalRecord\StructType\PhoneNumber $PhoneNumber = null;
     /**
      * The Email
      * @var \Travelport\UniversalRecord\StructType\Email|null
      */
-    protected $Email = null;
+    public ?\Travelport\UniversalRecord\StructType\Email $Email = null;
     /**
      * The LoyaltyCard
      * @var \Travelport\UniversalRecord\StructType\LoyaltyCard|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\LoyaltyCard $LoyaltyCard = null;
+    public ?\Travelport\UniversalRecord\StructType\LoyaltyCard $LoyaltyCard = null;
     /**
      * The DiscountCard
      * @var \Travelport\UniversalRecord\StructType\DiscountCard|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\DiscountCard $DiscountCard = null;
+    public ?\Travelport\UniversalRecord\StructType\DiscountCard $DiscountCard = null;
     /**
      * The SSR
      * Meta information extracted from the WSDL
@@ -53,7 +52,7 @@ class BookingTraveler extends AbstractStructBase
      * - ref: SSR
      * @var \Travelport\UniversalRecord\StructType\SSR[]
      */
-    protected ?array $SSR = null;
+    public ?array $SSR = null;
     /**
      * The NameRemark
      * Meta information extracted from the WSDL
@@ -62,7 +61,7 @@ class BookingTraveler extends AbstractStructBase
      * - ref: NameRemark
      * @var \Travelport\UniversalRecord\StructType\NameRemark[]
      */
-    protected ?array $NameRemark = null;
+    public ?array $NameRemark = null;
     /**
      * The AirSeatAssignment
      * Meta information extracted from the WSDL
@@ -71,7 +70,7 @@ class BookingTraveler extends AbstractStructBase
      * - ref: AirSeatAssignment
      * @var \Travelport\UniversalRecord\StructType\AirSeatAssignment[]
      */
-    protected ?array $AirSeatAssignment = null;
+    public ?array $AirSeatAssignment = null;
     /**
      * The RailSeatAssignment
      * Meta information extracted from the WSDL
@@ -80,42 +79,42 @@ class BookingTraveler extends AbstractStructBase
      * - ref: RailSeatAssignment
      * @var \Travelport\UniversalRecord\StructType\RailSeatAssignment[]
      */
-    protected ?array $RailSeatAssignment = null;
+    public ?array $RailSeatAssignment = null;
     /**
      * The EmergencyInfo
      * @var string|null
      */
-    protected ?string $EmergencyInfo = null;
+    public ?string $EmergencyInfo = null;
     /**
      * The Address
      * @var \Travelport\UniversalRecord\StructType\TypeStructuredAddress|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeStructuredAddress $Address = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeStructuredAddress $Address = null;
     /**
      * The DriversLicense
      * @var \Travelport\UniversalRecord\StructType\DriversLicense|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\DriversLicense $DriversLicense = null;
+    public ?\Travelport\UniversalRecord\StructType\DriversLicense $DriversLicense = null;
     /**
      * The AppliedProfile
      * @var \Travelport\UniversalRecord\StructType\AppliedProfile|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AppliedProfile $AppliedProfile = null;
+    public ?\Travelport\UniversalRecord\StructType\AppliedProfile $AppliedProfile = null;
     /**
      * The CustomizedNameData
      * @var \Travelport\UniversalRecord\StructType\CustomizedNameData|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CustomizedNameData $CustomizedNameData = null;
+    public ?\Travelport\UniversalRecord\StructType\CustomizedNameData $CustomizedNameData = null;
     /**
      * The TravelComplianceData
      * @var \Travelport\UniversalRecord\StructType\TravelComplianceData|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TravelComplianceData $TravelComplianceData = null;
+    public ?\Travelport\UniversalRecord\StructType\TravelComplianceData $TravelComplianceData = null;
     /**
      * The TravelInfo
      * @var \Travelport\UniversalRecord\StructType\TravelInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TravelInfo $TravelInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\TravelInfo $TravelInfo = null;
     /**
      * The NameNumber
      * Meta information extracted from the WSDL
@@ -123,7 +122,7 @@ class BookingTraveler extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $NameNumber = null;
+    public ?string $NameNumber = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -133,7 +132,7 @@ class BookingTraveler extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The TravelerType
      * Meta information extracted from the WSDL
@@ -145,7 +144,7 @@ class BookingTraveler extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TravelerType = null;
+    public ?string $TravelerType = null;
     /**
      * The Age
      * Meta information extracted from the WSDL
@@ -154,7 +153,7 @@ class BookingTraveler extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Age = null;
+    public ?int $Age = null;
     /**
      * The VIP
      * Meta information extracted from the WSDL
@@ -164,7 +163,7 @@ class BookingTraveler extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $VIP = null;
+    public ?bool $VIP = null;
     /**
      * The DOB
      * Meta information extracted from the WSDL
@@ -173,7 +172,7 @@ class BookingTraveler extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DOB = null;
+    public ?string $DOB = null;
     /**
      * The Gender
      * Meta information extracted from the WSDL
@@ -185,7 +184,7 @@ class BookingTraveler extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Gender = null;
+    public ?string $Gender = null;
     /**
      * The Nationality
      * Meta information extracted from the WSDL
@@ -196,7 +195,7 @@ class BookingTraveler extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Nationality = null;
+    public ?string $Nationality = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -205,7 +204,7 @@ class BookingTraveler extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -213,7 +212,7 @@ class BookingTraveler extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for BookingTraveler
      * @uses BookingTraveler::setBookingTravelerName()
@@ -353,7 +352,7 @@ class BookingTraveler extends AbstractStructBase
      * @param \Travelport\UniversalRecord\StructType\PhoneNumber $phoneNumber
      * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
-    public function setPhoneNumber($phoneNumber = null): self
+    public function setPhoneNumber(?\Travelport\UniversalRecord\StructType\PhoneNumber $phoneNumber = null): self
     {
         $this->PhoneNumber = $phoneNumber;
         
@@ -372,7 +371,7 @@ class BookingTraveler extends AbstractStructBase
      * @param \Travelport\UniversalRecord\StructType\Email $email
      * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
-    public function setEmail($email = null): self
+    public function setEmail(?\Travelport\UniversalRecord\StructType\Email $email = null): self
     {
         $this->Email = $email;
         
@@ -425,48 +424,12 @@ class BookingTraveler extends AbstractStructBase
         return $this->SSR;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setSSR method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setSSR method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateSSRForArrayConstraintFromSetSSR(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $bookingTravelerSSRItem) {
-            // validation for constraint: itemType
-            if (!$bookingTravelerSSRItem instanceof \Travelport\UniversalRecord\StructType\SSR) {
-                $invalidValues[] = is_object($bookingTravelerSSRItem) ? get_class($bookingTravelerSSRItem) : sprintf('%s(%s)', gettype($bookingTravelerSSRItem), var_export($bookingTravelerSSRItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The SSR property can only contain items of type \Travelport\UniversalRecord\StructType\SSR, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set SSR value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\SSR[] $sSR
      * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
     public function setSSR(?array $sSR = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($sSRArrayErrorMessage = self::validateSSRForArrayConstraintFromSetSSR($sSR))) {
-            throw new InvalidArgumentException($sSRArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($sSR) && count($sSR) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($sSR)), __LINE__);
-        }
         $this->SSR = $sSR;
         
         return $this;
@@ -479,14 +442,6 @@ class BookingTraveler extends AbstractStructBase
      */
     public function addToSSR(\Travelport\UniversalRecord\StructType\SSR $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\SSR) {
-            throw new InvalidArgumentException(sprintf('The SSR property can only contain items of type \Travelport\UniversalRecord\StructType\SSR, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->SSR) && count($this->SSR) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->SSR)), __LINE__);
-        }
         $this->SSR[] = $item;
         
         return $this;
@@ -500,48 +455,12 @@ class BookingTraveler extends AbstractStructBase
         return $this->NameRemark;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setNameRemark method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setNameRemark method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateNameRemarkForArrayConstraintFromSetNameRemark(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $bookingTravelerNameRemarkItem) {
-            // validation for constraint: itemType
-            if (!$bookingTravelerNameRemarkItem instanceof \Travelport\UniversalRecord\StructType\NameRemark) {
-                $invalidValues[] = is_object($bookingTravelerNameRemarkItem) ? get_class($bookingTravelerNameRemarkItem) : sprintf('%s(%s)', gettype($bookingTravelerNameRemarkItem), var_export($bookingTravelerNameRemarkItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The NameRemark property can only contain items of type \Travelport\UniversalRecord\StructType\NameRemark, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set NameRemark value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\NameRemark[] $nameRemark
      * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
     public function setNameRemark(?array $nameRemark = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($nameRemarkArrayErrorMessage = self::validateNameRemarkForArrayConstraintFromSetNameRemark($nameRemark))) {
-            throw new InvalidArgumentException($nameRemarkArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($nameRemark) && count($nameRemark) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($nameRemark)), __LINE__);
-        }
         $this->NameRemark = $nameRemark;
         
         return $this;
@@ -554,14 +473,6 @@ class BookingTraveler extends AbstractStructBase
      */
     public function addToNameRemark(\Travelport\UniversalRecord\StructType\NameRemark $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\NameRemark) {
-            throw new InvalidArgumentException(sprintf('The NameRemark property can only contain items of type \Travelport\UniversalRecord\StructType\NameRemark, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->NameRemark) && count($this->NameRemark) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->NameRemark)), __LINE__);
-        }
         $this->NameRemark[] = $item;
         
         return $this;
@@ -575,48 +486,12 @@ class BookingTraveler extends AbstractStructBase
         return $this->AirSeatAssignment;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirSeatAssignment method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirSeatAssignment method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAirSeatAssignmentForArrayConstraintFromSetAirSeatAssignment(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $bookingTravelerAirSeatAssignmentItem) {
-            // validation for constraint: itemType
-            if (!$bookingTravelerAirSeatAssignmentItem instanceof \Travelport\UniversalRecord\StructType\AirSeatAssignment) {
-                $invalidValues[] = is_object($bookingTravelerAirSeatAssignmentItem) ? get_class($bookingTravelerAirSeatAssignmentItem) : sprintf('%s(%s)', gettype($bookingTravelerAirSeatAssignmentItem), var_export($bookingTravelerAirSeatAssignmentItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AirSeatAssignment property can only contain items of type \Travelport\UniversalRecord\StructType\AirSeatAssignment, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AirSeatAssignment value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AirSeatAssignment[] $airSeatAssignment
      * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
     public function setAirSeatAssignment(?array $airSeatAssignment = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($airSeatAssignmentArrayErrorMessage = self::validateAirSeatAssignmentForArrayConstraintFromSetAirSeatAssignment($airSeatAssignment))) {
-            throw new InvalidArgumentException($airSeatAssignmentArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($airSeatAssignment) && count($airSeatAssignment) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($airSeatAssignment)), __LINE__);
-        }
         $this->AirSeatAssignment = $airSeatAssignment;
         
         return $this;
@@ -629,14 +504,6 @@ class BookingTraveler extends AbstractStructBase
      */
     public function addToAirSeatAssignment(\Travelport\UniversalRecord\StructType\AirSeatAssignment $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AirSeatAssignment) {
-            throw new InvalidArgumentException(sprintf('The AirSeatAssignment property can only contain items of type \Travelport\UniversalRecord\StructType\AirSeatAssignment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->AirSeatAssignment) && count($this->AirSeatAssignment) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->AirSeatAssignment)), __LINE__);
-        }
         $this->AirSeatAssignment[] = $item;
         
         return $this;
@@ -650,48 +517,12 @@ class BookingTraveler extends AbstractStructBase
         return $this->RailSeatAssignment;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRailSeatAssignment method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRailSeatAssignment method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateRailSeatAssignmentForArrayConstraintFromSetRailSeatAssignment(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $bookingTravelerRailSeatAssignmentItem) {
-            // validation for constraint: itemType
-            if (!$bookingTravelerRailSeatAssignmentItem instanceof \Travelport\UniversalRecord\StructType\RailSeatAssignment) {
-                $invalidValues[] = is_object($bookingTravelerRailSeatAssignmentItem) ? get_class($bookingTravelerRailSeatAssignmentItem) : sprintf('%s(%s)', gettype($bookingTravelerRailSeatAssignmentItem), var_export($bookingTravelerRailSeatAssignmentItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The RailSeatAssignment property can only contain items of type \Travelport\UniversalRecord\StructType\RailSeatAssignment, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set RailSeatAssignment value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\RailSeatAssignment[] $railSeatAssignment
      * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
     public function setRailSeatAssignment(?array $railSeatAssignment = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($railSeatAssignmentArrayErrorMessage = self::validateRailSeatAssignmentForArrayConstraintFromSetRailSeatAssignment($railSeatAssignment))) {
-            throw new InvalidArgumentException($railSeatAssignmentArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($railSeatAssignment) && count($railSeatAssignment) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($railSeatAssignment)), __LINE__);
-        }
         $this->RailSeatAssignment = $railSeatAssignment;
         
         return $this;
@@ -704,14 +535,6 @@ class BookingTraveler extends AbstractStructBase
      */
     public function addToRailSeatAssignment(\Travelport\UniversalRecord\StructType\RailSeatAssignment $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\RailSeatAssignment) {
-            throw new InvalidArgumentException(sprintf('The RailSeatAssignment property can only contain items of type \Travelport\UniversalRecord\StructType\RailSeatAssignment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->RailSeatAssignment) && count($this->RailSeatAssignment) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->RailSeatAssignment)), __LINE__);
-        }
         $this->RailSeatAssignment[] = $item;
         
         return $this;
@@ -731,10 +554,6 @@ class BookingTraveler extends AbstractStructBase
      */
     public function setEmergencyInfo(?string $emergencyInfo = null): self
     {
-        // validation for constraint: string
-        if (!is_null($emergencyInfo) && !is_string($emergencyInfo)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($emergencyInfo, true), gettype($emergencyInfo)), __LINE__);
-        }
         $this->EmergencyInfo = $emergencyInfo;
         
         return $this;
@@ -868,10 +687,6 @@ class BookingTraveler extends AbstractStructBase
      */
     public function setNameNumber(?string $nameNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($nameNumber) && !is_string($nameNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nameNumber, true), gettype($nameNumber)), __LINE__);
-        }
         $this->NameNumber = $nameNumber;
         
         return $this;
@@ -891,10 +706,6 @@ class BookingTraveler extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -914,18 +725,6 @@ class BookingTraveler extends AbstractStructBase
      */
     public function setTravelerType(?string $travelerType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($travelerType) && !is_string($travelerType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelerType, true), gettype($travelerType)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($travelerType) && mb_strlen((string) $travelerType) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $travelerType)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($travelerType) && mb_strlen((string) $travelerType) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $travelerType)), __LINE__);
-        }
         $this->TravelerType = $travelerType;
         
         return $this;
@@ -945,10 +744,6 @@ class BookingTraveler extends AbstractStructBase
      */
     public function setAge(?int $age = null): self
     {
-        // validation for constraint: int
-        if (!is_null($age) && !(is_int($age) || ctype_digit($age))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($age, true), gettype($age)), __LINE__);
-        }
         $this->Age = $age;
         
         return $this;
@@ -968,10 +763,6 @@ class BookingTraveler extends AbstractStructBase
      */
     public function setVIP(?bool $vIP = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($vIP) && !is_bool($vIP)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($vIP, true), gettype($vIP)), __LINE__);
-        }
         $this->VIP = $vIP;
         
         return $this;
@@ -991,10 +782,6 @@ class BookingTraveler extends AbstractStructBase
      */
     public function setDOB(?string $dOB = null): self
     {
-        // validation for constraint: string
-        if (!is_null($dOB) && !is_string($dOB)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($dOB, true), gettype($dOB)), __LINE__);
-        }
         $this->DOB = $dOB;
         
         return $this;
@@ -1014,18 +801,6 @@ class BookingTraveler extends AbstractStructBase
      */
     public function setGender(?string $gender = null): self
     {
-        // validation for constraint: string
-        if (!is_null($gender) && !is_string($gender)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($gender, true), gettype($gender)), __LINE__);
-        }
-        // validation for constraint: maxLength(2)
-        if (!is_null($gender) && mb_strlen((string) $gender) > 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 2', mb_strlen((string) $gender)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($gender) && mb_strlen((string) $gender) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $gender)), __LINE__);
-        }
         $this->Gender = $gender;
         
         return $this;
@@ -1045,14 +820,6 @@ class BookingTraveler extends AbstractStructBase
      */
     public function setNationality(?string $nationality = null): self
     {
-        // validation for constraint: string
-        if (!is_null($nationality) && !is_string($nationality)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nationality, true), gettype($nationality)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($nationality) && mb_strlen((string) $nationality) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $nationality)), __LINE__);
-        }
         $this->Nationality = $nationality;
         
         return $this;
@@ -1067,18 +834,11 @@ class BookingTraveler extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\BookingTraveler
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -1098,10 +858,6 @@ class BookingTraveler extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

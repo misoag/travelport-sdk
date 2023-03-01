@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class DebitCard extends TypePaymentCard
      * - use: optional
      * @var string|null
      */
-    protected ?string $IssueNumber = null;
+    public ?string $IssueNumber = null;
     /**
      * The ProfileID
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class DebitCard extends TypePaymentCard
      * - type: xs:string
      * @var string|null
      */
-    protected ?string $ProfileID = null;
+    public ?string $ProfileID = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class DebitCard extends TypePaymentCard
      * - type: typeRef
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * Constructor method for DebitCard
      * @uses DebitCard::setIssueNumber()
@@ -72,14 +71,6 @@ class DebitCard extends TypePaymentCard
      */
     public function setIssueNumber(?string $issueNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($issueNumber) && !is_string($issueNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($issueNumber, true), gettype($issueNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($issueNumber) && mb_strlen((string) $issueNumber) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $issueNumber)), __LINE__);
-        }
         $this->IssueNumber = $issueNumber;
         
         return $this;
@@ -99,10 +90,6 @@ class DebitCard extends TypePaymentCard
      */
     public function setProfileID(?string $profileID = null): self
     {
-        // validation for constraint: string
-        if (!is_null($profileID) && !is_string($profileID)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($profileID, true), gettype($profileID)), __LINE__);
-        }
         $this->ProfileID = $profileID;
         
         return $this;
@@ -122,10 +109,6 @@ class DebitCard extends TypePaymentCard
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;

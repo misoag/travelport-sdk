@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,12 +21,12 @@ class VehicleDisclaimer extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Type;
+    public string $Type;
     /**
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The SubType
      * Meta information extracted from the WSDL
@@ -35,7 +34,7 @@ class VehicleDisclaimer extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SubType = null;
+    public ?string $SubType = null;
     /**
      * The Description
      * Meta information extracted from the WSDL
@@ -43,7 +42,7 @@ class VehicleDisclaimer extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Description = null;
+    public ?string $Description = null;
     /**
      * Constructor method for VehicleDisclaimer
      * @uses VehicleDisclaimer::setType()
@@ -73,18 +72,11 @@ class VehicleDisclaimer extends AbstractStructBase
     }
     /**
      * Set Type value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleDisclaimer::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleDisclaimer::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $type
      * @return \Travelport\UniversalRecord\StructType\VehicleDisclaimer
      */
     public function setType(string $type): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeVehicleDisclaimer::valueIsValid($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeVehicleDisclaimer', is_array($type) ? implode(', ', $type) : var_export($type, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeVehicleDisclaimer::getValidValues())), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -104,10 +96,6 @@ class VehicleDisclaimer extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -127,10 +115,6 @@ class VehicleDisclaimer extends AbstractStructBase
      */
     public function setSubType(?string $subType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($subType) && !is_string($subType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($subType, true), gettype($subType)), __LINE__);
-        }
         $this->SubType = $subType;
         
         return $this;
@@ -150,10 +134,6 @@ class VehicleDisclaimer extends AbstractStructBase
      */
     public function setDescription(?string $description = null): self
     {
-        // validation for constraint: string
-        if (!is_null($description) && !is_string($description)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($description, true), gettype($description)), __LINE__);
-        }
         $this->Description = $description;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class BSPPayment extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $BSPIdentifier;
+    public string $BSPIdentifier;
     /**
      * The BSPPassword
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class BSPPayment extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BSPPassword = null;
+    public ?string $BSPPassword = null;
     /**
      * Constructor method for BSPPayment
      * @uses BSPPayment::setBSPIdentifier()
@@ -61,14 +60,6 @@ class BSPPayment extends AbstractStructBase
      */
     public function setBSPIdentifier(string $bSPIdentifier): self
     {
-        // validation for constraint: string
-        if (!is_null($bSPIdentifier) && !is_string($bSPIdentifier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bSPIdentifier, true), gettype($bSPIdentifier)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($bSPIdentifier) && mb_strlen((string) $bSPIdentifier) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $bSPIdentifier)), __LINE__);
-        }
         $this->BSPIdentifier = $bSPIdentifier;
         
         return $this;
@@ -88,14 +79,6 @@ class BSPPayment extends AbstractStructBase
      */
     public function setBSPPassword(?string $bSPPassword = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bSPPassword) && !is_string($bSPPassword)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bSPPassword, true), gettype($bSPPassword)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($bSPPassword) && mb_strlen((string) $bSPPassword) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $bSPPassword)), __LINE__);
-        }
         $this->BSPPassword = $bSPPassword;
         
         return $this;

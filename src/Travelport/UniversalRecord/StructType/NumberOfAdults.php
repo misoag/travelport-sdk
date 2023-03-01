@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class NumberOfAdults extends AbstractStructBase
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * The ExtraAdults
      * Meta information extracted from the WSDL
@@ -27,7 +26,7 @@ class NumberOfAdults extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $ExtraAdults = null;
+    public ?int $ExtraAdults = null;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class NumberOfAdults extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The Content
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class NumberOfAdults extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Content = null;
+    public ?string $Content = null;
     /**
      * Constructor method for NumberOfAdults
      * @uses NumberOfAdults::set_()
@@ -79,10 +78,6 @@ class NumberOfAdults extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;
@@ -102,10 +97,6 @@ class NumberOfAdults extends AbstractStructBase
      */
     public function setExtraAdults(?int $extraAdults = null): self
     {
-        // validation for constraint: int
-        if (!is_null($extraAdults) && !(is_int($extraAdults) || ctype_digit($extraAdults))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($extraAdults, true), gettype($extraAdults)), __LINE__);
-        }
         $this->ExtraAdults = $extraAdults;
         
         return $this;
@@ -125,10 +116,6 @@ class NumberOfAdults extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -148,10 +135,6 @@ class NumberOfAdults extends AbstractStructBase
      */
     public function setContent(?string $content = null): self
     {
-        // validation for constraint: string
-        if (!is_null($content) && !is_string($content)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($content, true), gettype($content)), __LINE__);
-        }
         $this->Content = $content;
         
         return $this;

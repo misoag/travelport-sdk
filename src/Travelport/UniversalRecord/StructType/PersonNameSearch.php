@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class PersonNameSearch extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Last;
+    public string $Last;
     /**
      * Constructor method for PersonNameSearch
      * @uses PersonNameSearch::setLast()
@@ -51,18 +50,6 @@ class PersonNameSearch extends AbstractStructBase
      */
     public function setLast(string $last): self
     {
-        // validation for constraint: string
-        if (!is_null($last) && !is_string($last)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($last, true), gettype($last)), __LINE__);
-        }
-        // validation for constraint: maxLength(64)
-        if (!is_null($last) && mb_strlen((string) $last) > 64) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 64', mb_strlen((string) $last)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($last) && mb_strlen((string) $last) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $last)), __LINE__);
-        }
         $this->Last = $last;
         
         return $this;

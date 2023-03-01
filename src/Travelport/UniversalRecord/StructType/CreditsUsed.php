@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class CreditsUsed extends AbstractStructBase
      * The UsedCredit
      * @var float|null
      */
-    protected ?float $UsedCredit = null;
+    public ?float $UsedCredit = null;
     /**
      * The CurrencyCode
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class CreditsUsed extends AbstractStructBase
      * - length: 3
      * @var string|null
      */
-    protected ?string $CurrencyCode = null;
+    public ?string $CurrencyCode = null;
     /**
      * Constructor method for CreditsUsed
      * @uses CreditsUsed::setUsedCredit()
@@ -57,10 +56,6 @@ class CreditsUsed extends AbstractStructBase
      */
     public function setUsedCredit(?float $usedCredit = null): self
     {
-        // validation for constraint: float
-        if (!is_null($usedCredit) && !(is_float($usedCredit) || is_numeric($usedCredit))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($usedCredit, true), gettype($usedCredit)), __LINE__);
-        }
         $this->UsedCredit = $usedCredit;
         
         return $this;
@@ -80,14 +75,6 @@ class CreditsUsed extends AbstractStructBase
      */
     public function setCurrencyCode(?string $currencyCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($currencyCode) && !is_string($currencyCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currencyCode, true), gettype($currencyCode)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($currencyCode) && mb_strlen((string) $currencyCode) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $currencyCode)), __LINE__);
-        }
         $this->CurrencyCode = $currencyCode;
         
         return $this;

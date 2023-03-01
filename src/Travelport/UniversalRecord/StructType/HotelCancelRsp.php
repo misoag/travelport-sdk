@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class HotelCancelRsp extends BaseRsp
      * - ref: UniversalRecord
      * @var \Travelport\UniversalRecord\StructType\UniversalRecord|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\UniversalRecord $UniversalRecord = null;
+    public ?\Travelport\UniversalRecord\StructType\UniversalRecord $UniversalRecord = null;
     /**
      * Constructor method for HotelCancelRsp
      * @uses HotelCancelRsp::setUniversalRecord()

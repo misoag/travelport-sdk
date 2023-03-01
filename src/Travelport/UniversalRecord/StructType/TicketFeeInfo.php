@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class TicketFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Base = null;
+    public ?string $Base = null;
     /**
      * The Tax
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class TicketFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Tax = null;
+    public ?string $Tax = null;
     /**
      * The Total
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class TicketFeeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Total = null;
+    public ?string $Total = null;
     /**
      * Constructor method for TicketFeeInfo
      * @uses TicketFeeInfo::setBase()
@@ -73,10 +72,6 @@ class TicketFeeInfo extends AbstractStructBase
      */
     public function setBase(?string $base = null): self
     {
-        // validation for constraint: string
-        if (!is_null($base) && !is_string($base)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($base, true), gettype($base)), __LINE__);
-        }
         $this->Base = $base;
         
         return $this;
@@ -96,10 +91,6 @@ class TicketFeeInfo extends AbstractStructBase
      */
     public function setTax(?string $tax = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tax) && !is_string($tax)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tax, true), gettype($tax)), __LINE__);
-        }
         $this->Tax = $tax;
         
         return $this;
@@ -119,10 +110,6 @@ class TicketFeeInfo extends AbstractStructBase
      */
     public function setTotal(?string $total = null): self
     {
-        // validation for constraint: string
-        if (!is_null($total) && !is_string($total)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($total, true), gettype($total)), __LINE__);
-        }
         $this->Total = $total;
         
         return $this;

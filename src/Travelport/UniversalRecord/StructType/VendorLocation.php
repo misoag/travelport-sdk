@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class VendorLocation extends TypeVendorLocation
      * - ref: common:Distance
      * @var \Travelport\UniversalRecord\StructType\Distance|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Distance $Distance = null;
+    public ?\Travelport\UniversalRecord\StructType\Distance $Distance = null;
     /**
      * Constructor method for VendorLocation
      * @uses VendorLocation::setDistance()

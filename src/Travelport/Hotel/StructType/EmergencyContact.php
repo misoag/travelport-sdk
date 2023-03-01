@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,17 +19,17 @@ class EmergencyContact extends AbstractStructBase
      * - ref: PhoneNumber
      * @var \Travelport\Hotel\StructType\PhoneNumber|null
      */
-    protected ?\Travelport\Hotel\StructType\PhoneNumber $PhoneNumber = null;
+    public ?\Travelport\Hotel\StructType\PhoneNumber $PhoneNumber = null;
     /**
      * The Name
      * @var string|null
      */
-    protected ?string $Name = null;
+    public ?string $Name = null;
     /**
      * The Relationship
      * @var string|null
      */
-    protected ?string $Relationship = null;
+    public ?string $Relationship = null;
     /**
      * Constructor method for EmergencyContact
      * @uses EmergencyContact::setPhoneNumber()
@@ -81,10 +80,6 @@ class EmergencyContact extends AbstractStructBase
      */
     public function setName(?string $name = null): self
     {
-        // validation for constraint: string
-        if (!is_null($name) && !is_string($name)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
-        }
         $this->Name = $name;
         
         return $this;
@@ -104,10 +99,6 @@ class EmergencyContact extends AbstractStructBase
      */
     public function setRelationship(?string $relationship = null): self
     {
-        // validation for constraint: string
-        if (!is_null($relationship) && !is_string($relationship)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($relationship, true), gettype($relationship)), __LINE__);
-        }
         $this->Relationship = $relationship;
         
         return $this;

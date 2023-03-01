@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class TravelInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TripName = null;
+    public ?string $TripName = null;
     /**
      * The TravelPurpose
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class TravelInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TravelPurpose = null;
+    public ?string $TravelPurpose = null;
     /**
      * Constructor method for TravelInfo
      * @uses TravelInfo::setTripName()
@@ -61,14 +60,6 @@ class TravelInfo extends AbstractStructBase
      */
     public function setTripName(?string $tripName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tripName) && !is_string($tripName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tripName, true), gettype($tripName)), __LINE__);
-        }
-        // validation for constraint: maxLength(50)
-        if (!is_null($tripName) && mb_strlen((string) $tripName) > 50) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 50', mb_strlen((string) $tripName)), __LINE__);
-        }
         $this->TripName = $tripName;
         
         return $this;
@@ -88,14 +79,6 @@ class TravelInfo extends AbstractStructBase
      */
     public function setTravelPurpose(?string $travelPurpose = null): self
     {
-        // validation for constraint: string
-        if (!is_null($travelPurpose) && !is_string($travelPurpose)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($travelPurpose, true), gettype($travelPurpose)), __LINE__);
-        }
-        // validation for constraint: maxLength(50)
-        if (!is_null($travelPurpose) && mb_strlen((string) $travelPurpose) > 50) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 50', mb_strlen((string) $travelPurpose)), __LINE__);
-        }
         $this->TravelPurpose = $travelPurpose;
         
         return $this;

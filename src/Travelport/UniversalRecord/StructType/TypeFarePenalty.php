@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class TypeFarePenalty extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $Amount = null;
+    public ?string $Amount = null;
     /**
      * The Percentage
      * Meta information extracted from the WSDL
@@ -33,14 +32,14 @@ class TypeFarePenalty extends AbstractStructBase
      * - pattern: ([0-9]{1,2}|100)\.[0-9]{1,2}
      * @var string|null
      */
-    protected ?string $Percentage = null;
+    public ?string $Percentage = null;
     /**
      * The PenaltyApplies
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $PenaltyApplies = null;
+    public ?string $PenaltyApplies = null;
     /**
      * The NoShow
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class TypeFarePenalty extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $NoShow = null;
+    public ?bool $NoShow = null;
     /**
      * Constructor method for typeFarePenalty
      * @uses TypeFarePenalty::setAmount()
@@ -83,10 +82,6 @@ class TypeFarePenalty extends AbstractStructBase
      */
     public function setAmount(?string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;
@@ -106,14 +101,6 @@ class TypeFarePenalty extends AbstractStructBase
      */
     public function setPercentage(?string $percentage = null): self
     {
-        // validation for constraint: string
-        if (!is_null($percentage) && !is_string($percentage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($percentage, true), gettype($percentage)), __LINE__);
-        }
-        // validation for constraint: pattern(([0-9]{1,2}|100)\.[0-9]{1,2})
-        if (!is_null($percentage) && !preg_match('/([0-9]{1,2}|100)\\.[0-9]{1,2}/', $percentage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /([0-9]{1,2}|100)\\.[0-9]{1,2}/', var_export($percentage, true)), __LINE__);
-        }
         $this->Percentage = $percentage;
         
         return $this;
@@ -133,10 +120,6 @@ class TypeFarePenalty extends AbstractStructBase
      */
     public function setPenaltyApplies(?string $penaltyApplies = null): self
     {
-        // validation for constraint: string
-        if (!is_null($penaltyApplies) && !is_string($penaltyApplies)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($penaltyApplies, true), gettype($penaltyApplies)), __LINE__);
-        }
         $this->PenaltyApplies = $penaltyApplies;
         
         return $this;
@@ -156,10 +139,6 @@ class TypeFarePenalty extends AbstractStructBase
      */
     public function setNoShow(?bool $noShow = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($noShow) && !is_bool($noShow)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($noShow, true), gettype($noShow)), __LINE__);
-        }
         $this->NoShow = $noShow;
         
         return $this;

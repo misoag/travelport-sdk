@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * The VehicleAdd
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - ref: VehicleAdd
      * @var \Travelport\UniversalRecord\StructType\VehicleAdd|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\VehicleAdd $VehicleAdd = null;
+    public ?\Travelport\UniversalRecord\StructType\VehicleAdd $VehicleAdd = null;
     /**
      * The VehicleDelete
      * Meta information extracted from the WSDL
@@ -45,7 +44,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - ref: VehicleDelete
      * @var \Travelport\UniversalRecord\StructType\VehicleDelete|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\VehicleDelete $VehicleDelete = null;
+    public ?\Travelport\UniversalRecord\StructType\VehicleDelete $VehicleDelete = null;
     /**
      * The VehicleUpdate
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - ref: VehicleUpdate
      * @var \Travelport\UniversalRecord\StructType\VehicleUpdate|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\VehicleUpdate $VehicleUpdate = null;
+    public ?\Travelport\UniversalRecord\StructType\VehicleUpdate $VehicleUpdate = null;
     /**
      * The AirAdd
      * Meta information extracted from the WSDL
@@ -67,7 +66,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - ref: AirAdd
      * @var \Travelport\UniversalRecord\StructType\AirAdd|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AirAdd $AirAdd = null;
+    public ?\Travelport\UniversalRecord\StructType\AirAdd $AirAdd = null;
     /**
      * The AirDelete
      * Meta information extracted from the WSDL
@@ -78,7 +77,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - ref: AirDelete
      * @var \Travelport\UniversalRecord\StructType\AirDelete|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AirDelete $AirDelete = null;
+    public ?\Travelport\UniversalRecord\StructType\AirDelete $AirDelete = null;
     /**
      * The AirUpdate
      * Meta information extracted from the WSDL
@@ -89,7 +88,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - ref: AirUpdate
      * @var \Travelport\UniversalRecord\StructType\AirUpdate|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AirUpdate $AirUpdate = null;
+    public ?\Travelport\UniversalRecord\StructType\AirUpdate $AirUpdate = null;
     /**
      * The UniversalAdd
      * Meta information extracted from the WSDL
@@ -100,7 +99,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - ref: UniversalAdd
      * @var \Travelport\UniversalRecord\StructType\UniversalAdd|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\UniversalAdd $UniversalAdd = null;
+    public ?\Travelport\UniversalRecord\StructType\UniversalAdd $UniversalAdd = null;
     /**
      * The UniversalDelete
      * Meta information extracted from the WSDL
@@ -111,7 +110,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - ref: UniversalDelete
      * @var \Travelport\UniversalRecord\StructType\UniversalDelete|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\UniversalDelete $UniversalDelete = null;
+    public ?\Travelport\UniversalRecord\StructType\UniversalDelete $UniversalDelete = null;
     /**
      * The UniversalUpdate
      * Meta information extracted from the WSDL
@@ -122,7 +121,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - ref: UniversalUpdate
      * @var \Travelport\UniversalRecord\StructType\UniversalUpdate|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\UniversalUpdate $UniversalUpdate = null;
+    public ?\Travelport\UniversalRecord\StructType\UniversalUpdate $UniversalUpdate = null;
     /**
      * The HotelAdd
      * Meta information extracted from the WSDL
@@ -133,7 +132,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - ref: HotelAdd
      * @var \Travelport\UniversalRecord\StructType\HotelAdd|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\HotelAdd $HotelAdd = null;
+    public ?\Travelport\UniversalRecord\StructType\HotelAdd $HotelAdd = null;
     /**
      * The HotelUpdate
      * Meta information extracted from the WSDL
@@ -144,7 +143,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - ref: HotelUpdate
      * @var \Travelport\UniversalRecord\StructType\HotelUpdate|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\HotelUpdate $HotelUpdate = null;
+    public ?\Travelport\UniversalRecord\StructType\HotelUpdate $HotelUpdate = null;
     /**
      * The HotelDelete
      * Meta information extracted from the WSDL
@@ -155,7 +154,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - ref: HotelDelete
      * @var \Travelport\UniversalRecord\StructType\HotelDelete|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\HotelDelete $HotelDelete = null;
+    public ?\Travelport\UniversalRecord\StructType\HotelDelete $HotelDelete = null;
     /**
      * The PassiveAdd
      * Meta information extracted from the WSDL
@@ -166,7 +165,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - ref: PassiveAdd
      * @var \Travelport\UniversalRecord\StructType\PassiveAdd|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PassiveAdd $PassiveAdd = null;
+    public ?\Travelport\UniversalRecord\StructType\PassiveAdd $PassiveAdd = null;
     /**
      * The PassiveDelete
      * Meta information extracted from the WSDL
@@ -177,7 +176,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - ref: PassiveDelete
      * @var \Travelport\UniversalRecord\StructType\PassiveDelete|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PassiveDelete $PassiveDelete = null;
+    public ?\Travelport\UniversalRecord\StructType\PassiveDelete $PassiveDelete = null;
     /**
      * The RailUpdate
      * Meta information extracted from the WSDL
@@ -188,7 +187,7 @@ class UniversalModifyCmd extends AbstractStructBase
      * - ref: RailUpdate
      * @var \Travelport\UniversalRecord\StructType\RailUpdate|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\RailUpdate $RailUpdate = null;
+    public ?\Travelport\UniversalRecord\StructType\RailUpdate $RailUpdate = null;
     /**
      * Constructor method for UniversalModifyCmd
      * @uses UniversalModifyCmd::setKey()
@@ -259,10 +258,6 @@ class UniversalModifyCmd extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -276,61 +271,15 @@ class UniversalModifyCmd extends AbstractStructBase
         return $this->VehicleAdd ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setVehicleAdd method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleAdd method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateVehicleAddForChoiceConstraintFromSetVehicleAdd($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'VehicleDelete',
-            'VehicleUpdate',
-            'AirAdd',
-            'AirDelete',
-            'AirUpdate',
-            'UniversalAdd',
-            'UniversalDelete',
-            'UniversalUpdate',
-            'HotelAdd',
-            'HotelUpdate',
-            'HotelDelete',
-            'PassiveAdd',
-            'PassiveDelete',
-            'RailUpdate',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property VehicleAdd can\'t be set as the property %s is already set. Only one property must be set among these properties: VehicleAdd, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set VehicleAdd value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\VehicleAdd $vehicleAdd
      * @return \Travelport\UniversalRecord\StructType\UniversalModifyCmd
      */
     public function setVehicleAdd(?\Travelport\UniversalRecord\StructType\VehicleAdd $vehicleAdd = null): self
     {
-        // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($vehicleAddChoiceErrorMessage = self::validateVehicleAddForChoiceConstraintFromSetVehicleAdd($vehicleAdd))) {
-            throw new InvalidArgumentException($vehicleAddChoiceErrorMessage, __LINE__);
-        }
         if (is_null($vehicleAdd) || (is_array($vehicleAdd) && empty($vehicleAdd))) {
             unset($this->VehicleAdd);
         } else {
@@ -348,61 +297,15 @@ class UniversalModifyCmd extends AbstractStructBase
         return $this->VehicleDelete ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setVehicleDelete method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleDelete method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateVehicleDeleteForChoiceConstraintFromSetVehicleDelete($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'VehicleAdd',
-            'VehicleUpdate',
-            'AirAdd',
-            'AirDelete',
-            'AirUpdate',
-            'UniversalAdd',
-            'UniversalDelete',
-            'UniversalUpdate',
-            'HotelAdd',
-            'HotelUpdate',
-            'HotelDelete',
-            'PassiveAdd',
-            'PassiveDelete',
-            'RailUpdate',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property VehicleDelete can\'t be set as the property %s is already set. Only one property must be set among these properties: VehicleDelete, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set VehicleDelete value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\VehicleDelete $vehicleDelete
      * @return \Travelport\UniversalRecord\StructType\UniversalModifyCmd
      */
     public function setVehicleDelete(?\Travelport\UniversalRecord\StructType\VehicleDelete $vehicleDelete = null): self
     {
-        // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($vehicleDeleteChoiceErrorMessage = self::validateVehicleDeleteForChoiceConstraintFromSetVehicleDelete($vehicleDelete))) {
-            throw new InvalidArgumentException($vehicleDeleteChoiceErrorMessage, __LINE__);
-        }
         if (is_null($vehicleDelete) || (is_array($vehicleDelete) && empty($vehicleDelete))) {
             unset($this->VehicleDelete);
         } else {
@@ -420,61 +323,15 @@ class UniversalModifyCmd extends AbstractStructBase
         return $this->VehicleUpdate ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setVehicleUpdate method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleUpdate method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateVehicleUpdateForChoiceConstraintFromSetVehicleUpdate($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'VehicleAdd',
-            'VehicleDelete',
-            'AirAdd',
-            'AirDelete',
-            'AirUpdate',
-            'UniversalAdd',
-            'UniversalDelete',
-            'UniversalUpdate',
-            'HotelAdd',
-            'HotelUpdate',
-            'HotelDelete',
-            'PassiveAdd',
-            'PassiveDelete',
-            'RailUpdate',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property VehicleUpdate can\'t be set as the property %s is already set. Only one property must be set among these properties: VehicleUpdate, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set VehicleUpdate value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\VehicleUpdate $vehicleUpdate
      * @return \Travelport\UniversalRecord\StructType\UniversalModifyCmd
      */
     public function setVehicleUpdate(?\Travelport\UniversalRecord\StructType\VehicleUpdate $vehicleUpdate = null): self
     {
-        // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($vehicleUpdateChoiceErrorMessage = self::validateVehicleUpdateForChoiceConstraintFromSetVehicleUpdate($vehicleUpdate))) {
-            throw new InvalidArgumentException($vehicleUpdateChoiceErrorMessage, __LINE__);
-        }
         if (is_null($vehicleUpdate) || (is_array($vehicleUpdate) && empty($vehicleUpdate))) {
             unset($this->VehicleUpdate);
         } else {
@@ -492,61 +349,15 @@ class UniversalModifyCmd extends AbstractStructBase
         return $this->AirAdd ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirAdd method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirAdd method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateAirAddForChoiceConstraintFromSetAirAdd($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'VehicleAdd',
-            'VehicleDelete',
-            'VehicleUpdate',
-            'AirDelete',
-            'AirUpdate',
-            'UniversalAdd',
-            'UniversalDelete',
-            'UniversalUpdate',
-            'HotelAdd',
-            'HotelUpdate',
-            'HotelDelete',
-            'PassiveAdd',
-            'PassiveDelete',
-            'RailUpdate',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property AirAdd can\'t be set as the property %s is already set. Only one property must be set among these properties: AirAdd, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set AirAdd value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AirAdd $airAdd
      * @return \Travelport\UniversalRecord\StructType\UniversalModifyCmd
      */
     public function setAirAdd(?\Travelport\UniversalRecord\StructType\AirAdd $airAdd = null): self
     {
-        // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($airAddChoiceErrorMessage = self::validateAirAddForChoiceConstraintFromSetAirAdd($airAdd))) {
-            throw new InvalidArgumentException($airAddChoiceErrorMessage, __LINE__);
-        }
         if (is_null($airAdd) || (is_array($airAdd) && empty($airAdd))) {
             unset($this->AirAdd);
         } else {
@@ -564,61 +375,15 @@ class UniversalModifyCmd extends AbstractStructBase
         return $this->AirDelete ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirDelete method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirDelete method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateAirDeleteForChoiceConstraintFromSetAirDelete($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'VehicleAdd',
-            'VehicleDelete',
-            'VehicleUpdate',
-            'AirAdd',
-            'AirUpdate',
-            'UniversalAdd',
-            'UniversalDelete',
-            'UniversalUpdate',
-            'HotelAdd',
-            'HotelUpdate',
-            'HotelDelete',
-            'PassiveAdd',
-            'PassiveDelete',
-            'RailUpdate',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property AirDelete can\'t be set as the property %s is already set. Only one property must be set among these properties: AirDelete, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set AirDelete value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AirDelete $airDelete
      * @return \Travelport\UniversalRecord\StructType\UniversalModifyCmd
      */
     public function setAirDelete(?\Travelport\UniversalRecord\StructType\AirDelete $airDelete = null): self
     {
-        // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($airDeleteChoiceErrorMessage = self::validateAirDeleteForChoiceConstraintFromSetAirDelete($airDelete))) {
-            throw new InvalidArgumentException($airDeleteChoiceErrorMessage, __LINE__);
-        }
         if (is_null($airDelete) || (is_array($airDelete) && empty($airDelete))) {
             unset($this->AirDelete);
         } else {
@@ -636,61 +401,15 @@ class UniversalModifyCmd extends AbstractStructBase
         return $this->AirUpdate ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirUpdate method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirUpdate method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateAirUpdateForChoiceConstraintFromSetAirUpdate($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'VehicleAdd',
-            'VehicleDelete',
-            'VehicleUpdate',
-            'AirAdd',
-            'AirDelete',
-            'UniversalAdd',
-            'UniversalDelete',
-            'UniversalUpdate',
-            'HotelAdd',
-            'HotelUpdate',
-            'HotelDelete',
-            'PassiveAdd',
-            'PassiveDelete',
-            'RailUpdate',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property AirUpdate can\'t be set as the property %s is already set. Only one property must be set among these properties: AirUpdate, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set AirUpdate value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AirUpdate $airUpdate
      * @return \Travelport\UniversalRecord\StructType\UniversalModifyCmd
      */
     public function setAirUpdate(?\Travelport\UniversalRecord\StructType\AirUpdate $airUpdate = null): self
     {
-        // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($airUpdateChoiceErrorMessage = self::validateAirUpdateForChoiceConstraintFromSetAirUpdate($airUpdate))) {
-            throw new InvalidArgumentException($airUpdateChoiceErrorMessage, __LINE__);
-        }
         if (is_null($airUpdate) || (is_array($airUpdate) && empty($airUpdate))) {
             unset($this->AirUpdate);
         } else {
@@ -708,61 +427,15 @@ class UniversalModifyCmd extends AbstractStructBase
         return $this->UniversalAdd ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setUniversalAdd method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setUniversalAdd method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateUniversalAddForChoiceConstraintFromSetUniversalAdd($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'VehicleAdd',
-            'VehicleDelete',
-            'VehicleUpdate',
-            'AirAdd',
-            'AirDelete',
-            'AirUpdate',
-            'UniversalDelete',
-            'UniversalUpdate',
-            'HotelAdd',
-            'HotelUpdate',
-            'HotelDelete',
-            'PassiveAdd',
-            'PassiveDelete',
-            'RailUpdate',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property UniversalAdd can\'t be set as the property %s is already set. Only one property must be set among these properties: UniversalAdd, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set UniversalAdd value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\UniversalAdd $universalAdd
      * @return \Travelport\UniversalRecord\StructType\UniversalModifyCmd
      */
     public function setUniversalAdd(?\Travelport\UniversalRecord\StructType\UniversalAdd $universalAdd = null): self
     {
-        // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($universalAddChoiceErrorMessage = self::validateUniversalAddForChoiceConstraintFromSetUniversalAdd($universalAdd))) {
-            throw new InvalidArgumentException($universalAddChoiceErrorMessage, __LINE__);
-        }
         if (is_null($universalAdd) || (is_array($universalAdd) && empty($universalAdd))) {
             unset($this->UniversalAdd);
         } else {
@@ -780,61 +453,15 @@ class UniversalModifyCmd extends AbstractStructBase
         return $this->UniversalDelete ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setUniversalDelete method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setUniversalDelete method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateUniversalDeleteForChoiceConstraintFromSetUniversalDelete($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'VehicleAdd',
-            'VehicleDelete',
-            'VehicleUpdate',
-            'AirAdd',
-            'AirDelete',
-            'AirUpdate',
-            'UniversalAdd',
-            'UniversalUpdate',
-            'HotelAdd',
-            'HotelUpdate',
-            'HotelDelete',
-            'PassiveAdd',
-            'PassiveDelete',
-            'RailUpdate',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property UniversalDelete can\'t be set as the property %s is already set. Only one property must be set among these properties: UniversalDelete, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set UniversalDelete value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\UniversalDelete $universalDelete
      * @return \Travelport\UniversalRecord\StructType\UniversalModifyCmd
      */
     public function setUniversalDelete(?\Travelport\UniversalRecord\StructType\UniversalDelete $universalDelete = null): self
     {
-        // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($universalDeleteChoiceErrorMessage = self::validateUniversalDeleteForChoiceConstraintFromSetUniversalDelete($universalDelete))) {
-            throw new InvalidArgumentException($universalDeleteChoiceErrorMessage, __LINE__);
-        }
         if (is_null($universalDelete) || (is_array($universalDelete) && empty($universalDelete))) {
             unset($this->UniversalDelete);
         } else {
@@ -852,61 +479,15 @@ class UniversalModifyCmd extends AbstractStructBase
         return $this->UniversalUpdate ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setUniversalUpdate method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setUniversalUpdate method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateUniversalUpdateForChoiceConstraintFromSetUniversalUpdate($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'VehicleAdd',
-            'VehicleDelete',
-            'VehicleUpdate',
-            'AirAdd',
-            'AirDelete',
-            'AirUpdate',
-            'UniversalAdd',
-            'UniversalDelete',
-            'HotelAdd',
-            'HotelUpdate',
-            'HotelDelete',
-            'PassiveAdd',
-            'PassiveDelete',
-            'RailUpdate',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property UniversalUpdate can\'t be set as the property %s is already set. Only one property must be set among these properties: UniversalUpdate, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set UniversalUpdate value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\UniversalUpdate $universalUpdate
      * @return \Travelport\UniversalRecord\StructType\UniversalModifyCmd
      */
     public function setUniversalUpdate(?\Travelport\UniversalRecord\StructType\UniversalUpdate $universalUpdate = null): self
     {
-        // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($universalUpdateChoiceErrorMessage = self::validateUniversalUpdateForChoiceConstraintFromSetUniversalUpdate($universalUpdate))) {
-            throw new InvalidArgumentException($universalUpdateChoiceErrorMessage, __LINE__);
-        }
         if (is_null($universalUpdate) || (is_array($universalUpdate) && empty($universalUpdate))) {
             unset($this->UniversalUpdate);
         } else {
@@ -924,61 +505,15 @@ class UniversalModifyCmd extends AbstractStructBase
         return $this->HotelAdd ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHotelAdd method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHotelAdd method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateHotelAddForChoiceConstraintFromSetHotelAdd($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'VehicleAdd',
-            'VehicleDelete',
-            'VehicleUpdate',
-            'AirAdd',
-            'AirDelete',
-            'AirUpdate',
-            'UniversalAdd',
-            'UniversalDelete',
-            'UniversalUpdate',
-            'HotelUpdate',
-            'HotelDelete',
-            'PassiveAdd',
-            'PassiveDelete',
-            'RailUpdate',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property HotelAdd can\'t be set as the property %s is already set. Only one property must be set among these properties: HotelAdd, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set HotelAdd value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\HotelAdd $hotelAdd
      * @return \Travelport\UniversalRecord\StructType\UniversalModifyCmd
      */
     public function setHotelAdd(?\Travelport\UniversalRecord\StructType\HotelAdd $hotelAdd = null): self
     {
-        // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($hotelAddChoiceErrorMessage = self::validateHotelAddForChoiceConstraintFromSetHotelAdd($hotelAdd))) {
-            throw new InvalidArgumentException($hotelAddChoiceErrorMessage, __LINE__);
-        }
         if (is_null($hotelAdd) || (is_array($hotelAdd) && empty($hotelAdd))) {
             unset($this->HotelAdd);
         } else {
@@ -996,61 +531,15 @@ class UniversalModifyCmd extends AbstractStructBase
         return $this->HotelUpdate ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHotelUpdate method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHotelUpdate method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateHotelUpdateForChoiceConstraintFromSetHotelUpdate($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'VehicleAdd',
-            'VehicleDelete',
-            'VehicleUpdate',
-            'AirAdd',
-            'AirDelete',
-            'AirUpdate',
-            'UniversalAdd',
-            'UniversalDelete',
-            'UniversalUpdate',
-            'HotelAdd',
-            'HotelDelete',
-            'PassiveAdd',
-            'PassiveDelete',
-            'RailUpdate',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property HotelUpdate can\'t be set as the property %s is already set. Only one property must be set among these properties: HotelUpdate, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set HotelUpdate value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\HotelUpdate $hotelUpdate
      * @return \Travelport\UniversalRecord\StructType\UniversalModifyCmd
      */
     public function setHotelUpdate(?\Travelport\UniversalRecord\StructType\HotelUpdate $hotelUpdate = null): self
     {
-        // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($hotelUpdateChoiceErrorMessage = self::validateHotelUpdateForChoiceConstraintFromSetHotelUpdate($hotelUpdate))) {
-            throw new InvalidArgumentException($hotelUpdateChoiceErrorMessage, __LINE__);
-        }
         if (is_null($hotelUpdate) || (is_array($hotelUpdate) && empty($hotelUpdate))) {
             unset($this->HotelUpdate);
         } else {
@@ -1068,61 +557,15 @@ class UniversalModifyCmd extends AbstractStructBase
         return $this->HotelDelete ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHotelDelete method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHotelDelete method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateHotelDeleteForChoiceConstraintFromSetHotelDelete($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'VehicleAdd',
-            'VehicleDelete',
-            'VehicleUpdate',
-            'AirAdd',
-            'AirDelete',
-            'AirUpdate',
-            'UniversalAdd',
-            'UniversalDelete',
-            'UniversalUpdate',
-            'HotelAdd',
-            'HotelUpdate',
-            'PassiveAdd',
-            'PassiveDelete',
-            'RailUpdate',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property HotelDelete can\'t be set as the property %s is already set. Only one property must be set among these properties: HotelDelete, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set HotelDelete value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\HotelDelete $hotelDelete
      * @return \Travelport\UniversalRecord\StructType\UniversalModifyCmd
      */
     public function setHotelDelete(?\Travelport\UniversalRecord\StructType\HotelDelete $hotelDelete = null): self
     {
-        // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($hotelDeleteChoiceErrorMessage = self::validateHotelDeleteForChoiceConstraintFromSetHotelDelete($hotelDelete))) {
-            throw new InvalidArgumentException($hotelDeleteChoiceErrorMessage, __LINE__);
-        }
         if (is_null($hotelDelete) || (is_array($hotelDelete) && empty($hotelDelete))) {
             unset($this->HotelDelete);
         } else {
@@ -1140,61 +583,15 @@ class UniversalModifyCmd extends AbstractStructBase
         return $this->PassiveAdd ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPassiveAdd method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPassiveAdd method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validatePassiveAddForChoiceConstraintFromSetPassiveAdd($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'VehicleAdd',
-            'VehicleDelete',
-            'VehicleUpdate',
-            'AirAdd',
-            'AirDelete',
-            'AirUpdate',
-            'UniversalAdd',
-            'UniversalDelete',
-            'UniversalUpdate',
-            'HotelAdd',
-            'HotelUpdate',
-            'HotelDelete',
-            'PassiveDelete',
-            'RailUpdate',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property PassiveAdd can\'t be set as the property %s is already set. Only one property must be set among these properties: PassiveAdd, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set PassiveAdd value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\PassiveAdd $passiveAdd
      * @return \Travelport\UniversalRecord\StructType\UniversalModifyCmd
      */
     public function setPassiveAdd(?\Travelport\UniversalRecord\StructType\PassiveAdd $passiveAdd = null): self
     {
-        // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($passiveAddChoiceErrorMessage = self::validatePassiveAddForChoiceConstraintFromSetPassiveAdd($passiveAdd))) {
-            throw new InvalidArgumentException($passiveAddChoiceErrorMessage, __LINE__);
-        }
         if (is_null($passiveAdd) || (is_array($passiveAdd) && empty($passiveAdd))) {
             unset($this->PassiveAdd);
         } else {
@@ -1212,61 +609,15 @@ class UniversalModifyCmd extends AbstractStructBase
         return $this->PassiveDelete ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPassiveDelete method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPassiveDelete method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validatePassiveDeleteForChoiceConstraintFromSetPassiveDelete($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'VehicleAdd',
-            'VehicleDelete',
-            'VehicleUpdate',
-            'AirAdd',
-            'AirDelete',
-            'AirUpdate',
-            'UniversalAdd',
-            'UniversalDelete',
-            'UniversalUpdate',
-            'HotelAdd',
-            'HotelUpdate',
-            'HotelDelete',
-            'PassiveAdd',
-            'RailUpdate',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property PassiveDelete can\'t be set as the property %s is already set. Only one property must be set among these properties: PassiveDelete, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set PassiveDelete value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\PassiveDelete $passiveDelete
      * @return \Travelport\UniversalRecord\StructType\UniversalModifyCmd
      */
     public function setPassiveDelete(?\Travelport\UniversalRecord\StructType\PassiveDelete $passiveDelete = null): self
     {
-        // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($passiveDeleteChoiceErrorMessage = self::validatePassiveDeleteForChoiceConstraintFromSetPassiveDelete($passiveDelete))) {
-            throw new InvalidArgumentException($passiveDeleteChoiceErrorMessage, __LINE__);
-        }
         if (is_null($passiveDelete) || (is_array($passiveDelete) && empty($passiveDelete))) {
             unset($this->PassiveDelete);
         } else {
@@ -1284,61 +635,15 @@ class UniversalModifyCmd extends AbstractStructBase
         return $this->RailUpdate ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRailUpdate method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRailUpdate method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateRailUpdateForChoiceConstraintFromSetRailUpdate($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'VehicleAdd',
-            'VehicleDelete',
-            'VehicleUpdate',
-            'AirAdd',
-            'AirDelete',
-            'AirUpdate',
-            'UniversalAdd',
-            'UniversalDelete',
-            'UniversalUpdate',
-            'HotelAdd',
-            'HotelUpdate',
-            'HotelDelete',
-            'PassiveAdd',
-            'PassiveDelete',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property RailUpdate can\'t be set as the property %s is already set. Only one property must be set among these properties: RailUpdate, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set RailUpdate value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\RailUpdate $railUpdate
      * @return \Travelport\UniversalRecord\StructType\UniversalModifyCmd
      */
     public function setRailUpdate(?\Travelport\UniversalRecord\StructType\RailUpdate $railUpdate = null): self
     {
-        // validation for constraint: choice(VehicleAdd, VehicleDelete, VehicleUpdate, AirAdd, AirDelete, AirUpdate, UniversalAdd, UniversalDelete, UniversalUpdate, HotelAdd, HotelUpdate, HotelDelete, PassiveAdd, PassiveDelete, RailUpdate)
-        if ('' !== ($railUpdateChoiceErrorMessage = self::validateRailUpdateForChoiceConstraintFromSetRailUpdate($railUpdate))) {
-            throw new InvalidArgumentException($railUpdateChoiceErrorMessage, __LINE__);
-        }
         if (is_null($railUpdate) || (is_array($railUpdate) && empty($railUpdate))) {
             unset($this->RailUpdate);
         } else {

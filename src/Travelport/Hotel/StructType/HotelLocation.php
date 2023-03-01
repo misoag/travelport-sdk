@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,14 +24,14 @@ class HotelLocation extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Location = null;
+    public ?string $Location = null;
     /**
      * The LocationType
      * Meta information extracted from the WSDL
      * - default: Airport
      * @var string|null
      */
-    protected ?string $LocationType = null;
+    public ?string $LocationType = null;
     /**
      * Constructor method for HotelLocation
      * @uses HotelLocation::setLocation()
@@ -61,14 +60,6 @@ class HotelLocation extends AbstractStructBase
      */
     public function setLocation(?string $location = null): self
     {
-        // validation for constraint: string
-        if (!is_null($location) && !is_string($location)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($location, true), gettype($location)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($location) && mb_strlen((string) $location) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $location)), __LINE__);
-        }
         $this->Location = $location;
         
         return $this;
@@ -83,18 +74,11 @@ class HotelLocation extends AbstractStructBase
     }
     /**
      * Set LocationType value
-     * @uses \Travelport\Hotel\EnumType\TypeHotelLocation::valueIsValid()
-     * @uses \Travelport\Hotel\EnumType\TypeHotelLocation::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $locationType
      * @return \Travelport\Hotel\StructType\HotelLocation
      */
     public function setLocationType(?string $locationType = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\Hotel\EnumType\TypeHotelLocation::valueIsValid($locationType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\Hotel\EnumType\TypeHotelLocation', is_array($locationType) ? implode(', ', $locationType) : var_export($locationType, true), implode(', ', \Travelport\Hotel\EnumType\TypeHotelLocation::getValidValues())), __LINE__);
-        }
         $this->LocationType = $locationType;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,14 +18,14 @@ class RestrictionPassengerTypes extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $MaxNbrTravelers = null;
+    public ?string $MaxNbrTravelers = null;
     /**
      * The TotalNbrPTC
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $TotalNbrPTC = null;
+    public ?string $TotalNbrPTC = null;
     /**
      * Constructor method for RestrictionPassengerTypes
      * @uses RestrictionPassengerTypes::setMaxNbrTravelers()
@@ -55,10 +54,6 @@ class RestrictionPassengerTypes extends AbstractStructBase
      */
     public function setMaxNbrTravelers(?string $maxNbrTravelers = null): self
     {
-        // validation for constraint: string
-        if (!is_null($maxNbrTravelers) && !is_string($maxNbrTravelers)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($maxNbrTravelers, true), gettype($maxNbrTravelers)), __LINE__);
-        }
         $this->MaxNbrTravelers = $maxNbrTravelers;
         
         return $this;
@@ -78,10 +73,6 @@ class RestrictionPassengerTypes extends AbstractStructBase
      */
     public function setTotalNbrPTC(?string $totalNbrPTC = null): self
     {
-        // validation for constraint: string
-        if (!is_null($totalNbrPTC) && !is_string($totalNbrPTC)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($totalNbrPTC, true), gettype($totalNbrPTC)), __LINE__);
-        }
         $this->TotalNbrPTC = $totalNbrPTC;
         
         return $this;

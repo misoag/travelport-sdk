@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class UniversalRecordImportReq extends BaseReq
      * - ref: common:FileFinishingInfo
      * @var \Travelport\UniversalRecord\StructType\FileFinishingInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FileFinishingInfo $FileFinishingInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\FileFinishingInfo $FileFinishingInfo = null;
     /**
      * The UniversalRecordLocatorCode
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class UniversalRecordImportReq extends BaseReq
      * - use: optional
      * @var string|null
      */
-    protected ?string $UniversalRecordLocatorCode = null;
+    public ?string $UniversalRecordLocatorCode = null;
     /**
      * The ReturnUnmaskedData
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class UniversalRecordImportReq extends BaseReq
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ReturnUnmaskedData = null;
+    public ?bool $ReturnUnmaskedData = null;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -51,7 +50,7 @@ class UniversalRecordImportReq extends BaseReq
      * - minLength: 2
      * @var string|null
      */
-    protected ?string $ProviderCode = null;
+    public ?string $ProviderCode = null;
     /**
      * The ProviderLocatorCode
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class UniversalRecordImportReq extends BaseReq
      * - maxLength: 15
      * @var string|null
      */
-    protected ?string $ProviderLocatorCode = null;
+    public ?string $ProviderLocatorCode = null;
     /**
      * Constructor method for UniversalRecordImportReq
      * @uses UniversalRecordImportReq::setFileFinishingInfo()
@@ -117,18 +116,6 @@ class UniversalRecordImportReq extends BaseReq
      */
     public function setUniversalRecordLocatorCode(?string $universalRecordLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($universalRecordLocatorCode) && !is_string($universalRecordLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($universalRecordLocatorCode, true), gettype($universalRecordLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($universalRecordLocatorCode) && mb_strlen((string) $universalRecordLocatorCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $universalRecordLocatorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($universalRecordLocatorCode) && mb_strlen((string) $universalRecordLocatorCode) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $universalRecordLocatorCode)), __LINE__);
-        }
         $this->UniversalRecordLocatorCode = $universalRecordLocatorCode;
         
         return $this;
@@ -148,10 +135,6 @@ class UniversalRecordImportReq extends BaseReq
      */
     public function setReturnUnmaskedData(?bool $returnUnmaskedData = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($returnUnmaskedData) && !is_bool($returnUnmaskedData)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($returnUnmaskedData, true), gettype($returnUnmaskedData)), __LINE__);
-        }
         $this->ReturnUnmaskedData = $returnUnmaskedData;
         
         return $this;
@@ -171,18 +154,6 @@ class UniversalRecordImportReq extends BaseReq
      */
     public function setProviderCode(?string $providerCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -202,14 +173,6 @@ class UniversalRecordImportReq extends BaseReq
      */
     public function setProviderLocatorCode(?string $providerLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerLocatorCode) && !is_string($providerLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerLocatorCode, true), gettype($providerLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($providerLocatorCode) && mb_strlen((string) $providerLocatorCode) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $providerLocatorCode)), __LINE__);
-        }
         $this->ProviderLocatorCode = $providerLocatorCode;
         
         return $this;

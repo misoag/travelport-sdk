@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class MerchandisingAvailabilityDetails extends AbstractStructBase
      * - ref: AirItineraryDetails
      * @var \Travelport\UniversalRecord\StructType\AirItineraryDetails|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AirItineraryDetails $AirItineraryDetails = null;
+    public ?\Travelport\UniversalRecord\StructType\AirItineraryDetails $AirItineraryDetails = null;
     /**
      * The AccountCode
      * Meta information extracted from the WSDL
@@ -29,7 +28,7 @@ class MerchandisingAvailabilityDetails extends AbstractStructBase
      * - ref: common:AccountCode
      * @var \Travelport\UniversalRecord\StructType\AccountCode|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AccountCode $AccountCode = null;
+    public ?\Travelport\UniversalRecord\StructType\AccountCode $AccountCode = null;
     /**
      * Constructor method for MerchandisingAvailabilityDetails
      * @uses MerchandisingAvailabilityDetails::setAirItineraryDetails()

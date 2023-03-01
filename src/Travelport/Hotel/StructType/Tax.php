@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -27,7 +26,7 @@ class Tax extends AbstractStructBase
      * - minOccurs: 1
      * @var string
      */
-    protected string $Amount;
+    public string $Amount;
     /**
      * The Percentage
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class Tax extends AbstractStructBase
      * - minOccurs: 1
      * @var float
      */
-    protected float $Percentage;
+    public float $Percentage;
     /**
      * The Code
      * Meta information extracted from the WSDL
@@ -46,21 +45,21 @@ class Tax extends AbstractStructBase
      * - use: required
      * @var int
      */
-    protected int $Code;
+    public int $Code;
     /**
      * The EffectiveDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $EffectiveDate = null;
+    public ?string $EffectiveDate = null;
     /**
      * The ExpirationDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $ExpirationDate = null;
+    public ?string $ExpirationDate = null;
     /**
      * The Term
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class Tax extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Term = null;
+    public ?string $Term = null;
     /**
      * The CollectionFreq
      * Meta information extracted from the WSDL
@@ -76,7 +75,7 @@ class Tax extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CollectionFreq = null;
+    public ?string $CollectionFreq = null;
     /**
      * Constructor method for Tax
      * @uses Tax::setAmount()
@@ -114,52 +113,15 @@ class Tax extends AbstractStructBase
         return $this->Amount ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAmount method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAmount method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateAmountForChoiceConstraintFromSetAmount($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'Percentage',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property Amount can\'t be set as the property %s is already set. Only one property must be set among these properties: Amount, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set Amount value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param string $amount
      * @return \Travelport\Hotel\StructType\Tax
      */
     public function setAmount(string $amount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
-        // validation for constraint: choice(Amount, Percentage)
-        if ('' !== ($amountChoiceErrorMessage = self::validateAmountForChoiceConstraintFromSetAmount($amount))) {
-            throw new InvalidArgumentException($amountChoiceErrorMessage, __LINE__);
-        }
         if (is_null($amount) || (is_array($amount) && empty($amount))) {
             unset($this->Amount);
         } else {
@@ -177,52 +139,15 @@ class Tax extends AbstractStructBase
         return $this->Percentage ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPercentage method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPercentage method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validatePercentageForChoiceConstraintFromSetPercentage($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'Amount',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property Percentage can\'t be set as the property %s is already set. Only one property must be set among these properties: Percentage, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set Percentage value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param float $percentage
      * @return \Travelport\Hotel\StructType\Tax
      */
     public function setPercentage(float $percentage = null): self
     {
-        // validation for constraint: float
-        if (!is_null($percentage) && !(is_float($percentage) || is_numeric($percentage))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($percentage, true), gettype($percentage)), __LINE__);
-        }
-        // validation for constraint: choice(Amount, Percentage)
-        if ('' !== ($percentageChoiceErrorMessage = self::validatePercentageForChoiceConstraintFromSetPercentage($percentage))) {
-            throw new InvalidArgumentException($percentageChoiceErrorMessage, __LINE__);
-        }
         if (is_null($percentage) || (is_array($percentage) && empty($percentage))) {
             unset($this->Percentage);
         } else {
@@ -246,10 +171,6 @@ class Tax extends AbstractStructBase
      */
     public function setCode(int $code): self
     {
-        // validation for constraint: int
-        if (!is_null($code) && !(is_int($code) || ctype_digit($code))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;
@@ -269,10 +190,6 @@ class Tax extends AbstractStructBase
      */
     public function setEffectiveDate(?string $effectiveDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($effectiveDate) && !is_string($effectiveDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($effectiveDate, true), gettype($effectiveDate)), __LINE__);
-        }
         $this->EffectiveDate = $effectiveDate;
         
         return $this;
@@ -292,10 +209,6 @@ class Tax extends AbstractStructBase
      */
     public function setExpirationDate(?string $expirationDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($expirationDate) && !is_string($expirationDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($expirationDate, true), gettype($expirationDate)), __LINE__);
-        }
         $this->ExpirationDate = $expirationDate;
         
         return $this;
@@ -315,10 +228,6 @@ class Tax extends AbstractStructBase
      */
     public function setTerm(?string $term = null): self
     {
-        // validation for constraint: string
-        if (!is_null($term) && !is_string($term)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($term, true), gettype($term)), __LINE__);
-        }
         $this->Term = $term;
         
         return $this;
@@ -338,10 +247,6 @@ class Tax extends AbstractStructBase
      */
     public function setCollectionFreq(?string $collectionFreq = null): self
     {
-        // validation for constraint: string
-        if (!is_null($collectionFreq) && !is_string($collectionFreq)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($collectionFreq, true), gettype($collectionFreq)), __LINE__);
-        }
         $this->CollectionFreq = $collectionFreq;
         
         return $this;

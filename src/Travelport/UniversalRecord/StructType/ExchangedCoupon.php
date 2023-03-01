@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,14 +23,14 @@ class ExchangedCoupon extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $TicketNumber;
+    public string $TicketNumber;
     /**
      * The CouponNumber
      * Meta information extracted from the WSDL
      * - documentation: Coupon numbers that were exchanged specific to this ticket
      * @var string|null
      */
-    protected ?string $CouponNumber = null;
+    public ?string $CouponNumber = null;
     /**
      * Constructor method for ExchangedCoupon
      * @uses ExchangedCoupon::setTicketNumber()
@@ -60,14 +59,6 @@ class ExchangedCoupon extends AbstractStructBase
      */
     public function setTicketNumber(string $ticketNumber): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketNumber) && !is_string($ticketNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketNumber, true), gettype($ticketNumber)), __LINE__);
-        }
-        // validation for constraint: length(13)
-        if (!is_null($ticketNumber) && mb_strlen((string) $ticketNumber) !== 13) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 13', mb_strlen((string) $ticketNumber)), __LINE__);
-        }
         $this->TicketNumber = $ticketNumber;
         
         return $this;
@@ -87,10 +78,6 @@ class ExchangedCoupon extends AbstractStructBase
      */
     public function setCouponNumber(?string $couponNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($couponNumber) && !is_string($couponNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($couponNumber, true), gettype($couponNumber)), __LINE__);
-        }
         $this->CouponNumber = $couponNumber;
         
         return $this;

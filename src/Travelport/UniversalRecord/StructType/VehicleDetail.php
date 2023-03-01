@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,21 +21,21 @@ class VehicleDetail extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Code;
+    public string $Code;
     /**
      * The Class
      * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
-    protected string $Class;
+    public string $Class;
     /**
      * The Category
      * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
-    protected string $Category;
+    public string $Category;
     /**
      * The AirConditioning
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class VehicleDetail extends AbstractStructBase
      * - use: required
      * @var bool
      */
-    protected bool $AirConditioning;
+    public bool $AirConditioning;
     /**
      * The Transmission
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class VehicleDetail extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Transmission;
+    public string $Transmission;
     /**
      * The MakeModel
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class VehicleDetail extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $MakeModel;
+    public string $MakeModel;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class VehicleDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SupplierCode = null;
+    public ?string $SupplierCode = null;
     /**
      * The PassengerCount
      * Meta information extracted from the WSDL
@@ -76,21 +75,21 @@ class VehicleDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PassengerCount = null;
+    public ?string $PassengerCount = null;
     /**
      * The NumberOfDoors
      * Meta information extracted from the WSDL
      * - documentation: The number of doors on vehicle. Ex: TwoToThreeDoors, TwoToFourDoors, FourToFiveDoors
      * @var string|null
      */
-    protected ?string $NumberOfDoors = null;
+    public ?string $NumberOfDoors = null;
     /**
      * The BagCount
      * Meta information extracted from the WSDL
      * - documentation: The number of bags
      * @var string|null
      */
-    protected ?string $BagCount = null;
+    public ?string $BagCount = null;
     /**
      * The FuelType
      * Meta information extracted from the WSDL
@@ -98,7 +97,7 @@ class VehicleDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FuelType = null;
+    public ?string $FuelType = null;
     /**
      * The AcrissVehicleCode
      * Meta information extracted from the WSDL
@@ -107,7 +106,7 @@ class VehicleDetail extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AcrissVehicleCode = null;
+    public ?string $AcrissVehicleCode = null;
     /**
      * The PreferredOption
      * Meta information extracted from the WSDL
@@ -115,7 +114,7 @@ class VehicleDetail extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PreferredOption = null;
+    public ?bool $PreferredOption = null;
     /**
      * Constructor method for VehicleDetail
      * @uses VehicleDetail::setCode()
@@ -177,10 +176,6 @@ class VehicleDetail extends AbstractStructBase
      */
     public function setCode(string $code): self
     {
-        // validation for constraint: string
-        if (!is_null($code) && !is_string($code)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;
@@ -195,18 +190,11 @@ class VehicleDetail extends AbstractStructBase
     }
     /**
      * Set Class value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleClass::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleClass::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $class
      * @return \Travelport\UniversalRecord\StructType\VehicleDetail
      */
     public function setClass(string $class): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeVehicleClass::valueIsValid($class)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeVehicleClass', is_array($class) ? implode(', ', $class) : var_export($class, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeVehicleClass::getValidValues())), __LINE__);
-        }
         $this->Class = $class;
         
         return $this;
@@ -221,18 +209,11 @@ class VehicleDetail extends AbstractStructBase
     }
     /**
      * Set Category value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleCategory::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleCategory::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $category
      * @return \Travelport\UniversalRecord\StructType\VehicleDetail
      */
     public function setCategory(string $category): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeVehicleCategory::valueIsValid($category)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeVehicleCategory', is_array($category) ? implode(', ', $category) : var_export($category, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeVehicleCategory::getValidValues())), __LINE__);
-        }
         $this->Category = $category;
         
         return $this;
@@ -252,10 +233,6 @@ class VehicleDetail extends AbstractStructBase
      */
     public function setAirConditioning(bool $airConditioning): self
     {
-        // validation for constraint: boolean
-        if (!is_null($airConditioning) && !is_bool($airConditioning)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($airConditioning, true), gettype($airConditioning)), __LINE__);
-        }
         $this->AirConditioning = $airConditioning;
         
         return $this;
@@ -270,18 +247,11 @@ class VehicleDetail extends AbstractStructBase
     }
     /**
      * Set Transmission value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleTransmission::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleTransmission::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $transmission
      * @return \Travelport\UniversalRecord\StructType\VehicleDetail
      */
     public function setTransmission(string $transmission): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeVehicleTransmission::valueIsValid($transmission)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeVehicleTransmission', is_array($transmission) ? implode(', ', $transmission) : var_export($transmission, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeVehicleTransmission::getValidValues())), __LINE__);
-        }
         $this->Transmission = $transmission;
         
         return $this;
@@ -301,10 +271,6 @@ class VehicleDetail extends AbstractStructBase
      */
     public function setMakeModel(string $makeModel): self
     {
-        // validation for constraint: string
-        if (!is_null($makeModel) && !is_string($makeModel)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($makeModel, true), gettype($makeModel)), __LINE__);
-        }
         $this->MakeModel = $makeModel;
         
         return $this;
@@ -324,10 +290,6 @@ class VehicleDetail extends AbstractStructBase
      */
     public function setSupplierCode(?string $supplierCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;
@@ -347,10 +309,6 @@ class VehicleDetail extends AbstractStructBase
      */
     public function setPassengerCount(?string $passengerCount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($passengerCount) && !is_string($passengerCount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passengerCount, true), gettype($passengerCount)), __LINE__);
-        }
         $this->PassengerCount = $passengerCount;
         
         return $this;
@@ -370,10 +328,6 @@ class VehicleDetail extends AbstractStructBase
      */
     public function setNumberOfDoors(?string $numberOfDoors = null): self
     {
-        // validation for constraint: string
-        if (!is_null($numberOfDoors) && !is_string($numberOfDoors)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($numberOfDoors, true), gettype($numberOfDoors)), __LINE__);
-        }
         $this->NumberOfDoors = $numberOfDoors;
         
         return $this;
@@ -393,10 +347,6 @@ class VehicleDetail extends AbstractStructBase
      */
     public function setBagCount(?string $bagCount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bagCount) && !is_string($bagCount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bagCount, true), gettype($bagCount)), __LINE__);
-        }
         $this->BagCount = $bagCount;
         
         return $this;
@@ -411,18 +361,11 @@ class VehicleDetail extends AbstractStructBase
     }
     /**
      * Set FuelType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFuel::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFuel::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $fuelType
      * @return \Travelport\UniversalRecord\StructType\VehicleDetail
      */
     public function setFuelType(?string $fuelType = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeFuel::valueIsValid($fuelType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeFuel', is_array($fuelType) ? implode(', ', $fuelType) : var_export($fuelType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeFuel::getValidValues())), __LINE__);
-        }
         $this->FuelType = $fuelType;
         
         return $this;
@@ -442,14 +385,6 @@ class VehicleDetail extends AbstractStructBase
      */
     public function setAcrissVehicleCode(?string $acrissVehicleCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($acrissVehicleCode) && !is_string($acrissVehicleCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($acrissVehicleCode, true), gettype($acrissVehicleCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(4)
-        if (!is_null($acrissVehicleCode) && mb_strlen((string) $acrissVehicleCode) > 4) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 4', mb_strlen((string) $acrissVehicleCode)), __LINE__);
-        }
         $this->AcrissVehicleCode = $acrissVehicleCode;
         
         return $this;
@@ -469,10 +404,6 @@ class VehicleDetail extends AbstractStructBase
      */
     public function setPreferredOption(?bool $preferredOption = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($preferredOption) && !is_bool($preferredOption)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($preferredOption, true), gettype($preferredOption)), __LINE__);
-        }
         $this->PreferredOption = $preferredOption;
         
         return $this;

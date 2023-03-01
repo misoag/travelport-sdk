@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class BrandID extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Id;
+    public string $Id;
     /**
      * Constructor method for BrandID
      * @uses BrandID::setId()
@@ -47,10 +46,6 @@ class BrandID extends AbstractStructBase
      */
     public function setId(string $id): self
     {
-        // validation for constraint: string
-        if (!is_null($id) && !is_string($id)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($id, true), gettype($id)), __LINE__);
-        }
         $this->Id = $id;
         
         return $this;

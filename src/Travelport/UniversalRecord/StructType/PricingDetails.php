@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class PricingDetails extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected ?array $AdvisoryMessage = null;
+    public ?array $AdvisoryMessage = null;
     /**
      * The EndorsementText
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class PricingDetails extends AbstractStructBase
      * - minOccurs: 0
      * @var string[]
      */
-    protected ?array $EndorsementText = null;
+    public ?array $EndorsementText = null;
     /**
      * The WaiverText
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class PricingDetails extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $WaiverText = null;
+    public ?string $WaiverText = null;
     /**
      * The LowFarePricing
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class PricingDetails extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $LowFarePricing = null;
+    public ?bool $LowFarePricing = null;
     /**
      * The LowFareFound
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class PricingDetails extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $LowFareFound = null;
+    public ?bool $LowFareFound = null;
     /**
      * The PenaltyApplies
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class PricingDetails extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PenaltyApplies = null;
+    public ?bool $PenaltyApplies = null;
     /**
      * The DiscountApplies
      * Meta information extracted from the WSDL
@@ -77,7 +76,7 @@ class PricingDetails extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $DiscountApplies = null;
+    public ?bool $DiscountApplies = null;
     /**
      * The ItineraryType
      * Meta information extracted from the WSDL
@@ -85,7 +84,7 @@ class PricingDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ItineraryType = null;
+    public ?string $ItineraryType = null;
     /**
      * The ValidatingVendorCode
      * Meta information extracted from the WSDL
@@ -95,7 +94,7 @@ class PricingDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ValidatingVendorCode = null;
+    public ?string $ValidatingVendorCode = null;
     /**
      * The ForTicketingOnDate
      * Meta information extracted from the WSDL
@@ -103,7 +102,7 @@ class PricingDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ForTicketingOnDate = null;
+    public ?string $ForTicketingOnDate = null;
     /**
      * The LastDateToTicket
      * Meta information extracted from the WSDL
@@ -111,7 +110,7 @@ class PricingDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $LastDateToTicket = null;
+    public ?string $LastDateToTicket = null;
     /**
      * The FormOfRefund
      * Meta information extracted from the WSDL
@@ -119,14 +118,14 @@ class PricingDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FormOfRefund = null;
+    public ?string $FormOfRefund = null;
     /**
      * The AccountCode
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $AccountCode = null;
+    public ?string $AccountCode = null;
     /**
      * The BankersSellingRate
      * Meta information extracted from the WSDL
@@ -134,7 +133,7 @@ class PricingDetails extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $BankersSellingRate = null;
+    public ?float $BankersSellingRate = null;
     /**
      * The PricingType
      * Meta information extracted from the WSDL
@@ -142,7 +141,7 @@ class PricingDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PricingType = null;
+    public ?string $PricingType = null;
     /**
      * The ConversionRate
      * Meta information extracted from the WSDL
@@ -150,7 +149,7 @@ class PricingDetails extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $ConversionRate = null;
+    public ?float $ConversionRate = null;
     /**
      * The RateOfExchange
      * Meta information extracted from the WSDL
@@ -158,7 +157,7 @@ class PricingDetails extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $RateOfExchange = null;
+    public ?float $RateOfExchange = null;
     /**
      * The OriginalTicketCurrency
      * Meta information extracted from the WSDL
@@ -168,7 +167,7 @@ class PricingDetails extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OriginalTicketCurrency = null;
+    public ?string $OriginalTicketCurrency = null;
     /**
      * Constructor method for PricingDetails
      * @uses PricingDetails::setAdvisoryMessage()
@@ -239,48 +238,12 @@ class PricingDetails extends AbstractStructBase
         return $this->AdvisoryMessage;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAdvisoryMessage method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAdvisoryMessage method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAdvisoryMessageForArrayConstraintFromSetAdvisoryMessage(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $pricingDetailsAdvisoryMessageItem) {
-            // validation for constraint: itemType
-            if (!is_string($pricingDetailsAdvisoryMessageItem)) {
-                $invalidValues[] = is_object($pricingDetailsAdvisoryMessageItem) ? get_class($pricingDetailsAdvisoryMessageItem) : sprintf('%s(%s)', gettype($pricingDetailsAdvisoryMessageItem), var_export($pricingDetailsAdvisoryMessageItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AdvisoryMessage property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AdvisoryMessage value
-     * @throws InvalidArgumentException
      * @param string[] $advisoryMessage
      * @return \Travelport\UniversalRecord\StructType\PricingDetails
      */
     public function setAdvisoryMessage(?array $advisoryMessage = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($advisoryMessageArrayErrorMessage = self::validateAdvisoryMessageForArrayConstraintFromSetAdvisoryMessage($advisoryMessage))) {
-            throw new InvalidArgumentException($advisoryMessageArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($advisoryMessage) && count($advisoryMessage) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($advisoryMessage)), __LINE__);
-        }
         $this->AdvisoryMessage = $advisoryMessage;
         
         return $this;
@@ -293,14 +256,6 @@ class PricingDetails extends AbstractStructBase
      */
     public function addToAdvisoryMessage(string $item): self
     {
-        // validation for constraint: itemType
-        if (!is_string($item)) {
-            throw new InvalidArgumentException(sprintf('The AdvisoryMessage property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->AdvisoryMessage) && count($this->AdvisoryMessage) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->AdvisoryMessage)), __LINE__);
-        }
         $this->AdvisoryMessage[] = $item;
         
         return $this;
@@ -314,48 +269,12 @@ class PricingDetails extends AbstractStructBase
         return $this->EndorsementText;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setEndorsementText method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setEndorsementText method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateEndorsementTextForArrayConstraintFromSetEndorsementText(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $pricingDetailsEndorsementTextItem) {
-            // validation for constraint: itemType
-            if (!is_string($pricingDetailsEndorsementTextItem)) {
-                $invalidValues[] = is_object($pricingDetailsEndorsementTextItem) ? get_class($pricingDetailsEndorsementTextItem) : sprintf('%s(%s)', gettype($pricingDetailsEndorsementTextItem), var_export($pricingDetailsEndorsementTextItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The EndorsementText property can only contain items of type string, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set EndorsementText value
-     * @throws InvalidArgumentException
      * @param string[] $endorsementText
      * @return \Travelport\UniversalRecord\StructType\PricingDetails
      */
     public function setEndorsementText(?array $endorsementText = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($endorsementTextArrayErrorMessage = self::validateEndorsementTextForArrayConstraintFromSetEndorsementText($endorsementText))) {
-            throw new InvalidArgumentException($endorsementTextArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($endorsementText) && count($endorsementText) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($endorsementText)), __LINE__);
-        }
         $this->EndorsementText = $endorsementText;
         
         return $this;
@@ -368,14 +287,6 @@ class PricingDetails extends AbstractStructBase
      */
     public function addToEndorsementText(string $item): self
     {
-        // validation for constraint: itemType
-        if (!is_string($item)) {
-            throw new InvalidArgumentException(sprintf('The EndorsementText property can only contain items of type string, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->EndorsementText) && count($this->EndorsementText) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->EndorsementText)), __LINE__);
-        }
         $this->EndorsementText[] = $item;
         
         return $this;
@@ -395,10 +306,6 @@ class PricingDetails extends AbstractStructBase
      */
     public function setWaiverText(?string $waiverText = null): self
     {
-        // validation for constraint: string
-        if (!is_null($waiverText) && !is_string($waiverText)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($waiverText, true), gettype($waiverText)), __LINE__);
-        }
         $this->WaiverText = $waiverText;
         
         return $this;
@@ -418,10 +325,6 @@ class PricingDetails extends AbstractStructBase
      */
     public function setLowFarePricing(?bool $lowFarePricing = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($lowFarePricing) && !is_bool($lowFarePricing)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($lowFarePricing, true), gettype($lowFarePricing)), __LINE__);
-        }
         $this->LowFarePricing = $lowFarePricing;
         
         return $this;
@@ -441,10 +344,6 @@ class PricingDetails extends AbstractStructBase
      */
     public function setLowFareFound(?bool $lowFareFound = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($lowFareFound) && !is_bool($lowFareFound)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($lowFareFound, true), gettype($lowFareFound)), __LINE__);
-        }
         $this->LowFareFound = $lowFareFound;
         
         return $this;
@@ -464,10 +363,6 @@ class PricingDetails extends AbstractStructBase
      */
     public function setPenaltyApplies(?bool $penaltyApplies = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($penaltyApplies) && !is_bool($penaltyApplies)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($penaltyApplies, true), gettype($penaltyApplies)), __LINE__);
-        }
         $this->PenaltyApplies = $penaltyApplies;
         
         return $this;
@@ -487,10 +382,6 @@ class PricingDetails extends AbstractStructBase
      */
     public function setDiscountApplies(?bool $discountApplies = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($discountApplies) && !is_bool($discountApplies)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($discountApplies, true), gettype($discountApplies)), __LINE__);
-        }
         $this->DiscountApplies = $discountApplies;
         
         return $this;
@@ -505,18 +396,11 @@ class PricingDetails extends AbstractStructBase
     }
     /**
      * Set ItineraryType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeItineraryCode::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeItineraryCode::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $itineraryType
      * @return \Travelport\UniversalRecord\StructType\PricingDetails
      */
     public function setItineraryType(?string $itineraryType = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeItineraryCode::valueIsValid($itineraryType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeItineraryCode', is_array($itineraryType) ? implode(', ', $itineraryType) : var_export($itineraryType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeItineraryCode::getValidValues())), __LINE__);
-        }
         $this->ItineraryType = $itineraryType;
         
         return $this;
@@ -536,14 +420,6 @@ class PricingDetails extends AbstractStructBase
      */
     public function setValidatingVendorCode(?string $validatingVendorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($validatingVendorCode) && !is_string($validatingVendorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($validatingVendorCode, true), gettype($validatingVendorCode)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($validatingVendorCode) && mb_strlen((string) $validatingVendorCode) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $validatingVendorCode)), __LINE__);
-        }
         $this->ValidatingVendorCode = $validatingVendorCode;
         
         return $this;
@@ -563,10 +439,6 @@ class PricingDetails extends AbstractStructBase
      */
     public function setForTicketingOnDate(?string $forTicketingOnDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($forTicketingOnDate) && !is_string($forTicketingOnDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($forTicketingOnDate, true), gettype($forTicketingOnDate)), __LINE__);
-        }
         $this->ForTicketingOnDate = $forTicketingOnDate;
         
         return $this;
@@ -586,10 +458,6 @@ class PricingDetails extends AbstractStructBase
      */
     public function setLastDateToTicket(?string $lastDateToTicket = null): self
     {
-        // validation for constraint: string
-        if (!is_null($lastDateToTicket) && !is_string($lastDateToTicket)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($lastDateToTicket, true), gettype($lastDateToTicket)), __LINE__);
-        }
         $this->LastDateToTicket = $lastDateToTicket;
         
         return $this;
@@ -604,18 +472,11 @@ class PricingDetails extends AbstractStructBase
     }
     /**
      * Set FormOfRefund value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFormOfRefund::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFormOfRefund::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $formOfRefund
      * @return \Travelport\UniversalRecord\StructType\PricingDetails
      */
     public function setFormOfRefund(?string $formOfRefund = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeFormOfRefund::valueIsValid($formOfRefund)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeFormOfRefund', is_array($formOfRefund) ? implode(', ', $formOfRefund) : var_export($formOfRefund, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeFormOfRefund::getValidValues())), __LINE__);
-        }
         $this->FormOfRefund = $formOfRefund;
         
         return $this;
@@ -635,10 +496,6 @@ class PricingDetails extends AbstractStructBase
      */
     public function setAccountCode(?string $accountCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($accountCode) && !is_string($accountCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountCode, true), gettype($accountCode)), __LINE__);
-        }
         $this->AccountCode = $accountCode;
         
         return $this;
@@ -658,10 +515,6 @@ class PricingDetails extends AbstractStructBase
      */
     public function setBankersSellingRate(?float $bankersSellingRate = null): self
     {
-        // validation for constraint: float
-        if (!is_null($bankersSellingRate) && !(is_float($bankersSellingRate) || is_numeric($bankersSellingRate))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($bankersSellingRate, true), gettype($bankersSellingRate)), __LINE__);
-        }
         $this->BankersSellingRate = $bankersSellingRate;
         
         return $this;
@@ -676,18 +529,11 @@ class PricingDetails extends AbstractStructBase
     }
     /**
      * Set PricingType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypePricingType::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypePricingType::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $pricingType
      * @return \Travelport\UniversalRecord\StructType\PricingDetails
      */
     public function setPricingType(?string $pricingType = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypePricingType::valueIsValid($pricingType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypePricingType', is_array($pricingType) ? implode(', ', $pricingType) : var_export($pricingType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypePricingType::getValidValues())), __LINE__);
-        }
         $this->PricingType = $pricingType;
         
         return $this;
@@ -707,10 +553,6 @@ class PricingDetails extends AbstractStructBase
      */
     public function setConversionRate(?float $conversionRate = null): self
     {
-        // validation for constraint: float
-        if (!is_null($conversionRate) && !(is_float($conversionRate) || is_numeric($conversionRate))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($conversionRate, true), gettype($conversionRate)), __LINE__);
-        }
         $this->ConversionRate = $conversionRate;
         
         return $this;
@@ -730,10 +572,6 @@ class PricingDetails extends AbstractStructBase
      */
     public function setRateOfExchange(?float $rateOfExchange = null): self
     {
-        // validation for constraint: float
-        if (!is_null($rateOfExchange) && !(is_float($rateOfExchange) || is_numeric($rateOfExchange))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($rateOfExchange, true), gettype($rateOfExchange)), __LINE__);
-        }
         $this->RateOfExchange = $rateOfExchange;
         
         return $this;
@@ -753,14 +591,6 @@ class PricingDetails extends AbstractStructBase
      */
     public function setOriginalTicketCurrency(?string $originalTicketCurrency = null): self
     {
-        // validation for constraint: string
-        if (!is_null($originalTicketCurrency) && !is_string($originalTicketCurrency)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($originalTicketCurrency, true), gettype($originalTicketCurrency)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($originalTicketCurrency) && mb_strlen((string) $originalTicketCurrency) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $originalTicketCurrency)), __LINE__);
-        }
         $this->OriginalTicketCurrency = $originalTicketCurrency;
         
         return $this;

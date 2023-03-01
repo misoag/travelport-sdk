@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,14 +18,14 @@ class TypeFailureInfo extends AbstractStructBase
      * - use: required
      * @var int
      */
-    protected int $Code;
+    public int $Code;
     /**
      * The Message
      * Meta information extracted from the WSDL
      * - use: required
      * @var string
      */
-    protected string $Message;
+    public string $Message;
     /**
      * Constructor method for typeFailureInfo
      * @uses TypeFailureInfo::setCode()
@@ -55,10 +54,6 @@ class TypeFailureInfo extends AbstractStructBase
      */
     public function setCode(int $code): self
     {
-        // validation for constraint: int
-        if (!is_null($code) && !(is_int($code) || ctype_digit($code))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($code, true), gettype($code)), __LINE__);
-        }
         $this->Code = $code;
         
         return $this;
@@ -78,10 +73,6 @@ class TypeFailureInfo extends AbstractStructBase
      */
     public function setMessage(string $message): self
     {
-        // validation for constraint: string
-        if (!is_null($message) && !is_string($message)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($message, true), gettype($message)), __LINE__);
-        }
         $this->Message = $message;
         
         return $this;

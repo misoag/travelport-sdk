@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class TravelerCriteria extends AbstractStructBase
      * - ref: NameCriteria
      * @var \Travelport\UniversalRecord\StructType\NameCriteria|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\NameCriteria $NameCriteria = null;
+    public ?\Travelport\UniversalRecord\StructType\NameCriteria $NameCriteria = null;
     /**
      * The AppliedProfileCriteria
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class TravelerCriteria extends AbstractStructBase
      * - ref: AppliedProfileCriteria
      * @var \Travelport\UniversalRecord\StructType\AppliedProfileCriteria|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\AppliedProfileCriteria $AppliedProfileCriteria = null;
+    public ?\Travelport\UniversalRecord\StructType\AppliedProfileCriteria $AppliedProfileCriteria = null;
     /**
      * The PhoneNumber
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class TravelerCriteria extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PhoneNumber = null;
+    public ?string $PhoneNumber = null;
     /**
      * The VIPOnly
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class TravelerCriteria extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $VIPOnly = null;
+    public ?bool $VIPOnly = null;
     /**
      * Constructor method for TravelerCriteria
      * @uses TravelerCriteria::setNameCriteria()
@@ -81,48 +80,15 @@ class TravelerCriteria extends AbstractStructBase
         return $this->NameCriteria ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setNameCriteria method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setNameCriteria method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateNameCriteriaForChoiceConstraintFromSetNameCriteria($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'AppliedProfileCriteria',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property NameCriteria can\'t be set as the property %s is already set. Only one property must be set among these properties: NameCriteria, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set NameCriteria value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\NameCriteria $nameCriteria
      * @return \Travelport\UniversalRecord\StructType\TravelerCriteria
      */
     public function setNameCriteria(?\Travelport\UniversalRecord\StructType\NameCriteria $nameCriteria = null): self
     {
-        // validation for constraint: choice(NameCriteria, AppliedProfileCriteria)
-        if ('' !== ($nameCriteriaChoiceErrorMessage = self::validateNameCriteriaForChoiceConstraintFromSetNameCriteria($nameCriteria))) {
-            throw new InvalidArgumentException($nameCriteriaChoiceErrorMessage, __LINE__);
-        }
         if (is_null($nameCriteria) || (is_array($nameCriteria) && empty($nameCriteria))) {
             unset($this->NameCriteria);
         } else {
@@ -140,48 +106,15 @@ class TravelerCriteria extends AbstractStructBase
         return $this->AppliedProfileCriteria ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAppliedProfileCriteria method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAppliedProfileCriteria method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateAppliedProfileCriteriaForChoiceConstraintFromSetAppliedProfileCriteria($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'NameCriteria',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property AppliedProfileCriteria can\'t be set as the property %s is already set. Only one property must be set among these properties: AppliedProfileCriteria, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set AppliedProfileCriteria value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AppliedProfileCriteria $appliedProfileCriteria
      * @return \Travelport\UniversalRecord\StructType\TravelerCriteria
      */
     public function setAppliedProfileCriteria(?\Travelport\UniversalRecord\StructType\AppliedProfileCriteria $appliedProfileCriteria = null): self
     {
-        // validation for constraint: choice(NameCriteria, AppliedProfileCriteria)
-        if ('' !== ($appliedProfileCriteriaChoiceErrorMessage = self::validateAppliedProfileCriteriaForChoiceConstraintFromSetAppliedProfileCriteria($appliedProfileCriteria))) {
-            throw new InvalidArgumentException($appliedProfileCriteriaChoiceErrorMessage, __LINE__);
-        }
         if (is_null($appliedProfileCriteria) || (is_array($appliedProfileCriteria) && empty($appliedProfileCriteria))) {
             unset($this->AppliedProfileCriteria);
         } else {
@@ -205,10 +138,6 @@ class TravelerCriteria extends AbstractStructBase
      */
     public function setPhoneNumber(?string $phoneNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($phoneNumber) && !is_string($phoneNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($phoneNumber, true), gettype($phoneNumber)), __LINE__);
-        }
         $this->PhoneNumber = $phoneNumber;
         
         return $this;
@@ -228,10 +157,6 @@ class TravelerCriteria extends AbstractStructBase
      */
     public function setVIPOnly(?bool $vIPOnly = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($vIPOnly) && !is_bool($vIPOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($vIPOnly, true), gettype($vIPOnly)), __LINE__);
-        }
         $this->VIPOnly = $vIPOnly;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class AirSegmentTicketingModifiers extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $BrandTier;
+    public string $BrandTier;
     /**
      * The AirSegmentRef
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class AirSegmentTicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AirSegmentRef = null;
+    public ?string $AirSegmentRef = null;
     /**
      * Constructor method for AirSegmentTicketingModifiers
      * @uses AirSegmentTicketingModifiers::setBrandTier()
@@ -63,18 +62,6 @@ class AirSegmentTicketingModifiers extends AbstractStructBase
      */
     public function setBrandTier(string $brandTier): self
     {
-        // validation for constraint: string
-        if (!is_null($brandTier) && !is_string($brandTier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($brandTier, true), gettype($brandTier)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($brandTier) && mb_strlen((string) $brandTier) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $brandTier)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($brandTier) && mb_strlen((string) $brandTier) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $brandTier)), __LINE__);
-        }
         $this->BrandTier = $brandTier;
         
         return $this;
@@ -94,10 +81,6 @@ class AirSegmentTicketingModifiers extends AbstractStructBase
      */
     public function setAirSegmentRef(?string $airSegmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($airSegmentRef) && !is_string($airSegmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($airSegmentRef, true), gettype($airSegmentRef)), __LINE__);
-        }
         $this->AirSegmentRef = $airSegmentRef;
         
         return $this;

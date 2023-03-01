@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class CabinInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Category = null;
+    public ?string $Category = null;
     /**
      * The Number
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class CabinInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Number = null;
+    public ?string $Number = null;
     /**
      * The Location
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class CabinInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Location = null;
+    public ?string $Location = null;
     /**
      * The RelativeLocation
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class CabinInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RelativeLocation = null;
+    public ?string $RelativeLocation = null;
     /**
      * The DeckName
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class CabinInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DeckName = null;
+    public ?string $DeckName = null;
     /**
      * The BedConfiguration
      * Meta information extracted from the WSDL
@@ -79,7 +78,7 @@ class CabinInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BedConfiguration = null;
+    public ?string $BedConfiguration = null;
     /**
      * The SmokingIndicator
      * Meta information extracted from the WSDL
@@ -87,7 +86,7 @@ class CabinInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $SmokingIndicator = null;
+    public ?bool $SmokingIndicator = null;
     /**
      * Constructor method for CabinInfo
      * @uses CabinInfo::setCategory()
@@ -131,18 +130,6 @@ class CabinInfo extends AbstractStructBase
      */
     public function setCategory(?string $category = null): self
     {
-        // validation for constraint: string
-        if (!is_null($category) && !is_string($category)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($category, true), gettype($category)), __LINE__);
-        }
-        // validation for constraint: maxLength(3)
-        if (!is_null($category) && mb_strlen((string) $category) > 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 3', mb_strlen((string) $category)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($category) && mb_strlen((string) $category) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $category)), __LINE__);
-        }
         $this->Category = $category;
         
         return $this;
@@ -162,18 +149,6 @@ class CabinInfo extends AbstractStructBase
      */
     public function setNumber(?string $number = null): self
     {
-        // validation for constraint: string
-        if (!is_null($number) && !is_string($number)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($number) && mb_strlen((string) $number) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $number)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($number) && mb_strlen((string) $number) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $number)), __LINE__);
-        }
         $this->Number = $number;
         
         return $this;
@@ -193,14 +168,6 @@ class CabinInfo extends AbstractStructBase
      */
     public function setLocation(?string $location = null): self
     {
-        // validation for constraint: string
-        if (!is_null($location) && !is_string($location)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($location, true), gettype($location)), __LINE__);
-        }
-        // validation for constraint: length(1)
-        if (!is_null($location) && mb_strlen((string) $location) !== 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 1', mb_strlen((string) $location)), __LINE__);
-        }
         $this->Location = $location;
         
         return $this;
@@ -220,18 +187,6 @@ class CabinInfo extends AbstractStructBase
      */
     public function setRelativeLocation(?string $relativeLocation = null): self
     {
-        // validation for constraint: string
-        if (!is_null($relativeLocation) && !is_string($relativeLocation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($relativeLocation, true), gettype($relativeLocation)), __LINE__);
-        }
-        // validation for constraint: maxLength(12)
-        if (!is_null($relativeLocation) && mb_strlen((string) $relativeLocation) > 12) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 12', mb_strlen((string) $relativeLocation)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($relativeLocation) && mb_strlen((string) $relativeLocation) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $relativeLocation)), __LINE__);
-        }
         $this->RelativeLocation = $relativeLocation;
         
         return $this;
@@ -251,18 +206,6 @@ class CabinInfo extends AbstractStructBase
      */
     public function setDeckName(?string $deckName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($deckName) && !is_string($deckName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($deckName, true), gettype($deckName)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($deckName) && mb_strlen((string) $deckName) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $deckName)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($deckName) && mb_strlen((string) $deckName) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $deckName)), __LINE__);
-        }
         $this->DeckName = $deckName;
         
         return $this;
@@ -282,18 +225,6 @@ class CabinInfo extends AbstractStructBase
      */
     public function setBedConfiguration(?string $bedConfiguration = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bedConfiguration) && !is_string($bedConfiguration)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bedConfiguration, true), gettype($bedConfiguration)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($bedConfiguration) && mb_strlen((string) $bedConfiguration) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $bedConfiguration)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($bedConfiguration) && mb_strlen((string) $bedConfiguration) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $bedConfiguration)), __LINE__);
-        }
         $this->BedConfiguration = $bedConfiguration;
         
         return $this;
@@ -313,10 +244,6 @@ class CabinInfo extends AbstractStructBase
      */
     public function setSmokingIndicator(?bool $smokingIndicator = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($smokingIndicator) && !is_bool($smokingIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($smokingIndicator, true), gettype($smokingIndicator)), __LINE__);
-        }
         $this->SmokingIndicator = $smokingIndicator;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class AirItinerarySolution extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * The AirSegmentRef
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class AirItinerarySolution extends AbstractStructBase
      * - ref: AirSegmentRef
      * @var \Travelport\UniversalRecord\StructType\AirSegmentRef[]
      */
-    protected ?array $AirSegmentRef = null;
+    public ?array $AirSegmentRef = null;
     /**
      * The Connection
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class AirItinerarySolution extends AbstractStructBase
      * - ref: Connection
      * @var \Travelport\UniversalRecord\StructType\Connection[]
      */
-    protected ?array $Connection = null;
+    public ?array $Connection = null;
     /**
      * Constructor method for AirItinerarySolution
      * @uses AirItinerarySolution::setKey()
@@ -73,10 +72,6 @@ class AirItinerarySolution extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -90,48 +85,12 @@ class AirItinerarySolution extends AbstractStructBase
         return $this->AirSegmentRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirSegmentRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirSegmentRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAirSegmentRefForArrayConstraintFromSetAirSegmentRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airItinerarySolutionAirSegmentRefItem) {
-            // validation for constraint: itemType
-            if (!$airItinerarySolutionAirSegmentRefItem instanceof \Travelport\UniversalRecord\StructType\AirSegmentRef) {
-                $invalidValues[] = is_object($airItinerarySolutionAirSegmentRefItem) ? get_class($airItinerarySolutionAirSegmentRefItem) : sprintf('%s(%s)', gettype($airItinerarySolutionAirSegmentRefItem), var_export($airItinerarySolutionAirSegmentRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AirSegmentRef property can only contain items of type \Travelport\UniversalRecord\StructType\AirSegmentRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AirSegmentRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AirSegmentRef[] $airSegmentRef
      * @return \Travelport\UniversalRecord\StructType\AirItinerarySolution
      */
     public function setAirSegmentRef(?array $airSegmentRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($airSegmentRefArrayErrorMessage = self::validateAirSegmentRefForArrayConstraintFromSetAirSegmentRef($airSegmentRef))) {
-            throw new InvalidArgumentException($airSegmentRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($airSegmentRef) && count($airSegmentRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($airSegmentRef)), __LINE__);
-        }
         $this->AirSegmentRef = $airSegmentRef;
         
         return $this;
@@ -144,14 +103,6 @@ class AirItinerarySolution extends AbstractStructBase
      */
     public function addToAirSegmentRef(\Travelport\UniversalRecord\StructType\AirSegmentRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AirSegmentRef) {
-            throw new InvalidArgumentException(sprintf('The AirSegmentRef property can only contain items of type \Travelport\UniversalRecord\StructType\AirSegmentRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->AirSegmentRef) && count($this->AirSegmentRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->AirSegmentRef)), __LINE__);
-        }
         $this->AirSegmentRef[] = $item;
         
         return $this;
@@ -165,48 +116,12 @@ class AirItinerarySolution extends AbstractStructBase
         return $this->Connection;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setConnection method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setConnection method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateConnectionForArrayConstraintFromSetConnection(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airItinerarySolutionConnectionItem) {
-            // validation for constraint: itemType
-            if (!$airItinerarySolutionConnectionItem instanceof \Travelport\UniversalRecord\StructType\Connection) {
-                $invalidValues[] = is_object($airItinerarySolutionConnectionItem) ? get_class($airItinerarySolutionConnectionItem) : sprintf('%s(%s)', gettype($airItinerarySolutionConnectionItem), var_export($airItinerarySolutionConnectionItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Connection property can only contain items of type \Travelport\UniversalRecord\StructType\Connection, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Connection value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\Connection[] $connection
      * @return \Travelport\UniversalRecord\StructType\AirItinerarySolution
      */
     public function setConnection(?array $connection = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($connectionArrayErrorMessage = self::validateConnectionForArrayConstraintFromSetConnection($connection))) {
-            throw new InvalidArgumentException($connectionArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($connection) && count($connection) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($connection)), __LINE__);
-        }
         $this->Connection = $connection;
         
         return $this;
@@ -219,14 +134,6 @@ class AirItinerarySolution extends AbstractStructBase
      */
     public function addToConnection(\Travelport\UniversalRecord\StructType\Connection $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\Connection) {
-            throw new InvalidArgumentException(sprintf('The Connection property can only contain items of type \Travelport\UniversalRecord\StructType\Connection, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->Connection) && count($this->Connection) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->Connection)), __LINE__);
-        }
         $this->Connection[] = $item;
         
         return $this;

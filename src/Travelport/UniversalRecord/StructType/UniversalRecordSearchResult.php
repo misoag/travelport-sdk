@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,14 +21,14 @@ class UniversalRecordSearchResult extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\ProductInfo[]
      */
-    protected ?array $ProductInfo = null;
+    public ?array $ProductInfo = null;
     /**
      * The UniversalRecordLocatorCode
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $UniversalRecordLocatorCode = null;
+    public ?string $UniversalRecordLocatorCode = null;
     /**
      * The EarliestTravelDate
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class UniversalRecordSearchResult extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $EarliestTravelDate = null;
+    public ?string $EarliestTravelDate = null;
     /**
      * The CreatedDate
      * Meta information extracted from the WSDL
@@ -45,7 +44,7 @@ class UniversalRecordSearchResult extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CreatedDate = null;
+    public ?string $CreatedDate = null;
     /**
      * The SavedTripLocatorCode
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class UniversalRecordSearchResult extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SavedTripLocatorCode = null;
+    public ?string $SavedTripLocatorCode = null;
     /**
      * The Ticketed
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class UniversalRecordSearchResult extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Ticketed = null;
+    public ?string $Ticketed = null;
     /**
      * The RecordStatus
      * Meta information extracted from the WSDL
@@ -72,7 +71,7 @@ class UniversalRecordSearchResult extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RecordStatus = null;
+    public ?string $RecordStatus = null;
     /**
      * The TicketStatus
      * Meta information extracted from the WSDL
@@ -80,7 +79,7 @@ class UniversalRecordSearchResult extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketStatus = null;
+    public ?string $TicketStatus = null;
     /**
      * Constructor method for UniversalRecordSearchResult
      * @uses UniversalRecordSearchResult::setProductInfo()
@@ -121,48 +120,12 @@ class UniversalRecordSearchResult extends AbstractStructBase
         return $this->ProductInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setProductInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setProductInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateProductInfoForArrayConstraintFromSetProductInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $universalRecordSearchResultProductInfoItem) {
-            // validation for constraint: itemType
-            if (!$universalRecordSearchResultProductInfoItem instanceof \Travelport\UniversalRecord\StructType\ProductInfo) {
-                $invalidValues[] = is_object($universalRecordSearchResultProductInfoItem) ? get_class($universalRecordSearchResultProductInfoItem) : sprintf('%s(%s)', gettype($universalRecordSearchResultProductInfoItem), var_export($universalRecordSearchResultProductInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ProductInfo property can only contain items of type \Travelport\UniversalRecord\StructType\ProductInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ProductInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\ProductInfo[] $productInfo
      * @return \Travelport\UniversalRecord\StructType\UniversalRecordSearchResult
      */
     public function setProductInfo(?array $productInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($productInfoArrayErrorMessage = self::validateProductInfoForArrayConstraintFromSetProductInfo($productInfo))) {
-            throw new InvalidArgumentException($productInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($productInfo) && count($productInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($productInfo)), __LINE__);
-        }
         $this->ProductInfo = $productInfo;
         
         return $this;
@@ -175,14 +138,6 @@ class UniversalRecordSearchResult extends AbstractStructBase
      */
     public function addToProductInfo(\Travelport\UniversalRecord\StructType\ProductInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\ProductInfo) {
-            throw new InvalidArgumentException(sprintf('The ProductInfo property can only contain items of type \Travelport\UniversalRecord\StructType\ProductInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->ProductInfo) && count($this->ProductInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->ProductInfo)), __LINE__);
-        }
         $this->ProductInfo[] = $item;
         
         return $this;
@@ -202,10 +157,6 @@ class UniversalRecordSearchResult extends AbstractStructBase
      */
     public function setUniversalRecordLocatorCode(?string $universalRecordLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($universalRecordLocatorCode) && !is_string($universalRecordLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($universalRecordLocatorCode, true), gettype($universalRecordLocatorCode)), __LINE__);
-        }
         $this->UniversalRecordLocatorCode = $universalRecordLocatorCode;
         
         return $this;
@@ -225,10 +176,6 @@ class UniversalRecordSearchResult extends AbstractStructBase
      */
     public function setEarliestTravelDate(?string $earliestTravelDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($earliestTravelDate) && !is_string($earliestTravelDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($earliestTravelDate, true), gettype($earliestTravelDate)), __LINE__);
-        }
         $this->EarliestTravelDate = $earliestTravelDate;
         
         return $this;
@@ -248,10 +195,6 @@ class UniversalRecordSearchResult extends AbstractStructBase
      */
     public function setCreatedDate(?string $createdDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($createdDate) && !is_string($createdDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($createdDate, true), gettype($createdDate)), __LINE__);
-        }
         $this->CreatedDate = $createdDate;
         
         return $this;
@@ -271,18 +214,6 @@ class UniversalRecordSearchResult extends AbstractStructBase
      */
     public function setSavedTripLocatorCode(?string $savedTripLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($savedTripLocatorCode) && !is_string($savedTripLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($savedTripLocatorCode, true), gettype($savedTripLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($savedTripLocatorCode) && mb_strlen((string) $savedTripLocatorCode) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $savedTripLocatorCode)), __LINE__);
-        }
-        // validation for constraint: minLength(5)
-        if (!is_null($savedTripLocatorCode) && mb_strlen((string) $savedTripLocatorCode) < 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 5', mb_strlen((string) $savedTripLocatorCode)), __LINE__);
-        }
         $this->SavedTripLocatorCode = $savedTripLocatorCode;
         
         return $this;
@@ -297,18 +228,11 @@ class UniversalRecordSearchResult extends AbstractStructBase
     }
     /**
      * Set Ticketed value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeReservationTicketed::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeReservationTicketed::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $ticketed
      * @return \Travelport\UniversalRecord\StructType\UniversalRecordSearchResult
      */
     public function setTicketed(?string $ticketed = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeReservationTicketed::valueIsValid($ticketed)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeReservationTicketed', is_array($ticketed) ? implode(', ', $ticketed) : var_export($ticketed, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeReservationTicketed::getValidValues())), __LINE__);
-        }
         $this->Ticketed = $ticketed;
         
         return $this;
@@ -323,18 +247,11 @@ class UniversalRecordSearchResult extends AbstractStructBase
     }
     /**
      * Set RecordStatus value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRecordStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRecordStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $recordStatus
      * @return \Travelport\UniversalRecord\StructType\UniversalRecordSearchResult
      */
     public function setRecordStatus(?string $recordStatus = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeRecordStatus::valueIsValid($recordStatus)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeRecordStatus', is_array($recordStatus) ? implode(', ', $recordStatus) : var_export($recordStatus, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeRecordStatus::getValidValues())), __LINE__);
-        }
         $this->RecordStatus = $recordStatus;
         
         return $this;
@@ -349,18 +266,11 @@ class UniversalRecordSearchResult extends AbstractStructBase
     }
     /**
      * Set TicketStatus value
-     * @uses \Travelport\UniversalRecord\EnumType\URTicketStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\URTicketStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $ticketStatus
      * @return \Travelport\UniversalRecord\StructType\UniversalRecordSearchResult
      */
     public function setTicketStatus(?string $ticketStatus = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\URTicketStatus::valueIsValid($ticketStatus)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\URTicketStatus', is_array($ticketStatus) ? implode(', ', $ticketStatus) : var_export($ticketStatus, true), implode(', ', \Travelport\UniversalRecord\EnumType\URTicketStatus::getValidValues())), __LINE__);
-        }
         $this->TicketStatus = $ticketStatus;
         
         return $this;

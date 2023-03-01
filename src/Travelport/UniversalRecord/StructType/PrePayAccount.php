@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class PrePayAccount extends AbstractStructBase
      * - ref: CreditSummary
      * @var \Travelport\UniversalRecord\StructType\CreditSummary|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\CreditSummary $CreditSummary = null;
+    public ?\Travelport\UniversalRecord\StructType\CreditSummary $CreditSummary = null;
     /**
      * The PrePayPriceInfo
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class PrePayAccount extends AbstractStructBase
      * - ref: PrePayPriceInfo
      * @var \Travelport\UniversalRecord\StructType\PrePayPriceInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PrePayPriceInfo $PrePayPriceInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\PrePayPriceInfo $PrePayPriceInfo = null;
     /**
      * The ProgramTitle
      * Meta information extracted from the WSDL
@@ -38,14 +37,14 @@ class PrePayAccount extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProgramTitle = null;
+    public ?string $ProgramTitle = null;
     /**
      * The CertificateNumber
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $CertificateNumber = null;
+    public ?string $CertificateNumber = null;
     /**
      * The ProgramName
      * Meta information extracted from the WSDL
@@ -53,7 +52,7 @@ class PrePayAccount extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProgramName = null;
+    public ?string $ProgramName = null;
     /**
      * The EffectiveDate
      * Meta information extracted from the WSDL
@@ -61,7 +60,7 @@ class PrePayAccount extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $EffectiveDate = null;
+    public ?string $EffectiveDate = null;
     /**
      * The ExpireDate
      * Meta information extracted from the WSDL
@@ -69,7 +68,7 @@ class PrePayAccount extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ExpireDate = null;
+    public ?string $ExpireDate = null;
     /**
      * Constructor method for PrePayAccount
      * @uses PrePayAccount::setCreditSummary()
@@ -151,10 +150,6 @@ class PrePayAccount extends AbstractStructBase
      */
     public function setProgramTitle(?string $programTitle = null): self
     {
-        // validation for constraint: string
-        if (!is_null($programTitle) && !is_string($programTitle)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($programTitle, true), gettype($programTitle)), __LINE__);
-        }
         $this->ProgramTitle = $programTitle;
         
         return $this;
@@ -174,10 +169,6 @@ class PrePayAccount extends AbstractStructBase
      */
     public function setCertificateNumber(?string $certificateNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($certificateNumber) && !is_string($certificateNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($certificateNumber, true), gettype($certificateNumber)), __LINE__);
-        }
         $this->CertificateNumber = $certificateNumber;
         
         return $this;
@@ -197,10 +188,6 @@ class PrePayAccount extends AbstractStructBase
      */
     public function setProgramName(?string $programName = null): self
     {
-        // validation for constraint: string
-        if (!is_null($programName) && !is_string($programName)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($programName, true), gettype($programName)), __LINE__);
-        }
         $this->ProgramName = $programName;
         
         return $this;
@@ -220,10 +207,6 @@ class PrePayAccount extends AbstractStructBase
      */
     public function setEffectiveDate(?string $effectiveDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($effectiveDate) && !is_string($effectiveDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($effectiveDate, true), gettype($effectiveDate)), __LINE__);
-        }
         $this->EffectiveDate = $effectiveDate;
         
         return $this;
@@ -243,10 +226,6 @@ class PrePayAccount extends AbstractStructBase
      */
     public function setExpireDate(?string $expireDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($expireDate) && !is_string($expireDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($expireDate, true), gettype($expireDate)), __LINE__);
-        }
         $this->ExpireDate = $expireDate;
         
         return $this;

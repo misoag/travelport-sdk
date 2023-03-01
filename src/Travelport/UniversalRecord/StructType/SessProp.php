@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class SessProp extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $nm;
+    public string $nm;
     /**
      * The val
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class SessProp extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $val;
+    public string $val;
     /**
      * Constructor method for SessProp
      * @uses SessProp::setNm()
@@ -59,10 +58,6 @@ class SessProp extends AbstractStructBase
      */
     public function setNm(string $nm): self
     {
-        // validation for constraint: string
-        if (!is_null($nm) && !is_string($nm)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nm, true), gettype($nm)), __LINE__);
-        }
         $this->nm = $nm;
         
         return $this;
@@ -82,10 +77,6 @@ class SessProp extends AbstractStructBase
      */
     public function setVal(string $val): self
     {
-        // validation for constraint: string
-        if (!is_null($val) && !is_string($val)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($val, true), gettype($val)), __LINE__);
-        }
         $this->val = $val;
         
         return $this;

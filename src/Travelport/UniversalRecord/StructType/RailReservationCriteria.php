@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class RailReservationCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeDateSpec|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeDateSpec $JourneyDepartureDate = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeDateSpec $JourneyDepartureDate = null;
     /**
      * The JourneyArrivalDate
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class RailReservationCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeDateSpec|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeDateSpec $JourneyArrivalDate = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeDateSpec $JourneyArrivalDate = null;
     /**
      * The SegmentDepartureDate
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class RailReservationCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeDateSpec|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeDateSpec $SegmentDepartureDate = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeDateSpec $SegmentDepartureDate = null;
     /**
      * The SegmentArrivalDate
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class RailReservationCriteria extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeDateSpec|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeDateSpec $SegmentArrivalDate = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeDateSpec $SegmentArrivalDate = null;
     /**
      * The JourneyOrigin
      * Meta information extracted from the WSDL
@@ -57,7 +56,7 @@ class RailReservationCriteria extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $JourneyOrigin = null;
+    public ?string $JourneyOrigin = null;
     /**
      * The JourneyDestination
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class RailReservationCriteria extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $JourneyDestination = null;
+    public ?string $JourneyDestination = null;
     /**
      * The JourneyRailLocOrigin
      * Meta information extracted from the WSDL
@@ -80,7 +79,7 @@ class RailReservationCriteria extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $JourneyRailLocOrigin = null;
+    public ?string $JourneyRailLocOrigin = null;
     /**
      * The JourneyRailLocDestination
      * Meta information extracted from the WSDL
@@ -92,21 +91,21 @@ class RailReservationCriteria extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $JourneyRailLocDestination = null;
+    public ?string $JourneyRailLocDestination = null;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $SupplierCode = null;
+    public ?string $SupplierCode = null;
     /**
      * The TrainNumber
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $TrainNumber = null;
+    public ?string $TrainNumber = null;
     /**
      * The PassiveOnly
      * Meta information extracted from the WSDL
@@ -115,7 +114,7 @@ class RailReservationCriteria extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PassiveOnly = null;
+    public ?bool $PassiveOnly = null;
     /**
      * Constructor method for RailReservationCriteria
      * @uses RailReservationCriteria::setJourneyDepartureDate()
@@ -247,14 +246,6 @@ class RailReservationCriteria extends AbstractStructBase
      */
     public function setJourneyOrigin(?string $journeyOrigin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($journeyOrigin) && !is_string($journeyOrigin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($journeyOrigin, true), gettype($journeyOrigin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($journeyOrigin) && mb_strlen((string) $journeyOrigin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $journeyOrigin)), __LINE__);
-        }
         $this->JourneyOrigin = $journeyOrigin;
         
         return $this;
@@ -274,14 +265,6 @@ class RailReservationCriteria extends AbstractStructBase
      */
     public function setJourneyDestination(?string $journeyDestination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($journeyDestination) && !is_string($journeyDestination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($journeyDestination, true), gettype($journeyDestination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($journeyDestination) && mb_strlen((string) $journeyDestination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $journeyDestination)), __LINE__);
-        }
         $this->JourneyDestination = $journeyDestination;
         
         return $this;
@@ -301,18 +284,6 @@ class RailReservationCriteria extends AbstractStructBase
      */
     public function setJourneyRailLocOrigin(?string $journeyRailLocOrigin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($journeyRailLocOrigin) && !is_string($journeyRailLocOrigin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($journeyRailLocOrigin, true), gettype($journeyRailLocOrigin)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($journeyRailLocOrigin) && mb_strlen((string) $journeyRailLocOrigin) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $journeyRailLocOrigin)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($journeyRailLocOrigin) && mb_strlen((string) $journeyRailLocOrigin) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $journeyRailLocOrigin)), __LINE__);
-        }
         $this->JourneyRailLocOrigin = $journeyRailLocOrigin;
         
         return $this;
@@ -332,18 +303,6 @@ class RailReservationCriteria extends AbstractStructBase
      */
     public function setJourneyRailLocDestination(?string $journeyRailLocDestination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($journeyRailLocDestination) && !is_string($journeyRailLocDestination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($journeyRailLocDestination, true), gettype($journeyRailLocDestination)), __LINE__);
-        }
-        // validation for constraint: maxLength(8)
-        if (!is_null($journeyRailLocDestination) && mb_strlen((string) $journeyRailLocDestination) > 8) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 8', mb_strlen((string) $journeyRailLocDestination)), __LINE__);
-        }
-        // validation for constraint: minLength(3)
-        if (!is_null($journeyRailLocDestination) && mb_strlen((string) $journeyRailLocDestination) < 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 3', mb_strlen((string) $journeyRailLocDestination)), __LINE__);
-        }
         $this->JourneyRailLocDestination = $journeyRailLocDestination;
         
         return $this;
@@ -363,10 +322,6 @@ class RailReservationCriteria extends AbstractStructBase
      */
     public function setSupplierCode(?string $supplierCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;
@@ -386,10 +341,6 @@ class RailReservationCriteria extends AbstractStructBase
      */
     public function setTrainNumber(?string $trainNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($trainNumber) && !is_string($trainNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($trainNumber, true), gettype($trainNumber)), __LINE__);
-        }
         $this->TrainNumber = $trainNumber;
         
         return $this;
@@ -409,10 +360,6 @@ class RailReservationCriteria extends AbstractStructBase
      */
     public function setPassiveOnly(?bool $passiveOnly = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($passiveOnly) && !is_bool($passiveOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($passiveOnly, true), gettype($passiveOnly)), __LINE__);
-        }
         $this->PassiveOnly = $passiveOnly;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class NameRemark extends AbstractStructBase
      * - documentation: Actual remarks data.
      * @var string|null
      */
-    protected ?string $RemarkData = null;
+    public ?string $RemarkData = null;
     /**
      * The ProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class NameRemark extends AbstractStructBase
      * - ref: ProviderReservationInfoRef
      * @var \Travelport\UniversalRecord\StructType\ProviderReservationInfoRef[]
      */
-    protected ?array $ProviderReservationInfoRef = null;
+    public ?array $ProviderReservationInfoRef = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class NameRemark extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The Category
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class NameRemark extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Category = null;
+    public ?string $Category = null;
     /**
      * The ElStat
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class NameRemark extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class NameRemark extends AbstractStructBase
      * - type: xs:boolean
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * Constructor method for NameRemark
      * @uses NameRemark::setRemarkData()
@@ -105,10 +104,6 @@ class NameRemark extends AbstractStructBase
      */
     public function setRemarkData(?string $remarkData = null): self
     {
-        // validation for constraint: string
-        if (!is_null($remarkData) && !is_string($remarkData)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($remarkData, true), gettype($remarkData)), __LINE__);
-        }
         $this->RemarkData = $remarkData;
         
         return $this;
@@ -122,48 +117,12 @@ class NameRemark extends AbstractStructBase
         return $this->ProviderReservationInfoRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setProviderReservationInfoRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationInfoRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateProviderReservationInfoRefForArrayConstraintFromSetProviderReservationInfoRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $nameRemarkProviderReservationInfoRefItem) {
-            // validation for constraint: itemType
-            if (!$nameRemarkProviderReservationInfoRefItem instanceof \Travelport\UniversalRecord\StructType\ProviderReservationInfoRef) {
-                $invalidValues[] = is_object($nameRemarkProviderReservationInfoRefItem) ? get_class($nameRemarkProviderReservationInfoRefItem) : sprintf('%s(%s)', gettype($nameRemarkProviderReservationInfoRefItem), var_export($nameRemarkProviderReservationInfoRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The ProviderReservationInfoRef property can only contain items of type \Travelport\UniversalRecord\StructType\ProviderReservationInfoRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set ProviderReservationInfoRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\ProviderReservationInfoRef[] $providerReservationInfoRef
      * @return \Travelport\UniversalRecord\StructType\NameRemark
      */
     public function setProviderReservationInfoRef(?array $providerReservationInfoRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($providerReservationInfoRefArrayErrorMessage = self::validateProviderReservationInfoRefForArrayConstraintFromSetProviderReservationInfoRef($providerReservationInfoRef))) {
-            throw new InvalidArgumentException($providerReservationInfoRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($providerReservationInfoRef) && count($providerReservationInfoRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($providerReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef = $providerReservationInfoRef;
         
         return $this;
@@ -176,14 +135,6 @@ class NameRemark extends AbstractStructBase
      */
     public function addToProviderReservationInfoRef(\Travelport\UniversalRecord\StructType\ProviderReservationInfoRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\ProviderReservationInfoRef) {
-            throw new InvalidArgumentException(sprintf('The ProviderReservationInfoRef property can only contain items of type \Travelport\UniversalRecord\StructType\ProviderReservationInfoRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->ProviderReservationInfoRef) && count($this->ProviderReservationInfoRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->ProviderReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef[] = $item;
         
         return $this;
@@ -203,10 +154,6 @@ class NameRemark extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -226,10 +173,6 @@ class NameRemark extends AbstractStructBase
      */
     public function setCategory(?string $category = null): self
     {
-        // validation for constraint: string
-        if (!is_null($category) && !is_string($category)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($category, true), gettype($category)), __LINE__);
-        }
         $this->Category = $category;
         
         return $this;
@@ -244,18 +187,11 @@ class NameRemark extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\NameRemark
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -275,10 +211,6 @@ class NameRemark extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;

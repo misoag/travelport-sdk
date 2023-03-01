@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class InitialAsynchResult extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MaxWait = null;
+    public ?int $MaxWait = null;
     /**
      * Constructor method for InitialAsynchResult
      * @uses InitialAsynchResult::setMaxWait()
@@ -46,10 +45,6 @@ class InitialAsynchResult extends AbstractStructBase
      */
     public function setMaxWait(?int $maxWait = null): self
     {
-        // validation for constraint: int
-        if (!is_null($maxWait) && !(is_int($maxWait) || ctype_digit($maxWait))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maxWait, true), gettype($maxWait)), __LINE__);
-        }
         $this->MaxWait = $maxWait;
         
         return $this;

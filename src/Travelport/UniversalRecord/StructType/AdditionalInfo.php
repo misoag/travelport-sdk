@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class AdditionalInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Category;
+    public string $Category;
     /**
      * Constructor method for AdditionalInfo
      * @uses AdditionalInfo::setCategory()
@@ -48,10 +47,6 @@ class AdditionalInfo extends AbstractStructBase
      */
     public function setCategory(string $category): self
     {
-        // validation for constraint: string
-        if (!is_null($category) && !is_string($category)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($category, true), gettype($category)), __LINE__);
-        }
         $this->Category = $category;
         
         return $this;

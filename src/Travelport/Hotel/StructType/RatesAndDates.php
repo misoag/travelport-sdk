@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class RatesAndDates extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Status;
+    public string $Status;
     /**
      * The Start
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class RatesAndDates extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Start;
+    public string $Start;
     /**
      * The End
      * Meta information extracted from the WSDL
@@ -43,7 +42,7 @@ class RatesAndDates extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $End;
+    public string $End;
     /**
      * The Low
      * Meta information extracted from the WSDL
@@ -53,7 +52,7 @@ class RatesAndDates extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Low;
+    public string $Low;
     /**
      * The High
      * Meta information extracted from the WSDL
@@ -63,7 +62,7 @@ class RatesAndDates extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $High;
+    public string $High;
     /**
      * Constructor method for RatesAndDates
      * @uses RatesAndDates::setStatus()
@@ -101,10 +100,6 @@ class RatesAndDates extends AbstractStructBase
      */
     public function setStatus(string $status): self
     {
-        // validation for constraint: string
-        if (!is_null($status) && !is_string($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($status, true), gettype($status)), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -124,14 +119,6 @@ class RatesAndDates extends AbstractStructBase
      */
     public function setStart(string $start): self
     {
-        // validation for constraint: string
-        if (!is_null($start) && !is_string($start)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($start, true), gettype($start)), __LINE__);
-        }
-        // validation for constraint: pattern([^:Z].*)
-        if (!is_null($start) && !preg_match('/[^:Z].*/', $start)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[^:Z].*/', var_export($start, true)), __LINE__);
-        }
         $this->Start = $start;
         
         return $this;
@@ -151,14 +138,6 @@ class RatesAndDates extends AbstractStructBase
      */
     public function setEnd(string $end): self
     {
-        // validation for constraint: string
-        if (!is_null($end) && !is_string($end)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($end, true), gettype($end)), __LINE__);
-        }
-        // validation for constraint: pattern([^:Z].*)
-        if (!is_null($end) && !preg_match('/[^:Z].*/', $end)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a literal that is among the set of character sequences denoted by the regular expression /[^:Z].*/', var_export($end, true)), __LINE__);
-        }
         $this->End = $end;
         
         return $this;
@@ -178,10 +157,6 @@ class RatesAndDates extends AbstractStructBase
      */
     public function setLow(string $low): self
     {
-        // validation for constraint: string
-        if (!is_null($low) && !is_string($low)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($low, true), gettype($low)), __LINE__);
-        }
         $this->Low = $low;
         
         return $this;
@@ -201,10 +176,6 @@ class RatesAndDates extends AbstractStructBase
      */
     public function setHigh(string $high): self
     {
-        // validation for constraint: string
-        if (!is_null($high) && !is_string($high)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($high, true), gettype($high)), __LINE__);
-        }
         $this->High = $high;
         
         return $this;

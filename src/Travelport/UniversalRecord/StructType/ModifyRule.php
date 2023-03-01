@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class ModifyRule extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Modification;
+    public string $Modification;
     /**
      * The AutomaticallyAppliedOnAdd
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class ModifyRule extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AutomaticallyAppliedOnAdd = null;
+    public ?bool $AutomaticallyAppliedOnAdd = null;
     /**
      * The CanDelete
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class ModifyRule extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $CanDelete = null;
+    public ?bool $CanDelete = null;
     /**
      * The CanAdd
      * Meta information extracted from the WSDL
@@ -51,7 +50,7 @@ class ModifyRule extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $CanAdd = null;
+    public ?bool $CanAdd = null;
     /**
      * The Refundable
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class ModifyRule extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Refundable = null;
+    public ?bool $Refundable = null;
     /**
      * The ProviderDefinedModificationType
      * Meta information extracted from the WSDL
@@ -69,7 +68,7 @@ class ModifyRule extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ProviderDefinedModificationType = null;
+    public ?string $ProviderDefinedModificationType = null;
     /**
      * Constructor method for ModifyRule
      * @uses ModifyRule::setModification()
@@ -105,18 +104,11 @@ class ModifyRule extends AbstractStructBase
     }
     /**
      * Set Modification value
-     * @uses \Travelport\UniversalRecord\EnumType\ModificationType::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\ModificationType::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $modification
      * @return \Travelport\UniversalRecord\StructType\ModifyRule
      */
     public function setModification(string $modification): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\ModificationType::valueIsValid($modification)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\ModificationType', is_array($modification) ? implode(', ', $modification) : var_export($modification, true), implode(', ', \Travelport\UniversalRecord\EnumType\ModificationType::getValidValues())), __LINE__);
-        }
         $this->Modification = $modification;
         
         return $this;
@@ -136,10 +128,6 @@ class ModifyRule extends AbstractStructBase
      */
     public function setAutomaticallyAppliedOnAdd(?bool $automaticallyAppliedOnAdd = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($automaticallyAppliedOnAdd) && !is_bool($automaticallyAppliedOnAdd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($automaticallyAppliedOnAdd, true), gettype($automaticallyAppliedOnAdd)), __LINE__);
-        }
         $this->AutomaticallyAppliedOnAdd = $automaticallyAppliedOnAdd;
         
         return $this;
@@ -159,10 +147,6 @@ class ModifyRule extends AbstractStructBase
      */
     public function setCanDelete(?bool $canDelete = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($canDelete) && !is_bool($canDelete)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($canDelete, true), gettype($canDelete)), __LINE__);
-        }
         $this->CanDelete = $canDelete;
         
         return $this;
@@ -182,10 +166,6 @@ class ModifyRule extends AbstractStructBase
      */
     public function setCanAdd(?bool $canAdd = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($canAdd) && !is_bool($canAdd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($canAdd, true), gettype($canAdd)), __LINE__);
-        }
         $this->CanAdd = $canAdd;
         
         return $this;
@@ -205,10 +185,6 @@ class ModifyRule extends AbstractStructBase
      */
     public function setRefundable(?bool $refundable = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($refundable) && !is_bool($refundable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($refundable, true), gettype($refundable)), __LINE__);
-        }
         $this->Refundable = $refundable;
         
         return $this;
@@ -228,10 +204,6 @@ class ModifyRule extends AbstractStructBase
      */
     public function setProviderDefinedModificationType(?string $providerDefinedModificationType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerDefinedModificationType) && !is_string($providerDefinedModificationType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerDefinedModificationType, true), gettype($providerDefinedModificationType)), __LINE__);
-        }
         $this->ProviderDefinedModificationType = $providerDefinedModificationType;
         
         return $this;

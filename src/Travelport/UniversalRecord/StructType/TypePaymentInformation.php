@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class TypePaymentInformation extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeVoucherInformation|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeVoucherInformation $Voucher = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeVoucherInformation $Voucher = null;
     /**
      * The BillingNumber
      * Meta information extracted from the WSDL
@@ -27,7 +26,7 @@ class TypePaymentInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BillingNumber = null;
+    public ?string $BillingNumber = null;
     /**
      * The BillingReferenceNumber
      * Meta information extracted from the WSDL
@@ -35,7 +34,7 @@ class TypePaymentInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BillingReferenceNumber = null;
+    public ?string $BillingReferenceNumber = null;
     /**
      * The PrePayment
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class TypePaymentInformation extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PrePayment = null;
+    public ?string $PrePayment = null;
     /**
      * Constructor method for typePaymentInformation
      * @uses TypePaymentInformation::setVoucher()
@@ -98,10 +97,6 @@ class TypePaymentInformation extends AbstractStructBase
      */
     public function setBillingNumber(?string $billingNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($billingNumber) && !is_string($billingNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingNumber, true), gettype($billingNumber)), __LINE__);
-        }
         $this->BillingNumber = $billingNumber;
         
         return $this;
@@ -121,10 +116,6 @@ class TypePaymentInformation extends AbstractStructBase
      */
     public function setBillingReferenceNumber(?string $billingReferenceNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($billingReferenceNumber) && !is_string($billingReferenceNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($billingReferenceNumber, true), gettype($billingReferenceNumber)), __LINE__);
-        }
         $this->BillingReferenceNumber = $billingReferenceNumber;
         
         return $this;
@@ -144,14 +135,6 @@ class TypePaymentInformation extends AbstractStructBase
      */
     public function setPrePayment(?string $prePayment = null): self
     {
-        // validation for constraint: string
-        if (!is_null($prePayment) && !is_string($prePayment)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($prePayment, true), gettype($prePayment)), __LINE__);
-        }
-        // validation for constraint: maxLength(90)
-        if (!is_null($prePayment) && mb_strlen((string) $prePayment) > 90) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 90', mb_strlen((string) $prePayment)), __LINE__);
-        }
         $this->PrePayment = $prePayment;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class BillingDetailItem extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Name;
+    public string $Name;
     /**
      * The DataType
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class BillingDetailItem extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $DataType;
+    public string $DataType;
     /**
      * The MinLength
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class BillingDetailItem extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $MinLength;
+    public string $MinLength;
     /**
      * The MaxLength
      * Meta information extracted from the WSDL
@@ -46,14 +45,14 @@ class BillingDetailItem extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $MaxLength;
+    public string $MaxLength;
     /**
      * The Value
      * Meta information extracted from the WSDL
      * - documentation: Detailed Billing Information Value
      * @var string|null
      */
-    protected ?string $Value = null;
+    public ?string $Value = null;
     /**
      * Constructor method for BillingDetailItem
      * @uses BillingDetailItem::setName()
@@ -86,18 +85,11 @@ class BillingDetailItem extends AbstractStructBase
     }
     /**
      * Set Name value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeBillingDetailsName::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeBillingDetailsName::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $name
      * @return \Travelport\UniversalRecord\StructType\BillingDetailItem
      */
     public function setName(string $name): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeBillingDetailsName::valueIsValid($name)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeBillingDetailsName', is_array($name) ? implode(', ', $name) : var_export($name, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeBillingDetailsName::getValidValues())), __LINE__);
-        }
         $this->Name = $name;
         
         return $this;
@@ -112,18 +104,11 @@ class BillingDetailItem extends AbstractStructBase
     }
     /**
      * Set DataType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeBillingDetailsDataType::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeBillingDetailsDataType::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $dataType
      * @return \Travelport\UniversalRecord\StructType\BillingDetailItem
      */
     public function setDataType(string $dataType): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeBillingDetailsDataType::valueIsValid($dataType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeBillingDetailsDataType', is_array($dataType) ? implode(', ', $dataType) : var_export($dataType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeBillingDetailsDataType::getValidValues())), __LINE__);
-        }
         $this->DataType = $dataType;
         
         return $this;
@@ -143,10 +128,6 @@ class BillingDetailItem extends AbstractStructBase
      */
     public function setMinLength(string $minLength): self
     {
-        // validation for constraint: string
-        if (!is_null($minLength) && !is_string($minLength)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($minLength, true), gettype($minLength)), __LINE__);
-        }
         $this->MinLength = $minLength;
         
         return $this;
@@ -166,10 +147,6 @@ class BillingDetailItem extends AbstractStructBase
      */
     public function setMaxLength(string $maxLength): self
     {
-        // validation for constraint: string
-        if (!is_null($maxLength) && !is_string($maxLength)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($maxLength, true), gettype($maxLength)), __LINE__);
-        }
         $this->MaxLength = $maxLength;
         
         return $this;
@@ -189,10 +166,6 @@ class BillingDetailItem extends AbstractStructBase
      */
     public function setValue(?string $value = null): self
     {
-        // validation for constraint: string
-        if (!is_null($value) && !is_string($value)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($value, true), gettype($value)), __LINE__);
-        }
         $this->Value = $value;
         
         return $this;

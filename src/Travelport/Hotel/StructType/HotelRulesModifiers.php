@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class HotelRulesModifiers extends AbstractStructBase
      * - ref: common:PermittedProviders
      * @var \Travelport\Hotel\StructType\PermittedProviders|null
      */
-    protected ?\Travelport\Hotel\StructType\PermittedProviders $PermittedProviders = null;
+    public ?\Travelport\Hotel\StructType\PermittedProviders $PermittedProviders = null;
     /**
      * The NumberOfChildren
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class HotelRulesModifiers extends AbstractStructBase
      * - ref: NumberOfChildren
      * @var \Travelport\Hotel\StructType\NumberOfChildren|null
      */
-    protected ?\Travelport\Hotel\StructType\NumberOfChildren $NumberOfChildren = null;
+    public ?\Travelport\Hotel\StructType\NumberOfChildren $NumberOfChildren = null;
     /**
      * The HotelBedding
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class HotelRulesModifiers extends AbstractStructBase
      * - ref: HotelBedding
      * @var \Travelport\Hotel\StructType\HotelBedding[]
      */
-    protected ?array $HotelBedding = null;
+    public ?array $HotelBedding = null;
     /**
      * The RateCategory
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class HotelRulesModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var int|null
      */
-    protected ?int $RateCategory = null;
+    public ?int $RateCategory = null;
     /**
      * The CorporateDiscountID
      * Meta information extracted from the WSDL
@@ -58,7 +57,7 @@ class HotelRulesModifiers extends AbstractStructBase
      * - ref: common:CorporateDiscountID
      * @var \Travelport\Hotel\StructType\CorporateDiscountID[]
      */
-    protected ?array $CorporateDiscountID = null;
+    public ?array $CorporateDiscountID = null;
     /**
      * The NumberOfAdults
      * Meta information extracted from the WSDL
@@ -66,7 +65,7 @@ class HotelRulesModifiers extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $NumberOfAdults = null;
+    public ?int $NumberOfAdults = null;
     /**
      * The NumberOfRooms
      * Meta information extracted from the WSDL
@@ -75,7 +74,7 @@ class HotelRulesModifiers extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $NumberOfRooms = null;
+    public ?int $NumberOfRooms = null;
     /**
      * The TotalOccupants
      * Meta information extracted from the WSDL
@@ -83,7 +82,7 @@ class HotelRulesModifiers extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $TotalOccupants = null;
+    public ?int $TotalOccupants = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -92,7 +91,7 @@ class HotelRulesModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * Constructor method for HotelRulesModifiers
      * @uses HotelRulesModifiers::setPermittedProviders()
@@ -174,48 +173,12 @@ class HotelRulesModifiers extends AbstractStructBase
         return $this->HotelBedding;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setHotelBedding method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setHotelBedding method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateHotelBeddingForArrayConstraintFromSetHotelBedding(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelRulesModifiersHotelBeddingItem) {
-            // validation for constraint: itemType
-            if (!$hotelRulesModifiersHotelBeddingItem instanceof \Travelport\Hotel\StructType\HotelBedding) {
-                $invalidValues[] = is_object($hotelRulesModifiersHotelBeddingItem) ? get_class($hotelRulesModifiersHotelBeddingItem) : sprintf('%s(%s)', gettype($hotelRulesModifiersHotelBeddingItem), var_export($hotelRulesModifiersHotelBeddingItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The HotelBedding property can only contain items of type \Travelport\Hotel\StructType\HotelBedding, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set HotelBedding value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\HotelBedding[] $hotelBedding
      * @return \Travelport\Hotel\StructType\HotelRulesModifiers
      */
     public function setHotelBedding(?array $hotelBedding = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($hotelBeddingArrayErrorMessage = self::validateHotelBeddingForArrayConstraintFromSetHotelBedding($hotelBedding))) {
-            throw new InvalidArgumentException($hotelBeddingArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(4)
-        if (is_array($hotelBedding) && count($hotelBedding) > 4) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 4', count($hotelBedding)), __LINE__);
-        }
         $this->HotelBedding = $hotelBedding;
         
         return $this;
@@ -228,14 +191,6 @@ class HotelRulesModifiers extends AbstractStructBase
      */
     public function addToHotelBedding(\Travelport\Hotel\StructType\HotelBedding $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\HotelBedding) {
-            throw new InvalidArgumentException(sprintf('The HotelBedding property can only contain items of type \Travelport\Hotel\StructType\HotelBedding, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(4)
-        if (is_array($this->HotelBedding) && count($this->HotelBedding) >= 4) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 4', count($this->HotelBedding)), __LINE__);
-        }
         $this->HotelBedding[] = $item;
         
         return $this;
@@ -255,10 +210,6 @@ class HotelRulesModifiers extends AbstractStructBase
      */
     public function setRateCategory(?int $rateCategory = null): self
     {
-        // validation for constraint: int
-        if (!is_null($rateCategory) && !(is_int($rateCategory) || ctype_digit($rateCategory))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($rateCategory, true), gettype($rateCategory)), __LINE__);
-        }
         $this->RateCategory = $rateCategory;
         
         return $this;
@@ -272,48 +223,12 @@ class HotelRulesModifiers extends AbstractStructBase
         return $this->CorporateDiscountID;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setCorporateDiscountID method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setCorporateDiscountID method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateCorporateDiscountIDForArrayConstraintFromSetCorporateDiscountID(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $hotelRulesModifiersCorporateDiscountIDItem) {
-            // validation for constraint: itemType
-            if (!$hotelRulesModifiersCorporateDiscountIDItem instanceof \Travelport\Hotel\StructType\CorporateDiscountID) {
-                $invalidValues[] = is_object($hotelRulesModifiersCorporateDiscountIDItem) ? get_class($hotelRulesModifiersCorporateDiscountIDItem) : sprintf('%s(%s)', gettype($hotelRulesModifiersCorporateDiscountIDItem), var_export($hotelRulesModifiersCorporateDiscountIDItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The CorporateDiscountID property can only contain items of type \Travelport\Hotel\StructType\CorporateDiscountID, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set CorporateDiscountID value
-     * @throws InvalidArgumentException
      * @param \Travelport\Hotel\StructType\CorporateDiscountID[] $corporateDiscountID
      * @return \Travelport\Hotel\StructType\HotelRulesModifiers
      */
     public function setCorporateDiscountID(?array $corporateDiscountID = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($corporateDiscountIDArrayErrorMessage = self::validateCorporateDiscountIDForArrayConstraintFromSetCorporateDiscountID($corporateDiscountID))) {
-            throw new InvalidArgumentException($corporateDiscountIDArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(2)
-        if (is_array($corporateDiscountID) && count($corporateDiscountID) > 2) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 2', count($corporateDiscountID)), __LINE__);
-        }
         $this->CorporateDiscountID = $corporateDiscountID;
         
         return $this;
@@ -326,14 +241,6 @@ class HotelRulesModifiers extends AbstractStructBase
      */
     public function addToCorporateDiscountID(\Travelport\Hotel\StructType\CorporateDiscountID $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\Hotel\StructType\CorporateDiscountID) {
-            throw new InvalidArgumentException(sprintf('The CorporateDiscountID property can only contain items of type \Travelport\Hotel\StructType\CorporateDiscountID, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(2)
-        if (is_array($this->CorporateDiscountID) && count($this->CorporateDiscountID) >= 2) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 2', count($this->CorporateDiscountID)), __LINE__);
-        }
         $this->CorporateDiscountID[] = $item;
         
         return $this;
@@ -353,10 +260,6 @@ class HotelRulesModifiers extends AbstractStructBase
      */
     public function setNumberOfAdults(?int $numberOfAdults = null): self
     {
-        // validation for constraint: int
-        if (!is_null($numberOfAdults) && !(is_int($numberOfAdults) || ctype_digit($numberOfAdults))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($numberOfAdults, true), gettype($numberOfAdults)), __LINE__);
-        }
         $this->NumberOfAdults = $numberOfAdults;
         
         return $this;
@@ -376,10 +279,6 @@ class HotelRulesModifiers extends AbstractStructBase
      */
     public function setNumberOfRooms(?int $numberOfRooms = 1): self
     {
-        // validation for constraint: int
-        if (!is_null($numberOfRooms) && !(is_int($numberOfRooms) || ctype_digit($numberOfRooms))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($numberOfRooms, true), gettype($numberOfRooms)), __LINE__);
-        }
         $this->NumberOfRooms = $numberOfRooms;
         
         return $this;
@@ -399,10 +298,6 @@ class HotelRulesModifiers extends AbstractStructBase
      */
     public function setTotalOccupants(?int $totalOccupants = null): self
     {
-        // validation for constraint: int
-        if (!is_null($totalOccupants) && !(is_int($totalOccupants) || ctype_digit($totalOccupants))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($totalOccupants, true), gettype($totalOccupants)), __LINE__);
-        }
         $this->TotalOccupants = $totalOccupants;
         
         return $this;
@@ -422,10 +317,6 @@ class HotelRulesModifiers extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;

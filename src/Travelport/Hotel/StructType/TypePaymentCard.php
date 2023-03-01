@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class TypePaymentCard extends AbstractStructBase
      * - ref: PhoneNumber
      * @var \Travelport\Hotel\StructType\PhoneNumber|null
      */
-    protected ?\Travelport\Hotel\StructType\PhoneNumber $PhoneNumber = null;
+    public ?\Travelport\Hotel\StructType\PhoneNumber $PhoneNumber = null;
     /**
      * The BillingAddress
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class TypePaymentCard extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\TypeStructuredAddress|null
      */
-    protected ?\Travelport\Hotel\StructType\TypeStructuredAddress $BillingAddress = null;
+    public ?\Travelport\Hotel\StructType\TypeStructuredAddress $BillingAddress = null;
     /**
      * The Type
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class TypePaymentCard extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Type = null;
+    public ?string $Type = null;
     /**
      * The Number
      * Meta information extracted from the WSDL
@@ -52,15 +51,15 @@ class TypePaymentCard extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Number = null;
+    public ?string $Number = null;
     /**
      * The ExpDate
      * Meta information extracted from the WSDL
      * - documentation: The Expiration date of this card in YYYY-MM format.
      * - use: optional
-     * @var int|null
+     * @var string|null
      */
-    protected ?string $ExpDate = null;
+    public ?string $ExpDate = null;
     /**
      * The Name
      * Meta information extracted from the WSDL
@@ -69,7 +68,7 @@ class TypePaymentCard extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Name = null;
+    public ?string $Name = null;
     /**
      * The CVV
      * Meta information extracted from the WSDL
@@ -78,7 +77,7 @@ class TypePaymentCard extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CVV = null;
+    public ?string $CVV = null;
     /**
      * The ApprovalCode
      * Meta information extracted from the WSDL
@@ -88,7 +87,7 @@ class TypePaymentCard extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ApprovalCode = null;
+    public ?string $ApprovalCode = null;
     /**
      * Constructor method for typePaymentCard
      * @uses TypePaymentCard::setPhoneNumber()
@@ -173,18 +172,6 @@ class TypePaymentCard extends AbstractStructBase
      */
     public function setType(?string $type = null): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
-        // validation for constraint: maxLength(2)
-        if (!is_null($type) && mb_strlen((string) $type) > 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 2', mb_strlen((string) $type)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($type) && mb_strlen((string) $type) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -204,25 +191,13 @@ class TypePaymentCard extends AbstractStructBase
      */
     public function setNumber(?string $number = null): self
     {
-        // validation for constraint: string
-        if (!is_null($number) && !is_string($number)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($number) && mb_strlen((string) $number) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $number)), __LINE__);
-        }
-        // validation for constraint: minLength(13)
-        if (!is_null($number) && mb_strlen((string) $number) < 13) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 13', mb_strlen((string) $number)), __LINE__);
-        }
         $this->Number = $number;
         
         return $this;
     }
     /**
      * Get ExpDate value
-     * @return int|null
+     * @return string|null
      */
     public function getExpDate(): ?string
     {
@@ -235,7 +210,6 @@ class TypePaymentCard extends AbstractStructBase
      */
     public function setExpDate(?string $expDate = null): self
     {
-        
         $this->ExpDate = $expDate;
         
         return $this;
@@ -255,14 +229,6 @@ class TypePaymentCard extends AbstractStructBase
      */
     public function setName(?string $name = null): self
     {
-        // validation for constraint: string
-        if (!is_null($name) && !is_string($name)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($name) && mb_strlen((string) $name) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $name)), __LINE__);
-        }
         $this->Name = $name;
         
         return $this;
@@ -282,14 +248,6 @@ class TypePaymentCard extends AbstractStructBase
      */
     public function setCVV(?string $cVV = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cVV) && !is_string($cVV)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cVV, true), gettype($cVV)), __LINE__);
-        }
-        // validation for constraint: maxLength(4)
-        if (!is_null($cVV) && mb_strlen((string) $cVV) > 4) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 4', mb_strlen((string) $cVV)), __LINE__);
-        }
         $this->CVV = $cVV;
         
         return $this;
@@ -309,18 +267,6 @@ class TypePaymentCard extends AbstractStructBase
      */
     public function setApprovalCode(?string $approvalCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approvalCode) && !is_string($approvalCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approvalCode, true), gettype($approvalCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(16)
-        if (!is_null($approvalCode) && mb_strlen((string) $approvalCode) > 16) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 16', mb_strlen((string) $approvalCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($approvalCode) && mb_strlen((string) $approvalCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $approvalCode)), __LINE__);
-        }
         $this->ApprovalCode = $approvalCode;
         
         return $this;

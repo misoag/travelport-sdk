@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * The ProviderCode
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ProviderCode;
+    public string $ProviderCode;
     /**
      * The LocatorCode
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $LocatorCode;
+    public string $LocatorCode;
     /**
      * The CreateDate
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $CreateDate;
+    public string $CreateDate;
     /**
      * The ModifiedDate
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ModifiedDate;
+    public string $ModifiedDate;
     /**
      * The ProviderReservationDetails
      * Meta information extracted from the WSDL
@@ -71,7 +70,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * - ref: ProviderReservationDetails
      * @var \Travelport\UniversalRecord\StructType\ProviderReservationDetails|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ProviderReservationDetails $ProviderReservationDetails = null;
+    public ?\Travelport\UniversalRecord\StructType\ProviderReservationDetails $ProviderReservationDetails = null;
     /**
      * The ProviderReservationDisplayDetailsList
      * Meta information extracted from the WSDL
@@ -82,7 +81,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * - ref: ProviderReservationDisplayDetailsList
      * @var \Travelport\UniversalRecord\StructType\ProviderReservationDisplayDetailsList|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ProviderReservationDisplayDetailsList $ProviderReservationDisplayDetailsList = null;
+    public ?\Travelport\UniversalRecord\StructType\ProviderReservationDisplayDetailsList $ProviderReservationDisplayDetailsList = null;
     /**
      * The HostCreateDate
      * Meta information extracted from the WSDL
@@ -90,7 +89,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $HostCreateDate = null;
+    public ?string $HostCreateDate = null;
     /**
      * The HostCreateTime
      * Meta information extracted from the WSDL
@@ -98,7 +97,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $HostCreateTime = null;
+    public ?string $HostCreateTime = null;
     /**
      * The Imported
      * Meta information extracted from the WSDL
@@ -106,7 +105,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Imported = null;
+    public ?bool $Imported = null;
     /**
      * The TicketingModifiersRef
      * Meta information extracted from the WSDL
@@ -115,7 +114,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TicketingModifiersRef = null;
+    public ?string $TicketingModifiersRef = null;
     /**
      * The InQueueMode
      * Meta information extracted from the WSDL
@@ -123,7 +122,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $InQueueMode = null;
+    public ?bool $InQueueMode = null;
     /**
      * The GroupRef
      * Meta information extracted from the WSDL
@@ -132,7 +131,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $GroupRef = null;
+    public ?string $GroupRef = null;
     /**
      * The OwningPCC
      * Meta information extracted from the WSDL
@@ -143,22 +142,22 @@ class ProviderReservationInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $OwningPCC = null;
+    public ?string $OwningPCC = null;
     /**
      * The ElStat
      * @var string|null
      */
-    protected ?string $ElStat = null;
+    public ?string $ElStat = null;
     /**
      * The KeyOverride
      * @var bool|null
      */
-    protected ?bool $KeyOverride = null;
+    public ?bool $KeyOverride = null;
     /**
      * The AgentOverride
      * @var string|null
      */
-    protected ?string $AgentOverride = null;
+    public ?string $AgentOverride = null;
     /**
      * The ProviderLocatorCode
      * Meta information extracted from the WSDL
@@ -167,7 +166,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * - maxLength: 15
      * @var string|null
      */
-    protected ?string $ProviderLocatorCode = null;
+    public ?string $ProviderLocatorCode = null;
     /**
      * The SupplierCode
      * Meta information extracted from the WSDL
@@ -177,7 +176,7 @@ class ProviderReservationInfo extends AbstractStructBase
      * - minLength: 1
      * @var string|null
      */
-    protected ?string $SupplierCode = null;
+    public ?string $SupplierCode = null;
     /**
      * Constructor method for ProviderReservationInfo
      * @uses ProviderReservationInfo::setKey()
@@ -257,10 +256,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -280,18 +275,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setProviderCode(string $providerCode): self
     {
-        // validation for constraint: string
-        if (!is_null($providerCode) && !is_string($providerCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerCode, true), gettype($providerCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $providerCode)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($providerCode) && mb_strlen((string) $providerCode) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $providerCode)), __LINE__);
-        }
         $this->ProviderCode = $providerCode;
         
         return $this;
@@ -311,14 +294,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setLocatorCode(string $locatorCode): self
     {
-        // validation for constraint: string
-        if (!is_null($locatorCode) && !is_string($locatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($locatorCode, true), gettype($locatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($locatorCode) && mb_strlen((string) $locatorCode) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $locatorCode)), __LINE__);
-        }
         $this->LocatorCode = $locatorCode;
         
         return $this;
@@ -338,10 +313,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setCreateDate(string $createDate): self
     {
-        // validation for constraint: string
-        if (!is_null($createDate) && !is_string($createDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($createDate, true), gettype($createDate)), __LINE__);
-        }
         $this->CreateDate = $createDate;
         
         return $this;
@@ -361,10 +332,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setModifiedDate(string $modifiedDate): self
     {
-        // validation for constraint: string
-        if (!is_null($modifiedDate) && !is_string($modifiedDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($modifiedDate, true), gettype($modifiedDate)), __LINE__);
-        }
         $this->ModifiedDate = $modifiedDate;
         
         return $this;
@@ -378,48 +345,15 @@ class ProviderReservationInfo extends AbstractStructBase
         return $this->ProviderReservationDetails ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setProviderReservationDetails method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationDetails method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateProviderReservationDetailsForChoiceConstraintFromSetProviderReservationDetails($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'ProviderReservationDisplayDetailsList',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property ProviderReservationDetails can\'t be set as the property %s is already set. Only one property must be set among these properties: ProviderReservationDetails, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set ProviderReservationDetails value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\ProviderReservationDetails $providerReservationDetails
      * @return \Travelport\UniversalRecord\StructType\ProviderReservationInfo
      */
     public function setProviderReservationDetails(?\Travelport\UniversalRecord\StructType\ProviderReservationDetails $providerReservationDetails = null): self
     {
-        // validation for constraint: choice(ProviderReservationDetails, ProviderReservationDisplayDetailsList)
-        if ('' !== ($providerReservationDetailsChoiceErrorMessage = self::validateProviderReservationDetailsForChoiceConstraintFromSetProviderReservationDetails($providerReservationDetails))) {
-            throw new InvalidArgumentException($providerReservationDetailsChoiceErrorMessage, __LINE__);
-        }
         if (is_null($providerReservationDetails) || (is_array($providerReservationDetails) && empty($providerReservationDetails))) {
             unset($this->ProviderReservationDetails);
         } else {
@@ -437,48 +371,15 @@ class ProviderReservationInfo extends AbstractStructBase
         return $this->ProviderReservationDisplayDetailsList ?? null;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setProviderReservationDisplayDetailsList method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setProviderReservationDisplayDetailsList method
-     * This has to validate that the property which is being set is the only one among the given choices
-     * @param mixed $value
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public function validateProviderReservationDisplayDetailsListForChoiceConstraintFromSetProviderReservationDisplayDetailsList($value): string
-    {
-        $message = '';
-        if (is_null($value)) {
-            return $message;
-        }
-        $properties = [
-            'ProviderReservationDetails',
-        ];
-        try {
-            foreach ($properties as $property) {
-                if (isset($this->{$property})) {
-                    throw new InvalidArgumentException(sprintf('The property ProviderReservationDisplayDetailsList can\'t be set as the property %s is already set. Only one property must be set among these properties: ProviderReservationDisplayDetailsList, %s.', $property, implode(', ', $properties)), __LINE__);
-                }
-            }
-        } catch (InvalidArgumentException $e) {
-            $message = $e->getMessage();
-        }
-        
-        return $message;
-    }
-    /**
      * Set ProviderReservationDisplayDetailsList value
      * This property belongs to a choice that allows only one property to exist. It is
      * therefore removable from the request, consequently if the value assigned to this
      * property is null, the property is removed from this object
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\ProviderReservationDisplayDetailsList $providerReservationDisplayDetailsList
      * @return \Travelport\UniversalRecord\StructType\ProviderReservationInfo
      */
     public function setProviderReservationDisplayDetailsList(?\Travelport\UniversalRecord\StructType\ProviderReservationDisplayDetailsList $providerReservationDisplayDetailsList = null): self
     {
-        // validation for constraint: choice(ProviderReservationDetails, ProviderReservationDisplayDetailsList)
-        if ('' !== ($providerReservationDisplayDetailsListChoiceErrorMessage = self::validateProviderReservationDisplayDetailsListForChoiceConstraintFromSetProviderReservationDisplayDetailsList($providerReservationDisplayDetailsList))) {
-            throw new InvalidArgumentException($providerReservationDisplayDetailsListChoiceErrorMessage, __LINE__);
-        }
         if (is_null($providerReservationDisplayDetailsList) || (is_array($providerReservationDisplayDetailsList) && empty($providerReservationDisplayDetailsList))) {
             unset($this->ProviderReservationDisplayDetailsList);
         } else {
@@ -502,10 +403,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setHostCreateDate(?string $hostCreateDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($hostCreateDate) && !is_string($hostCreateDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hostCreateDate, true), gettype($hostCreateDate)), __LINE__);
-        }
         $this->HostCreateDate = $hostCreateDate;
         
         return $this;
@@ -525,10 +422,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setHostCreateTime(?string $hostCreateTime = null): self
     {
-        // validation for constraint: string
-        if (!is_null($hostCreateTime) && !is_string($hostCreateTime)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hostCreateTime, true), gettype($hostCreateTime)), __LINE__);
-        }
         $this->HostCreateTime = $hostCreateTime;
         
         return $this;
@@ -548,10 +441,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setImported(?bool $imported = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($imported) && !is_bool($imported)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($imported, true), gettype($imported)), __LINE__);
-        }
         $this->Imported = $imported;
         
         return $this;
@@ -571,10 +460,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setTicketingModifiersRef(?string $ticketingModifiersRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($ticketingModifiersRef) && !is_string($ticketingModifiersRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($ticketingModifiersRef, true), gettype($ticketingModifiersRef)), __LINE__);
-        }
         $this->TicketingModifiersRef = $ticketingModifiersRef;
         
         return $this;
@@ -594,10 +479,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setInQueueMode(?bool $inQueueMode = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($inQueueMode) && !is_bool($inQueueMode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($inQueueMode, true), gettype($inQueueMode)), __LINE__);
-        }
         $this->InQueueMode = $inQueueMode;
         
         return $this;
@@ -617,10 +498,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setGroupRef(?string $groupRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($groupRef) && !is_string($groupRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($groupRef, true), gettype($groupRef)), __LINE__);
-        }
         $this->GroupRef = $groupRef;
         
         return $this;
@@ -640,18 +517,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setOwningPCC(?string $owningPCC = null): self
     {
-        // validation for constraint: string
-        if (!is_null($owningPCC) && !is_string($owningPCC)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($owningPCC, true), gettype($owningPCC)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($owningPCC) && mb_strlen((string) $owningPCC) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $owningPCC)), __LINE__);
-        }
-        // validation for constraint: minLength(2)
-        if (!is_null($owningPCC) && mb_strlen((string) $owningPCC) < 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 2', mb_strlen((string) $owningPCC)), __LINE__);
-        }
         $this->OwningPCC = $owningPCC;
         
         return $this;
@@ -666,18 +531,11 @@ class ProviderReservationInfo extends AbstractStructBase
     }
     /**
      * Set ElStat value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $elStat
      * @return \Travelport\UniversalRecord\StructType\ProviderReservationInfo
      */
     public function setElStat(?string $elStat = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeElementStatus::valueIsValid($elStat)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeElementStatus', is_array($elStat) ? implode(', ', $elStat) : var_export($elStat, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeElementStatus::getValidValues())), __LINE__);
-        }
         $this->ElStat = $elStat;
         
         return $this;
@@ -697,10 +555,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setKeyOverride(?bool $keyOverride = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($keyOverride) && !is_bool($keyOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($keyOverride, true), gettype($keyOverride)), __LINE__);
-        }
         $this->KeyOverride = $keyOverride;
         
         return $this;
@@ -720,10 +574,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setAgentOverride(?string $agentOverride = null): self
     {
-        // validation for constraint: string
-        if (!is_null($agentOverride) && !is_string($agentOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($agentOverride, true), gettype($agentOverride)), __LINE__);
-        }
         $this->AgentOverride = $agentOverride;
         
         return $this;
@@ -743,14 +593,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setProviderLocatorCode(?string $providerLocatorCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($providerLocatorCode) && !is_string($providerLocatorCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerLocatorCode, true), gettype($providerLocatorCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(15)
-        if (!is_null($providerLocatorCode) && mb_strlen((string) $providerLocatorCode) > 15) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 15', mb_strlen((string) $providerLocatorCode)), __LINE__);
-        }
         $this->ProviderLocatorCode = $providerLocatorCode;
         
         return $this;
@@ -770,18 +612,6 @@ class ProviderReservationInfo extends AbstractStructBase
      */
     public function setSupplierCode(?string $supplierCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($supplierCode) && !is_string($supplierCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($supplierCode, true), gettype($supplierCode)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $supplierCode)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($supplierCode) && mb_strlen((string) $supplierCode) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $supplierCode)), __LINE__);
-        }
         $this->SupplierCode = $supplierCode;
         
         return $this;

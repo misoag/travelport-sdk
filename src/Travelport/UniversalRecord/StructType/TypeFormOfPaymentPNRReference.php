@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class TypeFormOfPaymentPNRReference extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The ProviderReservationLevel
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class TypeFormOfPaymentPNRReference extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ProviderReservationLevel = null;
+    public ?bool $ProviderReservationLevel = null;
     /**
      * Constructor method for typeFormOfPaymentPNRReference
      * @uses TypeFormOfPaymentPNRReference::setKey()
@@ -59,10 +58,6 @@ class TypeFormOfPaymentPNRReference extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -82,10 +77,6 @@ class TypeFormOfPaymentPNRReference extends AbstractStructBase
      */
     public function setProviderReservationLevel(?bool $providerReservationLevel = true): self
     {
-        // validation for constraint: boolean
-        if (!is_null($providerReservationLevel) && !is_bool($providerReservationLevel)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($providerReservationLevel, true), gettype($providerReservationLevel)), __LINE__);
-        }
         $this->ProviderReservationLevel = $providerReservationLevel;
         
         return $this;

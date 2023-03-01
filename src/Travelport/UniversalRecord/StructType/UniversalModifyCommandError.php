@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,12 +22,12 @@ class UniversalModifyCommandError extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $UniversalModifyCmdKey;
+    public string $UniversalModifyCmdKey;
     /**
      * The _
      * @var string|null
      */
-    protected ?string $_ = null;
+    public ?string $_ = null;
     /**
      * Constructor method for UniversalModifyCommandError
      * @uses UniversalModifyCommandError::setUniversalModifyCmdKey()
@@ -57,10 +56,6 @@ class UniversalModifyCommandError extends AbstractStructBase
      */
     public function setUniversalModifyCmdKey(string $universalModifyCmdKey): self
     {
-        // validation for constraint: string
-        if (!is_null($universalModifyCmdKey) && !is_string($universalModifyCmdKey)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($universalModifyCmdKey, true), gettype($universalModifyCmdKey)), __LINE__);
-        }
         $this->UniversalModifyCmdKey = $universalModifyCmdKey;
         
         return $this;
@@ -80,10 +75,6 @@ class UniversalModifyCommandError extends AbstractStructBase
      */
     public function set_(?string $_ = null): self
     {
-        // validation for constraint: string
-        if (!is_null($_) && !is_string($_)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($_, true), gettype($_)), __LINE__);
-        }
         $this->_ = $_;
         
         return $this;

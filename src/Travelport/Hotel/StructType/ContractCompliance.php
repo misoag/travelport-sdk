@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class ContractCompliance extends AbstractStructBase
      * - use: required
      * @var bool
      */
-    protected bool $InContract;
+    public bool $InContract;
     /**
      * The ContractToken
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class ContractCompliance extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ContractToken = null;
+    public ?string $ContractToken = null;
     /**
      * Constructor method for ContractCompliance
      * @uses ContractCompliance::setInContract()
@@ -60,10 +59,6 @@ class ContractCompliance extends AbstractStructBase
      */
     public function setInContract(bool $inContract): self
     {
-        // validation for constraint: boolean
-        if (!is_null($inContract) && !is_bool($inContract)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($inContract, true), gettype($inContract)), __LINE__);
-        }
         $this->InContract = $inContract;
         
         return $this;
@@ -83,18 +78,6 @@ class ContractCompliance extends AbstractStructBase
      */
     public function setContractToken(?string $contractToken = null): self
     {
-        // validation for constraint: string
-        if (!is_null($contractToken) && !is_string($contractToken)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contractToken, true), gettype($contractToken)), __LINE__);
-        }
-        // validation for constraint: maxLength(128)
-        if (!is_null($contractToken) && mb_strlen((string) $contractToken) > 128) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 128', mb_strlen((string) $contractToken)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($contractToken) && mb_strlen((string) $contractToken) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $contractToken)), __LINE__);
-        }
         $this->ContractToken = $contractToken;
         
         return $this;

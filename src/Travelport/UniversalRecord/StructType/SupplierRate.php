@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class SupplierRate extends TypeVehicleRates
      * - use: optional
      * @var string|null
      */
-    protected ?string $DiscountAmount = null;
+    public ?string $DiscountAmount = null;
     /**
      * The MandatoryChargeTotal
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class SupplierRate extends TypeVehicleRates
      * - use: optional
      * @var string|null
      */
-    protected ?string $MandatoryChargeTotal = null;
+    public ?string $MandatoryChargeTotal = null;
     /**
      * The ApproximateTotal
      * Meta information extracted from the WSDL
@@ -39,7 +38,7 @@ class SupplierRate extends TypeVehicleRates
      * - use: optional
      * @var string|null
      */
-    protected ?string $ApproximateTotal = null;
+    public ?string $ApproximateTotal = null;
     /**
      * Constructor method for SupplierRate
      * @uses SupplierRate::setDiscountAmount()
@@ -71,10 +70,6 @@ class SupplierRate extends TypeVehicleRates
      */
     public function setDiscountAmount(?string $discountAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($discountAmount) && !is_string($discountAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($discountAmount, true), gettype($discountAmount)), __LINE__);
-        }
         $this->DiscountAmount = $discountAmount;
         
         return $this;
@@ -94,10 +89,6 @@ class SupplierRate extends TypeVehicleRates
      */
     public function setMandatoryChargeTotal(?string $mandatoryChargeTotal = null): self
     {
-        // validation for constraint: string
-        if (!is_null($mandatoryChargeTotal) && !is_string($mandatoryChargeTotal)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($mandatoryChargeTotal, true), gettype($mandatoryChargeTotal)), __LINE__);
-        }
         $this->MandatoryChargeTotal = $mandatoryChargeTotal;
         
         return $this;
@@ -117,10 +108,6 @@ class SupplierRate extends TypeVehicleRates
      */
     public function setApproximateTotal(?string $approximateTotal = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateTotal) && !is_string($approximateTotal)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateTotal, true), gettype($approximateTotal)), __LINE__);
-        }
         $this->ApproximateTotal = $approximateTotal;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,22 +19,22 @@ class Routing extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\DirectionInfo[]
      */
-    protected ?array $DirectionInfo = null;
+    public ?array $DirectionInfo = null;
     /**
      * The RoutingConstructedInd
      * @var bool|null
      */
-    protected ?bool $RoutingConstructedInd = null;
+    public ?bool $RoutingConstructedInd = null;
     /**
      * The Number
      * @var string|null
      */
-    protected ?string $Number = null;
+    public ?string $Number = null;
     /**
      * The RoutingRestriction
      * @var string|null
      */
-    protected ?string $RoutingRestriction = null;
+    public ?string $RoutingRestriction = null;
     /**
      * Constructor method for Routing
      * @uses Routing::setDirectionInfo()
@@ -64,48 +63,12 @@ class Routing extends AbstractStructBase
         return $this->DirectionInfo;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setDirectionInfo method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setDirectionInfo method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateDirectionInfoForArrayConstraintFromSetDirectionInfo(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $routingDirectionInfoItem) {
-            // validation for constraint: itemType
-            if (!$routingDirectionInfoItem instanceof \Travelport\UniversalRecord\StructType\DirectionInfo) {
-                $invalidValues[] = is_object($routingDirectionInfoItem) ? get_class($routingDirectionInfoItem) : sprintf('%s(%s)', gettype($routingDirectionInfoItem), var_export($routingDirectionInfoItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The DirectionInfo property can only contain items of type \Travelport\UniversalRecord\StructType\DirectionInfo, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set DirectionInfo value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\DirectionInfo[] $directionInfo
      * @return \Travelport\UniversalRecord\StructType\Routing
      */
     public function setDirectionInfo(?array $directionInfo = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($directionInfoArrayErrorMessage = self::validateDirectionInfoForArrayConstraintFromSetDirectionInfo($directionInfo))) {
-            throw new InvalidArgumentException($directionInfoArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($directionInfo) && count($directionInfo) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($directionInfo)), __LINE__);
-        }
         $this->DirectionInfo = $directionInfo;
         
         return $this;
@@ -118,14 +81,6 @@ class Routing extends AbstractStructBase
      */
     public function addToDirectionInfo(\Travelport\UniversalRecord\StructType\DirectionInfo $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\DirectionInfo) {
-            throw new InvalidArgumentException(sprintf('The DirectionInfo property can only contain items of type \Travelport\UniversalRecord\StructType\DirectionInfo, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->DirectionInfo) && count($this->DirectionInfo) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->DirectionInfo)), __LINE__);
-        }
         $this->DirectionInfo[] = $item;
         
         return $this;
@@ -145,10 +100,6 @@ class Routing extends AbstractStructBase
      */
     public function setRoutingConstructedInd(?bool $routingConstructedInd = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($routingConstructedInd) && !is_bool($routingConstructedInd)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($routingConstructedInd, true), gettype($routingConstructedInd)), __LINE__);
-        }
         $this->RoutingConstructedInd = $routingConstructedInd;
         
         return $this;
@@ -168,10 +119,6 @@ class Routing extends AbstractStructBase
      */
     public function setNumber(?string $number = null): self
     {
-        // validation for constraint: string
-        if (!is_null($number) && !is_string($number)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($number, true), gettype($number)), __LINE__);
-        }
         $this->Number = $number;
         
         return $this;
@@ -191,10 +138,6 @@ class Routing extends AbstractStructBase
      */
     public function setRoutingRestriction(?string $routingRestriction = null): self
     {
-        // validation for constraint: string
-        if (!is_null($routingRestriction) && !is_string($routingRestriction)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($routingRestriction, true), gettype($routingRestriction)), __LINE__);
-        }
         $this->RoutingRestriction = $routingRestriction;
         
         return $this;

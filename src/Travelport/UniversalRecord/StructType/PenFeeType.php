@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class PenFeeType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $DepRequired = null;
+    public ?bool $DepRequired = null;
     /**
      * The DepNonRef
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class PenFeeType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $DepNonRef = null;
+    public ?bool $DepNonRef = null;
     /**
      * The TkNonRef
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class PenFeeType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $TkNonRef = null;
+    public ?bool $TkNonRef = null;
     /**
      * The AirVFee
      * Meta information extracted from the WSDL
@@ -44,7 +43,7 @@ class PenFeeType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AirVFee = null;
+    public ?bool $AirVFee = null;
     /**
      * The Cancellation
      * Meta information extracted from the WSDL
@@ -52,7 +51,7 @@ class PenFeeType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Cancellation = null;
+    public ?bool $Cancellation = null;
     /**
      * The FailConfirmSpace
      * Meta information extracted from the WSDL
@@ -60,7 +59,7 @@ class PenFeeType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $FailConfirmSpace = null;
+    public ?bool $FailConfirmSpace = null;
     /**
      * The ItinChg
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class PenFeeType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ItinChg = null;
+    public ?bool $ItinChg = null;
     /**
      * The ReplaceTk
      * Meta information extracted from the WSDL
@@ -76,7 +75,7 @@ class PenFeeType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ReplaceTk = null;
+    public ?bool $ReplaceTk = null;
     /**
      * The Applicable
      * Meta information extracted from the WSDL
@@ -84,7 +83,7 @@ class PenFeeType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $Applicable = null;
+    public ?bool $Applicable = null;
     /**
      * The ApplicableTo
      * Meta information extracted from the WSDL
@@ -92,7 +91,7 @@ class PenFeeType extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ApplicableTo = null;
+    public ?bool $ApplicableTo = null;
     /**
      * The Amt
      * Meta information extracted from the WSDL
@@ -100,7 +99,7 @@ class PenFeeType extends AbstractStructBase
      * - use: optional
      * @var float|null
      */
-    protected ?float $Amt = null;
+    public ?float $Amt = null;
     /**
      * The Type
      * Meta information extracted from the WSDL
@@ -108,7 +107,7 @@ class PenFeeType extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Type = null;
+    public ?string $Type = null;
     /**
      * The Currency
      * Meta information extracted from the WSDL
@@ -116,7 +115,7 @@ class PenFeeType extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Currency = null;
+    public ?string $Currency = null;
     /**
      * Constructor method for PenFeeType
      * @uses PenFeeType::setDepRequired()
@@ -178,10 +177,6 @@ class PenFeeType extends AbstractStructBase
      */
     public function setDepRequired(?bool $depRequired = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($depRequired) && !is_bool($depRequired)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($depRequired, true), gettype($depRequired)), __LINE__);
-        }
         $this->DepRequired = $depRequired;
         
         return $this;
@@ -201,10 +196,6 @@ class PenFeeType extends AbstractStructBase
      */
     public function setDepNonRef(?bool $depNonRef = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($depNonRef) && !is_bool($depNonRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($depNonRef, true), gettype($depNonRef)), __LINE__);
-        }
         $this->DepNonRef = $depNonRef;
         
         return $this;
@@ -224,10 +215,6 @@ class PenFeeType extends AbstractStructBase
      */
     public function setTkNonRef(?bool $tkNonRef = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($tkNonRef) && !is_bool($tkNonRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($tkNonRef, true), gettype($tkNonRef)), __LINE__);
-        }
         $this->TkNonRef = $tkNonRef;
         
         return $this;
@@ -247,10 +234,6 @@ class PenFeeType extends AbstractStructBase
      */
     public function setAirVFee(?bool $airVFee = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($airVFee) && !is_bool($airVFee)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($airVFee, true), gettype($airVFee)), __LINE__);
-        }
         $this->AirVFee = $airVFee;
         
         return $this;
@@ -270,10 +253,6 @@ class PenFeeType extends AbstractStructBase
      */
     public function setCancellation(?bool $cancellation = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cancellation) && !is_bool($cancellation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cancellation, true), gettype($cancellation)), __LINE__);
-        }
         $this->Cancellation = $cancellation;
         
         return $this;
@@ -293,10 +272,6 @@ class PenFeeType extends AbstractStructBase
      */
     public function setFailConfirmSpace(?bool $failConfirmSpace = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($failConfirmSpace) && !is_bool($failConfirmSpace)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($failConfirmSpace, true), gettype($failConfirmSpace)), __LINE__);
-        }
         $this->FailConfirmSpace = $failConfirmSpace;
         
         return $this;
@@ -316,10 +291,6 @@ class PenFeeType extends AbstractStructBase
      */
     public function setItinChg(?bool $itinChg = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($itinChg) && !is_bool($itinChg)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($itinChg, true), gettype($itinChg)), __LINE__);
-        }
         $this->ItinChg = $itinChg;
         
         return $this;
@@ -339,10 +310,6 @@ class PenFeeType extends AbstractStructBase
      */
     public function setReplaceTk(?bool $replaceTk = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($replaceTk) && !is_bool($replaceTk)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($replaceTk, true), gettype($replaceTk)), __LINE__);
-        }
         $this->ReplaceTk = $replaceTk;
         
         return $this;
@@ -362,10 +329,6 @@ class PenFeeType extends AbstractStructBase
      */
     public function setApplicable(?bool $applicable = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($applicable) && !is_bool($applicable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($applicable, true), gettype($applicable)), __LINE__);
-        }
         $this->Applicable = $applicable;
         
         return $this;
@@ -385,10 +348,6 @@ class PenFeeType extends AbstractStructBase
      */
     public function setApplicableTo(?bool $applicableTo = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($applicableTo) && !is_bool($applicableTo)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($applicableTo, true), gettype($applicableTo)), __LINE__);
-        }
         $this->ApplicableTo = $applicableTo;
         
         return $this;
@@ -408,10 +367,6 @@ class PenFeeType extends AbstractStructBase
      */
     public function setAmt(?float $amt = null): self
     {
-        // validation for constraint: float
-        if (!is_null($amt) && !(is_float($amt) || is_numeric($amt))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a float value, %s given', var_export($amt, true), gettype($amt)), __LINE__);
-        }
         $this->Amt = $amt;
         
         return $this;
@@ -431,10 +386,6 @@ class PenFeeType extends AbstractStructBase
      */
     public function setType(?string $type = null): self
     {
-        // validation for constraint: string
-        if (!is_null($type) && !is_string($type)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($type, true), gettype($type)), __LINE__);
-        }
         $this->Type = $type;
         
         return $this;
@@ -454,10 +405,6 @@ class PenFeeType extends AbstractStructBase
      */
     public function setCurrency(?string $currency = null): self
     {
-        // validation for constraint: string
-        if (!is_null($currency) && !is_string($currency)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($currency, true), gettype($currency)), __LINE__);
-        }
         $this->Currency = $currency;
         
         return $this;

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class FareDetails extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Key;
+    public string $Key;
     /**
      * The PassengerDetailRef
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class FareDetails extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $PassengerDetailRef;
+    public string $PassengerDetailRef;
     /**
      * The FareBasis
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class FareDetails extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $FareBasis;
+    public string $FareBasis;
     /**
      * The FareTicketDesignator
      * Meta information extracted from the WSDL
@@ -50,7 +49,7 @@ class FareDetails extends AbstractStructBase
      * - ref: FareTicketDesignator
      * @var \Travelport\UniversalRecord\StructType\FareTicketDesignator|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FareTicketDesignator $FareTicketDesignator = null;
+    public ?\Travelport\UniversalRecord\StructType\FareTicketDesignator $FareTicketDesignator = null;
     /**
      * Constructor method for FareDetails
      * @uses FareDetails::setKey()
@@ -85,10 +84,6 @@ class FareDetails extends AbstractStructBase
      */
     public function setKey(string $key): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -108,10 +103,6 @@ class FareDetails extends AbstractStructBase
      */
     public function setPassengerDetailRef(string $passengerDetailRef): self
     {
-        // validation for constraint: string
-        if (!is_null($passengerDetailRef) && !is_string($passengerDetailRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($passengerDetailRef, true), gettype($passengerDetailRef)), __LINE__);
-        }
         $this->PassengerDetailRef = $passengerDetailRef;
         
         return $this;
@@ -131,14 +122,6 @@ class FareDetails extends AbstractStructBase
      */
     public function setFareBasis(string $fareBasis): self
     {
-        // validation for constraint: string
-        if (!is_null($fareBasis) && !is_string($fareBasis)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareBasis, true), gettype($fareBasis)), __LINE__);
-        }
-        // validation for constraint: maxLength(20)
-        if (!is_null($fareBasis) && mb_strlen((string) $fareBasis) > 20) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 20', mb_strlen((string) $fareBasis)), __LINE__);
-        }
         $this->FareBasis = $fareBasis;
         
         return $this;

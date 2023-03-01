@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class PersonName extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Last;
+    public string $Last;
     /**
      * The First
      * Meta information extracted from the WSDL
@@ -36,7 +35,7 @@ class PersonName extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $First = null;
+    public ?string $First = null;
     /**
      * The Prefix
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class PersonName extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Prefix = null;
+    public ?string $Prefix = null;
     /**
      * Constructor method for PersonName
      * @uses PersonName::setLast()
@@ -79,18 +78,6 @@ class PersonName extends AbstractStructBase
      */
     public function setLast(string $last): self
     {
-        // validation for constraint: string
-        if (!is_null($last) && !is_string($last)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($last, true), gettype($last)), __LINE__);
-        }
-        // validation for constraint: maxLength(64)
-        if (!is_null($last) && mb_strlen((string) $last) > 64) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 64', mb_strlen((string) $last)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($last) && mb_strlen((string) $last) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $last)), __LINE__);
-        }
         $this->Last = $last;
         
         return $this;
@@ -110,18 +97,6 @@ class PersonName extends AbstractStructBase
      */
     public function setFirst(?string $first = null): self
     {
-        // validation for constraint: string
-        if (!is_null($first) && !is_string($first)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($first, true), gettype($first)), __LINE__);
-        }
-        // validation for constraint: maxLength(64)
-        if (!is_null($first) && mb_strlen((string) $first) > 64) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 64', mb_strlen((string) $first)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($first) && mb_strlen((string) $first) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $first)), __LINE__);
-        }
         $this->First = $first;
         
         return $this;
@@ -141,18 +116,6 @@ class PersonName extends AbstractStructBase
      */
     public function setPrefix(?string $prefix = null): self
     {
-        // validation for constraint: string
-        if (!is_null($prefix) && !is_string($prefix)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($prefix, true), gettype($prefix)), __LINE__);
-        }
-        // validation for constraint: maxLength(16)
-        if (!is_null($prefix) && mb_strlen((string) $prefix) > 16) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 16', mb_strlen((string) $prefix)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($prefix) && mb_strlen((string) $prefix) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $prefix)), __LINE__);
-        }
         $this->Prefix = $prefix;
         
         return $this;

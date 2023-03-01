@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -20,7 +19,7 @@ class VehicleModifier extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AirConditioning = null;
+    public ?bool $AirConditioning = null;
     /**
      * The TransmissionType
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class VehicleModifier extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TransmissionType = null;
+    public ?string $TransmissionType = null;
     /**
      * The VehicleClass
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class VehicleModifier extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $VehicleClass = null;
+    public ?string $VehicleClass = null;
     /**
      * The Category
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class VehicleModifier extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Category = null;
+    public ?string $Category = null;
     /**
      * The DoorCount
      * Meta information extracted from the WSDL
@@ -55,7 +54,7 @@ class VehicleModifier extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DoorCount = null;
+    public ?string $DoorCount = null;
     /**
      * The FuelType
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class VehicleModifier extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FuelType = null;
+    public ?string $FuelType = null;
     /**
      * Constructor method for VehicleModifier
      * @uses VehicleModifier::setAirConditioning()
@@ -105,10 +104,6 @@ class VehicleModifier extends AbstractStructBase
      */
     public function setAirConditioning(?bool $airConditioning = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($airConditioning) && !is_bool($airConditioning)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($airConditioning, true), gettype($airConditioning)), __LINE__);
-        }
         $this->AirConditioning = $airConditioning;
         
         return $this;
@@ -123,18 +118,11 @@ class VehicleModifier extends AbstractStructBase
     }
     /**
      * Set TransmissionType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleTransmission::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleTransmission::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $transmissionType
      * @return \Travelport\UniversalRecord\StructType\VehicleModifier
      */
     public function setTransmissionType(?string $transmissionType = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeVehicleTransmission::valueIsValid($transmissionType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeVehicleTransmission', is_array($transmissionType) ? implode(', ', $transmissionType) : var_export($transmissionType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeVehicleTransmission::getValidValues())), __LINE__);
-        }
         $this->TransmissionType = $transmissionType;
         
         return $this;
@@ -149,18 +137,11 @@ class VehicleModifier extends AbstractStructBase
     }
     /**
      * Set VehicleClass value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleClass::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleClass::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $vehicleClass
      * @return \Travelport\UniversalRecord\StructType\VehicleModifier
      */
     public function setVehicleClass(?string $vehicleClass = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeVehicleClass::valueIsValid($vehicleClass)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeVehicleClass', is_array($vehicleClass) ? implode(', ', $vehicleClass) : var_export($vehicleClass, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeVehicleClass::getValidValues())), __LINE__);
-        }
         $this->VehicleClass = $vehicleClass;
         
         return $this;
@@ -175,18 +156,11 @@ class VehicleModifier extends AbstractStructBase
     }
     /**
      * Set Category value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleCategory::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeVehicleCategory::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $category
      * @return \Travelport\UniversalRecord\StructType\VehicleModifier
      */
     public function setCategory(?string $category = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeVehicleCategory::valueIsValid($category)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeVehicleCategory', is_array($category) ? implode(', ', $category) : var_export($category, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeVehicleCategory::getValidValues())), __LINE__);
-        }
         $this->Category = $category;
         
         return $this;
@@ -201,18 +175,11 @@ class VehicleModifier extends AbstractStructBase
     }
     /**
      * Set DoorCount value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeDoorCount::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeDoorCount::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $doorCount
      * @return \Travelport\UniversalRecord\StructType\VehicleModifier
      */
     public function setDoorCount(?string $doorCount = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeDoorCount::valueIsValid($doorCount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeDoorCount', is_array($doorCount) ? implode(', ', $doorCount) : var_export($doorCount, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeDoorCount::getValidValues())), __LINE__);
-        }
         $this->DoorCount = $doorCount;
         
         return $this;
@@ -227,18 +194,11 @@ class VehicleModifier extends AbstractStructBase
     }
     /**
      * Set FuelType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFuel::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFuel::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $fuelType
      * @return \Travelport\UniversalRecord\StructType\VehicleModifier
      */
     public function setFuelType(?string $fuelType = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeFuel::valueIsValid($fuelType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeFuel', is_array($fuelType) ? implode(', ', $fuelType) : var_export($fuelType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeFuel::getValidValues())), __LINE__);
-        }
         $this->FuelType = $fuelType;
         
         return $this;

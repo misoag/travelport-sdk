@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class BookingInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $BookingCode;
+    public string $BookingCode;
     /**
      * The FareInfoRef
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class BookingInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $FareInfoRef;
+    public string $FareInfoRef;
     /**
      * The BookingCount
      * Meta information extracted from the WSDL
@@ -38,14 +37,14 @@ class BookingInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BookingCount = null;
+    public ?string $BookingCount = null;
     /**
      * The CabinClass
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $CabinClass = null;
+    public ?string $CabinClass = null;
     /**
      * The SegmentRef
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class BookingInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SegmentRef = null;
+    public ?string $SegmentRef = null;
     /**
      * The CouponRef
      * Meta information extracted from the WSDL
@@ -63,7 +62,7 @@ class BookingInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $CouponRef = null;
+    public ?string $CouponRef = null;
     /**
      * The AirItinerarySolutionRef
      * Meta information extracted from the WSDL
@@ -72,7 +71,7 @@ class BookingInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $AirItinerarySolutionRef = null;
+    public ?string $AirItinerarySolutionRef = null;
     /**
      * The HostTokenRef
      * Meta information extracted from the WSDL
@@ -81,7 +80,7 @@ class BookingInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $HostTokenRef = null;
+    public ?string $HostTokenRef = null;
     /**
      * The TaxInfoRef
      * Meta information extracted from the WSDL
@@ -90,7 +89,7 @@ class BookingInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $TaxInfoRef = null;
+    public ?string $TaxInfoRef = null;
     /**
      * Constructor method for BookingInfo
      * @uses BookingInfo::setBookingCode()
@@ -140,10 +139,6 @@ class BookingInfo extends AbstractStructBase
      */
     public function setBookingCode(string $bookingCode): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingCode) && !is_string($bookingCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingCode, true), gettype($bookingCode)), __LINE__);
-        }
         $this->BookingCode = $bookingCode;
         
         return $this;
@@ -163,10 +158,6 @@ class BookingInfo extends AbstractStructBase
      */
     public function setFareInfoRef(string $fareInfoRef): self
     {
-        // validation for constraint: string
-        if (!is_null($fareInfoRef) && !is_string($fareInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareInfoRef, true), gettype($fareInfoRef)), __LINE__);
-        }
         $this->FareInfoRef = $fareInfoRef;
         
         return $this;
@@ -186,10 +177,6 @@ class BookingInfo extends AbstractStructBase
      */
     public function setBookingCount(?string $bookingCount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($bookingCount) && !is_string($bookingCount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($bookingCount, true), gettype($bookingCount)), __LINE__);
-        }
         $this->BookingCount = $bookingCount;
         
         return $this;
@@ -209,10 +196,6 @@ class BookingInfo extends AbstractStructBase
      */
     public function setCabinClass(?string $cabinClass = null): self
     {
-        // validation for constraint: string
-        if (!is_null($cabinClass) && !is_string($cabinClass)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($cabinClass, true), gettype($cabinClass)), __LINE__);
-        }
         $this->CabinClass = $cabinClass;
         
         return $this;
@@ -232,10 +215,6 @@ class BookingInfo extends AbstractStructBase
      */
     public function setSegmentRef(?string $segmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($segmentRef) && !is_string($segmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($segmentRef, true), gettype($segmentRef)), __LINE__);
-        }
         $this->SegmentRef = $segmentRef;
         
         return $this;
@@ -255,10 +234,6 @@ class BookingInfo extends AbstractStructBase
      */
     public function setCouponRef(?string $couponRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($couponRef) && !is_string($couponRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($couponRef, true), gettype($couponRef)), __LINE__);
-        }
         $this->CouponRef = $couponRef;
         
         return $this;
@@ -278,10 +253,6 @@ class BookingInfo extends AbstractStructBase
      */
     public function setAirItinerarySolutionRef(?string $airItinerarySolutionRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($airItinerarySolutionRef) && !is_string($airItinerarySolutionRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($airItinerarySolutionRef, true), gettype($airItinerarySolutionRef)), __LINE__);
-        }
         $this->AirItinerarySolutionRef = $airItinerarySolutionRef;
         
         return $this;
@@ -301,10 +272,6 @@ class BookingInfo extends AbstractStructBase
      */
     public function setHostTokenRef(?string $hostTokenRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($hostTokenRef) && !is_string($hostTokenRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($hostTokenRef, true), gettype($hostTokenRef)), __LINE__);
-        }
         $this->HostTokenRef = $hostTokenRef;
         
         return $this;
@@ -324,10 +291,6 @@ class BookingInfo extends AbstractStructBase
      */
     public function setTaxInfoRef(?string $taxInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($taxInfoRef) && !is_string($taxInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($taxInfoRef, true), gettype($taxInfoRef)), __LINE__);
-        }
         $this->TaxInfoRef = $taxInfoRef;
         
         return $this;

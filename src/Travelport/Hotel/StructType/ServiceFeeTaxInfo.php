@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class ServiceFeeTaxInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Category;
+    public string $Category;
     /**
      * The Amount
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class ServiceFeeTaxInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Amount;
+    public string $Amount;
     /**
      * Constructor method for ServiceFeeTaxInfo
      * @uses ServiceFeeTaxInfo::setCategory()
@@ -60,10 +59,6 @@ class ServiceFeeTaxInfo extends AbstractStructBase
      */
     public function setCategory(string $category): self
     {
-        // validation for constraint: string
-        if (!is_null($category) && !is_string($category)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($category, true), gettype($category)), __LINE__);
-        }
         $this->Category = $category;
         
         return $this;
@@ -83,10 +78,6 @@ class ServiceFeeTaxInfo extends AbstractStructBase
      */
     public function setAmount(string $amount): self
     {
-        // validation for constraint: string
-        if (!is_null($amount) && !is_string($amount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($amount, true), gettype($amount)), __LINE__);
-        }
         $this->Amount = $amount;
         
         return $this;

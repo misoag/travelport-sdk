@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -23,7 +22,7 @@ class Rows extends AbstractStructBase
      * - ref: Row
      * @var \Travelport\UniversalRecord\StructType\Row[]
      */
-    protected ?array $Row = null;
+    public ?array $Row = null;
     /**
      * The SegmentRef
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class Rows extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $SegmentRef = null;
+    public ?string $SegmentRef = null;
     /**
      * Constructor method for Rows
      * @uses Rows::setRow()
@@ -55,48 +54,12 @@ class Rows extends AbstractStructBase
         return $this->Row;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRow method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRow method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateRowForArrayConstraintFromSetRow(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $rowsRowItem) {
-            // validation for constraint: itemType
-            if (!$rowsRowItem instanceof \Travelport\UniversalRecord\StructType\Row) {
-                $invalidValues[] = is_object($rowsRowItem) ? get_class($rowsRowItem) : sprintf('%s(%s)', gettype($rowsRowItem), var_export($rowsRowItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Row property can only contain items of type \Travelport\UniversalRecord\StructType\Row, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Row value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\Row[] $row
      * @return \Travelport\UniversalRecord\StructType\Rows
      */
     public function setRow(?array $row = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($rowArrayErrorMessage = self::validateRowForArrayConstraintFromSetRow($row))) {
-            throw new InvalidArgumentException($rowArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($row) && count($row) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($row)), __LINE__);
-        }
         $this->Row = $row;
         
         return $this;
@@ -109,14 +72,6 @@ class Rows extends AbstractStructBase
      */
     public function addToRow(\Travelport\UniversalRecord\StructType\Row $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\Row) {
-            throw new InvalidArgumentException(sprintf('The Row property can only contain items of type \Travelport\UniversalRecord\StructType\Row, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->Row) && count($this->Row) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->Row)), __LINE__);
-        }
         $this->Row[] = $item;
         
         return $this;
@@ -136,10 +91,6 @@ class Rows extends AbstractStructBase
      */
     public function setSegmentRef(?string $segmentRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($segmentRef) && !is_string($segmentRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($segmentRef, true), gettype($segmentRef)), __LINE__);
-        }
         $this->SegmentRef = $segmentRef;
         
         return $this;

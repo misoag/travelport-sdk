@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class FlightInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $CriteriaKey;
+    public string $CriteriaKey;
     /**
      * The Carrier
      * Meta information extracted from the WSDL
@@ -31,7 +30,7 @@ class FlightInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Carrier;
+    public string $Carrier;
     /**
      * The FlightNumber
      * Meta information extracted from the WSDL
@@ -41,7 +40,7 @@ class FlightInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $FlightNumber;
+    public string $FlightNumber;
     /**
      * The DepartureDate
      * Meta information extracted from the WSDL
@@ -49,7 +48,7 @@ class FlightInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $DepartureDate;
+    public string $DepartureDate;
     /**
      * The FlightInfoDetail
      * Meta information extracted from the WSDL
@@ -58,7 +57,7 @@ class FlightInfo extends AbstractStructBase
      * - ref: FlightInfoDetail
      * @var \Travelport\UniversalRecord\StructType\FlightInfoDetail[]
      */
-    protected ?array $FlightInfoDetail = null;
+    public ?array $FlightInfoDetail = null;
     /**
      * The FlightInfoErrorMessage
      * Meta information extracted from the WSDL
@@ -67,7 +66,7 @@ class FlightInfo extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeResultMessage[]
      */
-    protected ?array $FlightInfoErrorMessage = null;
+    public ?array $FlightInfoErrorMessage = null;
     /**
      * The Origin
      * Meta information extracted from the WSDL
@@ -78,7 +77,7 @@ class FlightInfo extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Origin = null;
+    public ?string $Origin = null;
     /**
      * The Destination
      * Meta information extracted from the WSDL
@@ -89,7 +88,7 @@ class FlightInfo extends AbstractStructBase
      * - whiteSpace: collapse
      * @var string|null
      */
-    protected ?string $Destination = null;
+    public ?string $Destination = null;
     /**
      * The ClassOfService
      * Meta information extracted from the WSDL
@@ -100,7 +99,7 @@ class FlightInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ClassOfService = null;
+    public ?string $ClassOfService = null;
     /**
      * Constructor method for FlightInfo
      * @uses FlightInfo::setCriteriaKey()
@@ -150,10 +149,6 @@ class FlightInfo extends AbstractStructBase
      */
     public function setCriteriaKey(string $criteriaKey): self
     {
-        // validation for constraint: string
-        if (!is_null($criteriaKey) && !is_string($criteriaKey)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($criteriaKey, true), gettype($criteriaKey)), __LINE__);
-        }
         $this->CriteriaKey = $criteriaKey;
         
         return $this;
@@ -173,14 +168,6 @@ class FlightInfo extends AbstractStructBase
      */
     public function setCarrier(string $carrier): self
     {
-        // validation for constraint: string
-        if (!is_null($carrier) && !is_string($carrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrier, true), gettype($carrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($carrier) && mb_strlen((string) $carrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $carrier)), __LINE__);
-        }
         $this->Carrier = $carrier;
         
         return $this;
@@ -200,14 +187,6 @@ class FlightInfo extends AbstractStructBase
      */
     public function setFlightNumber(string $flightNumber): self
     {
-        // validation for constraint: string
-        if (!is_null($flightNumber) && !is_string($flightNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($flightNumber, true), gettype($flightNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(5)
-        if (!is_null($flightNumber) && mb_strlen((string) $flightNumber) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 5', mb_strlen((string) $flightNumber)), __LINE__);
-        }
         $this->FlightNumber = $flightNumber;
         
         return $this;
@@ -227,10 +206,6 @@ class FlightInfo extends AbstractStructBase
      */
     public function setDepartureDate(string $departureDate): self
     {
-        // validation for constraint: string
-        if (!is_null($departureDate) && !is_string($departureDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($departureDate, true), gettype($departureDate)), __LINE__);
-        }
         $this->DepartureDate = $departureDate;
         
         return $this;
@@ -244,48 +219,12 @@ class FlightInfo extends AbstractStructBase
         return $this->FlightInfoDetail;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFlightInfoDetail method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFlightInfoDetail method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFlightInfoDetailForArrayConstraintFromSetFlightInfoDetail(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $flightInfoFlightInfoDetailItem) {
-            // validation for constraint: itemType
-            if (!$flightInfoFlightInfoDetailItem instanceof \Travelport\UniversalRecord\StructType\FlightInfoDetail) {
-                $invalidValues[] = is_object($flightInfoFlightInfoDetailItem) ? get_class($flightInfoFlightInfoDetailItem) : sprintf('%s(%s)', gettype($flightInfoFlightInfoDetailItem), var_export($flightInfoFlightInfoDetailItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FlightInfoDetail property can only contain items of type \Travelport\UniversalRecord\StructType\FlightInfoDetail, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FlightInfoDetail value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FlightInfoDetail[] $flightInfoDetail
      * @return \Travelport\UniversalRecord\StructType\FlightInfo
      */
     public function setFlightInfoDetail(?array $flightInfoDetail = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($flightInfoDetailArrayErrorMessage = self::validateFlightInfoDetailForArrayConstraintFromSetFlightInfoDetail($flightInfoDetail))) {
-            throw new InvalidArgumentException($flightInfoDetailArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($flightInfoDetail) && count($flightInfoDetail) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($flightInfoDetail)), __LINE__);
-        }
         $this->FlightInfoDetail = $flightInfoDetail;
         
         return $this;
@@ -298,14 +237,6 @@ class FlightInfo extends AbstractStructBase
      */
     public function addToFlightInfoDetail(\Travelport\UniversalRecord\StructType\FlightInfoDetail $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\FlightInfoDetail) {
-            throw new InvalidArgumentException(sprintf('The FlightInfoDetail property can only contain items of type \Travelport\UniversalRecord\StructType\FlightInfoDetail, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FlightInfoDetail) && count($this->FlightInfoDetail) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FlightInfoDetail)), __LINE__);
-        }
         $this->FlightInfoDetail[] = $item;
         
         return $this;
@@ -319,48 +250,12 @@ class FlightInfo extends AbstractStructBase
         return $this->FlightInfoErrorMessage;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFlightInfoErrorMessage method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFlightInfoErrorMessage method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFlightInfoErrorMessageForArrayConstraintFromSetFlightInfoErrorMessage(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $flightInfoFlightInfoErrorMessageItem) {
-            // validation for constraint: itemType
-            if (!$flightInfoFlightInfoErrorMessageItem instanceof \Travelport\UniversalRecord\StructType\TypeResultMessage) {
-                $invalidValues[] = is_object($flightInfoFlightInfoErrorMessageItem) ? get_class($flightInfoFlightInfoErrorMessageItem) : sprintf('%s(%s)', gettype($flightInfoFlightInfoErrorMessageItem), var_export($flightInfoFlightInfoErrorMessageItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FlightInfoErrorMessage property can only contain items of type \Travelport\UniversalRecord\StructType\TypeResultMessage, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FlightInfoErrorMessage value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeResultMessage[] $flightInfoErrorMessage
      * @return \Travelport\UniversalRecord\StructType\FlightInfo
      */
     public function setFlightInfoErrorMessage(?array $flightInfoErrorMessage = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($flightInfoErrorMessageArrayErrorMessage = self::validateFlightInfoErrorMessageForArrayConstraintFromSetFlightInfoErrorMessage($flightInfoErrorMessage))) {
-            throw new InvalidArgumentException($flightInfoErrorMessageArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($flightInfoErrorMessage) && count($flightInfoErrorMessage) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($flightInfoErrorMessage)), __LINE__);
-        }
         $this->FlightInfoErrorMessage = $flightInfoErrorMessage;
         
         return $this;
@@ -373,14 +268,6 @@ class FlightInfo extends AbstractStructBase
      */
     public function addToFlightInfoErrorMessage(\Travelport\UniversalRecord\StructType\TypeResultMessage $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeResultMessage) {
-            throw new InvalidArgumentException(sprintf('The FlightInfoErrorMessage property can only contain items of type \Travelport\UniversalRecord\StructType\TypeResultMessage, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FlightInfoErrorMessage) && count($this->FlightInfoErrorMessage) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FlightInfoErrorMessage)), __LINE__);
-        }
         $this->FlightInfoErrorMessage[] = $item;
         
         return $this;
@@ -400,14 +287,6 @@ class FlightInfo extends AbstractStructBase
      */
     public function setOrigin(?string $origin = null): self
     {
-        // validation for constraint: string
-        if (!is_null($origin) && !is_string($origin)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($origin, true), gettype($origin)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($origin) && mb_strlen((string) $origin) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $origin)), __LINE__);
-        }
         $this->Origin = $origin;
         
         return $this;
@@ -427,14 +306,6 @@ class FlightInfo extends AbstractStructBase
      */
     public function setDestination(?string $destination = null): self
     {
-        // validation for constraint: string
-        if (!is_null($destination) && !is_string($destination)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($destination, true), gettype($destination)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($destination) && mb_strlen((string) $destination) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $destination)), __LINE__);
-        }
         $this->Destination = $destination;
         
         return $this;
@@ -454,18 +325,6 @@ class FlightInfo extends AbstractStructBase
      */
     public function setClassOfService(?string $classOfService = null): self
     {
-        // validation for constraint: string
-        if (!is_null($classOfService) && !is_string($classOfService)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($classOfService, true), gettype($classOfService)), __LINE__);
-        }
-        // validation for constraint: maxLength(2)
-        if (!is_null($classOfService) && mb_strlen((string) $classOfService) > 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 2', mb_strlen((string) $classOfService)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($classOfService) && mb_strlen((string) $classOfService) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $classOfService)), __LINE__);
-        }
         $this->ClassOfService = $classOfService;
         
         return $this;

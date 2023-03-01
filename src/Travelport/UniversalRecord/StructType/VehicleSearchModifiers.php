@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,14 +21,14 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\PermittedVendors|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PermittedVendors $PermittedVendors = null;
+    public ?\Travelport\UniversalRecord\StructType\PermittedVendors $PermittedVendors = null;
     /**
      * The ProhibitedVendors
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\ProhibitedVendors|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ProhibitedVendors $ProhibitedVendors = null;
+    public ?\Travelport\UniversalRecord\StructType\ProhibitedVendors $ProhibitedVendors = null;
     /**
      * The VehicleModifier
      * Meta information extracted from the WSDL
@@ -38,7 +37,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - ref: VehicleModifier
      * @var \Travelport\UniversalRecord\StructType\VehicleModifier[]
      */
-    protected ?array $VehicleModifier = null;
+    public ?array $VehicleModifier = null;
     /**
      * The VehicleType
      * Meta information extracted from the WSDL
@@ -47,7 +46,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - ref: VehicleType
      * @var \Travelport\UniversalRecord\StructType\VehicleType[]
      */
-    protected ?array $VehicleType = null;
+    public ?array $VehicleType = null;
     /**
      * The RateModifiers
      * Meta information extracted from the WSDL
@@ -56,14 +55,14 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - ref: RateModifiers
      * @var \Travelport\UniversalRecord\StructType\RateModifiers[]
      */
-    protected ?array $RateModifiers = null;
+    public ?array $RateModifiers = null;
     /**
      * The RateHostIndicator
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeRateHostIndicator|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeRateHostIndicator $RateHostIndicator = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeRateHostIndicator $RateHostIndicator = null;
     /**
      * The LoyaltyCard
      * Meta information extracted from the WSDL
@@ -72,7 +71,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - ref: common:LoyaltyCard
      * @var \Travelport\UniversalRecord\StructType\LoyaltyCard[]
      */
-    protected ?array $LoyaltyCard = null;
+    public ?array $LoyaltyCard = null;
     /**
      * The ReferencePoint
      * Meta information extracted from the WSDL
@@ -82,7 +81,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - ref: common:ReferencePoint
      * @var string|null
      */
-    protected ?string $ReferencePoint = null;
+    public ?string $ReferencePoint = null;
     /**
      * The BookingSource
      * Meta information extracted from the WSDL
@@ -90,7 +89,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - ref: common:BookingSource
      * @var \Travelport\UniversalRecord\StructType\BookingSource|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\BookingSource $BookingSource = null;
+    public ?\Travelport\UniversalRecord\StructType\BookingSource $BookingSource = null;
     /**
      * The SpecialEquipment
      * Meta information extracted from the WSDL
@@ -99,7 +98,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - ref: common:SpecialEquipment
      * @var \Travelport\UniversalRecord\StructType\SpecialEquipment[]
      */
-    protected ?array $SpecialEquipment = null;
+    public ?array $SpecialEquipment = null;
     /**
      * The SearchDistance
      * Meta information extracted from the WSDL
@@ -107,7 +106,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeVehicleSearchDistance|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeVehicleSearchDistance $SearchDistance = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeVehicleSearchDistance $SearchDistance = null;
     /**
      * The Policy
      * Meta information extracted from the WSDL
@@ -116,7 +115,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - ref: Policy
      * @var \Travelport\UniversalRecord\StructType\TypeKeyword[]
      */
-    protected ?array $Policy = null;
+    public ?array $Policy = null;
     /**
      * The DriverInfo
      * Meta information extracted from the WSDL
@@ -125,7 +124,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - ref: DriverInfo
      * @var \Travelport\UniversalRecord\StructType\DriverInfo|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\DriverInfo $DriverInfo = null;
+    public ?\Travelport\UniversalRecord\StructType\DriverInfo $DriverInfo = null;
     /**
      * The Key
      * Meta information extracted from the WSDL
@@ -134,7 +133,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Key = null;
+    public ?string $Key = null;
     /**
      * The PreferredCurrency
      * Meta information extracted from the WSDL
@@ -144,7 +143,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PreferredCurrency = null;
+    public ?string $PreferredCurrency = null;
     /**
      * The UnlimitedMileage
      * Meta information extracted from the WSDL
@@ -152,7 +151,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $UnlimitedMileage = null;
+    public ?bool $UnlimitedMileage = null;
     /**
      * The RateCategory
      * Meta information extracted from the WSDL
@@ -160,7 +159,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RateCategory = null;
+    public ?string $RateCategory = null;
     /**
      * The RateGuaranteed
      * Meta information extracted from the WSDL
@@ -169,7 +168,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $RateGuaranteed = null;
+    public ?bool $RateGuaranteed = null;
     /**
      * The RatePeriod
      * Meta information extracted from the WSDL
@@ -177,7 +176,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $RatePeriod = null;
+    public ?string $RatePeriod = null;
     /**
      * The SellableRatesOnly
      * Meta information extracted from the WSDL
@@ -185,7 +184,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $SellableRatesOnly = null;
+    public ?bool $SellableRatesOnly = null;
     /**
      * The ReturnSourceCurrency
      * Meta information extracted from the WSDL
@@ -194,7 +193,7 @@ class VehicleSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ReturnSourceCurrency = null;
+    public ?bool $ReturnSourceCurrency = null;
     /**
      * Constructor method for VehicleSearchModifiers
      * @uses VehicleSearchModifiers::setPermittedVendors()
@@ -312,48 +311,12 @@ class VehicleSearchModifiers extends AbstractStructBase
         return $this->VehicleModifier;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setVehicleModifier method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleModifier method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateVehicleModifierForArrayConstraintFromSetVehicleModifier(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $vehicleSearchModifiersVehicleModifierItem) {
-            // validation for constraint: itemType
-            if (!$vehicleSearchModifiersVehicleModifierItem instanceof \Travelport\UniversalRecord\StructType\VehicleModifier) {
-                $invalidValues[] = is_object($vehicleSearchModifiersVehicleModifierItem) ? get_class($vehicleSearchModifiersVehicleModifierItem) : sprintf('%s(%s)', gettype($vehicleSearchModifiersVehicleModifierItem), var_export($vehicleSearchModifiersVehicleModifierItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The VehicleModifier property can only contain items of type \Travelport\UniversalRecord\StructType\VehicleModifier, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set VehicleModifier value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\VehicleModifier[] $vehicleModifier
      * @return \Travelport\UniversalRecord\StructType\VehicleSearchModifiers
      */
     public function setVehicleModifier(?array $vehicleModifier = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($vehicleModifierArrayErrorMessage = self::validateVehicleModifierForArrayConstraintFromSetVehicleModifier($vehicleModifier))) {
-            throw new InvalidArgumentException($vehicleModifierArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($vehicleModifier) && count($vehicleModifier) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($vehicleModifier)), __LINE__);
-        }
         $this->VehicleModifier = $vehicleModifier;
         
         return $this;
@@ -366,14 +329,6 @@ class VehicleSearchModifiers extends AbstractStructBase
      */
     public function addToVehicleModifier(\Travelport\UniversalRecord\StructType\VehicleModifier $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\VehicleModifier) {
-            throw new InvalidArgumentException(sprintf('The VehicleModifier property can only contain items of type \Travelport\UniversalRecord\StructType\VehicleModifier, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->VehicleModifier) && count($this->VehicleModifier) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->VehicleModifier)), __LINE__);
-        }
         $this->VehicleModifier[] = $item;
         
         return $this;
@@ -387,48 +342,12 @@ class VehicleSearchModifiers extends AbstractStructBase
         return $this->VehicleType;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setVehicleType method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setVehicleType method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateVehicleTypeForArrayConstraintFromSetVehicleType(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $vehicleSearchModifiersVehicleTypeItem) {
-            // validation for constraint: itemType
-            if (!$vehicleSearchModifiersVehicleTypeItem instanceof \Travelport\UniversalRecord\StructType\VehicleType) {
-                $invalidValues[] = is_object($vehicleSearchModifiersVehicleTypeItem) ? get_class($vehicleSearchModifiersVehicleTypeItem) : sprintf('%s(%s)', gettype($vehicleSearchModifiersVehicleTypeItem), var_export($vehicleSearchModifiersVehicleTypeItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The VehicleType property can only contain items of type \Travelport\UniversalRecord\StructType\VehicleType, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set VehicleType value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\VehicleType[] $vehicleType
      * @return \Travelport\UniversalRecord\StructType\VehicleSearchModifiers
      */
     public function setVehicleType(?array $vehicleType = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($vehicleTypeArrayErrorMessage = self::validateVehicleTypeForArrayConstraintFromSetVehicleType($vehicleType))) {
-            throw new InvalidArgumentException($vehicleTypeArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($vehicleType) && count($vehicleType) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($vehicleType)), __LINE__);
-        }
         $this->VehicleType = $vehicleType;
         
         return $this;
@@ -441,14 +360,6 @@ class VehicleSearchModifiers extends AbstractStructBase
      */
     public function addToVehicleType(\Travelport\UniversalRecord\StructType\VehicleType $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\VehicleType) {
-            throw new InvalidArgumentException(sprintf('The VehicleType property can only contain items of type \Travelport\UniversalRecord\StructType\VehicleType, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->VehicleType) && count($this->VehicleType) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->VehicleType)), __LINE__);
-        }
         $this->VehicleType[] = $item;
         
         return $this;
@@ -462,48 +373,12 @@ class VehicleSearchModifiers extends AbstractStructBase
         return $this->RateModifiers;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setRateModifiers method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setRateModifiers method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateRateModifiersForArrayConstraintFromSetRateModifiers(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $vehicleSearchModifiersRateModifiersItem) {
-            // validation for constraint: itemType
-            if (!$vehicleSearchModifiersRateModifiersItem instanceof \Travelport\UniversalRecord\StructType\RateModifiers) {
-                $invalidValues[] = is_object($vehicleSearchModifiersRateModifiersItem) ? get_class($vehicleSearchModifiersRateModifiersItem) : sprintf('%s(%s)', gettype($vehicleSearchModifiersRateModifiersItem), var_export($vehicleSearchModifiersRateModifiersItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The RateModifiers property can only contain items of type \Travelport\UniversalRecord\StructType\RateModifiers, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set RateModifiers value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\RateModifiers[] $rateModifiers
      * @return \Travelport\UniversalRecord\StructType\VehicleSearchModifiers
      */
     public function setRateModifiers(?array $rateModifiers = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($rateModifiersArrayErrorMessage = self::validateRateModifiersForArrayConstraintFromSetRateModifiers($rateModifiers))) {
-            throw new InvalidArgumentException($rateModifiersArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($rateModifiers) && count($rateModifiers) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($rateModifiers)), __LINE__);
-        }
         $this->RateModifiers = $rateModifiers;
         
         return $this;
@@ -516,14 +391,6 @@ class VehicleSearchModifiers extends AbstractStructBase
      */
     public function addToRateModifiers(\Travelport\UniversalRecord\StructType\RateModifiers $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\RateModifiers) {
-            throw new InvalidArgumentException(sprintf('The RateModifiers property can only contain items of type \Travelport\UniversalRecord\StructType\RateModifiers, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->RateModifiers) && count($this->RateModifiers) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->RateModifiers)), __LINE__);
-        }
         $this->RateModifiers[] = $item;
         
         return $this;
@@ -556,48 +423,12 @@ class VehicleSearchModifiers extends AbstractStructBase
         return $this->LoyaltyCard;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setLoyaltyCard method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setLoyaltyCard method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $vehicleSearchModifiersLoyaltyCardItem) {
-            // validation for constraint: itemType
-            if (!$vehicleSearchModifiersLoyaltyCardItem instanceof \Travelport\UniversalRecord\StructType\LoyaltyCard) {
-                $invalidValues[] = is_object($vehicleSearchModifiersLoyaltyCardItem) ? get_class($vehicleSearchModifiersLoyaltyCardItem) : sprintf('%s(%s)', gettype($vehicleSearchModifiersLoyaltyCardItem), var_export($vehicleSearchModifiersLoyaltyCardItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The LoyaltyCard property can only contain items of type \Travelport\UniversalRecord\StructType\LoyaltyCard, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set LoyaltyCard value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\LoyaltyCard[] $loyaltyCard
      * @return \Travelport\UniversalRecord\StructType\VehicleSearchModifiers
      */
     public function setLoyaltyCard(?array $loyaltyCard = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($loyaltyCardArrayErrorMessage = self::validateLoyaltyCardForArrayConstraintFromSetLoyaltyCard($loyaltyCard))) {
-            throw new InvalidArgumentException($loyaltyCardArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($loyaltyCard) && count($loyaltyCard) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($loyaltyCard)), __LINE__);
-        }
         $this->LoyaltyCard = $loyaltyCard;
         
         return $this;
@@ -610,14 +441,6 @@ class VehicleSearchModifiers extends AbstractStructBase
      */
     public function addToLoyaltyCard(\Travelport\UniversalRecord\StructType\LoyaltyCard $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\LoyaltyCard) {
-            throw new InvalidArgumentException(sprintf('The LoyaltyCard property can only contain items of type \Travelport\UniversalRecord\StructType\LoyaltyCard, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->LoyaltyCard) && count($this->LoyaltyCard) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->LoyaltyCard)), __LINE__);
-        }
         $this->LoyaltyCard[] = $item;
         
         return $this;
@@ -637,14 +460,6 @@ class VehicleSearchModifiers extends AbstractStructBase
      */
     public function setReferencePoint(?string $referencePoint = null): self
     {
-        // validation for constraint: string
-        if (!is_null($referencePoint) && !is_string($referencePoint)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($referencePoint, true), gettype($referencePoint)), __LINE__);
-        }
-        // validation for constraint: maxLength(30)
-        if (!is_null($referencePoint) && mb_strlen((string) $referencePoint) > 30) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 30', mb_strlen((string) $referencePoint)), __LINE__);
-        }
         $this->ReferencePoint = $referencePoint;
         
         return $this;
@@ -677,48 +492,12 @@ class VehicleSearchModifiers extends AbstractStructBase
         return $this->SpecialEquipment;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setSpecialEquipment method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setSpecialEquipment method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateSpecialEquipmentForArrayConstraintFromSetSpecialEquipment(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $vehicleSearchModifiersSpecialEquipmentItem) {
-            // validation for constraint: itemType
-            if (!$vehicleSearchModifiersSpecialEquipmentItem instanceof \Travelport\UniversalRecord\StructType\SpecialEquipment) {
-                $invalidValues[] = is_object($vehicleSearchModifiersSpecialEquipmentItem) ? get_class($vehicleSearchModifiersSpecialEquipmentItem) : sprintf('%s(%s)', gettype($vehicleSearchModifiersSpecialEquipmentItem), var_export($vehicleSearchModifiersSpecialEquipmentItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The SpecialEquipment property can only contain items of type \Travelport\UniversalRecord\StructType\SpecialEquipment, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set SpecialEquipment value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\SpecialEquipment[] $specialEquipment
      * @return \Travelport\UniversalRecord\StructType\VehicleSearchModifiers
      */
     public function setSpecialEquipment(?array $specialEquipment = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($specialEquipmentArrayErrorMessage = self::validateSpecialEquipmentForArrayConstraintFromSetSpecialEquipment($specialEquipment))) {
-            throw new InvalidArgumentException($specialEquipmentArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($specialEquipment) && count($specialEquipment) > 5) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 5', count($specialEquipment)), __LINE__);
-        }
         $this->SpecialEquipment = $specialEquipment;
         
         return $this;
@@ -731,14 +510,6 @@ class VehicleSearchModifiers extends AbstractStructBase
      */
     public function addToSpecialEquipment(\Travelport\UniversalRecord\StructType\SpecialEquipment $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\SpecialEquipment) {
-            throw new InvalidArgumentException(sprintf('The SpecialEquipment property can only contain items of type \Travelport\UniversalRecord\StructType\SpecialEquipment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(5)
-        if (is_array($this->SpecialEquipment) && count($this->SpecialEquipment) >= 5) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 5', count($this->SpecialEquipment)), __LINE__);
-        }
         $this->SpecialEquipment[] = $item;
         
         return $this;
@@ -771,48 +542,12 @@ class VehicleSearchModifiers extends AbstractStructBase
         return $this->Policy;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPolicy method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPolicy method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePolicyForArrayConstraintFromSetPolicy(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $vehicleSearchModifiersPolicyItem) {
-            // validation for constraint: itemType
-            if (!$vehicleSearchModifiersPolicyItem instanceof \Travelport\UniversalRecord\StructType\TypeKeyword) {
-                $invalidValues[] = is_object($vehicleSearchModifiersPolicyItem) ? get_class($vehicleSearchModifiersPolicyItem) : sprintf('%s(%s)', gettype($vehicleSearchModifiersPolicyItem), var_export($vehicleSearchModifiersPolicyItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Policy property can only contain items of type \Travelport\UniversalRecord\StructType\TypeKeyword, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Policy value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TypeKeyword[] $policy
      * @return \Travelport\UniversalRecord\StructType\VehicleSearchModifiers
      */
     public function setPolicy(?array $policy = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($policyArrayErrorMessage = self::validatePolicyForArrayConstraintFromSetPolicy($policy))) {
-            throw new InvalidArgumentException($policyArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($policy) && count($policy) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($policy)), __LINE__);
-        }
         $this->Policy = $policy;
         
         return $this;
@@ -825,14 +560,6 @@ class VehicleSearchModifiers extends AbstractStructBase
      */
     public function addToPolicy(\Travelport\UniversalRecord\StructType\TypeKeyword $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TypeKeyword) {
-            throw new InvalidArgumentException(sprintf('The Policy property can only contain items of type \Travelport\UniversalRecord\StructType\TypeKeyword, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->Policy) && count($this->Policy) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->Policy)), __LINE__);
-        }
         $this->Policy[] = $item;
         
         return $this;
@@ -871,10 +598,6 @@ class VehicleSearchModifiers extends AbstractStructBase
      */
     public function setKey(?string $key = null): self
     {
-        // validation for constraint: string
-        if (!is_null($key) && !is_string($key)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($key, true), gettype($key)), __LINE__);
-        }
         $this->Key = $key;
         
         return $this;
@@ -894,14 +617,6 @@ class VehicleSearchModifiers extends AbstractStructBase
      */
     public function setPreferredCurrency(?string $preferredCurrency = null): self
     {
-        // validation for constraint: string
-        if (!is_null($preferredCurrency) && !is_string($preferredCurrency)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($preferredCurrency, true), gettype($preferredCurrency)), __LINE__);
-        }
-        // validation for constraint: length(3)
-        if (!is_null($preferredCurrency) && mb_strlen((string) $preferredCurrency) !== 3) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 3', mb_strlen((string) $preferredCurrency)), __LINE__);
-        }
         $this->PreferredCurrency = $preferredCurrency;
         
         return $this;
@@ -921,10 +636,6 @@ class VehicleSearchModifiers extends AbstractStructBase
      */
     public function setUnlimitedMileage(?bool $unlimitedMileage = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($unlimitedMileage) && !is_bool($unlimitedMileage)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($unlimitedMileage, true), gettype($unlimitedMileage)), __LINE__);
-        }
         $this->UnlimitedMileage = $unlimitedMileage;
         
         return $this;
@@ -939,18 +650,11 @@ class VehicleSearchModifiers extends AbstractStructBase
     }
     /**
      * Set RateCategory value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRateCategory::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRateCategory::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $rateCategory
      * @return \Travelport\UniversalRecord\StructType\VehicleSearchModifiers
      */
     public function setRateCategory(?string $rateCategory = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeRateCategory::valueIsValid($rateCategory)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeRateCategory', is_array($rateCategory) ? implode(', ', $rateCategory) : var_export($rateCategory, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeRateCategory::getValidValues())), __LINE__);
-        }
         $this->RateCategory = $rateCategory;
         
         return $this;
@@ -970,10 +674,6 @@ class VehicleSearchModifiers extends AbstractStructBase
      */
     public function setRateGuaranteed(?bool $rateGuaranteed = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($rateGuaranteed) && !is_bool($rateGuaranteed)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($rateGuaranteed, true), gettype($rateGuaranteed)), __LINE__);
-        }
         $this->RateGuaranteed = $rateGuaranteed;
         
         return $this;
@@ -988,18 +688,11 @@ class VehicleSearchModifiers extends AbstractStructBase
     }
     /**
      * Set RatePeriod value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRateTimePeriod::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeRateTimePeriod::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $ratePeriod
      * @return \Travelport\UniversalRecord\StructType\VehicleSearchModifiers
      */
     public function setRatePeriod(?string $ratePeriod = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeRateTimePeriod::valueIsValid($ratePeriod)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeRateTimePeriod', is_array($ratePeriod) ? implode(', ', $ratePeriod) : var_export($ratePeriod, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeRateTimePeriod::getValidValues())), __LINE__);
-        }
         $this->RatePeriod = $ratePeriod;
         
         return $this;
@@ -1019,10 +712,6 @@ class VehicleSearchModifiers extends AbstractStructBase
      */
     public function setSellableRatesOnly(?bool $sellableRatesOnly = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($sellableRatesOnly) && !is_bool($sellableRatesOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($sellableRatesOnly, true), gettype($sellableRatesOnly)), __LINE__);
-        }
         $this->SellableRatesOnly = $sellableRatesOnly;
         
         return $this;
@@ -1042,10 +731,6 @@ class VehicleSearchModifiers extends AbstractStructBase
      */
     public function setReturnSourceCurrency(?bool $returnSourceCurrency = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($returnSourceCurrency) && !is_bool($returnSourceCurrency)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($returnSourceCurrency, true), gettype($returnSourceCurrency)), __LINE__);
-        }
         $this->ReturnSourceCurrency = $returnSourceCurrency;
         
         return $this;

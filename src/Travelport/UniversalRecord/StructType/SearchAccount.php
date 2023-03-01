@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class SearchAccount extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ClientID = null;
+    public ?string $ClientID = null;
     /**
      * The BranchID
      * Meta information extracted from the WSDL
@@ -33,7 +32,7 @@ class SearchAccount extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $BranchID = null;
+    public ?string $BranchID = null;
     /**
      * Constructor method for SearchAccount
      * @uses SearchAccount::setClientID()
@@ -62,10 +61,6 @@ class SearchAccount extends AbstractStructBase
      */
     public function setClientID(?string $clientID = null): self
     {
-        // validation for constraint: string
-        if (!is_null($clientID) && !is_string($clientID)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($clientID, true), gettype($clientID)), __LINE__);
-        }
         $this->ClientID = $clientID;
         
         return $this;
@@ -85,18 +80,6 @@ class SearchAccount extends AbstractStructBase
      */
     public function setBranchID(?string $branchID = null): self
     {
-        // validation for constraint: string
-        if (!is_null($branchID) && !is_string($branchID)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($branchID, true), gettype($branchID)), __LINE__);
-        }
-        // validation for constraint: maxLength(10)
-        if (!is_null($branchID) && mb_strlen((string) $branchID) > 10) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 10', mb_strlen((string) $branchID)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($branchID) && mb_strlen((string) $branchID) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $branchID)), __LINE__);
-        }
         $this->BranchID = $branchID;
         
         return $this;

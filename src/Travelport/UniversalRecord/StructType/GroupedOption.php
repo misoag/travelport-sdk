@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class GroupedOption extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $OptionalServiceRef;
+    public string $OptionalServiceRef;
     /**
      * Constructor method for GroupedOption
      * @uses GroupedOption::setOptionalServiceRef()
@@ -47,10 +46,6 @@ class GroupedOption extends AbstractStructBase
      */
     public function setOptionalServiceRef(string $optionalServiceRef): self
     {
-        // validation for constraint: string
-        if (!is_null($optionalServiceRef) && !is_string($optionalServiceRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($optionalServiceRef, true), gettype($optionalServiceRef)), __LINE__);
-        }
         $this->OptionalServiceRef = $optionalServiceRef;
         
         return $this;

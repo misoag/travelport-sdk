@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class FareGuaranteeInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $GuaranteeType;
+    public string $GuaranteeType;
     /**
      * The GuaranteeDate
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class FareGuaranteeInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $GuaranteeDate = null;
+    public ?string $GuaranteeDate = null;
     /**
      * Constructor method for FareGuaranteeInfo
      * @uses FareGuaranteeInfo::setGuaranteeType()
@@ -54,18 +53,11 @@ class FareGuaranteeInfo extends AbstractStructBase
     }
     /**
      * Set GuaranteeType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareGuarantee::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareGuarantee::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $guaranteeType
      * @return \Travelport\UniversalRecord\StructType\FareGuaranteeInfo
      */
     public function setGuaranteeType(string $guaranteeType): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeFareGuarantee::valueIsValid($guaranteeType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeFareGuarantee', is_array($guaranteeType) ? implode(', ', $guaranteeType) : var_export($guaranteeType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeFareGuarantee::getValidValues())), __LINE__);
-        }
         $this->GuaranteeType = $guaranteeType;
         
         return $this;
@@ -85,10 +77,6 @@ class FareGuaranteeInfo extends AbstractStructBase
      */
     public function setGuaranteeDate(?string $guaranteeDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($guaranteeDate) && !is_string($guaranteeDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($guaranteeDate, true), gettype($guaranteeDate)), __LINE__);
-        }
         $this->GuaranteeDate = $guaranteeDate;
         
         return $this;

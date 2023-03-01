@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,7 +20,7 @@ class ProviderReservationDivideRsp extends BaseRsp
      * - ref: ParentProviderReservationInfo
      * @var \Travelport\UniversalRecord\StructType\ParentProviderReservationInfo
      */
-    protected \Travelport\UniversalRecord\StructType\ParentProviderReservationInfo $ParentProviderReservationInfo;
+    public \Travelport\UniversalRecord\StructType\ParentProviderReservationInfo $ParentProviderReservationInfo;
     /**
      * The ChildProviderReservationInfo
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class ProviderReservationDivideRsp extends BaseRsp
      * - ref: ChildProviderReservationInfo
      * @var \Travelport\UniversalRecord\StructType\ChildProviderReservationInfo
      */
-    protected \Travelport\UniversalRecord\StructType\ChildProviderReservationInfo $ChildProviderReservationInfo;
+    public \Travelport\UniversalRecord\StructType\ChildProviderReservationInfo $ChildProviderReservationInfo;
     /**
      * Constructor method for ProviderReservationDivideRsp
      * @uses ProviderReservationDivideRsp::setParentProviderReservationInfo()

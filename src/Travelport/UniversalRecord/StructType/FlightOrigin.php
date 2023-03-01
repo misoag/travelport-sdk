@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class FlightOrigin extends AbstractStructBase
      * - ref: common:Airport
      * @var \Travelport\UniversalRecord\StructType\Airport|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Airport $Airport = null;
+    public ?\Travelport\UniversalRecord\StructType\Airport $Airport = null;
     /**
      * Constructor method for FlightOrigin
      * @uses FlightOrigin::setAirport()

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,14 +20,14 @@ class UpsellBrand extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $FareBasis = null;
+    public ?string $FareBasis = null;
     /**
      * The FareInfoRef
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $FareInfoRef = null;
+    public ?string $FareInfoRef = null;
     /**
      * Constructor method for UpsellBrand
      * @uses UpsellBrand::setFareBasis()
@@ -57,10 +56,6 @@ class UpsellBrand extends AbstractStructBase
      */
     public function setFareBasis(?string $fareBasis = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fareBasis) && !is_string($fareBasis)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareBasis, true), gettype($fareBasis)), __LINE__);
-        }
         $this->FareBasis = $fareBasis;
         
         return $this;
@@ -80,10 +75,6 @@ class UpsellBrand extends AbstractStructBase
      */
     public function setFareInfoRef(?string $fareInfoRef = null): self
     {
-        // validation for constraint: string
-        if (!is_null($fareInfoRef) && !is_string($fareInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($fareInfoRef, true), gettype($fareInfoRef)), __LINE__);
-        }
         $this->FareInfoRef = $fareInfoRef;
         
         return $this;

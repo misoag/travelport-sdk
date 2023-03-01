@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,63 +20,63 @@ class Penalty extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $CancelRefund = null;
+    public ?bool $CancelRefund = null;
     /**
      * The NonRefundable
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $NonRefundable = null;
+    public ?bool $NonRefundable = null;
     /**
      * The NonExchangeable
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $NonExchangeable = null;
+    public ?bool $NonExchangeable = null;
     /**
      * The CancelationPenalty
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $CancelationPenalty = null;
+    public ?bool $CancelationPenalty = null;
     /**
      * The ReissuePenalty
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ReissuePenalty = null;
+    public ?bool $ReissuePenalty = null;
     /**
      * The NonReissuePenalty
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $NonReissuePenalty = null;
+    public ?bool $NonReissuePenalty = null;
     /**
      * The TicketRefundPenalty
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $TicketRefundPenalty = null;
+    public ?bool $TicketRefundPenalty = null;
     /**
      * The ChargeApplicable
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ChargeApplicable = null;
+    public ?bool $ChargeApplicable = null;
     /**
      * The ChargePortion
      * Meta information extracted from the WSDL
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ChargePortion = null;
+    public ?bool $ChargePortion = null;
     /**
      * The PenaltyAmount
      * Meta information extracted from the WSDL
@@ -86,7 +85,7 @@ class Penalty extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PenaltyAmount = null;
+    public ?string $PenaltyAmount = null;
     /**
      * Constructor method for Penalty
      * @uses Penalty::setCancelRefund()
@@ -139,10 +138,6 @@ class Penalty extends AbstractStructBase
      */
     public function setCancelRefund(?bool $cancelRefund = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cancelRefund) && !is_bool($cancelRefund)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cancelRefund, true), gettype($cancelRefund)), __LINE__);
-        }
         $this->CancelRefund = $cancelRefund;
         
         return $this;
@@ -162,10 +157,6 @@ class Penalty extends AbstractStructBase
      */
     public function setNonRefundable(?bool $nonRefundable = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($nonRefundable) && !is_bool($nonRefundable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($nonRefundable, true), gettype($nonRefundable)), __LINE__);
-        }
         $this->NonRefundable = $nonRefundable;
         
         return $this;
@@ -185,10 +176,6 @@ class Penalty extends AbstractStructBase
      */
     public function setNonExchangeable(?bool $nonExchangeable = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($nonExchangeable) && !is_bool($nonExchangeable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($nonExchangeable, true), gettype($nonExchangeable)), __LINE__);
-        }
         $this->NonExchangeable = $nonExchangeable;
         
         return $this;
@@ -208,10 +195,6 @@ class Penalty extends AbstractStructBase
      */
     public function setCancelationPenalty(?bool $cancelationPenalty = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($cancelationPenalty) && !is_bool($cancelationPenalty)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($cancelationPenalty, true), gettype($cancelationPenalty)), __LINE__);
-        }
         $this->CancelationPenalty = $cancelationPenalty;
         
         return $this;
@@ -231,10 +214,6 @@ class Penalty extends AbstractStructBase
      */
     public function setReissuePenalty(?bool $reissuePenalty = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($reissuePenalty) && !is_bool($reissuePenalty)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($reissuePenalty, true), gettype($reissuePenalty)), __LINE__);
-        }
         $this->ReissuePenalty = $reissuePenalty;
         
         return $this;
@@ -254,10 +233,6 @@ class Penalty extends AbstractStructBase
      */
     public function setNonReissuePenalty(?bool $nonReissuePenalty = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($nonReissuePenalty) && !is_bool($nonReissuePenalty)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($nonReissuePenalty, true), gettype($nonReissuePenalty)), __LINE__);
-        }
         $this->NonReissuePenalty = $nonReissuePenalty;
         
         return $this;
@@ -277,10 +252,6 @@ class Penalty extends AbstractStructBase
      */
     public function setTicketRefundPenalty(?bool $ticketRefundPenalty = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($ticketRefundPenalty) && !is_bool($ticketRefundPenalty)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($ticketRefundPenalty, true), gettype($ticketRefundPenalty)), __LINE__);
-        }
         $this->TicketRefundPenalty = $ticketRefundPenalty;
         
         return $this;
@@ -300,10 +271,6 @@ class Penalty extends AbstractStructBase
      */
     public function setChargeApplicable(?bool $chargeApplicable = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($chargeApplicable) && !is_bool($chargeApplicable)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($chargeApplicable, true), gettype($chargeApplicable)), __LINE__);
-        }
         $this->ChargeApplicable = $chargeApplicable;
         
         return $this;
@@ -323,10 +290,6 @@ class Penalty extends AbstractStructBase
      */
     public function setChargePortion(?bool $chargePortion = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($chargePortion) && !is_bool($chargePortion)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($chargePortion, true), gettype($chargePortion)), __LINE__);
-        }
         $this->ChargePortion = $chargePortion;
         
         return $this;
@@ -346,10 +309,6 @@ class Penalty extends AbstractStructBase
      */
     public function setPenaltyAmount(?string $penaltyAmount = null): self
     {
-        // validation for constraint: string
-        if (!is_null($penaltyAmount) && !is_string($penaltyAmount)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($penaltyAmount, true), gettype($penaltyAmount)), __LINE__);
-        }
         $this->PenaltyAmount = $penaltyAmount;
         
         return $this;

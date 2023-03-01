@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -19,7 +18,7 @@ class TCRInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Status;
+    public string $Status;
     /**
      * The TCRNumber
      * Meta information extracted from the WSDL
@@ -28,7 +27,7 @@ class TCRInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $TCRNumber;
+    public string $TCRNumber;
     /**
      * The ProviderReservationInfoRef
      * Meta information extracted from the WSDL
@@ -37,14 +36,14 @@ class TCRInfo extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $ProviderReservationInfoRef;
+    public string $ProviderReservationInfoRef;
     /**
      * The Date
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $Date = null;
+    public ?string $Date = null;
     /**
      * Constructor method for TCRInfo
      * @uses TCRInfo::setStatus()
@@ -74,18 +73,11 @@ class TCRInfo extends AbstractStructBase
     }
     /**
      * Set Status value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTCRStatus::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeTCRStatus::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $status
      * @return \Travelport\UniversalRecord\StructType\TCRInfo
      */
     public function setStatus(string $status): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeTCRStatus::valueIsValid($status)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeTCRStatus', is_array($status) ? implode(', ', $status) : var_export($status, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeTCRStatus::getValidValues())), __LINE__);
-        }
         $this->Status = $status;
         
         return $this;
@@ -105,10 +97,6 @@ class TCRInfo extends AbstractStructBase
      */
     public function setTCRNumber(string $tCRNumber): self
     {
-        // validation for constraint: string
-        if (!is_null($tCRNumber) && !is_string($tCRNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tCRNumber, true), gettype($tCRNumber)), __LINE__);
-        }
         $this->TCRNumber = $tCRNumber;
         
         return $this;
@@ -128,10 +116,6 @@ class TCRInfo extends AbstractStructBase
      */
     public function setProviderReservationInfoRef(string $providerReservationInfoRef): self
     {
-        // validation for constraint: string
-        if (!is_null($providerReservationInfoRef) && !is_string($providerReservationInfoRef)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($providerReservationInfoRef, true), gettype($providerReservationInfoRef)), __LINE__);
-        }
         $this->ProviderReservationInfoRef = $providerReservationInfoRef;
         
         return $this;
@@ -151,10 +135,6 @@ class TCRInfo extends AbstractStructBase
      */
     public function setDate(?string $date = null): self
     {
-        // validation for constraint: string
-        if (!is_null($date) && !is_string($date)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($date, true), gettype($date)), __LINE__);
-        }
         $this->Date = $date;
         
         return $this;

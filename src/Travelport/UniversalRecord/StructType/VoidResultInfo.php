@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,7 +21,7 @@ class VoidResultInfo extends AbstractStructBase
      * - minOccurs: 0
      * @var string|null
      */
-    protected ?string $FailureRemark = null;
+    public ?string $FailureRemark = null;
     /**
      * The ResultType
      * Meta information extracted from the WSDL
@@ -30,7 +29,7 @@ class VoidResultInfo extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ResultType = null;
+    public ?string $ResultType = null;
     /**
      * The DocumentNumber
      * Meta information extracted from the WSDL
@@ -40,12 +39,12 @@ class VoidResultInfo extends AbstractStructBase
      * - minLength: 1
      * @var string|null
      */
-    protected ?string $DocumentNumber = null;
+    public ?string $DocumentNumber = null;
     /**
      * The DocumentType
      * @var string|null
      */
-    protected ?string $DocumentType = null;
+    public ?string $DocumentType = null;
     /**
      * Constructor method for VoidResultInfo
      * @uses VoidResultInfo::setFailureRemark()
@@ -80,10 +79,6 @@ class VoidResultInfo extends AbstractStructBase
      */
     public function setFailureRemark(?string $failureRemark = null): self
     {
-        // validation for constraint: string
-        if (!is_null($failureRemark) && !is_string($failureRemark)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($failureRemark, true), gettype($failureRemark)), __LINE__);
-        }
         $this->FailureRemark = $failureRemark;
         
         return $this;
@@ -103,10 +98,6 @@ class VoidResultInfo extends AbstractStructBase
      */
     public function setResultType(?string $resultType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($resultType) && !is_string($resultType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($resultType, true), gettype($resultType)), __LINE__);
-        }
         $this->ResultType = $resultType;
         
         return $this;
@@ -126,18 +117,6 @@ class VoidResultInfo extends AbstractStructBase
      */
     public function setDocumentNumber(?string $documentNumber = null): self
     {
-        // validation for constraint: string
-        if (!is_null($documentNumber) && !is_string($documentNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($documentNumber, true), gettype($documentNumber)), __LINE__);
-        }
-        // validation for constraint: maxLength(13)
-        if (!is_null($documentNumber) && mb_strlen((string) $documentNumber) > 13) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be less than or equal to 13', mb_strlen((string) $documentNumber)), __LINE__);
-        }
-        // validation for constraint: minLength(1)
-        if (!is_null($documentNumber) && mb_strlen((string) $documentNumber) < 1) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be greater than or equal to 1', mb_strlen((string) $documentNumber)), __LINE__);
-        }
         $this->DocumentNumber = $documentNumber;
         
         return $this;
@@ -157,10 +136,6 @@ class VoidResultInfo extends AbstractStructBase
      */
     public function setDocumentType(?string $documentType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($documentType) && !is_string($documentType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($documentType, true), gettype($documentType)), __LINE__);
-        }
         $this->DocumentType = $documentType;
         
         return $this;

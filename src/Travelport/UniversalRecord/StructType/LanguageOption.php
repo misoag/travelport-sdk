@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class LanguageOption extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Language;
+    public string $Language;
     /**
      * The Country
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class LanguageOption extends AbstractStructBase
      * - use: required
      * @var string
      */
-    protected string $Country;
+    public string $Country;
     /**
      * Constructor method for LanguageOption
      * @uses LanguageOption::setLanguage()
@@ -63,14 +62,6 @@ class LanguageOption extends AbstractStructBase
      */
     public function setLanguage(string $language): self
     {
-        // validation for constraint: string
-        if (!is_null($language) && !is_string($language)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($language, true), gettype($language)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($language) && mb_strlen((string) $language) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $language)), __LINE__);
-        }
         $this->Language = $language;
         
         return $this;
@@ -90,14 +81,6 @@ class LanguageOption extends AbstractStructBase
      */
     public function setCountry(string $country): self
     {
-        // validation for constraint: string
-        if (!is_null($country) && !is_string($country)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($country, true), gettype($country)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($country) && mb_strlen((string) $country) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $country)), __LINE__);
-        }
         $this->Country = $country;
         
         return $this;

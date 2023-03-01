@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,21 +20,21 @@ class AirSearchModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\DisfavoredProviders|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\DisfavoredProviders $DisfavoredProviders = null;
+    public ?\Travelport\UniversalRecord\StructType\DisfavoredProviders $DisfavoredProviders = null;
     /**
      * The PreferredProviders
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\PreferredProviders|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PreferredProviders $PreferredProviders = null;
+    public ?\Travelport\UniversalRecord\StructType\PreferredProviders $PreferredProviders = null;
     /**
      * The DisfavoredCarriers
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\DisfavoredCarriers|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\DisfavoredCarriers $DisfavoredCarriers = null;
+    public ?\Travelport\UniversalRecord\StructType\DisfavoredCarriers $DisfavoredCarriers = null;
     /**
      * The PermittedCarriers
      * Meta information extracted from the WSDL
@@ -43,7 +42,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - ref: PermittedCarriers
      * @var \Travelport\UniversalRecord\StructType\PermittedCarriers|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PermittedCarriers $PermittedCarriers = null;
+    public ?\Travelport\UniversalRecord\StructType\PermittedCarriers $PermittedCarriers = null;
     /**
      * The ProhibitedCarriers
      * Meta information extracted from the WSDL
@@ -51,7 +50,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - ref: ProhibitedCarriers
      * @var \Travelport\UniversalRecord\StructType\ProhibitedCarriers|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ProhibitedCarriers $ProhibitedCarriers = null;
+    public ?\Travelport\UniversalRecord\StructType\ProhibitedCarriers $ProhibitedCarriers = null;
     /**
      * The PreferredCarriers
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - ref: PreferredCarriers
      * @var \Travelport\UniversalRecord\StructType\PreferredCarriers|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PreferredCarriers $PreferredCarriers = null;
+    public ?\Travelport\UniversalRecord\StructType\PreferredCarriers $PreferredCarriers = null;
     /**
      * The PermittedCabins
      * Meta information extracted from the WSDL
@@ -67,7 +66,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - ref: PermittedCabins
      * @var \Travelport\UniversalRecord\StructType\PermittedCabins|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PermittedCabins $PermittedCabins = null;
+    public ?\Travelport\UniversalRecord\StructType\PermittedCabins $PermittedCabins = null;
     /**
      * The PreferredCabins
      * Meta information extracted from the WSDL
@@ -75,28 +74,28 @@ class AirSearchModifiers extends AbstractStructBase
      * - ref: PreferredCabins
      * @var \Travelport\UniversalRecord\StructType\PreferredCabins|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PreferredCabins $PreferredCabins = null;
+    public ?\Travelport\UniversalRecord\StructType\PreferredCabins $PreferredCabins = null;
     /**
      * The PreferredAlliances
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\PreferredAlliances|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PreferredAlliances $PreferredAlliances = null;
+    public ?\Travelport\UniversalRecord\StructType\PreferredAlliances $PreferredAlliances = null;
     /**
      * The DisfavoredAlliances
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\DisfavoredAlliances|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\DisfavoredAlliances $DisfavoredAlliances = null;
+    public ?\Travelport\UniversalRecord\StructType\DisfavoredAlliances $DisfavoredAlliances = null;
     /**
      * The PermittedBookingCodes
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\PermittedBookingCodes|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PermittedBookingCodes $PermittedBookingCodes = null;
+    public ?\Travelport\UniversalRecord\StructType\PermittedBookingCodes $PermittedBookingCodes = null;
     /**
      * The PreferredBookingCodes
      * Meta information extracted from the WSDL
@@ -104,14 +103,14 @@ class AirSearchModifiers extends AbstractStructBase
      * - ref: PreferredBookingCodes
      * @var \Travelport\UniversalRecord\StructType\PreferredBookingCodes|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\PreferredBookingCodes $PreferredBookingCodes = null;
+    public ?\Travelport\UniversalRecord\StructType\PreferredBookingCodes $PreferredBookingCodes = null;
     /**
      * The ProhibitedBookingCodes
      * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\ProhibitedBookingCodes|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\ProhibitedBookingCodes $ProhibitedBookingCodes = null;
+    public ?\Travelport\UniversalRecord\StructType\ProhibitedBookingCodes $ProhibitedBookingCodes = null;
     /**
      * The FlightType
      * Meta information extracted from the WSDL
@@ -119,7 +118,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - ref: FlightType
      * @var \Travelport\UniversalRecord\StructType\FlightType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\FlightType $FlightType = null;
+    public ?\Travelport\UniversalRecord\StructType\FlightType $FlightType = null;
     /**
      * The MaxLayoverDuration
      * Meta information extracted from the WSDL
@@ -127,7 +126,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\MaxLayoverDurationType|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\MaxLayoverDurationType $MaxLayoverDuration = null;
+    public ?\Travelport\UniversalRecord\StructType\MaxLayoverDurationType $MaxLayoverDuration = null;
     /**
      * The NativeSearchModifier
      * Meta information extracted from the WSDL
@@ -135,7 +134,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - minOccurs: 0
      * @var \Travelport\UniversalRecord\StructType\TypeNativeSearchModifier|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TypeNativeSearchModifier $NativeSearchModifier = null;
+    public ?\Travelport\UniversalRecord\StructType\TypeNativeSearchModifier $NativeSearchModifier = null;
     /**
      * The DistanceType
      * Meta information extracted from the WSDL
@@ -143,7 +142,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $DistanceType = null;
+    public ?string $DistanceType = null;
     /**
      * The IncludeFlightDetails
      * Meta information extracted from the WSDL
@@ -151,7 +150,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $IncludeFlightDetails = null;
+    public ?bool $IncludeFlightDetails = null;
     /**
      * The AllowChangeOfAirport
      * Meta information extracted from the WSDL
@@ -159,7 +158,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $AllowChangeOfAirport = null;
+    public ?bool $AllowChangeOfAirport = null;
     /**
      * The ProhibitOvernightLayovers
      * Meta information extracted from the WSDL
@@ -169,7 +168,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ProhibitOvernightLayovers = null;
+    public ?bool $ProhibitOvernightLayovers = null;
     /**
      * The MaxSolutions
      * Meta information extracted from the WSDL
@@ -177,7 +176,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MaxSolutions = null;
+    public ?int $MaxSolutions = null;
     /**
      * The MaxConnectionTime
      * Meta information extracted from the WSDL
@@ -185,14 +184,14 @@ class AirSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MaxConnectionTime = null;
+    public ?int $MaxConnectionTime = null;
     /**
      * The SearchWeekends
      * Meta information extracted from the WSDL
      * - documentation: A value of true indicates that search should be expanded to include weekend combinations, if applicable.
      * @var bool|null
      */
-    protected ?bool $SearchWeekends = null;
+    public ?bool $SearchWeekends = null;
     /**
      * The IncludeExtraSolutions
      * Meta information extracted from the WSDL
@@ -200,14 +199,14 @@ class AirSearchModifiers extends AbstractStructBase
      * other applicable modifiers (like SearchWeekends) to return more results.
      * @var bool|null
      */
-    protected ?bool $IncludeExtraSolutions = null;
+    public ?bool $IncludeExtraSolutions = null;
     /**
      * The ProhibitMultiAirportConnection
      * Meta information extracted from the WSDL
      * - documentation: Indicates whether to restrict multi-airport connections
      * @var bool|null
      */
-    protected ?bool $ProhibitMultiAirportConnection = null;
+    public ?bool $ProhibitMultiAirportConnection = null;
     /**
      * The PreferNonStop
      * Meta information extracted from the WSDL
@@ -217,14 +216,14 @@ class AirSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $PreferNonStop = null;
+    public ?bool $PreferNonStop = null;
     /**
      * The OrderBy
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $OrderBy = null;
+    public ?string $OrderBy = null;
     /**
      * The ExcludeOpenJawAirport
      * Meta information extracted from the WSDL
@@ -234,7 +233,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ExcludeOpenJawAirport = null;
+    public ?bool $ExcludeOpenJawAirport = null;
     /**
      * The ExcludeGroundTransportation
      * Meta information extracted from the WSDL
@@ -244,7 +243,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $ExcludeGroundTransportation = null;
+    public ?bool $ExcludeGroundTransportation = null;
     /**
      * The MaxJourneyTime
      * Meta information extracted from the WSDL
@@ -255,7 +254,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $MaxJourneyTime = null;
+    public ?int $MaxJourneyTime = null;
     /**
      * The JetServiceOnly
      * Meta information extracted from the WSDL
@@ -263,7 +262,7 @@ class AirSearchModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $JetServiceOnly = null;
+    public ?bool $JetServiceOnly = null;
     /**
      * Constructor method for AirSearchModifiers
      * @uses AirSearchModifiers::setDisfavoredProviders()
@@ -678,18 +677,11 @@ class AirSearchModifiers extends AbstractStructBase
     }
     /**
      * Set DistanceType value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeDistance::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeDistance::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $distanceType
      * @return \Travelport\UniversalRecord\StructType\AirSearchModifiers
      */
     public function setDistanceType(?string $distanceType = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeDistance::valueIsValid($distanceType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeDistance', is_array($distanceType) ? implode(', ', $distanceType) : var_export($distanceType, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeDistance::getValidValues())), __LINE__);
-        }
         $this->DistanceType = $distanceType;
         
         return $this;
@@ -709,10 +701,6 @@ class AirSearchModifiers extends AbstractStructBase
      */
     public function setIncludeFlightDetails(?bool $includeFlightDetails = true): self
     {
-        // validation for constraint: boolean
-        if (!is_null($includeFlightDetails) && !is_bool($includeFlightDetails)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($includeFlightDetails, true), gettype($includeFlightDetails)), __LINE__);
-        }
         $this->IncludeFlightDetails = $includeFlightDetails;
         
         return $this;
@@ -732,10 +720,6 @@ class AirSearchModifiers extends AbstractStructBase
      */
     public function setAllowChangeOfAirport(?bool $allowChangeOfAirport = true): self
     {
-        // validation for constraint: boolean
-        if (!is_null($allowChangeOfAirport) && !is_bool($allowChangeOfAirport)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($allowChangeOfAirport, true), gettype($allowChangeOfAirport)), __LINE__);
-        }
         $this->AllowChangeOfAirport = $allowChangeOfAirport;
         
         return $this;
@@ -755,10 +739,6 @@ class AirSearchModifiers extends AbstractStructBase
      */
     public function setProhibitOvernightLayovers(?bool $prohibitOvernightLayovers = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($prohibitOvernightLayovers) && !is_bool($prohibitOvernightLayovers)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($prohibitOvernightLayovers, true), gettype($prohibitOvernightLayovers)), __LINE__);
-        }
         $this->ProhibitOvernightLayovers = $prohibitOvernightLayovers;
         
         return $this;
@@ -778,10 +758,6 @@ class AirSearchModifiers extends AbstractStructBase
      */
     public function setMaxSolutions(?int $maxSolutions = null): self
     {
-        // validation for constraint: int
-        if (!is_null($maxSolutions) && !(is_int($maxSolutions) || ctype_digit($maxSolutions))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maxSolutions, true), gettype($maxSolutions)), __LINE__);
-        }
         $this->MaxSolutions = $maxSolutions;
         
         return $this;
@@ -801,10 +777,6 @@ class AirSearchModifiers extends AbstractStructBase
      */
     public function setMaxConnectionTime(?int $maxConnectionTime = null): self
     {
-        // validation for constraint: int
-        if (!is_null($maxConnectionTime) && !(is_int($maxConnectionTime) || ctype_digit($maxConnectionTime))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maxConnectionTime, true), gettype($maxConnectionTime)), __LINE__);
-        }
         $this->MaxConnectionTime = $maxConnectionTime;
         
         return $this;
@@ -824,10 +796,6 @@ class AirSearchModifiers extends AbstractStructBase
      */
     public function setSearchWeekends(?bool $searchWeekends = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($searchWeekends) && !is_bool($searchWeekends)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($searchWeekends, true), gettype($searchWeekends)), __LINE__);
-        }
         $this->SearchWeekends = $searchWeekends;
         
         return $this;
@@ -847,10 +815,6 @@ class AirSearchModifiers extends AbstractStructBase
      */
     public function setIncludeExtraSolutions(?bool $includeExtraSolutions = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($includeExtraSolutions) && !is_bool($includeExtraSolutions)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($includeExtraSolutions, true), gettype($includeExtraSolutions)), __LINE__);
-        }
         $this->IncludeExtraSolutions = $includeExtraSolutions;
         
         return $this;
@@ -870,10 +834,6 @@ class AirSearchModifiers extends AbstractStructBase
      */
     public function setProhibitMultiAirportConnection(?bool $prohibitMultiAirportConnection = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($prohibitMultiAirportConnection) && !is_bool($prohibitMultiAirportConnection)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($prohibitMultiAirportConnection, true), gettype($prohibitMultiAirportConnection)), __LINE__);
-        }
         $this->ProhibitMultiAirportConnection = $prohibitMultiAirportConnection;
         
         return $this;
@@ -893,10 +853,6 @@ class AirSearchModifiers extends AbstractStructBase
      */
     public function setPreferNonStop(?bool $preferNonStop = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($preferNonStop) && !is_bool($preferNonStop)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($preferNonStop, true), gettype($preferNonStop)), __LINE__);
-        }
         $this->PreferNonStop = $preferNonStop;
         
         return $this;
@@ -916,10 +872,6 @@ class AirSearchModifiers extends AbstractStructBase
      */
     public function setOrderBy(?string $orderBy = null): self
     {
-        // validation for constraint: string
-        if (!is_null($orderBy) && !is_string($orderBy)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($orderBy, true), gettype($orderBy)), __LINE__);
-        }
         $this->OrderBy = $orderBy;
         
         return $this;
@@ -939,10 +891,6 @@ class AirSearchModifiers extends AbstractStructBase
      */
     public function setExcludeOpenJawAirport(?bool $excludeOpenJawAirport = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($excludeOpenJawAirport) && !is_bool($excludeOpenJawAirport)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($excludeOpenJawAirport, true), gettype($excludeOpenJawAirport)), __LINE__);
-        }
         $this->ExcludeOpenJawAirport = $excludeOpenJawAirport;
         
         return $this;
@@ -962,10 +910,6 @@ class AirSearchModifiers extends AbstractStructBase
      */
     public function setExcludeGroundTransportation(?bool $excludeGroundTransportation = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($excludeGroundTransportation) && !is_bool($excludeGroundTransportation)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($excludeGroundTransportation, true), gettype($excludeGroundTransportation)), __LINE__);
-        }
         $this->ExcludeGroundTransportation = $excludeGroundTransportation;
         
         return $this;
@@ -985,18 +929,6 @@ class AirSearchModifiers extends AbstractStructBase
      */
     public function setMaxJourneyTime(?int $maxJourneyTime = null): self
     {
-        // validation for constraint: int
-        if (!is_null($maxJourneyTime) && !(is_int($maxJourneyTime) || ctype_digit($maxJourneyTime))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($maxJourneyTime, true), gettype($maxJourneyTime)), __LINE__);
-        }
-        // validation for constraint: maxInclusive(99)
-        if (!is_null($maxJourneyTime) && $maxJourneyTime > 99) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically less than or equal to 99', var_export($maxJourneyTime, true)), __LINE__);
-        }
-        // validation for constraint: minInclusive
-        if (!is_null($maxJourneyTime) && $maxJourneyTime < 0) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, the value must be numerically greater than or equal to 0', var_export($maxJourneyTime, true)), __LINE__);
-        }
         $this->MaxJourneyTime = $maxJourneyTime;
         
         return $this;
@@ -1016,10 +948,6 @@ class AirSearchModifiers extends AbstractStructBase
      */
     public function setJetServiceOnly(?bool $jetServiceOnly = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($jetServiceOnly) && !is_bool($jetServiceOnly)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($jetServiceOnly, true), gettype($jetServiceOnly)), __LINE__);
-        }
         $this->JetServiceOnly = $jetServiceOnly;
         
         return $this;

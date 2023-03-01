@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\Hotel\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -21,14 +20,14 @@ class HotelRateByDate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $EffectiveDate = null;
+    public ?string $EffectiveDate = null;
     /**
      * The ExpireDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $ExpireDate = null;
+    public ?string $ExpireDate = null;
     /**
      * The ApproximateBase
      * Meta information extracted from the WSDL
@@ -37,7 +36,7 @@ class HotelRateByDate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ApproximateBase = null;
+    public ?string $ApproximateBase = null;
     /**
      * The ApproximateTotal
      * Meta information extracted from the WSDL
@@ -46,7 +45,7 @@ class HotelRateByDate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ApproximateTotal = null;
+    public ?string $ApproximateTotal = null;
     /**
      * The Contents
      * Meta information extracted from the WSDL
@@ -54,7 +53,7 @@ class HotelRateByDate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Contents = null;
+    public ?string $Contents = null;
     /**
      * The Base
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class HotelRateByDate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Base = null;
+    public ?string $Base = null;
     /**
      * The Tax
      * Meta information extracted from the WSDL
@@ -74,7 +73,7 @@ class HotelRateByDate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Tax = null;
+    public ?string $Tax = null;
     /**
      * The Total
      * Meta information extracted from the WSDL
@@ -84,7 +83,7 @@ class HotelRateByDate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Total = null;
+    public ?string $Total = null;
     /**
      * The Surcharge
      * Meta information extracted from the WSDL
@@ -94,7 +93,7 @@ class HotelRateByDate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Surcharge = null;
+    public ?string $Surcharge = null;
     /**
      * Constructor method for HotelRateByDate
      * @uses HotelRateByDate::setEffectiveDate()
@@ -144,10 +143,6 @@ class HotelRateByDate extends AbstractStructBase
      */
     public function setEffectiveDate(?string $effectiveDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($effectiveDate) && !is_string($effectiveDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($effectiveDate, true), gettype($effectiveDate)), __LINE__);
-        }
         $this->EffectiveDate = $effectiveDate;
         
         return $this;
@@ -167,10 +162,6 @@ class HotelRateByDate extends AbstractStructBase
      */
     public function setExpireDate(?string $expireDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($expireDate) && !is_string($expireDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($expireDate, true), gettype($expireDate)), __LINE__);
-        }
         $this->ExpireDate = $expireDate;
         
         return $this;
@@ -190,10 +181,6 @@ class HotelRateByDate extends AbstractStructBase
      */
     public function setApproximateBase(?string $approximateBase = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateBase) && !is_string($approximateBase)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateBase, true), gettype($approximateBase)), __LINE__);
-        }
         $this->ApproximateBase = $approximateBase;
         
         return $this;
@@ -213,10 +200,6 @@ class HotelRateByDate extends AbstractStructBase
      */
     public function setApproximateTotal(?string $approximateTotal = null): self
     {
-        // validation for constraint: string
-        if (!is_null($approximateTotal) && !is_string($approximateTotal)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($approximateTotal, true), gettype($approximateTotal)), __LINE__);
-        }
         $this->ApproximateTotal = $approximateTotal;
         
         return $this;
@@ -236,10 +219,6 @@ class HotelRateByDate extends AbstractStructBase
      */
     public function setContents(?string $contents = null): self
     {
-        // validation for constraint: string
-        if (!is_null($contents) && !is_string($contents)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($contents, true), gettype($contents)), __LINE__);
-        }
         $this->Contents = $contents;
         
         return $this;
@@ -259,10 +238,6 @@ class HotelRateByDate extends AbstractStructBase
      */
     public function setBase(?string $base = null): self
     {
-        // validation for constraint: string
-        if (!is_null($base) && !is_string($base)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($base, true), gettype($base)), __LINE__);
-        }
         $this->Base = $base;
         
         return $this;
@@ -282,10 +257,6 @@ class HotelRateByDate extends AbstractStructBase
      */
     public function setTax(?string $tax = null): self
     {
-        // validation for constraint: string
-        if (!is_null($tax) && !is_string($tax)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($tax, true), gettype($tax)), __LINE__);
-        }
         $this->Tax = $tax;
         
         return $this;
@@ -305,10 +276,6 @@ class HotelRateByDate extends AbstractStructBase
      */
     public function setTotal(?string $total = null): self
     {
-        // validation for constraint: string
-        if (!is_null($total) && !is_string($total)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($total, true), gettype($total)), __LINE__);
-        }
         $this->Total = $total;
         
         return $this;
@@ -328,10 +295,6 @@ class HotelRateByDate extends AbstractStructBase
      */
     public function setSurcharge(?string $surcharge = null): self
     {
-        // validation for constraint: string
-        if (!is_null($surcharge) && !is_string($surcharge)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($surcharge, true), gettype($surcharge)), __LINE__);
-        }
         $this->Surcharge = $surcharge;
         
         return $this;

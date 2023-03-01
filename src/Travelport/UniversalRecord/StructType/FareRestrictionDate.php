@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -22,28 +21,28 @@ class FareRestrictionDate extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Direction = null;
+    public ?string $Direction = null;
     /**
      * The StartDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $StartDate = null;
+    public ?string $StartDate = null;
     /**
      * The EndDate
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $EndDate = null;
+    public ?string $EndDate = null;
     /**
      * The EndDateIndicator
      * Meta information extracted from the WSDL
      * - use: optional
      * @var string|null
      */
-    protected ?string $EndDateIndicator = null;
+    public ?string $EndDateIndicator = null;
     /**
      * Constructor method for FareRestrictionDate
      * @uses FareRestrictionDate::setDirection()
@@ -73,18 +72,11 @@ class FareRestrictionDate extends AbstractStructBase
     }
     /**
      * Set Direction value
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareDirectionality::valueIsValid()
-     * @uses \Travelport\UniversalRecord\EnumType\TypeFareDirectionality::getValidValues()
-     * @throws InvalidArgumentException
      * @param string $direction
      * @return \Travelport\UniversalRecord\StructType\FareRestrictionDate
      */
     public function setDirection(?string $direction = null): self
     {
-        // validation for constraint: enumeration
-        if (!\Travelport\UniversalRecord\EnumType\TypeFareDirectionality::valueIsValid($direction)) {
-            throw new InvalidArgumentException(sprintf('Invalid value(s) %s, please use one of: %s from enumeration class \Travelport\UniversalRecord\EnumType\TypeFareDirectionality', is_array($direction) ? implode(', ', $direction) : var_export($direction, true), implode(', ', \Travelport\UniversalRecord\EnumType\TypeFareDirectionality::getValidValues())), __LINE__);
-        }
         $this->Direction = $direction;
         
         return $this;
@@ -104,10 +96,6 @@ class FareRestrictionDate extends AbstractStructBase
      */
     public function setStartDate(?string $startDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($startDate) && !is_string($startDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($startDate, true), gettype($startDate)), __LINE__);
-        }
         $this->StartDate = $startDate;
         
         return $this;
@@ -127,10 +115,6 @@ class FareRestrictionDate extends AbstractStructBase
      */
     public function setEndDate(?string $endDate = null): self
     {
-        // validation for constraint: string
-        if (!is_null($endDate) && !is_string($endDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endDate, true), gettype($endDate)), __LINE__);
-        }
         $this->EndDate = $endDate;
         
         return $this;
@@ -150,10 +134,6 @@ class FareRestrictionDate extends AbstractStructBase
      */
     public function setEndDateIndicator(?string $endDateIndicator = null): self
     {
-        // validation for constraint: string
-        if (!is_null($endDateIndicator) && !is_string($endDateIndicator)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($endDateIndicator, true), gettype($endDateIndicator)), __LINE__);
-        }
         $this->EndDateIndicator = $endDateIndicator;
         
         return $this;

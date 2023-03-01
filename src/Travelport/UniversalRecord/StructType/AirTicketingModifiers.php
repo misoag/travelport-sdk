@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -25,7 +24,7 @@ class AirTicketingModifiers extends AbstractStructBase
      * - ref: DocumentModifiers
      * @var \Travelport\UniversalRecord\StructType\DocumentModifiers|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\DocumentModifiers $DocumentModifiers = null;
+    public ?\Travelport\UniversalRecord\StructType\DocumentModifiers $DocumentModifiers = null;
     /**
      * The AirPricingInfoRef
      * Meta information extracted from the WSDL
@@ -34,7 +33,7 @@ class AirTicketingModifiers extends AbstractStructBase
      * - ref: AirPricingInfoRef
      * @var \Travelport\UniversalRecord\StructType\AirPricingInfoRef[]
      */
-    protected ?array $AirPricingInfoRef = null;
+    public ?array $AirPricingInfoRef = null;
     /**
      * The TourCode
      * Meta information extracted from the WSDL
@@ -42,7 +41,7 @@ class AirTicketingModifiers extends AbstractStructBase
      * - ref: TourCode
      * @var \Travelport\UniversalRecord\StructType\TourCode|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\TourCode $TourCode = null;
+    public ?\Travelport\UniversalRecord\StructType\TourCode $TourCode = null;
     /**
      * The TicketEndorsement
      * Meta information extracted from the WSDL
@@ -51,7 +50,7 @@ class AirTicketingModifiers extends AbstractStructBase
      * - ref: TicketEndorsement
      * @var \Travelport\UniversalRecord\StructType\TicketEndorsement[]
      */
-    protected ?array $TicketEndorsement = null;
+    public ?array $TicketEndorsement = null;
     /**
      * The Commission
      * Meta information extracted from the WSDL
@@ -59,7 +58,7 @@ class AirTicketingModifiers extends AbstractStructBase
      * - ref: common:Commission
      * @var \Travelport\UniversalRecord\StructType\Commission|null
      */
-    protected ?\Travelport\UniversalRecord\StructType\Commission $Commission = null;
+    public ?\Travelport\UniversalRecord\StructType\Commission $Commission = null;
     /**
      * The FormOfPayment
      * Meta information extracted from the WSDL
@@ -68,7 +67,7 @@ class AirTicketingModifiers extends AbstractStructBase
      * - ref: common:FormOfPayment
      * @var \Travelport\UniversalRecord\StructType\FormOfPayment[]
      */
-    protected ?array $FormOfPayment = null;
+    public ?array $FormOfPayment = null;
     /**
      * The CreditCardAuth
      * Meta information extracted from the WSDL
@@ -77,7 +76,7 @@ class AirTicketingModifiers extends AbstractStructBase
      * - ref: common:CreditCardAuth
      * @var \Travelport\UniversalRecord\StructType\CreditCardAuth[]
      */
-    protected ?array $CreditCardAuth = null;
+    public ?array $CreditCardAuth = null;
     /**
      * The Payment
      * Meta information extracted from the WSDL
@@ -86,7 +85,7 @@ class AirTicketingModifiers extends AbstractStructBase
      * - ref: common:Payment
      * @var \Travelport\UniversalRecord\StructType\Payment[]
      */
-    protected ?array $Payment = null;
+    public ?array $Payment = null;
     /**
      * The PlatingCarrier
      * Meta information extracted from the WSDL
@@ -96,7 +95,7 @@ class AirTicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $PlatingCarrier = null;
+    public ?string $PlatingCarrier = null;
     /**
      * The TicketedFareOverride
      * Meta information extracted from the WSDL
@@ -105,7 +104,7 @@ class AirTicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $TicketedFareOverride = null;
+    public ?bool $TicketedFareOverride = null;
     /**
      * The SuppressTaxAndFee
      * Meta information extracted from the WSDL
@@ -114,7 +113,7 @@ class AirTicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $SuppressTaxAndFee = null;
+    public ?bool $SuppressTaxAndFee = null;
     /**
      * The NoComparisonSFQ
      * Meta information extracted from the WSDL
@@ -123,7 +122,7 @@ class AirTicketingModifiers extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $NoComparisonSFQ = null;
+    public ?bool $NoComparisonSFQ = null;
     /**
      * Constructor method for AirTicketingModifiers
      * @uses AirTicketingModifiers::setDocumentModifiers()
@@ -195,48 +194,12 @@ class AirTicketingModifiers extends AbstractStructBase
         return $this->AirPricingInfoRef;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setAirPricingInfoRef method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setAirPricingInfoRef method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateAirPricingInfoRefForArrayConstraintFromSetAirPricingInfoRef(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airTicketingModifiersAirPricingInfoRefItem) {
-            // validation for constraint: itemType
-            if (!$airTicketingModifiersAirPricingInfoRefItem instanceof \Travelport\UniversalRecord\StructType\AirPricingInfoRef) {
-                $invalidValues[] = is_object($airTicketingModifiersAirPricingInfoRefItem) ? get_class($airTicketingModifiersAirPricingInfoRefItem) : sprintf('%s(%s)', gettype($airTicketingModifiersAirPricingInfoRefItem), var_export($airTicketingModifiersAirPricingInfoRefItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The AirPricingInfoRef property can only contain items of type \Travelport\UniversalRecord\StructType\AirPricingInfoRef, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set AirPricingInfoRef value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\AirPricingInfoRef[] $airPricingInfoRef
      * @return \Travelport\UniversalRecord\StructType\AirTicketingModifiers
      */
     public function setAirPricingInfoRef(?array $airPricingInfoRef = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($airPricingInfoRefArrayErrorMessage = self::validateAirPricingInfoRefForArrayConstraintFromSetAirPricingInfoRef($airPricingInfoRef))) {
-            throw new InvalidArgumentException($airPricingInfoRefArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($airPricingInfoRef) && count($airPricingInfoRef) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($airPricingInfoRef)), __LINE__);
-        }
         $this->AirPricingInfoRef = $airPricingInfoRef;
         
         return $this;
@@ -249,14 +212,6 @@ class AirTicketingModifiers extends AbstractStructBase
      */
     public function addToAirPricingInfoRef(\Travelport\UniversalRecord\StructType\AirPricingInfoRef $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\AirPricingInfoRef) {
-            throw new InvalidArgumentException(sprintf('The AirPricingInfoRef property can only contain items of type \Travelport\UniversalRecord\StructType\AirPricingInfoRef, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->AirPricingInfoRef) && count($this->AirPricingInfoRef) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->AirPricingInfoRef)), __LINE__);
-        }
         $this->AirPricingInfoRef[] = $item;
         
         return $this;
@@ -289,48 +244,12 @@ class AirTicketingModifiers extends AbstractStructBase
         return $this->TicketEndorsement;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setTicketEndorsement method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setTicketEndorsement method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateTicketEndorsementForArrayConstraintFromSetTicketEndorsement(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airTicketingModifiersTicketEndorsementItem) {
-            // validation for constraint: itemType
-            if (!$airTicketingModifiersTicketEndorsementItem instanceof \Travelport\UniversalRecord\StructType\TicketEndorsement) {
-                $invalidValues[] = is_object($airTicketingModifiersTicketEndorsementItem) ? get_class($airTicketingModifiersTicketEndorsementItem) : sprintf('%s(%s)', gettype($airTicketingModifiersTicketEndorsementItem), var_export($airTicketingModifiersTicketEndorsementItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The TicketEndorsement property can only contain items of type \Travelport\UniversalRecord\StructType\TicketEndorsement, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set TicketEndorsement value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\TicketEndorsement[] $ticketEndorsement
      * @return \Travelport\UniversalRecord\StructType\AirTicketingModifiers
      */
     public function setTicketEndorsement(?array $ticketEndorsement = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($ticketEndorsementArrayErrorMessage = self::validateTicketEndorsementForArrayConstraintFromSetTicketEndorsement($ticketEndorsement))) {
-            throw new InvalidArgumentException($ticketEndorsementArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(3)
-        if (is_array($ticketEndorsement) && count($ticketEndorsement) > 3) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 3', count($ticketEndorsement)), __LINE__);
-        }
         $this->TicketEndorsement = $ticketEndorsement;
         
         return $this;
@@ -343,14 +262,6 @@ class AirTicketingModifiers extends AbstractStructBase
      */
     public function addToTicketEndorsement(\Travelport\UniversalRecord\StructType\TicketEndorsement $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\TicketEndorsement) {
-            throw new InvalidArgumentException(sprintf('The TicketEndorsement property can only contain items of type \Travelport\UniversalRecord\StructType\TicketEndorsement, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(3)
-        if (is_array($this->TicketEndorsement) && count($this->TicketEndorsement) >= 3) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 3', count($this->TicketEndorsement)), __LINE__);
-        }
         $this->TicketEndorsement[] = $item;
         
         return $this;
@@ -383,48 +294,12 @@ class AirTicketingModifiers extends AbstractStructBase
         return $this->FormOfPayment;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setFormOfPayment method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setFormOfPayment method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateFormOfPaymentForArrayConstraintFromSetFormOfPayment(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airTicketingModifiersFormOfPaymentItem) {
-            // validation for constraint: itemType
-            if (!$airTicketingModifiersFormOfPaymentItem instanceof \Travelport\UniversalRecord\StructType\FormOfPayment) {
-                $invalidValues[] = is_object($airTicketingModifiersFormOfPaymentItem) ? get_class($airTicketingModifiersFormOfPaymentItem) : sprintf('%s(%s)', gettype($airTicketingModifiersFormOfPaymentItem), var_export($airTicketingModifiersFormOfPaymentItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The FormOfPayment property can only contain items of type \Travelport\UniversalRecord\StructType\FormOfPayment, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set FormOfPayment value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\FormOfPayment[] $formOfPayment
      * @return \Travelport\UniversalRecord\StructType\AirTicketingModifiers
      */
     public function setFormOfPayment(?array $formOfPayment = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($formOfPaymentArrayErrorMessage = self::validateFormOfPaymentForArrayConstraintFromSetFormOfPayment($formOfPayment))) {
-            throw new InvalidArgumentException($formOfPaymentArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($formOfPayment) && count($formOfPayment) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($formOfPayment)), __LINE__);
-        }
         $this->FormOfPayment = $formOfPayment;
         
         return $this;
@@ -437,14 +312,6 @@ class AirTicketingModifiers extends AbstractStructBase
      */
     public function addToFormOfPayment(\Travelport\UniversalRecord\StructType\FormOfPayment $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\FormOfPayment) {
-            throw new InvalidArgumentException(sprintf('The FormOfPayment property can only contain items of type \Travelport\UniversalRecord\StructType\FormOfPayment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->FormOfPayment) && count($this->FormOfPayment) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->FormOfPayment)), __LINE__);
-        }
         $this->FormOfPayment[] = $item;
         
         return $this;
@@ -458,48 +325,12 @@ class AirTicketingModifiers extends AbstractStructBase
         return $this->CreditCardAuth;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setCreditCardAuth method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setCreditCardAuth method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validateCreditCardAuthForArrayConstraintFromSetCreditCardAuth(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airTicketingModifiersCreditCardAuthItem) {
-            // validation for constraint: itemType
-            if (!$airTicketingModifiersCreditCardAuthItem instanceof \Travelport\UniversalRecord\StructType\CreditCardAuth) {
-                $invalidValues[] = is_object($airTicketingModifiersCreditCardAuthItem) ? get_class($airTicketingModifiersCreditCardAuthItem) : sprintf('%s(%s)', gettype($airTicketingModifiersCreditCardAuthItem), var_export($airTicketingModifiersCreditCardAuthItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The CreditCardAuth property can only contain items of type \Travelport\UniversalRecord\StructType\CreditCardAuth, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set CreditCardAuth value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\CreditCardAuth[] $creditCardAuth
      * @return \Travelport\UniversalRecord\StructType\AirTicketingModifiers
      */
     public function setCreditCardAuth(?array $creditCardAuth = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($creditCardAuthArrayErrorMessage = self::validateCreditCardAuthForArrayConstraintFromSetCreditCardAuth($creditCardAuth))) {
-            throw new InvalidArgumentException($creditCardAuthArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($creditCardAuth) && count($creditCardAuth) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($creditCardAuth)), __LINE__);
-        }
         $this->CreditCardAuth = $creditCardAuth;
         
         return $this;
@@ -512,14 +343,6 @@ class AirTicketingModifiers extends AbstractStructBase
      */
     public function addToCreditCardAuth(\Travelport\UniversalRecord\StructType\CreditCardAuth $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\CreditCardAuth) {
-            throw new InvalidArgumentException(sprintf('The CreditCardAuth property can only contain items of type \Travelport\UniversalRecord\StructType\CreditCardAuth, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->CreditCardAuth) && count($this->CreditCardAuth) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->CreditCardAuth)), __LINE__);
-        }
         $this->CreditCardAuth[] = $item;
         
         return $this;
@@ -533,48 +356,12 @@ class AirTicketingModifiers extends AbstractStructBase
         return $this->Payment;
     }
     /**
-     * This method is responsible for validating the value(s) passed to the setPayment method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setPayment method
-     * This has to validate that each item contained by the array match the itemType constraint
-     * @param array $values
-     * @return string A non-empty message if the values does not match the validation rules
-     */
-    public static function validatePaymentForArrayConstraintFromSetPayment(?array $values = []): string
-    {
-        if (!is_array($values)) {
-            return '';
-        }
-        $message = '';
-        $invalidValues = [];
-        foreach ($values as $airTicketingModifiersPaymentItem) {
-            // validation for constraint: itemType
-            if (!$airTicketingModifiersPaymentItem instanceof \Travelport\UniversalRecord\StructType\Payment) {
-                $invalidValues[] = is_object($airTicketingModifiersPaymentItem) ? get_class($airTicketingModifiersPaymentItem) : sprintf('%s(%s)', gettype($airTicketingModifiersPaymentItem), var_export($airTicketingModifiersPaymentItem, true));
-            }
-        }
-        if (!empty($invalidValues)) {
-            $message = sprintf('The Payment property can only contain items of type \Travelport\UniversalRecord\StructType\Payment, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
-        }
-        unset($invalidValues);
-        
-        return $message;
-    }
-    /**
      * Set Payment value
-     * @throws InvalidArgumentException
      * @param \Travelport\UniversalRecord\StructType\Payment[] $payment
      * @return \Travelport\UniversalRecord\StructType\AirTicketingModifiers
      */
     public function setPayment(?array $payment = null): self
     {
-        // validation for constraint: array
-        if ('' !== ($paymentArrayErrorMessage = self::validatePaymentForArrayConstraintFromSetPayment($payment))) {
-            throw new InvalidArgumentException($paymentArrayErrorMessage, __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($payment) && count($payment) > 999) {
-            throw new InvalidArgumentException(sprintf('Invalid count of %s, the number of elements contained by the property must be less than or equal to 999', count($payment)), __LINE__);
-        }
         $this->Payment = $payment;
         
         return $this;
@@ -587,14 +374,6 @@ class AirTicketingModifiers extends AbstractStructBase
      */
     public function addToPayment(\Travelport\UniversalRecord\StructType\Payment $item): self
     {
-        // validation for constraint: itemType
-        if (!$item instanceof \Travelport\UniversalRecord\StructType\Payment) {
-            throw new InvalidArgumentException(sprintf('The Payment property can only contain items of type \Travelport\UniversalRecord\StructType\Payment, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
-        }
-        // validation for constraint: maxOccurs(999)
-        if (is_array($this->Payment) && count($this->Payment) >= 999) {
-            throw new InvalidArgumentException(sprintf('You can\'t add anymore element to this property that already contains %s elements, the number of elements contained by the property must be less than or equal to 999', count($this->Payment)), __LINE__);
-        }
         $this->Payment[] = $item;
         
         return $this;
@@ -614,14 +393,6 @@ class AirTicketingModifiers extends AbstractStructBase
      */
     public function setPlatingCarrier(?string $platingCarrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($platingCarrier) && !is_string($platingCarrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($platingCarrier, true), gettype($platingCarrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($platingCarrier) && mb_strlen((string) $platingCarrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $platingCarrier)), __LINE__);
-        }
         $this->PlatingCarrier = $platingCarrier;
         
         return $this;
@@ -641,10 +412,6 @@ class AirTicketingModifiers extends AbstractStructBase
      */
     public function setTicketedFareOverride(?bool $ticketedFareOverride = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($ticketedFareOverride) && !is_bool($ticketedFareOverride)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($ticketedFareOverride, true), gettype($ticketedFareOverride)), __LINE__);
-        }
         $this->TicketedFareOverride = $ticketedFareOverride;
         
         return $this;
@@ -664,10 +431,6 @@ class AirTicketingModifiers extends AbstractStructBase
      */
     public function setSuppressTaxAndFee(?bool $suppressTaxAndFee = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($suppressTaxAndFee) && !is_bool($suppressTaxAndFee)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($suppressTaxAndFee, true), gettype($suppressTaxAndFee)), __LINE__);
-        }
         $this->SuppressTaxAndFee = $suppressTaxAndFee;
         
         return $this;
@@ -687,10 +450,6 @@ class AirTicketingModifiers extends AbstractStructBase
      */
     public function setNoComparisonSFQ(?bool $noComparisonSFQ = false): self
     {
-        // validation for constraint: boolean
-        if (!is_null($noComparisonSFQ) && !is_bool($noComparisonSFQ)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($noComparisonSFQ, true), gettype($noComparisonSFQ)), __LINE__);
-        }
         $this->NoComparisonSFQ = $noComparisonSFQ;
         
         return $this;

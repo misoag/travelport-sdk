@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Travelport\UniversalRecord\StructType;
 
-use InvalidArgumentException;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
@@ -24,7 +23,7 @@ class BundledService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Carrier = null;
+    public ?string $Carrier = null;
     /**
      * The CarrierSubCode
      * Meta information extracted from the WSDL
@@ -32,7 +31,7 @@ class BundledService extends AbstractStructBase
      * - use: optional
      * @var bool|null
      */
-    protected ?bool $CarrierSubCode = null;
+    public ?bool $CarrierSubCode = null;
     /**
      * The ServiceType
      * Meta information extracted from the WSDL
@@ -40,7 +39,7 @@ class BundledService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ServiceType = null;
+    public ?string $ServiceType = null;
     /**
      * The ServiceSubCode
      * Meta information extracted from the WSDL
@@ -48,7 +47,7 @@ class BundledService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $ServiceSubCode = null;
+    public ?string $ServiceSubCode = null;
     /**
      * The Name
      * Meta information extracted from the WSDL
@@ -56,7 +55,7 @@ class BundledService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Name = null;
+    public ?string $Name = null;
     /**
      * The Booking
      * Meta information extracted from the WSDL
@@ -64,7 +63,7 @@ class BundledService extends AbstractStructBase
      * - use: optional
      * @var string|null
      */
-    protected ?string $Booking = null;
+    public ?string $Booking = null;
     /**
      * The Occurrence
      * Meta information extracted from the WSDL
@@ -72,7 +71,7 @@ class BundledService extends AbstractStructBase
      * - use: optional
      * @var int|null
      */
-    protected ?int $Occurrence = null;
+    public ?int $Occurrence = null;
     /**
      * Constructor method for BundledService
      * @uses BundledService::setCarrier()
@@ -116,14 +115,6 @@ class BundledService extends AbstractStructBase
      */
     public function setCarrier(?string $carrier = null): self
     {
-        // validation for constraint: string
-        if (!is_null($carrier) && !is_string($carrier)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($carrier, true), gettype($carrier)), __LINE__);
-        }
-        // validation for constraint: length(2)
-        if (!is_null($carrier) && mb_strlen((string) $carrier) !== 2) {
-            throw new InvalidArgumentException(sprintf('Invalid length of %s, the number of characters/octets contained by the literal must be equal to 2', mb_strlen((string) $carrier)), __LINE__);
-        }
         $this->Carrier = $carrier;
         
         return $this;
@@ -143,10 +134,6 @@ class BundledService extends AbstractStructBase
      */
     public function setCarrierSubCode(?bool $carrierSubCode = null): self
     {
-        // validation for constraint: boolean
-        if (!is_null($carrierSubCode) && !is_bool($carrierSubCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($carrierSubCode, true), gettype($carrierSubCode)), __LINE__);
-        }
         $this->CarrierSubCode = $carrierSubCode;
         
         return $this;
@@ -166,10 +153,6 @@ class BundledService extends AbstractStructBase
      */
     public function setServiceType(?string $serviceType = null): self
     {
-        // validation for constraint: string
-        if (!is_null($serviceType) && !is_string($serviceType)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($serviceType, true), gettype($serviceType)), __LINE__);
-        }
         $this->ServiceType = $serviceType;
         
         return $this;
@@ -189,10 +172,6 @@ class BundledService extends AbstractStructBase
      */
     public function setServiceSubCode(?string $serviceSubCode = null): self
     {
-        // validation for constraint: string
-        if (!is_null($serviceSubCode) && !is_string($serviceSubCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($serviceSubCode, true), gettype($serviceSubCode)), __LINE__);
-        }
         $this->ServiceSubCode = $serviceSubCode;
         
         return $this;
@@ -212,10 +191,6 @@ class BundledService extends AbstractStructBase
      */
     public function setName(?string $name = null): self
     {
-        // validation for constraint: string
-        if (!is_null($name) && !is_string($name)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($name, true), gettype($name)), __LINE__);
-        }
         $this->Name = $name;
         
         return $this;
@@ -235,10 +210,6 @@ class BundledService extends AbstractStructBase
      */
     public function setBooking(?string $booking = null): self
     {
-        // validation for constraint: string
-        if (!is_null($booking) && !is_string($booking)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($booking, true), gettype($booking)), __LINE__);
-        }
         $this->Booking = $booking;
         
         return $this;
@@ -258,10 +229,6 @@ class BundledService extends AbstractStructBase
      */
     public function setOccurrence(?int $occurrence = null): self
     {
-        // validation for constraint: int
-        if (!is_null($occurrence) && !(is_int($occurrence) || ctype_digit($occurrence))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($occurrence, true), gettype($occurrence)), __LINE__);
-        }
         $this->Occurrence = $occurrence;
         
         return $this;
