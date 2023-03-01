@@ -33,36 +33,58 @@ class HotelReservation extends BaseReservation
     public ?array $BookingTravelerRef = null;
     /**
      * The ReservationName
+     * Meta information extracted from the WSDL
+     * - minOccurs: 0
+     * - ref: common:ReservationName
      * @var \Travelport\Hotel\StructType\ReservationName|null
      */
     public ?\Travelport\Hotel\StructType\ReservationName $ReservationName = null;
     /**
      * The ThirdPartyInformation
+     * Meta information extracted from the WSDL
+     * - minOccurs: 0
+     * - ref: common:ThirdPartyInformation
      * @var \Travelport\Hotel\StructType\ThirdPartyInformation|null
      */
     public ?\Travelport\Hotel\StructType\ThirdPartyInformation $ThirdPartyInformation = null;
     /**
      * The Email
-     * @var \Travelport\Hotel\StructType\Email|null
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 999
+     * - minOccurs: 0
+     * - ref: common:Email
+     * @var \Travelport\Hotel\StructType\Email[]
      */
-    public ?\Travelport\Hotel\StructType\Email $Email = null;
+    public ?array $Email = null;
     /**
      * The PhoneNumber
-     * @var \Travelport\Hotel\StructType\PhoneNumber|null
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 999
+     * - minOccurs: 0
+     * - ref: common:PhoneNumber
+     * @var \Travelport\Hotel\StructType\PhoneNumber[]
      */
-    public ?\Travelport\Hotel\StructType\PhoneNumber $PhoneNumber = null;
+    public ?array $PhoneNumber = null;
     /**
      * The HotelProperty
+     * Meta information extracted from the WSDL
+     * - ref: HotelProperty
      * @var \Travelport\Hotel\StructType\HotelProperty|null
      */
     public ?\Travelport\Hotel\StructType\HotelProperty $HotelProperty = null;
     /**
      * The HotelRateDetail
-     * @var \Travelport\Hotel\StructType\HotelRateDetail[]|null
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 99
+     * - minOccurs: 0
+     * - ref: HotelRateDetail
+     * @var \Travelport\Hotel\StructType\HotelRateDetail[]
      */
     public ?array $HotelRateDetail = null;
     /**
      * The HotelStay
+     * Meta information extracted from the WSDL
+     * - ref: HotelStay
      * @var \Travelport\Hotel\StructType\HotelStay|null
      */
     public ?\Travelport\Hotel\StructType\HotelStay $HotelStay = null;
@@ -72,66 +94,106 @@ class HotelReservation extends BaseReservation
      * - documentation: Common type for general textual information
      * - base: xs:string
      * - maxLength: 250
+     * - minOccurs: 0
+     * - ref: HotelSpecialRequest
      * @var string|null
      */
     public ?string $HotelSpecialRequest = null;
     /**
      * The Guarantee
+     * Meta information extracted from the WSDL
+     * - minOccurs: 0
+     * - ref: common:Guarantee
      * @var \Travelport\Hotel\StructType\Guarantee|null
      */
     public ?\Travelport\Hotel\StructType\Guarantee $Guarantee = null;
     /**
      * The PromotionCode
+     * Meta information extracted from the WSDL
+     * - minOccurs: 0
+     * - ref: PromotionCode
      * @var \Travelport\Hotel\StructType\PromotionCode|null
      */
     public ?\Travelport\Hotel\StructType\PromotionCode $PromotionCode = null;
     /**
      * The BookingSource
+     * Meta information extracted from the WSDL
+     * - minOccurs: 0
+     * - ref: common:BookingSource
      * @var \Travelport\Hotel\StructType\BookingSource|null
      */
     public ?\Travelport\Hotel\StructType\BookingSource $BookingSource = null;
     /**
      * The HotelBedding
-     * @var \Travelport\Hotel\StructType\HotelBedding|null
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 4
+     * - minOccurs: 0
+     * - ref: HotelBedding
+     * @var \Travelport\Hotel\StructType\HotelBedding[]
      */
-    public ?\Travelport\Hotel\StructType\HotelBedding $HotelBedding = null;
+    public ?array $HotelBedding = null;
     /**
      * The GuestInformation
+     * Meta information extracted from the WSDL
+     * - minOccurs: 0
+     * - ref: GuestInformation
      * @var \Travelport\Hotel\StructType\GuestInformation|null
      */
     public ?\Travelport\Hotel\StructType\GuestInformation $GuestInformation = null;
     /**
      * The AssociatedRemark
-     * @var \Travelport\Hotel\StructType\AssociatedRemark|null
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 999
+     * - minOccurs: 0
+     * - ref: AssociatedRemark
+     * @var \Travelport\Hotel\StructType\AssociatedRemark[]
      */
-    public ?\Travelport\Hotel\StructType\AssociatedRemark $AssociatedRemark = null;
+    public ?array $AssociatedRemark = null;
     /**
      * The SellMessage
-     * @var string|null
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 999
+     * - minOccurs: 0
+     * - ref: common:SellMessage
+     * @var string[]
      */
-    public ?string $SellMessage = null;
+    public ?array $SellMessage = null;
     /**
      * The HotelCommission
+     * Meta information extracted from the WSDL
+     * - minOccurs: 0
+     * - ref: HotelCommission
      * @var string|null
      */
     public ?string $HotelCommission = null;
     /**
      * The CancelInfo
+     * Meta information extracted from the WSDL
+     * - minOccurs: 0
+     * - ref: CancelInfo
      * @var \Travelport\Hotel\StructType\CancelInfo|null
      */
     public ?\Travelport\Hotel\StructType\CancelInfo $CancelInfo = null;
     /**
      * The TotalReservationPrice
+     * Meta information extracted from the WSDL
+     * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\TotalReservationPrice|null
      */
     public ?\Travelport\Hotel\StructType\TotalReservationPrice $TotalReservationPrice = null;
     /**
      * The HotelDetailItem
-     * @var \Travelport\Hotel\StructType\HotelDetailItem|null
+     * Meta information extracted from the WSDL
+     * - maxOccurs: 99
+     * - minOccurs: 0
+     * - ref: HotelDetailItem
+     * @var \Travelport\Hotel\StructType\HotelDetailItem[]
      */
-    public ?\Travelport\Hotel\StructType\HotelDetailItem $HotelDetailItem = null;
+    public ?array $HotelDetailItem = null;
     /**
      * The AdaptedRoomGuestAllocation
+     * Meta information extracted from the WSDL
+     * - minOccurs: 0
      * @var \Travelport\Hotel\StructType\AdaptedRoomGuestAllocation|null
      */
     public ?\Travelport\Hotel\StructType\AdaptedRoomGuestAllocation $AdaptedRoomGuestAllocation = null;
@@ -218,23 +280,23 @@ class HotelReservation extends BaseReservation
      * @param \Travelport\Hotel\StructType\BookingTravelerRef[] $bookingTravelerRef
      * @param \Travelport\Hotel\StructType\ReservationName $reservationName
      * @param \Travelport\Hotel\StructType\ThirdPartyInformation $thirdPartyInformation
-     * @param \Travelport\Hotel\StructType\Email $email
-     * @param \Travelport\Hotel\StructType\PhoneNumber $phoneNumber
+     * @param \Travelport\Hotel\StructType\Email[] $email
+     * @param \Travelport\Hotel\StructType\PhoneNumber[] $phoneNumber
      * @param \Travelport\Hotel\StructType\HotelProperty $hotelProperty
-     * @param \Travelport\Hotel\StructType\HotelRateDetail $hotelRateDetail
+     * @param \Travelport\Hotel\StructType\HotelRateDetail[] $hotelRateDetail
      * @param \Travelport\Hotel\StructType\HotelStay $hotelStay
      * @param string $hotelSpecialRequest
      * @param \Travelport\Hotel\StructType\Guarantee $guarantee
      * @param \Travelport\Hotel\StructType\PromotionCode $promotionCode
      * @param \Travelport\Hotel\StructType\BookingSource $bookingSource
-     * @param \Travelport\Hotel\StructType\HotelBedding $hotelBedding
+     * @param \Travelport\Hotel\StructType\HotelBedding[] $hotelBedding
      * @param \Travelport\Hotel\StructType\GuestInformation $guestInformation
-     * @param \Travelport\Hotel\StructType\AssociatedRemark $associatedRemark
-     * @param string $sellMessage
+     * @param \Travelport\Hotel\StructType\AssociatedRemark[] $associatedRemark
+     * @param string[] $sellMessage
      * @param string $hotelCommission
      * @param \Travelport\Hotel\StructType\CancelInfo $cancelInfo
      * @param \Travelport\Hotel\StructType\TotalReservationPrice $totalReservationPrice
-     * @param \Travelport\Hotel\StructType\HotelDetailItem $hotelDetailItem
+     * @param \Travelport\Hotel\StructType\HotelDetailItem[] $hotelDetailItem
      * @param \Travelport\Hotel\StructType\AdaptedRoomGuestAllocation $adaptedRoomGuestAllocation
      * @param string $bookingConfirmation
      * @param string $cancelConfirmation
@@ -243,7 +305,7 @@ class HotelReservation extends BaseReservation
      * @param int $providerSegmentOrder
      * @param string $passiveProviderReservationInfoRef
      */
-    public function __construct(string $status, ?array $bookingTravelerRef = null, ?\Travelport\Hotel\StructType\ReservationName $reservationName = null, ?\Travelport\Hotel\StructType\ThirdPartyInformation $thirdPartyInformation = null, ?\Travelport\Hotel\StructType\Email $email = null, ?\Travelport\Hotel\StructType\PhoneNumber $phoneNumber = null, ?\Travelport\Hotel\StructType\HotelProperty $hotelProperty = null, ?array $hotelRateDetail = null, ?\Travelport\Hotel\StructType\HotelStay $hotelStay = null, ?string $hotelSpecialRequest = null, ?\Travelport\Hotel\StructType\Guarantee $guarantee = null, ?\Travelport\Hotel\StructType\PromotionCode $promotionCode = null, ?\Travelport\Hotel\StructType\BookingSource $bookingSource = null, ?\Travelport\Hotel\StructType\HotelBedding $hotelBedding = null, ?\Travelport\Hotel\StructType\GuestInformation $guestInformation = null, ?\Travelport\Hotel\StructType\AssociatedRemark $associatedRemark = null, ?string $sellMessage = null, ?string $hotelCommission = null, ?\Travelport\Hotel\StructType\CancelInfo $cancelInfo = null, ?\Travelport\Hotel\StructType\TotalReservationPrice $totalReservationPrice = null, ?\Travelport\Hotel\StructType\HotelDetailItem $hotelDetailItem = null, ?\Travelport\Hotel\StructType\AdaptedRoomGuestAllocation $adaptedRoomGuestAllocation = null, ?string $bookingConfirmation = null, ?string $cancelConfirmation = null, ?string $providerReservationInfoRef = null, ?int $travelOrder = null, ?int $providerSegmentOrder = null, ?string $passiveProviderReservationInfoRef = null)
+    public function __construct(string $status, ?array $bookingTravelerRef = null, ?\Travelport\Hotel\StructType\ReservationName $reservationName = null, ?\Travelport\Hotel\StructType\ThirdPartyInformation $thirdPartyInformation = null, ?array $email = null, ?array $phoneNumber = null, ?\Travelport\Hotel\StructType\HotelProperty $hotelProperty = null, ?array $hotelRateDetail = null, ?\Travelport\Hotel\StructType\HotelStay $hotelStay = null, ?string $hotelSpecialRequest = null, ?\Travelport\Hotel\StructType\Guarantee $guarantee = null, ?\Travelport\Hotel\StructType\PromotionCode $promotionCode = null, ?\Travelport\Hotel\StructType\BookingSource $bookingSource = null, ?array $hotelBedding = null, ?\Travelport\Hotel\StructType\GuestInformation $guestInformation = null, ?array $associatedRemark = null, ?array $sellMessage = null, ?string $hotelCommission = null, ?\Travelport\Hotel\StructType\CancelInfo $cancelInfo = null, ?\Travelport\Hotel\StructType\TotalReservationPrice $totalReservationPrice = null, ?array $hotelDetailItem = null, ?\Travelport\Hotel\StructType\AdaptedRoomGuestAllocation $adaptedRoomGuestAllocation = null, ?string $bookingConfirmation = null, ?string $cancelConfirmation = null, ?string $providerReservationInfoRef = null, ?int $travelOrder = null, ?int $providerSegmentOrder = null, ?string $passiveProviderReservationInfoRef = null)
     {
         $this
             ->setStatus($status)
@@ -365,39 +427,63 @@ class HotelReservation extends BaseReservation
     }
     /**
      * Get Email value
-     * @return \Travelport\Hotel\StructType\Email|null
+     * @return \Travelport\Hotel\StructType\Email[]
      */
-    public function getEmail(): ?\Travelport\Hotel\StructType\Email
+    public function getEmail(): ?array
     {
         return $this->Email;
     }
     /**
      * Set Email value
-     * @param \Travelport\Hotel\StructType\Email $email
+     * @param \Travelport\Hotel\StructType\Email[] $email
      * @return \Travelport\Hotel\StructType\HotelReservation
      */
-    public function setEmail(?\Travelport\Hotel\StructType\Email $email = null): self
+    public function setEmail(?array $email = null): self
     {
         $this->Email = $email;
         
         return $this;
     }
     /**
-     * Get PhoneNumber value
-     * @return \Travelport\Hotel\StructType\PhoneNumber|null
+     * Add item to Email value
+     * @throws InvalidArgumentException
+     * @param \Travelport\Hotel\StructType\Email $item
+     * @return \Travelport\Hotel\StructType\HotelReservation
      */
-    public function getPhoneNumber(): ?\Travelport\Hotel\StructType\PhoneNumber
+    public function addToEmail(\Travelport\Hotel\StructType\Email $item): self
+    {
+        $this->Email[] = $item;
+        
+        return $this;
+    }
+    /**
+     * Get PhoneNumber value
+     * @return \Travelport\Hotel\StructType\PhoneNumber[]
+     */
+    public function getPhoneNumber(): ?array
     {
         return $this->PhoneNumber;
     }
     /**
      * Set PhoneNumber value
-     * @param \Travelport\Hotel\StructType\PhoneNumber $phoneNumber
+     * @param \Travelport\Hotel\StructType\PhoneNumber[] $phoneNumber
      * @return \Travelport\Hotel\StructType\HotelReservation
      */
-    public function setPhoneNumber(?\Travelport\Hotel\StructType\PhoneNumber $phoneNumber = null): self
+    public function setPhoneNumber(?array $phoneNumber = null): self
     {
         $this->PhoneNumber = $phoneNumber;
+        
+        return $this;
+    }
+    /**
+     * Add item to PhoneNumber value
+     * @throws InvalidArgumentException
+     * @param \Travelport\Hotel\StructType\PhoneNumber $item
+     * @return \Travelport\Hotel\StructType\HotelReservation
+     */
+    public function addToPhoneNumber(\Travelport\Hotel\StructType\PhoneNumber $item): self
+    {
+        $this->PhoneNumber[] = $item;
         
         return $this;
     }
@@ -422,7 +508,7 @@ class HotelReservation extends BaseReservation
     }
     /**
      * Get HotelRateDetail value
-     * @return \Travelport\Hotel\StructType\HotelRateDetail|null
+     * @return \Travelport\Hotel\StructType\HotelRateDetail[]
      */
     public function getHotelRateDetail(): ?array
     {
@@ -433,16 +519,22 @@ class HotelReservation extends BaseReservation
      * @param \Travelport\Hotel\StructType\HotelRateDetail[] $hotelRateDetail
      * @return \Travelport\Hotel\StructType\HotelReservation
      */
-    public function setHotelRateDetail($hotelRateDetail = null): self
+    public function setHotelRateDetail(?array $hotelRateDetail = null): self
     {
         $this->HotelRateDetail = $hotelRateDetail;
         
         return $this;
     }
-    public function adToHotelRateDetail($hotelRateDetail = null): self
+    /**
+     * Add item to HotelRateDetail value
+     * @throws InvalidArgumentException
+     * @param \Travelport\Hotel\StructType\HotelRateDetail $item
+     * @return \Travelport\Hotel\StructType\HotelReservation
+     */
+    public function addToHotelRateDetail(\Travelport\Hotel\StructType\HotelRateDetail $item): self
     {
-        $this->HotelRateDetail[] = $hotelRateDetail;
-
+        $this->HotelRateDetail[] = $item;
+        
         return $this;
     }
     /**
@@ -542,20 +634,32 @@ class HotelReservation extends BaseReservation
     }
     /**
      * Get HotelBedding value
-     * @return \Travelport\Hotel\StructType\HotelBedding|null
+     * @return \Travelport\Hotel\StructType\HotelBedding[]
      */
-    public function getHotelBedding(): ?\Travelport\Hotel\StructType\HotelBedding
+    public function getHotelBedding(): ?array
     {
         return $this->HotelBedding;
     }
     /**
      * Set HotelBedding value
-     * @param \Travelport\Hotel\StructType\HotelBedding $hotelBedding
+     * @param \Travelport\Hotel\StructType\HotelBedding[] $hotelBedding
      * @return \Travelport\Hotel\StructType\HotelReservation
      */
-    public function setHotelBedding(?\Travelport\Hotel\StructType\HotelBedding $hotelBedding = null): self
+    public function setHotelBedding(?array $hotelBedding = null): self
     {
         $this->HotelBedding = $hotelBedding;
+        
+        return $this;
+    }
+    /**
+     * Add item to HotelBedding value
+     * @throws InvalidArgumentException
+     * @param \Travelport\Hotel\StructType\HotelBedding $item
+     * @return \Travelport\Hotel\StructType\HotelReservation
+     */
+    public function addToHotelBedding(\Travelport\Hotel\StructType\HotelBedding $item): self
+    {
+        $this->HotelBedding[] = $item;
         
         return $this;
     }
@@ -580,39 +684,63 @@ class HotelReservation extends BaseReservation
     }
     /**
      * Get AssociatedRemark value
-     * @return \Travelport\Hotel\StructType\AssociatedRemark|null
+     * @return \Travelport\Hotel\StructType\AssociatedRemark[]
      */
-    public function getAssociatedRemark(): ?\Travelport\Hotel\StructType\AssociatedRemark
+    public function getAssociatedRemark(): ?array
     {
         return $this->AssociatedRemark;
     }
     /**
      * Set AssociatedRemark value
-     * @param \Travelport\Hotel\StructType\AssociatedRemark $associatedRemark
+     * @param \Travelport\Hotel\StructType\AssociatedRemark[] $associatedRemark
      * @return \Travelport\Hotel\StructType\HotelReservation
      */
-    public function setAssociatedRemark(?\Travelport\Hotel\StructType\AssociatedRemark $associatedRemark = null): self
+    public function setAssociatedRemark(?array $associatedRemark = null): self
     {
         $this->AssociatedRemark = $associatedRemark;
         
         return $this;
     }
     /**
-     * Get SellMessage value
-     * @return string|null
+     * Add item to AssociatedRemark value
+     * @throws InvalidArgumentException
+     * @param \Travelport\Hotel\StructType\AssociatedRemark $item
+     * @return \Travelport\Hotel\StructType\HotelReservation
      */
-    public function getSellMessage(): ?string
+    public function addToAssociatedRemark(\Travelport\Hotel\StructType\AssociatedRemark $item): self
+    {
+        $this->AssociatedRemark[] = $item;
+        
+        return $this;
+    }
+    /**
+     * Get SellMessage value
+     * @return string[]
+     */
+    public function getSellMessage(): ?array
     {
         return $this->SellMessage;
     }
     /**
      * Set SellMessage value
-     * @param string $sellMessage
+     * @param string[] $sellMessage
      * @return \Travelport\Hotel\StructType\HotelReservation
      */
-    public function setSellMessage(?string $sellMessage = null): self
+    public function setSellMessage(?array $sellMessage = null): self
     {
         $this->SellMessage = $sellMessage;
+        
+        return $this;
+    }
+    /**
+     * Add item to SellMessage value
+     * @throws InvalidArgumentException
+     * @param string $item
+     * @return \Travelport\Hotel\StructType\HotelReservation
+     */
+    public function addToSellMessage(string $item): self
+    {
+        $this->SellMessage[] = $item;
         
         return $this;
     }
@@ -675,20 +803,32 @@ class HotelReservation extends BaseReservation
     }
     /**
      * Get HotelDetailItem value
-     * @return \Travelport\Hotel\StructType\HotelDetailItem|null
+     * @return \Travelport\Hotel\StructType\HotelDetailItem[]
      */
-    public function getHotelDetailItem(): ?\Travelport\Hotel\StructType\HotelDetailItem
+    public function getHotelDetailItem(): ?array
     {
         return $this->HotelDetailItem;
     }
     /**
      * Set HotelDetailItem value
-     * @param \Travelport\Hotel\StructType\HotelDetailItem $hotelDetailItem
+     * @param \Travelport\Hotel\StructType\HotelDetailItem[] $hotelDetailItem
      * @return \Travelport\Hotel\StructType\HotelReservation
      */
-    public function setHotelDetailItem(?\Travelport\Hotel\StructType\HotelDetailItem $hotelDetailItem = null): self
+    public function setHotelDetailItem(?array $hotelDetailItem = null): self
     {
         $this->HotelDetailItem = $hotelDetailItem;
+        
+        return $this;
+    }
+    /**
+     * Add item to HotelDetailItem value
+     * @throws InvalidArgumentException
+     * @param \Travelport\Hotel\StructType\HotelDetailItem $item
+     * @return \Travelport\Hotel\StructType\HotelReservation
+     */
+    public function addToHotelDetailItem(\Travelport\Hotel\StructType\HotelDetailItem $item): self
+    {
+        $this->HotelDetailItem[] = $item;
         
         return $this;
     }
