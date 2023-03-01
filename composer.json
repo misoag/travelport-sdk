@@ -10,7 +10,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Travelport\\Util\\": "./src/Travelport/Util",
+            "Travelport\\Air\\": "./src/Travelport/Air",
             "Travelport\\UniversalRecord\\": "./src/Travelport/UniversalRecord",
             "Travelport\\Hotel\\": "./src/Travelport/Hotel"
         }
