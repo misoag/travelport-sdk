@@ -58,9 +58,9 @@ class HotelReservation extends BaseReservation
     public ?\Travelport\Hotel\StructType\HotelProperty $HotelProperty = null;
     /**
      * The HotelRateDetail
-     * @var \Travelport\Hotel\StructType\HotelRateDetail|null
+     * @var \Travelport\Hotel\StructType\HotelRateDetail[]|null
      */
-    public ?\Travelport\Hotel\StructType\HotelRateDetail $HotelRateDetail = null;
+    public ?array $HotelRateDetail = null;
     /**
      * The HotelStay
      * @var \Travelport\Hotel\StructType\HotelStay|null
@@ -243,7 +243,7 @@ class HotelReservation extends BaseReservation
      * @param int $providerSegmentOrder
      * @param string $passiveProviderReservationInfoRef
      */
-    public function __construct(string $status, ?array $bookingTravelerRef = null, ?\Travelport\Hotel\StructType\ReservationName $reservationName = null, ?\Travelport\Hotel\StructType\ThirdPartyInformation $thirdPartyInformation = null, ?\Travelport\Hotel\StructType\Email $email = null, ?\Travelport\Hotel\StructType\PhoneNumber $phoneNumber = null, ?\Travelport\Hotel\StructType\HotelProperty $hotelProperty = null, ?\Travelport\Hotel\StructType\HotelRateDetail $hotelRateDetail = null, ?\Travelport\Hotel\StructType\HotelStay $hotelStay = null, ?string $hotelSpecialRequest = null, ?\Travelport\Hotel\StructType\Guarantee $guarantee = null, ?\Travelport\Hotel\StructType\PromotionCode $promotionCode = null, ?\Travelport\Hotel\StructType\BookingSource $bookingSource = null, ?\Travelport\Hotel\StructType\HotelBedding $hotelBedding = null, ?\Travelport\Hotel\StructType\GuestInformation $guestInformation = null, ?\Travelport\Hotel\StructType\AssociatedRemark $associatedRemark = null, ?string $sellMessage = null, ?string $hotelCommission = null, ?\Travelport\Hotel\StructType\CancelInfo $cancelInfo = null, ?\Travelport\Hotel\StructType\TotalReservationPrice $totalReservationPrice = null, ?\Travelport\Hotel\StructType\HotelDetailItem $hotelDetailItem = null, ?\Travelport\Hotel\StructType\AdaptedRoomGuestAllocation $adaptedRoomGuestAllocation = null, ?string $bookingConfirmation = null, ?string $cancelConfirmation = null, ?string $providerReservationInfoRef = null, ?int $travelOrder = null, ?int $providerSegmentOrder = null, ?string $passiveProviderReservationInfoRef = null)
+    public function __construct(string $status, ?array $bookingTravelerRef = null, ?\Travelport\Hotel\StructType\ReservationName $reservationName = null, ?\Travelport\Hotel\StructType\ThirdPartyInformation $thirdPartyInformation = null, ?\Travelport\Hotel\StructType\Email $email = null, ?\Travelport\Hotel\StructType\PhoneNumber $phoneNumber = null, ?\Travelport\Hotel\StructType\HotelProperty $hotelProperty = null, ?array $hotelRateDetail = null, ?\Travelport\Hotel\StructType\HotelStay $hotelStay = null, ?string $hotelSpecialRequest = null, ?\Travelport\Hotel\StructType\Guarantee $guarantee = null, ?\Travelport\Hotel\StructType\PromotionCode $promotionCode = null, ?\Travelport\Hotel\StructType\BookingSource $bookingSource = null, ?\Travelport\Hotel\StructType\HotelBedding $hotelBedding = null, ?\Travelport\Hotel\StructType\GuestInformation $guestInformation = null, ?\Travelport\Hotel\StructType\AssociatedRemark $associatedRemark = null, ?string $sellMessage = null, ?string $hotelCommission = null, ?\Travelport\Hotel\StructType\CancelInfo $cancelInfo = null, ?\Travelport\Hotel\StructType\TotalReservationPrice $totalReservationPrice = null, ?\Travelport\Hotel\StructType\HotelDetailItem $hotelDetailItem = null, ?\Travelport\Hotel\StructType\AdaptedRoomGuestAllocation $adaptedRoomGuestAllocation = null, ?string $bookingConfirmation = null, ?string $cancelConfirmation = null, ?string $providerReservationInfoRef = null, ?int $travelOrder = null, ?int $providerSegmentOrder = null, ?string $passiveProviderReservationInfoRef = null)
     {
         $this
             ->setStatus($status)
@@ -424,19 +424,25 @@ class HotelReservation extends BaseReservation
      * Get HotelRateDetail value
      * @return \Travelport\Hotel\StructType\HotelRateDetail|null
      */
-    public function getHotelRateDetail(): ?\Travelport\Hotel\StructType\HotelRateDetail
+    public function getHotelRateDetail(): ?array
     {
         return $this->HotelRateDetail;
     }
     /**
      * Set HotelRateDetail value
-     * @param \Travelport\Hotel\StructType\HotelRateDetail $hotelRateDetail
+     * @param \Travelport\Hotel\StructType\HotelRateDetail[] $hotelRateDetail
      * @return \Travelport\Hotel\StructType\HotelReservation
      */
-    public function setHotelRateDetail(?\Travelport\Hotel\StructType\HotelRateDetail $hotelRateDetail = null): self
+    public function setHotelRateDetail($hotelRateDetail = null): self
     {
         $this->HotelRateDetail = $hotelRateDetail;
         
+        return $this;
+    }
+    public function adToHotelRateDetail($hotelRateDetail = null): self
+    {
+        $this->HotelRateDetail[] = $hotelRateDetail;
+
         return $this;
     }
     /**
